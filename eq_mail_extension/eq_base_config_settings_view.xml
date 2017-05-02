@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>   
+    	<function model="base.config.settings" name="delete_alias_domain"/> 
+    	
+    	    
+    	<record id="view_eq_base_config_alias" model="ir.ui.view">
+            <field name="name">base.config.settings.mail.alias</field>
+            <field name="model">base.config.settings</field>
+            <field name="inherit_id" ref="mail.view_general_configuration_mail_alias_domain"/>
+            <field name="arch" type="xml">
+            	<label for="alias_domain" position="attributes">
+              		<attribute name="attrs">{'invisible': True}</attribute>
+              	</label>
+              	<field name="alias_domain" position="attributes">
+              		<attribute name="attrs">{'invisible': True}</attribute>
+              	</field>
+            </field>
+        </record>
+    </data>
+</openerp>

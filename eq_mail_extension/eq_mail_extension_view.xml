@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="eq_ir_mail_server_form" model="ir.ui.view">
+            <field name="model">ir.mail_server</field>
+            <field name="inherit_id" ref="base.ir_mail_server_form"/>
+            <field name="arch" type="xml">
+                <field name="smtp_user" position="before">
+                    <field name="user_id"/>
+                </field>
+            </field>
+        </record>
+        
+        <record id="eq_view_users_form" model="ir.ui.view">
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form_simple_modif"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//button[@name='preference_change_password']" position="replace">
+            		<group cols="1">
+			            <button type="object" name="preference_change_password" string="Change password" class="oe_edit_only oe_link"/>
+			            <newline/>
+			            <button type="object" name="open_change_email" string="Change e-mail password" class="oe_edit_only oe_link"/>
+	            	</group>
+	            </xpath>
+	        </field>
+	   	</record>
+
+        <record id="eq_fetchmail_server_form" model="ir.ui.view">
+            <field name="model">fetchmail.server</field>
+            <field name="inherit_id" ref="fetchmail.view_email_server_form"/>
+            <field name="arch" type="xml">
+				<field name="password" position="after">
+					<field name="user_id"/>
+				</field>
+	        </field>
+	   	</record>
+	   	
+		<record id="eq_mail_password_change_form" model="ir.ui.view">		
+			<field name="name">eq.mail.password.change.form</field>
+			<field name="model">eq_mail.password_change</field>
+			<field name="arch" type="xml">
+				<form string="Change Password">
+					<group>
+						<field name="eq_old_password" password="True"/>
+						<field name="eq_password" password="True"/>
+						<field name="eq_compare_password" password="True"/>
+					</group>
+					<footer>
+					   	<button type="object" name="button_confirm" string="Confirm" class="oe_highlight"/> or 
+			   			<button type="special" name="cancel" string="Cancel" class="oe_edit_only oe_link"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+    </data>
+</openerp>
+

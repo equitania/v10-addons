@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>        
+    	<record id="view_eq_mail_configuration" model="ir.ui.view">
+            <field name="name">Email Settings</field>
+            <field name="model">eq_mail_config.settings</field>
+            <field name="arch" type="xml">
+                <form string="Email Settings" class="oe_form_configuration">
+                    <header>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+                    </header>
+                    <separator string="Email Settings"/>
+                    <div>
+                        <p>
+                            <label string="You need to select a System Mail Server. Otherwiese it will run into an error."/>
+                        </p>
+                    </div>
+                    <group>
+						<field name="mail_server_id" on_change="on_change_mail_server(mail_server_id)"/>
+						<field name="mail_server_address" readonly="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_eq_mail_configuration" model="ir.actions.act_window">
+            <field name="name">Email Settings</field>
+            <field name="res_model">eq_mail_config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+        </record>
+        <menuitem id="menu_eq_mail_configuration" parent="base.menu_config"
+            sequence="80" action="action_eq_mail_configuration" groups="base.group_erp_manager"/>
+    </data>
+</openerp>
