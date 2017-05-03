@@ -20,13 +20,13 @@
 ##############################################################################
 
 import logging
-from openerp import SUPERUSER_ID
+from odoo import SUPERUSER_ID
 import time
 from imaplib import IMAP4
 from imaplib import IMAP4_SSL
 from poplib import POP3
 from poplib import POP3_SSL
-from openerp.tools import frozendict
+from odoo.tools import frozendict
 try:
     import cStringIO as StringIO
 except ImportError:
@@ -34,21 +34,21 @@ except ImportError:
 
 import zipfile
 import base64
-from openerp import addons
+from odoo import addons
 
-from openerp.addons.base.ir.ir_mail_server import MailDeliveryException
-from openerp.osv import fields, osv
-from openerp import tools, api
-from openerp.tools.translate import _
+from odoo.addons.base.ir.ir_mail_server import MailDeliveryException
+from odoo import fields, models
+from odoo import tools, api
+from odoo.tools.translate import _
 
 _logger = logging.getLogger(__name__)
 
-class eq_fetchmail_server(osv.Model):
+class eq_fetchmail_server(models.Model):
     _inherit = "fetchmail.server"
     
-    _columns = {
-        'user_id': fields.many2one('res.users', string="Owner"),
-    }
+
+
+    user_id = fields.Many2one('res.users', string="Owner")
     
     #Copy and Pasted form original fetchmail.server and removed the remove E-Mail for pop mail servers.
     def fetch_mail(self, cr, uid, ids, context=None):
@@ -123,25 +123,24 @@ class eq_fetchmail_server(osv.Model):
             server.write({'date': time.strftime(tools.DEFAULT_SERVER_DATETIME_FORMAT)})
         return True
 
-class eq_ir_mail_server(osv.Model):
+class eq_ir_mail_server(models.Model):
     _inherit = "ir.mail_server"
     
-    _columns = {
-        'user_id': fields.many2one('res.users', string="Owner"),
-    }
+
+    user_id = fields.Many2one('res.users', string="Owner")
         
-class eq_mail_mail(osv.Model):
+class eq_mail_mail(models.Model):
     _inherit = 'mail.mail'
     
-    _columns = {
-        'mail_server_id': fields.many2one('ir.mail_server', "Default Mail Server"),
-        'mail_server_address': fields.char('Default Mail Server Address'),
-    }
+
+    mail_server_id = fields.Many2one('ir.mail_server', "Default Mail Server")
+    mail_server_address = fields.Char('Default Mail Server Address')
+
     
-    _default = {
-                lambda self, cr, uid, context: self.pool.get('ir.values').get_default(cr, uid, 'mail.mail', 'mail_server_id'),
-                lambda self, cr, uid, context: self.pool.get('ir.values').get_default(cr, uid, 'mail.mail', 'mail_server_address'),
-                }
+
+    lambda self, cr, uid, context: self.pool.get('ir.values').get_default(cr, uid, 'mail.mail', 'mail_server_id')
+    lambda self, cr, uid, context: self.pool.get('ir.values').get_default(cr, uid, 'mail.mail', 'mail_server_address')
+
     
     
     
@@ -294,7 +293,7 @@ class eq_mail_mail(osv.Model):
                     mail_sent = True
 
                 # /!\ can't use mail.state here, as mail.refresh() will cause an error
-                # see revid:odo@openerp.com-20120622152536-42b2s28lvdv3odyr in 6.1
+                # see revid:odo@odoo.com-20120622152536-42b2s28lvdv3odyr in 6.1
                 if mail_sent:
                     _logger.info('Mail with ID %r and Message-Id %r successfully sent', mail.id, mail.message_id)
                 self._postprocess_sent_message(cr, uid, mail, context=context, mail_sent=mail_sent)
@@ -321,7 +320,7 @@ class eq_mail_mail(osv.Model):
                 cr.commit()
         return True
     
-class eq_mail_followers(osv.Model):
+class eq_mail_followers(models.Model):
     _inherit = "mail.notification"
             
     def _notify(self, cr, uid, message_id, partners_to_notify=None, context=None,
@@ -351,7 +350,7 @@ class eq_mail_followers(osv.Model):
         # browse as SUPERUSER_ID because of access to res_partner not necessarily allowed
         self._notify_email(cr, SUPERUSER_ID, new_notif_ids, message_id, force_send, user_signature, context=context)
         
-class eq_res_user_extension(osv.osv):
+class eq_res_user_extension(models.Model):
     _inherit = 'res.users'
     
     def open_change_email(self, cr, uid, ids, context=None):
@@ -371,14 +370,14 @@ class eq_res_user_extension(osv.osv):
                 'res_id': False,
             }
 
-class eq_mail_password_change(osv.osv_memory):
+class eq_mail_password_change(models.TransientModel):
     _name = "eq_mail.password_change"
     
-    _columns = {
-                'eq_old_password': fields.char('Old password', size=64,),
-                'eq_password': fields.char('New password', size=64),
-                'eq_compare_password': fields.char('Repeat new password', size=64),
-                }
+
+    eq_old_password = fields.Char('Old password', size=64)
+    eq_password = fields.Char('New password', size=64)
+    eq_compare_password = fields.Char('Repeat new password', size=64)
+
     
     def button_confirm(self, cr, uid, ids, context=None):
         #ir.mail_server Object and Dataset id for the user.
@@ -393,15 +392,15 @@ class eq_mail_password_change(osv.osv_memory):
         ir_mail_server = ir_mail_server_obj.browse(cr, SUPERUSER_ID, ir_mail_server_id, context)
         
         if len(ir_mail_server_id) == 0 and len(fetchmail_server_id) == 0:
-            raise osv.except_osv(_('Error!'),_('There is no incoming and outgoing mailserver for this user./nPlease contact an administrator.' ))
+            raise models.except_osv(_('Error!'),_('There is no incoming and outgoing mailserver for this user./nPlease contact an administrator.' ))
         elif len(ir_mail_server_id) == 0:
-            raise osv.except_osv(_('Error!'),_('There is no outgoing mailserver for this user./nPlease contact an administrator.' ))
+            raise models.except_osv(_('Error!'),_('There is no outgoing mailserver for this user./nPlease contact an administrator.' ))
         else:
             if password.eq_old_password != ir_mail_server.smtp_pass:
-                raise osv.except_osv(_('Error!'),_('The old password does not match.' ))
+                raise models.except_osv(_('Error!'),_('The old password does not match.' ))
             else:
                 if password.eq_password != password.eq_compare_password:
-                    raise osv.except_osv(_('Error!'),_('The two new passwords do not match.' ))
+                    raise models.except_osv(_('Error!'),_('The two new passwords do not match.' ))
                 else:
                     #Set password for ir_mail_server
                     ir_mail_server_values = {

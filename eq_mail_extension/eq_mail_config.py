@@ -19,10 +19,10 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, osv
-from openerp.tools.translate import _
+from odoo import fields, models
+from odoo.tools.translate import _
 
-class eq_mail_config_settings(osv.osv_memory):
+class eq_mail_config_settings(models.TransientModel):
     _name = 'eq_mail_config.settings'
     _inherit = 'res.config.settings'    
     
@@ -51,11 +51,11 @@ class eq_mail_config_settings(osv.osv_memory):
                 'mail_server_address':address.smtp_user if address else "",
                 }
 
-    _columns = {
-                'mail_server_id': fields.many2one('ir.mail_server', 'Default Mail Server',
-                                                        help="""The outgoing mail server that the system should user for sending e-mails."""),
-                'mail_server_address': fields.char('Default Mails Server Address'),
-                }
+
+    mail_server_id = fields.Many2one('ir.mail_server', 'Default Mail Server',
+                                                        help="""The outgoing mail server that the system should user for sending e-mails.""")
+    mail_server_address =  fields.Char('Default Mails Server Address')
+
     
     
     def on_change_mail_server(self, cr, uid, ids, mail_server_id, context=None):

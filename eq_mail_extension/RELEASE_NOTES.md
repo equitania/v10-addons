@@ -1,5 +1,9 @@
 ## Modul eq_mail_extension
 
+#### 03.05.2017
+#### Version 1.0.10
+##### CHG/ADD
+- Odoo 10 portierung  
 
 #### 25.11.2016
 #### Version 1.0.9

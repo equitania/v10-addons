@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data>        
     	<record id="view_eq_mail_configuration" model="ir.ui.view">
             <field name="name">Email Settings</field>
@@ -31,7 +31,7 @@
             <field name="view_mode">form</field>
             <field name="target">inline</field>
         </record>
-        <menuitem id="menu_eq_mail_configuration" parent="base.menu_config"
+        <menuitem id="menu_eq_mail_configuration" parent="base.menu_administration"
             sequence="80" action="action_eq_mail_configuration" groups="base.group_erp_manager"/>
     </data>
-</openerp>
+</odoo>

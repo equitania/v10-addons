@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<record id="eq_email_template_version_form" model="ir.ui.view">
+            <field name="name">eq_email_template_version_form</field>
+            <field name="model">mail.template</field>
+            <field name="inherit_id" ref="mail.email_template_form" />
+            <field name="arch" type="xml">
+            	<field name="model_id" position="after">
+            		<field name="eq_email_template_version"/>
+            	</field>      
+            	<field name="body_html" position="replace">
+            		<field name="body_html" widget="text"/>
+            	</field>      	       	   
+            </field>
+        </record>
+        </data>
+</odoo>

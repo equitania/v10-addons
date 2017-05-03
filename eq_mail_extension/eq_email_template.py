@@ -19,17 +19,11 @@
 #
 ##############################################################################
 
-from odoo import fields, models, api
+from odoo import models, fields, api, _
 
-class eq_base_config_settings(models.TransientModel):
-    _inherit = 'base.config.settings'    
-     
-    @api.model
-    def delete_alias_domain(self):
-        config_parameters = self.env["ir.config_parameter"]
-        config_parameters.set_param("mail.catchall.domain", '')
+class email_template(models.Model):
 
-        return True
-                
-
-   
+    _inherit = 'mail.template'
+    
+    
+    eq_email_template_version = fields.Integer(string="Version Number")

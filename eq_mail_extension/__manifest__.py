@@ -31,11 +31,12 @@
     'summary': 'E-Mail Extension',
     'website': 'www.myodoo.de',
     'license': 'AGPL-3',
-    "depends" : ['base', 'mail', 'base_setup', 'fetchmail','mail'],
+    "depends" : ['base', 'mail', 'base_setup', 'fetchmail'],
     'data': [
              "eq_mail_extension_view.xml",
              "eq_mail_config_view.xml",
              "eq_base_config_settings_view.xml",
+             "eq_email_template_view.xml",
              ],
     "active": False,
     "installable": True
