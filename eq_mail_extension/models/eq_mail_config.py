@@ -53,7 +53,7 @@ class eq_mail_config_settings(models.TransientModel):
 
 
     mail_server_id = fields.Many2one('ir.mail_server', 'Default Mail Server',
-                                                        help="""The outgoing mail server that the system should user for sending e-mails.""")
+                                        help="""The outgoing mail server that the system should user for sending e-mails.""")
     mail_server_address =  fields.Char('Default Mails Server Address')
 
     

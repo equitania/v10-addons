@@ -45,8 +45,6 @@ _logger = logging.getLogger(__name__)
 
 class eq_fetchmail_server(models.Model):
     _inherit = "fetchmail.server"
-    
-
 
     user_id = fields.Many2one('res.users', string="Owner")
     
@@ -125,26 +123,20 @@ class eq_fetchmail_server(models.Model):
 
 class eq_ir_mail_server(models.Model):
     _inherit = "ir.mail_server"
-    
 
     user_id = fields.Many2one('res.users', string="Owner")
         
 class eq_mail_mail(models.Model):
     _inherit = 'mail.mail'
-    
 
     mail_server_id = fields.Many2one('ir.mail_server', "Default Mail Server")
     mail_server_address = fields.Char('Default Mail Server Address')
 
-    
 
     lambda self, cr, uid, context: self.pool.get('ir.values').get_default(cr, uid, 'mail.mail', 'mail_server_id')
     lambda self, cr, uid, context: self.pool.get('ir.values').get_default(cr, uid, 'mail.mail', 'mail_server_address')
 
-    
-    
-    
-    
+
     def send(self, cr, uid, ids, auto_commit=False, raise_exception=False, context=None):
         """ Sends the selected emails immediately, ignoring their current
             state (mails that have already been sent should not be passed

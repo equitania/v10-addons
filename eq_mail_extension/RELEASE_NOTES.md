@@ -1,5 +1,10 @@
 ## Modul eq_mail_extension
 
+#### 04.05.2017
+#### Version 1.0.11
+##### CHG/ADD
+- Verzeichnisstruktur angepasst
+
 #### 03.05.2017
 #### Version 1.0.10
 ##### CHG/ADD

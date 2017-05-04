@@ -18,8 +18,4 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-import eq_mail_extension
-import eq_mail_config
-import eq_base_config_settings
-import eq_email_template
+import models

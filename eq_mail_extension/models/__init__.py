@@ -18,26 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-{
-    'name': "Equitania E-Mail-Erweiterung",
-    'license': 'AGPL-3',
-    'version': '1.0.9',
-    'category': 'Mail',
-    'description': """Using different smptp settings for user's outgoing emails
-    Adds an default mail server for sending System E-Mails and Users without a configured outgoing mail server""",
-    'author': 'Equitania Software GmbH',
-    'category' : 'E-Mail',
-    'summary': 'E-Mail Extension',
-    'website': 'www.myodoo.de',
-    'license': 'AGPL-3',
-    "depends" : ['base', 'mail', 'base_setup', 'fetchmail'],
-    'data': [
-             "views/eq_mail_extension_view.xml",
-             "views/eq_mail_config_view.xml",
-             "views/eq_base_config_settings_view.xml",
-             "views/eq_email_template_view.xml",
-             ],
-    "active": False,
-    "installable": True
-}
+import eq_mail_extension
+import eq_mail_config
+import eq_base_config_settings
+import eq_email_template
