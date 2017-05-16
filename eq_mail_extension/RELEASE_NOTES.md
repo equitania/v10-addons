@@ -1,5 +1,10 @@
 ## Modul eq_mail_extension
 
+#### 16.05.2017
+#### Version 1.0.12
+##### CHG/ADD
+- Doppelter Eintrag der Lizenz in der Manifest-Datei entfernt
+
 #### 04.05.2017
 #### Version 1.0.11
 ##### CHG/ADD
