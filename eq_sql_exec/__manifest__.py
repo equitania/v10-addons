@@ -21,7 +21,7 @@
 
 {
     'name': 'Eq_Sql_Exec',
-    'version': '1.0.8',
+    'version': '1.0.9',
     'license': 'AGPL-3',
     'description': """
         Small SQL helper
