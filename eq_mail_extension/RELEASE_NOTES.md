@@ -1,5 +1,10 @@
 ## Modul eq_mail_extension
 
+#### 22.05.2017
+#### Version 1.0.13
+##### CHG
+- Angefangen Methoden auf neue API umgeschrieben
+
 #### 16.05.2017
 #### Version 1.0.12
 ##### CHG/ADD
