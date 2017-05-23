@@ -49,18 +49,20 @@ class eq_fetchmail_server(models.Model):
     user_id = fields.Many2one('res.users', string="Owner")
     
     #Copy and Pasted form original fetchmail.server and removed the remove E-Mail for pop mail servers.
-    def fetch_mail(self, cr, uid, ids, context=None):
-        """WARNING: meant for cron usage only - will commit() after each email!"""
-        context = dict(context or {})
-        context['fetchmail_cron_running'] = True
-        mail_thread = self.pool.get('mail.thread')
-        action_pool = self.pool.get('ir.actions.server')
-        for server in self.browse(cr, uid, ids, context=context):
+    @api.multi
+    def fetch_mail(self):
+        """ WARNING: meant for cron usage only - will commit() after each email! """
+        additionnal_context = {
+            'fetchmail_cron_running': True
+        }
+        MailThread = self.env['mail.thread']
+        for server in self:
             _logger.info('start checking for new emails on %s server %s', server.type, server.name)
-            context.update({'fetchmail_server_id': server.id, 'server_type': server.type})
+            additionnal_context['fetchmail_server_id'] = server.id
+            additionnal_context['server_type'] = server.type
             count, failed = 0, 0
-            imap_server = False
-            pop_server = False
+            imap_server = None
+            pop_server = None
             if server.type == 'imap':
                 try:
                     imap_server = server.connect()
@@ -71,54 +73,69 @@ class eq_fetchmail_server(models.Model):
                         result, data = imap_server.fetch(num, '(RFC822)')
                         imap_server.store(num, '-FLAGS', '\\Seen')
                         try:
-                            res_id = mail_thread.message_process(cr, uid, server.object_id.model,
-                                                                 data[0][1],
-                                                                 save_original=server.original,
-                                                                 strip_attachments=(not server.attach),
-                                                                 context=context)
+                            res_id = MailThread.with_context(**additionnal_context).message_process(
+                                server.object_id.model, data[0][1], save_original=server.original,
+                                strip_attachments=(not server.attach))
                         except Exception:
-                            _logger.exception('Failed to process mail from %s server %s.', server.type, server.name)
+                            _logger.info('Failed to process mail from %s server %s.', server.type, server.name,
+                                         exc_info=True)
                             failed += 1
                         if res_id and server.action_id:
-                            action_pool.run(cr, uid, [server.action_id.id], {'active_id': res_id, 'active_ids': [res_id], 'active_model': context.get("thread_model", server.object_id.model)})
+                            server.action_id.with_context({
+                                'active_id': res_id,
+                                'active_ids': [res_id],
+                                'active_model': self.env.context.get("thread_model", server.object_id.model)
+                            }).run()
                         imap_server.store(num, '+FLAGS', '\\Seen')
-                        cr.commit()
+                        self._cr.commit()
                         count += 1
-                    _logger.info("Fetched %d email(s) on %s server %s; %d succeeded, %d failed.", count, server.type, server.name, (count - failed), failed)
+                    _logger.info("Fetched %d email(s) on %s server %s; %d succeeded, %d failed.", count, server.type,
+                                 server.name, (count - failed), failed)
                 except Exception:
-                    _logger.exception("General failure when trying to fetch mail from %s server %s.", server.type, server.name)
+                    _logger.info("General failure when trying to fetch mail from %s server %s.", server.type,
+                                 server.name, exc_info=True)
                 finally:
                     if imap_server:
                         imap_server.close()
                         imap_server.logout()
             elif server.type == 'pop':
                 try:
-                    pop_server = server.connect()
-                    (numMsgs, totalSize) = pop_server.stat()
-                    pop_server.list()
-                    for num in range(1, numMsgs + 1):
-                        (header, msges, octets) = pop_server.retr(num)
-                        msg = '\n'.join(msges)
-                        res_id = None
-                        try:
-                            res_id = mail_thread.message_process(cr, uid, server.object_id.model,
-                                                                 msg,
-                                                                 save_original=server.original,
-                                                                 strip_attachments=(not server.attach),
-                                                                 context=context)
-                        except Exception:
-                            _logger.exception('Failed to process mail from %s server %s.', server.type, server.name)
-                            failed += 1
-                        if res_id and server.action_id:
-                            action_pool.run(cr, uid, [server.action_id.id], {'active_id': res_id, 'active_ids': [res_id], 'active_model': context.get("thread_model", server.object_id.model)})
-                        cr.commit()
-                    _logger.info("Fetched %d email(s) on %s server %s; %d succeeded, %d failed.", numMsgs, server.type, server.name, (numMsgs - failed), failed)
+                    while True:
+                        pop_server = server.connect()
+                        (num_messages, total_size) = pop_server.stat()
+                        pop_server.list()
+                        for num in range(1, min(MAX_POP_MESSAGES, num_messages) + 1):
+                            (header, messages, octets) = pop_server.retr(num)
+                            message = '\n'.join(messages)
+                            res_id = None
+                            try:
+                                res_id = MailThread.with_context(**additionnal_context).message_process(
+                                    server.object_id.model, message, save_original=server.original,
+                                    strip_attachments=(not server.attach))
+                                #pop_server.dele(num)
+                            except Exception:
+                                _logger.info('Failed to process mail from %s server %s.', server.type, server.name,
+                                             exc_info=True)
+                                failed += 1
+                            if res_id and server.action_id:
+                                server.action_id.with_context({
+                                    'active_id': res_id,
+                                    'active_ids': [res_id],
+                                    'active_model': self.env.context.get("thread_model", server.object_id.model)
+                                }).run()
+                            self.env.cr.commit()
+                        if num_messages < MAX_POP_MESSAGES:
+                            break
+                        pop_server.quit()
+                        _logger.info("Fetched %d email(s) on %s server %s; %d succeeded, %d failed.", num_messages,
+                                     server.type, server.name, (num_messages - failed), failed)
                 except Exception:
-                    _logger.exception("General failure when trying to fetch mail from %s server %s.", server.type, server.name)
+                    _logger.info("General failure when trying to fetch mail from %s server %s.", server.type,
+                                 server.name, exc_info=True)
                 finally:
                     if pop_server:
                         pop_server.quit()
-            server.write({'date': time.strftime(tools.DEFAULT_SERVER_DATETIME_FORMAT)})
+            server.write({'date': fields.Datetime.now()})
         return True
 
 class eq_ir_mail_server(models.Model):

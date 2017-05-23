@@ -20,23 +20,22 @@
 ##############################################################################
 
 {
-    'name': "Equitania E-Mail-Erweiterung",
-    'version': '1.0.12',
+    'name': 'Eq_Sql_Exec',
+    'version': '1.0.9',
     'license': 'AGPL-3',
-    'category': 'Mail',
-    'description': """Using different smptp settings for user's outgoing emails
-    Adds an default mail server for sending System E-Mails and Users without a configured outgoing mail server""",
+    'description': """
+        Small SQL helper
+    """,
     'author': 'Equitania Software GmbH',
-    'category' : 'E-Mail',
-    'summary': 'E-Mail Extension',
     'website': 'www.myodoo.de',
-    "depends" : ['base', 'mail', 'base_setup', 'fetchmail'],
-    'data': [
-             "views/eq_mail_extension_view.xml",
-             "views/eq_mail_config_view.xml",
-             "views/eq_base_config_settings_view.xml",
-             "views/eq_email_template_view.xml",
-             ],
-    "active": False,
-    "installable": False
+    'depends': ['base_setup'],
+    'category' : 'Tools',
+    'summary': 'EqSqlExec',    
+    'data': [         
+             'security/ir.model.access.csv',  
+             'eq_sql_exec_view.xml',
+    ],
+    'demo': [],
+    'installable': True,
+    'auto_install': False,
 }
