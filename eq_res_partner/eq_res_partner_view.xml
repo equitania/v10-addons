@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="eq_partner_extension_form_view" model="ir.ui.view">
+			<field name="name">eq_partner_extension.form</field>
+			<field name="model">res.partner</field>
+			<field name="priority">17</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="base.view_partner_form" />
+			<field name="arch" type="xml">
+
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="eq_firstname" placeholder="Firstname" />
+                </xpath>
+
+
+
+
+
+                <xpath expr="//field[@name='supplier_number']" position="replace">
+                </xpath>
+				<xpath expr="//field[@name='customer_number']" position="replace">
+                </xpath>
+
+
+
+
+				<field name="street" position="replace">
+					<field name="street" style="width: 80%%" placeholder="Street..." />
+					<field name="eq_house_no" style="width: 20%%" placeholder="House no" />
+				</field>
+
+				<xpath expr="//field[@name='state_id']" position="replace">
+                </xpath>
+
+				<field name="country_id" position="replace">
+					<div>
+					<field name="country_id" placeholder="Country" style="width: 50%%"
+							options='{"no_open": True, "no_create": True}' />
+					<field name="state_id" class="oe_no_button" placeholder="State"
+						style="width: 50%%" options='{"no_open": True}' on_change="onchange_state(state_id)" />"
+					</div>
+				</field>
+
+				<field name="lang" position="after">
+					<field name="eq_foreign_ref" attrs="{'invisible': [('customer', '=', False), ('supplier', '=', False)]}"/>
+                    <field name="eq_foreign_ref_purchase" attrs="{'invisible': [('customer', '=', False), ('supplier', '=', False)]}"/>
+				</field>
+
+
+
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="eq_name2" style="width: 100%%;" placeholder="Name2"
+						attrs="{'invisible': [('is_company', '=', False),('customer', '=', False), ('supplier', '=', False)]}" />
+					<field name="eq_name3" style="width: 100%%;" placeholder="Name3"
+						attrs="{'invisible': [('is_company', '=', False),('customer', '=', False), ('supplier', '=', False)]}" />
+
+
+					<div>
+                    <label for="customer_number" string="Customer Number" attrs="{'invisible':[('customer', '=', False)]}"/>
+                    <div attrs="{'invisible':[('customer', '=', False)]}" it="customer_number">
+                        <field name="customer_number" attrs="{'invisible':[('customer', '=', False)]}" class="oe_inline" />
+                    </div>
+                    <label for="supplier_number" string="Supplier Number" attrs="{'invisible':[('supplier', '=', False)]}" />
+                    <div attrs="{'invisible':[('supplier', '=', False)]}" it="supplier_number">
+                        <field name="supplier_number" attrs="{'invisible':[('supplier', '=', False)]}" colspan="3" class="oe_inline"/>
+                    </div>
+					</div>
+
+                </xpath>
+
+
+				<!--Kontaktansicht-->
+				<!--
+				<xpath
+					expr="//field[@name='child_ids']/form/sheet/group/group/field[@name='mobile']"
+					position="after">
+					<field name="is_company"  invisible="1" />
+					<field name="eq_birthday" attrs="{'invisible': [('type', '!=', 'contact')]}" />
+					<field name="eq_letter_salutation" placeholder="Dear Sir or Madam,"
+						attrs="{'invisible': ['|', ('type', '!=', 'contact'), ('is_company', '=', True)]}" />
+				</xpath>
+				-->
+
+
+				<xpath expr="//field[@name='email']" position="after">
+					<field name="eq_letter_salutation" placeholder="Dear Sir or Madam,"
+						attrs="{'invisible': ['|', ('type', '!=', 'contact'), ('is_company', '=', True)]}" />
+				</xpath>
+				<xpath expr="//field[@name='website']" position="after">
+					<field name="eq_birthday"
+						attrs="{'invisible': ['|', ('type', '!=', 'contact'), ('is_company', '=', True)]}" />
+				</xpath>
+
+
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,103 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* eq_res_partner
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-23 15:28+0000\n"
+"PO-Revision-Date: 2017-05-23 15:28+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: eq_res_partner
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_birthday
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_birthday
+msgid "Birthday"
+msgstr "Geburtstag"
+
+#. module: eq_res_partner
+#: model:ir.ui.view,arch_db:eq_res_partner.eq_partner_extension_form_view
+msgid "Country"
+msgstr "Land"
+
+#. module: eq_res_partner
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_citypart
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_citypart
+msgid "District"
+msgstr "Stadtteil"
+
+#. module: eq_res_partner
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_firstname
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_firstname
+#: model:ir.ui.view,arch_db:eq_res_partner.eq_partner_extension_form_view
+msgid "Firstname"
+msgstr "Vorname"
+
+#. module: eq_res_partner
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_foreign_ref
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_foreign_ref
+msgid "Foreign reference"
+msgstr "Fremdnr. Kunde"
+
+#. module: eq_res_partner
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_foreign_ref_purchase
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_foreign_ref_purchase
+msgid "Foreign reference purchase"
+msgstr "Fremdnr. Lieferant"
+
+#. module: eq_res_partner
+#: model:ir.ui.view,arch_db:eq_res_partner.eq_partner_extension_form_view
+msgid "House no"
+msgstr "Hausnr."
+
+#. module: eq_res_partner
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_house_no
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_house_no
+msgid "House number"
+msgstr "Hausnummer"
+
+#. module: eq_res_partner
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_name2
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_name2
+#: model:ir.ui.view,arch_db:eq_res_partner.eq_partner_extension_form_view
+msgid "Name2"
+msgstr "Namenszusatz"
+
+#. module: eq_res_partner
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_name3
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_name3
+#: model:ir.ui.view,arch_db:eq_res_partner.eq_partner_extension_form_view
+msgid "Name3"
+msgstr "Namenszusatz2"
+
+#. module: eq_res_partner
+#: model:ir.model,name:eq_res_partner.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: eq_res_partner
+#: model:ir.ui.view,arch_db:eq_res_partner.eq_partner_extension_form_view
+msgid "State"
+msgstr "Bundesland"
+
+#. module: eq_res_partner
+#: model:ir.ui.view,arch_db:eq_res_partner.eq_partner_extension_form_view
+msgid "Street..."
+msgstr "Straße..."
+
+
+#. module: eq_res_partner
+#: model:ir.ui.view,arch_db:eq_res_partner.eq_partner_extension_form_view
+msgid "Customer Number"
+msgstr "Kundennummer"
+
+#. module: eq_res_partner
+#: model:ir.ui.view,arch_db:eq_res_partner.eq_partner_extension_form_view
+msgid "Supplier Number"
+msgstr "Lieferantennummer"
