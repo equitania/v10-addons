@@ -39,3 +39,9 @@ class eq_res_partner(models.Model):
 
 
     #eq_complete_description = fields.Char(compute='_generate_complete_description', store=True)
+
+    @api.model
+    def _address_fields(self):
+        res = super(eq_res_partner, self)._address_fields()
+        res.extend(("eq_house_no", "eq_citypart"))
+        return res

@@ -29,6 +29,7 @@ msgstr "Land"
 #. module: eq_res_partner
 #: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_citypart
 #: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_citypart
+#: model:ir.ui.view,arch_db:eq_res_partner.eq_partner_extension_form_view
 msgid "District"
 msgstr "Stadtteil"
 
@@ -101,3 +102,9 @@ msgstr "Kundennummer"
 #: model:ir.ui.view,arch_db:eq_res_partner.eq_partner_extension_form_view
 msgid "Supplier Number"
 msgstr "Lieferantennummer"
+
+#. module: eq_res_partner
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_letter_salutation
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_letter_salutation
+msgid "Salutation"
+msgstr "Briefanrede"
