@@ -1,5 +1,10 @@
 ## Modul eq_mail_extension
 
+#### 29.05.2017
+#### Version 1.0.14
+##### CHG
+- set_default_mail_server und get_default_mail_server auf neue API portiert
+
 #### 22.05.2017
 #### Version 1.0.13
 ##### CHG
