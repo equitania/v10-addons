@@ -37,6 +37,9 @@ class eq_res_partner(models.Model):
     eq_foreign_ref = fields.Char('Foreign reference')
     eq_foreign_ref_purchase = fields.Char('Foreign reference purchase')
 
+    eq_email2 = fields.Char('E-Mail (additional)')
+    eq_phone2 = fields.Char('Phone (additional)')
+
 
     #eq_complete_description = fields.Char(compute='_generate_complete_description', store=True)
 

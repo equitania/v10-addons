@@ -103,8 +103,26 @@ msgstr "Kundennummer"
 msgid "Supplier Number"
 msgstr "Lieferantennummer"
 
+
 #. module: eq_res_partner
 #: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_letter_salutation
 #: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_letter_salutation
 msgid "Salutation"
 msgstr "Briefanrede"
+
+#. module: eq_res_partner
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_email2
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_email2
+msgid "E-Mail (additional)"
+msgstr "E-Mail (zusätzlich"
+
+#. module: eq_res_partner
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_phone2
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_phone2
+msgid "Phone (additional)"
+msgstr "Telefon (zusätzlich)"
+
+#. module: eq_res_partner
+#: model:ir.ui.view,arch_db:eq_res_partner.eq_partner_extension_form_view
+msgid "Phone (additional):"
+msgstr "Telefon (zusätzlich):"
