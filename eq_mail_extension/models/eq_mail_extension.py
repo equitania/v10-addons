@@ -37,7 +37,7 @@ import base64
 from odoo import addons
 
 from odoo.addons.base.ir.ir_mail_server import MailDeliveryException
-from odoo import fields, models
+from odoo import fields, models, exceptions
 from odoo import tools, api
 from odoo.tools.translate import _
 
@@ -332,8 +332,7 @@ class eq_mail_mail(models.Model):
 class eq_mail_followers(models.Model):
     _inherit = "mail.notification"
             
-    def _notify(self, cr, uid, message_id, partners_to_notify=None, context=None,
-                force_send=False, user_signature=True):
+    def _notify(self, message_id, partners_to_notify=None, context=None, force_send=False, user_signature=True):
         """ Send by email the notification depending on the user preferences
 
             :param list partners_to_notify: optional list of partner ids restricting
@@ -344,10 +343,10 @@ class eq_mail_followers(models.Model):
             :param bool user_signature: if True, the generated mail.mail body is
                 the body of the related mail.message with the author's signature
         """
-        notif_ids = self.search(cr, SUPERUSER_ID, [('message_id', '=', message_id), ('partner_id', 'in', partners_to_notify)], context=context)
+        notif_ids = self.search([('message_id', '=', message_id), ('partner_id', 'in', partners_to_notify)])
         
         # update or create notifications
-        new_notif_ids = self.update_message_notification(cr, SUPERUSER_ID, notif_ids, message_id, partners_to_notify, context=context)
+        new_notif_ids = self.update_message_notification(notif_ids, message_id, partners_to_notify)
 
         # mail_notify_noemail (do not send email) or no partner_ids: do not send, return
         if context and context.get('mail_notify_noemail', False):
@@ -357,14 +356,15 @@ class eq_mail_followers(models.Model):
             context['user_id'] = uid
 
         # browse as SUPERUSER_ID because of access to res_partner not necessarily allowed
-        self._notify_email(cr, SUPERUSER_ID, new_notif_ids, message_id, force_send, user_signature, context=context)
+        self._notify_email(new_notif_ids, message_id, force_send, user_signature)
         
 class eq_res_user_extension(models.Model):
     _inherit = 'res.users'
-    
-    def open_change_email(self, cr, uid, ids, context=None):
-        mod_obj = self.pool.get('ir.model.data')
-        res = mod_obj.get_object_reference(cr, uid, 'eq_mail_extension', 'eq_mail_password_change_form')
+
+    @api.multi
+    def open_change_email(self):
+        mod_obj = self.env['ir.model.data']
+        res = mod_obj.get_object_reference('eq_mail_extension', 'eq_mail_password_change_form')
                 
         return {
                 'name': 'Neue Version',
@@ -387,39 +387,38 @@ class eq_mail_password_change(models.TransientModel):
     eq_password = fields.Char('New password', size=64)
     eq_compare_password = fields.Char('Repeat new password', size=64)
 
-    
-    def button_confirm(self, cr, uid, ids, context=None):
+    @api.multi
+    def button_confirm(self):
         #ir.mail_server Object and Dataset id for the user.
-        ir_mail_server_obj = self.pool.get('ir.mail_server')
-        ir_mail_server_id = ir_mail_server_obj.search(cr, SUPERUSER_ID, [('user_id','=', uid)])
+        ir_mail_server_obj = self.env['ir.mail_server']
+        ir_mail_server_id = ir_mail_server_obj.search([('user_id', '=', self._uid)])
         #fetchmail.server Object and Dataset id for the user.
-        fetchmail_server_obj = self.pool.get('fetchmail.server')
-        fetchmail_server_id = fetchmail_server_obj.search(cr, SUPERUSER_ID, [('user_id', '=', uid)])
+        fetchmail_server_obj = self.env['fetchmail.server']
+        fetchmail_server_id = fetchmail_server_obj.search([('user_id', '=', self._uid)])
         #eq_mail.password_change Dataset
-        password = self.browse(cr, uid, ids, context)
+        password = self.browse(self.ids)
         #ir.mail_server Dataset
-        ir_mail_server = ir_mail_server_obj.browse(cr, SUPERUSER_ID, ir_mail_server_id, context)
-        
+        ir_mail_server = ir_mail_server_id
         if len(ir_mail_server_id) == 0 and len(fetchmail_server_id) == 0:
-            raise models.except_osv(_('Error!'),_('There is no incoming and outgoing mailserver for this user./nPlease contact an administrator.' ))
+            raise exceptions.UserError(_('There is no incoming and outgoing mailserver for this user./nPlease contact an administrator.' ))
         elif len(ir_mail_server_id) == 0:
-            raise models.except_osv(_('Error!'),_('There is no outgoing mailserver for this user./nPlease contact an administrator.' ))
+            raise exceptions.UserError(_('There is no outgoing mailserver for this user./nPlease contact an administrator.' ))
         else:
             if password.eq_old_password != ir_mail_server.smtp_pass:
-                raise models.except_osv(_('Error!'),_('The old password does not match.' ))
+                raise exceptions.UserError(_('The old password does not match.' ))
             else:
                 if password.eq_password != password.eq_compare_password:
-                    raise models.except_osv(_('Error!'),_('The two new passwords do not match.' ))
+                    raise exceptions.UserError(_('The two new passwords do not match.' ))
                 else:
                     #Set password for ir_mail_server
                     ir_mail_server_values = {
-                              'smtp_pass': password.eq_password,
+                              'smtp_pass': password.eq_password
                               }
-                    ir_mail_server_obj.write(cr, SUPERUSER_ID, ir_mail_server_id, ir_mail_server_values, context)
+                    ir_mail_server.write(ir_mail_server_values)
                     if len(fetchmail_server_id) != 0:
                     #Set password for fetchmail_server
                         fetchmail_server_values = {
                                   'password': password.eq_password,
                                   }
-                        fetchmail_server_obj.write(cr, uidSUPERUSER_ID, fetchmail_server_id, fetchmail_server_values, context)
+                        fetchmail_server_id.write(fetchmail_server_values)
                     return True
