@@ -1,6 +1,11 @@
 ## Modul eq_mail_extension
 
 #### 30.05.2017
+#### Version 1.0.16
+##### CHG
+- Zwischenstand von send
+
+#### 30.05.2017
 #### Version 1.0.15
 ##### CHG
 - eq_mail_followers und button_confirm portiert
