@@ -155,6 +155,7 @@ class eq_mail_mail(models.Model):
     lambda self, cr, uid, context: self.env['ir.values'].get_default('mail.mail', 'mail_server_address')
 
     #def send(self, cr, uid, ids, auto_commit=False, raise_exception=False, context=None):
+    @api.multi
     def send(self, auto_commit=False, raise_exception=False):
         """ Sends the selected emails immediately, ignoring their current
             state (mails that have already been sent should not be passed
@@ -170,9 +171,13 @@ class eq_mail_mail(models.Model):
                 email sending process has failed
             :return: True
         """
-        SUPERUSER_ID = 1
 
-        context = {}
+
+        print 'test'
+        print 'test'
+        print 'test'
+
+
         ir_mail_server = self.env['ir.mail_server']
         #ir_attachment = self.pool['ir.attachment']
         ir_attachment = self.env['ir.attachment']
@@ -190,12 +195,12 @@ class eq_mail_mail(models.Model):
 
 
         ########
-        for mail in self.browse(self.ids):
+        for mail in self.sudo().browse(self.ids):
             try:
                 # TDE note: remove me when model_id field is present on mail.message - done here to avoid doing it multiple times in the sub method
                 if mail.model:
                     # beide self.pool
-                    model_id = self.env['ir.model'].search([('model', '=', mail.model)])[0]
+                    model_id = self.env['ir.model'].sudo().search([('model', '=', mail.model)])[0]
                     model = model_id
                 else:
                     model = None
@@ -209,17 +214,21 @@ class eq_mail_mail(models.Model):
 
                 attachment_ids = [a.id for a in mail.attachment_ids]
 
+                #attachments = [(a['datas_fname'], base64.b64decode(a['datas']))
+                #                 for a in ir_attachment.read(self.sudo(), attachment_ids,
+                #                                             ['datas_fname', 'datas'])]
+
+
+
                 attachments = [(a['datas_fname'], base64.b64decode(a['datas']))
-                                 for a in ir_attachment.read(attachment_ids,
-                                                             ['datas_fname', 'datas'])]
+                               for a in mail.attachment_ids.sudo().read(['datas_fname', 'datas'])]
 
 
 
                 # specific behavior to customize the send email for notified partners
                 email_list = []
                 if mail.email_to:
-                    email_list.append(self.send_get_email_dict(mail))
-
+                    email_list.append(mail.send_get_email_dict())
 
                 for partner in mail.recipient_ids:
                     email_list.append(mail.send_get_email_dict(partner=partner))
@@ -259,15 +268,14 @@ class eq_mail_mail(models.Model):
                 res = None
                 mail_server = False
 
-                print dir(self)
-                print self._uid
+                context = {}
 
-                user = self._uid
+                user = context.get(self._uid, self.sudo())
 
-                print self.id
                 print user
+                print self.sudo()
 
-                if user != SUPERUSER_ID:
+                if user != self.sudo():
                     mail_server = ir_mail_server.search([('user_id', '=', user)])
 
 
@@ -321,7 +329,7 @@ class eq_mail_mail(models.Model):
                 # see revid:odo@odoo.com-20120622152536-42b2s28lvdv3odyr in 6.1
                 if mail_sent:
                     _logger.info('Mail with ID %r and Message-Id %r successfully sent', mail.id, mail.message_id)
-                self._postprocess_sent_message(mail, mail_sent=mail_sent)
+                self._postprocess_sent_message(mail_sent=mail_sent)
             except MemoryError:
                 # prevent catching transient MemoryErrors, bubble up to notify user or abort cron job
                 # instead of marking the mail as failed
@@ -337,16 +345,16 @@ class eq_mail_mail(models.Model):
                     if isinstance(e, AssertionError):
                         # get the args of the original error, wrap into a value and throw a MailDeliveryException
                         # that is an except_orm, with name and value as arguments
+
                         value = '. '.join(e.args)
                         raise MailDeliveryException(_("Mail Delivery Failed"), value)
                     raise
-
             if auto_commit is True:
-                cr.commit()
+                self._cr.commit()
         return True
 
 
-    # TODO: Nicht getestet
+
     # @api.multi
     # def send(self, auto_commit=False, raise_exception=False):
     #     """ Sends the selected emails immediately, ignoring their current
@@ -532,7 +540,7 @@ class eq_mail_followers(models.Model):
                 the body of the related mail.message with the author's signature
         """
         notif_ids = self.search([('message_id', '=', message_id), ('partner_id', 'in', partners_to_notify)])
-        
+        print"notify"
         # update or create notifications
         new_notif_ids = self.update_message_notification(notif_ids, message_id, partners_to_notify)
 
