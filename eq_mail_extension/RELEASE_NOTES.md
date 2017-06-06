@@ -1,5 +1,12 @@
 ## Modul eq_mail_extension
 
+#### 06.06.2017
+#### Version 1.0.19
+##### CHG
+- Bei einem Cronjob oder einem manuellen "Sofort senden" durch den Administrator, 
+wird jetzt über die author_id der zu veschickenden Mail der Benutzer und dementsprechend 
+der entsprechende Mail-Server ermittelt.
+
 #### 30.05.2017
 #### Version 1.0.18
 ##### CHG

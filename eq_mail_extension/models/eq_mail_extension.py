@@ -266,8 +266,14 @@ class eq_mail_mail(models.Model):
 
                 user = context.get(self._uid, self.sudo())
 
+
                 if user != self.sudo():
                     mail_server = ir_mail_server.search([('user_id', '=', user)])
+                else:
+                    partner_id = mail.author_id.id
+                    res_users_pool = self.env['res.users']
+                    res_users_id = res_users_pool.search([('partner_id', '=', partner_id)])
+                    mail_server = ir_mail_server.search([('user_id', '=', res_users_id.id)])
 
 
                 for email in email_list:
