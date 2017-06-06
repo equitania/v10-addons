@@ -21,7 +21,7 @@
 
 {
     'name': "Equitania E-Mail-Erweiterung",
-    'version': '1.0.17',
+    'version': '1.0.18',
     'license': 'AGPL-3',
     'category': 'Mail',
     'description': """Using different smptp settings for user's outgoing emails

@@ -1,6 +1,11 @@
 ## Modul eq_mail_extension
 
 #### 30.05.2017
+#### Version 1.0.18
+##### CHG
+- _notify auskommentiert(Ueberfluessig?)
+
+#### 30.05.2017
 #### Version 1.0.17
 ##### CHG
 - Zwischenstand von send
