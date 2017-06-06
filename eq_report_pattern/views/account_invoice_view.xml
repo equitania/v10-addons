@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="eq_view_invoice_doc_template_ext_form">
+			<field name="name">eq.view.invoice.doc.template.form</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account.invoice_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='date_invoice']" position="after">
+                    <field name="document_template_id" />
+                </xpath>
+                
+			</field>
+		</record>
+	</data>
+</openerp>

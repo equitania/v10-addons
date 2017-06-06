@@ -1,0 +1,5 @@
+import account_invoice
+import document_template
+import purchase
+import sale
+import stock_picking
