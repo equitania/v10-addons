@@ -1,5 +1,10 @@
 ## Modul eq_mail_extension
 
+#### 08.06.2017
+#### Version 1.0.20
+##### FIX
+- In der Manifestdatei auf Installable TRUE gesetzt, damit die Pfade für das Icon und das Logo in der Description wieder korrekt aufgelöst werden.
+
 #### 06.06.2017
 #### Version 1.0.19
 ##### CHG
