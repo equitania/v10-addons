@@ -1,5 +1,11 @@
 ## Modul eq_res_partner
 
+
+#### 08.06.2017
+#### Version 1.0.4
+##### CHG
+- Modul-Beschreibungsseite angepasst und doppelte Einträge in der Manifestdatei entfernt.
+
 #### 29.05.2017
 #### Version 1.0.3
 ##### CHG

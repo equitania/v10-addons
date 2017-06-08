@@ -22,14 +22,12 @@
 {
     'name': "Equitania Partner-Erweiterung",
     'license': 'AGPL-3',
-    'version': '1.0.3',
-    'category': 'Res Partner',
+    'version': '1.0.4',
+    'category': 'Partner',
     'description': """Extensions for res_partner""",
     'author': 'Equitania Software GmbH',
-    'category' : 'Partner',
     'summary': 'Partner Extension',
     'website': 'www.myodoo.de',
-    'license': 'AGPL-3',
     "depends" : ['base', 'base_setup',"pragma_supplier_number", "pragma_customer_number"],
     'data': [
             "eq_res_partner_view.xml",
