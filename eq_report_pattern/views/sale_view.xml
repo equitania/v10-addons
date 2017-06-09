@@ -2,6 +2,19 @@
 <openerp>
     <data>
 
+        <record id="eq_sale_order_form_quote" model="ir.ui.view">
+            <field name="name">hide.sale.order.form.payment</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="website_quote.sale_order_form_quote"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header/button[@name='open_quotation']" position="replace">
+                    <button name="open_quotation" type="object" class="o_open_quotation" string="Preview"/>
+                </xpath>
+                </field>
+        </record>
+
+
+
 		<record model="ir.ui.view" id="eq_sale_order_doc_template_form">
 			<field name="name">sale.order.doc.template.form</field>
 			<field name="model">sale.order</field>
@@ -19,10 +32,7 @@
 			 <field name="model">sale.order</field>
 			 <field name="inherit_id" ref="website_quote.sale_order_form_quote"/>
 			 <field name="arch" type="xml">
-				 <xpath expr="//label[@for='template_id']" position="replace"/>
-				 <field name="template_id" position="replace">
-					 <field name="template_id" invisible="True"/>
-				 </field>
+				 <field name="template_id" position="replace"/>
 			 </field>
 		</record>
 

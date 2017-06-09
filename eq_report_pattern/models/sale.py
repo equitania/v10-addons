@@ -44,12 +44,12 @@ class eq_sale_order_template(models.Model):
 
         sale_order_line_obj = self.env['sale.order.line']
         for line in quote_template.eq_quote_line:
-            #res = sale_order_line_obj.product_id_change()
+            res = sale_order_line_obj.product_id_change()
 
-            res = sale_order_line_obj.product_id_change(False, line.product_id.id, line.product_uom_qty,
-                                                        line.product_uom_id.id, False, False, line.name,
-                                                        partner, False, False, False, False,
-                                                        fiscal_position_id, False)
+            #res = sale_order_line_obj.product_id_change(False, line.product_id.id, line.product_uom_qty,
+            #                                            line.product_uom_id.id, False, False, line.name,
+            #                                            partner, False, False, False, False,
+            #                                            fiscal_position_id, False)
 
             data = res.get('value', {})
             if 'tax_id' in data:
@@ -70,6 +70,8 @@ class eq_sale_order_template(models.Model):
 
     @api.onchange('document_template_id')
     def onchange_document_template_id(self):
+
+
         selected_template = self.document_template_id
         if (self.partner_id and self.partner_id.lang and self.document_template_id):
             selected_template = self.document_template_id.with_context(lang=self.partner_id.lang)
@@ -84,12 +86,12 @@ class eq_sale_order_template(models.Model):
                 res = self.change_template_id(selected_template, partner_id, self.fiscal_position_id,
                                                          self.order_line)
                 #if (res and 'value' in res and 'order_line' in res['value'] and res['value']['order_line']):
-                #print 'test'
                 if (res):
                     self.order_line = res
-        #print 'test'
+
         self.eq_header = selected_template.eq_header
         self.eq_footer = selected_template.eq_footer
+
 
     # Automatischen Test anlegen
     # War deprecated, muss getestet werden.

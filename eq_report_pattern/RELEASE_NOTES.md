@@ -1,6 +1,11 @@
 ## eq_report_pattern 
 
 #### 08.06.2017
+#### Version 1.0.4
+##### [CHG]
+- Zwischenstand
+
+#### 08.06.2017
 #### Version 1.0.3
 ##### [ADD]
 - Beschreibung hinzugefügt
