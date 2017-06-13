@@ -1,5 +1,11 @@
 ## Modul eq_mail_extension
 
+#### 13.06.2017
+#### Version 1.0.21
+##### FIX
+- Grundfunktionalität funktioniert, es wird der Mail Server verwendet, der dem Benutzer hinterlegt ist.
+- Systemmails werden jetzt mit dem Deault Mail Server versendet.
+
 #### 08.06.2017
 #### Version 1.0.20
 ##### FIX

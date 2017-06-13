@@ -173,22 +173,14 @@ class eq_mail_mail(models.Model):
         """
 
         ir_mail_server = self.env['ir.mail_server']
-        #ir_attachment = self.pool['ir.attachment']
-        ir_attachment = self.env['ir.attachment']
         ir_values = self.env['ir.values']
         default_mail_server = ir_values.get_default('mail.mail', 'mail_server_id')
-        #default_mail_address = ir_values.get_default(cr, uid, 'mail.mail', 'mail_server_address')
-        ######
         existing_ir_mail_server = self.env['ir.mail_server'].search([('id','=',default_mail_server)])
-        if existing_ir_mail_server != []:
-            address = self.env['ir.mail_server'].browse(default_mail_server)
-            default_mail_address = getattr(address, "smtp_user", False)
+        if len(existing_ir_mail_server) > 0:
+            default_mail_address = existing_ir_mail_server.smtp_user
         else:
-            address = False
             default_mail_address = False
 
-
-        ########
         for mail in self.sudo().browse(self.ids):
             try:
                 # TDE note: remove me when model_id field is present on mail.message - done here to avoid doing it multiple times in the sub method
@@ -211,8 +203,6 @@ class eq_mail_mail(models.Model):
                 #attachments = [(a['datas_fname'], base64.b64decode(a['datas']))
                 #                 for a in ir_attachment.read(self.sudo(), attachment_ids,
                 #                                             ['datas_fname', 'datas'])]
-
-
 
                 attachments = [(a['datas_fname'], base64.b64decode(a['datas']))
                                for a in mail.attachment_ids.sudo().read(['datas_fname', 'datas'])]
@@ -260,8 +250,6 @@ class eq_mail_mail(models.Model):
 
                 # build an RFC2822 email.message.Message object and send it without queuing
                 res = None
-                mail_server = False
-
                 context = {}
 
                 user = context.get(self._uid, self.sudo())
@@ -275,9 +263,8 @@ class eq_mail_mail(models.Model):
                     res_users_id = res_users_pool.search([('partner_id', '=', partner_id)])
                     mail_server = ir_mail_server.search([('user_id', '=', res_users_id.id)])
 
-
                 for email in email_list:
-                    if not mail_server and default_mail_address:
+                    if len(mail_server) == 0 and default_mail_address:
                         msg = ir_mail_server.build_email(
                             email_from=default_mail_address,
                             email_to=email.get('email_to'),
@@ -315,7 +302,7 @@ class eq_mail_mail(models.Model):
                             headers=headers)
                         msg['Return-Path'] = mail.email_from
                         res = ir_mail_server.send_email(msg,
-                                                        mail_server_id=default_mail_server,
+                                                        mail_server_id=mail_server[0].id,
                                                         )
 
                 if res:
