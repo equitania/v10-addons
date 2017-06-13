@@ -1,5 +1,11 @@
 ## eq_report_pattern 
 
+#### 13.06.2017
+#### Version 1.0.5
+##### [FIX/CHG]
+- Bug behoben, welcher eine Anlage einer zweiten Vorlage verhinderte (create Methode angepasst)
+- sale.order note-Field jetzt Html vorher Text
+
 #### 08.06.2017
 #### Version 1.0.4
 ##### [CHG]
