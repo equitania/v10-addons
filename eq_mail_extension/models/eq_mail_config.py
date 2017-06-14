@@ -36,7 +36,6 @@ class eq_mail_config_settings(models.TransientModel):
     @api.model
     def get_default_mail_server(self, context=None):
         receivable = self.env['ir.values'].get_default('mail.mail','mail_server_id')
-        print"receivable: ", receivable
         existing_ir_mail_server = self.env['ir.mail_server'].search([('id','=',receivable)])
 
         if len(existing_ir_mail_server) > 0:
