@@ -1,0 +1,105 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* eq_product
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-14 14:26+0000\n"
+"PO-Revision-Date: 2017-06-14 14:26+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: eq_product
+#: model:ir.actions.act_window,name:eq_product.eq_template_standard_price_history_action
+#: model:ir.ui.view,arch_db:eq_product.eq_product_template_standard_price_history_form_view
+#: model:ir.ui.view,arch_db:eq_product.eq_product_template_standard_price_history_tree_view
+msgid "Cost Price History"
+msgstr "Historie Anschaffungspreis"
+
+#. module: eq_product
+#: model:ir.model.fields,field_description:eq_product.field_product_template_standard_price_history_create_date
+msgid "Create Date"
+msgstr "Erstellungsdatum"
+
+#. module: eq_product
+#: model:ir.model.fields,field_description:eq_product.field_product_template_standard_price_history_display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: eq_product
+#: model:ir.ui.view,arch_db:eq_product.eq_product_template_standard_price_history_search_view
+msgid "Group By"
+msgstr "Gruppiert nach..."
+
+#. module: eq_product
+#: model:ir.model.fields,field_description:eq_product.field_product_template_standard_price_history_id
+msgid "ID"
+msgstr "ID"
+
+#. module: eq_product
+#: model:ir.model.fields,field_description:eq_product.field_product_template_standard_price_history___last_update
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
+
+#. module: eq_product
+#: model:ir.model.fields,field_description:eq_product.field_product_template_standard_price_history_write_uid
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert durch"
+
+#. module: eq_product
+#: model:ir.model.fields,field_description:eq_product.field_product_template_standard_price_history_write_date
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: eq_product
+#: model:ir.model.fields,field_description:eq_product.field_product_template_standard_price_history_eq_new_price
+msgid "New Price"
+msgstr "Neuer Preis"
+
+#. module: eq_product
+#: model:ir.model.fields,field_description:eq_product.field_product_template_standard_price_history_eq_old_price
+msgid "Old Price"
+msgstr "Alter Preis"
+
+#. module: eq_product
+#: model:ir.model.fields,field_description:eq_product.field_product_template_standard_price_history_eq_product_id
+#: model:ir.ui.view,arch_db:eq_product.eq_product_template_standard_price_history_search_view
+msgid "Product"
+msgstr "Produkt"
+
+#. module: eq_product
+#: model:ir.model,name:eq_product.model_product_template
+msgid "Product Template"
+msgstr "Produktvorlage"
+
+#. module: eq_product
+#: model:ir.ui.view,arch_db:eq_product.eq_product_template_standard_price_history_search_view
+msgid "Search History"
+msgstr "Suchhistorie"
+
+#. module: eq_product
+#: model:ir.ui.view,arch_db:eq_product.eq_product_template_only_form_view
+msgid "Show Price History"
+msgstr "Preishistorie anzeigen"
+
+#. module: eq_product
+#: model:ir.model.fields,field_description:eq_product.field_product_template_standard_price_history_create_uid
+msgid "User"
+msgstr "Benutzer"
+
+#. module: eq_product
+#: model:ir.model,name:eq_product.model_product_template_standard_price_history
+msgid "product.template.standard_price_history"
+msgstr "product.template.standard_price_history"
+
+#. module: eq_product
+#: code:addons/eq_product/product.py:133
+#, python-format
+msgid "Change "
+msgstr "Änderung "
