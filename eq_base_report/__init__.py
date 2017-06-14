@@ -21,3 +21,4 @@
 
 import models
 import eq_res_config
+import eq_res_company
