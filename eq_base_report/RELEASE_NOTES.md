@@ -1,5 +1,11 @@
 ## Modul eq_base_report
 
+
+#### 14.06.2017
+#### Version 1.0.2
+##### ADD
+- Footer und Header hinzugefügt für spätere Nutzung
+
 #### 14.06.2017
 #### Version 1.0.1
 ##### CHG
