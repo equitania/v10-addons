@@ -1,0 +1,36 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* eq_sale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-14 16:39+0000\n"
+"PO-Revision-Date: 2017-06-14 16:39+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: eq_sale
+#: model:ir.model,name:eq_sale.model_product_product
+msgid "Product"
+msgstr "Produkt"
+
+#. module: eq_sale
+#: model:ir.model,name:eq_sale.model_product_template
+msgid "Product Template"
+msgstr "Produktvorlage"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_product.field_product_template_eq_sale_count
+msgid "Sales"
+msgstr "Verkäufe"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_product.field_product_product_eq_sale_count
+msgid "Sales"
+msgstr "Verkäufe"
