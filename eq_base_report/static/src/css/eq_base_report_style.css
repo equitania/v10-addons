@@ -4,6 +4,7 @@ body {
 
 td {
 	vertical-align:top;
+	font-size: 1.3em!important;
 }
 
 .border-black td {
@@ -13,7 +14,8 @@ td {
 .table-condensed &gt; thead	&gt; tr &gt; th {
 	border-bottom: 1px solid black !important;
 	page-break-inside:avoid !important;
-	font-size: 0.8em;
+	font-size: 1.1em!important!important;
+											/*font-size: 0.8em;*/
 }
 
 .zero_min_height {
@@ -35,7 +37,7 @@ td {
 	align:center;
 	text-align:center;
 	margin-left:0px;
-	font-size:6pt;
+	font-size:7pt!important;
 }
 
 .footer td {
@@ -89,7 +91,7 @@ td {
 #returnaddress {
 	color:
 	#000000;
-	font-size: 0.6em;
+	font-size: 0.7em!important;
 	border-bottom: 1px solid #000000;
 	padding-top:1cm;
 	margin-bottom:0.6em;

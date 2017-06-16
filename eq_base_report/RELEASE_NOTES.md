@@ -1,6 +1,11 @@
 ## Modul eq_base_report
 
 
+#### 16.06.2017
+#### Version 1.0.3
+##### CHG
+- Schriftgröße und Reportlogo hinzugefügt
+
 #### 14.06.2017
 #### Version 1.0.2
 ##### ADD
