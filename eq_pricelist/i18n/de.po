@@ -1,0 +1,97 @@
+
+
+
+#. module: eq_pricelist
+#: model:ir.actions.act_window,name:eq_pricelist.pricelistversionposition_action
+#: model:ir.ui.menu,name:eq_pricelist.pricelistversionposition_menu
+msgid "Pricelistversionsposition"
+msgstr "Preislistenversionspositionen"
+
+
+#. module: eq_pricelist
+#: view:eq_pricelist_item_search:eq_pricelist.eq_pricelist_item_search_form_view
+#: model:ir.actions.act_window,name:eq_pricelist.eq_pricelist_item_search_action
+#: model:ir.ui.menu,name:eq_pricelist.menu_eq_pricelist_item_search_action
+msgid "Itemsearch for Pricelist Version"
+msgstr "Positionssuche"
+
+#. module: eq_pricelist
+#: view:product.pricelist.item:eq_pricelist.eq_pricelist_item_search_item_form
+msgid "Max. Margin"
+msgstr "Max. Spanne"
+
+#. module: eq_pricelist
+#: view:product.pricelist.item:eq_pricelist.eq_pricelist_item_search_item_form
+msgid "Min. Margin"
+msgstr "Min. Spanne"
+
+#. module: eq_pricelist
+#: view:product.pricelist.item:eq_pricelist.eq_pricelist_item_search_item_form
+msgid "New Price ="
+msgstr "Neuer Preis ="
+
+#. module: eq_pricelist
+#: view:eq_pricelist_item_search:eq_pricelist.eq_pricelist_item_search_form_view
+msgid "Open"
+msgstr "Öffnen"
+
+#. module: eq_pricelist
+#: view:product.pricelist.item:eq_pricelist.eq_pricelist_item_search_item_form
+msgid "Price Computation"
+msgstr "Preisberechnung"
+
+
+#. module: eq_pricelist
+#: view:product.pricelist.item:eq_pricelist.eq_pricelist_item_search_item_form
+msgid "Products Listprices Items"
+msgstr "Elemente in Produktpreisliste"
+
+
+#. module: eq_pricelist
+#: view:product.pricelist.item:eq_pricelist.eq_pricelist_item_search_item_form
+msgid "Rounding Method"
+msgstr "Rundungsverfahren"
+
+#. module: eq_pricelist
+#: view:product.pricelist.item:eq_pricelist.eq_pricelist_item_search_item_form
+msgid "Save"
+msgstr "Speichern"
+
+#. module: eq_pricelist
+#: view:eq_pricelist_item_search:eq_pricelist.eq_pricelist_item_search_form_view
+msgid "Search Item"
+msgstr "Positionssuche"
+
+#. module: eq_pricelist
+#: code:addons/eq_pricelist/eq_pricelist_item_search.py:72
+#, python-format
+msgid "%s, Min. %s New Price %s"
+msgstr "%s, Mindestmenge %s, Neuer Preis %s"
+
+#. module: eq_pricelist
+#: view:product.pricelist.item:eq_pricelist.eq_pricelist_item_search_item_form
+msgid "Base Price"
+msgstr "Basispreis"
+
+#. module: eq_pricelist
+#: view:product.pricelist.item:eq_pricelist.eq_pricelist_item_search_item_form
+msgid "Delete"
+msgstr "Löschen"
+
+#. module: eq_pricelist
+#: field:eq_pricelist_item_search,eq_items_id:0
+msgid "Item"
+msgstr "Position"
+
+
+#. module: eq_pricelist
+#: view:eq_pricelist_item_search:eq_pricelist.eq_pricelist_item_search_form_view
+#: view:product.pricelist.item:eq_pricelist.eq_pricelist_item_search_item_form
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#. module: eq_pricelist
+#: view:eq_pricelist_item_search:eq_pricelist.eq_pricelist_item_search_form_view
+#: view:product.pricelist.item:eq_pricelist.eq_pricelist_item_search_item_form
+msgid "or"
+msgstr "oder"

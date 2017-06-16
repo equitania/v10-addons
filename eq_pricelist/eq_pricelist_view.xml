@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="pricelistversion_search_view" model="ir.ui.view">
+			<field name="name">pricelistversion.search.view</field>
+			<field name="model">product.pricelist.item</field>
+			<field name="arch" type="xml">
+				<search string="Pricelistversionposition Search">
+					<group expand="0" string="Group By">
+							<!--<filter string="Preislistenversion" context="{'group_by' : 'price_version_id'}"/>-->
+							<filter string="Produkte" context="{'group_by' : 'product_id'}"/>
+							<filter string="Regelbezeichnung" context="{'group_by' : 'name'}"/>
+							<filter string="Produkt-Vorlage" context="{'group_by' : 'product_tmpl_id'}"/>
+							<filter string="Produktkategorie" context="{'group_by' : 'categ_id'}"/>
+					</group>
+				</search>
+
+			</field>
+		</record>
+
+		<record id="pricelistversionposition_action" model="ir.actions.act_window">
+			<field name="name">Pricelistversionsposition</field>
+			<field name="res_model">product.pricelist.item</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem id="pricelistversionposition_menu" name="Pricelistversionsposition"
+					parent="sale.menu_product_pricelist_main" action="pricelistversionposition_action" sequence="10" />
+	</data>
+</openerp>
