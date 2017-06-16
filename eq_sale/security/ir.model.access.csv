@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_eq_delivery_conditions,access_eq_delivery_conditions,model_eq_delivery_conditions,sales_team.group_sale_salesman,1,1,1,1

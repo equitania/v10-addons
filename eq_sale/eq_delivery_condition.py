@@ -19,22 +19,12 @@
 #
 ##############################################################################
 
-{
-    'name': "Equitania Sale",
-    'license': 'AGPL-3',
-    'version': '1.0.1',
-    'category': 'product',
-    'description': """Extensions for product""",
-    'author': 'Equitania Software GmbH',
-    'summary': 'Product Extension',
-    'website': 'www.myodoo.de',
-    "depends" : ['base', 'base_setup', 'sale', 'product', 'sales_team', 'sale_stock' ],
-    'data': [
-            'security/ir.model.access.csv',
-            'product_view.xml',
-            'res_partner_view.xml',
-            'sale_views.xml',
-             ],
-    "active": False,
-    "installable": True
-}
+
+from odoo import models, fields, api, _
+
+
+class eq_deliver_conditions(models.Model):
+    _name = 'eq.delivery.conditions'
+    _rec_name = 'eq_name'
+
+    eq_name = fields.Char('Name', size=128)

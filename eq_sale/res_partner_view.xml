@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="eq_view_sale_config_settings_saleperson" model="ir.ui.view">
+			<field name="name">eq_sale.sale.config.settings</field>
+			<field name="model">sale.config.settings</field>
+			<field name="inherit_id" ref="sale.view_sales_config" />
+			<field name="arch" type="xml">
+
+                <xpath expr="//group[@name='customers']" position="inside">
+
+						<label for="id" string="Partner" />
+						<div>
+							<div>
+								<field name="default_creator_saleperson" />
+								<label for="default_creator_saleperson" />
+							</div>
+						</div>
+                </xpath>
+
+				<!--<form position="inside">-->
+					<!--<group>-->
+						<!--<label for="id" string="Partner" />-->
+						<!--<div>-->
+							<!--<div>-->
+								<!--<field name="default_creator_saleperson" />-->
+								<!--<label for="default_creator_saleperson" />-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</group>-->
+					<!--<group>-->
+						<!--<label for="id" string="Reset Password" />-->
+						<!--<div>-->
+							<!--<div>-->
+								<!--<field name="default_reset_passwort" />-->
+								<!--<label for="default_reset_passwort" />-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</group>-->
+				<!--</form>-->
+			</field>
+		</record>
+
+        
+        <!-- Aktion für den Smartbutton -->
+        <record id="eq_act_res_partner_order" model="ir.actions.act_window">
+            <field name="name">Order</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="context">{'search_default_partner_id': active_id}</field>
+            <field name="groups_id" eval="[(4, ref('sales_team.group_sale_salesman'))]"/>
+            <field name="domain">[('state', 'not in', ('draft', 'sent', 'cancel'))]</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a quotation or sales order for this customer.
+              </p><p>
+                Odoo will help you efficiently handle the complete sale flow:
+                quotation, sales order, delivery, invoicing and
+                payment.
+              </p><p>
+                The social feature helps you organize discussions on each sales
+                order, and allow your customer to keep track of the evolution
+                of the sales order.
+              </p>
+            </field>
+		</record>
+        
+        <!-- Aktion für den Smartbutton -->
+        <record id="eq_act_res_partner_quotation" model="ir.actions.act_window">
+            <field name="name">Quotations</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="context">{'search_default_partner_id': active_id}</field>
+            <field name="groups_id" eval="[(4, ref('sales_team.group_sale_salesman'))]"/>
+            <field name="domain">[('state', 'in', ('draft', 'sent', 'cancel'))]</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a quotation or sales order for this customer.
+              </p><p>
+                Odoo will help you efficiently handle the complete sale flow:
+                quotation, sales order, delivery, invoicing and
+                payment.
+              </p><p>
+                The social feature helps you organize discussions on each sales
+                order, and allow your customer to keep track of the evolution
+                of the sales order.
+              </p>
+            </field>
+		</record>
+
+
+        <!-- Smartbutton für Angebote und Aufträge -->
+        <record id="res_partner_view_buttons" model="ir.ui.view">
+            <field name="name">res.partner.view.buttons</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="sale.res_partner_view_buttons" />
+            <field name="groups_id" eval="[(4, ref('sales_team.group_sale_salesman'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='%(sale.act_res_partner_2_sale_order)d']" position="replace">
+                    <button class="oe_inline oe_stat_button" type="action" name="eq_sale.eq_act_res_partner_quotation"
+                        attrs="{'invisible': [('customer', '=', False)]}"
+                        icon="fa-strikethrough">
+                        <field string="Quotations" name="eq_sale_quotation_count" widget="statinfo"/>
+                    </button>
+                    <button class="oe_inline oe_stat_button" type="action" name="eq_sale.eq_act_res_partner_order"
+                        attrs="{'invisible': [('customer', '=', False)]}"
+                        icon="fa-strikethrough">
+                        <field string="Sales" name="sale_order_count" widget="statinfo"/>
+                    </button>     
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="eq_sale_partner_extension_form_view" model="ir.ui.view">
+			<field name="name">eq_sale.partner.extension.form</field>
+			<field name="model">res.partner</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="base.view_partner_form" />
+			<field name="arch" type="xml">
+
+				<xpath expr="//field[@name='user_id']" position="after">
+					<!--<field name="eq_incoterm" />-->
+					<field name="eq_delivery_condition_id"
+						attrs="{'invisible': [('is_company', '=', False),('customer', '=', False), ('supplier', '=', False)]}" />
+				</xpath>
+            </field>
+        </record>
+
+        
+	</data>
+</openerp>

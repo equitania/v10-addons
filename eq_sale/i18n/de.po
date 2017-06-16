@@ -6,14 +6,37 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-14 16:39+0000\n"
-"PO-Revision-Date: 2017-06-14 16:39+0000\n"
+"POT-Creation-Date: 2017-06-16 11:34+0000\n"
+"PO-Revision-Date: 2017-06-16 11:34+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_res_partner_eq_sale_quotation_count
+#: model:ir.model.fields,field_description:eq_sale.field_res_users_eq_sale_quotation_count
+msgid "# of Quotations"
+msgstr "# an Angeboten"
+
+#. module: eq_sale
+#: model:ir.actions.act_window,help:eq_sale.eq_act_res_partner_order
+#: model:ir.actions.act_window,help:eq_sale.eq_act_res_partner_quotation
+msgid "Click to create a quotation or sales order for this customer."
+msgstr "Klicken Sie zur Erstellung eines Angebots oder eines Auftrags für diesen Kunden."
+
+#. module: eq_sale
+#: model:ir.actions.act_window,name:eq_sale.eq_act_res_partner_order
+msgid "Order"
+msgstr "Auftrag"
+
+#. module: eq_sale
+#: model:ir.model,name:eq_sale.model_res_partner
+#: model:ir.ui.view,arch_db:eq_sale.eq_view_sale_config_settings_saleperson
+msgid "Partner"
+msgstr "Partner"
 
 #. module: eq_sale
 #: model:ir.model,name:eq_sale.model_product_product
@@ -26,11 +49,78 @@ msgid "Product Template"
 msgstr "Produktvorlage"
 
 #. module: eq_sale
-#: model:ir.model.fields,field_description:eq_product.field_product_template_eq_sale_count
+#: model:ir.actions.act_window,name:eq_sale.eq_act_res_partner_quotation
+#: model:ir.ui.view,arch_db:eq_sale.res_partner_view_buttons
+msgid "Quotations"
+msgstr "Angebote"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.res_partner_view_buttons
 msgid "Sales"
 msgstr "Verkäufe"
 
 #. module: eq_sale
-#: model:ir.model.fields,field_description:eq_product.field_product_product_eq_sale_count
-msgid "Sales"
-msgstr "Verkäufe"
+#: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_default_creator_saleperson
+msgid "The creator of the address dataset will be set automatically as sales person. [equitania]"
+msgstr "Der Ersteller eines Adressdatensatzes wird automatisch als Verkäufer gesetzt. [equitania]"
+
+
+#. module: eq_sale
+#: model:ir.model,name:eq_sale.model_sale_config_settings
+msgid "sale.config.settings"
+msgstr "Verkaufseinstellungen"
+
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_eq_delivery_conditions_display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_eq_delivery_conditions_id
+msgid "ID"
+msgstr "ID"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_eq_delivery_conditions___last_update
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_eq_delivery_conditions_write_uid
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert durch"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_eq_delivery_conditions_write_date
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_eq_delivery_conditions_eq_name
+msgid "Name"
+msgstr "Name"
+
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_eq_delivery_conditions_create_uid
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_eq_delivery_conditions_create_date
+msgid "Created on"
+msgstr "Angelegt am"
+
+#. module: eq_sale
+#: model:ir.model,name:eq_sale.model_eq_delivery_conditions
+msgid "eq.delivery.conditions"
+msgstr "eq.delivery.conditions"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_res_partner_eq_delivery_condition_id
+#: model:ir.model.fields,field_description:eq_sale.field_res_users_eq_delivery_condition_id
+#: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_eq_delivery_condition_id
+#: model:ir.model.fields,field_description:eq_sale.field_sale_order_eq_delivery_condition_id
+msgid "Delivery Condition"
+msgstr "Lieferbedingungen"
