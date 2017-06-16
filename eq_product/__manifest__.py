@@ -22,7 +22,7 @@
 {
     'name': "Equitania Produkt",
     'license': 'AGPL-3',
-    'version': '1.0.0',
+    'version': '1.0.1',
     'category': 'product',
     'description': """Extensions for product""",
     'author': 'Equitania Software GmbH',
@@ -30,6 +30,7 @@
     'website': 'www.myodoo.de',
     "depends" : ['base', 'base_setup', 'product' ],
     'data': [
+            'security/ir.model.access.csv',
             'product_view.xml'
              ],
     "active": False,

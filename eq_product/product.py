@@ -26,29 +26,7 @@ import odoo.addons.decimal_precision as dp
 class eq_product_template(models.Model):
     _inherit = 'product.template'
 
-    # def _eq_sale_count(self, cr, uid, ids, name, arg, context=None):
-    #     res = {}
-    #     for id in ids:
-    #         cr.execute("""select sum(product_uom_qty) from stock_move where procurement_id in
-    #         (select id from procurement_order where sale_line_id in
-    #         (select id from sale_order_line as sol where sol.product_id in
-    #         (select id from product_product where product_tmpl_id = %d)
-    #         and sol.state not in ('cancel')
-    #         and (select state from sale_order where id = sol.order_id) not in ('sent', 'draft')))
-    #         and state not in ('done', 'cancel')
-    #         and picking_id is not null""" % (id))
-    #         open = cr.fetchone()[0] or 0
-    #         cr.execute(
-    #             """select sum(product_uom_qty) from sale_order_line where product_id in (select id from product_product where product_tmpl_id = %d) and state != 'cancel' and (select state from sale_order where id = order_id) not in ('sent', 'draft')""" % (
-    #             id))
-    #         all = cr.fetchone()[0] or 0
-    #         res[id] = '%d / %d' % (open, all)
-    #     return res
-    #
-    # _columns = {
-    #     'eq_sale_count': fields.function(_eq_sale_count, type="char", string='Sales'),
-    #     # 'eq_sale_min_qty': fields.integer(string='Min. order quantity'),
-    # }
+
     #
     # """
     # _defaults = {
