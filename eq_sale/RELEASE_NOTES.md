@@ -1,5 +1,12 @@
 ## Modul eq_sale
 
+
+#### 16.06.2017
+#### Version 1.0.2
+##### CHG
+- super-Aufruf für Wechsel des Feldes partner_id
+
+
 #### 16.06.2017
 #### Version 1.0.1
 ##### CHG

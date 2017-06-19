@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+
+	    <!-- extension of invoices IN -->
+	    <record id="view_account_invoice_supplier_form_address_extension" model="ir.ui.view">
+	    	<field name="name">account.invoice_supplier_form.extension</field>
+	    	<field name="model">account.invoice</field>
+	    	<field name="inherit_id" ref="account.invoice_supplier_form"/>
+	    	<field name="arch" type="xml">
+	    		<!-- deactivate default version of address fields -->
+		    	<xpath expr="//field[@name='partner_id']" position="replace">
+		    		<field string="Supplier" name="partner_id"  context="{'search_default_customer':1, 'show_address': 0}" options="{&quot;always_reload&quot;: True}" domain="[('supplier', '=', True)]"/>
+		    	</xpath>  <!--on_change="onchange_partner_id(type, partner_id, date_invoice, payment_term, partner_bank_id, company_id, context)"-->
+		    	<!-- append our version of address fields -->
+	    		<xpath expr="//field[@name='partner_id']" position="after">
+	    			<field name="eq_street_house_no" attrs="{'invisible': [('eq_street_house_no', '=', False)]}" />
+               		<field name="eq_zip_city" attrs="{'invisible': [('eq_zip_city', '=', False)]}" />
+               		<field name="eq_country" attrs="{'invisible': [('eq_country', '=', False)]}" />
+            	</xpath>
+	    	</field>
+	    </record>
+
+	    <!-- extension of invoices OUT -->
+	    <record id="view_account_invoice_form_address_extension" model="ir.ui.view">
+	    	<field name="name">account.invoice_form.extension</field>
+	    	<field name="model">account.invoice</field>
+	    	<field name="inherit_id" ref="account.invoice_form"/>
+	    	<field name="arch" type="xml">
+		    	<!-- deactivate default version of address fields -->
+		    	<xpath expr="//field[@name='partner_id']" position="replace">
+		    		<field string="Customer" name="partner_id" context="{'search_default_customer':1, 'show_address': 0}" options="{&quot;always_reload&quot;: True}" domain="[('customer', '=', True)]"/>
+		    	</xpath> <!--on_change="onchange_partner_id(type, partner_id, date_invoice, payment_term, partner_bank_id, company_id, context)"-->
+		    	<!-- append our version of address fields -->
+	    		<xpath expr="//field[@name='partner_id']" position="after">
+	    			<field name="eq_street_house_no" attrs="{'invisible': [('eq_street_house_no', '=', False)]}" />
+               		<field name="eq_zip_city" attrs="{'invisible': [('eq_zip_city', '=', False)]}" />
+               		<field name="eq_country" attrs="{'invisible': [('eq_country', '=', False)]}" />
+            	</xpath>
+	    	</field>
+	    </record>
+    </data>
+</openerp>

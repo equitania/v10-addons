@@ -19,22 +19,21 @@
 #
 ##############################################################################
 
-{
-    'name': "Equitania Sale",
-    'license': 'AGPL-3',
-    'version': '1.0.2',
-    'category': 'product',
-    'description': """Extensions for product""",
-    'author': 'Equitania Software GmbH',
-    'summary': 'Product Extension',
-    'website': 'www.myodoo.de',
-    "depends" : ['base', 'base_setup', 'sale', 'product', 'sales_team', 'sale_stock', 'eq_res_partner' ],
-    'data': [
-            'security/ir.model.access.csv',
-            'product_view.xml',
-            'res_partner_view.xml',
-            'sale_views.xml',
-             ],
-    "active": False,
-    "installable": True
-}
+from odoo import models, fields, api, _
+
+
+class eq_crm_lead(models.Model):
+    _inherit = 'crm.lead'
+
+    firstname = fields.Char('Firstname')
+    lastname = fields.Char('Lastname')
+    category_ids = fields.Many2many('res.partner.category', string='Tags')
+    website = fields.Char('Website')
+    birthdate = fields.Date('Birthday')
+    eq_citypart = fields.Char('District')
+    eq_house_no = fields.Char('House Number')
+
+    # @api.onchange('state_id')
+    # def _onchange_state(self):
+    #     super(eq_crm_lead, self)._onchange_state()
+

@@ -19,22 +19,22 @@
 #
 ##############################################################################
 
-{
-    'name': "Equitania Sale",
-    'license': 'AGPL-3',
-    'version': '1.0.2',
-    'category': 'product',
-    'description': """Extensions for product""",
-    'author': 'Equitania Software GmbH',
-    'summary': 'Product Extension',
-    'website': 'www.myodoo.de',
-    "depends" : ['base', 'base_setup', 'sale', 'product', 'sales_team', 'sale_stock', 'eq_res_partner' ],
-    'data': [
-            'security/ir.model.access.csv',
-            'product_view.xml',
-            'res_partner_view.xml',
-            'sale_views.xml',
-             ],
-    "active": False,
-    "installable": True
-}
+from odoo import models, fields, api, _
+
+
+class eq_purchase_order(models.Model):
+    _inherit = 'purchase.order'
+
+    @api.onchange('partner_id')
+    def onchange_partner_id(self):
+        """
+        Override für Wechsel der Partner_ID: Übernahme der custom-Felder
+        :return:
+        """
+
+        super(eq_purchase_order, self).onchange_partner_id()
+
+        partner = self.partner_id
+        if partner:
+            self.partner_ref = partner.eq_foreign_ref_purchase
+
