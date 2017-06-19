@@ -43,7 +43,7 @@ class eq_partner_sale_order_extension(models.Model):
         :return:
         """
 
-        # result = super(eq_partner_sale_order_extension, self).onchange_partner_id()
+        super(eq_partner_sale_order_extension, self).onchange_partner_id()
 
         partner = self.partner_id
         if partner:
@@ -56,6 +56,8 @@ class eq_partner_sale_order_extension(models.Model):
                 self.eq_delivery_condition_id = partner.eq_delivery_condition_id.id
             else:
                 self.eq_delivery_condition_id = False
+
+            self.client_order_ref = partner.eq_foreign_ref
 
             # if partner.eq_default_delivery_address:
             #     self.partner_shipping_id = partner.eq_default_delivery_address.id
