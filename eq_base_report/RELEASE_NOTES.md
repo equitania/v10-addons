@@ -1,5 +1,9 @@
 ## Modul eq_base_report
 
+#### 19.06.2017
+#### Version 1.0.5
+##### IMP
+- Schriftart auf Open Sans, und alternativ als Calibiri gesetzt
 
 #### 19.06.2017
 #### Version 1.0.4
