@@ -1,5 +1,9 @@
 ## Modul eq_sale
 
+#### 19.06.2017
+#### Version 1.0.3
+##### ADD
+- Erste ReportVersion (EQ) Verkaufsreport
 
 #### 16.06.2017
 #### Version 1.0.2

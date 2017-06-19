@@ -124,3 +124,147 @@ msgstr "eq.delivery.conditions"
 #: model:ir.model.fields,field_description:eq_sale.field_sale_order_eq_delivery_condition_id
 msgid "Delivery Condition"
 msgstr "Lieferbedingungen"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<span>Contact person</span>"
+msgstr "<span>Ansprechpartner</span>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<span>Customer no.</span>"
+msgstr "<span>Kundennummer</span>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<span>E-Mail</span>"
+msgstr "<span>E-Mail</span>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<span>Fax</span>"
+msgstr "<span>Fax</span>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<span>Order date</span>"
+msgstr "<span>Auftragsdatum</span>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<span>Order no.</span>"
+msgstr "<span>Auftragsnummer</span>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<span>Phone</span>"
+msgstr "<span>Telefon</span>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<span>Quotation date</span>"
+msgstr "<span>Angebotsdatum</span>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<span>Quotation no.</span>"
+msgstr "<span>Angebotsnummer</span>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<span>Your reference no.</span>"
+msgstr "<span>Ihre Referenz</span>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid ""
+"<strong>\n"
+"                                                <span>Total VAT</span>\n"
+"                                            </strong>"
+msgstr ""
+"<strong>\n"
+"                                                <span>USt.</span>\n"
+"                                            </strong>"
+
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<strong>Discount (%)</strong>"
+msgstr "<strong>Rabatt (%)</strong>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<strong>For further information, please contact</strong>"
+msgstr "<strong>Ihr Ansprechpartner</strong>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<strong>Item description</strong>"
+msgstr "<strong>Artikelbeschreibung</strong>"
+
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<strong>Net price</strong>"
+msgstr "<strong>Nettopreis</strong>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<strong>Pos.</strong>"
+msgstr "<strong>Pos.</strong>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<strong>Qty.</strong>"
+msgstr "<strong>Menge</strong>"
+
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<strong>Total sum</strong>"
+msgstr "<strong>Gesamtbetrag</strong>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<strong>Total without taxes</strong>"
+msgstr "<strong>Nettobetrag</strong>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<strong>Unit price</strong>"
+msgstr "<strong>Einzelpreis</strong>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<strong>Unit</strong>"
+msgstr "<strong>Einheit</strong>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<strong>VAT</strong>"
+msgstr "<strong>USt.</strong>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "Incoterm:"
+msgstr "Incoterm:"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "Invoice address:"
+msgstr "Rechnungsanschrift:"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "Quotation"
+msgstr "Angebot"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "Sale order"
+msgstr "Verkaufsauftrag"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "Shipping address:"
+msgstr "Lieferadresse:"
