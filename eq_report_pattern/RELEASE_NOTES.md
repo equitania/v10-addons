@@ -1,5 +1,10 @@
 ## eq_report_pattern 
 
+#### 19.06.2017
+#### Version 1.0.6
+##### [ADD/CHG]
+- Header und Footer zu purchase und account_invoice hinzgefügt, note Feld ausgeblendet
+
 #### 13.06.2017
 #### Version 1.0.5
 ##### [FIX/CHG]
