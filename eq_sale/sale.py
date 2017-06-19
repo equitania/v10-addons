@@ -64,3 +64,110 @@ class eq_partner_sale_order_extension(models.Model):
             # if partner.eq_default_invoice_address:
             #     self.partner_invoice_id = partner.eq_default_invoice_address.id
 
+    @api.multi
+    def _compute_street_house_no(self):
+        """ Generate street and house no info for sale order """
+
+        for sale_order in self:
+            computed_street_house_no = ''
+            if sale_order.partner_id.street and sale_order.partner_id.eq_house_no:
+                computed_street_house_no = sale_order.partner_id.street + ' ' + sale_order.partner_id.eq_house_no
+            elif sale_order.partner_id.street:
+                computed_street_house_no = sale_order.partner_id.street
+
+            sale_order.eq_street_house_no = computed_street_house_no
+
+    @api.multi
+    def _compute_zip_city(self):
+        """ Generate zip and city info for sale order (eq_zip_city) """
+
+        for sale_order in self:
+            zip_city = ''
+            if sale_order.partner_id:
+                if sale_order.partner_id.zip and sale_order.partner_id.city:
+                    zip_city = sale_order.partner_id.zip + ' ' + sale_order.partner_id.city
+                elif sale_order.partner_id.zip:
+                    zip_city = sale_order.partner_id.zip
+                elif sale_order.partner_id.city:
+                    zip_city = sale_order.partner_id.city
+            sale_order.eq_zip_city = zip_city
+
+
+    @api.multi
+    def _compute_country(self):
+        """ Generate country info for sale order (eq_country) """
+
+        for sale_order in self:
+            if sale_order.partner_id and sale_order.partner_id.country_id:
+                sale_order.eq_country = sale_order.partner_id.country_id.name
+            else:
+                sale_order.eq_country = ''
+
+
+    @api.multi
+    def _compute_invoice_address(self):
+        """ Generate address infos for sale order (eq_invoice_address) """
+
+        for sale_order in self:
+            computed_address = ''
+            zip = ""
+            if sale_order.partner_shipping_id.zip:
+                zip = sale_order.partner_shipping_id.zip
+
+            if sale_order.partner_invoice_id:
+                if sale_order.partner_invoice_id.street and sale_order.partner_invoice_id.city:
+                    if sale_order.partner_invoice_id.eq_house_no:
+                        computed_address = sale_order.partner_invoice_id.street + ' ' + sale_order.partner_invoice_id.eq_house_no + ', @ZIP ' + sale_order.partner_invoice_id.city
+                    else:
+                        computed_address = sale_order.partner_invoice_id.street + ', @ZIP ' + sale_order.partner_invoice_id.city
+                elif sale_order.partner_invoice_id.street:
+                    if sale_order.partner_invoice_id.eq_house_no:
+                        computed_address = sale_order.partner_invoice_id.street + ' ' + sale_order.partner_invoice_id.eq_house_no
+                    else:
+                        computed_address = sale_order.partner_invoice_id.street
+                elif sale_order.partner_invoice_id.city:
+                    computed_address= sale_order.partner_invoice_id.city
+
+            if computed_address:
+                computed_address = computed_address.replace("@ZIP", zip)
+
+            sale_order.eq_invoice_address = computed_address
+
+
+
+
+    @api.multi
+    def _compute_delivery_address(self):
+        """ Generate address infos for sale order (eq_delivery_address)"""
+
+        for sale_order in self:
+            zip = ""
+            sale_order.eq_delivery_address = ''
+            if sale_order.partner_shipping_id.zip:
+                zip = sale_order.partner_shipping_id.zip
+
+            if sale_order.partner_shipping_id.street and sale_order.partner_shipping_id.city:
+                if sale_order.partner_shipping_id.eq_house_no:
+                    sale_order.eq_delivery_address = sale_order.partner_shipping_id.street + ' ' + sale_order.partner_shipping_id.eq_house_no + ', @ZIP ' + sale_order.partner_shipping_id.city
+                else:
+                    sale_order.eq_delivery_address = sale_order.partner_shipping_id.street + ', @ZIP ' + sale_order.partner_shipping_id.city
+            elif sale_order.partner_shipping_id.street:
+                if sale_order.partner_shipping_id.eq_house_no:
+                    sale_order.eq_delivery_address = sale_order.partner_shipping_id.street + ' ' + sale_order.partner_shipping_id.eq_house_no
+                else:
+                    sale_order.eq_delivery_address = sale_order.partner_shipping_id.street
+            elif sale_order.partner_shipping_id.city:
+                sale_order.eq_delivery_address = sale_order.partner_shipping_id.city
+
+            if sale_order.eq_delivery_address:
+                result = sale_order.eq_delivery_address
+                result = result.replace("@ZIP", zip)
+                sale_order.eq_delivery_address = result
+
+
+    eq_invoice_address = fields.Char(compute='_compute_invoice_address', string=" ", store=False)
+    eq_delivery_address = fields.Char(compute='_compute_delivery_address', string=" ", store=False)
+    client_order_ref = fields.Char('Reference/Description', copy=True) # Standard: copy = False
+    eq_street_house_no = fields.Char(compute='_compute_street_house_no', string=" ", store=False)
+    eq_zip_city = fields.Char(compute='_compute_zip_city', string=" ", store=False)
+    eq_country = fields.Char(compute='_compute_country', string=" ", store=False)

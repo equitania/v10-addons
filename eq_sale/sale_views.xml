@@ -14,5 +14,47 @@
 			</field>
 		</record>
 
+
+
+
+        <record id="eq_sale_address_fields_view_order_form_inherit" model="ir.ui.view">
+            <field name="name">eq_sale.address.fields.view.order.form.inherit</field>
+            <field name="model">sale.order</field>
+	    	<field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+            	<!-- deactivate default version of address fields -->
+                <field name="partner_id" position="attributes">
+                    <attribute name="context">{'search_default_customer':1, 'show_address': 0,'active_model':'sale.order','main_address': True}</attribute>
+                    <attribute name="options">{'always_reload': True}</attribute>
+            		<attribute name="domain">[('customer','=',True), ('is_company', '=', True)]</attribute>
+                </field>
+                <!-- append our version of address fields -->
+                <xpath expr="//field[@name='partner_id']" position="after">
+                	<field name="eq_street_house_no" attrs="{'invisible': [('eq_street_house_no', '=', False)]}" />
+               		<field name="eq_zip_city" attrs="{'invisible': [('eq_zip_city', '=', False)]}" />
+               		<field name="eq_country" attrs="{'invisible': [('eq_country', '=', False)]}" />
+                </xpath>
+
+                <!-- invoice address -->
+            	<xpath expr="//field[@name='partner_invoice_id']" position="attributes">
+            		<!-- <attribute name="domain">['|', ('id', '=', partner_id), ('parent_id', '=', partner_id)]</attribute> -->
+                    <attribute name="context">{'search_default_customer':1, 'show_address': 0,'active_model':'sale.order'}</attribute>
+            	</xpath>
+            	<xpath expr="//field[@name='partner_invoice_id']" position="after">
+            		<field name="eq_invoice_address" groups="sale.group_delivery_invoice_address"/>
+            	</xpath>
+
+            	<!-- shipping address -->
+            	<xpath expr="//field[@name='partner_shipping_id']" position="attributes">
+            		<!-- <attribute name="domain">['|', ('id', '=', partner_id), ('parent_id', '=', partner_id)]</attribute> -->
+                    <attribute name="context">{'search_default_customer':1, 'show_address': 0,'active_model':'sale.order'}</attribute>
+            	</xpath>
+            	<xpath expr="//field[@name='partner_shipping_id']" position="after">
+            		<field name="eq_delivery_address" groups="sale.group_delivery_invoice_address"/>
+            	</xpath>
+            </field>
+	    </record>
+
+
 	</data>
 </openerp>

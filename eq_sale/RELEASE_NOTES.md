@@ -1,11 +1,18 @@
 ## Modul eq_sale
 
+
+
+#### 19.06.2017
+#### Version 1.0.4
+##### CHG
+- Erweiterungen für Adressinformationen für sale_order
+
 #### 19.06.2017
 #### Version 1.0.3
 ##### ADD
 - Erste ReportVersion (EQ) Verkaufsreport
 
-#### 16.06.2017
+#### 19.06.2017
 #### Version 1.0.2
 ##### CHG
 - super-Aufruf für Wechsel des Feldes partner_id

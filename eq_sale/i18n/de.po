@@ -16,10 +16,12 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: eq_sale
-#: model:ir.model.fields,field_description:eq_sale.field_res_partner_eq_sale_quotation_count
-#: model:ir.model.fields,field_description:eq_sale.field_res_users_eq_sale_quotation_count
-msgid "# of Quotations"
-msgstr "# an Angeboten"
+#: model:ir.actions.act_window,name:eq_sale.eq_act_res_partner_quotation
+#: model:ir.actions.act_window,name:eq_sale.eq_open_purchases_crm_action
+#: model:ir.model.fields,field_description:eq_sale.field_crm_lead_total_quot_crm
+#: model:ir.ui.view,arch_db:eq_sale.res_partner_view_buttons
+msgid "Quotations"
+msgstr "Angebote"
 
 #. module: eq_sale
 #: model:ir.actions.act_window,help:eq_sale.eq_act_res_partner_order
