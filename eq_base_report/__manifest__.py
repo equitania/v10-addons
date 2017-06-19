@@ -22,7 +22,7 @@
 {
     'name': 'EQ Report Basis',
     'license': 'AGPL-3',
-    'version': '1.0.3',
+    'version': '1.0.5',
     'description': """
         Allgemeine Anpassungen für die Equitania Reports
     """,
