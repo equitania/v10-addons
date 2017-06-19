@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!-- Lead Form View -->
+		<record id="eq_crm_lead_form_ext" model="ir.ui.view">
+			<field name="name">eq.crm.lead.form.ext</field>
+			<field name="model">crm.lead</field>
+			<field name="inherit_id" ref="crm.crm_case_form_view_leads" />
+			<field name="arch" type="xml">
+				<field name="title" position="replace" />
+				<field name="contact_name" position="attributes" >
+					<attribute name="invisible">1</attribute>
+				</field>
+				<field name="email_from" position="before">
+					<group colspan="2">
+						<field name="title" placeholder="Title" />
+						<field name="firstname" placeholder="Firstname" />
+						<field name="lastname" placeholder="Lastname" />
+						<field name="birthdate" />
+					</group>
+				</field>
+				<field name="phone" position="after">
+					<field name="website" />
+				</field>
+
+
+				<field name="street" position="replace">
+					<field name="street" style="width: 80%%" placeholder="Street..." />
+					<field name="eq_house_no" style="width: 20%%" placeholder="House no" />
+				</field>
+
+				<field name="state_id" position="replace">
+
+				</field>
+
+				<field name="zip" position="replace">
+
+				</field>
+
+				<field name="city" position="replace">
+					<div>
+						<field name="zip" placeholder="ZIP" style="width: 25%%"  class="o_address_zip" />
+						<field name="city" style="width: 43%%; margin-right:2%%" placeholder="City" />
+						<field name="eq_citypart" style="width: 28%%" placeholder="District" />
+					</div>
+				</field>
+
+				<field name="country_id" position="replace" >
+					<div>
+					   <field name="country_id" placeholder="Country" style="width: 50%%"
+									options='{"no_open": True, "no_create": True}' />
+						<field name="state_id"  placeholder="State"
+							style="width: 50%%" options='{"no_open": True}'  /> <!--class="oe_no_button"-->
+					</div>
+				</field>
+
+				<!--<div class="o_address_format" position="replace">-->
+					<!--<div class="o_address_format">-->
+
+						<!--<field name="street" style="width: 80%%" placeholder="Street..."  class="o_address_street" />-->
+						<!--<field name="eq_house_no" style="width: 20%%" placeholder="House no" />-->
+
+						<!--<field name="street2" placeholder="Street 2..." class="o_address_street"/>-->
+						<!--<field name="zip" placeholder="ZIP" style="width: 102px"  class="o_address_zip" />-->
+						<!--<div>-->
+							<!--<field name="city" placeholder="City" style="width: 50%%" />-->
+							<!--<field name="eq_citypart" placeholder="District" style="width: 50%%" />-->
+						<!--</div>-->
+
+						<!--<div>-->
+							<!--<field name="country_id" placeholder="Country" style="width: 50%%"  class="o_address_country"-->
+								<!--options='{"no_open": True, "no_create": True}' />-->
+							<!--<field name="state_id"  class="o_address_state" placeholder="State"-->
+								<!--style="width: 50%%" options='{"no_open": True}'  /> &lt;!&ndash;class="oe_no_button" &ndash;&gt;-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+				<div class="oe_title" position="attributes">
+					<attribute name="style">width: 50%%</attribute>
+				</div>
+			</field>
+		</record>
+
+		<!-- Oppertunity Form View -->
+		<record model="ir.ui.view" id="eq_crm_case_form_view_oppor_ext">
+			<field name="name">eq.crm.case.form.view.oppor.ext</field>
+			<field name="model">crm.lead</field>
+			<field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
+			<field name="arch" type="xml">
+				<!--<field name="street" position="attributes">-->
+					<!--<attribute name="style">width: 80%%</attribute>-->
+				<!--</field>-->
+				<!--<field name="street" position="after">-->
+					<!--<field name="eq_house_no" style="width: 20%%" placeholder="House no" />-->
+				<!--</field>-->
+				<!--<field name="country_id" position="replace" />-->
+
+				<field name="street" position="replace">
+					<field name="street" style="width: 80%%" placeholder="Street..." />
+					<field name="eq_house_no" style="width: 20%%" placeholder="House no" />
+				</field>
+
+				<field name="state_id" position="replace">
+
+				</field>
+
+				<field name="zip" position="replace">
+
+				</field>
+
+				<field name="city" position="replace">
+					<div>
+						<field name="zip" placeholder="ZIP" style="width: 25%%"  class="o_address_zip" />
+						<field name="city" style="width: 43%%; margin-right:2%%" placeholder="City" />
+						<field name="eq_citypart" style="width: 28%%" placeholder="District" />
+					</div>
+				</field>
+
+				<field name="country_id" position="replace" >
+					<div>
+					   <field name="country_id" placeholder="Country" style="width: 50%%"
+									options='{"no_open": True, "no_create": True}' />
+						<field name="state_id"  placeholder="State"
+							style="width: 50%%" options='{"no_open": True}'  /> <!--class="oe_no_button"-->
+					</div>
+				</field>
+
+
+				<field name="contact_name" position="replace" />
+				<field name="title" position="replace" />
+				<field name="function" position="before">
+					<field name="title" placeholder="Title" />
+					<field name="firstname" placeholder="Firstname" />
+					<field name="lastname" placeholder="Lastname" />
+					<field name="birthdate" />
+				</field>
+
+				<field name="phone" position="after">
+					<field name="website" />
+				</field>
+
+			</field>
+		</record>
+
+	</data>
+</openerp>
