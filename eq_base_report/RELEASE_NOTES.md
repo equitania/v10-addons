@@ -1,6 +1,11 @@
 ## Modul eq_base_report
 
 #### 19.06.2017
+#### Version 1.0.7
+##### CHG
+- Anpassungen für die Footer Erweiterung
+
+#### 19.06.2017
 #### Version 1.0.6
 ##### ADD
 - Papier DIN A4 Format hinzugefügt
