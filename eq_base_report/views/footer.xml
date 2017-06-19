@@ -51,111 +51,13 @@
                     <td>
 	                    <!--<div t-if="bank.footer">-->
 	                        <span>Bank:</span> <span t-esc="bank_name"/><br/>
-		                    <span>BIC:</span> <span t-esc="bank_bic"/><br/>
-	                        <span>IBAN:</span> <span t-esc="bank_iban"/>
+		                    <!--<span>BIC:</span> --><span t-esc="bank_bic"/><br/>
+	                        <!--<span>IBAN:</span> --><span t-esc="bank_iban"/>
 	                	<!--</div>-->
 	                </td>
 	            </tr>
 	        </table>
 	    </div>
 
-
-
-
-<!--
-        <div class="footer padding-print">
-            <div class="row zero_min_height">
-                <table style="width: 100%; padding-left: 0.2cm; padding-right: 0.2cm; border: 3px solid red!important;">
-                    <tr>
-                        <td style="">
-                        </td>
-                        <td style="">
-                        </td>
-                        <td style="text-align: right">
-                        </td>
-                        <td style="text-align: right">
-                            <ul class="list-inline" style="border: 3px solid red!important;">
-                                <li>Page:</li>
-                                <li>
-                                    <span class="page"/>
-                                </li>
-                                <li>/</li>
-                                <li>
-                                    <span class="topage"/>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight:bold;">
-                            <span>Company Location</span>
-                        </td>
-                        <td style="font-weight:bold;">
-                            <span>CEO</span>
-                        </td>
-                        <td style="font-weight:bold; text-align: right">
-                            <span>Registry/VAT</span>
-                        </td>
-                        <td style="font-weight:bold; text-align: right">
-                            <span>Bank Account</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span t-field="company.name"/>
-                        </td>
-                        <td>
-                            <span t-esc="ceo"/>
-                        </td>
-                        <td style="text-align: right">
-                            <div t-if="company.company_registry">
-                                <span t-field="company.company_registry"/>
-                            </div>
-                            <div t-if="not company.company_registry">
-                                <div t-if="company.vat">
-                                    <span t-esc="vat"/>
-                                </div>
-                            </div>
-                        </td>
-
-                        <td style="text-align: right">
-                            <span t-esc="bank_iban"/>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <span t-field="company.street"/>
-                        </td>
-                        <td>
-                        </td>
-                        <td style="text-align: right">
-                            <div t-if="company.company_registry">
-                                <div t-if="company.vat">
-                                    <span t-esc="vat"/>
-                                </div>
-                            </div>
-                        </td>
-                        <td style="text-align: right">
-                            <span t-esc="bank_bic"/>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <span t-field="company.zip"/>
-                            <span t-field="company.city"/>
-                        </td>
-                        <td>
-                        </td>
-                        <td>
-                        </td>
-                        <td style="text-align: right">
-                            <span t-esc="bank_name"/>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>-->
     </template>
 </odoo>

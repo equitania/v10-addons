@@ -1,10 +1,12 @@
+
 body {
     color: #000 !important;
+	font-size: 14px!important;
 }
 
 td {
 	vertical-align:top;
-	font-size: 1.3em!important;
+	font-size: 14px!important;
 }
 
 .border-black td {
@@ -14,7 +16,7 @@ td {
 .table-condensed &gt; thead	&gt; tr &gt; th {
 	border-bottom: 1px solid black !important;
 	page-break-inside:avoid !important;
-	font-size: 1.1em!important!important;
+	font-size: 14px!important;
 											/*font-size: 0.8em;*/
 }
 
@@ -37,7 +39,7 @@ td {
 	align:center;
 	text-align:center;
 	margin-left:0px;
-	font-size:7pt!important;
+	font-size:10px!important;
 }
 
 .footer td {
@@ -48,6 +50,7 @@ td {
 	text-align:left;
 	border: none;
 	background-color:none;
+	font-size:10px!important;
 }
 
 #version {
