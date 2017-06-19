@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<!-- Support for our localization  -->
+		<function model="eq_install_func" name="_load_translation" eval="[('eq_framework_agreement')]"/>
+		
+	    <!--	    
+        <record id="view_order_form_inherit" model="ir.ui.view">
+            <field name="name">sale.order.form.sale.stock.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_stock.view_order_form_inherit"/>
+            <field name="arch" type="xml">
+        -->
+	    
+	    <!-- Sale Order Inherit -->
+   		<record id="eq_fromework_agreement_order_view" model="ir.ui.view">
+            <field name="name">sale.order.form.framework_agreement</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+            <!-- 
+                <xpath expr="//field[@name='order_line']/tree//field[@name='product_id']" position="replace">
+                	<field name="product_id"
+                       context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom}"
+                       groups="base.group_user" on_change="product_id_change_new(parent.pricelist_id, product_id, product_uom_qty, False, product_uos_qty, False, name, parent.partner_id, False, True, parent.date_order, False, parent.fiscal_position, False, context)"
+                    />
+                </xpath>
+            -->
+                <xpath expr="//field[@name='order_line']/tree//field[@name='product_id']" position="after">                	
+                	<field name="eq_agreement_id" domain="[('eq_customer_id', '=', parent.partner_id)]"  on_change="on_change_fa(parent.pricelist_id,product_id,product_uom_qty,False,product_uos_qty,False,name,parent.partner_id, False, True, parent.date_order, product_packaging, parent.fiscal_position, False, parent.warehouse_id, context)"/>
+                	<field name="eq_pos_fetch_id" invisible="True"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form/group/group/field[@name='address_allotment_id']" position="after">                	
+                	<field name="eq_agreement_id" on_change="(parent.pricelist_id,product_id,product_uom_qty,False,product_uos_qty,False,name,parent.partner_id, False, True, parent.date_order, product_packaging, parent.fiscal_position, False, parent.warehouse_id, context)"/>
+                </xpath>
+            </field>
+        </record>
+            
+        <!-- Framework Agreement Position Fetches -->
+        <record id="eq_framework_agreement_pos_fetches_tree_view" model="ir.ui.view">
+            <field name="name">eq_framework_agreement.pos.fetches.tree</field>
+            <field name="model">eq_framework_agreement.pos.fetches</field>
+            <field name="arch" type="xml">
+                <tree string="Fetches">
+					<field name="eq_pos_id"/>
+					<field name="eq_quantity"/>
+					<field name="eq_delivered_quantity"/>
+					<field name="eq_order_ref"/>
+                </tree>
+            </field>
+        </record>
+
+	    <!-- Framework Agreement Position -->
+        <record id="eq_framework_agreement_pos_tree_view" model="ir.ui.view">
+            <field name="name">eq_framework_agreement.pos.tree</field>
+            <field name="model">eq_framework_agreement.pos</field>
+            <field name="arch" type="xml">
+                <tree string="Framework Agreements">
+					<field name="eq_product_id"/>
+					<field name="eq_quantity"/>
+					<field name="eq_tax_id"/>
+					<field name="eq_min_purch_qua"/>
+					<field name="eq_ordered_qua"/>
+					<field name="eq_quantity_delivered"/>
+					<field name="eq_qua_left"/>
+					<field name="eq_sale_price"/>
+					<field name="eq_pos_fetches_ids" domain="[(eq_order_ref, '!=', 'False')]"/>
+					<field name="eq_subtotal"/>
+                </tree>
+            </field>
+        </record>
+        <record id="eq_framework_agreement_pos_form_view" model="ir.ui.view">
+            <field name="name">eq_framework_agreement.pos.form</field>
+            <field name="model">eq_framework_agreement.pos</field>
+            <field name="arch" type="xml">
+                <form string="Framework Agreements" version="7.0">
+                	<group colspan="4">
+                		<group>
+							<field name="eq_product_id" domain="[('sale_ok', '=', True)]"/>
+							<field name="eq_tax_id" domain="[('parent_id', '=', False), ('type_tax_use', '!=', 'purchase')]"/>
+							<field name="eq_quantity"/>
+							<field name="eq_min_purch_qua"/>
+							<field name="eq_sale_price"/>
+                		</group>
+                		<group>
+							<field name="eq_ordered_qua" readonly="True"/>
+							<field name="eq_quantity_delivered" readonly="True"/>
+							<field name="eq_qua_left" readonly="True"/>
+							<field name="eq_agreement_id" readonly="True"/>
+                		</group>
+                		<div colspan="4">
+							<field name="eq_pos_fetches_ids"/>
+						</div>
+					</group>
+                </form>
+            </field>
+        </record>
+                
+	    <!-- Framework Agreement -->
+        <record id="eq_framework_agreement_tree_view" model="ir.ui.view">
+            <field name="name">eq_framework_agreement.tree</field>
+            <field name="model">eq_framework_agreement</field>
+            <field name="arch" type="xml">
+                <tree string="Framework Agreements">
+					<field name="eq_fa_number"/>
+					<field name="eq_start_date"/>
+					<field name="eq_end_date"/>		
+					<field name="eq_sale_person_id"/>
+					<field name="eq_contact_person_id"/>
+					<field name="eq_customer_id"/>
+					<field name="eq_info"/>
+                </tree>
+            </field>
+        </record>
+        <record id="eq_framework_agreement_form_view" model="ir.ui.view">
+            <field name="name">eq_framework_agreement.form</field>
+            <field name="model">eq_framework_agreement</field>
+            <field name="arch" type="xml">
+                <form string="Framework Agreements" version="7.0">
+	               	<header>
+	               		<button name="create_offer" type="object" string="Create Offer" confirm="Are you sure, that you want to create an sale offe with the selected Positions." context="{'eq_start_date': eq_start_date, 'eq_end_date': eq_end_date, 'eq_customer_id': eq_customer_id, 'eq_ref': eq_ref, 'eq_info': eq_info, 'eq_pos_ids': eq_pos_ids}"/>
+	               	</header>
+	                <sheet>
+	                	<group colspan="4">
+		                	<group>
+		                		<label for="eq_fa_number"/>
+								<div>
+									<field name="eq_fa_number" class="oe_inline"/>
+		                        	<button name="eq_fa_update" string="Update" type="object" class="oe_edit_only oe_link oe_inline"/>
+	                        	</div>
+								<field name="eq_customer_id" domain="[('customer', '=', True)]" 
+								context="{'search_default_customer':1, 'show_address': 1,'active_model':'sale.order','main_address': True}"
+								on_change="onchange_customer_id(eq_customer_id)"/>
+								<label for="eq_street" string="Address"/>
+								<div class="addres_format">
+									<field name="eq_customer_name"/>
+								    <field name="eq_street"/>
+								    <field name="eq_street2"/>
+								    <field name="eq_zip" style="width: 20%%" nolabel="1"/>
+								    <field name="eq_city" style="width: 76%%" nolabel="1"/>
+								    <field name="eq_country_id"/>						    
+								</div>
+								<field name="eq_invoice_address_id"/>
+								<field name="eq_delivery_address_id"/>
+							</group>
+							<group>
+								<field name="eq_start_date"/>
+								<field name="eq_end_date"/>
+								<field name="eq_sale_person_id"/>
+								<field name="eq_contact_person_id"/>
+								<field name="eq_ref"/>
+							</group>
+							<label for="eq_info" string="Info"/>
+							<div colspan="4">
+								<field name="eq_info" nolabel="1"/>
+							</div>
+							<div colspan="4">
+								<field name="eq_pos_ids" nolabel="1">
+					                <tree string="Framework Agreements">
+										<field name="eq_product_id"/>
+										<field name="eq_quantity"/>
+										<field name="eq_min_purch_qua"/>		
+										<field name="eq_ordered_qua"/>
+										<field name="eq_quantity_delivered"/>
+										<field name="eq_qua_left"/>
+										<field name="eq_tax_id"/>
+										<field name="eq_sale_price"/>
+										<field name="eq_pos_fetches_ids" domain="[(eq_order_ref, '!=', 'False')]"/>
+										<field name="eq_subtotal"/>
+					                </tree>
+								</field>
+							</div>
+	                           	<group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+	                               	<field name="eq_amount_untaxed" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+	                               	<field name="eq_amount_tax" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+	                               	<div class="oe_subtotal_footer_separator oe_inline">
+	                                   	<label for="eq_amount_total" />
+	                                   	<!-- <button name="button_dummy"
+	                                       	states="draft,sent" string="(update)" type="object" class="oe_edit_only oe_link"/> -->
+	                               	</div>
+	                               	<field name="eq_amount_total" nolabel="1" class="oe_subtotal_footer_separator" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+	                           	</group>
+	                         	<group colspan="1">
+	                         		<field name="eq_payment_term"/>
+									<field name="eq_incoterm"/>
+									<field name="eq_delivery_condition"/>
+	                         	</group>
+							<br/>
+						</group>
+					</sheet>
+                </form>
+            </field>
+        </record>
+        
+        <!-- Framework Agreement Search -->
+        <record id="eq_framework_agreement_search" model="ir.ui.view">
+            <field name="name">eq_framework_agreement.search</field>
+            <field name="model">eq_framework_agreement</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="eq_fa_number"/>
+                    <field name="eq_product_id"/>
+               </search>
+            </field>
+        </record>
+        
+	    <!-- Framework Agreement Action Tree -->
+        <record id="action_eq_framework_agreement_tree" model="ir.actions.act_window">
+            <field name="context">{}</field><!-- force empty -->
+            <field name="name">Framework Agreements</field>
+            <field name="res_model">eq_framework_agreement</field>
+            <field name="domain">[('eq_product_id', '=', [active_id])]</field>
+            <field name="view_id" ref="eq_framework_agreement_tree_view"/>
+       	</record>
+        
+	    <!-- Framework Agreement Action -->
+        <record id="eq_framework_agreement_action" model="ir.actions.act_window">
+            <field name="name">Framework Agreements</field>
+            <field name="res_model">eq_framework_agreement</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Click on Create to create a Framework Agreement.</p>
+            </field>
+        </record>
+        
+	    <!-- Menuitem -->        
+        <menuitem action="eq_framework_agreement_action" id="eq_framework_agreement_menu" parent="base.menu_sales" name="Framework Agreements" sequence="40"/>
+    </data>
+</openerp>

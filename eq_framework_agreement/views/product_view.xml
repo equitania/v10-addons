@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+        <!-- Product Template - form view -->
+        <record id="eq_product_template_button_extension_fa" model="ir.ui.view">
+            <field name="name">eq.product.template.form.view.button.extension.fa</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='buttons']" position="inside">
+                   	<button class="oe_stat_button"
+                            name="action_view_fas_sale"
+                            icon="fa-list-alt"
+                            type="object"  attrs="{'invisible':[('sale_ok', '!=', True)]}">
+                  		<div><strong><field name="eq_fa_count_sale"/></strong><br/>FA Sale</div>
+                   	</button>
+                </xpath>
+            </field>
+		</record>
+        <!-- Product Product - form view -->
+        <record id="eq_product_product_button_extension_fa" model="ir.ui.view">
+            <field name="name">eq.product.product.form.view.button.extension.fa</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='buttons']" position="inside">
+                   	<button class="oe_stat_button"
+                            name="%(action_eq_framework_agreement_tree)d"
+                            icon="fa-list-alt"
+                            type="action"  attrs="{'invisible':[('sale_ok', '!=', True)]}">
+                  		<div><strong><field name="eq_fa_count_sale"/></strong><br/>FA Sale</div>
+                   	</button>
+                </xpath>
+            </field>
+		</record>
+	</data>
+</openerp>

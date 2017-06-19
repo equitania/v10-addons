@@ -1,0 +1,463 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* eq_framework_agreement
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0 Build 1602003\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-03 13:12+0000\n"
+"PO-Revision-Date: 2016-03-03 13:12+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: eq_framework_agreement
+#: code:addons/eq_framework_agreement/eq_framework_agreement.py:375
+#, python-format
+msgid "\n"
+"FA Number: %s\n"
+"Quantity Left: %s %s\n"
+"Min Qty: %s %s\n"
+"Sale price: %s"
+msgstr "\n"
+"RA Nummer: %s\n"
+"Menge übrig: %s %s\n"
+"Mindestbestellmenge: %s %s\n"
+"Verkaufspreis: %s"
+
+#. module: eq_framework_agreement
+#: model:ir.actions.act_window,help:eq_framework_agreement.eq_framework_agreement_action
+msgid "<p class=\"oe_view_nocontent_create\">Click on Create to create a Framework Agreement.</p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">Klicken Sie auf Anlegen und einen Rahmenauftrag anzulegen.</p>\n"
+"            "
+
+#. module: eq_framework_agreement
+#: view:eq_framework_agreement:eq_framework_agreement.eq_framework_agreement_form_view
+msgid "Address"
+msgstr "Adresse"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,eq_amount_tax:0
+msgid "Amount Tax"
+msgstr "Umsatzsteuer"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,eq_invoice_address_id:0
+msgid "Dif. Invoice Address"
+msgstr "Abw. Rechnungsadresse"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,eq_delivery_address_id:0
+msgid "Dif. Delivery Address"
+msgstr "Abw. Lieferadresse"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,eq_amount_total:0
+msgid "Amount Total"
+msgstr "Bruttobetrag"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,eq_amount_untaxed:0
+msgid "Amount Untaxed"
+msgstr "Nettobetrag"
+
+#. module: eq_framework_agreement
+#: view:eq_framework_agreement:eq_framework_agreement.eq_framework_agreement_form_view
+msgid "Are you sure, that you want to create an sale offe with the selected Positions."
+msgstr "Sind Sie sicher, dass Sie einen Verkaufsauftrag mit den ausgewählten Positionen erstellen wollen."
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,eq_company_id:0
+msgid "Company"
+msgstr "Kunde"
+
+#. module: eq_framework_agreement
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "Confirmation"
+msgstr "Auftragsbestätigung"
+
+#. module: eq_framework_agreement
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "Contact person"
+msgstr "Ansprechpartner"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,eq_country_id:0
+msgid "Country"
+msgstr "Land"
+
+#. module: eq_framework_agreement
+#: view:eq_framework_agreement:eq_framework_agreement.eq_framework_agreement_form_view
+msgid "Create Offer"
+msgstr "Verkaufsauftrag erstellen"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,create_uid:0
+#: field:eq_framework_agreement.pos,create_uid:0
+#: field:eq_framework_agreement.pos.fetches,create_uid:0
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,create_date:0
+#: field:eq_framework_agreement.pos,create_date:0
+#: field:eq_framework_agreement.pos.fetches,create_date:0
+msgid "Created on"
+msgstr "Erstellt am"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,eq_customer_id:0
+msgid "Customer"
+msgstr "Kunde"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,eq_ref:0
+msgid "Customer Number"
+msgstr "Kundennummer"
+
+#. module: eq_framework_agreement
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "Customer no."
+msgstr "Kundennr."
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement.pos.fetches,eq_delivered_quantity:0
+msgid "Delivered Qty"
+msgstr "Gelieferte Menge"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,eq_delivery_condition:0
+msgid "Delivery Condition"
+msgstr "Lieferbedingungen"
+
+#. module: eq_framework_agreement
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "Delivery condition:"
+msgstr "Lieferbedingungen:"
+
+#. module: eq_framework_agreement
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,eq_end_date:0
+msgid "End Date"
+msgstr "Enddatum"
+
+#. module: eq_framework_agreement
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "End date"
+msgstr "Enddatum"
+
+#. module: eq_framework_agreement
+#: field:sale.order.line,eq_agreement_id:0
+msgid "FA"
+msgstr "RA Verkauf"
+
+#. module: eq_framework_agreement
+#: view:product.product:eq_framework_agreement.eq_product_product_button_extension_fa
+#: view:product.template:eq_framework_agreement.eq_product_template_button_extension_fa
+msgid "FA Sale"
+msgstr "RA Verkauf"
+
+#. module: eq_framework_agreement
+#: field:sale.order.line,eq_pos_fetch_id:0
+msgid "Fetch"
+msgstr "Abruf"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement.pos,eq_pos_fetches_ids:0
+#: view:eq_framework_agreement.pos.fetches:eq_framework_agreement.eq_framework_agreement_pos_fetches_tree_view
+msgid "Fetches"
+msgstr "Abrufe"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement.pos.fetches,eq_done:0
+msgid "Finished"
+msgstr "Abgeschlossen"
+
+#. module: eq_framework_agreement
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "For further information, please contact"
+msgstr "Bei Fragen wenden Sie sich bitte an:"
+
+#. module: eq_framework_agreement
+#: code:addons/eq_framework_agreement/eq_framework_agreement.py:378
+#: field:eq_framework_agreement.pos,eq_agreement_id:0
+#: model:ir.actions.report.xml,name:eq_framework_agreement.report_framework_agreement_action
+#: help:sale.order.line,eq_agreement_id:0
+#, python-format
+msgid "Framework Agreement"
+msgstr "Rahmenauftrag"
+
+#. module: eq_framework_agreement
+#: field:stock.move,eq_fa_fetch_id:0
+msgid "Framework Agreement Fetch"
+msgstr "Framework Agreement Fetch"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,eq_fa_number:0
+msgid "Framework Agreement No."
+msgstr "Rahmenauftrag Nr."
+
+#. module: eq_framework_agreement
+#: view:eq_framework_agreement:eq_framework_agreement.eq_framework_agreement_form_view
+#: view:eq_framework_agreement:eq_framework_agreement.eq_framework_agreement_tree_view
+#: view:eq_framework_agreement.pos:eq_framework_agreement.eq_framework_agreement_pos_form_view
+#: view:eq_framework_agreement.pos:eq_framework_agreement.eq_framework_agreement_pos_tree_view
+#: model:ir.actions.act_window,name:eq_framework_agreement.action_eq_framework_agreement_tree
+#: model:ir.actions.act_window,name:eq_framework_agreement.eq_framework_agreement_action
+#: model:ir.ui.menu,name:eq_framework_agreement.eq_framework_agreement_menu
+msgid "Framework Agreements"
+msgstr "Rahmenaufträge"
+
+#. module: eq_framework_agreement
+#: view:website:equitania.report_saleorder_data
+msgid "Framework order:"
+msgstr "Rahmenauftrag:"
+
+#. module: eq_framework_agreement
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "Frameworkagreement No."
+msgstr "Rahmenauftrag Nr."
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,id:0
+#: field:eq_framework_agreement.pos,id:0
+#: field:eq_framework_agreement.pos.fetches,id:0
+#: field:report.eq_framework_agreement.report_framework_agreement_document,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,eq_incoterm:0
+msgid "Incoterm"
+msgstr "Incoterm"
+
+#. module: eq_framework_agreement
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "Incoterm:"
+msgstr "Incoterm:"
+
+#. module: eq_framework_agreement
+#: view:eq_framework_agreement:eq_framework_agreement.eq_framework_agreement_form_view
+#: field:eq_framework_agreement,eq_info:0
+msgid "Info"
+msgstr "Info"
+
+#. module: eq_framework_agreement
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "Item description"
+msgstr "Beschreibung"
+
+#. module: eq_framework_agreement
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "Item no."
+msgstr "Artikelnr."
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,write_uid:0
+#: field:eq_framework_agreement.pos,write_uid:0
+#: field:eq_framework_agreement.pos.fetches,write_uid:0
+msgid "Last Updated by"
+msgstr "Zuletzt akutallisiert von"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,write_date:0
+#: field:eq_framework_agreement.pos,write_date:0
+#: field:eq_framework_agreement.pos.fetches,write_date:0
+msgid "Last Updated on"
+msgstr "Zuletzt akutallisiert am"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement.pos,eq_min_purch_qua:0
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "Min. Purchase Quantity"
+msgstr "Min. Bestellmenge"
+
+#. module: eq_framework_agreement
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "Net sum"
+msgstr "Nettobetrag"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement.pos,eq_ordered_qua:0
+msgid "Ordered Quantity"
+msgstr "Bereits Bestellte Menge"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,eq_payment_term:0
+msgid "Payment Term"
+msgstr "Zahlungsbedingung"
+
+#. module: eq_framework_agreement
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "Phone"
+msgstr "Telefon"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,eq_pos_ids:0
+msgid "Position"
+msgstr "Position"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,eq_sale_person_id:0
+msgid "Processor"
+msgstr "Bearbeiter"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,eq_product_id:0
+#: field:eq_framework_agreement.pos,eq_product_id:0
+#: field:eq_framework_agreement.pos.fetches,eq_pos_id:0
+#: model:ir.model,name:eq_framework_agreement.model_product_product
+msgid "Product"
+msgstr "Produkt"
+
+#. module: eq_framework_agreement
+#: model:ir.model,name:eq_framework_agreement.model_product_template
+msgid "Product Template"
+msgstr "Produktvorlage"
+
+#. module: eq_framework_agreement
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "Qty."
+msgstr "Menge"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement.pos,eq_quantity:0
+#: field:eq_framework_agreement.pos.fetches,eq_quantity:0
+msgid "Quantity"
+msgstr "Menge"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement.pos,eq_quantity_delivered:0
+msgid "Quantity delivered"
+msgstr "Gelieferte Menge"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement.pos,eq_qua_left:0
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "Quantity left"
+msgstr "Restmenge"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement.pos.fetches,eq_order_ref:0
+msgid "Sale Order"
+msgstr "Verkaufsauftrag"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,eq_contact_person_id:0
+msgid "Sale Person"
+msgstr "Verkäufer"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement.pos,eq_sale_price:0
+msgid "Sale Price"
+msgstr "Preis"
+
+#. module: eq_framework_agreement
+#: model:ir.model,name:eq_framework_agreement.model_sale_order
+msgid "Sales Order"
+msgstr "Verkaufsauftrag"
+
+#. module: eq_framework_agreement
+#: model:ir.model,name:eq_framework_agreement.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Auftragsposition"
+
+#. module: eq_framework_agreement
+#: view:eq_framework_agreement:eq_framework_agreement.eq_framework_agreement_search
+msgid "Search"
+msgstr "Suche"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,eq_start_date:0
+msgid "Start Date"
+msgstr "Startdatum"
+
+#. module: eq_framework_agreement
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "Start date"
+msgstr "Startdatum"
+
+#. module: eq_framework_agreement
+#: model:ir.model,name:eq_framework_agreement.model_stock_move
+msgid "Stock Move"
+msgstr "Lagerbuchung"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement.pos.fetches,eq_stock_moves_delivered:0
+msgid "Stock moves"
+msgstr "Lagerbuchungen"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement.pos,eq_subtotal:0
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "Subtotal"
+msgstr "Nettopreis"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement.pos,eq_tax_id:0
+msgid "Tax"
+msgstr "Steuer"
+
+#. module: eq_framework_agreement
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "Term of payment:"
+msgstr "Zahlungskonditionen:"
+
+#. module: eq_framework_agreement
+#: code:addons/eq_framework_agreement/eq_framework_agreement.py:374
+#, python-format
+msgid "The following framework agreements are available.\n"
+""
+msgstr "Für das Produkt sind folgende Rahmenaufträge vorhanden.\n"
+""
+
+#. module: eq_framework_agreement
+#: sql_constraint:eq_framework_agreement:0
+msgid "This Framework Agreement Number is already used!"
+msgstr "Die Angegebene Rahmenauftrasnr wird bereits verwendet!"
+
+#. module: eq_framework_agreement
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "Total sum"
+msgstr "Bruttobetrag"
+
+#. module: eq_framework_agreement
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "Unit price"
+msgstr "Einzelpreis"
+
+#. module: eq_framework_agreement
+#: view:eq_framework_agreement:eq_framework_agreement.eq_framework_agreement_form_view
+msgid "Update"
+msgstr "Aktualisieren"
+
+#. module: eq_framework_agreement
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "Invoice address:"
+msgstr "Rechnungsadresse:"
+
+#. module: eq_framework_agreement
+#: view:website:eq_framework_agreement.report_framework_agreement
+msgid "Delivery address:"
+msgstr "Lieferadresse:"
+
+#. module: eq_framework_agreement
+#: field:eq_framework_agreement,eq_city:0
+#: field:eq_framework_agreement,eq_customer_name:0
+#: field:eq_framework_agreement,eq_street:0
+#: field:eq_framework_agreement,eq_street2:0
+#: field:eq_framework_agreement,eq_zip:0
+#: field:product.product,eq_fa_count_sale:0
+#: field:product.template,eq_fa_count_sale:0
+msgid "unknown"
+msgstr "unknown"
+

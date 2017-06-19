@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data> 	
+		<!-- search support -->
+		<record id="eq_open_sale_order_line_search_view_framework_agreement" model="ir.ui.view">
+			<field name="name">eq.open.sale.order.line.search.view</field>
+			<field name="model">eq_open_sale_order_line</field>
+			<field name="inherit_id" ref="equitania.eq_open_sale_order_line_search_view"/>
+			<field name="arch" type="xml">
+				<group string="Group By" position="inside">
+						    	<filter string="Frameworkagreement" context="{'group_by' : 'eq_framework_agreement_id'}"/>		
+			</group>
+			</field>
+		</record>
+		
+		    </data>    	
+</openerp>   
