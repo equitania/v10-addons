@@ -1,0 +1,25 @@
+<openerp>
+    <data>
+
+        <record id="eq_base_ceo_view_company_form" model="ir.ui.view">
+            <field name="name">eq_base.ceo.view.company.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+
+                <field name="website" position="before">
+                    <label string="CEO"/>
+
+                    <div>
+                        <field name="eq_ceo_title" style="width: 100%%;" placeholder="Title" />
+                        <field name="eq_ceo_01" style="width: 100%%;" />
+                        <field name="eq_ceo_02" style="width: 100%%;" />
+                        <field name="eq_ceo_03" style="width: 100%%;" />
+                    </div>
+
+                </field>
+
+            </field>
+        </record>
+    </data>
+</openerp>
