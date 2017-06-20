@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>    	
+    	<!-- Defaultansicht zusammen mit den Feldern, die wir anzeigen -->
+	    <record id="eq_open_sale_order_line_tree_view" model="ir.ui.view">
+	            <field name="name">eq.open.sale.order.line.tree.view</field>
+	            <field name="model">eq_open_sale_order_line</field>
+				<field name="arch" type="xml">				
+                <tree string="Open order lines" fonts="bold:eq_quantity_left > 0" colors="grey:eq_state=='cancel';green:eq_state == 'draft';blue:eq_state == 'done';red:eq_state in ('exception')">
+					<!--<field name="eq_pos"/>-->
+					<field name="eq_order_id"/>
+					<field name="eq_client_order_ref"/>
+					<field name="eq_customer_no"/>
+					<field name="eq_customer"/>
+					<field name="eq_delivery_date"/>
+					<field name="eq_quantity" sum="Total Quantity"/>
+					<field name="eq_quantity_left" sum="Total Quantity left"/>
+					<field name="eq_product_no"/>
+					<field name="eq_drawing_no"/>
+					<field name="eq_state"/>
+                </tree>
+            </field>            		          
+	    </record>
+	    
+		<!--Sales Order line Form view -->
+		<record id="eq_open_sale_order_line_form_view" model="ir.ui.view">
+			<field name="name">eq.open.sale.order.line.form.view</field>
+			<field name="model">eq_open_sale_order_line</field>
+			<field name="arch" type="xml">
+				<form string="Open Sales Order lines">
+					<sheet>
+						<group col="4">
+							<field name="eq_quantity" />
+							<!--<field name="eq_pos"/>-->
+							<field name="eq_state" />
+							<field name="eq_drawing_no" />
+							<field name="eq_client_order_ref" />
+							<field name="eq_customer" required="1"/>
+							<field name="eq_product_no" required="1"/>
+							<field name="eq_order_id" required="1"/>
+							<field name="eq_customer_no" />
+							<field name="eq_delivery_date" />
+							<field name="eq_quantity_left" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<!-- search support -->
+		<record id="eq_open_sale_order_line_search_view" model="ir.ui.view">
+			<field name="name">eq.open.sale.order.line.search.view</field>
+			<field name="model">eq_open_sale_order_line</field>
+			<field name="arch" type="xml">
+				<search string="Search Partner">
+	                    <field name="eq_order_id" filter_domain="['|','|','|','|',('eq_order_id','ilike',self),('eq_client_order_ref','ilike',self),('eq_product_no','ilike',self),('eq_customer','=',self),('eq_drawing_no','ilike',self)]"/>
+						<field name="eq_client_order_ref"/>
+						<field name="eq_customer_no"/>
+						<field name="eq_customer"/>
+						<field name="eq_delivery_date"/>
+						<!--<field name="eq_pos"/>-->
+						<field name="eq_quantity"/>
+						<field name="eq_quantity_left"/>
+						<field name="eq_product_no"/>
+						<field name="eq_drawing_no"/>
+						
+						<filter string="Remaining Quantity left" name="filter_remaining_quantity" domain="[('eq_quantity_left','>', '0')]"/>
+						<filter string="Draft" name="filter_draft" domain="[('eq_state','=', 'draft')]"/>
+						<filter string="Confirmed" name="filter_confirmed" domain="[('eq_state','=', 'confirmed')]"/>
+						<filter string="Exception" name="filter_exception" domain="[('eq_state','=', 'exception')]"/>
+						<filter string="Done" name="filter_done" domain="[('eq_state','=', 'done')]"/>
+						<filter string="Cancelled" name="filter_cancel" domain="[('eq_state','=', 'cancel')]"/>
+	                   
+						<group expand="0" string="Group By">
+						    <filter string="Saleorder" context="{'group_by' : 'eq_order_id'}"/>
+						   <!--  <filter string="Frameworkagreement" context="{'group_by' : 'eq_framework_agreement_id'}"/> -->
+						    <filter string="Customer" context="{'group_by': 'eq_customer'}"/>
+						    <filter string="Product" context="{'group_by': 'eq_product_no'}"/>
+						</group>
+			</search>
+			</field>
+		</record>
+		
+		<!-- Definition der Action -->
+        <record id="eq_open_sale_order_line_action" model="ir.actions.act_window">
+            <field name="name">Open sale order line</field>
+            <field name="res_model">eq_open_sale_order_line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"search_default_filter_remaining_quantity":1}</field>
+        </record>
+        
+    	<!-- Erweiterung der Menuleiste LINKS -->
+		<menuitem action="eq_open_sale_order_line_action" id="eq_open_sale_order_line_menu" parent="sales_team.menu_sales" name="Open sale order line" sequence="40"/>
+    </data>    	
+</openerp>    
