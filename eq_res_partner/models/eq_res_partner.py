@@ -40,6 +40,8 @@ class eq_res_partner(models.Model):
     eq_email2 = fields.Char('E-Mail (additional)')
     eq_phone2 = fields.Char('Phone (additional)')
 
+    eq_deb_cred_number = fields.Char(compute="_show_deb_cred_number", store=False)
+
 
     #eq_complete_description = fields.Char(compute='_generate_complete_description', store=True)
 
@@ -48,3 +50,19 @@ class eq_res_partner(models.Model):
         res = super(eq_res_partner, self)._address_fields()
         res.extend(("eq_house_no", "eq_citypart"))
         return res
+
+
+    @api.multi
+    def _show_deb_cred_number(self):
+        result = {}
+        for partner in self:
+            deb_cred = False
+            if partner.customer_number != 'False' and partner.customer_number and partner.supplier_number != 'False' and partner.supplier_number:
+                deb_cred = partner.customer_number + ' / ' + partner.supplier_number
+            elif partner.customer_number != 'False' and partner.customer_number:
+                deb_cred = partner.customer_number
+            elif partner.supplier_number != 'False' and partner.supplier_number:
+                deb_cred = partner.supplier_number
+            result[partner.id] = deb_cred
+            partner.eq_deb_cred_number = deb_cred
+        return result

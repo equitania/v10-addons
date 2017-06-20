@@ -1,6 +1,13 @@
 ## Modul eq_res_partner
 
 
+
+#### 20.06.2017
+#### Version 1.0.6
+##### CHG
+- VEP-87: Anzeige von Kunden- und Lieferantennr in Kanbanview
+
+
 #### 20.06.2017
 #### Version 1.0.5
 ##### CHG

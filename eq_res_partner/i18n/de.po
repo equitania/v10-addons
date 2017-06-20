@@ -126,3 +126,9 @@ msgstr "Telefon (zusätzlich)"
 #: model:ir.ui.view,arch_db:eq_res_partner.eq_partner_extension_form_view
 msgid "Phone (additional):"
 msgstr "Telefon (zusätzlich):"
+
+#. module: eq_res_partner
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_deb_cred_number
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_deb_cred_number
+msgid "Eq deb cred number"
+msgstr "Kundennr. / Lieferantennr."
