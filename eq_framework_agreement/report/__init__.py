@@ -19,4 +19,4 @@
 #
 ##############################################################################
 
-import eq_report_framework_agreement
+#import eq_report_framework_agreement:TODO Paul fragen ob der Teil aus dem equitania Modul übernommen erden soll

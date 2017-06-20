@@ -21,17 +21,17 @@
 
 from datetime import datetime, timedelta
 import time
-from openerp.osv import fields, osv
-from openerp.tools.translate import _
-from openerp.tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT
-import openerp.addons.decimal_precision as dp
-from openerp import workflow
+from odoo import fields, models
+from odoo.tools.translate import _
+from odoo.tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT
+import odoo.addons.decimal_precision as dp
+from odoo import workflow
 
-class eq_framework_agreement(osv.osv):
+class eq_framework_agreement(models.Model):
     _name = "eq_framework_agreement"
     _rec_name = "eq_fa_number"
 
-    def copy(self, cr, uid, id, default=None, context=None):
+    def copy(self, default=None):
         new_no = self.env['ir.sequence'].get('eq_fa_sale.seq')
         default.update({
             'eq_fa_number': new_no,
@@ -39,15 +39,15 @@ class eq_framework_agreement(osv.osv):
         return super(eq_framework_agreement, self).copy(cr, uid, id, default, context)
 
 
-    def _get_amount_total(self, cr, uid, ids, field, arg, context=None):
+    def _get_amount_total(self, context=None):
         res = {}
         tax_obj = self.env['account.tax']
-        for fa in self.browse(cr, uid, ids, context=context):
+        for fa in self.browse(self.ids, context=context):
             untaxed = 0
             tax = 0
             total = 0
             for line in fa.eq_pos_ids:
-                vals = tax_obj.compute_all(cr, uid, line.eq_tax_id, line.eq_sale_price, line.eq_quantity)
+                vals = tax_obj.compute_all(line.eq_tax_id, line.eq_sale_price, line.eq_quantity)
                 total += vals['total_included']
                 untaxed += vals['total']
                 tax += vals['total_included'] - vals['total']
@@ -58,31 +58,31 @@ class eq_framework_agreement(osv.osv):
         return res
 
 
-    eq_fa_number = fields.Char('Framework Agreement No.', size=64),
-    company_id = fields.Many2one('res.company', 'Company', required=False),
-    eq_start_date = fields.Date('Start Date', required=True),
-    eq_end_date = fields.Date('End Date', required=True),
-    eq_contact_person_id = fields.Many2one('hr.employee', 'Sale Person'),
-    eq_sale_person_id = fields.Many2one('res.users', 'Processor', required=True),
-    eq_customer_id = fields.Many2one('res.partner', 'Customer', required=True),
-    eq_invoice_address_id = fields.Many2one('res.partner', 'Dif. Invoice Address'),
-    eq_delivery_address_id = fields.Many2one('res.partner', 'Dif. Delivery Address'),
-    eq_customer_name = fields.Related('eq_customer_id', 'name', type='char', size=128, readonly=True),
-    eq_street = fields.Related('eq_customer_id', 'street', type='char', size=128, readonly=True),
-    eq_street2 = fields.Related('eq_customer_id', 'street2', type='char', size=128, readonly=True),
-    eq_city = fields.Related('eq_customer_id', 'city', type='char', size=128, readonly=True),
-    eq_zip = fields.Related('eq_customer_id', 'zip', type='char', size=24, readonly=True),
-    eq_country_id = fields.Related('eq_customer_id', 'country_id', type='many2one', relation='res.country', string='Country', readonly=True),
-    eq_ref = fields.Related('eq_customer_id', 'ref', type='char', size=24, readonly=True, string="Customer Number"),
-    eq_info = fields.Html('Info'),
-    eq_pos_ids = fields.One2many('eq_framework_agreement.pos', 'eq_agreement_id', 'Position', required=True),
-    eq_product_id = fields.Related('eq_pos_ids', 'eq_product_id', type='many2one', relation='product.product', string='Product'),
-    eq_amount_untaxed = fields.Function(_get_amount_total, multi="sum", type='float', string="Amount Untaxed"),
-    eq_amount_tax = fields.Function(_get_amount_total, multi="sum", type='float', string="Amount Tax"),
-    eq_amount_total = fields.Function(_get_amount_total, multi="sum", type='float', string="Amount Total"),
-    eq_payment_term = fields.Many2one('account.payment.term', string='Payment Term'),
-    eq_incoterm = fields.Many2one('stock.incoterms', string='Incoterm'),
-    eq_delivery_condition = fields.Many2one('eq.delivery.conditions', string='Delivery Condition'),
+    eq_fa_number = fields.Char('Framework Agreement No.', size=64)
+    company_id = fields.Many2one('res.company', 'Company', required=False)
+    eq_start_date = fields.Date('Start Date', required=True)
+    eq_end_date = fields.Date('End Date', required=True)
+    eq_contact_person_id = fields.Many2one('hr.employee', 'Sale Person')
+    eq_sale_person_id = fields.Many2one('res.users', 'Processor', required=True)
+    eq_customer_id = fields.Many2one('res.partner', 'Customer', required=True)
+    eq_invoice_address_id = fields.Many2one('res.partner', 'Dif. Invoice Address')
+    eq_delivery_address_id = fields.Many2one('res.partner', 'Dif. Delivery Address')
+    eq_customer_name = fields.Char(related='eq_customer_id', string='name', type='char', size=128, readonly=True)
+    eq_street = fields.Char(relation='eq_customer_id', string='street', size=128, readonly=True)
+    eq_street2 = fields.Char(relation='eq_customer_id', string='street2', type='char', size=128, readonly=True)
+    eq_city = fields.Char(relation='eq_customer_id', string='city', type='char', size=128, readonly=True)
+    eq_zip = fields.Char(relation='eq_customer_id', string='zip', type='char', size=24, readonly=True)
+    eq_country_id = fields.Many2one( 'country_id', related='eq_customer_id', relation='res.country', string='Country', readonly=True)
+    eq_ref = fields.Char(string='ref', relation='eq_customer_id', type='char', size=24, readonly=True)#string="Customer Number"
+    eq_info = fields.Html('Info')
+    eq_pos_ids = fields.One2many(related='eq_framework_agreement.pos', relation='eq_agreement_id', string='Position', required=True)
+    eq_product_id = fields.Many2one(relation='eq_product_id', related='eq_pos_ids', type='many2one', string='Product')#'product.product',
+    eq_amount_untaxed = fields.Float(compute=_get_amount_total, multi="sum", type='float', string="Amount Untaxed")
+    eq_amount_tax = fields.Float(compute=_get_amount_total, multi="sum", type='float', string="Amount Tax")
+    eq_amount_total = fields.Float(compute=_get_amount_total, multi="sum", type='float', string="Amount Total")
+    eq_payment_term = fields.Many2one('account.payment.term', string='Payment Term')
+    eq_incoterm = fields.Many2one('stock.incoterms', string='Incoterm')
+    eq_delivery_condition = fields.Many2one('eq.delivery.conditions', string='Delivery Condition')
 
     
     _defaults = {
@@ -93,9 +93,9 @@ class eq_framework_agreement(osv.osv):
                         ('eq_fa_number_unique', 'unique(eq_fa_number)', "This Framework Agreement Number is already used!")
                        ]
     
-    def onchange_customer_id(self, cr, uid, ids, eq_customer_id, context=None):
+    def onchange_customer_id(self, eq_customer_id, context=None):
         res = {'value': {}}
-        current_customer = self.pool.get('res.partner').browse(cr, uid, eq_customer_id, context)
+        current_customer = self.env['res.partner'].browse(eq_customer_id, context)
         if current_customer.eq_default_delivery_address:
             res['value']['eq_delivery_address_id'] = current_customer.eq_default_delivery_address.id
         if current_customer.eq_default_invoice_address:
@@ -108,20 +108,20 @@ class eq_framework_agreement(osv.osv):
             res['value']['eq_payment_term'] = current_customer.property_payment_term.id
         return res
     
-    def create(self, cr, uid, vals, context):
+    def create(self, vals, context):
         if not vals.get('eq_fa_number', False):
-            vals['eq_fa_number'] = self.pool.get('ir.sequence').get(cr, uid, 'eq_fa_sale.seq')
-        return super(eq_framework_agreement, self).create(cr, uid, vals, context)
+            vals['eq_fa_number'] = self.env['ir.sequence'].get('eq_fa_sale.seq')
+        return super(eq_framework_agreement, self).create(vals, context)
         
     
-    def create_offer(self, cr, uid, ids, context):
+    def create_offer(self, ids, context):
         offer_pos_vals = {}
         """
         for pos_id in eq_pos_ids:
             pos = self.pool.get('eq_framework_agreement.pos').read()
         """
         
-        fq = self.pool.get('eq_framework_agreement').browse(cr, uid, ids, context)
+        fq = self.env['eq_framework_agreement'].browse(ids, context)
         fa_pos_id = fq.eq_pos_ids
         #Sets User id
         user_id = fq.eq_sale_person_id.id
@@ -149,7 +149,7 @@ class eq_framework_agreement(osv.osv):
         if fq.eq_delivery_address_id:
             offer_vals['partner_delivery_id'] = fq.eq_delivery_address_id.id
         #Creates the Offer
-        offer_id = self.pool.get('sale.order').create(cr, uid, offer_vals, context)
+        offer_id = self.env['sale.order'].create(offer_vals, context)
         seq = 10
         for position in fa_pos_id:
             delay = position.eq_product_id.sale_delay
@@ -173,10 +173,10 @@ class eq_framework_agreement(osv.osv):
                 pos['tax_id'] = [(6, 0, [position.eq_tax_id.id])],
             seq = seq + 10
             #Creates Positions
-            pos_id = self.pool.get('sale.order.line').create(cr, uid, pos, context)
+            pos_id = self.env['sale.order.line'].create(pos, context)
         #Returns the form view of the created Sale Order
-        mod_obj = self.pool.get('ir.model.data')
-        res = mod_obj.get_object_reference(cr, uid, 'sale', 'view_order_form')
+        mod_obj = self.env['ir.model.data']
+        res = mod_obj.get_object_reference('sale', 'view_order_form')
         return {
             'name': 'Offer',
             'view_type': 'form',
@@ -191,79 +191,79 @@ class eq_framework_agreement(osv.osv):
         }
         
     """Only one id at a time"""
-    def eq_fa_update(self, cr, uid, ids, context={}):
-        current_fa = self.browse(cr, uid, ids, context)
+    def eq_fa_update(self, ids, context={}):
+        current_fa = self.browse(ids, context)
         if not current_fa[0].eq_fa_number:
             vals = {
-                    'eq_fa_number': self.pool.get('ir.sequence').get(cr, uid, 'eq_fa_sale.seq'),
+                    'eq_fa_number': self.env['ir.sequence'].get('eq_fa_sale.seq'),
                     }
-            self.write(cr, uid, ids, vals, context=context)
+            self.write(ids, vals, context=context)
     
 eq_framework_agreement()
 
-class eq_framework_agreement_pos(osv.osv):    
+class eq_framework_agreement_pos(models.Model):
     _name = "eq_framework_agreement.pos"
     _rec_name = "eq_product_id"
     
-    def _calc_quantity(self, cr, uid, ids, field_name, arg, context=None): 
+    def _calc_quantity(self, ids, context=None):
         res = {}       
-        for pos in self.browse(cr, uid, ids, context=context):
+        for pos in self.browse(ids, context=context):
             res[pos.id] = {
                    'eq_ordered_qua': 0.0,
                    'eq_quantity_delivered': 0.0,
                    'eq_qua_left': pos.eq_quantity,
                    }
-            if self.browse(cr, uid, pos.id).eq_pos_fetches_ids:
-                for fetches in self.browse(cr, uid, pos.id).eq_pos_fetches_ids:
+            if self.browse(pos.id).eq_pos_fetches_ids:
+                for fetches in self.browse(pos.id).eq_pos_fetches_ids:
                     res[pos.id]['eq_ordered_qua'] += fetches.eq_quantity
                     delivered = sum([move.product_uom_qty if move.state == 'done' else 0 for move in fetches.eq_stock_moves_delivered])
                     res[pos.id]['eq_quantity_delivered'] += delivered
                     res[pos.id]['eq_qua_left'] -= fetches.eq_quantity if fetches.eq_quantity >= delivered and not fetches.eq_done or fetches.eq_quantity < 0 else delivered
         return res
     
-    def _get_subtotal(self, cr, uid, ids, field, arg, context=None):
+    def _get_subtotal(self, ids, field, arg, context=None):
         res = {}
-        for line in self.browse(cr, uid, ids, context=context):
+        for line in self.browse(ids, context=context):
             res[line.id] = line.eq_quantity * line.eq_sale_price
         return res
 
     
 
-    eq_product_id = fields.Many2one('product.product', 'Product', required=True),
-    eq_quantity = fields.Float('Quantity', required=True),
-    eq_min_purch_qua = fields.Float('Min. Purchase Quantity', required=True),
-    eq_ordered_qua = fields.Function(_calc_quantity, arg=None, type="float", method=True, store=False,
-                                digits_compute=dp.get_precision('Sale Price'), string="Ordered Quantity", multi="quantity", readonly=True),
-    eq_qua_left = fields.Function(_calc_quantity, arg=None, type="float", method=True, store=False,
-                                digits_compute=dp.get_precision('Sale Price'), string="Quantity left", multi="quantity", readonly=True),
-    eq_quantity_delivered = fields.Function(_calc_quantity, arg=None, type="float", method=True, store=False,
-                                digits_compute=dp.get_precision('Sale Price'), string="Quantity delivered", multi="quantity", readonly=True),
-    eq_sale_price = fields.Float('Sale Price', required=True),
-    eq_agreement_id = fields.Many2one('eq_framework_agreement', 'Framework Agreement', select=True, invisible=True, readonly=True),
-    eq_pos_fetches_ids = fields.One2many('eq_framework_agreement.pos.fetches', 'eq_pos_id', 'Fetches', readonly=True),
-    eq_tax_id = fields.Many2one('account.tax', string='Tax'),
-    eq_subtotal = fields.Function(_get_subtotal, type='float', string="Subtotal"),
+    eq_product_id = fields.Many2one('product.product', 'Product', required=True)
+    eq_quantity = fields.Float('Quantity', required=True)
+    eq_min_purch_qua = fields.Float('Min. Purchase Quantity', required=True)
+    eq_ordered_qua = fields.Float(compute=_calc_quantity, arg=None, type="float", method=True, store=False,
+                                digits_compute=dp.get_precision('Sale Price'), string="Ordered Quantity", multi="quantity", readonly=True)
+    eq_qua_left = fields.Float(compute=_calc_quantity, arg=None, type="float", method=True, store=False,
+                                digits_compute=dp.get_precision('Sale Price'), string="Quantity left", multi="quantity", readonly=True)
+    eq_quantity_delivered = fields.Float(compute=_calc_quantity, arg=None, type="float", method=True, store=False,
+                                digits_compute=dp.get_precision('Sale Price'), string="Quantity delivered", multi="quantity", readonly=True)
+    eq_sale_price = fields.Float('Sale Price', required=True)
+    eq_agreement_id = fields.Many2one('eq_framework_agreement', 'Framework Agreement', select=True, invisible=True, readonly=True)
+    eq_pos_fetches_ids = fields.One2many('eq_framework_agreement.pos.fetches', 'eq_pos_id', 'Fetches', readonly=True)
+    eq_tax_id = fields.Many2one('account.tax', string='Tax')
+    eq_subtotal = fields.Float(compute=_get_subtotal, type='float', string="Subtotal")
 
 
 eq_framework_agreement_pos()
 
-class eq_framework_agreement_pos_fetches(osv.osv):    
+class eq_framework_agreement_pos_fetches(models.Model):
     _name = "eq_framework_agreement.pos.fetches"
     _rec_name = "eq_pos_id"
     
-    def compute_delivered_qty(self, cr, uid, ids, field_name, arg, context):
+    def compute_delivered_qty(self, ids, context):
         res = {}
-        for fetch in self.browse(cr, uid, ids, context):
+        for fetch in self.browse(ids, context):
             res[fetch.id] = sum([move.product_uom_qty for move in fetch.eq_stock_moves_delivered])
         return res
     
 
-    eq_quantity = fields.Float('Quantity'),
-    eq_delivered_quantity = fields.Function(compute_delivered_qty, type="float", method=True, store=False, string="Delivered Qty"),
-    eq_pos_id = fields.Many2one('eq_framework_agreement.pos', 'Product'),
-    eq_order_ref = fields.Many2one('sale.order', 'Sale Order'),
-    eq_stock_moves_delivered = fields.One2many('stock.move', 'eq_fa_fetch_id', string="Stock moves"),
-    eq_done = fields.Boolean('Finished'),
+    eq_quantity = fields.Float('Quantity')
+    eq_delivered_quantity = fields.Float(compute=compute_delivered_qty, type="float", method=True, store=False, string="Delivered Qty")
+    eq_pos_id = fields.Many2one('eq_framework_agreement.pos', 'Product')
+    eq_order_ref = fields.Many2one('sale.order', 'Sale Order')
+    eq_stock_moves_delivered = fields.One2many('stock.move', 'eq_fa_fetch_id', string="Stock moves")
+    eq_done = fields.Boolean('Finished')
 
     
     _defaults = {
@@ -272,12 +272,12 @@ class eq_framework_agreement_pos_fetches(osv.osv):
 
 eq_framework_agreement_pos_fetches()
 
-class eq_framework_agreement_order(osv.osv):
+class eq_framework_agreement_order(models.Model):
     _inherit = "sale.order"
     
-    def action_cancel(self, cr, uid, ids, context):
+    def action_cancel(self, ids, context):
         #Create a reverse fetch if the line has a fetch. 
-        order = self.browse(cr, uid, ids, context)
+        order = self.browse(ids, context)
         for line in order.order_line:
             if line.eq_pos_fetch_id:
                 values = {
@@ -285,16 +285,16 @@ class eq_framework_agreement_order(osv.osv):
                           'eq_pos_id': line.eq_pos_fetch_id.eq_pos_id.id,
                           'eq_order_ref': line.eq_pos_fetch_id.eq_order_ref.id,
                           }
-                self.pool.get('eq_framework_agreement.pos.fetches').create(cr, uid, values)
-        return super(eq_framework_agreement_order,self).action_cancel(cr, uid, ids, context)
+                self.env['eq_framework_agreement.pos.fetches'].create(values)
+        return super(eq_framework_agreement_order,self).action_cancel(ids, context)
             
-    def action_button_confirm(self, cr, uid, ids, context=None):
+    def action_button_confirm(self, ids, context=None):
         #Creates the fetch.
         assert len(ids) == 1, 'This option should only be used for a single id at a time.'
-        self.signal_workflow(cr, uid, ids, 'order_confirm')
-        for line in self.browse(cr, uid, ids, context).order_line:
+        self.signal_workflow(ids, 'order_confirm')
+        for line in self.browse(ids, context).order_line:
             if line.eq_agreement_id:
-                pos_id = self.pool.get('eq_framework_agreement.pos').search(cr, uid, [('eq_agreement_id', '=', line.eq_agreement_id.id), ('eq_product_id', '=', line.product_id.id)])
+                pos_id = self.env['eq_framework_agreement.pos'].search([('eq_agreement_id', '=', line.eq_agreement_id.id), ('eq_product_id', '=', line.product_id.id)])
                 fetch_vals = {
                               'eq_quantity': line.product_uom_qty,
                               'eq_pos_id': pos_id[0] if pos_id else False,
@@ -304,23 +304,23 @@ class eq_framework_agreement_order(osv.osv):
                 fetch_id = self.pool.get('eq_framework_agreement.pos.fetches').create(cr, uid, fetch_vals)
                 values = {}
                 values['eq_pos_fetch_id'] = fetch_id
-                self.pool.get('sale.order.line').write(cr, uid, line.id, values)
+                self.env['sale.order.line'].write(line.id, values)
         return True
         
 eq_framework_agreement_order()
 
-class eq_framework_agreement_order_line(osv.osv):
+class eq_framework_agreement_order_line(models.Model):
     _inherit = 'sale.order.line'
      
 
-    eq_agreement_id = fields.Many2one('eq_framework_agreement', 'FA', help="Framework Agreement", readonly=True, states={'draft': [('readonly', False)]}),
-    eq_pos_fetch_id = fields.Many2one('eq_framework_agreement.pos.fetches', 'Fetch'),
+    eq_agreement_id = fields.Many2one('eq_framework_agreement', 'FA', help="Framework Agreement", readonly=True, states={'draft': [('readonly', False)]})
+    eq_pos_fetch_id = fields.Many2one('eq_framework_agreement.pos.fetches', 'Fetch')
 
     
-    def _get_uos_id(self, cr, uid, *args):
+    def _get_uos_id(self):
         try:
-            proxy = self.pool.get('ir.model.data')
-            result = proxy.get_object_reference(cr, uid, 'product', 'product_uom_unit')
+            proxy = self.env['ir.model.data']
+            result = proxy.get_object_reference('product', 'product_uom_unit')
             return result[1]
         except Exception, ex:
             return False
@@ -329,22 +329,22 @@ class eq_framework_agreement_order_line(osv.osv):
                 'product_uos': _get_uos_id,
                  }
     
-    def on_change_fa(self, cr, uid, ids, pricelist, product, qty=0,
+    def on_change_fa(self, ids, pricelist, product, qty=0,
             uom=False, qty_uos=0, uos=False, name='', partner_id=False,
             lang=False, update_tax=True, date_order=False, packaging=False, fiscal_position=False, flag=False, eq_fa=False, context=None):
         if not eq_fa:
             try:
-                res = super(eq_framework_agreement_order_line, self).product_id_change_with_wh(cr, uid, ids, pricelist, product, qty,
+                res = super(eq_framework_agreement_order_line, self).product_id_change_with_wh(ids, pricelist, product, qty,
                                                                uom, qty_uos, uos, name, partner_id,
                                                                lang, update_tax, date_order, packaging, fiscal_position, flag, context)
             except:
-                res = super(eq_framework_agreement_order_line, self).product_id_change(cr, uid, ids, pricelist, product, qty,
+                res = super(eq_framework_agreement_order_line, self).product_id_change(ids, pricelist, product, qty,
                                                                uom, qty_uos, uos, name, partner_id,
                                                                lang, update_tax, date_order, packaging, fiscal_position, flag, context)
             return res
     
     #If the product is in an Frameworkagreement, it fills the apropriate fields.
-    def product_id_change(self, cr, uid, ids, pricelist, product, qty=0,
+    def product_id_change(self, ids, pricelist, product, qty=0,
             uom=False, qty_uos=0, uos=False, name='', partner_id=False,
             lang=False, update_tax=True, date_order=False, packaging=False, fiscal_position=False, flag=False, context=None):
         
@@ -363,13 +363,13 @@ class eq_framework_agreement_order_line(osv.osv):
             if context.get('eq_calculationflag') is None:   
                 #Addition from custom Modul. Adds the Order line Data.
                 any_fa_product = False
-                line = self.browse(cr, uid ,ids)
+                line = self.browse(ids)
                 message = []
                 if partner_id:
-                    fr_agr_ids = self.pool.get('eq_framework_agreement', self).search(cr, uid, ['&', '&',('eq_customer_id.id', '=', partner_id), ('eq_start_date', '<=', datetime.now()), ('eq_end_date', '>=', datetime.now()), ])
+                    fr_agr_ids = self.env['eq_framework_agreement', self].search(['&', '&',('eq_customer_id.id', '=', partner_id), ('eq_start_date', '<=', datetime.now()), ('eq_end_date', '>=', datetime.now()), ])
                     fr_agr_ids.sort(reverse=True)
                     if fr_agr_ids:
-                        fr_agreements = self.pool.get('eq_framework_agreement').browse(cr, uid, fr_agr_ids, context)
+                        fr_agreements = self.env['eq_framework_agreement'].browse(fr_agr_ids, context)
                         for fr_agr in fr_agreements:
                             for position in fr_agr.eq_pos_ids:
                                 if product == position.eq_product_id.id and position.eq_qua_left > 0:
@@ -393,11 +393,11 @@ class eq_framework_agreement_order_line(osv.osv):
         return result #{'value': result, 'domain': domain, 'warning': warning} <-- result
     
     #shows the warning messages for the framework agreement
-    def product_id_change_with_wh(self, cr, uid, ids, pricelist, product, qty=0,
+    def product_id_change_with_wh(self, ids, pricelist, product, qty=0,
             uom=False, qty_uos=0, uos=False, name='', partner_id=False,
             lang=False, update_tax=True, date_order=False, packaging=False, fiscal_position=False, flag=False, warehouse_id=False, show_msg=False, context=None):
         
-        result = super(eq_framework_agreement_order_line, self).product_id_change_with_wh(cr, uid, ids, pricelist, product, qty,
+        result = super(eq_framework_agreement_order_line, self).product_id_change_with_wh(ids, pricelist, product, qty,
             uom, qty_uos, uos, name, partner_id,
             lang, update_tax, date_order, packaging, fiscal_position, flag, warehouse_id, context)
         
@@ -415,36 +415,36 @@ class eq_framework_agreement_order_line(osv.osv):
 
 eq_framework_agreement_order_line()
 
-class eq_stock_move(osv.osv):
+class eq_stock_move(models.Model):
     _inherit = 'stock.move'
     
 
     eq_fa_fetch_id = fields.Many2one('eq_framework_agreement.pos.fetches', 'Framework Agreement Fetch', copy=False)
 
     
-    def action_done(self, cr, uid, ids, context=None):
+    def action_done(self, ids, context=None):
         """ Runs the actual method and adds the move to the framework agreement fetch.
         """
-        res = super(eq_stock_move, self).action_done(cr, uid, ids, context=context)
+        res = super(eq_stock_move, self).action_done(ids, context=context)
         
-        for move in self.browse(cr, uid, ids, context=context):
+        for move in self.browse(ids, context=context):
             if move.procurement_id:
                 if move.procurement_id.sale_line_id:
                     if move.procurement_id.sale_line_id.eq_pos_fetch_id and move.picking_id:
                         self.write(cr, uid, move.id, {'eq_fa_fetch_id': move.procurement_id.sale_line_id.eq_pos_fetch_id.id})
                         if move.procurement_id.state == 'done':
-                            self.pool.get('eq_framework_agreement.pos.fetches').write(cr, uid, move.procurement_id.sale_line_id.eq_pos_fetch_id.id, {'eq_done': True})
+                            self.env['eq_framework_agreement.pos.fetches'].write(move.procurement_id.sale_line_id.eq_pos_fetch_id.id, {'eq_done': True})
                     
         return res
     
     
-    def action_cancel(self, cr, uid, ids, context=None):
-        res = super(eq_stock_move, self).action_cancel(cr, uid, ids, context=context)       
-        for move in self.browse(cr, uid, ids, context=context):
+    def action_cancel(self, ids, context=None):
+        res = super(eq_stock_move, self).action_cancel(ids, context=context)
+        for move in self.browse(ids, context=context):
             if move.procurement_id:
                 if move.procurement_id.sale_line_id:
                     if move.procurement_id.sale_line_id.eq_pos_fetch_id and move.picking_id:
                         self.write(cr, uid, move.id, {'eq_fa_fetch_id': move.procurement_id.sale_line_id.eq_pos_fetch_id.id})
                         if move.procurement_id.state == 'cancel':
-                            self.pool.get('eq_framework_agreement.pos.fetches').write(cr, uid, move.procurement_id.sale_line_id.eq_pos_fetch_id.id, {'eq_done': True})
+                            self.env['eq_framework_agreement.pos.fetches'].write(move.procurement_id.sale_line_id.eq_pos_fetch_id.id, {'eq_done': True})
         return res
