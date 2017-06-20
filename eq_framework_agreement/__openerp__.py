@@ -22,7 +22,7 @@
 {
     'name': 'Rahmenaufträge',
     'license': 'AGPL-3',
-    'version': '1.0.0',
+    'version': '1.0.1',
     'description': """
         Equitania Software GmbH
     """,
@@ -32,7 +32,7 @@
     'category' : 'Framework Agreement, Sale, Contracts',
     'summary': 'Orders, Contracts',
     'data': [
-        'security/ir.model.access.csv',
+        #'security/ir.model.access.csv',
         'views/eq_report_view.xml',
         'views/eq_framework_agreement_view.xml',
         'views/product_view.xml',

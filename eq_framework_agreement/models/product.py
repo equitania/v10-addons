@@ -18,48 +18,48 @@
 #
 ##############################################################################
 
-from odoo import fields
+from odoo import fields, models
 
-class eq_product_template_fa(osv.osv):
+class eq_product_template_fa(models.Model):
     _inherit = 'product.template'
     
-    def _eq_fa_count_sale(self, cr, uid, ids, name, arg, context=None):
+    def _eq_fa_count_sale(self, ids):
         res = {}
         for id in ids:
-            cr.execute("""select count(*) FROM (select eq_agreement_id from eq_framework_agreement_pos as pos where eq_product_id in (select id from product_product where product_tmpl_id = %d) and eq_quantity > coalesce((select sum(eq_quantity) from eq_framework_agreement_pos_fetches where eq_pos_id = pos.id), 0) group by eq_agreement_id) as test""" % (id))
-            open = cr.fetchone() or [0]
-            cr.execute("""select count(*) FROM (select eq_agreement_id from eq_framework_agreement_pos as pos where eq_product_id in (select id from product_product where product_tmpl_id = %d) group by eq_agreement_id) as test""" % (id))
-            all = cr.fetchone() or [0]
+            self.env.cr.execute("""select count(*) FROM (select eq_agreement_id from eq_framework_agreement_pos as pos where eq_product_id in (select id from product_product where product_tmpl_id = %d) and eq_quantity > coalesce((select sum(eq_quantity) from eq_framework_agreement_pos_fetches where eq_pos_id = pos.id), 0) group by eq_agreement_id) as test""" % (id))
+            open = self.env.cr.fetchone() or [0]
+            self.env.cr.execute("""select count(*) FROM (select eq_agreement_id from eq_framework_agreement_pos as pos where eq_product_id in (select id from product_product where product_tmpl_id = %d) group by eq_agreement_id) as test""" % (id))
+            all = self.env.cr.fetchone() or [0]
             res[id] = '%d / %d' % (open[0], all[0])
         return res
     
 
-    eq_fa_count_sale = fields.Function(_eq_fa_count_sale, type="char")
+    #eq_fa_count_sale = fields.Function(_eq_fa_count_sale, type="char")
 
     
-    def action_view_fas_sale(self, cr, uid, ids, context=None):
+    def action_view_fas_sale(self, ids, context=None):
         act_obj = self.env['ir.actions.act_window']
         mod_obj = self.env['ir.model.data']
         product_ids = []
-        for template in self.browse(cr, uid, ids, context=context):
+        for template in self.browse(ids, context=context):
             product_ids += [x.id for x in template.product_variant_ids]
-        result = mod_obj.xmlid_to_res_id(cr, uid, 'eq_framework_agreement.action_eq_framework_agreement_tree',raise_if_not_found=True)
-        result = act_obj.read(cr, uid, [result], context=context)[0]
+        result = mod_obj.xmlid_to_res_id('eq_framework_agreement.action_eq_framework_agreement_tree',raise_if_not_found=True)
+        result = act_obj.read([result], context=context)[0]
         result['domain'] = "[('eq_product_id','in',[" + ','.join(map(str, product_ids)) + "])]"
         return result
     
-class eq_product_product_fa(osv.osv):
+class eq_product_product_fa(models.Model):
     _inherit = 'product.product'
     
-    def _eq_fa_count_sale(self, cr, uid, ids, name, arg, context=None):
+    def _eq_fa_count_sale(self, ids):
         res = {}
         for id in ids:
-            cr.execute("""select count(*) FROM (select eq_agreement_id from eq_framework_agreement_pos as pos where eq_product_id = %d and eq_quantity > coalesce((select sum(eq_quantity) from eq_framework_agreement_pos_fetches where eq_pos_id = pos.id), 0) group by eq_agreement_id) as test""" % (id))
-            open = cr.fetchone() or [0]
-            cr.execute("""select count(*) FROM (select eq_agreement_id from eq_framework_agreement_pos as pos where eq_product_id = %d group by eq_agreement_id) as test""" % (id))
-            all = cr.fetchone() or [0]
+            self.env.cr.execute("""select count(*) FROM (select eq_agreement_id from eq_framework_agreement_pos as pos where eq_product_id = %d and eq_quantity > coalesce((select sum(eq_quantity) from eq_framework_agreement_pos_fetches where eq_pos_id = pos.id), 0) group by eq_agreement_id) as test""" % (id))
+            open = self.env.cr.fetchone() or [0]
+            self.env.cr.execute("""select count(*) FROM (select eq_agreement_id from eq_framework_agreement_pos as pos where eq_product_id = %d group by eq_agreement_id) as test""" % (id))
+            all = self.env.cr.fetchone() or [0]
             res[id] = '%d / %d' % (open[0], all[0])
         return res
     
 
-    eq_fa_count_sale = fields.Function(_eq_fa_count_sale, type="char")
+    eq_fa_count_sale = fields.Char(compute=_eq_fa_count_sale, type="char")
