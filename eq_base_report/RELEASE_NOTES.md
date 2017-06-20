@@ -1,5 +1,10 @@
 ## Modul eq_base_report
 
+#### 20.06.2017
+#### Version 1.0.8
+##### IMP
+- Übersetzungen im Footer nach neuer Logik (für Seite: und CEO:)
+
 #### 19.06.2017
 #### Version 1.0.7
 ##### CHG

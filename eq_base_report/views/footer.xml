@@ -4,13 +4,8 @@
         <div class="footer">
 	        <table class="header" style="border-bottom: 1px solid #999999; width: 100%;">
 	            <tr>
-	                <td style="text-align:right;font-size:8pt; font-weight:bold;">Page:
-
-
-	                    <span class="page"/> /
-
-
-	                    <span class="topage"/>
+	                <td style="text-align:right;font-size:8pt; font-weight:bold;">
+						<span>Page:</span> <span class="page"/><span> / </span><span class="topage"/>
 	                </td>
 	            </tr>
 	        </table>
@@ -39,8 +34,9 @@
 	                    <span t-field="company.company_registry"/>
 	                </td>
 	                <td style="">
-                        CEO:<br/>
-                        <span t-esc="ceo"/>
+                        <span>CEO:</span> <br/>
+						<span t-field="company.ps_ceo" />
+                        <!--<span t-esc="ceo"/>-->
 	                    <!--<span t-field="company.eq_custom_1"/><br/>
 	                    <span t-field="company.eq_custom_2"/><br/>
 	                    <span t-field="company.eq_custom_3"/><br/>
@@ -50,10 +46,20 @@
 	                <!--<td t-foreach="company.bank_ids" t-as="bank">-->
                     <td>
 	                    <!--<div t-if="bank.footer">-->
-	                        <span>Bank:</span> <span t-esc="bank_name"/><br/>
-		                    <!--<span>BIC:</span> --><span t-esc="bank_bic"/><br/>
-	                        <!--<span>IBAN:</span> --><span t-esc="bank_iban"/>
+						<!--<span>Bank:</span> <span t-field="bank_acc.name"/><br/>-->
+		                    <!--<span>BIC:</span> <span t-esc="bank_acc.bic"/><br/>
+	                        <span>IBAN:</span> <span t-esc="bank_acc.acc_number"/>-->
+	                        <!--<span>Bank:</span> <span t-esc="bank_name"/><br/>
+		                    <span t-esc="bank_bic"/><br/>
+	                        <span t-esc="bank_iban"/>-->
 	                	<!--</div>-->
+
+            <t t-foreach="company.bank_journal_ids" t-as="journal">
+                <t t-set="bank_acc" t-value="journal.bank_account_id"/>
+                <t t-if="journal.display_on_footer">
+                    Bank: <span t-esc="bank_acc.bank_name"/><br/><t t-if="bank_acc.bank_bic">BIC: <span t-esc="bank_acc.bank_bic"/><br/></t>IBAN: <span t-esc="bank_acc.acc_number"/>
+                </t>
+            </t>
 	                </td>
 	            </tr>
 	        </table>
