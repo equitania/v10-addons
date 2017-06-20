@@ -20,7 +20,4 @@
 ##############################################################################
 
 
-import product
-import eq_delivery_condition
-import res_partner
-import sale
+import models
