@@ -22,7 +22,7 @@
 {
     'name': "Equitania Sale",
     'license': 'AGPL-3',
-    'version': '1.0.5',
+    'version': '1.0.7',
     'category': 'product',
     'description': """Extensions for product""",
     'author': 'Equitania Software GmbH',
@@ -30,6 +30,7 @@
     'website': 'www.myodoo.de',
     "depends" : ['base', 'base_setup', 'sale', 'product', 'sales_team', 'sale_stock', 'eq_res_partner', 'eq_base_report' ],
     'data': [
+            'security/equitania_security.xml',
             'security/ir.model.access.csv',
             'views/report_sale_order.xml',
             'views/reports.xml',

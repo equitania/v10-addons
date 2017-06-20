@@ -88,3 +88,5 @@ class eq_product_product(models.Model):
 
 
     eq_sale_count = fields.Char(compute='_eq_sale_count', string="Sales")
+
+    eq_rrp = fields.Float(string='RRP')

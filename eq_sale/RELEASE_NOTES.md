@@ -2,6 +2,12 @@
 
 
 #### 20.06.2017
+#### Version 1.0.6
+##### CHG
+- VEP-38: Erweiterungen für Verkaufseinstellungen
+
+
+#### 20.06.2017
 #### Version 1.0.5
 ##### CHG
 - Anpassungen für Ordnerstruktur

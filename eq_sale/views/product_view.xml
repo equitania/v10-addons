@@ -45,5 +45,55 @@
 			</field>
 		</record>
 
+
+		<!-- min. order quantity for product.product -->
+		<record id="eq_sale_product_product_extension_form_view" model="ir.ui.view">
+			<field name="name">eq_sale.product.product.extension.form.view</field>
+			<field name="model">product.product</field>
+			<field name="inherit_id" ref="product.product_normal_form_view" />
+			<field name="arch" type="xml">
+				<!--<group name="sale_condition" position="inside">-->
+					<!--<label for="eq_sale_min_qty" class="eq_db_variant" />-->
+					<!--<div>-->
+						<!--<field name="eq_sale_min_qty" />-->
+					<!--</div>-->
+				<!--</group>-->
+				<field name="lst_price" position="after">
+					<field name="eq_rrp" groups="eq_sale.group_product_rrp"
+						class="eq_db_variant" />
+				</field>
+				<!---->
+				<!--<field name="ean13" position="attributes">-->
+					<!--<attribute name="class">eq_db_variant</attribute>-->
+				<!--</field>-->
+				<!--<field name="default_code" position="attributes">-->
+					<!--<attribute name="class">eq_db_variant</attribute>-->
+				<!--</field>-->
+				<!--<field name="active" position="attributes">-->
+					<!--<attribute name="class">eq_db_variant</attribute>-->
+				<!--</field>-->
+				<!--<field name="default_code" position="attributes">-->
+					<!--<attribute name="class">eq_db_variant</attribute>-->
+				<!--</field>-->
+				<!--<field name="eq_sale_min_qty" position="attributes">-->
+					<!--<attribute name="class">eq_db_variant</attribute>-->
+				<!--</field>-->
+				<!--<label for="qty_available" position="attributes">-->
+					<!--<attribute name="class">eq_db_variant</attribute>-->
+				<!--</label>-->
+				<!--<field name="virtual_available" position="attributes">-->
+					<!--<attribute name="class">eq_db_variant</attribute>-->
+				<!--</field>-->
+				<!--<label for="incoming_qty" position="attributes">-->
+					<!--<attribute name="class">eq_db_variant</attribute>-->
+				<!--</label>-->
+
+
+				<!--<group name="store" position="replace">-->
+				<!--</group>-->
+
+			</field>
+		</record>
+
     </data>
 </openerp>

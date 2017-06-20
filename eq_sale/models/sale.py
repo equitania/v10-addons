@@ -171,3 +171,30 @@ class eq_partner_sale_order_extension(models.Model):
     eq_street_house_no = fields.Char(compute='_compute_street_house_no', string=" ", store=False)
     eq_zip_city = fields.Char(compute='_compute_zip_city', string=" ", store=False)
     eq_country = fields.Char(compute='_compute_country', string=" ", store=False)
+
+
+class eq_sale_configuration_address(models.TransientModel):
+    _inherit = 'sale.config.settings'
+    # _inherit = _name
+
+    def set_default_values(self):
+        ir_values_obj = self.env['ir.values']
+
+        ir_values_obj.set_default('sale.order', 'default_show_address', self.default_show_address or False)
+        ir_values_obj.set_default('sale.order', 'default_search_only_company', self.default_search_only_company or False)
+
+    def get_default_values(self, fields):
+        ir_values_obj = self.env['ir.values']
+        notification = ir_values_obj.get_default('sale.order', 'default_show_address')
+        only_company = ir_values_obj.get_default('sale.order', 'default_search_only_company')
+        return {
+            'default_show_address': notification,
+            'default_search_only_company': only_company,
+        }
+
+    default_show_address = fields.Boolean(
+            string='Show street and city in the partner search of the Sale and Purchase Order [equitania]',
+            help="This adds the street and the city to the results of the partner search of the Sale and Purchase Order.")
+    default_search_only_company = fields.Boolean(string='Only Search for Companies [equitania]',
+                                                      help="Only Companies will be shown in the Customer search of the Sale and Purchase Order.")
+    group_product_rrp = fields.Boolean(string='Show RRP for products [equitania]', implied_group='eq_sale.group_product_rrp')
