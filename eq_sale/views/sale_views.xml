@@ -56,5 +56,38 @@
 	    </record>
 
 
+		<record id="eq_view_sale_config_settings_show_address" model="ir.ui.view">
+            <field name="name">eq_sale.config.address.product.settings</field>
+            <field name="model">sale.config.settings</field>
+            <field name="inherit_id" ref="sale.view_sales_config"/>
+            <field name="arch" type="xml">
+                <data>
+                	<xpath expr="//group[@name='customers']" position="inside">
+						<label string="Customer search settings [equitania]"/>
+						<div>
+							<div>
+								<field name="default_show_address" class="oe_inline"/>
+								<label for="default_show_address" string="Show street and city in the partner search of the saleorder [equitania]"/>
+							</div>
+
+							<div>
+								<field name="default_search_only_company" class="oe_inline"/>
+								<label for="default_search_only_company" string="Only search for Companies in the Sale Order/Quotation [equitania]"/>
+							</div>
+						</div>
+					</xpath>
+
+					<xpath expr="//group[@name='quotations_sales']" position="inside">
+						<label string="Product properties"/>
+	                    <div>
+	                        <field name="group_product_rrp"/>
+							<label for="group_product_rrp"/>
+	                    </div>
+					</xpath>
+                </data>
+            </field>
+        </record>
+
+
 	</data>
 </openerp>

@@ -1,0 +1,41 @@
+<openerp>
+    <data>
+        	<!-- Smart Button Angebote unter Chancen -->
+	    <record id="eq_open_purchases_crm_action" model="ir.actions.act_window">
+			<field name="name">Quotations</field>
+			<field name="res_model">sale.order</field>
+			<field name="domain">[('state', 'in', ('draft', 'sent', 'cancel'))]</field>
+			<field name="context">{'search_default_partner_id': id_active}</field>
+			<!-- <field name="view_id" ref="document.view_document_file_tree" /> -->
+		</record>
+
+        <record model="ir.ui.view" id="eq_sale_crm_view_buttons">
+			<field name="name">eq_sale.crm.view.buttons</field>
+			<field name="model">crm.lead</field>
+			<field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
+			<field name="priority" eval="20" />
+			<field name="arch" type="xml">
+
+                <xpath expr="//div[@name='button_box']/button[@name='action_schedule_meeting']" position="after">
+
+
+
+					<button type="action" class="oe_stat_button" icon="fa-strikethrough"
+						name="%(eq_sale_crm.eq_open_purchases_crm_action)d" context = "{'id_active' : partner_id}">
+						<!-- context="{'search_default_partner_id': active_id,'default_partner_id':
+							active_id}"> -->
+						<!--<div>-->
+							<!--<strong>-->
+								<field name="total_quot_crm"  widget="statinfo"/>
+
+							<!--</strong>-->
+							<!--<br />-->
+							<!--Quotations-->
+						<!--</div>-->
+					</button>
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>

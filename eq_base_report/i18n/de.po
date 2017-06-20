@@ -32,6 +32,10 @@ msgstr "Tel:"
 
 #. module: eq_base_report
 #: model:ir.ui.view,arch_db:eq_base_report.eq_external_layout_footer
-msgid "CEO:"
-msgstr "Geschäftsführer:"
+msgid "<span>CEO:</span> <br/>"
+msgstr "<span>Geschäftsführer:</span> <br/>"
 
+#. module: eq_base_report
+#: model:ir.ui.view,arch_db:eq_base_report.eq_external_layout_footer
+msgid "<span>Page:</span> <span class=\"page\"/><span> / </span><span class=\"topage\"/>"
+msgstr "<span>Seite:</span> <span class=\"page\"/><span> / </span><span class=\"topage\"/>"

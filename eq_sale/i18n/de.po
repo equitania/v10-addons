@@ -270,3 +270,97 @@ msgstr "Verkaufsauftrag"
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "Shipping address:"
 msgstr "Lieferadresse:"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_view_sale_config_settings_show_address
+msgid "Customer search settings [equitania]"
+msgstr "Sucheinstellungen [equitania]"
+
+
+#. module: eq_sale
+#: model:ir.model.fields,help:eq_sale.field_sale_config_settings_default_search_only_company
+msgid "Only Companies will be shown in the Customer search of the Sale and Purchase Order."
+msgstr "Nur Unternehmen werden in der Partnersuche der Einkaufs- und Verkaufsaufträgen angezeigt."
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_default_search_only_company
+msgid "Only Search for Companies [equitania]"
+msgstr "Suche auf Unternehmen beschränken [equitania]"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_view_sale_config_settings_show_address
+msgid "Only search for Companies in the Sale Order/Quotation [equitania]"
+msgstr "Suche nur nach Firmen in den Angeboten und Verkaufsaufträgen [equitania]"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_view_sale_config_settings_show_address
+msgid "Product properties"
+msgstr "Produkteigenschaften"
+
+#. module: eq_sale
+#: model:res.groups,name:eq_sale.group_product_rrp
+msgid "Show RRP for products"
+msgstr "UVP für Produkte anzeigen"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_group_product_rrp
+msgid "Show RRP for products [equitania]"
+msgstr "UVP für Produkte anzeigen [equitania]"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_default_show_address
+msgid "Show street and city in the partner search of the Sale and Purchase Order [equitania]"
+msgstr "Zeige die Straße und den Ort in den Verkaufs- und Einkaufsaufträgen an [equitania]"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_view_sale_config_settings_show_address
+msgid "Show street and city in the partner search of the saleorder [equitania]"
+msgstr "Zeige Straße und Ort in der Kundensuche für Verkaufsaufträge [equitania]"
+
+#. module: eq_sale
+#: model:ir.model.fields,help:eq_sale.field_sale_config_settings_default_show_address
+msgid "This adds the street and the city to the results of the partner search of the Sale and Purchase Order."
+msgstr "Anzeige von Straße und Ort im Suchergebnis im Ein- und Verkauf."
+
+
+#. module: eq_sale
+#: code:addons/eq_sale/models/res_partner.py:156
+#, python-format
+msgid "invoice"
+msgstr "Rechnung"
+
+#. module: eq_sale
+#: code:addons/eq_sale/models/res_partner.py:154
+#, python-format
+msgid "contact"
+msgstr "Kontakt"
+
+#. module: eq_sale
+#: code:addons/eq_sale/models/res_partner.py:160
+#, python-format
+msgid "default"
+msgstr "Standard"
+
+#. module: eq_sale
+#: code:addons/eq_sale/models/res_partner.py:158
+#, python-format
+msgid "delivery"
+msgstr "Lieferung"
+
+#. module: eq_sale
+#: code:addons/eq_sale/models/res_partner.py:162
+#, python-format
+msgid "other"
+msgstr "Andere"
+
+#. module: eq_sale
+#: code:addons/eq_sale/models/res_partner.py:147
+#: code:addons/eq_sale/models/res_partner.py:150
+#, python-format
+msgid "Company"
+msgstr "Firma"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_product_product_eq_rrp
+msgid "RRP"
+msgstr "UVP"

@@ -22,7 +22,7 @@
 {
     'name': "Equitania Produkt",
     'license': 'AGPL-3',
-    'version': '1.0.1',
+    'version': '1.0.2',
     'category': 'product',
     'description': """Extensions for product""",
     'author': 'Equitania Software GmbH',
@@ -31,7 +31,7 @@
     "depends" : ['base', 'base_setup', 'product' ],
     'data': [
             'security/ir.model.access.csv',
-            'product_view.xml'
+            'views/product_view.xml'
              ],
     "active": False,
     "installable": True
