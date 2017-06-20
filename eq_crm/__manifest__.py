@@ -22,7 +22,7 @@
 {
     'name': "Equitania CRM",
     'license': 'AGPL-3',
-    'version': '1.0.0',
+    'version': '1.0.1',
     'category': 'crm',
     'description': """Extensions for crm leads""",
     'author': 'Equitania Software GmbH',
@@ -30,7 +30,7 @@
     'website': 'www.myodoo.de',
     "depends" : ['base', 'base_setup', 'crm'],
     'data': [
-            'crm_view.xml'
+            'views/crm_view.xml'
              ],
     "active": False,
     "installable": True
