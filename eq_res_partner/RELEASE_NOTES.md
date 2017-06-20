@@ -1,6 +1,12 @@
 ## Modul eq_res_partner
 
 
+#### 20.06.2017
+#### Version 1.0.5
+##### CHG
+- Anpassungen für Ordnerstruktur
+
+
 #### 08.06.2017
 #### Version 1.0.4
 ##### CHG
