@@ -19,6 +19,9 @@
 #
 ##############################################################################
 
+from openerp import models, fields, api, _
 
-import res_company
-import res_country
+class res_country(models.Model):
+    _inherit = 'res.country'
+
+    eq_active = fields.Boolean(string = "Active", default = True)

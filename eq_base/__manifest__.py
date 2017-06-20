@@ -22,7 +22,7 @@
 {
     'name': 'Equitania Base',
     'license': 'AGPL-3',
-    'version': '1.0.0',
+    'version': '1.0.1',
     'description': """
         Extensions for module eq_base
     """,
@@ -34,6 +34,7 @@
 
     'data': [
          "views/res_company_view.xml",
+         "views/res_country_view.xml",
 
     ],
     'demo': [],
