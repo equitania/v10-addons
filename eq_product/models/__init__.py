@@ -19,20 +19,5 @@
 #
 ##############################################################################
 
-{
-    'name': "Equitania Produkt",
-    'license': 'AGPL-3',
-    'version': '1.0.2',
-    'category': 'product',
-    'description': """Extensions for product""",
-    'author': 'Equitania Software GmbH',
-    'summary': 'Product Extension',
-    'website': 'www.myodoo.de',
-    "depends" : ['base', 'base_setup', 'product' ],
-    'data': [
-            'security/ir.model.access.csv',
-            'views/product_view.xml'
-             ],
-    "active": False,
-    "installable": True
-}
+
+import product
