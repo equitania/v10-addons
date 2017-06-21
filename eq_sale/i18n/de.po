@@ -154,6 +154,11 @@ msgstr "<span>Auftragsdatum</span>"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<span>Quotation date</span>"
+msgstr "<span>Angebotssdatum</span>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "<span>Order no.</span>"
 msgstr "<span>Auftragsnummer</span>"
 
@@ -176,6 +181,16 @@ msgstr "<span>Angebotsnummer</span>"
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "<span>Your reference no.</span>"
 msgstr "<span>Ihre Referenz</span>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<span>Our reference no.</span>"
+msgstr "<span>Unsere Referenz</span>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<span>Offer valid until</span>"
+msgstr "<span>Angebot gültig bis</span>"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
@@ -245,6 +260,11 @@ msgstr "<strong>Einheit</strong>"
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "<strong>VAT</strong>"
 msgstr "<strong>USt.</strong>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "Term of payment:"
+msgstr "Zahlungsbedingungen:"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
