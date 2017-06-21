@@ -29,8 +29,14 @@ class eq_pricelist_item_search(models.Model):
 
     eq_items_id = fields.Many2one('product.pricelist.item', 'Item')
 
-    # Opens a pup-up window with the selected pricelist version
+
     def open(self, context):
+        """
+        Aufgerufen aus Dialog für Positionssuche
+        Öffnet die Detailansicht einer Preislistenposition
+        :param context:
+        :return:
+        """
         mod_obj = self.env['ir.model.data']
         # item = self.pool.get('eq_pricelist_item_search').browse(cr, uid, ids, context)
         self._cr.execute("DELETE FROM eq_pricelist_item_search",)
@@ -53,7 +59,7 @@ class eq_pricelist_item_search(models.Model):
             'res_id': res_id or False,
         }
         
-eq_pricelist_item_search()
+
         
 class eq_product_pricelist_item_search_item(models.Model):
     _inherit = 'product.pricelist.item'

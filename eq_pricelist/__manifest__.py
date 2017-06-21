@@ -22,7 +22,7 @@
 {
     'name': "Equitania Pricelist",
     'license': 'AGPL-3',
-    'version': '1.0.0',
+    'version': '1.0.1',
     'category': 'pricelist',
     'description': """Extensions for pricelists""",
     'author': 'Equitania Software GmbH',
@@ -31,8 +31,8 @@
     "depends" : ['base', 'base_setup', 'product', 'sale' ],
     'data': [
                 'security/ir.model.access.csv',
-                'eq_pricelist_view.xml',
-                'eq_pricelist_item_search_view.xml',
+                'views/eq_pricelist_view.xml',
+                'views/eq_pricelist_item_search_view.xml',
              ],
     "active": False,
     "installable": True
