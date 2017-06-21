@@ -1,5 +1,9 @@
 ## Modul eq_res_partner
 
+#### 21.06.2017
+#### Version 1.0.7
+##### CHG
+- Anpassungen für Anzeige der Kunden- und Lieferantennr in Kanbanview
 
 
 #### 20.06.2017

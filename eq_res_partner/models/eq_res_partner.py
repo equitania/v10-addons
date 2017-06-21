@@ -54,7 +54,10 @@ class eq_res_partner(models.Model):
 
     @api.multi
     def _show_deb_cred_number(self):
-        result = {}
+        """
+        Setzen des Feldes für die Anzeige der Kunden- und Lieferantennr in der Kanbanview
+        :return:
+        """
         for partner in self:
             deb_cred = False
             if partner.customer_number != 'False' and partner.customer_number and partner.supplier_number != 'False' and partner.supplier_number:
@@ -63,6 +66,4 @@ class eq_res_partner(models.Model):
                 deb_cred = partner.customer_number
             elif partner.supplier_number != 'False' and partner.supplier_number:
                 deb_cred = partner.supplier_number
-            result[partner.id] = deb_cred
             partner.eq_deb_cred_number = deb_cred
-        return result
