@@ -13,6 +13,9 @@
                                 <h t-field="o.company_id.partner_id.name"/>
                                 <span>-</span>
                                 <h t-field="o.company_id.partner_id.street"/>
+                                <h t-if="o.company_id.partner_id.eq_house_no">
+                                    <h t-field="o.company_id.partner_id.eq_house_no" />
+                                </h>
                                 <span>-</span>
                                 <h t-field="o.company_id.partner_id.zip"/>
                                 <span>
@@ -22,14 +25,31 @@
                             <t t-if="o.partner_id.parent_id">
                                 <div t-field="o.partner_id.parent_id.name" style="clear:left;"/>
                             </t>
-                            <div t-esc="print_name" style="clear:left;"/>
-                            <div t-field="o.partner_id.street"/>
+                            <div  style="clear:left;">
+                                <h t-if="o.partner_id.title.name" t-field="o.partner_id.title.name"  />
+                                <h t-if="o.partner_id.eq_firstname" t-field="o.partner_id.eq_firstname" />
+                                <h t-esc="print_name" />
+                            </div>
+                            <!--<div t-esc="print_name" style="clear:left;"/>-->
+                            <div t-if="o.partner_id.eq_name2" style="clear:left;">
+                                <div t-field="o.partner_id.eq_name2"/>
+                            </div>
+                            <div style="clear:left;">
+                                <span t-field="o.partner_id.street"/>
+                                <h t-if="o.partner_id.eq_house_no">
+                                    <span t-field="o.partner_id.eq_house_no" />
+                                </h>
+                            </div>
                             <div t-if="o.partner_id.street2">
                                 <div t-field="o.partner_id.street2"/>
                             </div>
                             <h>
                                 <span t-field="o.partner_id.zip"/>
                                 <span t-field="o.partner_id.city"/>
+								<h t-if="o.partner_id.eq_citypart">
+									-
+									<h t-field="o.partner_id.eq_citypart" />
+								</h>
                             </h>
                             <div t-field="o.partner_id.country_id.name"/>
                         </div>
@@ -46,7 +66,7 @@
                                             <span t-esc="customer_number"/>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr t-if="o.client_order_ref">
                                         <td>
                                             <span>Your reference no.</span>
                                         </td>
@@ -54,7 +74,15 @@
                                             <span t-field="o.client_order_ref"/>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr t-if="o.origin">
+                                        <td>
+                                            <span>Our reference no.</span>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="o.origin" />
+                                        </td>
+                                    </tr>
+                                    <tr t-if="o.name">
                                         <td t-if="o.state not in ['draft','sent']">
                                             <span>Order no.</span>
                                         </td>
@@ -65,26 +93,23 @@
                                             <span t-field="o.name"/>
                                         </td>
                                     </tr>
-                                    <tr t-if="o.origin">
-                                        <td>
+                                    <tr t-if="order_date">
+                                        <td t-if="o.state not in ['draft','sent']">
+                                            <span>Order date</span>
                                         </td>
-                                        <td class="text-right">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
+                                        <td t-if="o.state in ['draft','sent']">
                                             <span>Quotation date</span>
                                         </td>
                                         <td class="text-right">
                                             <span t-esc="order_date"/>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td t-if="o.date_order">
-                                            <span>Order date</span>
+                                    <tr t-if="o.validity_date and o.state in ['draft','sent']">
+                                        <td id="sale_header_placeholder">
+                                            <span>Offer valid until</span>
                                         </td>
-                                        <td t-if="o.date_order" class="text-right">
-                                            <span t-esc="order_date"/>
+                                        <td class="text-right">
+                                            <span t-field="o.validity_date"/>
                                         </td>
                                     </tr>
                                     <tr>
@@ -97,15 +122,15 @@
                             </h>
                             <table style="width:100%; font-size: 0.8em;" t-if="o.user_id">
                                 <tbody>
-                                    <tr>
+                                    <tr t-if="o.user_id.name">
                                         <td>
                                             <span>Contact person</span>
                                         </td>
                                         <td class="text-right">
-                                            <span t-field="o.user_id.name"/>
+                                            <span t-field="o.user_id.eq_firstname"/> <span t-field="o.user_id.name"/>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr t-if="o.user_id.phone">
                                         <td>
                                             <span>Phone</span>
                                         </td>
@@ -113,7 +138,7 @@
                                             <span t-field="o.user_id.phone"/>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr t-if="o.user_id.fax">
                                         <td>
                                             <span>Fax</span>
                                         </td>
@@ -121,7 +146,7 @@
                                             <span t-field="o.user_id.fax"/>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr t-if="o.user_id.email">
                                         <td>
                                             <span>E-Mail</span>
                                         </td>
@@ -198,6 +223,9 @@
                         <span t-if="o.state not in ['draft','sent']">Sale order</span>
                         <span t-if="o.state in ['draft','sent']">Quotation</span>
                         <span t-field="o.name"/>
+                    </div>
+                    <div t-if="o.eq_header" class="eq_headertext">
+                        <p t-field="o.eq_header"/>
                     </div>
                     <div class="col-xs-12"
                          style="margin-top:1em; margin-bottom:2em; font-size:0.8em; margin-left:0px; padding-left:0px;">
@@ -296,17 +324,28 @@
                             <table class="col-xs-3"
                                    style="width:auto!important; max-width:50%; font-size: 0.8em;">
                                 <tbody>
+                                    <!--<tr t-if="o.note">
+                                        <td style="padding-right:0.5cm; vertical-align:top;" colspan="2">
+                                            <p t-field="o.note"/>
+                                        </td>
+                                    </tr>-->
+                                    <tr t-if="o.eq_footer">
+                                        <td style="padding-right:0.5cm; vertical-align:top; " colspan="2" class="eq_footertext">
+                                            <p t-field="o.eq_footer" style="margin-bottom:3em;"/>
+                                        </td>
+                                    </tr>
                                     <tr t-if="o.payment_term_id">
                                         <td style="padding-right:0.5cm;">
-                                            <!--Term of payment: -->
+                                            Term of payment:
                                         </td>
                                         <td>
                                             <span t-field="o.payment_term_id.note"/>
 
-                <div name="payment_term" t-if="doc.payment_term_id" class="col-xs-3" style="border:2px solid red;">
+                <!-- Diesen Container löschen, nach Oktober 2017
+                <div name="payment_term" t-if="o.payment_term_id" class="col-xs-3" style="border:2px solid red;">
                     <strong>Payment Terms:</strong>
-                    <p t-field="doc.payment_term_id"/>
-                </div>
+                    <p t-field="o.payment_term_id"/>
+                </div>-->
                                         </td>
                                     </tr>
                                     <tr t-if="o.incoterm">
@@ -315,13 +354,6 @@
                                         </td>
                                         <td>
                                             <span t-field="o.incoterm.name"/>
-                                        </td>
-                                    </tr>
-                                    <tr t-if="o.note">
-                                        <td style="padding-right:0.5cm; vertical-align:top;">
-                                        </td>
-                                        <td styles=" vertical-align:top;">
-                                            <p t-field="o.note"/>
                                         </td>
                                     </tr>
                                     <tr

@@ -1,6 +1,19 @@
 ## Modul eq_sale
 
 
+
+#### 21.06.2017
+#### Version 1.0.8
+##### IMP
+- Mehrere Verbesserungen am Report:
+Neu: Neue Felder für Kopf- und Fußtext mit HTML Editor werden verwendet
+Neu: "Unser Referenzbeleg" im Reportkopf
+Neu: "Angebot gültig bis" Feld im Report hinzugefügt
+Neu: Die Kundenanschrift enthält nun auch Anrede, Vorname, Hausnr, Stadtteil und eq_name2
+Verbessert: Zahlungsbedingungen haben nun ein eigenes Label
+Verbessert: Das Auftragsdatum heißt nun ggf. Angebotsdatum, solange es ein Angebot ist.
+
+
 #### 20.06.2017
 #### Version 1.0.7
 ##### CHG
