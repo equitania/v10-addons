@@ -3,6 +3,12 @@
 
 
 #### 21.06.2017
+#### Version 1.0.9
+##### CHG
+- VEP-78: Erweiterungen für sale_order_line
+
+
+#### 21.06.2017
 #### Version 1.0.8
 ##### IMP
 - Mehrere Verbesserungen am Report:

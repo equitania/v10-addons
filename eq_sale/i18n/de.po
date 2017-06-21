@@ -384,3 +384,74 @@ msgstr "Firma"
 #: model:ir.model.fields,field_description:eq_sale.field_product_product_eq_rrp
 msgid "RRP"
 msgstr "UVP"
+
+
+#. module: eq_sale
+#: selection:res.partner,eq_delivery_date_type_sale:0
+msgid "Calendar week"
+msgstr "Kalenderwoche"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_res_partner_eq_delivery_date_type_sale
+#: model:ir.model.fields,field_description:eq_sale.field_res_users_eq_delivery_date_type_sale
+msgid "Delivery Date Sale"
+msgstr "Lieferdatum Verkauf"
+
+#. module: eq_sale
+#: model:ir.model.fields,help:eq_sale.field_res_partner_eq_delivery_date_type_sale
+#: model:ir.model.fields,help:eq_sale.field_res_users_eq_delivery_date_type_sale
+msgid "If nothing is selected, the default from the settings will be used."
+msgstr "Wenn keine Auswahl getroffen ist, wird der Standardwert aus den Einstellungen genommen. Das Lieferdatum muss in den Einstellungen aktiviert sein."
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_default_use_calendar_week
+msgid "Show Calendar Week for Delivery Date [equitania]"
+msgstr "Liefertermin als Kalenderwoche anzeigen [equitania]"
+
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_sale_order_show_delivery_date
+msgid "Show Delivery Date"
+msgstr "Liefertermin Anzeige"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_default_show_delivery_date
+msgid "Show the Delivery Date on the Sale Order [equitania]"
+msgstr "Liefertermin auf Angebot und Auftragsbestätigung anzeigen [equitania]"
+
+
+#. module: eq_sale
+#: model:ir.model.fields,help:eq_sale.field_sale_config_settings_default_use_calendar_week
+msgid "The delivery date will be shown as a calendar week"
+msgstr "Der Liefertermin wird als Kalenderwoche angezeigt."
+
+#. module: eq_sale
+#: model:ir.model.fields,help:eq_sale.field_sale_config_settings_default_show_delivery_date
+msgid "The delivery date will be shown in the Sale Order"
+msgstr "Der Liefertermin wird im Angebot/Verkaufsauftrag angezeigt."
+
+#. module: eq_sale
+#: model:ir.model.fields,help:eq_sale.field_sale_config_settings_default_eq_use_internal_description
+msgid "The internal description will be used for sale orders not the sale description"
+msgstr "Die interne Beschreibung wird in den Auftragspositionen anstatt der Verkaufsbeschreibung genutzt."
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_sale_order_use_calendar_week
+msgid "Use Calendar Week for Delivery Date[equitania]"
+msgstr "Use Calendar Week for Delivery Date[equitania]"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_sale_order_line_eq_use_internal_description
+msgid "Use internal description for sale orders"
+msgstr "Bei Angebote/Verkaufsaufträge wird die interne Beschreibung an Stelle der Verkaufsbeschreibung verwenden"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_default_eq_use_internal_description
+msgid "Use internal description for sale orders [equitania]"
+msgstr "Interne Beschreibung für die Angebote/Verkaufsaufträge verwenden [equitania]"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_sale_order_line_eq_delivery_date
+#: model:ir.ui.view,arch_db:eq_sale.eq_view_sale_config_settings_show_address
+msgid "Delivery Date"
+msgstr "Lieferdatum"

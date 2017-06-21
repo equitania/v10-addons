@@ -50,6 +50,9 @@ class res_partner(models.Model):
     eq_sale_quotation_count = fields.Integer(compute="_sale_quotation_count", string='# of Quotations')
     sale_order_count = fields.Integer(compute="_sale_quotation_count", string='# of Orders')
     eq_delivery_condition_id = fields.Many2one('eq.delivery.conditions', 'Delivery Condition')
+    eq_delivery_date_type_sale = fields.Selection([('cw', 'Calendar week'), ('date', 'Date')],
+                                                  string="Delivery Date Sale",
+                                                  help="If nothing is selected, the default from the settings will be used.")
 
     # @api.multi
     def name_get(self):

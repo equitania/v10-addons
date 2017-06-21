@@ -52,6 +52,16 @@
             	<xpath expr="//field[@name='partner_shipping_id']" position="after">
             		<field name="eq_delivery_address" groups="sale.group_delivery_invoice_address"/>
             	</xpath>
+
+
+				<xpath expr="//field[@name='order_line']/form/group/group/field[@name='tax_id']" position="after">
+            		<field name="eq_delivery_date" />
+            	</xpath>
+
+				<xpath expr="//field[@name='order_line']/tree" position="attributes">
+            		<attribute name="editable"></attribute>
+            	</xpath>
+
             </field>
 	    </record>
 
@@ -80,10 +90,40 @@
 					<xpath expr="//group[@name='quotations_sales']" position="inside">
 						<label string="Product properties"/>
 	                    <div>
+							<div>
 	                        <field name="group_product_rrp"/>
 							<label for="group_product_rrp"/>
+								</div>
+							<div>
+							<field name="default_eq_use_internal_description"/>
+							<label for="default_eq_use_internal_description"/>
+							</div>
 	                    </div>
+
+
+
 					</xpath>
+
+
+					<!--<form string="Configure Sales" position="inside">-->
+					<div id="main" position="inside">
+                    <!--<separator string="Reports"/>-->
+		     		<group string="Reports">
+                    	<label for="id" string="Delivery Date"/>
+	                	<div>
+	                		<div>
+		                        <field name="default_show_delivery_date"/>
+		                        <label for="default_show_delivery_date"/>
+	                        </div>
+	                        <div>
+		                        <field name="default_use_calendar_week"/>
+		                        <label for="default_use_calendar_week"/>
+	                		</div>
+	                    </div>
+	                </group>
+					</div>
+                <!--</form>-->
+
                 </data>
             </field>
         </record>
