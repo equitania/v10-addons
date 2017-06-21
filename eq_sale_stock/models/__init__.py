@@ -20,5 +20,4 @@
 ##############################################################################
 
 import stock
-import sale
 import eq_open_sale_order_line
