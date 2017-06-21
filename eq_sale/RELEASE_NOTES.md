@@ -2,6 +2,12 @@
 
 
 #### 20.06.2017
+#### Version 1.0.7
+##### CHG
+- Erweiterungen für Kommentare
+
+
+#### 20.06.2017
 #### Version 1.0.6
 ##### CHG
 - VEP-38: Erweiterungen für Verkaufseinstellungen

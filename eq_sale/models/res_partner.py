@@ -32,6 +32,10 @@ class res_partner(models.Model):
             partner.sale_order_count = len(partner.sale_order_ids.filtered(lambda record: record.state not in ('draft', 'sent', 'cancel'))) + len(partner.mapped('child_ids.sale_order_ids').filtered(lambda record: record.state not in ('draft', 'sent', 'cancel')))
 
     def default_user_id(self):
+        """
+        Setzen des Feldes Verkäufers für einen Partner. Wir automatisch auf Ersteller gesetzt, falls diese Option in den Verkaufseinstellungen aktiviert wurde.
+        :return:
+        """
         user_id = False
         ir_values_obj = self.env['ir.values']
         creator = ir_values_obj.get_default('res.partner', 'default_creator_saleperson')
@@ -50,7 +54,7 @@ class res_partner(models.Model):
     # @api.multi
     def name_get(self):
         """
-        Überschreiben der name_get-Methode für Sucheinstellungen
+        Überschreiben der name_get-Methode für angepasste Anzeige in Suchboxen
         :return:
         """
 
