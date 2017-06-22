@@ -2,9 +2,16 @@
 
 
 #### 22.06.2017
+#### Version 1.0.3
+##### CHG
+- Einbau des Feldes eq_drawing_number für die Auftragspositionen
+
+
+#### 22.06.2017
 #### Version 1.0.2
 ##### CHG
 - Anpassungen für VEP-64: Neues Feld eq_sale_order_id für stock_picking
+
 
 #### 21.06.2017
 #### Version 1.0.1

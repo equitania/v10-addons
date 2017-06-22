@@ -27,7 +27,7 @@ from openerp.tools import DEFAULT_SERVER_DATE_FORMAT as OE_DFORMAT
 class eq_open_sale_order_line(models.Model):
     _auto = False
     _name = 'eq_open_sale_order_line'
-    _order = 'eq_delivery_date'
+    _order = 'eq_delivery_date, eq_order_id'
     _rec_name = 'eq_product_no'
     
     # Felder
@@ -147,8 +147,6 @@ class eq_open_sale_order_line(models.Model):
                                                                              
                     as eq_quantity_left,             
                 main.product_id AS eq_product_no,
-                '' as eq_drawing_no,
-                /* Auskommentiert da eq_drawing_number noch fehlt
                 (
                     SELECT
                         product_template.eq_drawing_number
@@ -163,7 +161,7 @@ class eq_open_sale_order_line(models.Model):
                             WHERE
                                 product_product.id = main.product_id
                             )
-                ) AS eq_drawing_no, */
+                ) AS eq_drawing_no, 
                 main.state AS eq_state
 
             FROM
@@ -211,9 +209,7 @@ class eq_open_sale_order_line(models.Model):
                 --main.product_uom_qty ,
                 
                 main.product_id,
-               main.product_id, /*product_id doppelt als Platzhalter für eq_drawing_number*/
-               /* (
-                    SELECT
+                    (SELECT
                         product_template.eq_drawing_number
                     FROM
                         product_template
@@ -225,7 +221,7 @@ class eq_open_sale_order_line(models.Model):
                                 product_product
                             WHERE
                                 product_product.id = main.product_id)
-                ),*/
+                ),
                  main.state
         )
             """)

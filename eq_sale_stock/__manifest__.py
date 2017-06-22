@@ -22,13 +22,13 @@
 {
     'name': "Equitania Sale Stock",
     'license': 'AGPL-3',
-    'version': '1.0.2',
+    'version': '1.0.3',
     'category': 'sale_stock',
     'description': """Extensions for sale_stock""",
     'author': 'Equitania Software GmbH',
     'summary': 'Sale_stock Extension',
     'website': 'www.myodoo.de',
-    "depends" : ['base', 'base_setup', 'sale', 'stock', 'sales_team', 'sale_stock', 'eq_sale' ],
+    "depends" : ['base', 'base_setup', 'sale', 'stock', 'sales_team', 'sale_stock', 'eq_sale', 'eq_product'],
     'data': [
             'security/ir.model.access.csv',
             'views/eq_open_sale_order_line_view.xml',
