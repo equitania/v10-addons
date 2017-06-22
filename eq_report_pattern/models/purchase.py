@@ -30,11 +30,7 @@ class eq_purchase_order_template(models.Model):
     _inherit = 'purchase.order'
    
     document_template_id = fields.Many2one(comodel_name='eq.document.template', string='Document Template', readonly=True, states={'draft': [('readonly', False)], 'sent': [('readonly', False)]})
-    eq_header = fields.Html(string="Header", translate=True,
-                            domain="[('document_template_id', '=', document_template_id)]")
-    eq_footer = fields.Html(string="Footer", translate=True,
-                            domain="[('document_template_id', '=', document_template_id)]")
-    
+
     
     # @api.onchange('document_template_id')
     # def onchange_document_template_id(self):
@@ -99,6 +95,6 @@ class eq_purchase_order_template(models.Model):
                 if (res):
                     self.order_line = res
 
-        self.eq_header = selected_template.eq_header
-        self.eq_footer = selected_template.eq_footer
+        self.eq_head_text = selected_template.eq_header
+        self.notes = selected_template.eq_footer
     

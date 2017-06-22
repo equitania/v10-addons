@@ -29,10 +29,6 @@ class eq_account_invoice(models.Model):
    
     document_template_id = fields.Many2one(comodel_name='eq.document.template', string='Document Template')#TODO: readonly falls Rechnung nicht mehr editierbar?
 
-    eq_header = fields.Html(string="Header", translate=True,
-                            domain="[('document_template_id', '=', document_template_id)]")
-    eq_footer = fields.Html(string="Footer", translate=True,
-                            domain="[('document_template_id', '=', document_template_id)]")
 
     # @api.onchange('document_template_id')
     # def onchange_document_template_id(self):
@@ -81,20 +77,23 @@ class eq_account_invoice(models.Model):
 
     @api.onchange('document_template_id')
     def onchange_document_template_id(self):
-
+        """
+        Übernahme der Texte beim Wechsel des Templates
+        :return:
+        """
         selected_template = self.document_template_id
         if (self.partner_id and self.partner_id.lang and self.document_template_id):
             selected_template = self.document_template_id.with_context(lang=self.partner_id.lang)
 
         if (selected_template):
             self.eq_head_text = selected_template.eq_header
-            self.note = selected_template.eq_footer
-            partner_id = False
-            if (self.partner_id):
-                partner_id = self.partner_id.id
+            self.comment = selected_template.eq_footer
+            # partner_id = False
+            # if (self.partner_id):
+            #     partner_id = self.partner_id.id
 
-        self.eq_header = selected_template.eq_header
-        self.eq_footer = selected_template.eq_footer
+        # self.eq_head_text = selected_template.eq_header
+        # self.comment = selected_template.eq_footer
 
 """
     def _prepare_invoice(self, cr, uid, order, line_ids, context=None):

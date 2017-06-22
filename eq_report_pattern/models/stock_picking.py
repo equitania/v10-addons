@@ -29,8 +29,8 @@ class eq_stock_picking(models.Model):
     _inherit = 'stock.picking'
    
     document_template_id = fields.Many2one(comodel_name='eq.document.template', string='Document Template')#TODO: readonly falls Rechnung nicht mehr editierbar?
-    eq_header_text = fields.Html(string="Header")
-    eq_footer_text = fields.Html(string="Footer")
+    # eq_header_text = fields.Html(string="Header")
+    # eq_footer_text = fields.Html(string="Footer")
     
     # account.invoice enthaelt die selbe Methode und ist auf die selbe Art ueberschrieben
     @api.onchange('document_template_id')
