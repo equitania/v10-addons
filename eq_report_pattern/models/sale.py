@@ -30,10 +30,6 @@ class eq_sale_order_template(models.Model):
     _inherit = 'sale.order'
    
     document_template_id = fields.Many2one(comodel_name='eq.document.template', string='Document Template', readonly=True, states={'draft': [('readonly', False)], 'sent': [('readonly', False)]})
-    eq_header = fields.Html(string="Header", translate=True, domain="[('document_template_id', '=', document_template_id)]")
-    eq_footer = fields.Html(string="Footer", translate=True, domain="[('document_template_id', '=', document_template_id)]")
-    note = fields.Html('Terms and conditions')
-
 
     # Automatischen Test anlegen
     @api.model
@@ -91,7 +87,7 @@ class eq_sale_order_template(models.Model):
                     self.order_line = res
 
         self.eq_header = selected_template.eq_header
-        self.eq_footer = selected_template.eq_footer
+        self.note = selected_template.eq_footer
 
 
     # Automatischen Test anlegen

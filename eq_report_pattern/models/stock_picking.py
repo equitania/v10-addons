@@ -50,8 +50,8 @@ class eq_stock_picking(models.Model):
     def create(self, vals):
         sale_order_obj = self.env['sale.order']
         sale_order_ids = sale_order_obj.search([("name", "=", vals["origin"])])
-        if (sale_order_ids):
-            sale_order_origin = sale_order_obj.browse(sale_order_ids[0])
+        if sale_order_ids:
+            sale_order_origin = sale_order_ids[0]
             if sale_order_origin:
                 vals['eq_header_text'] = sale_order_origin.eq_head_text
                 vals['eq_footer_text'] = sale_order_origin.note
