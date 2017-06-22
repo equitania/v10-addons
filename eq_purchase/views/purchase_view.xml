@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <record id="eq_purchase_view_purchase_order_form" model="ir.ui.view">
+            <field name="name">eq.purchase.view.purchase.order.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='notes']" position="replace">
+                </xpath>
+
+                <xpath expr="//page/field[@name='order_line']/.." position='after'>
+                    <page string='Head Text'>
+                        <field name="eq_head_text"/>
+                    </page>
+
+                    <page string="Foot Text">
+                        <!--<field name="eq_use_page_break_before_footer"></field>-->
+                        <!--<label string="Page break before footer text"></label>-->
+                        <field name="notes" nolabel="1"/>
+                    </page>
+                </xpath>
+
+
+            </field>
+        </record>
+    </data>
+</openerp>

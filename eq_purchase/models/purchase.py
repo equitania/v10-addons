@@ -19,19 +19,25 @@
 #
 ##############################################################################
 
-{
-    'name': "Equitania Bestellungen",
-    'license': 'AGPL-3',
-    'version': '1.0.1',
-    'category': 'purchase',
-    'description': """Extensions for purchase""",
-    'author': 'Equitania Software GmbH',
-    'summary': 'Purchase Extension',
-    'website': 'www.myodoo.de',
-    "depends": ['base', 'base_setup', 'purchase', 'eq_res_partner'],
-    'data': [
-        'views/purchase_view.xml'
-             ],
-    "active": False,
-    "installable": True
-}
+from odoo import models, fields, api, _
+
+
+class eq_purchase_order(models.Model):
+    _inherit = 'purchase.order'
+
+    eq_head_text = fields.Html('Head Text')
+    notes = fields.Html('Terms and conditions')
+
+    @api.onchange('partner_id')
+    def onchange_partner_id(self):
+        """
+        Override für Wechsel der Partner_ID: Übernahme der custom-Felder
+        :return:
+        """
+
+        super(eq_purchase_order, self).onchange_partner_id()
+
+        partner = self.partner_id
+        if partner:
+            self.partner_ref = partner.eq_foreign_ref_purchase
+
