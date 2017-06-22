@@ -22,7 +22,7 @@
 {
     'name': "Equitania Sale Stock",
     'license': 'AGPL-3',
-    'version': '1.0.3',
+    'version': '1.0.4',
     'category': 'sale_stock',
     'description': """Extensions for sale_stock""",
     'author': 'Equitania Software GmbH',
@@ -32,6 +32,7 @@
     'data': [
             'security/ir.model.access.csv',
             'views/eq_open_sale_order_line_view.xml',
+            'views/stock_picking_view.xml',
              ],
     "active": False,
     "installable": True

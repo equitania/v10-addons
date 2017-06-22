@@ -197,3 +197,18 @@ msgstr "Lieferung vornehmen"
 #: model:ir.model,name:eq_sale_stock.model_eq_open_sale_order_line
 msgid "eq_open_sale_order_line"
 msgstr "eq_open_sale_order_line"
+
+#. module: eq_sale_stock
+#: model:ir.ui.view,arch_db:eq_sale_stock.eq_stock_view_doc_template_ext
+msgid "Header Text"
+msgstr "Kopftext"
+
+#. module: eq_sale_stock
+#: model:ir.ui.view,arch_db:eq_sale_stock.eq_stock_view_doc_template_ext
+msgid "Header text"
+msgstr "Kopftext"
+
+#. module: eq_sale_stock
+#: model:ir.ui.view,arch_db:eq_sale_stock.eq_stock_view_doc_template_ext
+msgid "Footer Text"
+msgstr "Fußtext"

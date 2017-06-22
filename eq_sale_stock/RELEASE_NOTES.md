@@ -2,6 +2,11 @@
 
 
 #### 22.06.2017
+#### Version 1.0.4
+##### CHG
+- Kopf- und Fußtext für stock_picking
+
+#### 22.06.2017
 #### Version 1.0.3
 ##### CHG
 - Einbau des Feldes eq_drawing_number für die Auftragspositionen
