@@ -30,14 +30,14 @@ class eq_stock_picking_extension(models.Model):
     @api.model
     def create(self, vals):
         """
-            Extended version of create method. We're using this in process "Confirm an order" to be able to set linke between sale order and stock_picking.
-            It's a quit simple solution to save sale_order_id defined as many2one field eq_sale_order_id.
+            Extended version of create method. We're using this in process "Confirm an order" to be able to set link between sale order and stock_picking.
+            It's a simple solution to save sale_order_id defined as many2one field eq_sale_order_id.
             @vals: values to be saved
             @return: defaul result
         """
         sale_order_obj = self.env['sale.order']
         sale_order_ids = sale_order_obj.search([("name", "=", vals["origin"])])  # let's find linked sale_order to be able to save it's ID in our field
-        if len(sale_order_ids) > 0:
-            vals['eq_sale_order_id'] = sale_order_ids[0]  # ok, we've got it...save it
+        if sale_order_ids and len(sale_order_ids) > 0:
+            vals['eq_sale_order_id'] = sale_order_ids[0].id  # ok, we've got it...save it
 
         return super(eq_stock_picking_extension, self).create(vals)

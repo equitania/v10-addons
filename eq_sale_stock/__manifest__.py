@@ -22,7 +22,7 @@
 {
     'name': "Equitania Sale Stock",
     'license': 'AGPL-3',
-    'version': '1.0.1',
+    'version': '1.0.2',
     'category': 'sale_stock',
     'description': """Extensions for sale_stock""",
     'author': 'Equitania Software GmbH',
