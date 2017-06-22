@@ -62,3 +62,5 @@ class eq_account_invoice(models.Model):
     eq_street_house_no = fields.Char(compute='_compute_street_house_no', string=" ", store=False)
     eq_zip_city = fields.Char(compute='_compute_zip_city', string=" ", store=False)
     eq_country = fields.Char(compute='_compute_country', string=" ", store=False)
+    eq_head_text = fields.Html('Head Text')
+    comment = fields.Html('Additional Information')

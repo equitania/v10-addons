@@ -38,6 +38,26 @@
                		<field name="eq_zip_city" attrs="{'invisible': [('eq_zip_city', '=', False)]}" />
                		<field name="eq_country" attrs="{'invisible': [('eq_country', '=', False)]}" />
             	</xpath>
+
+				<!-- Kopf- und Fußtext-->
+				<!--<label for="comment" position="replace"/>-->
+                <field name="comment" position="replace"/>
+				<xpath expr="//notebook" position="inside">
+                    <page string="Head Text">
+
+                    	<!--<field name="eq_use_page_break_after_header"></field>-->
+                    	<!--<label string="Page break after header text"></label>-->
+
+						<field name="eq_head_text" placeholder="Dear Sir or Madam," nolabel="1"/>
+                    </page>
+                    <page string="Foot Text">
+                        <!--<field name="eq_use_page_break_before_footer"></field>-->
+                    	<!--<label string="Page break before footer text"></label>-->
+
+                    	<field name="comment" nolabel="1"/>
+                    </page>
+                </xpath>
+
 	    	</field>
 	    </record>
     </data>
