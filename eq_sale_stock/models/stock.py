@@ -40,6 +40,9 @@ class eq_stock_picking_extension(models.Model):
         sale_order_obj = self.env['sale.order']
         sale_order_ids = sale_order_obj.search([("name", "=", vals["origin"])])  # let's find linked sale_order to be able to save it's ID in our field
         if sale_order_ids and len(sale_order_ids) > 0:
-            vals['eq_sale_order_id'] = sale_order_ids[0].id  # ok, we've got it...save it
+            found_sale_order = sale_order_ids[0]
+            vals['eq_sale_order_id'] = found_sale_order.id  # ok, we've got it...save it
+            vals['eq_header_text'] = found_sale_order.eq_head_text
+            vals['eq_footer_text'] = found_sale_order.note
 
         return super(eq_stock_picking_extension, self).create(vals)

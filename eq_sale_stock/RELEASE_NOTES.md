@@ -2,6 +2,12 @@
 
 
 #### 22.06.2017
+#### Version 1.0.5
+##### CHG
+- Üernahme von Kopf- und Fußtexten aus Auftrag
+
+
+#### 22.06.2017
 #### Version 1.0.4
 ##### CHG
 - Kopf- und Fußtext für stock_picking
