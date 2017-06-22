@@ -25,13 +25,16 @@ msgstr "Kunde"
 msgid "Dear Sir or Madam,"
 msgstr "Sehr geehrte Damen und Herren,"
 
+
 #. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_account_invoice_supplier_form
 #: model:ir.ui.view,arch_db:eq_account.view_account_invoice_form_address_extension
 msgid "Foot Text"
 msgstr "Fußtext"
 
 #. module: eq_account
 #: model:ir.model.fields,field_description:eq_account.field_account_invoice_eq_head_text
+#: model:ir.ui.view,arch_db:eq_account.eq_account_invoice_supplier_form
 #: model:ir.ui.view,arch_db:eq_account.view_account_invoice_form_address_extension
 msgid "Head Text"
 msgstr "Kopftext"

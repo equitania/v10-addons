@@ -1,8 +1,15 @@
 ## Modul eq_account
 
-#### 12.06.2017
+
+#### 22.06.2017
+#### Version 1.0.2
+##### CHG
+- Anzeige von Kopf- und Fußtext bearbeitet
+
+
+#### 22.06.2017
 #### Version 1.0.1
-##### ADD
+##### CHG
 - Neues Feld für Kopftext
 
 

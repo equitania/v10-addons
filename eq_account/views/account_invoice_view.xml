@@ -19,8 +19,32 @@
                		<field name="eq_zip_city" attrs="{'invisible': [('eq_zip_city', '=', False)]}" />
                		<field name="eq_country" attrs="{'invisible': [('eq_country', '=', False)]}" />
             	</xpath>
+
+
 	    	</field>
 	    </record>
+
+		<record id="eq_account_invoice_supplier_form" model="ir.ui.view">
+            <field name="name">account.invoice.supplier.form.eq</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form" />
+            <field name="arch" type="xml">
+                <!--<field name="user_id" position="replace"/>-->
+	            <!--<field name="journal_id" position="after">-->
+                    <!--<field name="eq_contact_person_id"/>-->
+                	<!--<field name="user_id"/>-->
+                <!--</field>-->
+                <field name="comment" position="replace"/>
+            	<xpath expr="//notebook" position="inside">
+                    <page string="Head Text">
+						<field name="eq_head_text" placeholder="Dear Sir or Madam," nolabel="1"/>
+                    </page>
+                    <page string="Foot Text">
+                    	<field name="comment" nolabel="1"/>
+                    </page>
+                </xpath>
+            </field>
+       	</record>
 
 	    <!-- extension of invoices OUT -->
 	    <record id="view_account_invoice_form_address_extension" model="ir.ui.view">
