@@ -103,3 +103,9 @@ msgstr "product.template.standard_price_history"
 #, python-format
 msgid "Change "
 msgstr "Änderung "
+
+#. module: eq_product
+#: model:ir.model.fields,field_description:eq_product.field_product_product_eq_drawing_number
+#: model:ir.model.fields,field_description:eq_product.field_product_template_eq_drawing_number
+msgid "Drawing Number"
+msgstr "Zeichnungsnummer"

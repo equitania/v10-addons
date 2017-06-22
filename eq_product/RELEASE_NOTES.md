@@ -1,6 +1,12 @@
 ## Modul eq_product
 
 
+#### 22.06.2017
+#### Version 1.0.3
+##### CHG
+- VEP-79: Neues Feld eq_drawing_number
+
+
 #### 20.06.2017
 #### Version 1.0.2
 ##### CHG

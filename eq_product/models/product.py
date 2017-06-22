@@ -22,10 +22,16 @@
 from odoo import models, fields, api, _
 import odoo.addons.decimal_precision as dp
 
+class eq_product_product(models.Model):
+    _inherit = 'product.product'
+
+    eq_drawing_number = fields.Char('Drawing Number', size=50)
+
 
 class eq_product_template(models.Model):
     _inherit = 'product.template'
 
+    eq_drawing_number = fields.Char('Drawing Number', size=50)
 
     #
     # """
