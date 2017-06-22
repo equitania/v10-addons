@@ -166,6 +166,18 @@ class eq_sale_order_extension(models.Model):
                 result = result.replace("@ZIP", zip)
                 sale_order.eq_delivery_address = result
 
+    @api.multi
+    def _prepare_invoice(self):
+        """
+        Überschrieben für Übernahme von Kopf- und Fußtext in die Rechnung
+        :return:
+        """
+
+        result = super(eq_sale_order_extension, self)._prepare_invoice()
+        result['eq_head_text'] = self.eq_head_text
+        result['comment'] = self.note
+        return result
+
 
     eq_invoice_address = fields.Char(compute='_compute_invoice_address', string=" ", store=False)
     eq_delivery_address = fields.Char(compute='_compute_delivery_address', string=" ", store=False)

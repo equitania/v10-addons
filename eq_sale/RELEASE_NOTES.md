@@ -2,7 +2,13 @@
 
 
 #### 22.06.2017
-#### Version 1.0.9
+#### Version 1.0.11
+##### CHG
+- Anpassung für Rechnungserstellung
+
+
+#### 22.06.2017
+#### Version 1.0.10
 ##### CHG
 - Einbau des Kopftextes, Verweis auf eq_report_pattern entfernt
 
