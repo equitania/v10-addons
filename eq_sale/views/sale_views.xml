@@ -35,6 +35,15 @@
                		<field name="eq_country" attrs="{'invisible': [('eq_country', '=', False)]}" />
                 </xpath>
 
+				<notebook position="inside">
+                    <page string="Head Text">
+						<field name="eq_head_text" placeholder="Dear Sir or Madam," nolabel="1"/>
+                    </page>
+                    <page string="Foot Text">
+                    	<field name="note" nolabel="1"/>
+                    </page>
+            	</notebook>
+
                 <!-- invoice address -->
             	<xpath expr="//field[@name='partner_invoice_id']" position="attributes">
             		<!-- <attribute name="domain">['|', ('id', '=', partner_id), ('parent_id', '=', partner_id)]</attribute> -->
@@ -65,7 +74,6 @@
             </field>
 	    </record>
 
-
 		<record id="eq_view_sale_config_settings_show_address" model="ir.ui.view">
             <field name="name">eq_sale.config.address.product.settings</field>
             <field name="model">sale.config.settings</field>
@@ -87,40 +95,46 @@
 						</div>
 					</xpath>
 
-					<xpath expr="//group[@name='quotations_sales']" position="inside">
+
+					<!-- Produkteigenschaften -->
+					<xpath expr="//field[@name='deposit_product_id_setting']" position="after">
 						<label string="Product properties"/>
 	                    <div>
 							<div>
 	                        <field name="group_product_rrp"/>
 							<label for="group_product_rrp"/>
 								</div>
+	                    </div>
+
+					</xpath>
+
+					<!-- Verkaufseigenschaften -->
+					<xpath expr="//group[@name='quotations_sales']" position="inside">
+						<label string="Sale properties"/>
+	                    <div>
 							<div>
 							<field name="default_eq_use_internal_description"/>
 							<label for="default_eq_use_internal_description"/>
 							</div>
 	                    </div>
-
-
-
 					</xpath>
 
 
-					<!--<form string="Configure Sales" position="inside">-->
+					<!---->
 					<div id="main" position="inside">
-                    <!--<separator string="Reports"/>-->
-		     		<group string="Reports">
-                    	<label for="id" string="Delivery Date"/>
-	                	<div>
-	                		<div>
-		                        <field name="default_show_delivery_date"/>
-		                        <label for="default_show_delivery_date"/>
-	                        </div>
-	                        <div>
-		                        <field name="default_use_calendar_week"/>
-		                        <label for="default_use_calendar_week"/>
-	                		</div>
-	                    </div>
-	                </group>
+						<group string="Reports">
+							<label for="id" string="Delivery Date"/>
+							<div>
+								<div>
+									<field name="default_show_delivery_date"/>
+									<label for="default_show_delivery_date"/>
+								</div>
+								<div>
+									<field name="default_use_calendar_week"/>
+									<label for="default_use_calendar_week"/>
+								</div>
+							</div>
+						</group>
 					</div>
                 <!--</form>-->
 

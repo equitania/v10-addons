@@ -22,13 +22,13 @@
 {
     'name': "Equitania Sale",
     'license': 'AGPL-3',
-    'version': '1.0.9',
+    'version': '1.0.10',
     'category': 'product',
     'description': """Extensions for product""",
     'author': 'Equitania Software GmbH',
     'summary': 'Product Extension',
     'website': 'www.myodoo.de',
-    "depends" : ['base', 'base_setup', 'sale', 'product', 'sales_team', 'sale_stock', 'eq_res_partner', 'eq_base_report', 'eq_report_pattern' ],
+    "depends" : ['base', 'base_setup', 'sale', 'product', 'sales_team', 'sale_stock', 'eq_res_partner', 'eq_base_report', ],
     'data': [
             'security/equitania_security.xml',
             'security/ir.model.access.csv',

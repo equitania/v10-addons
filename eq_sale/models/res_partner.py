@@ -75,9 +75,9 @@ class res_partner(models.Model):
             if not record.parent_id and not record.is_company:
                 name = "%s %s %s" % ((record.title.name if record.title else ''), (record.eq_firstname if record.eq_firstname else ''), record.name)
             if tmp_context.get('show_address_only'):
-                name = self._display_address(record, without_company=True)
+                name = self._display_address(without_company=True) # record
             if tmp_context.get('show_address'):
-                name = name + "\n" + self._display_address(record, without_company=True)
+                name = name + "\n" + self._display_address(without_company=True) # record
             name = name.replace('\n\n','\n')
             name = name.replace('\n\n','\n')
             if tmp_context.get('show_email') and record.email:

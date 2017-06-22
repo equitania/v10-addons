@@ -26,7 +26,7 @@ from openerp.tools import DEFAULT_SERVER_DATE_FORMAT as OE_DFORMAT
 
 
 
-class eq_partner_sale_order_extension(models.Model):
+class eq_sale_order_extension(models.Model):
     _inherit = 'sale.order'
 
 
@@ -174,6 +174,9 @@ class eq_partner_sale_order_extension(models.Model):
     eq_zip_city = fields.Char(compute='_compute_zip_city', string=" ", store=False)
     eq_country = fields.Char(compute='_compute_country', string=" ", store=False)
 
+    eq_head_text = fields.Html(string="Header", translate=True)
+    note = fields.Html('Terms and conditions') # überschrieben als HTML-Feld
+
     # Report
     show_delivery_date = fields.Boolean(string='Show Delivery Date')
     use_calendar_week = fields.Boolean('Use Calendar Week for Delivery Date[equitania]')
@@ -250,25 +253,23 @@ class eq_sale_order_line(models.Model):
                         result[order_line.id] = delivery_date.strftime('%d.%m.%Y')
             else:
                 result[order_line.id] = False
-
         return result
 
 
     # ODOO 10: Feld delay fehlt für sale_order_line
-    @api.onchange('eq_delivery_date')
-    def on_change_delivery_date(self):
-        """
-
-        :return:
-        """
-        self._get_delivery_date()
-        #
-        # date_order = self.order_id.date_order if self.order_id else False
-        # if date_order and self.eq_delivery_date:
-        #     date_order = datetime.strptime(date_order.split(' ')[0], OE_DFORMAT)
-        #     eq_delivery_date = datetime.strptime(eq_delivery_date, OE_DFORMAT)
-        #
-        #     self.delay = (eq_delivery_date - date_order).days
+    # @api.onchange('eq_delivery_date')
+    # def on_change_delivery_date(self):
+    #     """
+    #
+    #     :return:
+    #     """
+    #
+    #     date_order = self.order_id.date_order if self.order_id else False
+    #     if date_order and self.eq_delivery_date:
+    #         date_order = datetime.strptime(date_order.split(' ')[0], OE_DFORMAT)
+    #         eq_delivery_date = datetime.strptime(eq_delivery_date, OE_DFORMAT)
+    #
+    #         self.delay = (eq_delivery_date - date_order).days
 
 
 

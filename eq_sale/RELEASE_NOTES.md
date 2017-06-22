@@ -1,6 +1,11 @@
 ## Modul eq_sale
 
 
+#### 22.06.2017
+#### Version 1.0.9
+##### CHG
+- Einbau des Kopftextes, Verweis auf eq_report_pattern entfernt
+
 
 #### 21.06.2017
 #### Version 1.0.9

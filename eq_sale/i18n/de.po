@@ -455,3 +455,23 @@ msgstr "Interne Beschreibung für die Angebote/Verkaufsaufträge verwenden [equi
 #: model:ir.ui.view,arch_db:eq_sale.eq_view_sale_config_settings_show_address
 msgid "Delivery Date"
 msgstr "Lieferdatum"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_view_sale_config_settings_show_address
+msgid "Sale properties"
+msgstr "Verkaufseigenschaften"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_sale_address_fields_view_order_form_inherit
+msgid "Foot Text"
+msgstr "Fußtext"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_sale_address_fields_view_order_form_inherit
+msgid "Head Text"
+msgstr "Kopftext"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_sale_order_eq_head_text
+msgid "Header"
+msgstr "Kopftext"

@@ -224,8 +224,8 @@
                         <span t-if="o.state in ['draft','sent']">Quotation</span>
                         <span t-field="o.name"/>
                     </div>
-                    <div t-if="o.eq_header" class="eq_headertext">
-                        <p t-field="o.eq_header"/>
+                    <div t-if="o.eq_head_text" class="eq_headertext">
+                        <p t-field="o.eq_head_text"/>
                     </div>
                     <div class="col-xs-12"
                          style="margin-top:1em; margin-bottom:2em; font-size:0.8em; margin-left:0px; padding-left:0px;">
@@ -329,9 +329,9 @@
                                             <p t-field="o.note"/>
                                         </td>
                                     </tr>-->
-                                    <tr t-if="o.eq_footer">
+                                    <tr t-if="o.note">
                                         <td style="padding-right:0.5cm; vertical-align:top; " colspan="2" class="eq_footertext">
-                                            <p t-field="o.eq_footer" style="margin-bottom:3em;"/>
+                                            <p t-field="o.note" style="margin-bottom:3em;"/>
                                         </td>
                                     </tr>
                                     <tr t-if="o.payment_term_id">
