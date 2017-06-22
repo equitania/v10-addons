@@ -1,16 +1,20 @@
 ## eq_report_pattern 
 
+#### 22.06.2017
+#### Version 1.0.9
+##### CHG
+- Anpassungen nach Auslagerung der Kopf- und Fußtexte
 
 
 #### 22.06.2017
 #### Version 1.0.8
-##### [CHG]
+##### CHG
 - Kopft- und Fußtexte verschoben
 
 
 #### 22.06.2017
 #### Version 1.0.7
-##### [CHG]
+##### CHG
 - Kopftext ins Modul eq_sale verschoben
 - für sale_order: note statt eq_footer verwenden
 

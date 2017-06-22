@@ -29,9 +29,7 @@ class eq_stock_picking(models.Model):
     _inherit = 'stock.picking'
    
     document_template_id = fields.Many2one(comodel_name='eq.document.template', string='Document Template')#TODO: readonly falls Rechnung nicht mehr editierbar?
-    # eq_header_text = fields.Html(string="Header")
-    # eq_footer_text = fields.Html(string="Footer")
-    
+
     # account.invoice enthaelt die selbe Methode und ist auf die selbe Art ueberschrieben
     @api.onchange('document_template_id')
     def onchange_document_template_id(self):
@@ -48,13 +46,16 @@ class eq_stock_picking(models.Model):
     # War deprecated, muss getestet werden.[funktioniert]
     @api.model
     def create(self, vals):
+        """
+        Überschrieben zur Übernahme der Dokumentenvorlage aus dem Auftrag
+        :param vals:
+        :return:
+        """
         sale_order_obj = self.env['sale.order']
         sale_order_ids = sale_order_obj.search([("name", "=", vals["origin"])])
         if sale_order_ids:
             sale_order_origin = sale_order_ids[0]
             if sale_order_origin:
-                vals['eq_header_text'] = sale_order_origin.eq_head_text
-                vals['eq_footer_text'] = sale_order_origin.note
                 vals['document_template_id'] = sale_order_origin.document_template_id.id
         
         return super(eq_stock_picking, self).create(vals)

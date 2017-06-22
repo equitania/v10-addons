@@ -93,24 +93,17 @@ class eq_sale_order_template(models.Model):
     # Automatischen Test anlegen
     # War deprecated, muss getestet werden.
     @api.multi
-    def _prepare_invoice(self, qty):
+    def _prepare_invoice(self):
         """
-            Override of default _prepare_invoice method. We'll set value from 2 new fields from settings (eq_head_text and eq_foo_text)
-            @cr: cursor
-            @uid: user id
-            @order: current sale order
-            @lines: lines of current sale order
-            @context: context
-            @return: dictionary with all values of actual sale order that will be saved during standard create of an invoice
+        Überschrieben zum Setzen der Dokumentenvorlage
+        :return:
         """
-
-
-        result = super(eq_sale_order_template, self)._prepare_invoice(qty)
-        if self.event_id:
-            result['eq_head_text'] = order.eq_head_text
-            result['comment'] = order.note
+        result = super(eq_sale_order_template, self)._prepare_invoice()
+        # if self.event_id:
+            # result['eq_head_text'] = order.eq_head_text
+            # result['comment'] = order.note
         
-            if order.document_template_id:
-                result['document_template_id'] = order.document_template_id.id
+        if self.document_template_id:
+            result['document_template_id'] = self.document_template_id.id
           
         return result
