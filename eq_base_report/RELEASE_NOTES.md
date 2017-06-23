@@ -1,6 +1,11 @@
 ## Modul eq_base_report
 
 #### 23.06.2017
+#### Version 1.0.11
+##### IMP
+- Papierabstände in andere CSS Klasse verschoben
+
+#### 23.06.2017
 #### Version 1.0.10
 ##### CHG
 - Footer nun mit equitania CEO Felder

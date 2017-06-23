@@ -30,7 +30,8 @@ td {
 	padding-left:15px; padding-right:15px;
 }
 
-.padding-print {
+/* Hier die zusätzlichen Abstände für den Druck einstellen */
+.page {
 	padding-left:1cm;
 	padding-right:0cm;
 }
