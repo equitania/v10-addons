@@ -125,3 +125,8 @@ td {
 	border-top: 1px solid #000000;
 	border-bottom: 1px solid #000000;
 }
+
+/* HTML formatierte Texte im Kopf und Fußtext */
+.eq_headertext ul, .eq_footertext ul {
+	padding-left:3em!important;
+}

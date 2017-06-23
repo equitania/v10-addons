@@ -1,5 +1,11 @@
 ## Modul eq_base_report
 
+#### 23.06.2017
+#### Version 1.0.9
+##### IMP
+- Hinweis für das Reportlogo, wenn dieses noch nicht konfiguriert(hochgeladen) wurde
+- FIX für die Listendarstellung von HTML Kopf & Fußtext
+
 #### 20.06.2017
 #### Version 1.0.8
 ##### IMP
