@@ -22,13 +22,13 @@
 {
     'name': 'EQ Report Basis',
     'license': 'AGPL-3',
-    'version': '1.0.9',
+    'version': '1.0.10',
     'description': """
         Allgemeine Anpassungen für die Equitania Reports
     """,
     'author': 'Equitania Software GmbH',
     'website': 'www.myodoo.de',
-    'depends': ['base_setup'],
+    'depends': ['base_setup','eq_base'],
     'category' : 'Report',
     'summary': 'Reports',
 

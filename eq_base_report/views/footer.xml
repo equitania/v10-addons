@@ -34,8 +34,11 @@
 	                    <span t-field="company.company_registry"/>
 	                </td>
 	                <td style="">
-                        <span>CEO:</span> <br/>
-						<span t-field="company.ps_ceo" />
+                        <!--<span>CEO:</span> <br/>-->
+						<span t-field="company.eq_ceo_title" t-if="company.eq_ceo_title"/><br/>
+						<span t-field="company.eq_ceo_01" t-if="company.eq_ceo_01"/><br/>
+						<span t-field="company.eq_ceo_02" t-if="company.eq_ceo_02"/><br/>
+						<span t-field="company.eq_ceo_03" t-if="company.eq_ceo_03"/>
                         <!--<span t-esc="ceo"/>-->
 	                    <!--<span t-field="company.eq_custom_1"/><br/>
 	                    <span t-field="company.eq_custom_2"/><br/>

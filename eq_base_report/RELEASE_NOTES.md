@@ -1,6 +1,11 @@
 ## Modul eq_base_report
 
 #### 23.06.2017
+#### Version 1.0.10
+##### CHG
+- Footer nun mit equitania CEO Felder
+
+#### 23.06.2017
 #### Version 1.0.9
 ##### IMP
 - Hinweis für das Reportlogo, wenn dieses noch nicht konfiguriert(hochgeladen) wurde
