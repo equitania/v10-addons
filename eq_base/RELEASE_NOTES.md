@@ -1,5 +1,11 @@
 ## Modul eq_base
 
+#### 23.06.2017
+#### Version 1.0.2
+##### CHG
+- CEO Title ist nun mehrsprachig und kein Dropdownfeld mehr 
+
+
 #### 20.06.2017
 #### Version 1.0.1
 ##### CHG

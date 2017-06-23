@@ -22,7 +22,7 @@
 {
     'name': 'Equitania Base',
     'license': 'AGPL-3',
-    'version': '1.0.1',
+    'version': '1.0.2',
     'description': """
         Extensions for module eq_base
     """,
