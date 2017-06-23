@@ -235,6 +235,10 @@ msgstr "<strong>Pos.</strong>"
 msgid "<strong>Qty.</strong>"
 msgstr "<strong>Menge</strong>"
 
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "Delivery date:"
+msgstr "Lieferdatum:"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document

@@ -251,7 +251,14 @@
                                         </strong>
                                         <br/>
                                         <span t-field="line.name"/>
-                                        <br/>
+                                        <t id="eq_drawing_number" />
+                                        <!--<t t-if="o.state not in ['draft','sent']">-->
+                                            <t t-if="line.eq_delivery_date">
+                                                <div class="clearfix"></div>
+                                                Delivery date:
+                                                    <span t-field="line.eq_delivery_date" />
+                                            </t>
+                                        <!--</t>-->
                                         <div id="agreement_id"/>
                                     </td>
                                     <td class="text-right">

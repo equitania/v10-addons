@@ -103,9 +103,14 @@ class PragmaSaleOrderReport(models.AbstractModel):
             'bank_name': bank_name,
             'customer_number': customer_number,
             'order_date': order_date,
+            'get_number_of_page': self.get_number_of_page
         }
 
         return self.env['report'].render('eq_sale.eq_report_saleorder', docargs)
+
+    def get_number_of_page(self,page):
+        print"page: ",page
+
 
 
 class SaleOrder(models.Model):

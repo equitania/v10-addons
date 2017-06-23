@@ -1,6 +1,13 @@
 ## Modul eq_sale
 
 
+#### 23.06.2017
+#### Version 1.0.12
+##### ADD
+- Report: Lieferdatum auf Auftragszeile
+- Report: Platzhalter für Zeichnungsnummer
+- Report: Platzhalter für Rahmenauftragsnr.
+
 #### 22.06.2017
 #### Version 1.0.11
 ##### CHG
