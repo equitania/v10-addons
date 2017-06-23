@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <report
+    <!--<report
             id="eq_sale_order"
             model="sale.order"
             string="EQ Sale Order"
@@ -9,6 +9,6 @@
             name="eq_sale.eq_report_saleorder"
             file="sale_order"
             attachment="">
-    </report>
+    </report>-->
 
 </odoo>

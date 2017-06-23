@@ -2,6 +2,12 @@
 
 
 #### 23.06.2017
+#### Version 1.0.13
+##### CHG
+- Report ersetzt nun den Standard Verkaufsauftrag-Report
+- Diverse nichtmehr benötigte Klassen wurden bereinigt
+
+#### 23.06.2017
 #### Version 1.0.12
 ##### ADD
 - Report: Lieferdatum auf Auftragszeile

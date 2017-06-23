@@ -22,7 +22,7 @@
 {
     'name': "Equitania Sale",
     'license': 'AGPL-3',
-    'version': '1.0.12',
+    'version': '1.0.13',
     'category': 'sale',
     'description': """Extensions for sale""",
     'author': 'Equitania Software GmbH',
@@ -33,7 +33,7 @@
             'security/equitania_security.xml',
             'security/ir.model.access.csv',
             'views/report_sale_order.xml',
-            'views/reports.xml',
+            #'views/reports.xml',    auskommentiert da kein eigener Report erstellt werden soll, sondern der bestehende überschrieben
             'views/product_view.xml',
             'views/res_partner_view.xml',
             'views/sale_views.xml',
