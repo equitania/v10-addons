@@ -115,7 +115,7 @@ td {
 }
 
 .table-row tbody tr:nth-child(odd) {
-	background-color: #eeeeee;
+	background-color: #ffffff; /* Alter Wert für graue Zeile: #eeeeee */
 }
 
 .table-row tbody tr:nth-child(even) {

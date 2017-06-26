@@ -1,5 +1,10 @@
 ## Modul eq_base_report
 
+#### 26.06.2017
+#### Version 1.0.12
+##### CHG
+- Graue Hintergrundfarbe für Auftragszeilen entfernt
+
 #### 23.06.2017
 #### Version 1.0.11
 ##### IMP
