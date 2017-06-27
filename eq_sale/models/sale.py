@@ -45,7 +45,7 @@ class eq_sale_order_extension(models.Model):
         :return:
         """
 
-        super(eq_partner_sale_order_extension, self).onchange_partner_id()
+        super(eq_sale_order_extension, self).onchange_partner_id()
 
         partner = self.partner_id
         if partner:

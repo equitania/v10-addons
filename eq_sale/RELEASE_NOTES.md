@@ -1,6 +1,12 @@
 ## Modul eq_sale
 
 
+#### 27.06.2017
+#### Version 1.0.14
+##### Fix
+- Korrektur für Wechsel des Kunden in Angebotsmaske
+
+
 #### 23.06.2017
 #### Version 1.0.13
 ##### CHG
