@@ -301,9 +301,13 @@ class eq_mail_mail(models.Model):
                             subtype_alternative='plain',
                             headers=headers)
                         msg['Return-Path'] = mail.email_from
-                        res = ir_mail_server.send_email(msg,
-                                                        mail_server_id=mail_server[0].id,
-                                                        )
+
+                        if len(mail_server) == 0:
+                            pass
+                        else:
+                            res = ir_mail_server.send_email(msg,
+                                                            mail_server_id=mail_server[0].id,
+                                                            )
 
                 if res:
                     mail.write({'state': 'sent', 'message_id': res})

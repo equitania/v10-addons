@@ -1,5 +1,10 @@
 ## Modul eq_mail_extension
 
+#### 28.06.2017
+#### Version 1.0.23
+##### FIX
+- zusätzlich Abfrage hinzugefügt, sodass ein Kopieren z.B eines Benutzers wieder möglich ist.
+
 #### 14.06.2017
 #### Version 1.0.22
 ##### CHG
