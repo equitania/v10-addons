@@ -109,3 +109,9 @@ msgstr "Änderung "
 #: model:ir.model.fields,field_description:eq_product.field_product_template_eq_drawing_number
 msgid "Drawing Number"
 msgstr "Zeichnungsnummer"
+
+#. module: eq_product
+#: model:ir.ui.view,arch_db:eq_product.eq_product_product_form_view
+#: model:ir.ui.view,arch_db:eq_product.eq_product_template_only_form_view
+msgid "Article No."
+msgstr "Artikelnummer"

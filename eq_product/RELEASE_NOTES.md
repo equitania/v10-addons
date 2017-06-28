@@ -1,6 +1,12 @@
 ## Modul eq_product
 
 
+#### 28.06.2017
+#### Version 1.0.4
+##### ADD
+- Feld für Artikelnummer in die Produkt-Ansicht eingefügt
+
+
 #### 22.06.2017
 #### Version 1.0.3
 ##### CHG
