@@ -1,13 +1,13 @@
 
 body {
     color: #000 !important;
-	font-size: 14px!important;
+	font-size: 11pt!important;
     font-family: "Open Sans", Calibri,"Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 td {
 	vertical-align:top;
-	font-size: 14px!important;
+	font-size: 11pt!important;
 }
 
 .border-black td {
@@ -17,7 +17,7 @@ td {
 .table-condensed &gt; thead	&gt; tr &gt; th {
 	border-bottom: 1px solid black !important;
 	page-break-inside:avoid !important;
-	font-size: 14px!important;
+	font-size: 11pt!important;
 											/*font-size: 0.8em;*/
 }
 
@@ -52,7 +52,7 @@ td {
 	text-align:left;
 	border: none;
 	background-color:none;
-	font-size:10px!important;
+	font-size:8pt!important;
 }
 
 #version {
@@ -96,7 +96,7 @@ td {
 #returnaddress {
 	color:
 	#000000;
-	font-size: 0.7em!important;
+	font-size: 9pt!important;
 	border-bottom: 1px solid #000000;
 	padding-top:1cm;
 	margin-bottom:0.6em;
@@ -131,3 +131,7 @@ td {
 .eq_headertext ul, .eq_footertext ul {
 	padding-left:3em!important;
 }
+
+.table > tbody > tr.active > td {
+	background-color:#ddd;
+	color:#000;}

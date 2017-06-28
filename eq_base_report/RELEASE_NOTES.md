@@ -1,5 +1,10 @@
 ## Modul eq_base_report
 
+#### 28.06.2017
+#### Version 1.0.13
+##### CHG
+- Schriftgröße von EM auf PT umgestellt; Hintergrundstyle für Sektionen
+
 #### 26.06.2017
 #### Version 1.0.12
 ##### CHG
