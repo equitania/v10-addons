@@ -1,9 +1,14 @@
 ## Modul eq_sale
 
 
+#### 28.06.2017
+#### Version 1.0.15
+##### CHG
+- Neuer Aufbau der Auftragszeilen, mit Sektionen und zuschaltbarer Mengeneinheit
+
 #### 27.06.2017
 #### Version 1.0.14
-##### Fix
+##### FIX
 - Korrektur für Wechsel des Kunden in Angebotsmaske
 
 

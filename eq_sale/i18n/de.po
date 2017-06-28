@@ -479,3 +479,8 @@ msgstr "Kopftext"
 #: model:ir.model.fields,field_description:eq_sale.field_sale_order_eq_head_text
 msgid "Header"
 msgstr "Kopftext"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<strong>Item no.</strong>"
+msgstr "<strong>Artikelnr.</strong>"
