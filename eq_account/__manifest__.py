@@ -22,7 +22,7 @@
 {
     'name': "Equitania Account",
     'license': 'AGPL-3',
-    'version': '1.0.2',
+    'version': '1.0.3',
     'category': 'account',
     'description': """Extensions for account""",
     'author': 'Equitania Software GmbH',
@@ -30,7 +30,8 @@
     'website': 'www.myodoo.de',
     "depends" : ['base', 'base_setup', 'account'],
     'data': [
-            'views/account_invoice_view.xml'
+            'views/account_invoice_view.xml',
+            'views/report_invoice.xml'
              ],
     "active": False,
     "installable": True

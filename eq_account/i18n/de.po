@@ -41,6 +41,7 @@ msgstr "Kopftext"
 
 #. module: eq_account
 #: model:ir.model,name:eq_account.model_account_invoice
+#: model:ir.ui.view,arch_db:pragma_qweb_reports.pragma_report_invoice_document
 msgid "Invoice"
 msgstr "Rechnung"
 
@@ -48,3 +49,115 @@ msgstr "Rechnung"
 #: model:ir.ui.view,arch_db:eq_account.view_account_invoice_supplier_form_address_extension
 msgid "Supplier"
 msgstr "Lieferant"
+
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<span>Customer no.</span>"
+msgstr "<span>Kundennummer</span>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<span>VAT Reg. no.</span>"
+msgstr "<span>USt.ID-Nr.</span>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<span>Invoice no.</span>"
+msgstr "<span>Rechnungsnr.</span>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<span>Invoice date</span>"
+msgstr "<span>Rechnungsdatum</span>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<strong>For further information, please contact</strong>"
+msgstr "<strong>Ihr Ansprechpartner</strong>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<span>Contact person</span>"
+msgstr "<span>Ansprechpartner</span>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<span>Phone</span>"
+msgstr "<span>Telefon</span>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<span>Fax</span>"
+msgstr "<span>Fax</span>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<span>E-Mail</span>"
+msgstr "<span>E-Mail</span>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<strong>Pos.</strong>"
+msgstr "<strong>Pos.</strong>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<strong>Item description</strong>"
+msgstr "<strong>Artikelbeschreibung</strong>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<strong>Qty.</strong>"
+msgstr "<strong>Menge</strong>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<strong>Discount (%)</strong>"
+msgstr "<strong>Rabatt (%)</strong>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<strong>Net price</strong>"
+msgstr "<strong>Nettopreis</strong>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "Draft Invoice"
+msgstr "Entwurf Rechnung"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "Incoming Invoice"
+msgstr "Rechnung"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "Cancellation Invoice"
+msgstr "Stornorechnung"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "Outgoing Credit Note"
+msgstr "Kundengutschrift"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "Incoming Credit Note"
+msgstr "Lieferantengutschrift"
+
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<strong>Shipping address:</strong>"
+msgstr "<strong>Lieferadresse:</strong>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "Unit Price"
+msgstr "Preis pro ME"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<strong>Payment Terms:</strong>"
+msgstr "<strong>Zahlungsbedingungen:</strong>"

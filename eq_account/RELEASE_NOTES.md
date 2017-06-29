@@ -1,6 +1,11 @@
 ## Modul eq_account
 
 
+#### 29.06.2017
+#### Version 1.0.3
+##### CHG
+- Rechnungsreport: Neuer Report überschreibt den Standard-Report
+
 #### 22.06.2017
 #### Version 1.0.2
 ##### CHG
