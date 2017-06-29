@@ -24,3 +24,4 @@ import product
 import eq_delivery_condition
 import res_partner
 import sale
+#import eq_report_sale_order

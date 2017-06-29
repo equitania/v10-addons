@@ -1,6 +1,12 @@
 ## Modul eq_sale
 
 
+#### 29.06.2017
+#### Version 1.0.16
+##### IMP
+- Verkaufsreport: Verbesserung in Details wie Ländernamen bei Kunden aus einem anderen Land, Pos-Nr und Kategorien für Auftragszeilen
+
+
 #### 28.06.2017
 #### Version 1.0.15
 ##### CHG
