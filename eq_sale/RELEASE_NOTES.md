@@ -1,5 +1,9 @@
 ## Modul eq_sale
 
+#### 30.06.2017
+#### Version 1.0.17
+##### CHG
+- Übersetzung für die Zwischensumme hinzugefügt
 
 #### 29.06.2017
 #### Version 1.0.16

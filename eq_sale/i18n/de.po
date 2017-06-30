@@ -484,3 +484,8 @@ msgstr "Kopftext"
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "<strong>Item no.</strong>"
 msgstr "<strong>Artikelnr.</strong>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<strong>Subtotal: </strong>"
+msgstr "<strong>Zwischensumme: </strong>"
