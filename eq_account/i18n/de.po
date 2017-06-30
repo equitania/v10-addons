@@ -154,10 +154,20 @@ msgstr "<strong>Lieferadresse:</strong>"
 
 #. module: eq_account
 #: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
-msgid "Unit Price"
-msgstr "Preis pro ME"
+msgid "<strong>Unit Price</strong>"
+msgstr "<strong>Einzelpreis</strong>"
 
 #. module: eq_account
 #: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
 msgid "<strong>Payment Terms:</strong>"
 msgstr "<strong>Zahlungsbedingungen:</strong>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<strong>Taxes</strong>"
+msgstr "<strong>Steuern</strong>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<strong>Subtotal: </strong>"
+msgstr "<strong>Zwischensumme: </strong>"
