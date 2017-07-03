@@ -1,6 +1,15 @@
 ## Modul eq_res_partner
 
 #### 03.07.2017
+#### Version 1.0.9
+##### CHG
+(VEP-90) Kontaktmaske der Kundenansicht bearbeitet:
+- Vorname hinzugefügt wenn der Kontakt keine Firma ist
+- eq_name2 & eq_name3 hinzugefügt wenn der Kontakt eine Firma ist
+- Label von Ansprechpartner auf "Name" gewechselt, damit es auch für Firmen sinnvoll benannt ist
+- Übersetzung von "Address" gefixt
+
+#### 03.07.2017
 #### Version 1.0.8
 ##### CHG
 - Übersetzungsfehler korrigiert "E-Mail (zusätzlich", fehlte eine Klammer
