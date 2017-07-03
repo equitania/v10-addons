@@ -114,7 +114,7 @@ msgstr "Briefanrede"
 #: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_email2
 #: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_email2
 msgid "E-Mail (additional)"
-msgstr "E-Mail (zusätzlich"
+msgstr "E-Mail (zusätzlich)"
 
 #. module: eq_res_partner
 #: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_phone2

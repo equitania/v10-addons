@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 03.07.2017
+#### Version 1.0.8
+##### CHG
+- Übersetzungsfehler korrigiert "E-Mail (zusätzlich", fehlte eine Klammer
+
 #### 21.06.2017
 #### Version 1.0.7
 ##### CHG
