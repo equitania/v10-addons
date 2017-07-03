@@ -171,3 +171,14 @@ msgstr "<strong>Steuern</strong>"
 #: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
 msgid "<strong>Subtotal: </strong>"
 msgstr "<strong>Zwischensumme: </strong>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<strong>Total sum</strong>"
+msgstr "<strong>Gesamtbetrag</strong>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<span>Total without taxes</span>"
+msgstr "<span>Nettobetrag</span>"
+

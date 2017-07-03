@@ -1,6 +1,13 @@
 ## Modul eq_account
 
 
+#### 03.07.2017
+#### Version 1.0.5
+##### IMP
+Summentabelle der Reports angepasst
+- Übersetzung gepflegt
+- Position und Ausrichtung korrigiert
+- Zusätzliche Steuerzeilen-Tabelle ausgeblendet
 
 #### 30.06.2017
 #### Version 1.0.4
