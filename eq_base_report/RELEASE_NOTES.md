@@ -1,5 +1,11 @@
 ## Modul eq_base_report
 
+#### 04.07.2017
+#### Version 1.0.14
+##### ADD
+- Report Header/Footer Erweiterung: Erweiterung der Logik für die Sichtbarkeit von Elementen auf 1. Seite, letzte Seite, alle außer 1. Seite, alle außer letzte Seite
+- Hinzufügen von Textcontainern für Angebote und Rechnungen, welche ab der 2. Seite angezeigt werden (z.B. Kundennummer, Datum etc)
+
 #### 28.06.2017
 #### Version 1.0.13
 ##### CHG

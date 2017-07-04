@@ -88,6 +88,18 @@ td {
 .leftbox {
 	width: 50%;
 }
+div.header .leftbox {
+	margin-left:1.4cm;
+	margin-top: 0.8cm;
+	float:left;
+}
+
+/* Tabellenformatierung für 1. Spalte dicker Inhalt */
+table.data > tbody > tr > td:first-child {
+	font-weight:bold;
+	padding-right:0.4cm;
+}
+
 
 .rightbox {
 	float:right;
@@ -134,4 +146,6 @@ td {
 
 .table > tbody > tr.active > td {
 	background-color:#ddd;
-	color:#000;}
+	color:#000;
+}
+

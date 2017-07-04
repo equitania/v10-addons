@@ -3,14 +3,126 @@
     <template id="eq_external_layout_header">
         <div class="header padding-print">
             <div class="row zero_min_height" style="padding-right:0.5cm;">
-                <!--<t t-esc="page_size"/>
-                <t t-esc="page"/>
-                <span class="page"></span>
-                <t t-if="page_size > 1">1+</t>
                 <div class="leftbox">
-                    <span>Customer no.</span>
-                    <span t-if="customer_number" t-esc="customer_number"/>
-                </div>-->
+                    <!--<span class="not-last-page">not last page<br/></span>
+                    <span class="first-page">first page<br/></span>
+                    <span class="last-page">last page</span>
+                    <span class="page"/><br/>
+                    <span class="topage"/><br/>
+                    <span class="webpage"/><br/>
+                    <span class="frompage"/><br/>
+                    <span class="section"/><br/>
+                    <span class="subsection"/><br/>
+                    <span class="subsubsection"/>-->
+                    <div class="not-first-page">
+<!-- Angebot / AB -->
+                        <t t-if="doc_model == 'sale.order'">
+                            <table class="data">
+                                <tbody>
+                                    <tr t-if="doc.partner_id.customer_number">
+                                        <td>
+                                            <span>Customer no.</span>
+                                        </td>
+                                        <td >
+                                            <span t-field="doc.partner_id.customer_number"/>
+                                        </td>
+                                    </tr>
+                                    <tr t-if="doc.client_order_ref">
+                                        <td>
+                                            <span>Your reference no.</span>
+                                        </td>
+                                        <td >
+                                            <span t-field="doc.client_order_ref"/>
+                                        </td>
+                                    </tr>
+                                    <!--<tr t-if="doc.origin">
+                                        <td>
+                                            <span>Our reference no.</span>
+                                        </td>
+                                        <td >
+                                            <span t-field="doc.origin" />
+                                        </td>
+                                    </tr>-->
+                                    <tr t-if="doc.name">
+                                        <td t-if="doc.state not in ['draft','sent']">
+                                            <span>Order no.</span>
+                                        </td>
+                                        <td t-if="doc.state in ['draft','sent']">
+                                            <span>Quotation no.</span>
+                                        </td>
+                                        <td >
+                                            <span t-field="doc.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr t-if="order_date">
+                                        <td t-if="doc.state not in ['draft','sent']">
+                                            <span>Order date</span>
+                                        </td>
+                                        <td t-if="doc.state in ['draft','sent']">
+                                            <span>Quotation date</span>
+                                        </td>
+                                        <td >
+                                            <span t-esc="order_date"/>
+                                        </td>
+                                    </tr>
+                                    <!--<tr t-if="doc.validity_date and doc.state in ['draft','sent']">
+                                        <td id="sale_header_placeholder">
+                                            <span>Offer valid until</span>
+                                        </td>
+                                        <td >
+                                            <span t-field="doc.validity_date"/>
+                                        </td>
+                                    </tr>-->
+                                </tbody>
+                            </table>
+                        </t>
+
+<!-- Rechnungen -->
+                        <t t-if="doc_model == 'account.invoice'">
+                            <table class="data">
+                                <tbody>
+                                    <tr t-if="o.partner_id.customer_number">
+                                        <td>
+                                            <span>Customer no.</span>
+                                        </td>
+                                        <td >
+                                            <span t-field="o.partner_id.customer_number"/>
+                                        </td>
+                                    </tr>
+                                    <tr t-if="o.number">
+                                        <td>
+                                            <span>Invoice no.</span>
+                                        </td>
+                                        <td >
+                                            <span t-field="o.number"/>
+                                        </td>
+                                    </tr>
+                                    <!--<tr t-if="o.origin">
+                                        <td>
+                                            <span>Origin</span>
+                                        </td>
+                                        <td >
+                                            <span t-field="o.origin"/>
+                                        </td>
+                                    </tr>-->
+                                    <tr t-if="o.date_invoice">
+                                        <td>
+                                            <span>Invoice date</span>
+                                        </td>
+                                        <td >
+                                            <span t-field="o.date_invoice"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </t>
+
+<!-- Lieferschein -->
+                        <t t-if="doc_model == 'stock.picking'">
+                            <b>LS - bitte den Block im eq_base_report // header.xml anpassen</b>
+                        </t>
+                    </div>
+                </div>
 
                 <div class="rightbox" id="logo" >
                     <!--<img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo"
