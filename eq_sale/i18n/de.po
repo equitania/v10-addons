@@ -514,3 +514,24 @@ msgstr "Fußtext [equitania]"
 #: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_eq_head_text_invoice
 msgid "Invoice head text [equitania]"
 msgstr "Kopftext [equitania]"
+
+
+#. module: eq_sale
+#: model:ir.ui.menu,name:eq_sale.EQ Report_configuration
+msgid "Report Layout Categories"
+msgstr "Reportsektionen"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_sale_order_line_sale_layout_cat_id
+msgid "Section"
+msgstr "Sektion"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.report_configuration_search_view
+msgid "Separator"
+msgstr "Separator"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_sale_layout_category_sequence_6312
+msgid "Sequence"
+msgstr "Reihenfolge"

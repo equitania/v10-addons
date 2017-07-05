@@ -3,6 +3,12 @@
 
 
 #### 05.07.2017
+#### Version 1.0.19
+##### CHG
+- VEP-92: Begonnen mit Sektionen im Angebot
+
+
+#### 05.07.2017
 #### Version 1.0.18
 ##### CHG
 - VEP-17: Kopf- und Fußtext der Rechnungen abhängig von Einstellung "Benutze Kopf- und Fusstext aus Auftrag"
