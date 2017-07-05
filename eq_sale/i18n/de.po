@@ -489,3 +489,28 @@ msgstr "<strong>Artikelnr.</strong>"
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "<strong>Subtotal: </strong>"
 msgstr "<strong>Zwischensumme: </strong>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_view_sale_config_settings_show_address
+msgid "Texts"
+msgstr "Texte"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_view_sale_config_settings_show_address
+msgid "Invoices"
+msgstr "Rechnungen"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_eq_use_text_from_order
+msgid "Use text from order [equitania]"
+msgstr "Benutze Kopf- und Fusstext aus Auftrag [equitania]"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_eq_foot_text_invoice
+msgid "Invoice foot text [equitania]"
+msgstr "Fußtext [equitania]"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_eq_head_text_invoice
+msgid "Invoice head text [equitania]"
+msgstr "Kopftext [equitania]"

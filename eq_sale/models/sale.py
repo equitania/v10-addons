@@ -166,6 +166,19 @@ class eq_sale_order_extension(models.Model):
                 result = result.replace("@ZIP", zip)
                 sale_order.eq_delivery_address = result
 
+    def get_setting(self, settingName):
+        """
+            Get value of actual setting
+            @cr:
+            @uid:
+            @settingName:
+            @return:
+        """
+        result = self.env['ir.config_parameter'].get_param(settingName)
+        if result == "":
+            return None
+        return result
+
     @api.multi
     def _prepare_invoice(self):
         """
@@ -174,8 +187,19 @@ class eq_sale_order_extension(models.Model):
         """
 
         result = super(eq_sale_order_extension, self)._prepare_invoice()
-        result['eq_head_text'] = self.eq_head_text
-        result['comment'] = self.note
+        eq_use_text_from_order = self.get_setting("eq.use.text.from.order")
+        if str(eq_use_text_from_order) == "False":  # ok, wir sollen den eq_text verwenden
+            head = self.get_setting("eq.head.text.invoice")
+            if head is not None:
+                result['eq_head_text'] = head
+
+            foot = self.get_setting("eq.foot.text.invoice")
+            if foot is not None:
+                result['comment'] = foot
+
+        else:
+            result['eq_head_text'] = self.eq_head_text
+            result['comment'] = self.note
         return result
 
 
@@ -200,6 +224,7 @@ class eq_sale_configuration_address(models.TransientModel):
 
     def set_default_values(self):
         ir_values_obj = self.env['ir.values']
+        ir_config_obj = self.env['ir.config_parameter']
 
         ir_values_obj.set_default('sale.order', 'default_show_address', self.default_show_address or False)
         ir_values_obj.set_default('sale.order', 'default_search_only_company', self.default_search_only_company or False)
@@ -207,19 +232,33 @@ class eq_sale_configuration_address(models.TransientModel):
         ir_values_obj.set_default('sale.order', 'use_calendar_week', self.default_use_calendar_week)
         ir_values_obj.set_default('sale.order.line', 'eq_use_internal_description', self.default_eq_use_internal_description)
 
+        ir_config_obj.set_param('eq.use.text.from.order', self.eq_use_text_from_order)
+        ir_config_obj.set_param('eq.head.text.invoice', self.eq_head_text_invoice)
+        ir_config_obj.set_param('eq.foot.text.invoice', self.eq_foot_text_invoice)
+
     def get_default_values(self, fields):
         ir_values_obj = self.env['ir.values']
+        ir_config_obj = self.env['ir.config_parameter']
+
         notification = ir_values_obj.get_default('sale.order', 'default_show_address')
         only_company = ir_values_obj.get_default('sale.order', 'default_search_only_company')
         show_delivery_date = ir_values_obj.get_default('sale.order', 'show_delivery_date')
         use_calendar_week = ir_values_obj.get_default('sale.order', 'use_calendar_week')
         eq_use_internal_description = ir_values_obj.get_default('sale.order.line', 'eq_use_internal_description')
+
+        eq_use_text_from_order = ir_config_obj.get_param('eq.use.text.from.order')
+        eq_head_text_invoice = ir_config_obj.get_param('eq.head.text.invoice')
+        eq_foot_text_invoice = ir_config_obj.get_param('eq.foot.text.invoice')
+
         return {
             'default_show_address': notification,
             'default_search_only_company': only_company,
             'default_show_delivery_date': show_delivery_date,
             'default_use_calendar_week': use_calendar_week,
             'default_eq_use_internal_description': eq_use_internal_description,
+            'eq_use_text_from_order': eq_use_text_from_order,
+            'eq_head_text_invoice': eq_head_text_invoice,
+            'eq_foot_text_invoice': eq_foot_text_invoice,
         }
 
     default_show_address = fields.Boolean(
@@ -237,6 +276,12 @@ class eq_sale_configuration_address(models.TransientModel):
     default_eq_use_internal_description = fields.Boolean('Use internal description for sale orders [equitania]',
                                                           help='The internal description will be used for sale orders not the sale description',
                                                           default_model='sale.order.line')
+
+    eq_use_text_from_order = fields.Boolean(string="Use text from order [equitania]", required=False,
+                                            default=False)  # Benutze Kopf- und Fusstext aus Auftrag
+    eq_head_text_invoice = fields.Html(string="Invoice head text [equitania]", required=False,
+                                       default="")  # Kopftext - kann überall verwendet werden und ersetzt dadurch Odoo Standard
+    eq_foot_text_invoice = fields.Html(string="Invoice foot text [equitania]", required=False, default="")
 
 
 class eq_sale_order_line(models.Model):

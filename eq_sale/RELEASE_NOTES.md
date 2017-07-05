@@ -1,5 +1,13 @@
 ## Modul eq_sale
 
+
+
+#### 05.07.2017
+#### Version 1.0.18
+##### CHG
+- VEP-17: Kopf- und Fußtext der Rechnungen abhängig von Einstellung "Benutze Kopf- und Fusstext aus Auftrag"
+
+
 #### 30.06.2017
 #### Version 1.0.17
 ##### CHG
