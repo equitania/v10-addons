@@ -1,6 +1,10 @@
 ## Modul eq_sale
 
 
+#### 06.07.2017
+#### Version 1.0.20
+##### FIX
+- VEP-111: Fix für Fehler bei Anlage eines Angebots
 
 #### 05.07.2017
 #### Version 1.0.19

@@ -71,9 +71,9 @@ class res_partner(models.Model):
             if record.parent_id and not record.is_company:
                 name = "%s, %s" % (record.parent_id.name, name)
                 if record.type == 'contact':
-                    name = "%s, %s %s %s" % (record.parent_id.name, (record.title.name if record.title else ''), (record.eq_firstname if record.eq_firstname else ''), record.name)
+                    name = "%s, %s %s %s" % (record.parent_id.name, (record.title.name if record.title else ''), (record.eq_firstname or ''), record.name or '')
             if not record.parent_id and not record.is_company:
-                name = "%s %s %s" % ((record.title.name if record.title else ''), (record.eq_firstname if record.eq_firstname else ''), record.name)
+                name = "%s %s %s" % ((record.title.name if record.title else ''), (record.eq_firstname or ''), record.name or '')
             if tmp_context.get('show_address_only'):
                 name = self._display_address(without_company=True) # record
             if tmp_context.get('show_address'):
@@ -138,9 +138,10 @@ class res_partner(models.Model):
                 # Company name
                 company_name = partner_id.parent_id and partner_id.parent_id.name + ' ; ' or ''
                 # Street City
-                street = partner_id.street if partner_id.street else ''
+                street = partner_id.street or ''
                 house_no = partner_id.eq_house_no or ''
-                city = partner_id.city if partner_id.city else ''
+                city = partner_id.city or ''
+                partner_name = partner_id.name or ''
                 # customer/creditor number
                 deb_num = ''
                 if partner_id.customer_number != 'False' and partner_id.customer_number and partner_id.supplier_number != 'False' and partner_id.supplier_number:
@@ -151,10 +152,11 @@ class res_partner(models.Model):
                     deb_num = '[' + partner_id.supplier_number + '] '
                 if partner_id.is_company:
                     if show_address:
-                        new_res.append((partner_id.id, deb_num + company_name + partner_id.name + ' / ' + _(
+                        new_res.append((partner_id.id, deb_num + company_name + partner_name + ' / ' + _(
                             'Company') + ' // ' + street + ' ' + house_no + ', ' + city))
                     else:
-                        new_res.append((partner_id.id, deb_num + company_name + partner_id.name + ' / ' + _('Company')))
+                        new_res.append((partner_id.id, deb_num + company_name + partner_name + ' / ' + _('Company')))
+
                 else:
                     type = partner_id.type
                     if partner_id.type == 'contact':
@@ -175,7 +177,7 @@ class res_partner(models.Model):
                     else:
                         new_res.append((partner_id.id, "%s %s %s %s" % (
                         deb_num + company_name, (partner_id.title.name if partner_id.title else ''),
-                        (partner_id.eq_firstname if partner_id.eq_firstname else ''), (partner_id.name or '') + ' / ' + type)))
+                        (partner_id.eq_firstname if partner_id.eq_firstname else ''), partner_name + ' / ' + type)))
             return new_res
         return res
 
