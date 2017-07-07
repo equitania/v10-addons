@@ -35,6 +35,7 @@
                		<field name="eq_country" attrs="{'invisible': [('eq_country', '=', False)]}" />
                 </xpath>
 
+				<field name="note" position="replace"></field>
 				<notebook position="inside">
                     <page string="Head Text">
 						<field name="eq_head_text" placeholder="Dear Sir or Madam," nolabel="1"/>

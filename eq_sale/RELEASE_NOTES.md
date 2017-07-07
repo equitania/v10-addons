@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 07.07.2017
+#### Version 1.0.21
+##### FIX
+- VEP-112: Fußtext ist doppelt drin
+
 
 #### 06.07.2017
 #### Version 1.0.20
