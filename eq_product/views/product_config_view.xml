@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="eq_view_sale_config_settings_product_no_generator" model="ir.ui.view">
+            <field name="name">eq_sale.config.address.product.settings.product.no.generator</field>
+            <field name="model">sale.config.settings</field>
+            <field name="inherit_id" ref="sale.view_sales_config"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='deposit_product_id_setting']" position="after">
+
+                        <label for="id" string="Product Number Generator"/>
+                        <div>
+                            <div>
+                                <field name="default_eq_min_prefix_count" class="oe_inline"/>
+                                <label for="default_eq_min_prefix_count"/>
+                            </div>
+                            <div>
+                                <field name="default_eq_max_prefix_count" class="oe_inline"/>
+                                <label for="default_eq_max_prefix_count"/>
+                            </div>
+                            <div>
+                                <field name="default_eq_prod_num_lenght" class="oe_inline"/>
+                                <label for="default_eq_prod_num_lenght"/>
+                            </div>
+                            <div>
+                                <field name="default_eq_seperator" class="oe_inline"/>
+                                <label for="default_eq_seperator"/>
+                            </div>
+                        </div>
+                    </xpath>
+
+                </data>
+            </field>
+        </record>
+
+    </data>
+</openerp>

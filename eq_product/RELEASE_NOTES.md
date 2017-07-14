@@ -1,6 +1,12 @@
 ## Modul eq_product
 
 
+#### 14.07.2017
+#### Version 1.0.5
+##### CHG
+- VEP-113: Nummerngenerator für Produkte
+
+
 #### 28.06.2017
 #### Version 1.0.4
 ##### ADD

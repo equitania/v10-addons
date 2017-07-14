@@ -21,11 +21,125 @@
 
 from odoo import models, fields, api, _
 import odoo.addons.decimal_precision as dp
+from string import replace
+
 
 class eq_product_product(models.Model):
     _inherit = 'product.product'
 
     eq_drawing_number = fields.Char('Drawing Number', size=50)
+
+    def _generate_ean(self, company_ean, sequence):
+        ean_without_checksum = company_ean + sequence[-5:]
+
+        oddsum = 0
+        evensum = 0
+        for i in range(0, len(ean_without_checksum)):
+            if i % 2 == 0:
+                oddsum += int(ean_without_checksum[i])
+            else:
+                evensum += int(ean_without_checksum[i])
+        total = oddsum + (evensum * 3)
+        checksum = int(10 - total % 10.0) % 10
+        if checksum == 10:
+            checksum == 0
+        ean13 = ean_without_checksum + str(checksum)
+        self.write({'ean13': ean13})
+
+    @api.multi
+    def eq_product_number_update(self, context):
+        print 'test'
+        # Gets the product
+        for product in self:
+            # product = self # self.env['product.product'].browse(ids)
+            prod_rec = product.default_code
+
+            # Gets the config values for the product number
+            ir_values = self.env['ir.values']
+            min_prefix_count = ir_values.get_default('product.product', 'default_eq_min_prefix_count')
+            max_prefix_count = ir_values.get_default('product.product', 'default_eq_max_prefix_count')
+            prod_num_lenght = ir_values.get_default('product.product', 'default_eq_prod_num_lenght')
+            seperator = ir_values.get_default('product.product', 'default_eq_seperator')
+            # Deletes all spaces in the string
+            if prod_rec:
+                prod_rec = replace(prod_rec, ' ', '')
+                if seperator:
+                    prod_rec = replace(prod_rec, seperator, '')
+                else:
+                    seperator = ''
+                    prod_rec = replace(prod_rec, seperator, '')
+            else:
+                prod_rec = ''
+                seperator = ''
+            if len(prod_rec) >= min_prefix_count and len(prod_rec) <= max_prefix_count:
+                # Sql Query (self explaining), which gets the entries where prefix is identical to prefix.
+                self._cr.execute("Select * From ir_sequence Where code=%s", ('eq_product_no.' + prod_rec,))
+
+                # cr.fetchone is a dictionary with the row from the database. which we got with cr.execute
+                # If the sequence with the prefix is present, we just use the sequence
+                if self._cr.fetchone():
+                    # Gets the sequence for the and sets it in the appropriate field
+                    seq = self.env['ir.sequence'].get('eq_product_no.' + prod_rec)
+                    vals = {
+                        'default_code': seq
+                    }
+
+                    # Test
+                    product._generate_ean('1234567890123', seq)
+
+                    super(eq_product_product, product).write(vals)
+                    if prod_rec == '' and max_prefix_count == 0:
+                        company_ean = self.env['res.users'].browse(self._uid).company_id.eq_company_ean
+                        if company_ean:
+                            product._generate_ean(company_ean, seq)
+
+                # Else we create that sequence and the sequence.type and use it
+                else:
+                    # Defines the sequence.type
+
+                    # auskommentiert in Odoo10
+                    # vals_seq_type = {
+                    #     'code': 'eq_product_no.' + prod_rec,
+                    #     'name': 'Product Number ' + prod_rec,
+                    # }
+
+                    # Creates the sequence.type in OpenERP; auskommentiert in Odoo10
+                    # self.env['ir.sequence.type'].create(vals_seq_type, context)
+
+                    # Gets the company_id, which is needed for the sequence
+                    user_rec = self.env['res.users'].browse(self._uid)
+                    company_id = user_rec.company_id.id
+
+                    # Defines the sequence and uses the ir.sequence.type that was previously created
+                    vals_seq = {
+                        'code': 'eq_product_no.' + prod_rec,
+                        'suffix': '',
+                        'number_next': 1,
+                        'number_increment': 1,
+                        'implementation': 'standard',
+                        'company_id': company_id,
+                        'padding': prod_num_lenght,
+                        'active': True,
+                        'prefix': prod_rec + seperator,
+                        'name': 'Product Number ' + prod_rec,
+                    }
+                    # Creates the sequence in OpenERP
+                    self.env['ir.sequence'].create(vals_seq)
+
+                    # Gets the sequence for the and sets it in the appropriate field
+                    seq = self.env['ir.sequence'].get('eq_product_no.' + prod_rec)
+
+                    # Test
+                    product._generate_ean('1234567890123', seq)
+
+                    vals = {
+                        'default_code': seq
+                    }
+                    super(eq_product_product, product).write(vals)
+                    if prod_rec == '' and max_prefix_count == 0:
+                        company_ean = self.env['res.users'].browse(self._uid).company_id.eq_company_ean
+                        if company_ean:
+                            product._generate_ean(company_ean, seq)
 
 
 class eq_product_template(models.Model):
@@ -93,11 +207,130 @@ class eq_product_template(models.Model):
                 text_to_be_set = vals['name']
                 ir_translation_obj = self.env['ir.translation']
                 ir_translation_record = ir_translation_obj.sudo().search([('res_id', '=', self.id), (
-                'lang', '=', actual_language), ('name', '=', 'product.template,name')])
+                    'lang', '=', actual_language), ('name', '=', 'product.template,name')])
                 if ir_translation_record:
                     ir_translation_record.value = text_to_be_set
 
         return res
+
+    @api.multi
+    def eq_product_number_update(self):
+        """
+        Generierung der Produktnummer in product.template
+        :param ids:
+        :return:
+        """
+
+        product_obj = self.env['product.product']
+        product = self.env['product.template'].browse(self.id)
+        prod_rec = product[0].default_code
+        product_variant = product[0].product_variant_ids[0].id
+
+        # Gets the config values for the product number
+        ir_values = self.env['ir.values']
+        min_prefix_count = ir_values.get_default('product.product', 'default_eq_min_prefix_count')
+        max_prefix_count = ir_values.get_default('product.product', 'default_eq_max_prefix_count')
+        prod_num_lenght = ir_values.get_default('product.product', 'default_eq_prod_num_lenght')
+        seperator = ir_values.get_default('product.product', 'default_eq_seperator')
+        # Deletes all spaces in the string
+        if prod_rec:
+            prod_rec = replace(prod_rec, ' ', '')
+            if seperator:
+                prod_rec = replace(prod_rec, seperator, '')
+            else:
+                seperator = ""
+        else:
+            prod_rec = ''
+            seperator = ''
+        if len(prod_rec) >= min_prefix_count and len(prod_rec) <= max_prefix_count:
+            # Sql Query (self explaining), which gets the entries where prefix is identical to prefix.
+            self._cr.execute("Select * From ir_sequence Where code=%s", ('eq_product_no.' + prod_rec,))
+
+            # If the sequence with the prefix is present, we just use the sequence
+            if self._cr.fetchone():
+                # Gets the sequence for the and sets it in the appropriate field
+                seq = self.env['ir.sequence'].get('eq_product_no.' + prod_rec)
+                vals = {
+                    'default_code': seq
+                }
+
+                if product[0].product_variant_ids:
+                    product[0].product_variant_ids[0].write(vals)
+                    if prod_rec == '' and max_prefix_count == 0:
+                        try:
+                            company_ean = self.env['res.users'].browse(uid).company_id.eq_company_ean
+                            if company_ean:
+                                product_obj._generate_ean(product[0].product_variant_ids[0], company_ean, seq)
+                        except:
+                            # vorläufig wegen fehlendem Feld eq_company_ean
+                            pass
+
+            # Else we create that sequence and the sequence.type and use it
+            else:
+                # Defines the sequence.type
+                vals_seq_type = {
+                    'code': 'eq_product_no.' + prod_rec,
+                    'name': 'Product Number ' + prod_rec,
+                }
+
+                # Creates the sequence.type in OpenERP; auskommentiert in Odoo10
+                # self.env['ir.sequence.type'].create(vals_seq_type)
+
+                # Gets the company_id, which is needed for the sequence
+                user_rec = self.env['res.users'].browse(self._uid)
+                company_id = user_rec.company_id.id
+
+                # Defines the sequence and uses the ir.sequence.type that was previously created
+                vals_seq = {
+                    'code': 'eq_product_no.' + prod_rec,
+                    'suffix': '',
+                    'number_next': 1,
+                    'number_increment': 1,
+                    'implementation': 'standard',
+                    'company_id': company_id,
+                    'padding': prod_num_lenght,
+                    'active': True,
+                    'prefix': prod_rec + seperator,
+                    'name': 'Product Number ' + prod_rec,
+                }
+                # Creates the sequence in OpenERP
+                self.env['ir.sequence'].create(vals_seq)
+
+                # Gets the sequence for the and sets it in the appropriate field
+                seq = self.env['ir.sequence'].get('eq_product_no.' + prod_rec)
+                vals = {
+                    'default_code': seq
+                }
+
+                if product[0].product_variant_ids:
+                    product[0].product_variant_ids[0].write(vals)  # ?
+
+                # product_obj.write(product_variant, vals)
+                if prod_rec == '' and max_prefix_count == 0:
+                    try:
+                        company_ean = self.env['res.users'].browse(uid, context).company_id.eq_company_ean
+                        if company_ean:
+                            product_obj._generate_ean(product[0].product_variant_ids[0], company_ean, seq)
+                    except:
+                        # try vorläufig wegen fehlendem Feld eq_company_ean
+                        pass
+
+        def _generate_ean(self, prod_variant, company_ean, sequence):
+            ean_without_checksum = company_ean + sequence[-5:]
+
+            oddsum = 0
+            evensum = 0
+            for i in range(0, len(ean_without_checksum)):
+                if i % 2 == 0:
+                    oddsum += int(ean_without_checksum[i])
+                else:
+                    evensum += int(ean_without_checksum[i])
+            total = oddsum + (evensum * 3)
+            checksum = int(10 - total % 10.0) % 10
+            if checksum == 10:
+                checksum == 0
+            ean13 = ean_without_checksum + str(checksum)
+            prod_variant.write({'ean13': ean13})
 
 
 class eq_product_template_standard_price_history(models.Model):
@@ -118,3 +351,33 @@ class eq_product_template_standard_price_history(models.Model):
 
         return res
 
+
+class eq_sale_config_product(models.TransientModel):
+    _inherit = 'sale.config.settings'
+
+    def set_default_prod_config_values(self):
+        ir_values_obj = self.env['ir.values']
+
+        ir_values_obj.set_default('product.product', 'default_eq_min_prefix_count', self.default_eq_min_prefix_count)
+        ir_values_obj.set_default('product.product', 'default_eq_max_prefix_count', self.default_eq_max_prefix_count)
+        ir_values_obj.set_default('product.product', 'default_eq_prod_num_lenght', self.default_eq_prod_num_lenght)
+        ir_values_obj.set_default('product.product', 'default_eq_seperator', self.default_eq_seperator)
+
+    def get_default_prod_config_values(self, fields):
+        ir_values_obj = self.env['ir.values']
+
+        default_eq_min_prefix_count = ir_values_obj.get_default('product.product', 'default_eq_min_prefix_count')
+        default_eq_max_prefix_count = ir_values_obj.get_default('product.product', 'default_eq_max_prefix_count')
+        default_eq_prod_num_lenght = ir_values_obj.get_default('product.product', 'default_eq_prod_num_lenght')
+        default_eq_seperator = ir_values_obj.get_default('product.product', 'default_eq_seperator')
+        return {
+            'default_eq_min_prefix_count': default_eq_min_prefix_count,
+            'default_eq_max_prefix_count': default_eq_max_prefix_count,
+            'default_eq_prod_num_lenght': default_eq_prod_num_lenght,
+            'default_eq_seperator': default_eq_seperator,
+        }
+
+    default_eq_min_prefix_count = fields.Integer('Min prefix lenght [equitania]')
+    default_eq_max_prefix_count = fields.Integer('Max prefix lenght [equitania]')
+    default_eq_prod_num_lenght = fields.Integer('Product number lenght [equitania]')
+    default_eq_seperator = fields.Char('Seperator [equitania]')
