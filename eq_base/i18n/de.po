@@ -59,4 +59,4 @@ msgstr "CEO 3"
 #. module: eq_base
 #: model:ir.ui.view,arch_db:eq_base.eq_base_ceo_view_company_form
 msgid "Title"
-msgstr "Anrede"
+msgstr "Geschäftsführer oder Inhaber:"
