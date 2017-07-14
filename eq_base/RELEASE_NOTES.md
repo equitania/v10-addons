@@ -1,5 +1,11 @@
 ## Modul eq_base
 
+#### 14.07.2017
+#### Version 1.0.3
+##### CHG
+- Übersetzung korrigiert 
+
+
 #### 23.06.2017
 #### Version 1.0.2
 ##### CHG
