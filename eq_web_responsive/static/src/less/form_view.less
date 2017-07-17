@@ -1,0 +1,85 @@
+/* Copyright 2016 Ponto Suprimentos Ltda.
+ * License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). */
+
+
+
+body {
+    font-size: 15px;
+}
+
+
+.ui-autocomplete {
+    font-family: "Lucida Grande", Helvetica, Verdana, Arial, sans-serif;
+}
+
+
+.o_form_view.o_form_editable .o_form_field_many2manytags {
+    border: 2px solid #ccc;
+    border-width: 0px 0px 2px 0px;
+    border-radius: 5px;
+}
+
+.o_form_view {
+
+    // Modulspezifische Anpassungen
+    // ___________________________________________________________##########################
+
+    // Zusätzlicher Abstand für Titel entfernen, Vorname und Name z.B. bei Kundenmaske, im nicht-edit-modus
+    .oe_title {
+        h1 {
+            margin: 0 0 4px 0;
+        }
+
+       /*.o_form_field_many2one {
+            width: 100%;
+            background-color: yellow;
+            padding-right: 20px;
+        }*/
+    }
+
+
+   // Button box
+    .oe_button_box {
+
+        &, & + .oe_avatar {
+            + .oe_title {
+                width: auto;
+                padding-right:40px;
+            }
+        }
+    }
+
+    .o_form_label {
+        font-size: 15px;
+    }
+
+    input.eq_citypart {
+        width: 60%!important;
+        margin-left:40%;
+    }
+    span.eq_citypart {
+        width: 100%;
+
+    }
+
+    input[type="text"], input[type="password"], input[type="number"], textarea, select {
+        border: 2px solid #ccc;
+        border-width: 0px 0px 2px 0px;
+        border-radius: 5px;
+    }
+    .o_form_field_many2manytags {
+        .o_form_input_dropdown {
+            .o_dropdown_button {
+                right: 0px!important;
+            }
+        }
+    }
+
+    // Groups
+    .o_td_label {
+        min-width: 180px!important;
+    }
+
+}
+
+
