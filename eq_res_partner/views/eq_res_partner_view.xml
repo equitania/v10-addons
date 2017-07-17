@@ -47,10 +47,11 @@
 				<xpath expr="//div[@class='oe_title']/h1" position="replace">
 
 					<div>
+
+						<field name="title" placeholder="Titel" />
 						<h1>
-							<field name="title" placeholder="Titel" />
-						<field name="eq_firstname" placeholder="Firstname" attrs="{'invisible': [('is_company', '=', True)]}"/>
-						<field name="name" placeholder="Name" />
+							<field name="eq_firstname" placeholder="Firstname" attrs="{'invisible': [('is_company', '=', True)]}"/><br/>
+							<field name="name" placeholder="Name" />
 						</h1>
 
 						<field name="eq_name2" style="width: 100%%;" placeholder="Name2"
@@ -91,8 +92,8 @@
 
 				<xpath expr="//field[@name='country_id']" position="before">
 					<div>
-						<field name="city" placeholder="City" style="width: 50%%" />
-						<field name="eq_citypart" placeholder="District" style="width: 50%%" />
+						<field name="city" placeholder="City" style="width: 60%%" />
+						<field name="eq_citypart" placeholder="District" class="eq_citypart" />
 					</div>
                 </xpath>
 

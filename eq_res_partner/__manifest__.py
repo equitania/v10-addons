@@ -22,7 +22,7 @@
 {
     'name': "Equitania Partner-Erweiterung",
     'license': 'AGPL-3',
-    'version': '1.0.9',
+    'version': '1.0.10',
     'category': 'Partner',
     'description': """Extensions for res_partner""",
     'author': 'Equitania Software GmbH',

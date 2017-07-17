@@ -1,5 +1,13 @@
 ## Modul eq_res_partner
 
+
+#### 17.07.2017
+#### Version 1.0.10
+##### CHG
+- Titel eines Kontaktes nun normal-groß
+- PLZ nun direkt unterhalb der Stadt im EDIT-Modus
+
+
 #### 03.07.2017
 #### Version 1.0.9
 ##### CHG
