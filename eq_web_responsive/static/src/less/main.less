@@ -1,0 +1,16 @@
+/* Copyright 2016 LasLabs Inc.
+ * License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). */
+
+
+body {
+/*Dieser Fix ist für die Situationen, wenn ein Refresh auf das Fenster gemacht wird und die per
+    javascript generierte max-height für die UL Elemente nicht gesetzt wird, greift die overflow
+    damit das Menü trotzdem ganz gescrollt und erreicht werden kann */
+    overflow:auto!important;
+}
+
+.o_web_settings_dashboard {
+    /* Diese Farbe ist für den nicht sichtbaren Bereich, der ggf. durch den oberen Fix sichtbar wird.
+    d.h. wenn Sie die Hintergrundfarbe für das dashboard anpassen, muss auch die background-color für den body auf die selbe Farbe gesetzt werden! */
+    background-color:#f0eeee!important;
+}

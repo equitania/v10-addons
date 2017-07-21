@@ -1,5 +1,12 @@
 ## Modul eq_web_responsive
 
+
+
+#### 21.07.2017
+#### Version 1.0.2
+##### FIX
+- Fix für die Problematik mit dem Menü welches nicht scrollbar ist nach einem Refresh der Seite
+
 #### 21.07.2017
 #### Version 1.0.1
 ##### ADD

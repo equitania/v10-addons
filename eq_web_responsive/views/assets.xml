@@ -11,13 +11,14 @@
             <link rel="stylesheet"
                   href="/eq_web_responsive/static/src/less/form_view.less"
                   />
+            <link rel="stylesheet"
+                  href="/eq_web_responsive/static/src/less/main.less"
+                  />
             <!--<link rel="stylesheet"
                   type="text/css"
                   href="/web_responsive/static/lib/css/drawer.3.2.0.css"
                   />
-            <link rel="stylesheet"
-                  href="/web_responsive/static/src/less/main.less"
-                  />
+
             <link rel="stylesheet"
                   href="/web_responsive/static/src/less/navbar.less"
                   />
