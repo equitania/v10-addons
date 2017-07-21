@@ -1,5 +1,10 @@
 ## Modul eq_web_responsive
 
+#### 21.07.2017
+#### Version 1.0.1
+##### ADD
+- Menüpunkt "Allgemeine Einstellungen" unter Einstellungen enthält nun einen Unterpunkt "Allgemeine Einstellungen" (Jira-Issue VEP-115)
+
 #### 17.07.2017
 #### Version 1.0.0
 ##### CHG

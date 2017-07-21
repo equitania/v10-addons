@@ -22,13 +22,13 @@
 {
     'name': 'Equitania Web Responsive',
     'license': 'AGPL-3',
-    'version': '1.0.0',
+    'version': '1.0.1',
     'description': """
         Anpassung für das backend theme web_responsive
     """,
     'author': 'Equitania Software GmbH',
     'website': 'www.myodoo.de',
-    'depends': ['web_responsive'],
+    'depends': ['web_responsive','base_setup'],
     'category' : 'backend',
     'summary': 'backend improvement',
 
