@@ -2,6 +2,12 @@
 
 
 #### 24.07.2017
+#### Version 1.0.25
+##### ADD
+- Optionale Positionen für Angebote (Nun auch in Reports enthalten)
+
+
+#### 24.07.2017
 #### Version 1.0.24
 ##### CHG
 - Optionale Positionen für Angebote
