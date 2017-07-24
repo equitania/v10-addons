@@ -19,19 +19,13 @@
 #
 ##############################################################################
 
-{
-    'name': "Equitania Bestellungen",
-    'license': 'AGPL-3',
-    'version': '1.0.2',
-    'category': 'purchase',
-    'description': """Extensions for purchase""",
-    'author': 'Equitania Software GmbH',
-    'summary': 'Purchase Extension',
-    'website': 'www.myodoo.de',
-    "depends": ['base', 'base_setup', 'purchase', 'eq_res_partner'],
-    'data': [
-        'views/purchase_view.xml'
-             ],
-    "active": False,
-    "installable": True
-}
+
+from odoo import models, fields, api, _
+
+class res_partner(models.Model):
+    _inherit = 'res.partner'
+
+
+    eq_delivery_date_type_purchase = fields.Selection([('cw', 'Calendar week'), ('date', 'Date')],
+                                                  string="Delivery Date Purchase",
+                                                  help="If nothing is selected, the default from the settings will be used.")

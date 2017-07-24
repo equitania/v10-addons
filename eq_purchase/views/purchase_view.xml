@@ -26,5 +26,38 @@
 
             </field>
         </record>
+
+
+
+
+        <record id="eq_view_purchase_config_settings_report_settings" model="ir.ui.view">
+            <field name="name">eq_purchase.config.report.settings</field>
+            <field name="model">purchase.config.settings</field>
+            <field name="inherit_id" ref="purchase.view_purchase_configuration"/>
+            <field name="arch" type="xml">
+                <data>
+					<!---->
+                    <xpath expr="//form[@class='oe_form_configuration']/div" position="before">
+
+						<group string="Reports" name="eq_purchase_report_settings">
+							<label for="id" string="Delivery Date"/>
+							<div>
+								<div>
+									<field name="default_show_delivery_date"/>
+									<label for="default_show_delivery_date"/>
+								</div>
+								<div>
+									<field name="default_use_calendar_week"/>
+									<label for="default_use_calendar_week"/>
+								</div>
+							</div>
+						</group>
+                    </xpath>
+
+                </data>
+            </field>
+        </record>
+
+
     </data>
 </openerp>
