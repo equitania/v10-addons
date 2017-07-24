@@ -26,15 +26,21 @@
 			</field>
         </record>
 
-
+        <!--Feld template_id mit div und label entfernen (aus website_quote)-->
 		<record id="eq_disable_temaplate_id_form" model="ir.ui.view">
 			 <field name="name">eq.disable.template.id.form</field>
 			 <field name="model">sale.order</field>
 			 <field name="inherit_id" ref="website_quote.sale_order_form_quote"/>
 			 <field name="arch" type="xml">
+                 <!--
 				 <field name="template_id" position="replace"/>
+                  -->
+                 <xpath expr="//sheet/group/group/div" position="replace">
+                 </xpath>
+                 <label for="template_id"  position="replace"/>
 			 </field>
 		</record>
+
 
 <!--
         <record id="eq_disable_note_form" model="ir.ui.view">

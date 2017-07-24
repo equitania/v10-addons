@@ -1,5 +1,10 @@
 ## eq_report_pattern 
 
+#### 24.07.2017
+#### Version 1.0.11
+##### CHG
+- Div und Label für Feld template_id entfernt (Leerzeile in Anzeige für Lieferadresse)
+
 
 #### 24.07.2017
 #### Version 1.0.10
