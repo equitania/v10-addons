@@ -14,3 +14,120 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<span><strong>Invoice address:</strong></span>"
+msgstr "<span><strong>Rechnungsadresse:</strong></span>"
+
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<span><strong>Customer Address:</strong></span>"
+msgstr "<span><strong>Kundenadresse:</strong></span>"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<span>Contact person</span>"
+msgstr "<span>Ansprechpartner</span>"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<span>Customer no.</span>"
+msgstr "<span>Kundennr.</span>"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<span>Date</span>"
+msgstr "<span>Datum</span>"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<span>Delivery note:</span>"
+msgstr "<span>Lieferschein:</span>"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<span>E-Mail</span>"
+msgstr "<span>E-Mail</span>"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<span>Fax</span>"
+msgstr "<span>Fax</span>"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<span>Our reference no.</span>"
+msgstr "<span>Unsere Referenz</span>"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<span>Phone</span>"
+msgstr "<span>Telefon</span>"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<span>Scheduled date</span>"
+msgstr "<span>Geplante Lieferung</span>"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<strong>Barcode</strong>"
+msgstr "<strong>Barcode</strong>"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<strong>Date</strong>"
+msgstr "<strong>Datum</strong>"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<strong>Destination</strong>"
+msgstr "<strong>Zielort</strong>"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<strong>For further information, please contact</strong>"
+msgstr "<strong>Bei Fragen wenden Sie sich bitte an</strong>"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<strong>Item description</strong>"
+msgstr "<strong>Beschreibung</strong>"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<strong>Item no.</strong>"
+msgstr "<strong>Artikelnr.</strong>"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<strong>Order</strong>"
+msgstr "<strong>Bestellung</strong>"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<strong>Pos.</strong>"
+msgstr "<strong>Pos.</strong>"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<strong>Qty.</strong>"
+msgstr "<strong>Menge</strong>"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<strong>S/N</strong>"
+msgstr "<strong>S/N</strong>"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<strong>Source</strong>"
+msgstr "<strong>Quelle</strong>"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<strong>Unit</strong>"
+msgstr "<strong>Einheit</strong>"

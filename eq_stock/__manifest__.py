@@ -22,7 +22,7 @@
 {
     'name': 'Equitania Stock',
     'license': 'AGPL-3',
-    'version': '1.0.0',
+    'version': '1.0.1',
     'description': """
         Extension for stock
     """,
