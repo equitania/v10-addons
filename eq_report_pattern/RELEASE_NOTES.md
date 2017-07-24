@@ -1,5 +1,12 @@
 ## eq_report_pattern 
 
+
+#### 24.07.2017
+#### Version 1.0.12
+##### CHG
+- Ausblenden der Seite Produktvorschläge
+
+
 #### 24.07.2017
 #### Version 1.0.11
 ##### CHG
