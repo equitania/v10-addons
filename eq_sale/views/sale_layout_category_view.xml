@@ -2,6 +2,8 @@
 <openerp>
     <data>
         <!-- Sale order form -->
+        <!--nicht mehr nötig, bereits im Standard-->
+        <!--
         <record model="ir.ui.view" id="view_order_form_inherit_1">
             <field name="name">sale.order.form.inherit_1</field>
             <field name="model">sale.order</field>
@@ -17,7 +19,7 @@
                 </data>
             </field>
         </record>
-
+-->
         <!--&lt;!&ndash; Invoice form &ndash;&gt;-->
         <!--<record model="ir.ui.view" id="view_invoice_form_inherit_1">-->
              <!--<field name="name">account.invoice.form.inherit_1</field>-->
@@ -55,7 +57,7 @@
         <!-- Report condiguration -->
         <record id="report_configuration_form_view" model="ir.ui.view">
             <field name="name">report.configuration.form.view</field>
-            <field name="model">sale_layout.category</field>
+            <field name="model">sale.layout_category</field>
             <field name="arch" type="xml">
                 <form string="Report Configuration">
                     <group>
@@ -71,7 +73,7 @@
 
         <record id="report_configuration_tree_view" model="ir.ui.view">
             <field name="name">report.configuration.form.view</field>
-            <field name="model">sale_layout.category</field>
+            <field name="model">sale.layout_category</field>
             <field name="arch" type="xml">
                 <tree string="Report Configuration">
                         <field name="name"/>
@@ -85,7 +87,7 @@
 
         <record id="report_configuration_search_view" model="ir.ui.view" >
 	        <field name="name">report.configuration.search.view</field>
-	        <field name="model">sale_layout.category</field>
+	        <field name="model">sale.layout_category</field>
 	        <field name="arch" type="xml">
                 <search string="Search Name">
                     <filter string="Total" domain="[('subtotal','=','True')]"/>
@@ -100,7 +102,7 @@
 
         <record id='report_configuration_action' model='ir.actions.act_window'>
             <field name="name">Report Configuration</field>
-            <field name="res_model">sale_layout.category</field>
+            <field name="res_model">sale.layout_category</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
         </record>

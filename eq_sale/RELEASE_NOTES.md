@@ -1,5 +1,15 @@
 ## Modul eq_sale
 
+
+#### 24.07.2017
+#### Version 1.0.23
+##### CHG
+- Vererbung für Sektionen statt neue Tabelle
+
+Benötigte Updatestatements nach Modeländerungen:
+DELETE from ir_ui_view where name = 'sale.order.form.inherit_1';
+DELETE from ir_model where name = 'sale_layout.category';
+
 #### 24.07.2017
 #### Version 1.0.22
 ##### CHG
