@@ -108,6 +108,10 @@
                     <newline/>
                 </field>
 
+                <xpath expr="//page[@name='general_information']/group" position="after">
+                    <field name="description" placeholder="Describe the product characteristics..." />
+                </xpath>
+
                 <!--<group name="store" position="replace">-->
                 <!--</group>-->
             </field>
@@ -144,6 +148,10 @@
                 <!-- code - Article no. -->
                 <xpath expr="//div[@class='oe_title']/h1" position="after">
                     <field name="default_code" placeholder="Article No."/>
+                </xpath>
+
+                <xpath expr="//page[@name='general_information']/group" position="after">
+                    <field name="description" placeholder="Describe the product characteristics..." />
                 </xpath>
 
 

@@ -1,6 +1,13 @@
 ## Modul eq_product
 
 
+
+#### 24.07.2017
+#### Version 1.0.6
+##### CHG
+- Anzeige der Produktbeschreibung
+
+
 #### 14.07.2017
 #### Version 1.0.5
 ##### CHG

@@ -147,3 +147,9 @@ msgstr "Trennzeichen [equitania]"
 #: model:ir.model.fields,field_description:eq_product.field_sale_config_settings_default_eq_prod_num_lenght
 msgid "Product number lenght [equitania]"
 msgstr "Länge der Produktnummer [equitania]"
+
+#. module: eq_product
+#: model:ir.ui.view,arch_db:eq_product.eq_product_product_form_view
+#: model:ir.ui.view,arch_db:eq_product.eq_product_template_only_form_view
+msgid "Describe the product characteristics..."
+msgstr "Beschreiben Sie die Produkteigenschaften..."
