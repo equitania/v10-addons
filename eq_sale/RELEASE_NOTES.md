@@ -1,5 +1,13 @@
 ## Modul eq_sale
 
+#### 24.07.2017
+#### Version 1.0.22
+##### CHG
+AngebotsReport angepasst:
+- Titel, Vorname, Namenszusatz, Hausnummer und Straße2 in den separaten Liefer & Rechnungsadressen unten im Angebot ergänzt
+- Standard Incoterm ausgeblendet/überschrieben
+- Lieferbedingungen ergänzt
+
 #### 07.07.2017
 #### Version 1.0.21
 ##### FIX

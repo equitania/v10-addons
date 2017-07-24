@@ -272,6 +272,11 @@ msgstr "Zahlungsbedingungen:"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "Delivery Condition:"
+msgstr "Lieferbedingungen:"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "Incoterm:"
 msgstr "Incoterm:"
 

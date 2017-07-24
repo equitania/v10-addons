@@ -471,6 +471,14 @@
                                                     <span t-field="doc.payment_term_id.note"/>
                                                 </td>
                                             </tr>
+                                            <tr t-if="doc.eq_delivery_condition_id">
+                                                <td style="padding-right:0.5cm;">
+                                                    Delivery Condition:
+                                                </td>
+                                                <td>
+                                                    <span t-field="doc.eq_delivery_condition_id"/>
+                                                </td>
+                                            </tr>
                                             <tr t-if="doc.incoterm">
                                                 <td style="padding-right:0.5cm;">
                                                     Incoterm:
@@ -481,10 +489,10 @@
                                             </tr>
                                             <tr
                                                     t-if="doc.partner_invoice_id != doc.partner_id and doc.partner_invoice_id != False">
-                                                <td style="padding-right:0.5cm; font-weight:bold;" valign="top">
+                                                <td style="padding-right:0.5cm; font-weight:bold;padding-top:0.5cm;" valign="top">
                                                     Invoice address:
                                                 </td>
-                                                <td style="padding-bottom:0.5cm;">
+                                                <td style="padding-top:0.5cm;">
                                                     <div>
                                                         <!-- falls es einen übergeordneten Partner gibt, dann dessen
                                                             Namen ausgeben -->
@@ -492,14 +500,32 @@
                                                             <div t-field="doc.partner_invoice_id.parent_id.name"
                                                                  style="clear:left;"/>
                                                         </t>
-                                                        <div t-field="doc.partner_invoice_id.name" style="clear:left;"/>
-                                                        <div t-field="doc.partner_invoice_id.street"/>
+                                                        <div  style="clear:left;">
+                                                            <h t-if="doc.partner_invoice_id.title.name" t-field="doc.partner_invoice_id.title.name"  />
+                                                            <h t-if="doc.partner_invoice_id.eq_firstname" t-field="doc.partner_invoice_id.eq_firstname" />
+                                                            <h t-field="doc.partner_invoice_id.name" />
+                                                        </div>
+                                                        <div t-if="doc.partner_invoice_id.eq_name2" style="clear:left;">
+                                                            <div t-field="doc.partner_invoice_id.eq_name2"/>
+                                                        </div>
+                                                        <!--<div t-field="doc.partner_invoice_id.name" style="clear:left;"/>-->
+                                                        <!--<div t-field="doc.partner_invoice_id.street"/>-->
+                                                        <div style="clear:left;">
+                                                            <span t-field="doc.partner_invoice_id.street"/>
+                                                            <h t-if="doc.partner_invoice_id.eq_house_no">
+                                                                <span t-field="doc.partner_invoice_id.eq_house_no" />
+                                                            </h>
+                                                        </div>
                                                         <div t-if="doc.partner_invoice_id.street2">
                                                             <div t-field="doc.partner_invoice_id.street2"/>
                                                         </div>
                                                         <h>
                                                             <h t-field="doc.partner_invoice_id.zip"/>
                                                             <h t-field="doc.partner_invoice_id.city"/>
+                                                            <h t-if="doc.partner_invoice_id.eq_citypart">
+                                                                -
+                                                                <h t-field="doc.partner_invoice_id.eq_citypart" />
+                                                            </h>
                                                         </h>
                                                         <div t-field="doc.partner_invoice_id.country_id.name"/>
                                                     </div>
@@ -507,23 +533,44 @@
                                             </tr>
                                             <tr
                                                     t-if="doc.partner_shipping_id != doc.partner_id and doc.partner_shipping_id != False">
-                                                <td style="padding-right:0.5cm; font-weight:bold;" valign="top">
+                                                <td style="padding-right:0.5cm; font-weight:bold;padding-top:0.5cm;" valign="top">
                                                     Shipping address:
                                                 </td>
-                                                <td>
+                                                <td style="padding-top:0.5cm;">
                                                     <div>
                                                         <t t-if="doc.partner_shipping_id.parent_id">
                                                             <div t-field="doc.partner_shipping_id.parent_id.name"
                                                                  style="clear:left;"/>
                                                         </t>
-                                                        <div t-field="doc.partner_shipping_id.name" style="clear:left;"/>
-                                                        <div t-field="doc.partner_shipping_id.street"/>
+                                                        <div  style="clear:left;">
+                                                            <h t-if="doc.partner_shipping_id.title.name" t-field="doc.partner_shipping_id.title.name"  />
+                                                            <h t-if="doc.partner_shipping_id.eq_firstname" t-field="doc.partner_shipping_id.eq_firstname" />
+                                                            <h t-field="doc.partner_shipping_id.name" />
+                                                        </div>
+                                                        <div t-if="doc.partner_shipping_id.eq_name2" style="clear:left;">
+                                                            <div t-field="doc.partner_shipping_id.eq_name2"/>
+                                                        </div>
+                                                        <!--<div t-field="doc.partner_shipping_id.name" style="clear:left;"/>-->
+                                                        <div style="clear:left;">
+                                                            <span t-field="doc.partner_shipping_id.street"/>
+                                                            <h t-if="doc.partner_shipping_id.eq_house_no">
+                                                                <span t-field="doc.partner_shipping_id.eq_house_no" />
+                                                            </h>
+                                                        </div>
+                                                        <div t-if="doc.partner_shipping_id.street2">
+                                                            <div t-field="doc.partner_shipping_id.street2"/>
+                                                        </div>
+                                                        <!--<div t-field="doc.partner_shipping_id.street"/>-->
                                                         <div t-if="doc.partner_shipping_id.street2">
                                                             <div t-field="doc.partner_shipping_id.street2"/>
                                                         </div>
                                                         <h>
                                                             <h t-field="doc.partner_shipping_id.zip"/>
                                                             <h t-field="doc.partner_shipping_id.city"/>
+                                                            <h t-if="doc.partner_shipping_id.eq_citypart">
+                                                                -
+                                                                <h t-field="doc.partner_shipping_id.eq_citypart" />
+                                                            </h>
                                                         </h>
                                                         <div t-field="doc.partner_shipping_id.country_id.name"/>
                                                     </div>
@@ -533,14 +580,6 @@
                                     </table>
                                 </div>
                                 <div></div>
-
-
-
-
-
-
-
-
                             </div>
                             <div class="col-xs-12"
                                  style="margin-top:1em;font-size:0.8em; margin-left:0px; padding-left:0px; page-break-inside:avoid !important;">
@@ -581,6 +620,12 @@
                         </div>
                     <!--</div>-->
                 </t>
+            </xpath>
+        </template>
+
+        <template id="eq_delete_standard_incoterm" inherit_id="sale_stock.report_saleorder_document_inherit_sale_stock" >
+            <xpath expr="//div[@t-if='doc.incoterm']" position="replace">
+                <!-- Überschreibt die Standard incoterm Positionierung -->
             </xpath>
         </template>
 
