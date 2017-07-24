@@ -2,6 +2,12 @@
 
 
 #### 24.07.2017
+#### Version 1.0.24
+##### CHG
+- Optionale Positionen für Angebote
+
+
+#### 24.07.2017
 #### Version 1.0.23
 ##### CHG
 - Vererbung für Sektionen statt neue Tabelle

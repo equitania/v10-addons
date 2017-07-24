@@ -60,7 +60,7 @@ class eq_report_sale_order(report_sxw.rml_parse):
     def get_tax(self, object, tax_id, language, currency_id):
         amount_net = 0;
         for line in object.order_line:
-            if tax_id.id in [x.id for x in line.tax_id] :#and not line.eq_optional:
+            if tax_id.id in [x.id for x in line.tax_id] and not line.eq_optional:
                  amount_net += line.price_subtotal
                  
         tax_amount = 0
@@ -72,7 +72,7 @@ class eq_report_sale_order(report_sxw.rml_parse):
     def has_tax_amount(self, object, tax_id):
         amount_net = 0;
         for line in object.order_line:
-            if tax_id.id in [x.id for x in line.tax_id] :#and not line.eq_optional:
+            if tax_id.id in [x.id for x in line.tax_id] and not line.eq_optional:
                  amount_net += line.prireport_invoice_document_inherit_sale_stockce_subtotal
 
         tax_amount = 0
@@ -159,22 +159,23 @@ class eq_report_sale_order(report_sxw.rml_parse):
     #
     #     return None
     #
-    # def calculate_sum(self, input, category_no, lines):
-    #     """
-    #         Calculate sum - just a simple total price
-    #         @input: input
-    #         @category_no: category
-    #         @lines: order lines
-    #     """
-    #     result = 0
-    #
-    #     for line in lines:
-    #         if line.eq_optional is False:
-    #             quantity = line.product_uom_qty
-    #             price = line.price_unit
-    #             result += quantity * price
-    #
-    #     return result
+
+    def calculate_sum(self, input, category_no, lines):
+        """
+            Calculate sum - just a simple total price
+            @input: input
+            @category_no: category
+            @lines: order lines
+        """
+        result = 0
+
+        for line in lines:
+            if line.eq_optional is False:
+                quantity = line.product_uom_qty
+                price = line.price_unit
+                result += quantity * price
+
+        return result
     #
     # def calculate(self, input, category_no):
     #     """

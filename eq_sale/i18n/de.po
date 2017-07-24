@@ -540,3 +540,30 @@ msgstr "Separator"
 #: model:ir.model.fields,field_description:eq_sale.field_sale_layout_category_sequence_6312
 msgid "Sequence"
 msgstr "Reihenfolge"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_sale_address_fields_view_order_form_inherit
+msgid "Confirm Sale"
+msgstr "Auftrag bestätigen"
+
+#. module: eq_sale
+#: code:addons/eq_sale/models/sale.py:276
+#, python-format
+msgid "The order contains optional positions!"
+msgstr "Optionale Positionen im Auftrag!"
+
+#. module: eq_sale
+#: code:addons/eq_sale/models/sale.py:270
+#, python-format
+msgid "All the optional positions will be removed."
+msgstr "Alle optionalen Positionen werden aus dem Auftrag entfernt."
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_info_optional_form_view
+msgid "Confirm"
+msgstr "Bestätigen"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_info_optional_form_view
+msgid "Cancel"
+msgstr "Abbrechen"

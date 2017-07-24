@@ -217,6 +217,91 @@ class eq_sale_order_extension(models.Model):
     show_delivery_date = fields.Boolean(string='Show Delivery Date')
     use_calendar_week = fields.Boolean('Use Calendar Week for Delivery Date[equitania]')
 
+    @api.depends('order_line.price_total')
+    def _amount_all(self):
+        """
+        _amount_all überschrieben für Abzug der optionalen Positionen
+        :return:
+        """
+        cur_obj = self.pool.get('res.currency')
+        super(eq_sale_order_extension, self)._amount_all()
+        for order in self:
+            val1 = 0
+            val = 0
+            cur = order.pricelist_id.currency_id
+            for line in order.order_line:
+                if line.eq_optional:
+                    val1 += line.price_subtotal
+
+                    if order.company_id.tax_calculation_rounding_method == 'round_globally':
+                        price = line.price_unit * (1 - (line.discount or 0.0) / 100.0)
+                        taxes = line.tax_id.compute_all(price, line.order_id.currency_id, line.product_uom_qty,
+                                                        product=line.product_id, partner=order.partner_shipping_id)
+                        val += sum(t.get('amount', 0.0) for t in taxes.get('taxes', []))
+                    else:
+                        val += line.price_tax
+
+            amount_tax_new = order.amount_tax - cur.round(val)
+            amount_untaxed_new = order.amount_untaxed - cur.round(val1)
+
+            order.update({
+                'amount_untaxed': order.pricelist_id.currency_id.round(amount_untaxed_new),
+                'amount_tax': order.pricelist_id.currency_id.round(amount_tax_new),
+                'amount_total': amount_untaxed_new + amount_tax_new,
+            })
+
+
+
+
+    @api.multi
+    def action_button_confirm_optional(self):
+        """
+        Bestätigung des Auftrags mit Berücksichtigung der optionalen Positionen
+        Einblendung eines Dialogs, falls optionale Positionen gefunden werden
+        :return:
+        """
+        warning_msgs = False
+        for line in self.order_line:
+            if line.eq_optional:
+                warning_msgs = True
+
+        if warning_msgs:
+            vals = {
+                'eq_info_text': _("All the optional positions will be removed."),
+                'eq_sale_id': self.id,
+            }
+            new_popup = self.env['eq_info_optional'].create(vals)
+            view = self.env.ref('eq_sale.eq_info_optional_form_view')
+            return {
+                'name': _('The order contains optional positions!'),
+                'view_type': 'form',
+                'view_mode': 'form',
+                'view_id': view.id,
+                'res_model': 'eq_info_optional',
+                'context': "{}",
+                'type': 'ir.actions.act_window',
+                'nodestroy': True,
+                'target': 'new',
+                'res_id': new_popup.id,
+            }
+        else:
+            return self.action_confirm()
+
+
+class eq_info_optional(models.TransientModel):
+    _name = 'eq_info_optional'
+
+    eq_info_text = fields.Text()
+    eq_sale_id = fields.Many2one('sale.order')
+
+    @api.multi
+    def action_done(self):
+        for line in self.eq_sale_id.order_line:
+            if line.eq_optional:
+                line.unlink()
+        self.eq_sale_id.action_confirm()
+        return True
+
 
 class eq_sale_configuration_address(models.TransientModel):
     _inherit = 'sale.config.settings'
@@ -314,20 +399,18 @@ class eq_sale_order_line(models.Model):
 
 
     # ODOO 10: Feld delay fehlt für sale_order_line
-    # @api.onchange('eq_delivery_date')
-    # def on_change_delivery_date(self):
-    #     """
-    #
-    #     :return:
-    #     """
-    #
-    #     date_order = self.order_id.date_order if self.order_id else False
-    #     if date_order and self.eq_delivery_date:
-    #         date_order = datetime.strptime(date_order.split(' ')[0], OE_DFORMAT)
-    #         eq_delivery_date = datetime.strptime(eq_delivery_date, OE_DFORMAT)
-    #
-    #         self.delay = (eq_delivery_date - date_order).days
+    @api.onchange('eq_delivery_date')
+    def on_change_delivery_date(self):
+        """
 
+        :return:
+        """
+
+        date_order = self.order_id.date_order if self.order_id else False
+        if date_order and self.eq_delivery_date:
+            date_order = datetime.strptime(date_order.split(' ')[0], OE_DFORMAT)
+            eq_delivery_date = datetime.strptime(self.eq_delivery_date, OE_DFORMAT)
+            self.customer_lead = (eq_delivery_date - self.date_order).days
 
 
 
@@ -415,3 +498,5 @@ class eq_sale_order_line(models.Model):
     eq_delivery_date = fields.Date('Delivery Date')
     get_delivery_date = fields.Char(compute="_get_delivery_date", string="Delivery", methode=True, store=False)
     eq_use_internal_description = fields.Boolean('Use internal description for sale orders')
+
+    eq_optional = fields.Boolean(string="Optional")
