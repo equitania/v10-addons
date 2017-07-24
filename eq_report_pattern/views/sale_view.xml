@@ -20,7 +20,7 @@
 			<field name="model">sale.order</field>
 			<field name="inherit_id" ref="sale.view_order_form"/>
 			<field name="arch" type="xml">
-				<xpath expr="//field[@name='partner_id']" position="after">
+				<xpath expr="//field[@name='payment_term_id']" position="after">
 					<field name="document_template_id" context="{'company_id': company_id}" />
 				</xpath>
 			</field>

@@ -1,5 +1,11 @@
 ## eq_report_pattern 
 
+
+#### 24.07.2017
+#### Version 1.0.10
+##### CHG
+- Dokumentenvorlage verschoben
+
 #### 22.06.2017
 #### Version 1.0.9
 ##### CHG
