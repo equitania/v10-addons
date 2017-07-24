@@ -96,7 +96,7 @@
                                                     <span t-field="doc.name"/>
                                                 </td>
                                             </tr>
-                                            <tr t-if="order_date">
+                                            <tr t-if="doc.date_order">
                                                 <td t-if="doc.state not in ['draft','sent']">
                                                     <span>Order date</span>
                                                 </td>
@@ -104,7 +104,9 @@
                                                     <span>Quotation date</span>
                                                 </td>
                                                 <td class="text-right">
-                                                    <span t-esc="order_date"/>
+                                                    <!--<span t-field="doc.date_order"/>-->
+                                                    <span
+										                t-esc="doc.date_order.split(' ')[0].split('-')[2] + '.' + doc.date_order.split(' ')[0].split('-')[1] + '.' + doc.date_order.split(' ')[0].split('-')[0]" />
                                                 </td>
                                             </tr>
                                             <tr t-if="doc.validity_date and doc.state in ['draft','sent']">
