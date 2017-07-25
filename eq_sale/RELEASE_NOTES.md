@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 25.07.2017
+#### Version 1.0.26
+##### CHG
+- Automatisches Setzen des Lieferdatums und "Tage bis Auslieferung" bei Änderung
+
 
 #### 24.07.2017
 #### Version 1.0.25

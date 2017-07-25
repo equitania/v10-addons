@@ -402,16 +402,31 @@ class eq_sale_order_line(models.Model):
     @api.onchange('eq_delivery_date')
     def on_change_delivery_date(self):
         """
-
-        :return:
+        Änderung des Lieferdatums ändert "Tage bis Auslieferung"
         """
 
         date_order = self.order_id.date_order if self.order_id else False
         if date_order and self.eq_delivery_date:
             date_order = datetime.strptime(date_order.split(' ')[0], OE_DFORMAT)
             eq_delivery_date = datetime.strptime(self.eq_delivery_date, OE_DFORMAT)
-            self.customer_lead = (eq_delivery_date - self.date_order).days
+            new_customer_lead = (eq_delivery_date - date_order).days
+            if new_customer_lead < 0:
+                new_customer_lead = 0;
+            self.customer_lead = new_customer_lead
 
+    @api.onchange('customer_lead')
+    def on_change_customer_lead(self):
+        """
+        Änderung des Wertes für "Tage bis Auslieferung" ändert das Lieferdatum
+        """
+        values = {}
+        date_order = self.order_id.date_order if self.order_id else False
+        customer_lead = self.customer_lead
+        if not customer_lead:
+            customer_lead = 0
+        if date_order:
+            date_order = datetime.strptime(date_order.split(' ')[0], OE_DFORMAT)
+            self.eq_delivery_date = date_order + timedelta(days=int(customer_lead))
 
 
     def generate_line_text_with_attributes(self, attributes, product_id, eq_use_internal_description):
