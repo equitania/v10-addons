@@ -2,6 +2,12 @@
 
 
 #### 25.07.2017
+#### Version 1.0.5
+##### CHG
+- Feld user_id für purchase_order
+
+
+#### 25.07.2017
 #### Version 1.0.4
 ##### CHG
 - Anzeige Geplantes Datum für Report

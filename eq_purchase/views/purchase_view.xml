@@ -23,11 +23,12 @@
                     </page>
                 </xpath>
 
+                <xpath expr="//field[@name='is_shipped']" position="after">
+                    <field name="user_id"/>
+                </xpath>
 
             </field>
         </record>
-
-
 
 
         <record id="eq_view_purchase_config_settings_report_settings" model="ir.ui.view">

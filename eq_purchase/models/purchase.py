@@ -28,6 +28,8 @@ class eq_purchase_order(models.Model):
     eq_head_text = fields.Html('Head Text')
     notes = fields.Html('Terms and conditions')
 
+    user_id = fields.Many2one('res.users', string="User", default=lambda self: self.env.user)
+
     # Report
     show_planned_date = fields.Boolean(string='Show Planned Date')
     use_calendar_week = fields.Boolean('Use Calendar Week for Planned Date [equitania]')
