@@ -2,6 +2,12 @@
 
 
 #### 25.07.2017
+#### Version 1.0.4
+##### CHG
+- Anzeige Geplantes Datum für Report
+
+
+#### 25.07.2017
 #### Version 1.0.3
 ##### CHG
 - Korrekturen für Klassennamen (Fehler in Bestellungen)

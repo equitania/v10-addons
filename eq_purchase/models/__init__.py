@@ -21,3 +21,4 @@
 
 
 import purchase
+import res_partner
