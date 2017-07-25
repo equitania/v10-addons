@@ -46,7 +46,7 @@ class eq_purchase_order(models.Model):
             self.partner_ref = partner.eq_foreign_ref_purchase
 
 
-class eq_purchase_order(models.Model):
+class eq_purchase_order_line(models.Model):
     _inherit = 'purchase.order.line'
 
     @api.multi

@@ -30,3 +30,34 @@ msgstr "Kopftext"
 #: model:ir.model,name:eq_purchase.model_purchase_order
 msgid "Purchase Order"
 msgstr "Beschaffungsauftrag"
+
+#. module: eq_purchase
+#: model:ir.model.fields,field_description:eq_purchase.field_purchase_config_settings_default_show_delivery_date
+msgid "Show the Delivery Date on the Purchase Order [equitania]"
+msgstr "Liefertermin auf Bestellung anzeigen [equitania]"
+
+#. module: eq_purchase
+#: model:ir.model.fields,field_description:eq_purchase.field_purchase_config_settings_default_use_calendar_week
+msgid "Show Calendar Week for Delivery Date [equitania]"
+msgstr "Liefertermin als Kalenderwoche anzeigen [equitania]"
+
+#. module: eq_purchase
+#: model:ir.model.fields,field_description:eq_purchase.field_purchase_order_show_delivery_date
+msgid "Show Delivery Date"
+msgstr "Liefertermin Anzeige"
+
+#. module: eq_purchase
+#: model:ir.model.fields,help:eq_purchase.field_purchase_config_settings_default_show_delivery_date
+msgid "The delivery date will be shown in the Purchase Order"
+msgstr "Der Liefertermin wird in der Bestellung angezeigt."
+
+#. module: eq_purchase
+#: model:ir.model.fields,help:eq_purchase.field_purchase_config_settings_default_use_calendar_week
+msgid "The delivery date will be shown as a calendar week"
+msgstr "Der Liefertermin wird als Kalenderwoche angezeigt."
+
+#. module: eq_purchase
+#: model:ir.model.fields,field_description:eq_purchase.field_purchase_order_use_calendar_week
+msgid "Use Calendar Week for Delivery Date[equitania]"
+msgstr "Use Calendar Week for Delivery Date[equitania]"
+
