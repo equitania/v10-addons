@@ -401,6 +401,11 @@ msgid "Calendar week"
 msgstr "Kalenderwoche"
 
 #. module: eq_sale
+#: selection:res.partner,eq_delivery_date_type_sale:0
+msgid "Date"
+msgstr "Datum"
+
+#. module: eq_sale
 #: model:ir.model.fields,field_description:eq_sale.field_res_partner_eq_delivery_date_type_sale
 #: model:ir.model.fields,field_description:eq_sale.field_res_users_eq_delivery_date_type_sale
 msgid "Delivery Date Sale"
@@ -447,7 +452,7 @@ msgstr "Die interne Beschreibung wird in den Auftragspositionen anstatt der Verk
 #. module: eq_sale
 #: model:ir.model.fields,field_description:eq_sale.field_sale_order_use_calendar_week
 msgid "Use Calendar Week for Delivery Date[equitania]"
-msgstr "Use Calendar Week for Delivery Date[equitania]"
+msgstr "Kalenderwoche anzeigen[equitania]"
 
 #. module: eq_sale
 #: model:ir.model.fields,field_description:eq_sale.field_sale_order_line_eq_use_internal_description
@@ -567,3 +572,8 @@ msgstr "Bestätigen"
 #: model:ir.ui.view,arch_db:eq_sale.eq_info_optional_form_view
 msgid "Cancel"
 msgstr "Abbrechen"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<strong>Tax</strong>"
+msgstr "<strong>Steuern</strong>"

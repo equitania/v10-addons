@@ -26,6 +26,6 @@ class res_partner(models.Model):
     _inherit = 'res.partner'
 
 
-    eq_delivery_date_type_purchase = fields.Selection([('cw', 'Calendar week'), ('date', 'Date')],
-                                                  string="Delivery Date Purchase",
+    eq_planned_date_type_purchase = fields.Selection([('cw', 'Calendar week'), ('date', 'Date')],
+                                                  string="Planned Date Purchase",
                                                   help="If nothing is selected, the default from the settings will be used.")

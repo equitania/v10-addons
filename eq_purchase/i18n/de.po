@@ -30,3 +30,56 @@ msgstr "Kopftext"
 #: model:ir.model,name:eq_purchase.model_purchase_order
 msgid "Purchase Order"
 msgstr "Beschaffungsauftrag"
+
+#. module: eq_purchase
+#: model:ir.model.fields,field_description:eq_purchase.field_purchase_config_settings_default_show_planned_date
+msgid "Show the Planned Date on the Purchase Order [equitania]"
+msgstr "Das geplante Datum in der Bestellung anzeigen [equitania]"
+
+#. module: eq_purchase
+#: model:ir.model.fields,field_description:eq_purchase.field_purchase_config_settings_default_use_calendar_week
+msgid "Show Calendar Week for Planned Date [equitania]"
+msgstr "Das geplante Datum als Kalenderwoche anzeigen [equitania]"
+
+#. module: eq_purchase
+#: model:ir.model.fields,field_description:eq_purchase.field_purchase_order_show_planned_date
+msgid "Show Planned Date"
+msgstr "Geplante Datum anzeigen"
+
+#. module: eq_purchase
+#: model:ir.model.fields,help:eq_purchase.field_purchase_config_settings_default_show_planned_date
+msgid "The planned date will be shown in the Purchase Order"
+msgstr "Das geplante Datum wird in der Bestellung angezeigt."
+
+#. module: eq_purchase
+#: model:ir.model.fields,help:eq_purchase.field_purchase_config_settings_default_use_calendar_week
+msgid "The planned date will be shown as a calendar week"
+msgstr "Das geplante Datum wird als Kalenderwoche angezeigt."
+
+#. module: eq_purchase
+#: model:ir.model.fields,field_description:eq_purchase.field_purchase_order_use_calendar_week
+msgid "Use Calendar Week for Planned Date [equitania]"
+msgstr "Kalenderwoche anzeigen [equitania]"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_view_purchase_config_settings_report_settings
+msgid "Planned Date"
+msgstr "Geplantes Datum"
+
+
+#. module: eq_purchase
+#: model:ir.model.fields,field_description:eq_purchase.field_res_partner_eq_planned_date_type_purchase
+#: model:ir.model.fields,field_description:eq_purchase.field_res_users_eq_planned_date_type_purchase
+msgid "Planned Date Purchase"
+msgstr "Geplantes Datum Einkauf"
+
+#. module: eq_purchase
+#: selection:res.partner,eq_planned_date_type_purchase:0
+msgid "Calendar week"
+msgstr "Kalenderwoche"
+
+#. module: eq_purchase
+#: selection:res.partner,eq_planned_date_type_purchase:0
+msgid "Date"
+msgstr "Datum"
+

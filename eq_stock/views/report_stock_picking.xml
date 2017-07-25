@@ -100,7 +100,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <span>Scheduled date</span>
+                                                <span>Scheduled Date</span>
                                             </td>
                                             <td class="text-right">
                                                 <!--<span t-esc="scheduled_date"/>-->

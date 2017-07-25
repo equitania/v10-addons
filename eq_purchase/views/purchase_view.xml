@@ -40,11 +40,11 @@
                     <xpath expr="//form[@class='oe_form_configuration']/div" position="before">
 
 						<group string="Reports" name="eq_purchase_report_settings">
-							<label for="id" string="Delivery Date"/>
+							<label for="id" string="Planned Date"/>
 							<div>
 								<div>
-									<field name="default_show_delivery_date"/>
-									<label for="default_show_delivery_date"/>
+									<field name="default_show_planned_date"/>
+									<label for="default_show_planned_date"/>
 								</div>
 								<div>
 									<field name="default_use_calendar_week"/>

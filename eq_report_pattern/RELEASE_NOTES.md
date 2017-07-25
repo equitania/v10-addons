@@ -2,6 +2,12 @@
 
 
 #### 24.07.2017
+#### Version 1.0.13
+##### CHG
+- Partnereinstellungen für Formatierung des Lieferdatum und des geplanten Datums im Report
+
+
+#### 24.07.2017
 #### Version 1.0.12
 ##### CHG
 - Ausblenden der Seite Produktvorschläge

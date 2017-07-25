@@ -250,3 +250,9 @@ msgstr "c/o"
 msgid "eq.document.template"
 msgstr "eq.document.template"
 
+
+#. module: eq_report_pattern
+#: model:ir.ui.view,arch_db:eq_report_pattern.eq_sale_partner_extension_form_view
+msgid "Report settings"
+msgstr "Reporteinstellungen"
+
