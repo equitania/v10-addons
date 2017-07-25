@@ -22,7 +22,7 @@
 {
     'name': 'Equitania Stock',
     'license': 'AGPL-3',
-    'version': '1.0.1',
+    'version': '1.0.2',
     'description': """
         Extension for stock
     """,
@@ -34,6 +34,7 @@
 
     'data': [
         "views/report_stock_picking.xml",
+        "views/report_stock_picking_packaging.xml",
     ],
     'demo': [],
     'css': ['base.css'],
