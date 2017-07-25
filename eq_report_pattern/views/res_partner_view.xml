@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="eq_sale_partner_extension_form_view" model="ir.ui.view">
+            <field name="name">eq_sale.partner.extension.form</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//notebook/page[@name='sales_purchases']/group" position="inside">
+                    <group string="Report settings" attrs="{'invisible': [('is_company', '=', False),('customer', '=', False), ('supplier', '=', False)]}">
+                        <field name="eq_delivery_date_type_sale"/>
+                        <field name="eq_planned_date_type_purchase"/>
+                    </group>
+                </xpath>
+
+            </field>
+        </record>
+
+
+    </data>
+</openerp>
