@@ -1,5 +1,11 @@
 ## Modul eq_sale
 
+
+#### 25.07.2017
+#### Version 1.0.27
+##### CHG
+- Erweiterungen für Übersetzung
+
 #### 25.07.2017
 #### Version 1.0.26
 ##### CHG

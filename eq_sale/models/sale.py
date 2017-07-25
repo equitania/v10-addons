@@ -375,8 +375,7 @@ class eq_sale_order_line(models.Model):
     @api.multi
     def _get_delivery_date(self):
         """
-        Hilfsfunktion für Report für Ermittlung des Lieferdatums
-        Aktuell wird Feld show_delivery_date der sale_order nicht gesetzt -> Rückgabe immer false
+        Darstellung des Lieferdatums in Abhängigkeit der Reporteinstellungen
         :return:
         """
         result = {}
