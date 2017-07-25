@@ -1,6 +1,11 @@
 ## Modul eq_purchase
 
 
+#### 26.07.2017
+#### Version 1.0.6
+##### ADD
+- Einkaufs-Report
+
 #### 25.07.2017
 #### Version 1.0.5
 ##### CHG

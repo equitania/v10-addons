@@ -22,7 +22,7 @@
 {
     'name': "Equitania Bestellungen",
     'license': 'AGPL-3',
-    'version': '1.0.5',
+    'version': '1.0.6',
     'category': 'purchase',
     'description': """Extensions for purchase""",
     'author': 'Equitania Software GmbH',
@@ -30,7 +30,8 @@
     'website': 'www.myodoo.de',
     "depends": ['base', 'base_setup', 'purchase', 'eq_res_partner'],
     'data': [
-        'views/purchase_view.xml'
+        'views/purchase_view.xml',
+        'views/report_purchase_order.xml',
              ],
     "active": False,
     "installable": True

@@ -83,3 +83,145 @@ msgstr "Kalenderwoche"
 msgid "Date"
 msgstr "Datum"
 
+#. module: eq_purchase
+#: model:ir.model.fields,field_description:eq_purchase.field_purchase_order_user_id
+msgid "User"
+msgstr "Benutzer"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<span>Supplier no.</span>"
+msgstr "<span>Supplier no.</span>"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<span>Your order reference</span>"
+msgstr "<span>Ihre Bestellnr.</span>"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<span>Order no.</span>"
+msgstr "<span>Auftragsnummer</span>"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<span>Our order reference</span>"
+msgstr "<span>Unsere Bestellnr.</span>"
+
+
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<span>Supplier no.</span>"
+msgstr "<span>Lieferantennr.</span>"
+
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<span>Order date</span>"
+msgstr "<span>Bestelldatum</span>"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<span>Quotation date</span>"
+msgstr "<span>Angebotsdatum</span>"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<span>Purchase quotation</span>"
+msgstr "<span>Einkaufsanfrage</span>"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "Term of payment:"
+msgstr "Zahlungsbedingungen:"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "Incoterm:"
+msgstr "Lieferbedingungen:"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<strong>Deliver to:</strong>"
+msgstr "<strong>Lieferadresse:</strong>"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<strong>For further information, please contact</strong>"
+msgstr "<strong>Bei Fragen wenden Sie sich bitte an</strong>"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<span>Contact person</span>"
+msgstr "<span>Ansprechpartner</span>"
+
+
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<span>Phone</span>"
+msgstr "<span>Telefon</span>"
+
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<span>Fax</span>"
+msgstr "<span>Fax</span>"
+
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<span>E-Mail</span>"
+msgstr "<span>E-Mail</span>"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<strong>Item description</strong>"
+msgstr "<strong>Beschreibung</strong>"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<strong>Item no.</strong>"
+msgstr "<strong>Artikelnr.</strong>"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<strong>Qty.</strong>"
+msgstr "<strong>Menge</strong>"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<strong>Unit</strong>"
+msgstr "<strong>Einheit</strong>"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<strong>Unit price</strong>"
+msgstr "<strong>Einzelpreis</strong>"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<strong>Net price</strong>"
+msgstr "<strong>Nettopreis</strong>"
+
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<strong>VAT</strong>"
+msgstr "<strong>Steuern</strong>"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<strong>Total sum</strong>"
+msgstr "<strong>Gesamtbetrag</strong>"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<strong>Total without taxes</strong>"
+msgstr "<strong>Nettobetrag</strong>"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+msgid "<strong>Total VAT</strong>"
+msgstr "<strong>Steuern</strong>"
