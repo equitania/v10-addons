@@ -2,15 +2,19 @@
 
 
 #### 25.07.2017
-#### Version 1.0.27
+#### Version 1.0.28
 ##### CHG
-- Erweiterungen für Übersetzung
+- Übersetzung für die neue Steuerzeile durch die optionalen Positionen ergänzt
 
 #### 25.07.2017
 #### Version 1.0.26
 ##### CHG
 - Automatisches Setzen des Lieferdatums und "Tage bis Auslieferung" bei Änderung
 
+#### 25.07.2017
+#### Version 1.0.26
+##### ADD
+- Optionale
 
 #### 24.07.2017
 #### Version 1.0.25

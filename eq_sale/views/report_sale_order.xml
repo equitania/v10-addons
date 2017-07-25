@@ -438,7 +438,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><strong>Taxes</strong></td>
+                                                    <td><strong>Tax</strong></td>
                                                     <td class="text-right">
                                                         <span t-field="doc.amount_tax"
                                                             t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>

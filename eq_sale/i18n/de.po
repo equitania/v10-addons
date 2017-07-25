@@ -572,3 +572,8 @@ msgstr "Bestätigen"
 #: model:ir.ui.view,arch_db:eq_sale.eq_info_optional_form_view
 msgid "Cancel"
 msgstr "Abbrechen"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<strong>Tax</strong>"
+msgstr "<strong>Steuern</strong>"
