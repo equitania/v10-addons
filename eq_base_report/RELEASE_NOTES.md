@@ -1,5 +1,13 @@
 ## Modul eq_base_report
 
+
+
+#### 26.07.2017
+#### Version 1.0.15
+##### CHG
+- Neue Klasse mit Hilfsfunktionen für Reports
+
+
 #### 04.07.2017
 #### Version 1.0.14
 ##### ADD
