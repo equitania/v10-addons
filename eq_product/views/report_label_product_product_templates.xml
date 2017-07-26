@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+<template id="report_simple_product_label" inherit_id="product.report_simple_label">
+    <xpath expr="//div[@class='col-xs-4']" position="replace">
+        <div class="row">
+            <div class="col-xs-12" style="margin-top:5mm;">
+                <table class="align-middle" style="width:100%; border:1px solid black; margin-left:-5mm; height:30mm;">
+                    <tr>
+                        <td colspan="2" class="text-center" height="50%">
+                            <t t-if="product.default_code">
+                                [<strong t-field="product.default_code"/>]
+                            </t>
+                            <strong t-field="product.name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td t-if="product.barcode" colspan="2" class="text-center" height="50%">
+                            <img t-if="product.barcode" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', product.barcode, 600, 150)" style="width:100%;height:25%;"/>
+                            <span t-field="product.barcode" />
+                        </td>
+                        <td t-if="product.default_code and not product.barcode"  colspan="2" class="text-center" height="50%">
+                            <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', product.default_code, 600, 150)" style="width:100%;height:25%;"/>
+                            <span t-field="product.default_code"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </xpath>
+
+</template>
+
+</data>
+</odoo>

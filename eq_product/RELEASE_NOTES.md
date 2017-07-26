@@ -1,5 +1,9 @@
 ## Modul eq_product
 
+#### 26.07.2017
+#### Version 1.0.7
+##### ADD
+- Eigene Darstellung für die Produktetiketten erstellt, welche den Standard überschreiben 
 
 
 #### 24.07.2017
