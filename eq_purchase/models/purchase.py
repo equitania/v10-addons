@@ -20,6 +20,7 @@
 ##############################################################################
 
 from odoo import models, fields, api, _
+import odoo.addons.decimal_precision as dp
 
 
 class eq_purchase_order(models.Model):
@@ -77,6 +78,10 @@ class eq_purchase_order_line(models.Model):
         return result
 
     get_planned_date = fields.Char(compute="_get_planned_date", string="Planned Date", methode=True, store=False)
+
+    # existierende Felder überschrieben für andere Angabe der Dezimalstellen
+    product_qty = fields.Float(string='Quantity', digits=dp.get_precision('Product Quantity Purchase'), required=True)
+    price_unit = fields.Float(string='Unit Price', required=True, digits=dp.get_precision('Product Price Purchase'))
 
 class eq_purchase_configuration_address(models.TransientModel):
     _inherit = 'purchase.config.settings'

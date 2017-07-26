@@ -1,6 +1,11 @@
 ## Modul eq_purchase
 
 
+#### 26.07.2017
+#### Version 1.0.8
+##### CHG
+- Formatierung für Menge und Preis pro für die Bestellpositionen über Einstellungen aus decimal_precision.xml
+
 
 #### 26.07.2017
 #### Version 1.0.7
