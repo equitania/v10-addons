@@ -1,6 +1,12 @@
 ## Modul eq_sale
 
 
+#### 26.07.2017
+#### Version 1.0.29
+##### CHG
+- Erweiterungen für die Dezimalstellen in Reports
+
+
 #### 25.07.2017
 #### Version 1.0.28
 ##### CHG
