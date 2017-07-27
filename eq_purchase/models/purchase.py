@@ -80,8 +80,8 @@ class eq_purchase_order_line(models.Model):
     get_planned_date = fields.Char(compute="_get_planned_date", string="Planned Date", methode=True, store=False)
 
     # existierende Felder überschrieben für andere Angabe der Dezimalstellen
-    product_qty = fields.Float(string='Quantity', digits=dp.get_precision('Product Quantity Purchase'), required=True)
-    price_unit = fields.Float(string='Unit Price', required=True, digits=dp.get_precision('Product Price Purchase'))
+    product_qty = fields.Float(string='Quantity', digits=dp.get_precision('Purchase Unit of Measure [eq_purchase]'), required=True)
+    price_unit = fields.Float(string='Unit Price', required=True, digits=dp.get_precision('Purchase Product Price [eq_purchase]'))
 
 class eq_purchase_configuration_address(models.TransientModel):
     _inherit = 'purchase.config.settings'
@@ -131,7 +131,7 @@ class report_purchase_order(models.Model):
         for tex in self.env['account.tax']._compute([tax_id], amount_net, 1):
             tax_amount += tex['amount']
 
-        return self.env["eq_report_helper"].get_price(tax_amount, language, 'Purchase Price Report', currency_id)
+        return self.env["eq_report_helper"].get_price(tax_amount, language, 'Purchase Price Report [eq_purchase]', currency_id)
 
 
     @api.multi
@@ -143,7 +143,7 @@ class report_purchase_order(models.Model):
         :param language:
         :return:
         """
-        return self.env["eq_report_helper"].get_price(value, language, 'Purchase Price Report', currency_id)
+        return self.env["eq_report_helper"].get_price(value, language, 'Purchase Price Report [eq_purchase]', currency_id)
 
     @api.multi
     def get_qty(self, value, language):
@@ -153,7 +153,7 @@ class report_purchase_order(models.Model):
         :param language:
         :return:
         """
-        return self.env["eq_report_helper"].get_qty(value, language, 'Purchase Quantity Report')
+        return self.env["eq_report_helper"].get_qty(value, language, 'Purchase Unit of Measure Report [eq_purchase]')
 
 
 class report_purchase_order_line(models.Model):
@@ -169,7 +169,7 @@ class report_purchase_order_line(models.Model):
         :param language:
         :return:
         """
-        return self.env["eq_report_helper"].get_price(value, language, 'Purchase Price Report', currency_id)
+        return self.env["eq_report_helper"].get_price(value, language, 'Purchase Price Report [eq_purchase]', currency_id)
 
     @api.multi
     def get_qty(self, value, language):
@@ -179,4 +179,4 @@ class report_purchase_order_line(models.Model):
         :param language:
         :return:
         """
-        return self.env["eq_report_helper"].get_qty(value, language, 'Purchase Quantity Report')
+        return self.env["eq_report_helper"].get_qty(value, language, 'Purchase Unit of Measure Report [eq_purchase]')

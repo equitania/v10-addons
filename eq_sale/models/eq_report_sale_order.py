@@ -284,7 +284,7 @@ class report_sale_order_line(models.Model):
         :param language:
         :return:
         """
-        return self.env["eq_report_helper"].get_price(value, language, 'Sale Price Report', currency_id)
+        return self.env["eq_report_helper"].get_price(value, language, 'Sale Price Report [eq_sale]', currency_id)
 
     @api.multi
     def get_qty(self, value, language):
@@ -294,6 +294,6 @@ class report_sale_order_line(models.Model):
         :param language:
         :return:
         """
-        return self.env["eq_report_helper"].get_qty(value, language, 'Sale Quantity Report')
+        return self.env["eq_report_helper"].get_qty(value, language, 'Sale Unit of Measure Report [eq_sale]')
 
 

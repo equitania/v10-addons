@@ -2,6 +2,17 @@
 
 
 #### 26.07.2017
+#### Version 1.0.30
+##### CHG
+- Änderungen der Bezeichner für Dezimalstelleneinstellungen
+
+Updates für alte Bezeichner:
+UPDATE decimal_precision SET name = 'Sale Unit of Measure Report [eq_sale]' WHERE name = 'Sale Quantity Report';
+UPDATE decimal_precision SET name = 'Sale Price Report [eq_sale]' WHERE name = 'Sale Price Report';
+UPDATE decimal_precision SET name = 'Sale Weight Report [eq_sale]' WHERE name = 'Sale Weight Report';hase';
+
+
+#### 26.07.2017
 #### Version 1.0.29
 ##### CHG
 - Erweiterungen für die Dezimalstellen in Reports

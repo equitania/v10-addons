@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data noupdate="1">
-        <record forcecreate="True" id="decimal_purchase_qty" model="decimal.precision">
-            <field name="name">Purchase Quantity Report</field>
+        <record forcecreate="True" id="decimal_qty_purchase" model="decimal.precision">
+            <field name="name">Purchase Unit of Measure [eq_purchase]</field>
             <field name="digits">2</field>
         </record>
-        <record forcecreate="True" id="decimal_production_price" model="decimal.precision">
-            <field name="name">Purchase Price Report</field>
+        <record forcecreate="True" id="decimal_purchase_qty" model="decimal.precision">
+            <field name="name">Purchase Unit of Measure Report [eq_purchase]</field>
             <field name="digits">2</field>
         </record>
         <record forcecreate="True" id="decimal_price_purchase" model="decimal.precision">
-            <field name="name">Product Price Purchase</field>
+            <field name="name">Purchase Product Price [eq_purchase]</field>
             <field name="digits">2</field>
         </record>
-        <record forcecreate="True" id="decimal_qty_purchase" model="decimal.precision">
-            <field name="name">Product Quantity Purchase</field>
+        <record forcecreate="True" id="decimal_production_price" model="decimal.precision">
+            <field name="name">Purchase Price Report [eq_purchase]</field>
             <field name="digits">2</field>
         </record>
     </data>

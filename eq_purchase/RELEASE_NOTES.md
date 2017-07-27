@@ -2,6 +2,17 @@
 
 
 #### 26.07.2017
+#### Version 1.0.9
+##### CHG
+- Änderungen der Bezeichner für Dezimalstelleneinstellungen
+
+Updates für alte Bezeichner:
+UPDATE decimal_precision SET name = 'Purchase Unit of Measure Report [eq_purchase]' WHERE name = 'Purchase Quantity Report';
+UPDATE decimal_precision SET name = 'Purchase Price Report [eq_purchase]' WHERE name = 'Purchase Price Report';
+UPDATE decimal_precision SET name = 'Purchase Product Price [eq_purchase]' WHERE name = 'Product Price Purchase';
+UPDATE decimal_precision SET name = 'Purchase Unit of Measure [eq_purchase]' WHERE name = 'Product Quantity Purchase';
+
+#### 26.07.2017
 #### Version 1.0.8
 ##### CHG
 - Formatierung für Menge und Preis pro für die Bestellpositionen über Einstellungen aus decimal_precision.xml
