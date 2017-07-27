@@ -1,5 +1,9 @@
 ## Modul eq_purchase
 
+#### 27.07.2017
+#### Version 1.0.10
+##### ADD
+- Angebots-Report: Neu hinzugefügt. Sowie Verbesserungen in der Bestellung
 
 #### 26.07.2017
 #### Version 1.0.9
