@@ -64,3 +64,5 @@ class eq_account_invoice(models.Model):
     eq_country = fields.Char(compute='_compute_country', string=" ", store=False)
     eq_head_text = fields.Html('Head Text')
     comment = fields.Html('Additional Information')
+    eq_use_page_break_after_header = fields.Boolean(string='Page break after header text')
+    eq_use_page_break_before_footer = fields.Boolean(string='Page break before footer text')

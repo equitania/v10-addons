@@ -182,3 +182,14 @@ msgstr "<strong>Gesamtbetrag</strong>"
 msgid "<span>Total without taxes</span>"
 msgstr "<span>Nettobetrag</span>"
 
+#. module: eq_account
+#: model:ir.model.fields,field_description:eq_account.field_account_invoice_eq_use_page_break_after_header
+#: model:ir.ui.view,arch_db:eq_account.view_account_invoice_form_address_extension
+msgid "Page break after header text"
+msgstr "Seitenumbruch nach Kopftext"
+
+#. module: eq_account
+#: model:ir.model.fields,field_description:eq_account.field_account_invoice_eq_use_page_break_before_footer
+#: model:ir.ui.view,arch_db:eq_account.view_account_invoice_form_address_extension
+msgid "Page break before footer text"
+msgstr "Seitenumbruch vor dem Fußtext"
