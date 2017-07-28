@@ -67,9 +67,13 @@
 				<field name="note" position="replace"></field>
 				<notebook position="inside">
                     <page string="Head Text">
+						<field name="eq_use_page_break_after_header"></field>
+                    	<label string="Page break after header text"></label>
 						<field name="eq_head_text" placeholder="Dear Sir or Madam," nolabel="1"/>
                     </page>
                     <page string="Foot Text">
+						<field name="eq_use_page_break_before_footer"></field>
+                    	<label string="Page break before footer text"></label>
                     	<field name="note" nolabel="1"/>
                     </page>
             	</notebook>
@@ -114,6 +118,9 @@
 				<xpath expr="//field[@name='order_line']/tree" position="attributes">
 					<attribute name="colors">blue:eq_optional!=False</attribute>
 				</xpath>
+
+
+
             </field>
 	    </record>
 

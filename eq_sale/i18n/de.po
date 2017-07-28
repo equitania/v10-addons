@@ -577,3 +577,15 @@ msgstr "Abbrechen"
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "<strong>Tax</strong>"
 msgstr "<strong>Steuern</strong>"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_sale_order_eq_use_page_break_after_header
+#: model:ir.ui.view,arch_db:eq_sale.eq_sale_address_fields_view_order_form_inherit
+msgid "Page break after header text"
+msgstr "Seitenumbruch nach Kopftext"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_sale_order_eq_use_page_break_before_footer
+#: model:ir.ui.view,arch_db:eq_sale.eq_sale_address_fields_view_order_form_inherit
+msgid "Page break before footer text"
+msgstr "Seitenumbruch vor dem Fußtext"

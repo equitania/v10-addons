@@ -1,6 +1,13 @@
 ## Modul eq_sale
 
 
+
+#### 28.07.2017
+#### Version 1.0.32
+##### CHG
+- Konfigurierbarer Seitenumbruch für Kopf- und Fußtexte im Report
+
+
 #### 28.07.2017
 #### Version 1.0.31
 ##### CHG

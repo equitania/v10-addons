@@ -35,7 +35,8 @@ class eq_sale_order_extension(models.Model):
         #                               states={'draft': [('readonly', False)], 'sent': [('readonly', False)]},
         #                               required=True, change_default=True, select=True, track_visibility='always'),
 
-
+    eq_use_page_break_after_header = fields.Boolean(string='Page break after header text')
+    eq_use_page_break_before_footer = fields.Boolean(string='Page break before footer text')
 
     @api.onchange('partner_id')
     def onchange_partner_id(self):
