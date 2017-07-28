@@ -74,7 +74,7 @@ msgstr "<span>Rechnungsdatum</span>"
 #. module: eq_account
 #: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
 msgid "<strong>For further information, please contact</strong>"
-msgstr "<strong>Ihr Ansprechpartner</strong>"
+msgstr "<strong>Bei Fragen wenden Sie sich bitte an</strong>"
 
 #. module: eq_account
 #: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
