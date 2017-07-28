@@ -364,8 +364,8 @@
                                                     </td>
                                                     <td class="text-right">
 
-                                                        <!--Test
-                                                        <span t-esc="l.get_qty(l.product_uom_qty, doc.partner_id.lang)" />-->
+                                                        <!--Test-->
+                                                        <span t-esc="l.get_qty(l.product_uom_qty, doc.partner_id.lang)" style="color:green;"/>
 
                                                         <span t-field="l.product_uom_qty"/>
                                                         <span t-field="l.product_uom"  groups="product.group_uom" />
@@ -376,8 +376,8 @@
 
 
                                                     <td class="text-right">
-                                                        <!--Test
-                                                        <span t-esc="l.get_price(l.price_unit, doc.pricelist_id.currency_id, doc.partner_id.lang)" />  -->
+                                                        <!--Test-->
+                                                        <span t-esc="l.get_price(l.price_unit, doc.pricelist_id.currency_id, doc.partner_id.lang)" style="color:green;"/>
                                                         <span t-field="l.price_unit" t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
                                                     </td>
                                                     <td t-if="display_discount" class="text-right" groups="sale.group_discount_per_so_line">
