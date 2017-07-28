@@ -212,7 +212,7 @@ msgstr "<strong>Rabatt (%)</strong>"
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "<strong>For further information, please contact</strong>"
-msgstr "<strong>Ihr Ansprechpartner</strong>"
+msgstr "<strong>Bei Fragen wenden Sie sich bitte an</strong>"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
