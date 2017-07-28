@@ -22,7 +22,7 @@
 {
     'name': "Equitania CRM",
     'license': 'AGPL-3',
-    'version': '1.0.1',
+    'version': '1.0.2',
     'category': 'crm',
     'description': """Extensions for crm leads""",
     'author': 'Equitania Software GmbH',
