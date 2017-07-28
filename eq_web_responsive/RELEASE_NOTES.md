@@ -1,6 +1,9 @@
 ## Modul eq_web_responsive
 
-
+#### 28.07.2017
+#### Version 1.0.3
+##### CHG
+- Wikilink in die Beschreibung eingefügt
 
 #### 21.07.2017
 #### Version 1.0.2
