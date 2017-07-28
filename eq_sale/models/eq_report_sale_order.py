@@ -270,6 +270,26 @@ class report_sale_order(models.Model):
         """
         return self.env["eq_report_helper"].get_qty(value, language, 'Sale Quantity Report')
 
+    @api.multi
+    def html_text_is_set(self, value):
+        """
+        Workaround für HTML-Texte: Autom. Inhalt nach Speichern ohne Inhalt: <p><br></p>
+        Entfernen der Zeilenumbrüche und Paragraphen für Test, ob ein Inhalt gesetzt wurde
+        :param value:
+        :return:
+        """
+        if not value:
+            return False
+
+        value = value.replace('<br>', '')
+        value = value.replace('<p>', '')
+        value = value.replace('</p>', '')
+        value = value.replace('<', '')
+        value = value.replace('>', '')
+        value = value.replace('/', '')
+        value = value.strip()
+        return value != ''
+
 
 class report_sale_order_line(models.Model):
     _inherit = 'sale.order.line'

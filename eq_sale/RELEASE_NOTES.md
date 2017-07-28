@@ -1,6 +1,12 @@
 ## Modul eq_sale
 
 
+#### 28.07.2017
+#### Version 1.0.31
+##### CHG
+- Reportfunktion für Test auf gesetzten Inhalt eines HTML-Textes
+
+
 #### 26.07.2017
 #### Version 1.0.30
 ##### CHG
