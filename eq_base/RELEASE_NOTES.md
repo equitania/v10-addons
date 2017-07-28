@@ -1,5 +1,12 @@
 ## Modul eq_base
 
+
+#### 28.07.2017
+#### Version 1.0.4
+##### CHG
+- Modulbeschreibung erweitert
+
+
 #### 14.07.2017
 #### Version 1.0.3
 ##### CHG
