@@ -2,6 +2,11 @@
 
 
 #### 28.07.2017
+#### Version 1.0.8
+##### CHG
+- Modulbeschreibung erweitert
+
+#### 28.07.2017
 #### Version 1.0.7
 ##### CHG
 - Konfigurierbarer Seitenumbruch für Kopf- und Fußtexte im Report

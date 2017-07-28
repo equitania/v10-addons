@@ -173,7 +173,7 @@
                         </t>
 
                         <!-- gehört zu VARIANTE 1 Pragma/Kaser Version -->
-                        <!--<t t-set="table_header">
+                        <t t-set="table_header">
                             <thead>
                                 <tr>
                                     <th>
@@ -182,17 +182,17 @@
                                     <th>
                                         <strong>Item description</strong>
                                     </th>
-                                    <th class="text-right">
+                                    <th class="text-center" colspan="2">
                                         <strong>Qty.</strong>
                                     </th>
-                                    <th class="text-right">
+                                    <!--<th class="text-right">
                                         <strong>Unit</strong>
+                                    </th>-->
+                                    <th class="text-right">
+                                        <strong>Unit Price</strong>
                                     </th>
                                     <th class="text-right">
-                                        <strong>VAT</strong>
-                                    </th>
-                                    <th class="text-right">
-                                        <strong>Unit price</strong>
+                                        <strong>Taxes</strong>
                                     </th>
                                     <th t-if="any([line.discount for line in o.invoice_line_ids])" class="text-right">
                                         <strong>Discount (%)</strong>
@@ -202,7 +202,11 @@
                                     </th>
                                 </tr>
                             </thead>
-                        </t>-->
+                        </t>
+
+
+
+
                         <t t-set="page_break">
 
                             &lt;/tbody&gt;
@@ -242,6 +246,10 @@
                             <span t-if="o.type == 'in_refund'">Incoming Credit Note</span>
                             <span t-field="o.number"/>
                         </div>
+
+                        <div t-if="o.eq_head_text" class="eq_headertext">
+                            <p t-field="o.eq_head_text"/>
+                        </div>
                         <div id="informations" class="col-xs-12"
                              style="margin-top:1em; margin-bottom:2em; font-size:0.8em; margin-left:0px; padding-left:0px;">
                             <div>
@@ -250,7 +258,7 @@
                         </div>
 
 <!-- VARIANTE 1 Pragma/Kaser Version -->
-                        <!--<table class="table table-condensed table-row">
+                        <table class="table table-condensed table-row">
                             <t t-raw="table_header"/>
                             <tbody class="tbody">
                                 <t t-set="pos" t-value="1"/>
@@ -262,26 +270,28 @@
                                         <span t-esc="pos"/>
                                     </td>
                                     <td style="width:8cm;">
-                                        <strong>
-                                            <span t-field="line.product_id.name"/>
-                                        </strong>
-                                        <br/>
-                                        <span t-field="line.name"/>
+                                        <t t-if="line.product_id.name">
+                                            <strong>
+                                                <span t-field="line.product_id.name"/>
+                                            </strong>
+                                        </t>
+                                        <t t-if="line.product_id.name and line.name"><br/></t>
+                                        <span t-if="line.name" t-field="line.name"/>
                                     </td>
                                     <td class="text-right">
                                         <span t-field="line.quantity"/>
                                     </td>
-                                    <td class="text-right">
+                                    <td><!--class="text-right"-->
                                         <span t-field="line.uom_id.name"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="line.price_unit"
+                                              t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                     </td>
                                     <td class="text-right">
                                         <span t-if="line.invoice_line_tax_ids">
                                             <span t-field="line.invoice_line_tax_ids[0].description"/>
                                         </span>
-                                    </td>
-                                    <td class="text-right">
-                                        <span t-field="line.price_unit"
-                                              t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                     </td>
                                     <td t-if="any([line.discount for line in o.invoice_line_ids])" class="text-right">
                                         <t t-if="line.discount">
@@ -295,13 +305,13 @@
                                     <t t-set="pos" t-value="pos + 1"/>
                                 </tr>
                             </tbody>
-                        </table>-->
+                        </table>
 
 
 
 <!-- VARIANTE 2 mit Kategorien -->
         <t groups="sale.group_sale_layout" t-foreach="o.order_lines_layouted()" t-as="page">
-            <table class="table table-condensed" style="">
+            <table class="table table-condensed" style="color:red;">
                 <thead>
                     <tr>
                         <th>
@@ -424,11 +434,19 @@
                                     </tr>
                                 </table>
                             </div>
+
+
+
                             <div id="informations" class="col-xs-12"
                                  style="margin-top:1em; margin-bottom:1em; margin-left:0px; padding-left:0px; page-break-inside:avoid !important;">
                                 <table class="col-xs-3"
                                        style="width:auto!important; max-width:50%; margin-left:0px; padding-left:0px; font-size: 0.8em;">
                                     <tbody>
+                                        <tr t-if="o.comment">
+                                            <td style="padding-right:0.5cm; vertical-align:top; " colspan="2" class="eq_footertext">
+                                                <p t-field="o.comment" style="margin-bottom:3em;"/>
+                                            </td>
+                                        </tr>
                                         <tr t-if="o.payment_term_id">
                                             <td style="padding-right:1em;">
                                                 <strong>Payment Terms:</strong>
