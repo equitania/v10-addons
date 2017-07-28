@@ -1,37 +1,34 @@
-## Welcome to GitHub Pages
+# Die Equitania Module für das Open Source ERP System Odoo Version 10
+----
+*Powered by*
+*Equitania Software GmbH* 
+*Weiherstrassse 13* 
+*75173 Pforzheim* 
+*Germany - Deutschland* 
+*www.myodoo.de / www.equitania.de* 
 
-You can use the [editor on GitHub](https://github.com/equitania/myodoo-addons-v10/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+----
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Sie basieren auf dem "Fork" **MyOdoo** des Systems Odoo, einem Browser gestützten Open Source Projekt für ERP, Warenwirtschaft, Lagerverwaltung, Webshop, CMS Anwendungen mit über 5.000 Zusatzmodule.
 
-### Markdown
+MyOdoo ist für den deutschsprachigen Raum optimiert. Deshalb werden nur die Sprachen Deutsch und Englisch unterstützt.
+Unsere **deutschen Sprachübersetzungen unterscheiden** sich in Details von den Standardpaketen, da diese aus unserer Sicht teilweise falsch, mißverständlich oder gar nicht übersetzt sind.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Unser Fork wird regelmäßig mit dem Hauptodoo Fork abgeglichen.
 
-```markdown
-Syntax highlighted code block
+Dieser Repository obliegt der <a href="http://www.gnu.org/licenses/licenses.html">GNU Affero General Public License</a> wie das Ursprungssystem <a href="https://www.odoo.com">Odoo</a> selbst.
 
-# Header 1
-## Header 2
-### Header 3
+## Gute Gründe den MyOdoo Fork einzusetzen
 
-- Bulleted
-- List
+- Der MyOdoo Fork ist optimiert für den deutschsprachigen Raum (D-A-CH), d.h. verbesserte Übersetzungen und geringere Größe
+- Der MyOdoo Fork wird von einem deutschsprachigen Unternehmen betreut.
+- Der MyOdoo Fork beinhaltet einige Verbesserungen und Bugfixes, die im Odoo Haupt Branch fehlen. Dennoch wird der Fork wöchentlich abgeglichen. 
+- Der MyOdoo Fork wird über einen Release Manager verwaltet und ist bei vielen deutschen Unternehmen im Einsatz.
 
-1. Numbered
-2. List
+Weitere Information in den Modulen unter https://equitania.atlassian.net/wiki/x/vHeGAw 
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Weitere Informationen unter <a href="https://www.myodoo.de">Myodoo.de</a>
+oder <a href="https://leanpub.com/odoo-kochbuch">Das Odoo Kochbuch</a>
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/equitania/myodoo-addons-v10/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
