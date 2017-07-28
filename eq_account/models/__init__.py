@@ -21,3 +21,4 @@
 
 
 import account_invoice
+import report_invoice

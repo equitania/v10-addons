@@ -1,6 +1,12 @@
 ## Modul eq_account
 
 
+#### 28.07.2017
+#### Version 1.0.6
+##### CHG
+- Hilfsfunktionen für Report
+
+
 #### 03.07.2017
 #### Version 1.0.5
 ##### IMP
