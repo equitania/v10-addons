@@ -3,29 +3,34 @@
 		<div class="oe_span12">
 			<h2 class="oe_slogan">Equitania Mail Extension</h2>
 		</div>
-
+		
 		<div class="oe_span12">
-			<p class='oe_mt32' style='font-size:14px;'>
-			Dieses Modul korrigiert die Mailfunktionalit&auml;t von Odoo.
-			</p>
+			<h3> Erweitert die Funktionalit&auml;ten und Einstellungen des MailServers</h3>
+
+			<h3>F&uuml;gt hinzu:</h3>
 			<ul>
-			<li> Deaktiviert Catchall</li>
-			<li> Deaktiviert Alias</li>
-			<li> Erm&ouml;glicht die Verkn&uuml;pfung pro Benutzer mit einem E-Mailaccount f&uuml;r ausgehende und eingehende Mails</li>
+				<li>Es ist nun m&ouml;glich unterschiedliche SMTP Einstellungen (ausgehende E-Mails) f&uuml;r jeden Benutzer anzulegen.</li>
+				<li>Erm&ouml;ouml;glicht die Verkn&uuml;pfung pro Benutzer mit einem E-Mailaccount f&uuml;r ausgehende und eingehende Mails</li>
 			</ul>
-
-
+			<h3>&Auml;nderungen:</h3>
+			<ul>
+				<li>Je nach ausgew&auml;hlten "Default Mail Server" wird der entsprechende Benutzername direkt in die "Default Mails Server Address" eingesetzt.</li>
+				<li>Das Feld + Label "Alias Domain" wird nun ausgeblendet und falls ein Wert drin Stand wird dieser entfernt.</li>
+				<li>Einige &uuml;bersetzungsfehler korrigiert</li>
+				<li>BugFix: es wird jetzt abgefragt, ob der vordefinierte Mail Server in der Datenbank (ir_values) &uuml;berhaupt noch vorhanden ist, bevor die Send-Methode ausgef&uuml;hrt wird.</li>
+				<li>Bei einem Cronjob oder einem manuellen "Sofort senden" durch den Administrator, wird jetzt &uuml;ber die author_id der zu veschickenden Mail der Benutzer und der entsprechende Mail-Server ermittelt.</li>
+			</ul>
 			<br>
-			<p style='font-size:14px'>Die Dokumentation zum Modul finden Sie hier: <a href="https://equitania.atlassian.net/wiki/x/SIAZ" target="_blank">MyOdoo Modul WIKI</a> </p>
-			<br>
+			<p>Weitere Informationen finden Sie in unserem Wikieintrag: <a href="https://equitania.atlassian.net/wiki/spaces/MM/pages/59835573/Modul+Equitania+E-Mail-Erweiterung" target="_blank" class="btn btn-default">Modul Equitania Mail Extension</a></p>
 			<br>
 		</div>
+
 	</div>
 </section>
 
 <section class="oe_container oe_dark">
     <div class="oe_row oe_spaced">
-        <div class="oe_span6">
+        <div class="oe_span8">
             <h2 class="oe_slogan" style="color:#875A7B; text-align: left;">Equitania Software GmbH</h2>
             <h5 class="oe_slogan" style="text-align: left;">
                 Weiherstrasse 13<br>
@@ -53,7 +58,7 @@
 		        along with this program.  If not, see <a href="http://www.gnu.org/licenses" target="_blank">http://www.gnu.org/licenses</a>.
 		    </p>
         </div>
-        <div class="oe_span6">
+        <div class="oe_span4">
             <img class="img-responsive" src="EquitaniaLogo.png"/>
         </div>
     </div>
