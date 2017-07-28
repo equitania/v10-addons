@@ -22,15 +22,15 @@
 {
     'name': 'Equitania Stock',
     'license': 'AGPL-3',
-    'version': '1.0.2',
+    'version': '1.0.3',
     'description': """
-        Extension for stock
+        Erweiterung für Lager
     """,
     'author': 'Equitania Software GmbH',
     'website': 'www.myodoo.de',
     'depends': ['base', 'base_setup', 'stock',],
     'category' : 'stock',
-    'summary': 'Stock Extension',
+    'summary': 'Equitania Lager Erweiterung',
 
     'data': [
         "views/report_stock_picking.xml",

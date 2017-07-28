@@ -1,5 +1,9 @@
 ## Modul eq_stock
 
+#### 28.07.2017
+#### Version 1.0.3
+##### ADD- Wikilink in Beschreibung eingefügt
+
 #### 25.07.2017
 #### Version 1.0.2
 ##### ADD
