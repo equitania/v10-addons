@@ -22,3 +22,4 @@
 
 import purchase
 import res_partner
+import report_purchase_order

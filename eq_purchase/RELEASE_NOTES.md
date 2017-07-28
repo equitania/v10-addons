@@ -1,5 +1,13 @@
 ## Modul eq_purchase
 
+
+
+#### 28.07.2017
+#### Version 1.0.11
+##### CHG
+- Reportfunktion für Test auf gesetzten Inhalt eines HTML-Textes
+
+
 #### 27.07.2017
 #### Version 1.0.10
 ##### ADD
