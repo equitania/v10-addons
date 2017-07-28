@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="pragma_supplier_number.view_partner_form">
+            <field name="name">pragma_supplier_number.view_partner_form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='ref']" position="after">
+                    <field name="supplier_number"
+                           attrs="{'invisible': [('supplier','=',False)], 'readonly': [('auto_supplier_ref','=',True)]}"/>
+                    <field name="auto_supplier_ref" invisible="1"/>
+                    <field name="supp_auto_ref" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='ref']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath
+                        expr="//page[@name='sales_purchases']//field[@name='supplier']"
+                        position="replace">
+                    <field name="supplier" invisible="1"/>
+                    <label for="supplier" string="Supplier"/>
+                    <div>
+                        <field name="supplier" class="oe_inline"/>
+                        <button name="create_supplier_number" string="Create Supplier Number"
+                                type="object"
+                                attrs="{'invisible': ['|',('supplier','=',False),('supp_auto_ref','!=',False)]}"
+                                class="oe_edit_only oe_link oe_inline"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

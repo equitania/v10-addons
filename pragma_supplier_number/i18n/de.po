@@ -1,0 +1,67 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# 	* inox_lieferantennummer
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-13 10:44+0000\n"
+"PO-Revision-Date: 2015-02-13 11:48+0100\n"
+"Last-Translator: Josef Kaser <josef.kaser@inox-tech.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: de\n"
+"X-Generator: Poedit 1.7.4\n"
+
+#. module: inox_lieferantennummer
+#: field:res.partner,lieferantennummer:0
+msgid "Lieferantennummer"
+msgstr "Lieferantennummer"
+
+#. module: inox_lieferantennummer
+#: field:res.partner,supp_auto_ref:0
+msgid "Supplier Reference (automatically assigned)"
+msgstr "Supplier Reference (automatically assigned)"
+
+#. module: inox_lieferantennummer
+#: view:res.partner:0
+msgid "Create Supplier Number"
+msgstr "Lieferantennummer erzeugen"
+
+#. module: inox_lieferantennummer
+#: field:res.partner,supp_ref_print:0
+msgid "Supplier Reference (used in reports)"
+msgstr "Supplier Reference (used in reports)"
+
+#. module: inox_lieferantennummer
+#: field:res.partner,auto_supplier_ref:0
+msgid "unknown"
+msgstr "unknown"
+
+#. module: inox_lieferantennummer
+#: view:res.partner:0
+msgid "Supplier"
+msgstr "Lieferant"
+
+#. module: inox_lieferantennummer
+#: model:ir.model,name:inox_lieferantennummer.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: inox_lieferantennummer
+#: field:res.partner,supp_no_auto_ref:0
+msgid "Supplier Reference (manually assigned)"
+msgstr "Supplier Reference (manually assigned)"
+
+#. module: inox_lieferantennummer
+#: view:res.partner:0
+msgid ""
+"{'invisible': [('supplier','=',False)],\n"
+"\t\t\t\t\t\t\t'readonly': [('auto_supplier_ref','=',True)]}"
+msgstr ""
+"{'invisible': [('supplier','=',False)],\n"
+"\t\t\t\t\t\t\t'readonly': [('auto_supplier_ref','=',True)]}"

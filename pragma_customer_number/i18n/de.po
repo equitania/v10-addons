@@ -1,0 +1,63 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# 	* inox_kundennummer
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-13 10:44+0000\n"
+"PO-Revision-Date: 2015-02-13 11:47+0100\n"
+"Last-Translator: Josef Kaser <josef.kaser@inox-tech.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: de\n"
+"X-Generator: Poedit 1.7.4\n"
+
+#. module: inox_kundennummer
+#: view:res.partner:0
+msgid "Customer"
+msgstr "Kunde"
+
+#. module: inox_kundennummer
+#: field:res.partner,customer_number:0
+msgid "Kundennummer"
+msgstr "Kundennummer"
+
+#. module: inox_kundennummer
+#: field:res.partner,auto_customer_ref:0
+msgid "unknown"
+msgstr "unknown"
+
+#. module: inox_kundennummer
+#: field:res.partner,cust_auto_ref:0
+msgid "Customer Reference (automatically assigned)"
+msgstr "Customer Reference (automatically assigned)"
+
+#. module: inox_kundennummer
+#: field:res.partner,cust_ref_print:0
+msgid "Customer Reference (used in reports)"
+msgstr "Customer Reference (used in reports)"
+
+#. module: inox_kundennummer
+#: view:res.partner:0
+msgid "Create Customer Number"
+msgstr "Kundennummer erzeugen"
+
+#. module: inox_kundennummer
+#: field:res.partner,cust_no_auto_ref:0
+msgid "Customer Reference (manually assigned)"
+msgstr "Customer Reference (manually assigned)"
+
+#. module: inox_kundennummer
+#: view:res.partner:0
+msgid "{'invisible': [('customer','=',False)], 'readonly': [('auto_customer_ref','=',True)]}"
+msgstr "{'invisible': [('customer','=',False)], 'readonly': [('auto_customer_ref','=',True)]}"
+
+#. module: inox_kundennummer
+#: model:ir.model,name:inox_kundennummer.model_res_partner
+msgid "Partner"
+msgstr "Partner"

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="pragma_customer_number.view_partner_form">
+            <field name="name">pragma_customer_number.view_partner_form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='ref']" position="after">
+                    <field name="customer_number"
+                           attrs="{'invisible': [('customer','=',False)], 'readonly':[('auto_customer_ref','=',True)]}"/>
+                    <field name="auto_customer_ref" invisible="1"/>
+                    <field name="cust_auto_ref" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='ref']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath
+                        expr="//page[@name='sales_purchases']//field[@name='customer']"
+                        position="replace">
+                    <field name="customer" invisible="1"/>
+                    <label for="customer" string="Customer"/>
+                    <div>
+                        <field name="customer" class="oe_inline"/>
+                        <button name="create_customer_number" string="Create Customer Number"
+                                type="object"
+                                attrs="{'invisible': ['|',('customer','=',False),('cust_auto_ref','!=',False)]}"
+                                class="oe_edit_only oe_link oe_inline"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
