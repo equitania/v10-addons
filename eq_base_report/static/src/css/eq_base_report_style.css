@@ -14,7 +14,7 @@ td {
 	border-top: 1px solid black !important;
 }
 
-.table-condensed &gt; thead	&gt; tr &gt; th {
+.table-condensed > thead > tr > th {
 	border-bottom: 1px solid black !important;
 	page-break-inside:avoid !important;
 	font-size: 11pt!important;
@@ -127,11 +127,11 @@ table.data > tbody > tr > td:first-child {
 }
 
 .table-row tbody tr:nth-child(odd) {
-	background-color: #ffffff; /* Alter Wert für graue Zeile: #eeeeee */
+	background-color: #ffffff!important; /* Alter Wert für graue Zeile: #eeeeee */
 }
 
 .table-row tbody tr:nth-child(even) {
-	background-color: #ffffff;
+	background-color: #ffffff!important;
 }
 
 .table-row tbody tr {
@@ -145,7 +145,7 @@ table.data > tbody > tr > td:first-child {
 }
 
 .table > tbody > tr.active > td {
-	background-color:#ddd;
+	background-color:#fff; /*alter wert: #ddd */
 	color:#000;
 }
 

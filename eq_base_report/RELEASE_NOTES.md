@@ -2,6 +2,11 @@
 
 
 
+#### 28.07.2017
+#### Version 1.0.16
+##### CHG
+- Modulbeschreibung erweitert
+
 #### 26.07.2017
 #### Version 1.0.15
 ##### CHG
