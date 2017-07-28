@@ -20,8 +20,8 @@
 ##############################################################################
 
 {
-    'name': 'Eq_Sql_Exec',
-    'version': '1.0.9',
+    'name': 'Equitania SQL Exec',
+    'version': '1.0.10',
     'license': 'AGPL-3',
     'description': """
         Small SQL helper

@@ -1,3 +1,10 @@
+## Modul eq_sql_exec
+
+### 28.07.2017
+### Version 1.0.10
+#### CHG
+- Wikilink in die Beschreibung eingefügt
+
 ### 16.05.2017 - 1.0.9
 ### eq_sql_exec
 #### ADD
