@@ -35,6 +35,9 @@ class eq_purchase_order(models.Model):
     show_planned_date = fields.Boolean(string='Show Planned Date')
     use_calendar_week = fields.Boolean('Use Calendar Week for Planned Date [equitania]')
 
+    eq_use_page_break_after_header = fields.Boolean(string='Page break after header text')
+    eq_use_page_break_before_footer = fields.Boolean(string='Page break before footer text')
+
     @api.onchange('partner_id')
     def onchange_partner_id(self):
         """

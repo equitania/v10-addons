@@ -249,3 +249,15 @@ msgstr "<strong>Steuern</strong>"
 #: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchasequotation_document
 msgid "<span>Purchase Order</span>"
 msgstr "<span>Beschaffungsauftrag</span>"
+
+#. module: eq_purchase
+#: model:ir.model.fields,field_description:eq_purchase.field_purchase_order_eq_use_page_break_after_header
+#: model:ir.ui.view,arch_db:eq_purchase.eq_purchase_view_purchase_order_form
+msgid "Page break after header text"
+msgstr "Seitenumbruch nach Kopftext"
+
+#. module: eq_purchase
+#: model:ir.model.fields,field_description:eq_purchase.field_purchase_order_eq_use_page_break_before_footer
+#: model:ir.ui.view,arch_db:eq_purchase.eq_purchase_view_purchase_order_form
+msgid "Page break before footer text"
+msgstr "Seitenumbruch vor dem Fußtext"

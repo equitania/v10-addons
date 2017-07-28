@@ -13,12 +13,14 @@
 
                 <xpath expr="//page/field[@name='order_line']/.." position='after'>
                     <page string='Head Text'>
+                        <field name="eq_use_page_break_after_header"></field>
+                    	<label string="Page break after header text"></label>
                         <field name="eq_head_text"/>
                     </page>
 
                     <page string="Foot Text">
-                        <!--<field name="eq_use_page_break_before_footer"></field>-->
-                        <!--<label string="Page break before footer text"></label>-->
+                        <field name="eq_use_page_break_before_footer"></field>
+                        <label string="Page break before footer text"></label>
                         <field name="notes" nolabel="1"/>
                     </page>
                 </xpath>
