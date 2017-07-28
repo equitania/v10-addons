@@ -1,11 +1,14 @@
 ## Modul eq_sale_stock
 
+#### 28.07.2017
+#### Version 1.0.6
+##### CHG
+- Wikilink in Beschreibung eingefügt
 
 #### 22.06.2017
 #### Version 1.0.5
 ##### CHG
-- Üernahme von Kopf- und Fußtexten aus Auftrag
-
+- Übernahme von Kopf- und Fußtexten aus Auftrag
 
 #### 22.06.2017
 #### Version 1.0.4
