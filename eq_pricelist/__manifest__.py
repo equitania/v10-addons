@@ -22,7 +22,7 @@
 {
     'name': "Equitania Pricelist",
     'license': 'AGPL-3',
-    'version': '1.0.1',
+    'version': '1.0.2',
     'category': 'pricelist',
     'description': """Extensions for pricelists""",
     'author': 'Equitania Software GmbH',
