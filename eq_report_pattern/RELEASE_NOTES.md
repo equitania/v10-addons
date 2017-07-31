@@ -1,6 +1,11 @@
 ## eq_report_pattern 
 
 
+#### 31.07.2017
+#### Version 1.0.14
+##### CHG
+- Modulbeschreibung erweitert
+
 #### 24.07.2017
 #### Version 1.0.13
 ##### CHG
