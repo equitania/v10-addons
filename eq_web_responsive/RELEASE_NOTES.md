@@ -1,5 +1,11 @@
 ## Modul eq_web_responsive
 
+#### 31.07.2017
+#### Version 1.0.4
+##### IMP
+- Checkbox und RadioButtons sind nun 1,5-Fach größer.
+- Checkboxen in der ersten Spalte einer Tabelle werden mit margin-left um 10 nach rechts verschoben, damit eine bessere Bedienbarkeit gewährleistet bleibt
+
 #### 28.07.2017
 #### Version 1.0.3
 ##### CHG

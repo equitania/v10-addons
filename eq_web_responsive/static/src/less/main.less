@@ -14,3 +14,17 @@ body {
     d.h. wenn Sie die Hintergrundfarbe für das dashboard anpassen, muss auch die background-color für den body auf die selbe Farbe gesetzt werden! */
     background-color:#f0eeee!important;
 }
+
+/* Skaliert die Größe der Checkbox und radioButtons damit sie nichtmehr so klein sind und besser zu bedienen sind*/
+input[type="checkbox"], input[type="radio"] {
+    transform: scale(1.5);
+}
+
+/* In diversen Tabellen, wie z.B. in der Modulübersicht, gibt es in der ersten Spalte eine Checkbox.
+Diese ist zu nah an der Browserseite. Um dies optisch gemütlicher für den Kunden zu machen,
+wird nur für die erste Spalte, wenn da eine Checkbox enthalten ist, die Checkbox mit 10margin links erweitert */
+.table > thead > tr > th:first-child input[type="checkbox"],
+.table > thead > tr > td:first-child input[type="checkbox"],
+.table > tbody > tr > td:first-child input[type="checkbox"] {
+    margin-left:10px;
+}
