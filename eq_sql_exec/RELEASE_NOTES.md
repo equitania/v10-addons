@@ -1,5 +1,12 @@
 ## Modul eq_sql_exec
 
+
+### 31.07.2017
+### Version 1.0.11
+#### CHG
+- Freischalten des Models eq_import_helper
+
+
 ### 28.07.2017
 ### Version 1.0.10
 #### CHG

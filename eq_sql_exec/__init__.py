@@ -20,4 +20,4 @@
 ##############################################################################
 
 import eq_sql_exec
-#import eq_import_helper
+import eq_import_helper

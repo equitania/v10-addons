@@ -21,7 +21,7 @@
 
 {
     'name': 'Equitania SQL Exec',
-    'version': '1.0.10',
+    'version': '1.0.11',
     'license': 'AGPL-3',
     'description': """
         Small SQL helper
