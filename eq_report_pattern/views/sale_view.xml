@@ -26,6 +26,7 @@
         </record>
 
         <!--Workaround für Entfernen des Tabs Produktvorschläge da page kein Name-Attribut hat-->
+        <!--
         <record model="ir.ui.view" id="eq_sale_order_remove_product_suggestions">
             <field name="name">eq.sale.order.remove.product.suggestion</field>
             <field name="model">sale.order</field>
@@ -36,6 +37,7 @@
                 </xpath>
             </field>
         </record>
+-->
 
         <!--Feld template_id mit div und label entfernen (aus website_quote)-->
         <record id="eq_disable_temaplate_id_form" model="ir.ui.view">

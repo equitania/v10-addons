@@ -1,5 +1,10 @@
 ## eq_report_pattern 
 
+#### 31.07.2017
+#### Version 1.0.15
+##### CHG
+- Ausblenden der Seite Produktvorschläge wieder zurückgenommen (führte zum Ausblenden eines falschen Tabs)
+
 
 #### 31.07.2017
 #### Version 1.0.14
