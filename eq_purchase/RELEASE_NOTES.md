@@ -1,5 +1,10 @@
 ## Modul eq_purchase
 
+#### 31.07.2017
+#### Version 1.0.13
+##### CHG
+- Modulbeschreibung erweitert
+
 #### 28.07.2017
 #### Version 1.0.12
 ##### CHG
