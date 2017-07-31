@@ -1,5 +1,11 @@
 ## Modul eq_product
 
+#### 31.07.2017
+#### Version 1.0.8
+##### CHG
+- Modulbeschreibung erweitert
+
+
 #### 26.07.2017
 #### Version 1.0.7
 ##### ADD
