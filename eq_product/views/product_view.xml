@@ -89,13 +89,6 @@
                             style="margin-left: 20px"/>
                 </field>
 
-
-                <xpath expr="//group//field[@name='default_code']" position="replace">
-                    <field name="eq_drawing_number"/>
-                    <!--<field name="eq_index"/>-->
-                </xpath>
-
-
                 <!-- code - Article no. -->
                 <xpath expr="//div[@class='oe_title']/h1" position="after">
                     <field name="default_code" placeholder="Article No."/>
@@ -117,23 +110,6 @@
             </field>
         </record>
 
-        <record id="eq_product_template_search_view" model="ir.ui.view">
-            <field name="name">eq.product.template.product.search</field>
-            <field name="model">product.template</field>
-            <field name="inherit_id" ref="product.product_template_search_view"/>
-            <field name="arch" type="xml">
-                <!--<field name="name" position="replace">-->
-                <!--<field name="name" string="Product" filter_domain="['|',('default_code','ilike',self),('name','ilike',self)]"/>-->
-                <!--<field name="name" string="Name"/>-->
-                <!--</field>-->
-                <field name="pricelist_id" position="after">
-                    <!--<field name="default_code"/>-->
-                    <field name="eq_drawing_number"/>
-                    <!--<field name="eq_internal_number"/>-->
-                    <!--<field name="eq_index"/>-->
-                </field>
-            </field>
-        </record>
 
         <!-- Product Product - form view -->
         <record id="eq_product_product_form_view" model="ir.ui.view">
@@ -142,9 +118,7 @@
             <field name="inherit_id" ref="product.product_normal_form_view"/>
             <field name="arch" type="xml">
                 <!-- add only our 2 main fields and remove default_code..will be added below -->
-                <xpath expr="//group//field[@name='default_code']" position="replace">
-                    <field name="eq_drawing_number" class="eq_db_variant"/>
-                </xpath>
+
                 <!-- code - Article no. -->
                 <xpath expr="//div[@class='oe_title']/h1" position="after">
                     <field name="default_code" placeholder="Article No."/>

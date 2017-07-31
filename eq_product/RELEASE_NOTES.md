@@ -1,5 +1,11 @@
 ## Modul eq_product
 
+
+#### 31.07.2017
+#### Version 1.0.8
+##### CHG
+- eq_drawing_number aus eq_product entfernt (neu in eq_mrp)
+
 #### 31.07.2017
 #### Version 1.0.8
 ##### CHG

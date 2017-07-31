@@ -27,7 +27,6 @@ from string import replace
 class eq_product_product(models.Model):
     _inherit = 'product.product'
 
-    eq_drawing_number = fields.Char('Drawing Number', size=50)
 
     def _generate_ean(self, company_ean, sequence):
         ean_without_checksum = company_ean + sequence[-5:]
@@ -145,7 +144,6 @@ class eq_product_product(models.Model):
 class eq_product_template(models.Model):
     _inherit = 'product.template'
 
-    eq_drawing_number = fields.Char('Drawing Number', size=50)
 
     #
     # """
