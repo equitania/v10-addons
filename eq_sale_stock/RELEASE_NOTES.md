@@ -1,5 +1,12 @@
 ## Modul eq_sale_stock
 
+
+#### 31.07.2017
+#### Version 1.0.7
+##### CHG
+- Dependency auf eq_mrp wegen eq_drawing_number
+
+
 #### 28.07.2017
 #### Version 1.0.6
 ##### CHG
