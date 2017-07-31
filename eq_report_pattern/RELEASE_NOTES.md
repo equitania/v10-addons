@@ -1,5 +1,12 @@
 ## eq_report_pattern 
 
+
+#### 31.07.2017
+#### Version 1.0.16
+##### CHG
+- Dependency auf eq_mrp wegen eq_drawing_number
+
+
 #### 31.07.2017
 #### Version 1.0.15
 ##### CHG
