@@ -1,5 +1,9 @@
 ## Modul eq_res_partner
 
+#### 31.07.2017
+#### Version 1.0.11
+##### CHG
+- Modulbeschreibung erweitert 
 
 #### 17.07.2017
 #### Version 1.0.10
