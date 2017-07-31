@@ -20,9 +20,9 @@
 ##############################################################################
 
 {
-    'name': "Equitania Bestellungen",
+    'name': "Equitania Einkauf",
     'license': 'AGPL-3',
-    'version': '1.0.13',
+    'version': '1.0.14',
     'category': 'purchase',
     'description': """Extensions for purchase""",
     'author': 'Equitania Software GmbH',

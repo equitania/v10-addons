@@ -1,6 +1,11 @@
 ## Modul eq_purchase
 
 #### 31.07.2017
+#### Version 1.0.14
+##### CHG
+- Equitania Bestellungen in Einkauf umbenannt
+
+#### 31.07.2017
 #### Version 1.0.13
 ##### CHG
 - Modulbeschreibung erweitert
