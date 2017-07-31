@@ -2,6 +2,11 @@
 
 
 #### 31.07.2017
+#### Version 1.0.17
+##### CHG
+- Dependency zu Fertigung entfernt
+
+#### 31.07.2017
 #### Version 1.0.16
 ##### CHG
 - Dependency auf eq_mrp wegen eq_drawing_number
