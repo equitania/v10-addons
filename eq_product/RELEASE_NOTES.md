@@ -1,8 +1,14 @@
 ## Modul eq_product
 
+#### 31.07.2017
+#### Version 1.0.10
+##### CHG
+DB-Update für entfernte View:
+DELETE FROM ir_ui_view WHERE name = 'eq.product.template.product.search';
+
 
 #### 31.07.2017
-#### Version 1.0.8
+#### Version 1.0.9
 ##### CHG
 - eq_drawing_number aus eq_product entfernt (neu in eq_mrp)
 
