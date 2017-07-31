@@ -2,6 +2,11 @@
 
 
 #### 31.07.2017
+#### Version 1.0.18
+##### DEL
+- Lieferschein Duplikat (Template) gelöscht
+
+#### 31.07.2017
 #### Version 1.0.17
 ##### CHG
 - Dependency zu Fertigung entfernt
