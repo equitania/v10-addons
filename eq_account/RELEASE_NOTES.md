@@ -1,5 +1,11 @@
 ## Modul eq_account
 
+#### 01.08.2017
+#### Version 1.0.10
+##### IMP
+- Report erweitert:
+- Kopf und Fußtext hinzugefügt. 
+- Lieferanschrift umgebaut mit eq_house_no, Citypart usw
 
 #### 01.08.2017
 #### Version 1.0.9
