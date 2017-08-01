@@ -188,3 +188,26 @@ msgstr "<strong>Produkt</strong>"
 #: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_packaging_doc
 msgid "<strong>Quantity</strong>"
 msgstr "<strong>Menge</strong>"
+
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_stock_view_doc_template_ext
+msgid "Footer Text"
+msgstr "Fußtext"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_stock_view_doc_template_ext
+msgid "Header Text"
+msgstr "Kopftext"
+
+#. module: eq_stock
+#: model:ir.model.fields,field_description:eq_stock.field_stock_picking_eq_use_page_break_after_header
+#: model:ir.ui.view,arch_db:eq_stock.eq_stock_view_doc_template_ext
+msgid "Page break after header text"
+msgstr "Seitenumbruch nach Kopftext"
+
+#. module: eq_stock
+#: model:ir.model.fields,field_description:eq_stock.field_stock_picking_eq_use_page_break_before_footer
+#: model:ir.ui.view,arch_db:eq_stock.eq_stock_view_doc_template_ext
+msgid "Page break before footer text"
+msgstr "Seitenumbruch vor dem Fußtext"

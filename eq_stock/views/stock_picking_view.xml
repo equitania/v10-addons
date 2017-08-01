@@ -7,18 +7,17 @@
 			<field name="model">stock.picking</field>
 			<field name="inherit_id" ref="stock.view_picking_form" />
 			<field name="arch" type="xml">
-				
 
 				<notebook position="inside">
-					<label for="eq_header_text" string="Header text"/>
-					<group>
-						<field name="eq_header_text" placeholder="Dear Sir or Madam," nolabel="1"/>
-					</group>
 
 					<page string="Header Text">
+						<field name="eq_use_page_break_after_header"></field>
+                    	<label string="Page break after header text"></label>
 						<field name="eq_header_text" placeholder="Dear Sir or Madam," nolabel="1"/>
                     </page>
                     <page string="Footer Text">
+						<field name="eq_use_page_break_before_footer"></field>
+                    	<label string="Page break before footer text"></label>
                     	<field name="eq_footer_text" nolabel="1"/>
                     </page>
 
