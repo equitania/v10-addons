@@ -208,6 +208,14 @@
                             <span t-field="o.name"/>
                         </div>
 
+                        <div t-if="o.html_text_is_set(o.eq_header_text)" class="eq_headertext">
+                        <!--<div t-if="o.eq_header_text" class="eq_headertext">-->
+                            <p t-field="o.eq_header_text"/>
+                        </div>
+                        <!-- Pagebreak after headertext -->
+                        <p t-if="o.eq_use_page_break_after_header" style="page-break-after:always;"> </p>
+
+
 
                         <table class="table table-condensed">
                             <thead>
@@ -349,7 +357,17 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <div name="invoice_partner"
+                        <!-- Pagebreak before footertext -->
+
+                        <p t-if="o.eq_use_page_break_before_footer" style="page-break-after:always;"> </p>
+
+
+                        <div t-if="o.html_text_is_set(o.eq_footer_text)"  class="eq_footertext" style="width:100%;float:left; display:block;page-break-inside:avoid !important;" >
+                        <!--<div t-if="o.eq_footer_text"  class="eq_footertext" style="width:100%;float:left; display:block;page-break-inside:avoid !important;" >-->
+                            <p t-field="o.eq_footer_text" style="margin-bottom:3em;"/>
+                        </div>
+
+                        <div name="invoice_partner" class="col-xs-12"
                              t-if="o.picking_type_id.code == 'outgoing' and o.sale_id and o.sale_id.partner_invoice_id"
                              style="margin-top:1em; margin-bottom:2em; margin-left:0px; padding-left:0px; page-break-inside:avoid !important;">
                             <table style="width:auto!important; max-width:90%; font-size: 0.8em;">

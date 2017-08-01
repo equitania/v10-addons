@@ -2,6 +2,12 @@
 
 
 #### 01.08.2017
+#### Version 1.0.5
+##### IMP
+Report: Kopf und Fußtext hinzugefügt, inkl. Seitenumbruch
+
+
+#### 01.08.2017
 #### Version 1.0.4
 ##### CHG
 - Erweiterungen für stock_picking: Kopf- und Fußtexte
