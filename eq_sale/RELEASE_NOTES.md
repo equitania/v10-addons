@@ -2,6 +2,18 @@
 
 
 #### 01.08.2017
+#### Version 1.0.35
+##### IMP
+Report verbesserungen
+- Kopf und Fußtext hinzugefügt, inkl. Seitenumbruch
+- Anordnung und Darstellung der Angebots-Fußdaten verbessert
+- Delivery Method in den Report eingefügt
+- Unnötige Abstände entfernt
+- Paar Übersetzungen angepasst für die neue Darstellung
+
+
+
+#### 01.08.2017
 #### Version 1.0.34
 ##### CHG
 - Report: Übersetzung für die "Sale Order" ist nichtmehr "Verkaufsauftrag" sondern "Auftragsbestätigung"

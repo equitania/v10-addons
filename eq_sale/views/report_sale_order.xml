@@ -233,16 +233,25 @@
                                 <t t-raw="eq_saleorder_extension_right_header"/>
                             </div>
                             <div style="margin-bottom:25px; margin-top:25px; font-size: 1.7em;">
-                                <span t-if="doc.state not in ['draft','sent']">Sale order</span>
-                                <span t-if="doc.state in ['draft','sent']">Quotation</span>
+                                <t t-if="doc.state not in ['draft','sent']">
+                                    <span>Sale order</span>
+                                </t>
+                                <t t-if="doc.state in ['draft','sent']"><span>Quotation</span></t>
                                 <span t-field="doc.name"/>
                             </div>
-                            <div t-if="doc.eq_head_text" class="eq_headertext">
+
+                            <div t-if="doc.html_text_is_set(doc.eq_head_text)" class="eq_headertext">
+                            <!--<div t-if="doc.eq_head_text" class="eq_headertext">-->
                                 <p t-field="doc.eq_head_text"/>
                             </div>
-                            <div class="col-xs-12"
+                            <!-- Pagebreak after headertext -->
+                            <p t-if="doc.eq_use_page_break_after_header" style="page-break-after:always;"> </p>
+
+
+
+                            <!--<div class="col-xs-12"
                                  style="margin-top:1em; margin-bottom:2em; font-size:0.8em; margin-left:0px; padding-left:0px;">
-                            </div>
+                            </div>-->
 
 
 <!--
@@ -476,24 +485,36 @@
 
 
                                 </div>
-                                <div class="col-xs-12"
-                                     style="margin-top:1em; margin-bottom:2em; margin-left:0px; padding-left:0px; page-break-inside:avoid !important;">
+
+
+
+                                <!-- Pagebreak before footertext -->
+                                <p t-if="doc.eq_use_page_break_before_footer" style="page-break-after:always;"> </p>
+
+
+                                <div t-if="doc.html_text_is_set(doc.note)"  class="eq_footertext" style="width:100%;float:left; display:block;page-break-inside:avoid !important;" >
+                                    <p t-field="doc.note" style="margin-bottom:3em;"/>
+                                </div>
+
+
+                                <!--<div class="col-xs-12"
+                                     style="margin-top:1em; margin-bottom:2em; margin-left:0px; padding-left:0px; page-break-inside:avoid !important;">-->
                                     <table class="col-xs-3"
-                                           style="width:auto!important; max-width:50%; font-size: 0.8em;">
+                                           style="width:auto!important; ">
                                         <tbody>
                                             <!--<tr t-if="doc.note">
                                                 <td style="padding-right:0.5cm; vertical-align:top;" colspan="2">
                                                     <p t-field="doc.note"/>
                                                 </td>
                                             </tr>-->
-                                            <tr t-if="doc.note">
+                                            <!--<tr t-if="doc.html_text_is_set(doc.note)" >
                                                 <td style="padding-right:0.5cm; vertical-align:top; " colspan="2" class="eq_footertext">
                                                     <p t-field="doc.note" style="margin-bottom:3em;"/>
                                                 </td>
-                                            </tr>
+                                            </tr>-->
                                             <tr t-if="doc.payment_term_id">
                                                 <td style="padding-right:0.5cm;">
-                                                    Term of payment:
+                                                    <strong>Term of payment:</strong>
                                                 </td>
                                                 <td>
                                                     <span t-field="doc.payment_term_id.note"/>
@@ -501,15 +522,23 @@
                                             </tr>
                                             <tr t-if="doc.eq_delivery_condition_id">
                                                 <td style="padding-right:0.5cm;">
-                                                    Delivery Condition:
+                                                    <strong>Delivery Condition:</strong>
                                                 </td>
                                                 <td>
                                                     <span t-field="doc.eq_delivery_condition_id"/>
                                                 </td>
                                             </tr>
+                                            <tr t-if="doc.carrier_id.name">
+                                                <td style="padding-right:0.5cm;">
+                                                    <strong>Delivery Method:</strong>
+                                                </td>
+                                                <td>
+                                                    <span t-field="doc.carrier_id.name"/>
+                                                </td>
+                                            </tr>
                                             <tr t-if="doc.incoterm">
                                                 <td style="padding-right:0.5cm;">
-                                                    Incoterm:
+                                                    <strong>Incoterm:</strong>
                                                 </td>
                                                 <td>
                                                     <span t-field="doc.incoterm.name"/>
@@ -518,7 +547,7 @@
                                             <tr
                                                     t-if="doc.partner_invoice_id != doc.partner_id and doc.partner_invoice_id != False">
                                                 <td style="padding-right:0.5cm; font-weight:bold;padding-top:0.5cm;" valign="top">
-                                                    Invoice address:
+                                                    <strong>Invoice address:</strong>
                                                 </td>
                                                 <td style="padding-top:0.5cm;">
                                                     <div>
@@ -606,15 +635,15 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                </div>
+                                <!--</div>-->
                                 <div></div>
                             </div>
-                            <div class="col-xs-12"
+                            <!--<div class="col-xs-12"
                                  style="margin-top:1em;font-size:0.8em; margin-left:0px; padding-left:0px; page-break-inside:avoid !important;">
-                            </div>
-                            <div class="col-xs-12"
+                            </div>-->
+                            <!--<div class="col-xs-12"
                                  style="margin-top:1em;font-size:0.8em; margin-left:0px; padding-left:0px; page-break-inside:avoid !important;">
-                                <!--
+
                                 <p style="margin-bottom:0.3cm!important;">
                                     <span>
                                         <p>
@@ -639,8 +668,7 @@
                                         </div>
                                     </span>
                                 </p>
-                                -->
-                            </div>
+                            </div>-->
                             <div id="informations" style="display:none;"></div>
                             <p id="fiscal_position_remark"></p>
                             <div name="payment_term"></div>

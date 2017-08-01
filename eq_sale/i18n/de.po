@@ -267,33 +267,33 @@ msgstr "<strong>USt.</strong>"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
-msgid "Term of payment:"
-msgstr "Zahlungsbedingungen:"
+msgid "<strong>Term of payment:</strong>"
+msgstr "<strong>Zahlungsbedingungen:</strong>"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
-msgid "Delivery Condition:"
-msgstr "Lieferbedingungen:"
+msgid "<strong>Delivery Condition:</strong>"
+msgstr "<strong>Lieferbedingungen:</strong>"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
-msgid "Incoterm:"
-msgstr "Incoterm:"
+msgid "<strong>Incoterm:</strong>"
+msgstr "<strong>Incoterm:</strong>"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
-msgid "Invoice address:"
-msgstr "Rechnungsanschrift:"
+msgid "<strong>Invoice address:</strong>"
+msgstr "<strong>Rechnungsanschrift:</strong>"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
-msgid "Quotation"
-msgstr "Angebot"
+msgid "<span>Quotation</span>"
+msgstr "<span>Angebot</span>"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
-msgid "Sale order"
-msgstr "Auftragsbestätigung"
+msgid "<span>Sale order</span>"
+msgstr "<span>Auftragsbestätigung</span>"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
@@ -589,3 +589,10 @@ msgstr "Seitenumbruch nach Kopftext"
 #: model:ir.ui.view,arch_db:eq_sale.eq_sale_address_fields_view_order_form_inherit
 msgid "Page break before footer text"
 msgstr "Seitenumbruch vor dem Fußtext"
+
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<strong>Delivery Method:</strong>"
+msgstr "<strong>Auslieferungsmethode:</strong>"
+
