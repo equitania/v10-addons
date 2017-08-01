@@ -40,9 +40,7 @@ class eq_open_sale_order_line(models.Model):
     eq_quantity = fields.Integer(string="Quantity")
     eq_quantity_left = fields.Integer(string="Quantity left")
     eq_product_no = fields.Many2one('product.product', string="Product number")
-    # TODO
-    eq_drawing_no = fields.Char(size=100, string="Drawing number")
-    
+
     eq_state = fields.Selection(
                 [('cancel', 'Cancelled'),('draft', 'Draft'), ('sale', 'Sale Order'), ('sent', 'Quotation Sent'),('confirmed', 'Confirmed'),('exception', 'Exception'),('done', 'Done')],
                 'Status')
@@ -147,21 +145,6 @@ class eq_open_sale_order_line(models.Model):
                                                                              
                     as eq_quantity_left,             
                 main.product_id AS eq_product_no,
-                (
-                    SELECT
-                        product_template.eq_drawing_number
-                    FROM
-                        product_template
-                    WHERE
-                        product_template.id = (
-                            SELECT
-                                product_product.product_tmpl_id
-                            FROM
-                                product_product
-                            WHERE
-                                product_product.id = main.product_id
-                            )
-                ) AS eq_drawing_no, 
                 main.state AS eq_state
 
             FROM
@@ -209,19 +192,7 @@ class eq_open_sale_order_line(models.Model):
                 --main.product_uom_qty ,
                 
                 main.product_id,
-                    (SELECT
-                        product_template.eq_drawing_number
-                    FROM
-                        product_template
-                    WHERE
-                        product_template.id = (
-                            SELECT
-                                product_product.product_tmpl_id
-                            FROM
-                                product_product
-                            WHERE
-                                product_product.id = main.product_id)
-                ),
                  main.state
+        
         )
             """)

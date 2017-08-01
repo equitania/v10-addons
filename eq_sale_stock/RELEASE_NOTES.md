@@ -1,5 +1,10 @@
 ## Modul eq_sale_stock
 
+#### 01.08.2017
+#### Version 1.0.8
+##### CHG
+- Zeichnungsnr für die Auftragspositionen und dependency auf eq_mrp entfernt
+
 
 #### 31.07.2017
 #### Version 1.0.7

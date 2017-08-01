@@ -71,11 +71,6 @@ msgid "Draft"
 msgstr "Entwurf"
 
 #. module: eq_sale_stock
-#: model:ir.model.fields,field_description:eq_sale_stock.field_eq_open_sale_order_line_eq_drawing_no
-msgid "Drawing number"
-msgstr "Zeichnungsnummer"
-
-#. module: eq_sale_stock
 #: selection:eq_open_sale_order_line,eq_state:0
 #: model:ir.ui.view,arch_db:eq_sale_stock.eq_open_sale_order_line_search_view
 msgid "Exception"

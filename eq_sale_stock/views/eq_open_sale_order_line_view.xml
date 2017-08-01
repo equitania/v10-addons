@@ -16,7 +16,6 @@
 					<field name="eq_quantity" sum="Total Quantity"/>
 					<field name="eq_quantity_left" sum="Total Quantity left"/>
 					<field name="eq_product_no"/>
-					<field name="eq_drawing_no"/>
 					<field name="eq_state"/>
                 </tree>
             </field>            		          
@@ -33,7 +32,6 @@
 							<field name="eq_quantity" />
 							<!--<field name="eq_pos"/>-->
 							<field name="eq_state" />
-							<field name="eq_drawing_no" />
 							<field name="eq_client_order_ref" />
 							<field name="eq_customer" required="1"/>
 							<field name="eq_product_no" required="1"/>
@@ -53,7 +51,7 @@
 			<field name="model">eq_open_sale_order_line</field>
 			<field name="arch" type="xml">
 				<search string="Search Partner">
-	                    <field name="eq_order_id" filter_domain="['|','|','|','|',('eq_order_id','ilike',self),('eq_client_order_ref','ilike',self),('eq_product_no','ilike',self),('eq_customer','=',self),('eq_drawing_no','ilike',self)]"/>
+	                    <field name="eq_order_id" filter_domain="['|','|','|',('eq_order_id','ilike',self),('eq_client_order_ref','ilike',self),('eq_product_no','ilike',self),('eq_customer','=',self)]"/>
 						<field name="eq_client_order_ref"/>
 						<field name="eq_customer_no"/>
 						<field name="eq_customer"/>
@@ -62,8 +60,7 @@
 						<field name="eq_quantity"/>
 						<field name="eq_quantity_left"/>
 						<field name="eq_product_no"/>
-						<field name="eq_drawing_no"/>
-						
+
 						<filter string="Remaining Quantity left" name="filter_remaining_quantity" domain="[('eq_quantity_left','>', '0')]"/>
 						<filter string="Draft" name="filter_draft" domain="[('eq_state','=', 'draft')]"/>
 						<filter string="Confirmed" name="filter_confirmed" domain="[('eq_state','=', 'confirmed')]"/>
