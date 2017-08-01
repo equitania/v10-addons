@@ -28,7 +28,7 @@ class eq_account_invoice(models.Model):
     _inherit = 'account.invoice'
    
     document_template_id = fields.Many2one(comodel_name='eq.document.template', string='Document Template')#TODO: readonly falls Rechnung nicht mehr editierbar?
-
+    comment = fields.Html('Additional Information')
 
     # @api.onchange('document_template_id')
     # def onchange_document_template_id(self):
