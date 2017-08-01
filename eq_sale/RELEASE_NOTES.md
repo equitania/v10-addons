@@ -1,5 +1,11 @@
 ## Modul eq_sale
 
+
+#### 01.08.2017
+#### Version 1.0.34
+##### CHG
+- Report: Übersetzung für die "Sale Order" ist nichtmehr "Verkaufsauftrag" sondern "Auftragsbestätigung"
+
 #### 28.07.2017
 #### Version 1.0.33
 ##### CHG

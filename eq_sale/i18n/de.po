@@ -293,7 +293,7 @@ msgstr "Angebot"
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "Sale order"
-msgstr "Verkaufsauftrag"
+msgstr "Auftragsbestätigung"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
