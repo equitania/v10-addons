@@ -1,5 +1,10 @@
 ## Modul eq_web_responsive
 
+#### 01.08.2017
+#### Version 1.0.5
+##### IMP
+- (VEP-123) Allgemeine Überschriften mit der Klasse "horizontal seperator" sind nun 17 statt 20px groß und der Abstand wurde visuell verbessert
+
 #### 31.07.2017
 #### Version 1.0.4
 ##### IMP
