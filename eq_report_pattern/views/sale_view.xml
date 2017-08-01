@@ -2,6 +2,29 @@
 <openerp>
     <data>
 
+        <record id="website_quote.sale_order_form_quote" model="ir.ui.view">
+        <field name="name">sale.order.form.payment</field>
+        <field name="model">sale.order</field>
+        <field name="arch" type="xml">
+            <xpath expr="//header/button[@name='action_confirm'][1]" position="after">
+                <button name="open_quotation" type="object"
+                    class="o_open_quotation" string="Preview"
+                    attrs="{'invisible': [('template_id', '=', False)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_shipping_id']" position="after">
+                <label for="template_id"/>
+                <div>
+                    <field name="template_id" context="{'company_id': company_id}"
+                        options="{'no_create': True, 'no_open': True}"/>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='client_order_ref']" position="after">
+                <field name="require_payment" widget="radio"/>
+                <field name="website_description" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
         <record id="eq_sale_order_form_quote" model="ir.ui.view">
             <field name="name">hide.sale.order.form.payment</field>
             <field name="model">sale.order</field>

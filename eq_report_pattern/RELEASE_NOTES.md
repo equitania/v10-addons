@@ -1,10 +1,14 @@
 ## eq_report_pattern 
 
 #### 01.08.2017
+#### Version 1.0.20
+##### CHG
+- Tab "Produktvorschläge" wird unter Verkaufsaufträgen nun ausgeblendet
+
+#### 01.08.2017
 #### Version 1.0.19
 ##### CHG
 - Feld comment als HTML-Feld für Rechnungen (Workaround da Feld trotz Erweiterung in eq_account als Textfeld angezeigt wurde, falls eq_report_pattern installiert wurde)
-
 
 #### 31.07.2017
 #### Version 1.0.18
