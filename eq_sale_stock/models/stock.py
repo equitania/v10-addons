@@ -26,8 +26,8 @@ class eq_stock_picking_extension(models.Model):
     _inherit = 'stock.picking'
 
     eq_sale_order_id = fields.Many2one('sale.order', 'SaleOrder')
-    eq_header_text = fields.Html(string="Header")
-    eq_footer_text = fields.Html(string="Footer")
+    # eq_header_text = fields.Html(string="Header")
+    # eq_footer_text = fields.Html(string="Footer")
 
     @api.model
     def create(self, vals):

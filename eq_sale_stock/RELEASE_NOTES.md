@@ -1,5 +1,12 @@
 ## Modul eq_sale_stock
 
+
+#### 01.08.2017
+#### Version 1.0.9
+##### CHG
+- Kopf- und Fußtext für stock_picking in eq_stock verschoben
+
+
 #### 01.08.2017
 #### Version 1.0.8
 ##### CHG
