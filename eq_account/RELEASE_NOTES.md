@@ -1,6 +1,11 @@
 ## Modul eq_account
 
 
+#### 01.08.2017
+#### Version 1.0.9
+##### FIX
+- Report: Es wurde noch ein Templating (in rot) angezeigt welche die Kategorien der Auftragszeilen enthalten sollte, dies funktioniert aber noch nicht und wurde nun erstmal wiedr ausgeblendet, damit der Rechnungs-Report wieder fehlerfrei aussieht.
+
 #### 28.07.2017
 #### Version 1.0.8
 ##### CHG
