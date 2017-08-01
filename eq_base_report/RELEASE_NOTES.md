@@ -1,6 +1,10 @@
 ## Modul eq_base_report
 
 
+#### 01.08.2017
+#### Version 1.0.17
+##### CHG
+- Lieferschein-Kopf: Vorerst den Infotext ausgeblendet
 
 #### 28.07.2017
 #### Version 1.0.16

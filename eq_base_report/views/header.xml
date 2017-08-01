@@ -119,7 +119,7 @@
 
 <!-- Lieferschein -->
                         <t t-if="doc_model == 'stock.picking'">
-                            <b>LS - bitte den Block im eq_base_report // header.xml anpassen</b>
+                            <!--TODO <b>LS - bitte den Block im eq_base_report // header.xml anpassen</b>-->
                         </t>
                     </div>
                 </div>
