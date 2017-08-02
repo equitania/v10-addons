@@ -1,5 +1,10 @@
 ## eq_report_pattern 
 
+#### 02.08.2017
+#### Version 1.0.21
+##### CHG
+- Dependencys eq_sale_stock entfernt.
+
 #### 01.08.2017
 #### Version 1.0.20
 ##### CHG

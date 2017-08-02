@@ -28,8 +28,7 @@
     """,
     'author': 'Equitania Software GmbH',
     'website': 'www.myodoo.de',
-    'depends': ['base', 'base_setup', 'website_quote', 'stock', 'sales_team', 'eq_sale', 'eq_purchase', 'eq_account',
-                'eq_sale_stock'],
+    'depends': ['base', 'base_setup', 'website_quote', 'stock', 'sales_team', 'eq_sale', 'eq_purchase', 'eq_account'],
     'category' : 'Reports',
     #What it Improves e.g Sale, Purchase, Accounting
     'summary': '',
