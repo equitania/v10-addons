@@ -1,5 +1,9 @@
 ## Modul eq_base_report
 
+#### 02.08.2017
+#### Version 1.0.18
+##### CHG
+- Lieferschein-Kopf: Daten für Seite2+ nun enthalten
 
 #### 01.08.2017
 #### Version 1.0.17

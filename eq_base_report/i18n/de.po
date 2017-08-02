@@ -79,3 +79,18 @@ msgstr "<span>Auftragsdatum</span>"
 #: model:ir.ui.view,arch_db:eq_base_report.eq_external_layout_header
 msgid "<span>Quotation date</span>"
 msgstr "<span>Angebotssdatum</span>"
+
+#. module: eq_base_report
+#: model:ir.ui.view,arch_db:eq_base_report.eq_external_layout_header
+msgid "<span>Quotation date</span>"
+msgstr "<span>Angebotssdatum</span>"
+
+#. module: eq_base_report
+#: model:ir.ui.view,arch_db:eq_base_report.eq_external_layout_header
+msgid "<span>Delivery note</span>"
+msgstr "<span>Lieferschein</span>"
+
+#. module: eq_base_report
+#: model:ir.ui.view,arch_db:eq_base_report.eq_external_layout_header
+msgid "<span>Date</span>"
+msgstr "<span>Datum</span>"

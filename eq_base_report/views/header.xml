@@ -119,7 +119,34 @@
 
 <!-- Lieferschein -->
                         <t t-if="doc_model == 'stock.picking'">
-                            <!--TODO <b>LS - bitte den Block im eq_base_report // header.xml anpassen</b>-->
+                            <table class="data">
+                                <tbody>
+                                    <tr t-if="o.name">
+                                        <td>
+                                            <span>Delivery note</span>
+                                        </td>
+                                        <td >
+                                            <span t-field="o.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr t-if="o.partner_id.customer_number">
+                                        <td>
+                                            <span>Customer no.</span>
+                                        </td>
+                                        <td >
+                                            <span t-field="o.partner_id.customer_number"/>
+                                        </td>
+                                    </tr>
+                                    <tr t-if="o.date">
+                                        <td>
+                                            <span>Date</span>
+                                        </td>
+                                        <td >
+                                            <span t-esc="o.date.split(' ')[0].split('-')[2] + '.' + o.date.split(' ')[0].split('-')[1] + '.' + o.date.split(' ')[0].split('-')[0]" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </t>
                     </div>
                 </div>
