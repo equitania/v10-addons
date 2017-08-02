@@ -147,3 +147,9 @@ msgstr "Länge der Produktnummer [equitania]"
 #: model:ir.ui.view,arch_db:eq_product.eq_product_template_only_form_view
 msgid "Describe the product characteristics..."
 msgstr "Beschreiben Sie die Produkteigenschaften..."
+
+#. module: eq_product
+#: model:ir.model.fields,field_description:eq_product.field_product_product_eq_drawing_number
+#: model:ir.model.fields,field_description:eq_product.field_product_template_eq_drawing_number
+msgid "Drawing Number"
+msgstr "Zeichnungsnummer"

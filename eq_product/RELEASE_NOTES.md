@@ -1,11 +1,15 @@
 ## Modul eq_product
 
+#### 02.08.2017
+#### Version 1.0.11
+##### CHG
+- Übersetzung angepasst
+
 #### 31.07.2017
 #### Version 1.0.10
 ##### CHG
 DB-Update für entfernte View:
 DELETE FROM ir_ui_view WHERE name = 'eq.product.template.product.search';
-
 
 #### 31.07.2017
 #### Version 1.0.9
