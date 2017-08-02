@@ -207,3 +207,8 @@ msgstr "Kopftext"
 #: model:ir.ui.view,arch_db:eq_sale_stock.eq_stock_view_doc_template_ext
 msgid "Footer Text"
 msgstr "Fußtext"
+
+#. module: eq_sale_stock
+#: model:ir.model.fields,field_description:eq_sale_stock.field_eq_open_sale_order_line_eq_drawing_no
+msgid "Drawing number"
+msgstr "Zeichnungsnummer"

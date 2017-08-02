@@ -1,6 +1,11 @@
 ## Modul eq_sale_stock
 
 
+#### 02.08.2017
+#### Version 1.0.10
+##### CHG
+- Übersetzung angepasst
+
 #### 01.08.2017
 #### Version 1.0.9
 ##### CHG
