@@ -198,9 +198,20 @@
                     <span>Purchase Order</span>
                     <span t-field="o.name"/>
                 </div>
-                <div t-if="o.eq_head_text" class="eq_headertext">
+
+
+                <!--<div t-if="o.eq_head_text" class="eq_headertext">-->
+                <div t-if="o.html_text_is_set(o.eq_head_text)" class="eq_headertext">
                     <p t-field="o.eq_head_text"/>
+
                 </div>
+
+                <!-- Pagebreak after headertext -->
+                <p t-if="o.eq_use_page_break_after_header" style="page-break-after:always;"> </p>
+
+                <!--<div t-if="o.eq_head_text" class="eq_headertext">
+                    <p t-field="o.eq_head_text"/>
+                </div>-->
                 <table class="table table-condensed table-row">
                     <t t-raw="table_header"/>
                     <tbody class="sale_tbody">
@@ -280,17 +291,32 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="row padding-fix">
+                </div>
+
+
+
+                    <!-- Pagebreak before footertext -->
+                    <p t-if="o.eq_use_page_break_before_footer" style="page-break-after:always;"> </p>
+
+
+                    <div t-if="o.html_text_is_set(o.notes)"  class="eq_footertext" style="width:100%;float:left; display:block;page-break-inside:avoid !important;" >
+                        <p t-field="o.notes" style="margin-bottom:3em;"/>
+                    </div>
+
+
+
+                    <!--<div class="row padding-fix">
                         <div t-if="o.notes" class="col-xs-12 eq_footertext">
                             <p t-field="o.notes"/>
                         </div>
-                    </div>
+                    </div>-->
+                <div class="row nopadding" >
                     <div class="col-xs-12">
                         <table style="margin-top:1em;">
                             <tbody>
                                 <tr t-if="o.payment_term_id" style="vertical-align:top;">
                                     <td style="padding-right:0.5cm;">
-                                        Term of payment:
+                                        <strong>Term of payment:</strong>
                                     </td>
                                     <td >
                                         <span t-field="o.payment_term_id"/>
@@ -298,7 +324,7 @@
                                 </tr>
                                 <tr t-if="o.incoterm_id" style="vertical-align:top;">
                                     <td style="padding-right:0.5cm;">
-                                        Incoterm:
+                                        <strong>Incoterm:</strong>
                                     </td>
                                     <td>
                                         <span t-field="o.incoterm_id.name"/>

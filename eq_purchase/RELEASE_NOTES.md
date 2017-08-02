@@ -1,5 +1,11 @@
 ## Modul eq_purchase
 
+
+#### 02.08.2017
+#### Version 1.0.16
+##### IMP
+- Report: Kopf & Fußtext nun korrigiert und Funktion für Seitenumbruch enthalten
+
 #### 31.07.2017
 #### Version 1.0.15
 ##### CHG
