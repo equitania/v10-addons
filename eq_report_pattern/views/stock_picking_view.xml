@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
 	<data>
 
 		<record id="eq_stock_view_doc_template_ext" model="ir.ui.view">
@@ -13,4 +13,4 @@
 			</field>
 		</record>
 	</data>
-</openerp>
+</odoo>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
 	<data>
 		<record model="ir.ui.view" id="eq_view_invoice_doc_template_ext_form">
 			<field name="name">eq.view.invoice.doc.template.form</field>
@@ -14,4 +14,4 @@
 		</record>
 
 	</data>
-</openerp>
+</odoo>

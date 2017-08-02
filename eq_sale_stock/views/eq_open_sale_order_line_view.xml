@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data>    	
     	<!-- Defaultansicht zusammen mit den Feldern, die wir anzeigen -->
 	    <record id="eq_open_sale_order_line_tree_view" model="ir.ui.view">
@@ -90,4 +90,4 @@
     	<!-- Erweiterung der Menuleiste LINKS -->
 		<menuitem action="eq_open_sale_order_line_action" id="eq_open_sale_order_line_menu" parent="sales_team.menu_sales" name="Open sale order line" sequence="40"/>
     </data>    	
-</openerp>    
+</odoo>

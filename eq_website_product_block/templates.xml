@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Erweiterung der Produktdetail um ein Block für HTML Elemente -->
+        <template id="eq_website_product_block.product" inherit_id="website_sale.product" name="eq_website_block_product">
+            <xpath expr="//section[@id='product_detail']/div" position="after">
+                <div itemprop="eq_description" t-field="product.eq_website_description" class="oe_structure mt16" id="product_full_description"/>
+			</xpath>
+        </template>
+
+    </data>
+</odoo>

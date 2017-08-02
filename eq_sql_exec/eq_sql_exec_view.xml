@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
 	<data noupdate="1">
 		<!--<function model="eq_sql_exec" name="test_run" />		-->
 		<function model="eq_sql_exec" name="_generate_password" />
 	</data>
-</openerp>
+</odoo>

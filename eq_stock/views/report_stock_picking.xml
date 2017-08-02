@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data>
         <template id="eq_report_stockpicking_document" inherit_id="stock.report_delivery_document">
             <xpath expr="//t[@t-call='report.external_layout']" position="replace">
@@ -447,4 +447,4 @@
             </t>
         </template>
     </data>
-</openerp>
+</odoo>

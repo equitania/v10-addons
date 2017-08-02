@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
 	<data>
 		<!-- http://stackoverflow.com/questions/29815280/how-to-link-custom-paper-format-to-a-pdf-report-in-odoo-8-0 -->
 		<record id="paperformat_a4_landscape" model="report.paperformat">
@@ -22,4 +22,4 @@
             -->
 		</record>
 	</data>
-</openerp>
+</odoo>
