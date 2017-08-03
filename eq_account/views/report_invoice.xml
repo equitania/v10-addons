@@ -107,14 +107,24 @@
                                                 <!--<span t-esc="invoice_date"/>-->
                                             </td>
                                         </tr>
-                                        <tr t-if="o.partner_id.vat">
-                                            <td>
-                                                <span>VAT Reg. no.</span>
+                                        <tr t-if="o.reference and o.type == 'in_invoice'">
+                                            <td style="padding-right:1em;">
+                                                <span>Reference</span>
                                             </td>
-                                            <td class="text-right">
-                                                <span t-field="o.partner_id.vat"/>
+                                            <td>
+                                                <p t-field="o.reference"/>
                                             </td>
                                         </tr>
+                                        <t t-if="o.fiscal_position_id.name == 'Kunde EU Unternehmen (mit USt-ID)' or o.fiscal_position_id.name == 'Kunde EU Unternehmen (mit USt-ID) - SKR03' or o.fiscal_position_id.name == 'Kunde EU Unternehmen (mit USt-ID) - SKR04'">
+                                            <tr t-if="o.partner_id.vat">
+                                                <td>
+                                                    <span>VAT Reg. no.</span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span t-field="o.partner_id.vat"/>
+                                                </td>
+                                            </tr>
+                                        </t>
                                         <tr>
                                             <td>
                 <!--<div name="reference" class="col-xs-2" t-if="o.reference and o.type == 'in_invoice'">
@@ -471,12 +481,12 @@
                                                 <span t-field="o.payment_term_id.name"/>
                                             </td>
                                         </tr>
-                                        <tr t-if="o.reference and o.type == 'in_invoice'">
-                                            <td style="padding-right:1em;">
-                                                <strong>Reference:</strong>
+                                        <tr t-if="o.incoterms_id">
+                                            <td style="padding-right:0.5cm;">
+                                                <strong>Delivery Condition:</strong>
                                             </td>
                                             <td>
-                                                <p t-field="o.reference"/>
+                                                <span t-field="o.incoterms_id"/>
                                             </td>
                                         </tr>
                                         <tr groups="sale.group_delivery_invoice_address"  t-if="o.partner_shipping_id != o.partner_id">

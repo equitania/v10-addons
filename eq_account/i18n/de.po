@@ -193,3 +193,13 @@ msgstr "Seitenumbruch nach Kopftext"
 #: model:ir.ui.view,arch_db:eq_account.view_account_invoice_form_address_extension
 msgid "Page break before footer text"
 msgstr "Seitenumbruch vor dem Fußtext"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<strong>Delivery Condition:</strong>"
+msgstr "<strong>Lieferbedingungen:</strong>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<span>Reference</span>"
+msgstr "<span>Referenz</span>"

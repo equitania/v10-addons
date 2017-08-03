@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 03.08.2017
+#### Version 1.0.11
+##### ADD
+- Report: USt.ID-Nr. wird nun auf der Rechnung angezeigt, wenn die Rechnung die Steuerzuordnung für EU Kunde mit eingetragener USt.ID-Nr. hat 
+
 #### 01.08.2017
 #### Version 1.0.10
 ##### IMP
