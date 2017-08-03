@@ -117,6 +117,16 @@
                                                     <span t-field="doc.validity_date"/>
                                                 </td>
                                             </tr>
+                                            <t t-if="doc.fiscal_position_id.name == 'Kunde EU Unternehmen (mit USt-ID)' or doc.fiscal_position_id.name == 'Kunde EU Unternehmen (mit USt-ID) - SKR03' or doc.fiscal_position_id.name == 'Kunde EU Unternehmen (mit USt-ID) - SKR04'">
+                                                <tr t-if="doc.partner_id.vat">
+                                                    <td>
+                                                        <span>VAT Reg. no.</span>
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <span t-field="doc.partner_id.vat"/>
+                                                    </td>
+                                                </tr>
+                                            </t>
                                             <tr>
                                                 <td></td>
                                             </tr>

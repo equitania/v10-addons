@@ -1,6 +1,13 @@
 ## Modul eq_sale
 
 
+
+#### 03.08.2017
+#### Version 1.0.36
+##### ADD
+- Report: USt.ID-Nr. wird nun auf dem Angebot angezeigt, wenn das Angebot die Steuerzuordnung für EU Kunde mit eingetragener USt.ID-Nr. hat 
+
+
 #### 01.08.2017
 #### Version 1.0.35
 ##### IMP

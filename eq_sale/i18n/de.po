@@ -596,3 +596,7 @@ msgstr "Seitenumbruch vor dem Fußtext"
 msgid "<strong>Delivery Method:</strong>"
 msgstr "<strong>Auslieferungsmethode:</strong>"
 
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<span>VAT Reg. no.</span>"
+msgstr "<span>USt.ID-Nr.</span>"
