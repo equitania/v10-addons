@@ -7,6 +7,7 @@ from odoo.exceptions import ValidationError
 class report_account_invoice(models.Model):
     _inherit = 'account.invoice'
 
+    eq_ref_number = fields.Char('Sale Order Referenc', size=64)
 
     @api.multi
     def get_price(self, value, currency_id, language):
@@ -49,10 +50,33 @@ class report_account_invoice(models.Model):
         return value != ''
 
 
+class StockMove(models.Model):
+    _inherit = 'stock.move'
+
+    sale_line_id = fields.Many2one(
+            related='procurement_id.sale_line_id',
+            string='Sale Order Line',
+            readonly=True,
+            store=True,
+            ondelete='set null'
+    )
+
+class SaleOrderLine(models.Model):
+    _inherit = 'sale.order.line'
+
+    move_ids = fields.One2many(
+            comodel_name='stock.move',
+            inverse_name='sale_line_id',
+            string='Ralated Moves',
+            readonly=True,
+            ondelete='set null'
+    )
 
 
 class report_account_invoice_line(models.Model):
     _inherit = 'account.invoice.line'
+
+    eq_move_id = fields.Many2one('stock.move', "Move")
 
     @api.multi
     def get_price(self, value, currency_id, language):
@@ -77,8 +101,51 @@ class report_account_invoice_line(models.Model):
         return self.env["eq_report_helper"].get_qty(value, language, 'Sale Unit of Measure Report [eq_sale]')
 
 
+    @api.multi
+    def create(self, vals):
+        """
+            let's get original sequence no from deliverynote and save it for every position on delivery note
+            @cr: cursor
+            @use: actual user
+            @vals: alle values to be saved
+            @context: context
+        """
 
 
+        # use standard save functionality and save it
+
+        res = super(report_account_invoice_line, self).create(vals)
+        account_invoice_line = res
+        sale_line_id = account_invoice_line.sale_line_ids.id
+        stock_move_obj = self.env['stock.move'].search([('sale_line_id', '=', sale_line_id)])
+        res.update({'eq_move_id': stock_move_obj.id})
+
+        return res
+
+class eq_report_extension_stock_picking(models.Model):
+    _inherit = "stock.picking"
+
+    eq_ref_number = fields.Char('Sale Order Referenc', size=64)
+
+    def create(self, vals):
+        """
+            Adds the customer ref number to the picking list. Gets data from context which is set in the method action_ship_create of the sale.order
+            @cr: cursor
+            @user: actual user
+            @vals: values to be saved - we'll append eq_ref_number here
+            @context: context
+            @return: result of super method
+        """
+
+        #print"self: ", self
+        #print"vals: ", vals
+        res = super(eq_report_extension_stock_picking, self).create(vals)
+        sale_order_obj = res.eq_sale_order_id
+        client_order_ref = sale_order_obj.client_order_ref
+
+        res.update({'eq_ref_number': client_order_ref})
+
+        return res
 
 
 # class EqInvoiceReport(models.AbstractModel):

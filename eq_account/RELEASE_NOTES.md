@@ -1,5 +1,11 @@
 ## Modul eq_account
 
+#### 04.08.2017
+#### Version 1.0.12
+##### ADD/CHG
+- Dependency zu eq_sale_stock hinzugefügt (anhand der eq_sale_order_id wird die eq_ref_number (client_order_ref) bis in die stock.picking durchgezogen.
+- eq_move_id hinzugefügt: Verbindung zwischen account.invoice.line und dem dazugehörigen stock.move
+
 #### 03.08.2017
 #### Version 1.0.11
 ##### ADD
