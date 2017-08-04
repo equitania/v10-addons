@@ -1,5 +1,10 @@
 ## Modul eq_base_report
 
+#### 04.08.2017
+#### Version 1.0.19
+##### FIX
+- Report Style: Schriftgrößen von PT auf PX umgestellt, damit die Version WKTHMLTOPDF 0.12.2.1 die PDF richtig rendert
+
 #### 02.08.2017
 #### Version 1.0.18
 ##### CHG
