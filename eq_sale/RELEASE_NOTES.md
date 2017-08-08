@@ -90,8 +90,8 @@ UPDATE decimal_precision SET name = 'Sale Weight Report [eq_sale]' WHERE name = 
 #### Version 1.0.23
 ##### CHG
 - Vererbung für Sektionen statt neue Tabelle
-
-Benötigte Updatestatements nach Modeländerungen:
+Benötigte Updatestatements nach Modeländerungen:<br>
+<b>Fehler - Das Feld `sale_layout_cat_id` existiert nicht</b><br>
 DELETE from ir_ui_view where name = 'sale.order.form.inherit_1';
 DELETE from ir_model where name = 'sale_layout.category';
 

@@ -8,6 +8,7 @@
 #### 31.07.2017
 #### Version 1.0.10
 ##### CHG
+<b>Error "eq_drawing_numer"</b> <br/>
 DB-Update für entfernte View:
 DELETE FROM ir_ui_view WHERE name = 'eq.product.template.product.search';
 
