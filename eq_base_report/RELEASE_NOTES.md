@@ -1,5 +1,10 @@
 ## Modul eq_base_report
 
+#### 08.08.2017
+#### Version 1.0.20
+##### IMP
+- Erweiterung der Helperklasse um neue Funktion für optionale Produkte, VEP-138, eq_sale: Optionale Produkte, falsche Zwischensumme
+
 #### 04.08.2017
 #### Version 1.0.19
 ##### FIX

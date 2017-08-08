@@ -257,3 +257,16 @@ class eq_report_helper(models.TransientModel):
             finalResult += decimal_part
 
         return finalResult
+
+    def get_sum_without_optional_positions(self, category_positions):
+        """
+        Berechnet die Zwischensumme der Positionen einer Kategorie und ignoriert dabei alle Positionen, die als OPTIONAL definiert sind
+        :param category_positions: Alle Positionen einer Kategorie
+        :return: Zwischensumme der Positionen einer Kategorie und ignoriert dabei alle Positionen, die als OPTIONAL definiert sind
+        """
+        result = 0
+        for position in category_positions:
+            if position.eq_optional is False:                       # nur Positionen, die NICHT optional sind, sollen wir berücksichtigen
+                result = result + position.price_subtotal
+
+        return result
