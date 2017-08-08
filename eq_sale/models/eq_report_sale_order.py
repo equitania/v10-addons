@@ -237,6 +237,13 @@ class report_sale_order(models.Model):
     _inherit = 'sale.order'
 
     def get_tax(self, tax_id, language, currency_id):
+        """
+        Berechnet MwSt für die aktuelle Sprache und liefert den Wert zurück
+        :param tax_id: MwSt-ID
+        :param language: Aktuelle Sprache
+        :param currency_id: Aktuelle Währung
+        :return: MwSt für die aktuelle Sprache
+        """
         amount_net = 0;
         for line in self.order_line:
             if tax_id.id in [x.id for x in line.tax_id] and not line.eq_optional:
@@ -248,6 +255,14 @@ class report_sale_order(models.Model):
 
         return self.env["eq_report_helper"].get_price(tax_amount, language, 'Sale Price Report', currency_id)
 
+    @api.multi
+    def get_sum_without_optional_positions(self, category_id):
+        """
+        Berechnet die Zwischensumme der Positionen einer Kategorie und ignoriert dabei alle Positionen, die als OPTIONAL definiert sind
+        :param category_positions: Alle Positionen einer Kategorie
+        :return: Zwischensumme der Positionen einer Kategorie und ignoriert dabei alle Positionen, die als OPTIONAL definiert sind
+        """
+        return self.env["eq_report_helper"].get_sum_without_optional_positions(category_id)
 
     @api.multi
     def get_price(self, value, currency_id, language):
@@ -294,7 +309,6 @@ class report_sale_order(models.Model):
 class report_sale_order_line(models.Model):
     _inherit = 'sale.order.line'
 
-
     @api.multi
     def get_price(self, value, currency_id, language):
         """
@@ -315,5 +329,3 @@ class report_sale_order_line(models.Model):
         :return:
         """
         return self.env["eq_report_helper"].get_qty(value, language, 'Sale Unit of Measure Report [eq_sale]')
-
-

@@ -1,6 +1,10 @@
 ## Modul eq_sale
 
 
+#### 08.08.2017
+#### Version 1.0.37
+##### IMP
+- Erweiterung der Funktionalität des Reports "Angebot" um neue Logik für optionale Produkte, VEP-138, eq_sale: Optionale Produkte, falsche Zwischensumme
 
 #### 03.08.2017
 #### Version 1.0.36
