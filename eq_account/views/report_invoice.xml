@@ -324,6 +324,34 @@
                                         </td>
                                         <t t-set="pos" t-value="pos + 1"/>
                                     </tr>
+                                    <tr t-if="line.eq_move_id and line.eq_move_id.picking_id"  style="border-top-style:hidden;">
+                                        <td></td>
+                                        <td colspan="7">
+                                            <div style="font-weight:bold; ">
+                                                <t t-if="line.eq_move_id and line.eq_move_id.picking_id.eq_ref_number">
+                                                    <span>Customer Reference:</span>
+                                                    <span t-field="line.eq_move_id.picking_id.eq_ref_number"/>
+                                                </t>
+                                                <t t-if="line.eq_move_id and line.eq_move_id.picking_id.eq_ref_number and line.eq_move_id and line.eq_move_id.picking_id.origin">
+                                                    <span> / </span>
+                                                </t>
+                                                <t t-if="line.eq_move_id and line.eq_move_id.picking_id.origin">
+                                                    <span>Order No.:</span>
+                                                    <span t-field="line.eq_move_id.picking_id.origin"/>
+                                                </t>
+                                                <br/>
+                                                <t t-if="line.eq_move_id.picking_id.name">
+                                                    <span>Delivery No.:</span> <span t-field="line.eq_move_id.picking_id.name" />
+                                                    <t t-if="line.eq_move_id.picking_id.date_done">
+                                                        <span>from</span>
+                                                        <span
+                                                            t-esc="line.eq_move_id.picking_id.date_done.split(' ')[0].split('-')[2] + '.' + line.eq_move_id.picking_id.date_done.split(' ')[0].split('-')[1] + '.' + line.eq_move_id.picking_id.date_done.split(' ')[0].split('-')[0]" />
+                                                        <span>/ Delivery Date (the date of service)</span>
+                                                    </t>
+                                                </t>
+                                            </div>
+                                        </td>
+                                    </tr>
 
 
 

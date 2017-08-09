@@ -203,3 +203,28 @@ msgstr "<strong>Lieferbedingungen:</strong>"
 #: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
 msgid "<span>Reference</span>"
 msgstr "<span>Referenz</span>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<span>Customer Reference:</span>"
+msgstr "<span>Kundenreferenz:</span>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<span>Order No:</span>"
+msgstr "<span>Auftragsnr.:</span>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<span>Delivery No:</span>"
+msgstr "<span>Lieferscheinnr.:</span>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<span>from</span>"
+msgstr "<span>vom</span>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<span>/ Delivery Date (the date of service)</span>"
+msgstr "<span>/ Lieferdatum (Leistungstag)</span>"
