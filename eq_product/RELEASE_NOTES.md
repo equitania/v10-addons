@@ -1,5 +1,10 @@
 ## Modul eq_product
 
+#### 09.08.2017
+#### Version 1.0.12
+##### FIX
+- Feld 'default_code' wurde zusätzlich nochmal eingefügt, wodurch eine Diskrepanz entstanden ist.
+
 #### 02.08.2017
 #### Version 1.0.11
 ##### CHG

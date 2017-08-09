@@ -90,6 +90,7 @@
                 </field>
 
                 <!-- code - Article no. -->
+                <field name="default_code" position="replace"/>
                 <xpath expr="//div[@class='oe_title']/h1" position="after">
                     <field name="default_code" placeholder="Article No."/>
                 </xpath>
