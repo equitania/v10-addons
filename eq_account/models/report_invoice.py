@@ -117,8 +117,9 @@ class report_account_invoice_line(models.Model):
         res = super(report_account_invoice_line, self).create(vals)
         account_invoice_line = res
         sale_line_id = account_invoice_line.sale_line_ids.id
-        stock_move_obj = self.env['stock.move'].search([('sale_line_id', '=', sale_line_id)])
-        res.update({'eq_move_id': stock_move_obj.id})
+        if sale_line_id:
+            stock_move_obj = self.env['stock.move'].search([('sale_line_id', '=', sale_line_id)])
+            res.update({'eq_move_id': stock_move_obj.id})
 
         return res
 

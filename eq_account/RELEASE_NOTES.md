@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 09.08.2017
+#### Version 1.0.13
+##### FIX
+- BugFix Jira-Issue [VEP-139]: eq_move_id wird nicht mehr bei einer Rückerstattung gesetzt, dies hat den Odoo Error verursacht.
+
 #### 04.08.2017
 #### Version 1.0.12
 ##### ADD/CHG
