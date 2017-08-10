@@ -1,5 +1,13 @@
 ## Modul eq_sale
 
+
+
+#### 10.08.2017
+#### Version 1.0.39
+##### CHG
+- Dependency und Report angepasst für das Modul "delivery" um den Frachtführer hinzuzufügen
+
+
 #### 10.08.2017
 #### Version 1.0.38
 ##### FIX
