@@ -41,16 +41,23 @@ class eq_sale_order_template(models.Model):
 
         sale_order_line_obj = self.env['sale.order.line']
         for line in quote_template.eq_quote_line:
-            res = sale_order_line_obj.product_id_change()
+            # res = line.product_id_change()
 
             #res = sale_order_line_obj.product_id_change(False, line.product_id.id, line.product_uom_qty,
             #                                            line.product_uom_id.id, False, False, line.name,
             #                                            partner, False, False, False, False,
             #                                            fiscal_position_id, False)
 
-            data = res.get('value', {})
-            if 'tax_id' in data:
-                data['tax_id'] = [(6, 0, data['tax_id'])]
+            data = {}
+            # aus _compute_tax_id in Basis übernommen
+            try:
+                fpos = self.fiscal_position_id or self.partner_id.property_account_position_id
+                # If company_id is set, always filter taxes by the company
+                taxes = line.product_id.taxes_id.filtered(lambda r: not self.company_id or r.company_id == self.company_id)
+                data['tax_id'] = fpos.map_tax(taxes, line.product_id, line.order_id.partner_shipping_id) if fpos else taxes
+            except:
+                pass
+
             data.update({
                 'name': line.name,
                 'price_unit': line.price_unit,

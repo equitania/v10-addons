@@ -16,7 +16,7 @@
 							<field name="eq_quote_line">
 								<tree string="Sales Quote Template Lines" editable="bottom">
 									<field name="sequence" widget="handle"/>
-									<field name="product_id" on_change="onchange_product_id"/>
+									<field name="product_id"/>
 									<field name="layout_category_id"/>
 									<field name="name"/>
 									<field name="product_uom_qty"/>
