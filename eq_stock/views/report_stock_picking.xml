@@ -224,6 +224,7 @@
                                     <th name="td_sched_date_h">
                                         <strong>Date</strong>
                                     </th>
+                                    <!-- das Modul delivery sucht nach dem TH mit oben verwendeten Name um den Frachtführer (Carrier) und Gewicht (weight) AN DIESER STELLE einzubinden -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -233,14 +234,13 @@
                                     </td>
                                     <td name="td_sched_date">
                                        <t t-if="o.state == 'done'">
-                                            <!--<span t-field="o.date_done"/>-->
                                            <span t-esc="o.date_done.split(' ')[0].split('-')[2] + '.' + o.date_done.split(' ')[0].split('-')[1] + '.' + o.date_done.split(' ')[0].split('-')[0]" />
                                        </t>
                                        <t t-if="o.state != 'done'">
-                                            <!--<span t-field="o.min_date"/>-->
                                            <span t-esc="o.min_date.split(' ')[0].split('-')[2] + '.' + o.min_date.split(' ')[0].split('-')[1] + '.' + o.min_date.split(' ')[0].split('-')[0]" />
                                        </t>
                                     </td>
+                                    <!-- das Modul delivery sucht nach dem TH mit oben verwendeten Name um den Frachtführer (Carrier) und Gewicht (weight) AN DIESER STELLE einzubinden -->
                                 </tr>
                             </tbody>
                         </table>
