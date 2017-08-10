@@ -497,14 +497,14 @@
                                                     <span t-field="doc.eq_delivery_condition_id"/>
                                                 </td>
                                             </tr>
-                                            <tr t-if="doc.carrier_id.name">
+                                            <!--<tr t-if="doc.carrier_id.name">
                                                 <td style="padding-right:0.5cm;">
                                                     <strong>Delivery Method:</strong>
                                                 </td>
                                                 <td>
                                                     <span t-field="doc.carrier_id.name"/>
                                                 </td>
-                                            </tr>
+                                            </tr>-->
                                             <tr t-if="doc.incoterm">
                                                 <td style="padding-right:0.5cm;">
                                                     <strong>Incoterm:</strong>

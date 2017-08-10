@@ -1,5 +1,9 @@
 ## Modul eq_sale
 
+#### 10.08.2017
+#### Version 1.0.38
+##### FIX
+- Report: Carrier_ID aus dem Report auskommentiert, da es sonst zu Problemen führen kann wenn die Option für die Versandkosten-hinzufügen nicht aktiviert ist
 
 #### 08.08.2017
 #### Version 1.0.37
