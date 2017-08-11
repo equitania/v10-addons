@@ -1,5 +1,10 @@
 ## Modul eq_web_responsive
 
+#### 10.08.2017
+#### Version 1.0.6
+##### IMP
+- Many2Many Fields und Monetary Fields sind nun auch korrekt gestyled
+
 #### 01.08.2017
 #### Version 1.0.5
 ##### IMP
