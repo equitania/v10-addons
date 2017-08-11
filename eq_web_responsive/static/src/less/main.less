@@ -20,6 +20,12 @@ input[type="checkbox"], input[type="radio"] {
     transform: scale(1.5);
 }
 
+/* kleine optische Korrektur für die vertikale Position in Vergleich zum Text - außerdem wurde die vertical align im standard auf sub gesetzt, wodurch bei langen Labels oder texten die checkbox unten statt oben am Text anhängt, dies ist hiermit ebenso korrigiert */
+div.o_checkbox {
+    vertical-align: top;
+}
+
+
 /* In diversen Tabellen, wie z.B. in der Modulübersicht, gibt es in der ersten Spalte eine Checkbox.
 Diese ist zu nah an der Browserseite. Um dies optisch gemütlicher für den Kunden zu machen,
 wird nur für die erste Spalte, wenn da eine Checkbox enthalten ist, die Checkbox mit 10margin links erweitert */

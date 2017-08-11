@@ -1,6 +1,12 @@
 ## Modul eq_web_responsive
 
-#### 10.08.2017
+
+#### 11.08.2017
+#### Version 1.0.7
+##### IMP
+- Checkboxen sind in ihrem Container nun "oben" ausgerichtet, statt unten
+
+#### 11.08.2017
 #### Version 1.0.6
 ##### IMP
 - Many2Many Fields und Monetary Fields sind nun auch korrekt gestyled
