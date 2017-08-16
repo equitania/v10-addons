@@ -156,14 +156,14 @@ class ResPartner(models.Model):
     def write(self, vals):
         parent = False
 
-        if 'parent_id' in vals:
+        if 'parent_id' in vals and vals['parent_id']:
             parent = vals['parent_id']
 
         # wenn es eine übergeordnete Firma gibt, dann die Kundennummer der übergeordneten Firma übernehmen
         if parent:
             partner_obj = self.env['res.partner']
 
-            parent = partner_obj.read(parent)
+            parent = partner_obj.browse([parent])
 
             if parent['customer']:
                 vals['cust_auto_ref'] = parent['customer_number']
