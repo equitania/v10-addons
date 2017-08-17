@@ -1,0 +1,13 @@
+<openerp>
+    <data>
+
+
+	 	<template id="layout_styles" inherit_id="web.layout">
+		 	<xpath expr="//html/head" position="inside">
+		 		<link rel="stylesheet" href="/eq_setting_unbrand/static/src/css/eq_style.css"/>
+		 	</xpath>
+    	</template>
+
+
+    </data>
+</openerp>

@@ -22,7 +22,7 @@
 {
     'name': "Equitania Setting Unbrand",
     'license': 'AGPL-3',
-    'version': '1.0.1',
+    'version': '1.0.2',
     'category': 'Branding',
     'description': """Entfernt die Odoo Brandings und ersetzt Sie durch Equitania Links""",
     'author': 'Equitania Software GmbH',
@@ -31,9 +31,10 @@
     #"depends" : ['base'],
     'data': [
             #'security/ir.model.access.csv',
-            #'views/eq_open_sale_order_line_view.xml',
-            #'views/stock_picking_view.xml',
+            'static/src/xml/dashboard_extension.xml',
+            'style_extension.xml',
              ],
+    #'qweb': ['static/src/xml/*.xml'],
     "active": False,
-    "installable": False
+    "installable": True
 }

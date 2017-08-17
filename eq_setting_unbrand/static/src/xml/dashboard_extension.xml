@@ -1,0 +1,25 @@
+<openerp>
+    <data>
+
+        <template id="Planners_list_equitania" inherit_id='web.assets_backend'>
+
+
+      <!--  <template id="Planners_list_equitania" inherit_id='web_settings_dashboard.assets_backend'>
+			<xpath expr="//t[@t-name='DashboardPlanner']" position="replace">
+				<div>
+                    Julia
+
+				</div>
+
+			</xpath>
+		</template>-->
+
+
+
+
+       <!--row o_web_settings_dashboard_planners_list-->
+
+        </template>
+
+    </data>
+</openerp>
