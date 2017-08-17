@@ -336,8 +336,10 @@
                                         <t t-foreach="page" t-as="layout_category">
                                             <t t-if="layout_category_size > 1 or page_size > 1" groups="sale.group_sale_layout">
                                                 <tr class="active">
-                                                    <td colspan="10" style="font-weight: bold; border-bottom: 1px solid black;">
-                                                        <t t-esc="layout_category['name']"/>
+                                                    <td colspan="10" style="font-weight: bold; border-bottom: 1px solid black; border-top:0px;">
+                                                        <!--<t t-esc="layout_category['name']"/>-->
+                                                        <t t-if="layout_category['name'] == 'Uncategorized'">Others</t>
+                                                        <t t-if="layout_category['name'] != 'Uncategorized'"><t t-esc="layout_category['name']"/></t>
                                                     </td>
                                                 </tr>
                                             </t>
@@ -404,7 +406,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr class="text-center">
-                                                    <td colspan="100">
+                                                    <td colspan="100" style="border-top:0px;">
                                                         <br/>
                                                     </td>
                                                 </tr>
@@ -421,17 +423,17 @@
                             <div class="row padding-fix">
                                 <div name="total">
                                     <div class="row" name="total">
-                                        <div class="col-xs-4 pull-right">
-                                            <table class="table table-condensed">
-                                                <tr class="border-black">
-                                                    <td><strong>Total without taxes</strong></td>
+                                        <div class="col-xs-5 pull-right">
+                                            <table class="table table-condensed" style="page-break-inside:avoid !important;">
+                                                <tr>
+                                                    <td>Total without taxes</td>
                                                     <td class="text-right">
                                                         <span t-field="doc.amount_untaxed"
                                                             t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><strong>Tax</strong></td>
+                                                    <td>Tax</td>
                                                     <td class="text-right">
                                                         <span t-field="doc.amount_tax"
                                                             t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
@@ -450,8 +452,10 @@
                                                 <tr class="border-black">
                                                     <td><strong>Total sum</strong></td>
                                                     <td class="text-right">
-                                                        <span t-field="doc.amount_total"
-                                                            t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
+                                                        <strong>
+                                                            <span t-field="doc.amount_total"
+                                                                t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
+                                                        </strong>
                                                     </td>
                                                 </tr>
                                             </table>

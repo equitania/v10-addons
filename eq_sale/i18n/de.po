@@ -247,8 +247,8 @@ msgstr "<strong>Gesamtbetrag</strong>"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
-msgid "<strong>Total without taxes</strong>"
-msgstr "<strong>Nettobetrag</strong>"
+msgid "Total without taxes"
+msgstr "Nettobetrag"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
@@ -575,8 +575,8 @@ msgstr "Abbrechen"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
-msgid "<strong>Tax</strong>"
-msgstr "<strong>Steuern</strong>"
+msgid "Tax"
+msgstr "Steuern"
 
 #. module: eq_sale
 #: model:ir.model.fields,field_description:eq_sale.field_sale_order_eq_use_page_break_after_header
@@ -600,3 +600,8 @@ msgstr "<strong>Auslieferungsmethode:</strong>"
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "<span>VAT Reg. no.</span>"
 msgstr "<span>USt.ID-Nr.</span>"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "Others"
+msgstr "Weitere Produkte"

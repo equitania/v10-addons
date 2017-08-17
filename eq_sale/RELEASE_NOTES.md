@@ -1,6 +1,11 @@
 ## Modul eq_sale
 
 
+#### 17.08.2017
+#### Version 1.0.40
+##### IMP
+- Visuelle Anpassungen an dem Summenblock sowie an den Sektionen
+
 
 #### 10.08.2017
 #### Version 1.0.39
