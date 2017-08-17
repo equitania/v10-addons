@@ -1,5 +1,11 @@
 ## Modul eq_account
 
+#### 17.08.2017
+#### Version 1.0.15
+##### ADD
+- Sektionen für die Rechnungen sind nun eingebunden und funktionieren
+- Visuelle Anpassungen an dem Summenblock
+
 #### 09.08.2017
 #### Version 1.0.14
 ##### ADD

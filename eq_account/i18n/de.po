@@ -228,3 +228,8 @@ msgstr "<span>vom</span>"
 #: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
 msgid "<span>/ Delivery Date (the date of service)</span>"
 msgstr "<span>/ Lieferdatum (Leistungstag)</span>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "Others"
+msgstr "Weitere Produkte"
