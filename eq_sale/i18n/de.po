@@ -605,3 +605,8 @@ msgstr "<span>USt.ID-Nr.</span>"
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "Others"
 msgstr "Weitere Produkte"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_sale_layout_category_separator_6550
+msgid "Add separator"
+msgstr "Trennlinie hinzufügen"

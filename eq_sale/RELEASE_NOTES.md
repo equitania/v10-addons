@@ -1,6 +1,13 @@
 ## Modul eq_sale
 
 
+
+#### 17.08.2017
+#### Version 1.0.41
+##### CHG
+- Anpassungen für Ansicht Report Layoutkategorien (Anzeige des neuen Feldes Trennlinie)
+
+
 #### 17.08.2017
 #### Version 1.0.40
 ##### IMP
