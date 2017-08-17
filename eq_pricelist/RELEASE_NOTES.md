@@ -1,6 +1,12 @@
 ## Modul eq_pricelist
 
 
+#### 17.08.2017
+#### Version 1.0.3
+##### CHG
+- Menueintrag Positionssuche entfernt (VEP-133)
+
+
 #### 31.07.2017
 #### Version 1.0.2
 ##### CHG
