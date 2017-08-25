@@ -1,25 +1,29 @@
-<openerp>
-    <data>
+<?xml version="1.0" encoding="UTF-8"?>
 
-        <template id="Planners_list_equitania" inherit_id='web.assets_backend'>
+<!-- Infos zu dem Anpassen von t-name Elementen hier:
+https://stackoverflow.com/questions/27907963/how-to-inherit-a-template-with-no-id-in-odoo
+-->
+<templates id="eq_dashboard_changes" xml:space="preserve">
+    <t t-extend="DashboardApps">
+        <t t-jquery=".o_web_settings_dashboard_pills" t-operation="replace">
+            <!--<div class="o_web_settings_dashboard_pills">
+                <a href="https://www.odoo.com/apps/modules" target="_blank" class="pull-left"><i class="fa fa-rocket fa-2x text-muted"/> App store</a>
+                <a href="https://www.odoo.com/apps/themes" target="_blank" class="pull-right"><i class="fa fa-picture-o fa-2x text-muted"/> Theme store</a>
+            </div>-->
+        </t>
+    </t>
+    <t t-extend="DashboardPlanner">
+        <t t-jquery="a" t-operation="replace">
+            <a href="https://equitania.atlassian.net/wiki/spaces/MW/overview" target="_blank"><i class="fa fa-3x fa-question-circle" aria-hidden="true" style="float:left;"></i></a>
+            <br/><a href="https://equitania.atlassian.net/wiki/spaces/MW/overview" target="_blank">Durchstöbern Sie unser Wiki</a>
+
+        </t>
+    </t>
+    <!--<t t-extend="DashboardShare">
+        <t t-jquery=".tab-content" t-operation="after">
+            <a href="test">testlink</a>
+        </t>
+    </t>-->
 
 
-      <!--  <template id="Planners_list_equitania" inherit_id='web_settings_dashboard.assets_backend'>
-			<xpath expr="//t[@t-name='DashboardPlanner']" position="replace">
-				<div>
-                    Julia
-
-				</div>
-
-			</xpath>
-		</template>-->
-
-
-
-
-       <!--row o_web_settings_dashboard_planners_list-->
-
-        </template>
-
-    </data>
-</openerp>
+</templates>

@@ -2,16 +2,11 @@
 
 /*ausblenden des AppStore und Design Store Links */
 
-.o_web_settings_dashboard .o_web_settings_dashboard_col .o_web_settings_dashboard_pills > a  {display:none!important;}
-
+/*.o_web_settings_dashboard .o_web_settings_dashboard_col .o_web_settings_dashboard_pills > a  {display:none!important;}
 
 .o_web_settings_dashboard_planner > a {display:none!important;}
 
 .o_web_settings_dashboard_planner:after {
-content:"Besuchen Sie unser Wiki";
-}
-
-.o_web_settings_dashboard_planner:after {
 content:"Besuchen Sie unser Wiki https://equitania.atlassian.net/wiki/spaces/MW/overview";
-
 }
+*/

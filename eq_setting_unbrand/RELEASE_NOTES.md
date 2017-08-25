@@ -1,5 +1,10 @@
 ## Modul eq_setting_unbrand
 
+### 25.08.2017
+#### Version 1.0.3
+##### IMP
+- Links per XML ausgeblendet und den Hilfelink nun neu gesetzt (mit target new blank)
+
 ### 17.08.2017
 #### Version 1.0.2
 ##### CHG
