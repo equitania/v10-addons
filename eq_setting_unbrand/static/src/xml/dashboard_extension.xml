@@ -3,6 +3,7 @@
 <!-- Infos zu dem Anpassen von t-name Elementen hier:
 https://stackoverflow.com/questions/27907963/how-to-inherit-a-template-with-no-id-in-odoo
 -->
+<!-- WICHTIG ist das diese XML nicht unter DATA in der manifest-datei angegeben ist, sondern unter QWEB -->
 <templates id="eq_dashboard_changes" xml:space="preserve">
     <t t-extend="DashboardApps">
         <t t-jquery=".o_web_settings_dashboard_pills" t-operation="replace">
@@ -19,11 +20,15 @@ https://stackoverflow.com/questions/27907963/how-to-inherit-a-template-with-no-i
 
         </t>
     </t>
-    <!--<t t-extend="DashboardShare">
-        <t t-jquery=".tab-content" t-operation="after">
-            <a href="test">testlink</a>
+    <t t-extend="DashboardShare">
+        <t t-jquery="div.mt16" t-operation="replace">
+            <div class="row mt16">
+                <div class="col-xs-4"><a href="https://www.youtube.com/channel/UCcJDf4kkpDOqPOBYhSKJmhA" target="_blank"><i class="fa fa-youtube-square fa-4x"/></a></div>
+                <div class="col-xs-4"><a href="https://twitter.com/equitaniaGmbH" target="_blank"><i class="fa fa-twitter-square fa-4x"/></a></div>
+                <div class="col-xs-4"><a href="https://www.facebook.com/Equitania-Software-GmbH/" target="_blank"><i class="fa fa-facebook-square fa-4x"/></a></div>
+            </div>
         </t>
-    </t>-->
+    </t>
 
 
 </templates>

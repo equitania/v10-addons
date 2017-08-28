@@ -1,5 +1,11 @@
 ## Modul eq_setting_unbrand
 
+### 28.08.2017
+#### Version 1.0.4
+##### CHG
+- Die Elemente werden nun vollständig per template, und nichtmehr per CSS ersetzt und erweitert.
+- Social-Media Links von MyOdoo/Equitania nun hinzugefügt
+
 ### 25.08.2017
 #### Version 1.0.3
 ##### IMP
