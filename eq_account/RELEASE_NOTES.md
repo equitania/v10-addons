@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 28.08.2017
+#### Version 1.0.16
+##### FIX
+- Auftragszeilen werden nun auch gedruckt wenn die Option für die Kategorien(Sektionen) nicht aktiviert wurde
+
 #### 17.08.2017
 #### Version 1.0.15
 ##### ADD

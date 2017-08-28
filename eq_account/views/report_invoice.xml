@@ -363,7 +363,7 @@
 
 
 <!-- VARIANTE 2 mit Kategorien  Funktioniert aber noch nicht korrekt -->
-        <t groups="sale.group_sale_layout" t-foreach="o.order_lines_layouted()" t-as="page">
+        <t  t-foreach="o.order_lines_layouted()" t-as="page"><!-- groups="sale.group_sale_layout" auskommentiert, um die Rechnungszeilen auch ohne aktivierte Kategorien anzuzeigen -->
             <table class="table table-condensed">
                 <thead>
                     <tr>
