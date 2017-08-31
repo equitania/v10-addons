@@ -1,5 +1,11 @@
 ## Modul eq_product
 
+#### 31.08.2017
+#### Version 1.0.13
+##### ADD
+- Jira-Issue OEMRP-46:Das Feld 'default_code' ist jetzt ein Constraint. Bei der Produktanlage müssen die Artieklnummer einzigartig sein.
+- Wichtig: Constraintdefinition erfolgt nur, wenn es bisher keine Produkte in der Datenbank gibt, welche gegen diese Constraint verstoßen.
+
 #### 09.08.2017
 #### Version 1.0.12
 ##### FIX

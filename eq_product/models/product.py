@@ -27,6 +27,13 @@ from string import replace
 class eq_product_product(models.Model):
     _inherit = 'product.product'
 
+    # Nachfolgende Constraintdefinition erfolgt nur, wenn es bisher keine Produkte gibt, welche gegen diese Constraint verstoßen.
+    # https://www.odoo.com/forum/help-1/question/why-sql-constraints-not-working-39549
+
+    _sql_constraints = [
+        ('default_code_unique', 'unique(default_code)', "This Product No. is already in use!"),
+    ]
+
 
     def _generate_ean(self, company_ean, sequence):
         ean_without_checksum = company_ean + sequence[-5:]
@@ -143,6 +150,14 @@ class eq_product_product(models.Model):
 
 class eq_product_template(models.Model):
     _inherit = 'product.template'
+
+
+    #Nachfolgende Constraintdefinition erfolgt nur, wenn es bisher keine Produkte gibt, welche gegen diese Constraint verstoßen.
+    #https://www.odoo.com/forum/help-1/question/why-sql-constraints-not-working-39549
+
+    _sql_constraints = [
+        ('default_code_unique', 'unique(default_code)', "This Product No. is already in use!"),
+    ]
 
 
     #

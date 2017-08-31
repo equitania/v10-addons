@@ -153,3 +153,9 @@ msgstr "Beschreiben Sie die Produkteigenschaften..."
 #: model:ir.model.fields,field_description:eq_product.field_product_template_eq_drawing_number
 msgid "Drawing Number"
 msgstr "Zeichnungsnummer"
+
+#. module: eq_product
+#: sql_constraint:product.product:0
+#: sql_constraint:product.template:0
+msgid "This Product No. is already in use!"
+msgstr "Diese Artikelnummer wird bereits verwendet! Bitte verwenden Sie eine andere Artikelnummer!"
