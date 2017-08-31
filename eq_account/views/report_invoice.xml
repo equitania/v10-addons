@@ -84,6 +84,14 @@
                                                 <span t-field="o.partner_id.customer_number"/>
                                             </td>
                                         </tr>
+                                        <tr t-if="o.name">
+                                            <td>
+                                                <span>Your reference no.</span>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-field="o.name"/>
+                                            </td>
+                                        </tr>
                                         <tr t-if="o.number">
                                             <td>
                                                 <span>Invoice no.</span>
@@ -94,8 +102,10 @@
                                         </tr>
                                         <tr t-if="o.origin">
                                             <td>
+                                                <span>Our reference no.</span>
                                             </td>
                                             <td class="text-right">
+                                                <span t-field="o.origin"/>
                                             </td>
                                         </tr>
                                         <tr t-if="o.date_invoice">
@@ -250,11 +260,11 @@
                             </span>
                             <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
                             <span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancellation Invoice</span>
-                            <span t-if="o.type == 'out_invoice' and o.state in ['open','paid']">Invoice</span>
+                            <span t-if="o.type == 'out_invoice' and o.state in ['open','paid']" >Invoice</span>
                             <span t-if="o.type == 'in_invoice'">Incoming Invoice</span>
                             <span t-if="o.type == 'out_refund'">Outgoing Credit Note</span>
                             <span t-if="o.type == 'in_refund'">Incoming Credit Note</span>
-                            <span t-field="o.number"/>
+                            <span t-field="o.number" />
                         </div>
 
 

@@ -123,6 +123,11 @@ msgstr "<strong>Nettopreis</strong>"
 
 #. module: eq_account
 #: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "Invoice"
+msgstr "Rechnung"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
 msgid "Draft Invoice"
 msgstr "Entwurf Rechnung"
 
@@ -233,3 +238,13 @@ msgstr "<span>/ Lieferdatum (Leistungstag)</span>"
 #: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
 msgid "Others"
 msgstr "Weitere Produkte"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<span>Your reference no.</span>"
+msgstr "<span>Ihre Referenz</span>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<span>Our reference no.</span>"
+msgstr "<span>Unsere Referenz</span>"

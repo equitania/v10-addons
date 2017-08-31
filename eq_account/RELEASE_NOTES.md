@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 31.08.2017
+#### Version 1.0.17
+##### ADD
+- Referenzbeleg und Referenznr. werden nun auf den Rechnungen angedruckt
+
 #### 28.08.2017
 #### Version 1.0.16
 ##### FIX
