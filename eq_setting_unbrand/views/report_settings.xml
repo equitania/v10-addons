@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+        <!-- Folgend werden die Einstellungen für die alten RML Reports unsichtabr geschalten - aber vollständig aufgebaut um Komplikationen zu verhindern-->
+        <record id="eq_base_config_settings_form_inherit" model="ir.ui.view">
+            <field name="name">base.config.settings.form.inherit</field>
+            <field name="model">base.config.settings</field>
+            <field name="inherit_id" ref="base_setup.view_general_configuration"/>
+            <field name="arch" type="xml">
+                <xpath expr="//label[@for='custom_footer']" position="replace">
+                    <label for="custom_footer" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='custom_footer']" position="replace">
+                    <field name="custom_footer" invisible="1"/>
+                </xpath>
+                <xpath expr="//label[@for='rml_footer']" position="replace">
+                    <label for="rml_footer" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='rml_footer']" position="replace">
+                    <field name="rml_footer" invisible="1"/>
+                </xpath>
+                <xpath expr="//label[@for='rml_footer_readonly']" position="replace">
+                    <label for="rml_footer_readonly" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='rml_footer']" position="replace">
+                    <field name="rml_footer_readonly" invisible="1"/>
+                </xpath>
+                <xpath expr="//group[@groups='base.group_no_one']" position="replace">
+                    <group string="RML Report Configuration" groups="base.group_no_one" invisible="1"><!-- wird unsichtbar gesetzt aber vollständig aufgebaut um Komplikationen zu verhindern-->
+                        <button name="%(base.preview_rml_report)d" string="Preview RML Report" type="action" colspan="2"/>
+                        <label for="rml_paper_format"/>
+                        <div>
+                            <field name="rml_paper_format" class="oe_inline"/>
+                        </div>
+                        <label for="font"/>
+                        <div>
+                            <field name="font" class="oe_inline"/>
+                            <button string="(reload fonts)" name="act_discover_fonts" type="object" class="oe_link"/>
+                        </div>
+                        <label for="rml_header"/>
+                        <div>
+                            <field name="rml_header"/>
+                        </div>
+                        <label for="rml_header2"/>
+                        <div>
+                            <field name="rml_header2"/>
+                        </div>
+                        <label for="rml_header3"/>
+                        <div>
+                            <field name="rml_header3"/>
+                        </div>
+                    </group>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="eq_base_config_settings_inherited" model="ir.ui.view">
+            <field name="name">base.config.settings.inherited</field>
+            <field name="model">base.config.settings</field>
+            <field name="inherit_id" ref="report.base_config_settings_inherited"/>
+            <field name="arch" type="xml">
+                <!-- entfernen der unnötigen Buttons neben dem Papierformat -->
+                <xpath expr="//button[@name='%(report.action_report_internalpreview)d']" position="replace"></xpath>
+                <xpath expr="//button[@name='%(report.action_report_externalpreview)d']" position="replace"></xpath>
+                <xpath expr="//button[@name='edit_external_header']" position="replace"></xpath>
+                <xpath expr="//button[@name='edit_external_footer']" position="replace"></xpath>
+                <xpath expr="//button[@name='edit_internal_header']" position="replace"></xpath>
+            </field>
+        </record>
+
+    </data>
+
+
+</odoo>

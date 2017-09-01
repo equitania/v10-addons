@@ -1,5 +1,10 @@
 ## Modul eq_setting_unbrand
 
+### 01.09.2017
+#### Version 1.0.5
+##### CHG
+- Entfernt die alten RML Basis-Report Settings aus den allgemeinen Einstellungen
+
 ### 28.08.2017
 #### Version 1.0.4
 ##### CHG
