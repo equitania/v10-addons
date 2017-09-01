@@ -1,6 +1,11 @@
 ## Modul eq_purchase
 
 
+#### 01.09.2017
+#### Version 1.0.17
+##### IMP
+- Einkaufs Report: Angleichung der Darstellung vom Summenblock zu den anderen Reports
+
 #### 02.08.2017
 #### Version 1.0.16
 ##### IMP

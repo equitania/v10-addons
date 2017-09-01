@@ -259,34 +259,35 @@
                     </tbody>
                 </table>
                 <div class="row nopadding" >
-                    <div name="total" class="col-xs-4 col-xs-offset-8 ">
-                        <table class="table" rules="none"
-                               style="border-top: 1px solid #999999; border-bottom: 1px solid #999999; page-break-inside:avoid !important;">
-                            <tr class="border-black">
-                                <td class="text-right" id="price_netto">
-                                    <strong>Total without taxes</strong>
+                    <div name="total" class="col-xs-5 pull-right "><!--col-xs-offset-8-->
+                        <table class="table table-condensed" rules="none" style="page-break-inside:avoid !important;"><!--border-top: 1px solid #999999; border-bottom: 1px solid #999999;-->
+                            <tr style="border-top:none;">
+                                <td id="price_netto" style="border-top:none;">
+                                    <span>Total without taxes</span>
                                 </td>
-                                <td class="text-right" id="price_netto_amount">
+                                <td class="text-right" id="price_netto_amount" style="border-top:none;">
                                     <span t-field="o.amount_untaxed"
                                           t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="text-right">
-                                    <strong>Total VAT</strong>
+                                <td class="text-left">
+                                    <span>Total VAT</span>
                                 </td>
                                 <td class="text-right" t-if="o.order_line[0].taxes_id">
                                     <span t-field="o.amount_tax"
                                           t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                 </td>
                             </tr>
-                            <tr>
-                                <td class="text-right">
+                            <tr class="border-black">
+                                <td class="text-left">
                                     <strong>Total sum</strong>
                                 </td>
                                 <td class="text-right">
-                                    <span t-field="o.amount_total"
-                                          t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                    <strong>
+                                        <span t-field="o.amount_total"
+                                              t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                    </strong>
                                 </td>
                             </tr>
                         </table>

@@ -235,13 +235,13 @@ msgstr "<strong>Gesamtbetrag</strong>"
 
 #. module: eq_purchase
 #: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
-msgid "<strong>Total without taxes</strong>"
-msgstr "<strong>Nettobetrag</strong>"
+msgid "<span>Total without taxes</span>"
+msgstr "<span>Nettobetrag</span>"
 
 #. module: eq_purchase
 #: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
-msgid "<strong>Total VAT</strong>"
-msgstr "<strong>Steuern</strong>"
+msgid "<span>Total VAT</span>"
+msgstr "<span>Steuern</span>"
 
 #. module: eq_purchase
 #: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
