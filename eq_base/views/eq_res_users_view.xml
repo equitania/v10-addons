@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+
+        <!-- Extension of Res_User View -->
+		<record id="eq_users_modif_form_view" model="ir.ui.view">
+            <field name="name">eq.view.users.form.view</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form_simple_modif"/>
+            <field name="arch" type="xml">
+	            <data>
+	                <field name="signature" position="after">
+	                    <field name="eq_signature" widget='image' class="oe_avatar oe_left" options='{"preview_image": "eq_signature"}'/>
+	                </field>
+	            </data>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -60,3 +60,8 @@ msgstr "CEO 3"
 #: model:ir.ui.view,arch_db:eq_base.eq_base_ceo_view_company_form
 msgid "Title"
 msgstr "Geschäftsführer oder Inhaber:"
+
+#. module: eq_base
+#: model:ir.model.fields,field_description:eq_base.field_res_users_eq_signature
+msgid "Signature"
+msgstr "Unterschrift"

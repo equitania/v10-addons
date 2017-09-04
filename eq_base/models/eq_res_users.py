@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+    # -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Odoo Addon, Open Source Management Solution
@@ -19,27 +19,11 @@
 #
 ##############################################################################
 
-{
-    'name': 'Equitania Base',
-    'license': 'AGPL-3',
-    'version': '1.0.5',
-    'description': """
-        Extensions for module eq_base
-    """,
-    'author': 'Equitania Software GmbH',
-    'website': 'www.myodoo.de',
-    'depends': ['base_setup', 'base'],
-    'category' : 'General Improvements',
-    'summary': 'Base extension',
+from odoo import models, fields, api, _
 
-    'data': [
-         "views/res_company_view.xml",
-         "views/res_country_view.xml",
-         "views/eq_res_users_view.xml",
 
-    ],
-    'demo': [],
-    # 'css': ['base.css'],
-    'installable': True,
-    'auto_install': False,
-}
+class eq_res_users(models.Model):
+    _inherit = 'res.users'
+
+    eq_signature = fields.Binary(string='Signature')
+

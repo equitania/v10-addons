@@ -1,6 +1,12 @@
 ## Modul eq_base
 
 
+#### 04.08.2017
+#### Version 1.0.5
+##### CHG
+- VEP-45: Neues Feld Unterschrift für Benutzer
+
+
 #### 28.07.2017
 #### Version 1.0.4
 ##### CHG
