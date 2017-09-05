@@ -118,8 +118,13 @@ class report_account_invoice_line(models.Model):
         account_invoice_line = res
         sale_line_id = account_invoice_line.sale_line_ids.id
         if sale_line_id:
-            stock_move_obj = self.env['stock.move'].search([('sale_line_id', '=', sale_line_id)])
-            res.update({'eq_move_id': stock_move_obj.id})
+            stock_move_objs = self.env['stock.move'].search([('sale_line_id', '=', sale_line_id),('state','=','done')])
+            for stock_move_obj in stock_move_objs:
+                if len(stock_move_obj.origin_returned_move_id) == 0:
+                    res.update({'eq_move_id': stock_move_obj.id})
+                else:
+                    pass
+
 
         return res
 
