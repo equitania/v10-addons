@@ -76,7 +76,8 @@ class SaleOrderLine(models.Model):
 class report_account_invoice_line(models.Model):
     _inherit = 'account.invoice.line'
 
-    eq_move_id = fields.Many2one('stock.move', "Move")
+    eq_move_ids = fields.Many2many('stock.move', string="Move") #Notwendig bei Teillieferungen
+    eq_move_id = fields.Many2one('stock.move', string="Move")   #Funktioniert, nur nicht bei Teillieferungen
 
     @api.multi
     def get_price(self, value, currency_id, language):
@@ -115,16 +116,22 @@ class report_account_invoice_line(models.Model):
         # use standard save functionality and save it
 
         res = super(report_account_invoice_line, self).create(vals)
+        stock_move_list = []
         account_invoice_line = res
         sale_line_id = account_invoice_line.sale_line_ids.id
         if sale_line_id:
             stock_move_objs = self.env['stock.move'].search([('sale_line_id', '=', sale_line_id),('state','=','done')])
             for stock_move_obj in stock_move_objs:
                 if len(stock_move_obj.origin_returned_move_id) == 0:
+                    stock_move_list.append(stock_move_obj.id)
+                    ################ Obsolete sobald Report angepasst wurde
                     res.update({'eq_move_id': stock_move_obj.id})
+                    ################
                 else:
                     pass
 
+            if len(stock_move_list) > 0:
+                res.update({'eq_move_ids': [(6, 0, stock_move_list)]})
 
         return res
 

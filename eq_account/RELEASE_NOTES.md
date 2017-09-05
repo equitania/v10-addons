@@ -1,6 +1,11 @@
 ## Modul eq_account
 
 #### 05.09.2017
+#### Version 1.0.19
+##### FIX
+- Feld 'eq_move_ids' hinzugefügt, welche bei Teillieferungen benötigt werden.
+
+#### 05.09.2017
 #### Version 1.0.18
 ##### FIX
 - Im Bezug auf Jira Issue VEP-139 gab es den gleichen Fehler, allerdings bei einer Teillieferung. Dieser wurde durch eine angepasste Abfrage behoben.
