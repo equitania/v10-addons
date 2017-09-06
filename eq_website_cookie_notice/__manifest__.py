@@ -5,14 +5,14 @@
 {
     'name': 'Equitania Cookie Notiz Erweiterung',
     'summary': 'Optische und sprachliche Verbesserungen an der Cookie Notiz',
-    'version': '1.0.1',
+    'version': '1.0.2',
     'category': 'Website',
     'author': "Equitania Software GmbH",
 
     'website': 'www.myodoo.de / www.equitania.de',
     'license': 'AGPL-3',
     'depends': [
-        'website_legal_page','website_cookie_notice',
+        #'nothing',
     ],
     'data': [
         'templates/website.xml',

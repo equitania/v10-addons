@@ -1,5 +1,10 @@
 ## Modul eq_website_cookie_notice
 
+#### 06.09.2017
+#### Version 1.0.2
+##### CHG
+- Modul zu einem eigenständigen Equitania Modul umfunktioniert, überflüssige Abhängigkeiten entfernt, Übersetzung bearbeitet
+
 #### 28.07.2017
 #### Version 1.0.1
 ##### CHG
