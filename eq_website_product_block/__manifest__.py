@@ -22,7 +22,7 @@
 {
     'name': 'Modul Equitania Website Product Block',
     'license': 'AGPL-3',
-    'version': '1.0.0',
+    'version': '1.0.1',
     'description': "Block Erweiterung für das EQ Theme Louma",
     'author': 'Equitania Software GmbH',
     'website': 'www.myodoo.de',
