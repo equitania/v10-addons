@@ -24,7 +24,7 @@
     'license': 'AGPL-3',
     'version': '1.0.4',
     'category': 'pricelist',
-    'description': """Extensions for pricelists""",
+    'description': """ Extension for pricelist-positions """,
     'author': 'Equitania Software GmbH',
     'summary': 'Pricelist Extension',
     'website': 'www.myodoo.de',
