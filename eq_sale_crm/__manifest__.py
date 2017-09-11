@@ -30,12 +30,11 @@
     'website': 'www.myodoo.de',
     #'depends': ['base_setup', 'base', 'sale', 'crm', 'sale_crm'],      # Sody: 09.08.2017 - original vor der Erweiterung der Docu
     'depends': ['base_setup', 'base' , 'sale_crm'],
-    'category' : 'General Improvements',
+    'category' : 'CRM Sale',
     'summary': 'Sale_crm extensions',
 
     'data': [
         "views/crm_view.xml",
-
     ],
     'demo': [],
     'css': ['base.css'],

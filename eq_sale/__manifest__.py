@@ -34,7 +34,6 @@
             'security/ir.model.access.csv',
             'data/decimal_precision.xml',
             'views/report_sale_order.xml',
-            #'views/reports.xml',    auskommentiert da kein eigener Report erstellt werden soll, sondern der bestehende überschrieben
             'views/product_view.xml',
             'views/res_partner_view.xml',
             'views/sale_views.xml',
