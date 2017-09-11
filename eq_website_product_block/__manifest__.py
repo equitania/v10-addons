@@ -20,15 +20,15 @@
 ##############################################################################
 
 {
-    'name': 'Modul Equitania Website Product Block',
+    'name': 'Equitania Website Product Block',
     'license': 'AGPL-3',
     'version': '1.0.1',
-    'description': "Block Erweiterung für das EQ Theme Louma",
+    'description': "Fügt einen Bereich für Produktbeschreibungen in der Produktdetailansicht hinzu",
     'author': 'Equitania Software GmbH',
     'website': 'www.myodoo.de',
     'depends': ['base_setup', 'website_sale'],
-    'category' : 'General Improvements',
-    'summary': 'Block Erweiterung für das EQ Theme Louma',
+    'category' : 'website sale',
+    'summary': 'Fügt einen Bereich für Produktbeschreibungen in der Produktdetailansicht hinzu',
 
     'data': [
         "templates.xml",
