@@ -24,7 +24,7 @@
     'license': 'AGPL-3',
     'version': '1.0.5',
     'description': """
-        Extensions for module eq_base
+        Basic fields for more EQ Modules
     """,
     'author': 'Equitania Software GmbH',
     'website': 'www.myodoo.de',
@@ -39,7 +39,6 @@
 
     ],
     'demo': [],
-    # 'css': ['base.css'],
     'installable': True,
     'auto_install': False,
 }
