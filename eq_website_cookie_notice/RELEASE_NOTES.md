@@ -1,5 +1,11 @@
 ## Modul eq_website_cookie_notice
 
+### 13.09.2017
+#### Version 1.0.5
+##### FIX/CHG
+-Javascript angepasst (Animation entfernt: .hide("fast"); durch detach(); ersetzt; Der Balken verschwindet jetzt einfach ohne Animation.
+- die Datenschutzseite /page/datenschutz wird vom Modul gleich mit angelegt
+
 ### 08.09.2017
 #### Version 1.0.4
 ##### CHG

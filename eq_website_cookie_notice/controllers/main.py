@@ -12,6 +12,8 @@ class CookieNotice(http.Controller):
         methods=['POST'])
     def accept_cookies(self):
         """Stop spamming with cookie banner."""
+
+
         http.request.session["accepted_cookies"] = True
         http.request.env['ir.ui.view'].search([
             ('type', '=', 'qweb')

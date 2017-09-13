@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+	<data>
+		<template name="Datenschutz" id="website.datenschutz" page="True">
+		   <t t-call="website.layout">
+			   <div class="page-wrapper oe_structure">
+					<div class="page-intro">
+						<div class="container">
+							<div class="row">
+
+							</div>
+						</div>
+					</div>
+
+
+
+			   </div>
+		   </t>
+		</template>
+	</data>
+</openerp>

@@ -20,10 +20,10 @@
 ##############################################################################
 
 {
-    'name': 'Equitania Cookie Notiz Erweiterung',
+    'name': 'Equitania Cookie Notiz',
     'summary': 'Verbesserte Version der Cookie Notiz für Website',
     'description': 'Cookie Notiz für Website',
-    'version': '1.0.4',
+    'version': '1.0.5',
     'category': 'Website',
     'author': "Equitania Software GmbH",
 
@@ -34,6 +34,7 @@
     ],
     'data': [
         'templates/website.xml',
+        'views/website_datenschutz.xml',
     ],
 
     'installable': True,

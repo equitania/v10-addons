@@ -14,7 +14,8 @@ odoo.define('eq_website_cookie_notice.cookie_notice', function (require) {
             e.preventDefault();
             ajax.jsonRpc('/eq_website_cookie_notice/ok', 'call').then(function (data) {
                 if (data.result == 'ok') {
-                    $(e.target).closest(".cc-cookies").hide("fast");
+                    $("#eq_website_cookie_notice").detach();
+                    //$("#eq_website_cookie_notice").hide("fast");
                 }
             });
         });
