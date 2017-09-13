@@ -134,8 +134,8 @@ class res_partner(models.Model):
 
         # Erweiterung der Adresse um HausNr.
         address_format = address_format.replace('%(street)s', '%(street)s %(eq_house_no)s')
-        print "* address_format: ", address_format
-        print "------------------------------"
+        #print "* address_format: ", address_format
+        #print "------------------------------"
         return address_format % args
 
     @api.model

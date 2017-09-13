@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 13.09.2017
+#### Version 1.0.43
+##### CHG
+- Zwei Printstatements entfernt, damit die Console wieder sauber ausgegeben wird
+
 #### 12.09.2017
 #### Version 1.0.42
 ##### IMP
