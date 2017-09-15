@@ -610,3 +610,8 @@ msgstr "Weitere Produkte"
 #: model:ir.model.fields,field_description:eq_sale.field_sale_layout_category_separator_6550
 msgid "Add separator"
 msgstr "Trennlinie hinzufügen"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_sale_view_partner_tree
+msgid "Customer Number"
+msgstr "Kundennummer"

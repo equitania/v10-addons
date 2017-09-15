@@ -1,5 +1,11 @@
 ## Modul eq_sale
 
+#### 14.09.2017
+#### Version 1.0.44
+##### CHG
+- Listview als Defaultansicht
+- Neue Felder für Listview
+
 #### 13.09.2017
 #### Version 1.0.43
 ##### CHG

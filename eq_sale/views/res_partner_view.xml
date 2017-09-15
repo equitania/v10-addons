@@ -135,5 +135,52 @@
         </record>
 
 
+
+
+        <!--Reihenfolge der Views ändern: Erst Treeview, dann Kanban-->
+         <record id="base.action_partner_form_view1" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="base.res_partner_kanban_view"/>
+            <field name="act_window_id" ref="base.action_partner_form"/>
+        </record>
+
+        <record id="base.action_partner_tree_view1" model="ir.actions.act_window.view">
+            <field name="sequence" eval="0"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="base.view_partner_tree"/>
+            <field name="act_window_id" ref="base.action_partner_form"/>
+        </record>
+
+         <record id="eq_action_partner_customer_form" model="ir.actions.act_window">
+            <field name="name">Customers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{'default_customer':1, 'search_default_customer':1}</field>
+            <field name="filter" eval="True"/>
+             <field name="inherit_id" ref="base.action_partner_customer_form"/>
+        </record>
+
+        <!--Anzeige weiterer Felder in der Treeview-->
+        <record id="eq_sale_view_partner_tree" model="ir.ui.view">
+            <field name="name">eq_sale.partner.extension.view.tree</field>
+            <field name="model">res.partner</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+
+                <field name="display_name" position="after">
+                    <field name="customer_number" string="Customer Number"></field>
+                </field>
+
+                 <field name="email" position="after">
+                    <field name="city"></field>
+                </field>
+            </field>
+        </record>
+
     </data>
 </odoo>
