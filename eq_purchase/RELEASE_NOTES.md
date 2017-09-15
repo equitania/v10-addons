@@ -1,5 +1,9 @@
 ## Modul eq_purchase
 
+#### 15.09.2017
+#### Version 1.0.19
+##### CHG
+- Lieferantennumer aus List View entfernt
 
 #### 15.09.2017
 #### Version 1.0.18
