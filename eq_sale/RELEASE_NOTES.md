@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 15.09.2017
+#### Version 1.0.45
+##### CHG
+- Kundennumer aus List-View entfernt
+
 #### 14.09.2017
 #### Version 1.0.44
 ##### CHG

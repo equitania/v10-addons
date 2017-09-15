@@ -172,9 +172,9 @@
             <field name="inherit_id" ref="base.view_partner_tree"/>
             <field name="arch" type="xml">
 
-                <field name="display_name" position="after">
-                    <field name="customer_number" string="Customer Number"></field>
-                </field>
+                <!--<field name="display_name" position="after">-->
+                    <!--<field name="customer_number" string="Customer Number"></field>-->
+                <!--</field>-->
 
                  <field name="email" position="after">
                     <field name="city"></field>
