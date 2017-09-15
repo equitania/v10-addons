@@ -22,7 +22,7 @@
 {
     'name': "Equitania Einkauf",
     'license': 'AGPL-3',
-    'version': '1.0.17',
+    'version': '1.0.18',
     'category': 'purchase',
     'description': """Extensions for purchase""",
     'author': 'Equitania Software GmbH',
@@ -34,6 +34,7 @@
         'views/purchase_view.xml',
         'views/report_purchase_order.xml',
         'views/report_purchase_quotation.xml',
+        'views/eq_res_partner_view.xml',
              ],
     "active": False,
     "installable": True

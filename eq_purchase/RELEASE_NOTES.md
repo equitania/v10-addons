@@ -1,6 +1,13 @@
 ## Modul eq_purchase
 
 
+#### 15.09.2017
+#### Version 1.0.18
+##### CHG
+- Listview als Defaultansicht
+- Neue Felder für Listview
+
+
 #### 01.09.2017
 #### Version 1.0.17
 ##### IMP
