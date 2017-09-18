@@ -38,22 +38,22 @@
         </record>
 
 
-        <!--<record id="eq_purchase_view_partner_tree" model="ir.ui.view">-->
-            <!--<field name="name">eq_purchase.partner.extension.view.tree</field>-->
-            <!--<field name="model">res.partner</field>-->
-            <!--<field name="type">tree</field>-->
-            <!--<field name="inherit_id" ref="base.view_partner_tree"/>-->
-            <!--<field name="arch" type="xml">-->
-                <!--<field name="display_name" position="after">-->
-                    <!--<field name="supplier_number"  string="Supplier Number"></field>-->
-                <!--</field>-->
-<!--&lt;!&ndash;-->
-                 <!--<field name="email" position="after">-->
-                    <!--<field name="city"></field>-->
-                <!--</field>-->
-                <!--&ndash;&gt;-->
-            <!--</field>-->
-        <!--</record>-->
+        <record id="eq_purchase_view_partner_tree" model="ir.ui.view">
+            <field name="name">eq_purchase.partner.extension.view.tree</field>
+            <field name="model">res.partner</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <field name="display_name" position="after">
+                    <field name="supplier_number"  string="Supplier Number"></field>
+                </field>
+<!--
+                 <field name="email" position="after">
+                    <field name="city"></field>
+                </field>
+                -->
+            </field>
+        </record>
 
     </data>
 </odoo>
