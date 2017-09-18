@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 18.09.2017
+#### Version 1.0.13
+##### CHG
+- Kanbanerweiterung wieder hinzugefügt.
+
 #### 15.09.2017
 #### Version 1.0.12
 ##### CHG

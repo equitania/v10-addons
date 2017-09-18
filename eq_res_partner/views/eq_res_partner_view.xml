@@ -3,23 +3,23 @@
     <data>
 
 
-		<!--&lt;!&ndash; Kunden Kanban &ndash;&gt;-->
-        <!--<record model="ir.ui.view" id="eq_res_partner_partner_kanban_view">-->
-            <!--<field name="name">eq_res.partner.kanban.datev.inherit</field>-->
-            <!--<field name="model">res.partner</field>-->
-            <!--<field name="inherit_id" ref="base.res_partner_kanban_view"/>-->
-            <!--<field name="priority" eval="20"/>-->
-            <!--<field name="arch" type="xml">-->
-                <!--<xpath expr="//li[@t-if='record.email.raw_value']" position="after">-->
-					<!--<li t-if="record.eq_deb_cred_number.raw_value"><field name="eq_deb_cred_number"/></li>-->
-                <!--</xpath>-->
+		<!-- Kunden Kanban -->
+        <record model="ir.ui.view" id="eq_res_partner_partner_kanban_view">
+            <field name="name">eq_res.partner.kanban.datev.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <xpath expr="//li[@t-if='record.email.raw_value']" position="after">
+					<li t-if="record.eq_deb_cred_number.raw_value"><field name="eq_deb_cred_number"/></li>
+                </xpath>
 
-				<!--&lt;!&ndash;<field name="type" position="after">&ndash;&gt;-->
-					<!--&lt;!&ndash;<field name="eq_deb_cred_number"/>&ndash;&gt;-->
-				<!--&lt;!&ndash;</field>&ndash;&gt;-->
+				<!--<field name="type" position="after">-->
+					<!--<field name="eq_deb_cred_number"/>-->
+				<!--</field>-->
 
-            <!--</field>-->
-        <!--</record>-->
+            </field>
+        </record>
 
 
         <record id="eq_partner_extension_form_view" model="ir.ui.view">
