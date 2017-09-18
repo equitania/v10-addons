@@ -35,6 +35,7 @@ class ResPartner(models.Model):
     cust_ref_print = fields.Char(_('Customer Reference (used in reports)'), readonly=True, invisible=True)
     auto_customer_ref = fields.Boolean(compute='_auto_customer_ref', store=False, readonly=True, invisible=True)
 
+    @api.one
     @api.depends('cust_auto_ref', 'cust_no_auto_ref')
     def _get_customer_number(self):
         ir_values = self.env['ir.values']
