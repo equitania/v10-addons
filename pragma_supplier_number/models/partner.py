@@ -35,6 +35,7 @@ class ResPartner(models.Model):
     supp_ref_print = fields.Char(_('Supplier Reference (used in reports)'), readonly=True, invisible=True)
     auto_supplier_ref = fields.Boolean(compute='_auto_supplier_ref', store=False, readonly=True, invisible=True)
 
+    @api.one
     @api.depends('supp_auto_ref', 'supp_no_auto_ref')
     def _get_supplier_number(self):
         default_auto_supplier_ref = self.env['ir.values'].get_default('res.partner', 'default_auto_supplier_ref')
