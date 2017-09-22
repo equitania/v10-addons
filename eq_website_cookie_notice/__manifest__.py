@@ -23,18 +23,18 @@
     'name': 'Equitania Cookie Notiz',
     'summary': 'Verbesserte Version der Cookie Notiz für Website',
     'description': 'Cookie Notiz für Website',
-    'version': '1.0.5',
+    'version': '1.0.6',
     'category': 'Website',
     'author': "Equitania Software GmbH",
 
     'website': 'www.myodoo.de',
     'license': 'AGPL-3',
     'depends': [
-        #'nothing',
+
     ],
     'data': [
         'templates/website.xml',
-        'views/website_datenschutz.xml',
+        #'views/website_datenschutz.xml',
     ],
 
     'installable': True,

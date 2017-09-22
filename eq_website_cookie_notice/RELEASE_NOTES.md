@@ -1,5 +1,10 @@
 ## Modul eq_website_cookie_notice
 
+### 22.09.2017
+#### Version 1.0.6
+##### FIX
+- Anpassung für die Datenschutzseite wieder herausgenommen; Geht nur für Neuinstallationen wo die /page/datenschutz noch nicht angelegt ist
+
 ### 13.09.2017
 #### Version 1.0.5
 ##### FIX/CHG
