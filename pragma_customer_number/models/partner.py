@@ -174,3 +174,13 @@ class ResPartner(models.Model):
                 vals['cust_ref_print'] = vals['cust_auto_ref']
 
         return super(ResPartner, self).write(vals)
+
+
+class ResUsers(models.Model):
+    _inherit = 'res.users'
+
+    @api.model
+    def create(self, vals):
+        self = self.with_context(is_user=True)
+        res = super(ResUsers, self).create(vals)
+        return res
