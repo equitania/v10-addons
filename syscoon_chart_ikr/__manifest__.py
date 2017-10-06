@@ -21,6 +21,7 @@ German accounting chart and localization (Industry Chart Temlate (IKR)) relating
     'depends': [
 		'l10n_de',
 	],
+    'category': 'Localization',
     'demo': [],
     'data': [
         'account_chart.xml', 

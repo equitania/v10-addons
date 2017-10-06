@@ -14,6 +14,7 @@ Dieses  Modul beinhaltet einen deutschen Kontenrahmen basierend auf dem SKR04.
 German accounting chart and localization.
     """,
     'depends': ['l10n_de'],
+    'category': 'Localization',
     'demo': [],
     'data': [
         'account_chart.xml',
