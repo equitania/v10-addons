@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 06.10.2017
+#### Version 1.0.47
+##### CHG
+- Kundenreferenz im Tab 'Weitere Information' entfernt und in der Hauptmaske zum Verkaufauftrag/Angebot hinzugefügt.
+
 #### 18.09.2017
 #### Version 1.0.46
 ##### CHG

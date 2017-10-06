@@ -36,7 +36,10 @@
 	    	<field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
             	<!-- deactivate default version of address fields -->
-
+				<field name="client_order_ref" position="replace"/>
+				<xpath expr="//field[@name='payment_term_id']" position="after">
+					<field name="client_order_ref"/>
+				</xpath>
 
 				<button name="action_confirm" states="draft" position="after">
 	            	<button name="action_button_confirm_optional" states="draft" class="o_sale_confirm" string="Confirm Sale" type="object" groups="base.group_user"/>
