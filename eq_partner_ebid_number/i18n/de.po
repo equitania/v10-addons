@@ -1,0 +1,461 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* eq_partner_ebid_number
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-09 12:08+0000\n"
+"PO-Revision-Date: 2017-10-09 12:08+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_config_eq_ebid_acceptance_rate
+msgid "Acceptance rate"
+msgstr "Mindestwert für Suchergebnis"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_eq_res_id
+msgid "Address"
+msgstr "Adresse"
+
+#. module: eq_partner_ebid_number
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_config_settings
+msgid "Apply"
+msgstr "Übernehmen"
+
+#. module: eq_partner_ebid_number
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_config_settings
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#. module: eq_partner_ebid_number
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_view_partner_form_ebid
+msgid "Check"
+msgstr "Überprüfen"
+
+#. module: eq_partner_ebid_number
+#: code:addons/eq_partner_ebid_number/models/eq_ebid_protocol.py:172
+#: code:addons/eq_partner_ebid_number/models/partner.py:265
+#: code:addons/eq_partner_ebid_number/models/partner.py:347
+#: code:addons/eq_partner_ebid_number/models/partner.py:366
+#, python-format
+msgid "Check the configuration for EBID"
+msgstr "Überprüfen Sie die Konfiguration für EBID"
+
+#. module: eq_partner_ebid_number
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_protocol_search
+msgid "Checked"
+msgstr "Überprüfung durchgeführt"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_eq_request_city
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_eq_city
+msgid "City"
+msgstr "Stadt"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_eq_city_part
+msgid "City part"
+msgstr "Stadtteil"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_eq_company_name
+msgid "Company name"
+msgstr "Firmenname"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_config_eq_ebid_service_company_url
+msgid "Company service"
+msgstr "Company service"
+
+#. module: eq_partner_ebid_number
+#: model:ir.actions.act_window,name:eq_partner_ebid_number.action_eq_ebid_config_settings
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_config_settings
+msgid "Configure Ebid"
+msgstr "Konfiguriere Ebid"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_eq_country
+msgid "Country"
+msgstr "Land"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_config_create_uid
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_create_uid
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_create_uid
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_message_create_uid
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_config_create_date
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_create_date
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_create_date
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_message_create_date
+msgid "Created on"
+msgstr "Angelegt am"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_config_display_name
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_display_name
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_display_name
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_message_display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_eq_email
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#. module: eq_partner_ebid_number
+#: model:ir.ui.menu,name:eq_partner_ebid_number.menu_ebid_conf
+msgid "EBID"
+msgstr "EBID"
+
+#. module: eq_partner_ebid_number
+#: model:ir.ui.menu,name:eq_partner_ebid_number.menu_eq_ebid_config_settings
+msgid "EBID Configuration"
+msgstr "EBID Konfiguration"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_res_partner_eq_ebid_no
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_res_users_eq_ebid_no
+msgid "EBID Number"
+msgstr "EBID Nummer"
+
+#. module: eq_partner_ebid_number
+#: model:ir.actions.act_window,name:eq_partner_ebid_number.eq_ebid_protocol_action
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_eq_protocol_positions
+#: model:ir.ui.menu,name:eq_partner_ebid_number.eq_ebid_protocol_menu
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_protocol_form_view
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_protocol_pos_form_view
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_protocol_tree_view
+msgid "EBID Protocol"
+msgstr "EBID Protokoll"
+
+#. module: eq_partner_ebid_number
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_protocol_pos_tree_view
+msgid "EBID Protocol Positions"
+msgstr "EBID Protokollpositionen"
+
+#. module: eq_partner_ebid_number
+#: code:addons/eq_partner_ebid_number/models/partner.py:399
+#, python-format
+msgid "EBID could not be found for this address"
+msgstr "Für diese Adresse konnte keine EBID-Nummer ermittelt werden."
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_ebid_no
+msgid "EBID-No"
+msgstr "EBID-Nummer"
+
+#. module: eq_partner_ebid_number
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_view_partner_form_ebid
+msgid "EBID-Number"
+msgstr "EBID-Nummer"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_res_partner_eq_ebid_was_checked
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_res_users_eq_ebid_was_checked
+msgid "EBID-Suche wurde durchgeführt"
+msgstr "EBID-Suche wurde durchgeführt"
+
+#. module: eq_partner_ebid_number
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_config_settings
+msgid "Ebid Configuration"
+msgstr "Ebid Konfiguration"
+
+#. module: eq_partner_ebid_number
+#: code:addons/eq_partner_ebid_number/models/eq_ebid_protocol.py:172
+#: code:addons/eq_partner_ebid_number/models/partner.py:265
+#: code:addons/eq_partner_ebid_number/models/partner.py:347
+#: code:addons/eq_partner_ebid_number/models/partner.py:366
+#, python-format
+msgid "Error"
+msgstr "Fehler"
+
+#. module: eq_partner_ebid_number
+#: code:addons/eq_partner_ebid_number/models/partner.py:424
+#: code:addons/eq_partner_ebid_number/models/partner.py:459
+#, python-format
+msgid "Error: "
+msgstr "Fehler: "
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_eq_fax
+msgid "Fax"
+msgstr "Fax"
+
+#. module: eq_partner_ebid_number
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_config_settings
+msgid "General"
+msgstr "Allgemein"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_eq_url
+msgid "Homepage"
+msgstr "Homepage"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_config_eq_ebid_homepage
+msgid "Homepage Unternehmensverzeichnis"
+msgstr "Homepage Unternehmensverzeichnis"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_eq_house_no
+msgid "House No"
+msgstr "Hausnummer"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_config_id
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_id
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_id
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_message_id
+msgid "ID"
+msgstr "ID"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_message_eq_info
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_message
+msgid "Info"
+msgstr "Information"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_config___last_update
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol___last_update
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position___last_update
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_message___last_update
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_config_write_uid
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_write_uid
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_write_uid
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_message_write_uid
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert durch"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_config_write_date
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_write_date
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_write_date
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_message_write_date
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: eq_partner_ebid_number
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_protocol_pos_form_view
+msgid "Load data from Unternehmensverzeichnis.org"
+msgstr "Adressdaten aus Unternehmensverzeichnis.org laden"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_config_eq_ebid_activate_log
+msgid "Logging"
+msgstr "Logging"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_config_eq_ebid_service_match_url
+msgid "Match service"
+msgstr "Match service"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_eq_message
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_message_eq_message_text
+#: model:ir.model.fields,help:eq_partner_ebid_number.field_eq_ebid_protocol_eq_message
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_message
+msgid "Message"
+msgstr "Nachricht"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_eq_mobile
+msgid "Mobile"
+msgstr "Mobil"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_eq_model
+msgid "Model"
+msgstr "Modell"
+
+#. module: eq_partner_ebid_number
+#: code:addons/eq_partner_ebid_number/models/partner.py:444
+#, python-format
+msgid "More than one EBID-Number were found for this address. Check the EBID protocol."
+msgstr "Für diese Adresse wurden mehrere EBID-Nummern ermittelt. Bitte überprüfen Sie das Ergebnis im EBID-Protokoll."
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_eq_partner_name
+msgid "Name"
+msgstr "Name"
+
+#. module: eq_partner_ebid_number
+#: code:addons/eq_partner_ebid_number/models/partner.py:442
+#: code:addons/eq_partner_ebid_number/models/partner.py:461
+#, python-format
+msgid "No EBID-Number could be found for this address"
+msgstr "Für diese Adresse konnte keine EBID-Nummer ermittelt werden."
+
+#. module: eq_partner_ebid_number
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_message
+msgid "OK"
+msgstr "OK"
+
+#. module: eq_partner_ebid_number
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_protocol_pos_form_view
+msgid "Open Unternehmensverzeichnis.org"
+msgstr "Open Unternehmensverzeichnis.org"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_eq_ebid_protocol_id
+msgid "Parent Protocol"
+msgstr "Parent Protocol"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model,name:eq_partner_ebid_number.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_config_eq_ebid_pw
+msgid "Password"
+msgstr "Passwort"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_eq_phone
+msgid "Phone"
+msgstr "Telefon"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_message_eq_res_id
+msgid "Protocol"
+msgstr "Protokoll"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_eq_request
+#: model:ir.model.fields,help:eq_partner_ebid_number.field_eq_ebid_protocol_eq_request
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_protocol_form_view
+msgid "Request"
+msgstr "Suchparameter"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_eq_request_type
+msgid "Request type"
+msgstr "Anfragetyp"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_eq_response
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_eq_response
+#: model:ir.model.fields,help:eq_partner_ebid_number.field_eq_ebid_protocol_eq_response
+#: model:ir.model.fields,help:eq_partner_ebid_number.field_eq_ebid_protocol_position_eq_response
+msgid "Response"
+msgstr "Response"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_eq_checked
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_protocol_search
+msgid "Result checked"
+msgstr "Überprüfung durchgeführt"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_eq_result_count
+msgid "Result count"
+msgstr "Treffer"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_eq_rate
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_eq_rate
+msgid "Seach rate"
+msgstr "Trefferquote"
+
+#. module: eq_partner_ebid_number
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_protocol_search
+msgid "Search"
+msgstr "Suchen"
+
+#. module: eq_partner_ebid_number
+#: code:addons/eq_partner_ebid_number/models/partner.py:351
+#, python-format
+msgid "Search for EBID"
+msgstr "Ermittlung der EBID-Nummer"
+
+#. module: eq_partner_ebid_number
+#: code:addons/eq_partner_ebid_number/models/partner.py:422
+#: code:addons/eq_partner_ebid_number/models/partner.py:457
+#, python-format
+msgid "Search of EBID for address was not successful"
+msgstr "Für diese Adresse konnte keine EBID-Nummer ermittelt werden."
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_config_eq_ebid_service_search_url
+msgid "Search service"
+msgstr "Search service"
+
+#. module: eq_partner_ebid_number
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_protocol_pos_form_view
+msgid "Set data for company"
+msgstr "Daten in Adresse übernehmen"
+
+#. module: eq_partner_ebid_number
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_view_partner_form_ebid
+msgid "Show address"
+msgstr "Unternehmensverzeichnis.org"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_eq_request_street
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_eq_street
+msgid "Street"
+msgstr "Straße"
+
+#. module: eq_partner_ebid_number
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_protocol_pos_form_view
+msgid "Use this EBID-No for the company"
+msgstr "EBID-Nummer für Adresse setzen"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_config_eq_ebid_user
+msgid "User"
+msgstr "Benutzer"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_eq_ustid_nr
+msgid "UstidNr"
+msgstr "UstidNr"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_eq_request_zip
+#: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_eq_zip
+msgid "Zip"
+msgstr "PLZ"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model,name:eq_partner_ebid_number.model_eq_ebid_config
+msgid "eq.ebid.config"
+msgstr "eq.ebid.config"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model,name:eq_partner_ebid_number.model_eq_ebid_protocol
+msgid "eq.ebid.protocol"
+msgstr "eq.ebid.protocol"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model,name:eq_partner_ebid_number.model_eq_ebid_protocol_position
+msgid "eq.ebid.protocol.position"
+msgstr "eq.ebid.protocol.position"
+
+#. module: eq_partner_ebid_number
+#: model:ir.model,name:eq_partner_ebid_number.model_eq_message
+msgid "eq_message"
+msgstr "eq_message"
+
+#. module: eq_partner_ebid_number
+#: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_config_settings
+msgid "or"
+msgstr "oder"

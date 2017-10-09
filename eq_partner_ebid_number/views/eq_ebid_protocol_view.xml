@@ -1,0 +1,162 @@
+<openerp>
+    <data>
+    
+    <!-- EBID Protocol Position -->
+        <record id="eq_ebid_protocol_pos_tree_view" model="ir.ui.view">
+            <field name="name">eq_ebid_protocol.pos.tree</field>
+            <field name="model">eq.ebid.protocol.position</field>
+            <field name="arch" type="xml">
+                <tree string="EBID Protocol Positions">
+					<field name="ebid_no"/>
+					<field name="eq_rate"/>
+					<field name="eq_company_name"/>		
+					<field name="eq_street"/>
+					<field name="eq_house_no"/> 
+					<field name="eq_city"/>
+                </tree>
+            </field>
+        </record>
+        <record id="eq_ebid_protocol_pos_form_view" model="ir.ui.view">
+            <field name="name">eq_ebid_protocol.pos.form</field>
+            <field name="model">eq.ebid.protocol.position</field>
+            <field name="arch" type="xml">
+                <form string="EBID Protocol" version="7.0">
+                	<header>
+                		<button name="open_url_for_ebid" string="Open Unternehmensverzeichnis.org" type="object" attrs="{'invisible':[('ebid_no', '=', False)]}" style="margin:5px!important;"/>
+                		<button name="search_for_ebid_no" string="Load data from Unternehmensverzeichnis.org" type="object" attrs="{'invisible':[('ebid_no', '=', False)]}" style="margin:5px!important;"/>
+                		<button name="set_ebid_no_for_partner" string="Use this EBID-No for the company" type="object" attrs="{'invisible':[('ebid_no', '=', False)]}" style="margin:5px!important;"/>
+                		<button name="set_ebid_data_for_partner" string="Set data for company" type="object" attrs="{'invisible':[('ebid_no', '=', False)]}" style="margin:5px!important;"/>
+                	</header>
+                	<group colspan="4">
+                		<group>
+							<field name="ebid_no"/>
+							<field name="eq_rate"/>
+							<field name="eq_company_name"/>		
+							<field name="eq_street"/>
+							<field name="eq_house_no"/> 
+							<field name="eq_city"/>
+							<field name="eq_city_part"/>
+							<field name="eq_zip"/>
+							<field name="eq_country"/> 
+							<field name="eq_phone"/>
+							<field name="eq_fax"/>
+							<field name="eq_mobile"/> 
+							<field name="eq_email"/>
+							<field name="eq_url"/> 
+							<field name="eq_ustid_nr"/>
+							
+                		</group>
+                		<group>
+
+                		</group>
+					</group>
+                </form>
+            </field>
+        </record>
+    
+    	<!-- EBID Protocol -->
+        <record id="eq_ebid_protocol_tree_view" model="ir.ui.view">
+            <field name="name">eq_ebid_protocol.tree</field>
+            <field name="model">eq.ebid.protocol</field>
+            <field name="arch" type="xml">
+                <tree string="EBID Protocol">
+					<field name="create_date"/>
+					<field name="eq_partner_name"/>
+					<field name="eq_rate"/>
+					<field name="eq_result_count"/>
+					<field name="eq_checked"/>
+					<!-- 
+					<field name="eq_request_street"/>
+					<field name="eq_request_zip"/>
+					<field name="eq_request_city"/>
+					<field name="eq_res_id"/> -->
+                </tree>
+            </field>
+        </record>
+        
+        
+        <record id="eq_ebid_protocol_form_view" model="ir.ui.view">
+            <field name="name">eq_ebid_protocol.form</field>
+            <field name="model">eq.ebid.protocol</field>
+            <field name="arch" type="xml">
+                <form string="EBID Protocol" version="7.0">
+                	<sheet>
+                	<group colspan="4">
+	                	<group>
+	                		<field name="create_date"/>
+							<field name="eq_res_id" domain="[('customer', '=', True)]" readonly="1" context="{'search_default_customer':1, 'show_address': 1,'active_model':'eq.ebid.protocol','main_address': True}"/>
+							<field name="eq_rate"/>
+							<field name="eq_result_count"/>
+							<field name="eq_checked"/>
+							<label for="eq_request_street" string="Request"/>
+							<div class="addres_format">
+								<field name="eq_partner_name"/>
+							    <field name="eq_request_street"/>
+							    <field name="eq_request_zip" style="width: 20%%" nolabel="1"/>
+							    <field name="eq_request_city" style="width: 76%%" nolabel="1"/> 
+							</div>
+					
+						</group>
+						<group>
+							<!--<label for="eq_partner_name" string="Daten"/>
+							
+							Daten von Ebid-->
+							
+						</group>
+						<div colspan="4">
+						
+						<field name="eq_protocol_positions" nolabel="1"  widget="one2many_list" >
+			                 <tree string="EBID Protocol">
+								<field name="ebid_no"/>
+								<field name="eq_rate"/>
+								<field name="eq_company_name"/>		
+								<field name="eq_street"/>
+								<field name="eq_house_no"/> 
+								<field name="eq_city"/>
+								<field name="eq_country"/>
+			                </tree> 
+						</field>
+						</div>
+                	</group>
+                	</sheet>
+                </form>
+            </field>
+        </record>
+        
+        <!-- EBID Protocol Search -->
+        <record id="eq_ebid_protocol_search" model="ir.ui.view">
+            <field name="name">eq_ebid_protocol.search</field>
+            <field name="model">eq.ebid.protocol</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="eq_res_id"/>
+                    <filter string="Checked" domain="[('eq_checked','=',True)]" help="Result checked"/>
+               </search>
+            </field>
+        </record>
+	    
+	    <!-- EBID Protocol Action -->
+        <record id="eq_ebid_protocol_action" model="ir.actions.act_window">
+            <field name="name">EBID Protocol</field>
+            <field name="res_model">eq.ebid.protocol</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+	    <!-- Menuitem
+        <menuitem action="eq_ebid_protocol_action" id="eq_ebid_protocol_menu" parent="crm.root_menu" name="EBID Protocol" sequence="40"/>
+-->
+
+		<!--TODO-->
+
+		<menuitem
+            id="eq_ebid_protocol_menu"
+            name="EBID Protocol"
+            action="eq_ebid_protocol_action"
+            parent="menu_ebid_conf"
+            sequence="10"
+            />
+
+
+    </data>
+</openerp>

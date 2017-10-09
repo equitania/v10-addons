@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		<record id="eq_ebid_config_settings" model="ir.ui.view">
+            <field name="name">ebid settings</field>
+            <field name="model">eq.ebid.config</field>
+            <field name="arch" type="xml">
+                <form string="Configure Ebid" class="oe_form_configuration">
+                    <header>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+                    </header>
+                    <separator string="Ebid Configuration"/>
+                    <group>
+                        <label for="id" string="General"/>
+                        <div>
+                        	<div>
+                                <label for="eq_ebid_homepage"/>
+                                <field name="eq_ebid_homepage" class="oe_inline" style="width:300px!important;"/>
+                            </div>
+                            <div>
+                                <label for="eq_ebid_service_match_url"/>
+                                <field name="eq_ebid_service_match_url" class="oe_inline" style="width:300px!important;"/>
+                            </div>
+                            <div>
+                                <label for="eq_ebid_service_company_url"/>
+                                <field name="eq_ebid_service_company_url" class="oe_inline"  style="width:300px!important;"/>
+                            </div>
+                            <div>
+                                <label for="eq_ebid_user"/>
+                                <field name="eq_ebid_user" class="oe_inline" />
+                            </div>
+                             <div>
+                                 <label for="eq_ebid_pw"/>
+                                <field name="eq_ebid_pw" class="oe_inline" password="True"/>
+                            </div>
+                             <div>
+                                 <label for="eq_ebid_acceptance_rate"/>
+                                <field name="eq_ebid_acceptance_rate" class="oe_inline" />
+                            </div>
+                            <div>
+                                 <label for="eq_ebid_activate_log"/>
+                                <field name="eq_ebid_activate_log" class="oe_inline" />
+                            </div>
+                        </div>
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+        <record id="action_eq_ebid_config_settings" model="ir.actions.act_window">
+            <field name="name">Configure Ebid</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">eq.ebid.config</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+        </record>
+
+        <!--<menuitem id="menu_eq_ebid_config_settings" name="Ebid" parent="base.menu_config"-->
+            <!--sequence="3" action="action_eq_ebid_config_settings"/>-->
+
+
+
+
+        <menuitem
+            id="menu_ebid_conf"
+            name="EBID"
+            parent="sales_team.menu_sale_config"
+            sequence="40"
+            groups="sales_team.group_sale_manager"/>
+
+         <menuitem
+            id="menu_eq_ebid_config_settings"
+            name="EBID Configuration"
+            action="action_eq_ebid_config_settings"
+            parent="menu_ebid_conf"
+            sequence="3"
+            />
+        
+	</data>
+</openerp>

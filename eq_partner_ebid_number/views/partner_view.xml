@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="eq_view_partner_form_ebid" model="ir.ui.view">
+            <field name="name">res.partner.form.ebid</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">            
+                <field name="email" position="after">           
+					<label for="eq_ebid_no" string="EBID-Number" attrs="{'invisible':[('is_company', '=', False)]}"/>
+                    <div attrs="{'invisible':[('is_company', '=', False)]}">
+                        <field name="eq_ebid_no" attrs="{'invisible':[('is_company', '=', False)]}" class="oe_inline" style="width:128px!important;"/>
+                        <button name="button_search_ebid" string="Check" type="object" attrs="{'invisible':[('is_company', '=', False)]}" class="oe_edit_only oe_link oe_inline" style="margin:5px!important;"/>
+                        <div>
+                        	<button name="show_data_for_ebid" string="Show address" type="object" attrs="{'invisible':[('eq_ebid_no', '=', False),]}" style="margin:5px!important;"/>
+                        </div>
+                    </div>
+				</field>
+          	</field>
+        </record>
+        
+        <!-- Modalpopup Infomessage -->
+        <record id="eq_message" model="ir.ui.view">
+        <field name="name">eq_message</field>
+        <field name="model">eq_message</field>
+        <field name="arch" type="xml">
+            <form string="Info">
+            	
+                	<field name="eq_message_text" attrs="{'readonly': True }" string="Message"/>      
+                	
+                	<!--  <label for="eq_res_id" string="Protocol for: " attrs="{'invisible':[('eq_res_id', '=', False)]}"/>               	           
+                	<field string="Protocol" name="eq_res_id" readonly="1" attrs="{'invisible':[('eq_res_id', '=', False)]}" options="{'no_create': True}" context="{'active_model':'res.partner'}" /> 
+                	       -->    	
+                	 <footer>
+                        <button string="OK" class="oe_link" special="cancel" />
+                    </footer>
+               
+            </form>
+        </field>
+        </record>  
+    </data>
+</openerp>
