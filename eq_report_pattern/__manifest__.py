@@ -22,7 +22,7 @@
 {
     'name': 'Equitania Report Pattern',
     'license': 'AGPL-3',
-    'version': '1.0.22',
+    'version': '1.0.24',
     'description': """
         Improves the odoo document templating, overwrites head- and foot-texttemplates
     """,
