@@ -29,6 +29,20 @@
 			</field>
 		</record>
 
+		<record id="eq_sale_form_quote" model="ir.ui.view">
+            <field name="name">hide.preview_button</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="website_quote.sale_order_form_quote"/>
+            <field name="arch" type="xml">
+				<field name="carrier_id" position="after">
+                <field name="eq_show_preview_button" invisible="1"/>
+				</field>
+                <xpath expr="//header/button[@name='open_quotation']" position="replace">
+                    <button name="open_quotation" string="Preview" attrs="{'invisible': [('eq_show_preview_button', '=', False)]}"/>
+                </xpath>
+            </field>
+        </record>
+
 
         <record id="eq_sale_address_fields_view_order_form_inherit" model="ir.ui.view">
             <field name="name">eq_sale.address.fields.view.order.form.inherit</field>
@@ -40,6 +54,10 @@
 				<xpath expr="//field[@name='payment_term_id']" position="after">
 					<field name="client_order_ref"/>
 				</xpath>
+
+				<!--<button name="open_quotation" position="replace">-->
+					<!--&lt;!&ndash;<button name="open_quotation" attrs="{'invisible': [('eq_show_preview_button', '=', True)]}"/>&ndash;&gt;-->
+				<!--</button>-->
 
 				<button name="action_confirm" states="draft" position="after">
 	            	<button name="action_button_confirm_optional" states="draft" class="o_sale_confirm" string="Confirm Sale" type="object" groups="base.group_user"/>
@@ -170,6 +188,13 @@
 							<div>
 							<field name="default_eq_use_internal_description"/>
 							<label for="default_eq_use_internal_description"/>
+							</div>
+	                    </div>
+						<label string="Show Preview"/>
+	                    <div>
+							<div>
+							<field name="default_eq_show_preview_button"/>
+							<label for="default_eq_show_preview_button"/>
 							</div>
 	                    </div>
 					</xpath>

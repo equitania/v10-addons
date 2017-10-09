@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 09.10.2017
+#### Version 1.0.48
+##### ADD
+- Preview Button im Angebot jetzt über Flag in den Einstellungen (Verkauf) steuerbar ob er ein- oder ausgeblendet wird.
+
 #### 06.10.2017
 #### Version 1.0.47
 ##### CHG

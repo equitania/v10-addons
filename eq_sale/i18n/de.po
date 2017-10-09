@@ -615,3 +615,13 @@ msgstr "Trennlinie hinzufügen"
 #: model:ir.ui.view,arch_db:eq_sale.eq_sale_view_partner_tree
 msgid "Customer Number"
 msgstr "Kundennummer"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_view_sale_config_settings_show_address
+msgid "Show Preview"
+msgstr "Vorschau Button"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_default_eq_show_preview_button
+msgid "Show Preview-Button in Sale Order [equitania]"
+msgstr "Vorschau Button in Angeboten/Verkaufsaufträgen anzeigen [equitania]"
