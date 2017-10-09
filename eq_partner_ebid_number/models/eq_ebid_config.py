@@ -22,6 +22,9 @@
 from openerp import models, fields, api, _
 
 class eq_ebid_config(models.TransientModel):
+    """
+    Konfiguration der Verbindung zum Unternehmensverzeichnis und weitere Einstellungen für den Datenabgleich
+    """
     _name = 'eq.ebid.config'
     _inherit = 'res.config.settings'
     
@@ -34,9 +37,13 @@ class eq_ebid_config(models.TransientModel):
     eq_ebid_acceptance_rate = fields.Integer("Acceptance rate")
     eq_ebid_activate_log = fields.Boolean("Logging")
     
-    """ Ebid get function """
     @api.model
     def get_default_eq_ebid_data(self, fields):
+        """
+        EBID Config get function
+        :param fields:
+        :return:
+        """
         config_parameters = self.env["ir.config_parameter"]
         company_url = config_parameters.get_param("eq.ebid.service.company.url") or 'https://api.unternehmensverzeichnis.org/ws/company/rest/v2.0/'
         search_url = config_parameters.get_param("eq.ebid.service.search.url") or 'https://api.unternehmensverzeichnis.org/ws/crm/search/rest/v2.1/'
@@ -58,9 +65,12 @@ class eq_ebid_config(models.TransientModel):
                 'eq_ebid_activate_log': eq_ebid_activate_log
                 }
         
-    """ Ebid set function  """    
     @api.multi
     def set_eq_ebid_data(self):
+        """
+        EBID Config set function
+        :return:
+        """
         config_parameters = self.env["ir.config_parameter"]
         for record in self:
 

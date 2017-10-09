@@ -116,14 +116,9 @@ msgid "E-Mail"
 msgstr "E-Mail"
 
 #. module: eq_partner_ebid_number
-#: model:ir.ui.menu,name:eq_partner_ebid_number.menu_ebid_conf
-msgid "EBID"
-msgstr "EBID"
-
-#. module: eq_partner_ebid_number
 #: model:ir.ui.menu,name:eq_partner_ebid_number.menu_eq_ebid_config_settings
-msgid "EBID Configuration"
-msgstr "EBID Konfiguration"
+msgid "Configuration"
+msgstr "Konfiguration"
 
 #. module: eq_partner_ebid_number
 #: model:ir.model.fields,field_description:eq_partner_ebid_number.field_res_partner_eq_ebid_no
@@ -134,7 +129,6 @@ msgstr "EBID Nummer"
 #. module: eq_partner_ebid_number
 #: model:ir.actions.act_window,name:eq_partner_ebid_number.eq_ebid_protocol_action
 #: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_eq_protocol_positions
-#: model:ir.ui.menu,name:eq_partner_ebid_number.eq_ebid_protocol_menu
 #: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_protocol_form_view
 #: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_protocol_pos_form_view
 #: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_protocol_tree_view
@@ -170,8 +164,8 @@ msgstr "EBID-Suche wurde durchgeführt"
 
 #. module: eq_partner_ebid_number
 #: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_config_settings
-msgid "Ebid Configuration"
-msgstr "Ebid Konfiguration"
+msgid "Configuration"
+msgstr "Konfiguration"
 
 #. module: eq_partner_ebid_number
 #: code:addons/eq_partner_ebid_number/models/eq_ebid_protocol.py:172
@@ -311,7 +305,7 @@ msgstr "OK"
 #. module: eq_partner_ebid_number
 #: model:ir.ui.view,arch_db:eq_partner_ebid_number.eq_ebid_protocol_pos_form_view
 msgid "Open Unternehmensverzeichnis.org"
-msgstr "Open Unternehmensverzeichnis.org"
+msgstr "Zu Unternehmensverzeichnis.org springen"
 
 #. module: eq_partner_ebid_number
 #: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_ebid_protocol_position_eq_ebid_protocol_id
@@ -334,7 +328,13 @@ msgid "Phone"
 msgstr "Telefon"
 
 #. module: eq_partner_ebid_number
+#: model:ir.ui.menu,name:eq_partner_ebid_number.menu_ebid_conf
+msgid "EBID"
+msgstr "Unternehmensverzeichnis"
+
+#. module: eq_partner_ebid_number
 #: model:ir.model.fields,field_description:eq_partner_ebid_number.field_eq_message_eq_res_id
+#: model:ir.ui.menu,name:eq_partner_ebid_number.eq_ebid_protocol_menu
 msgid "Protocol"
 msgstr "Protokoll"
 

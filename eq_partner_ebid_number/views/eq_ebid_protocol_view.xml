@@ -23,7 +23,7 @@
                 <form string="EBID Protocol" version="7.0">
                 	<header>
                 		<button name="open_url_for_ebid" string="Open Unternehmensverzeichnis.org" type="object" attrs="{'invisible':[('ebid_no', '=', False)]}" style="margin:5px!important;"/>
-                		<button name="search_for_ebid_no" string="Load data from Unternehmensverzeichnis.org" type="object" attrs="{'invisible':[('ebid_no', '=', False)]}" style="margin:5px!important;"/>
+                		<button name="get_data_for_ebid_no" string="Load data from Unternehmensverzeichnis.org" type="object" attrs="{'invisible':[('ebid_no', '=', False)]}" style="margin:5px!important;"/>
                 		<button name="set_ebid_no_for_partner" string="Use this EBID-No for the company" type="object" attrs="{'invisible':[('ebid_no', '=', False)]}" style="margin:5px!important;"/>
                 		<button name="set_ebid_data_for_partner" string="Set data for company" type="object" attrs="{'invisible':[('ebid_no', '=', False)]}" style="margin:5px!important;"/>
                 	</header>
@@ -151,7 +151,7 @@
 
 		<menuitem
             id="eq_ebid_protocol_menu"
-            name="EBID Protocol"
+            name="Protocol"
             action="eq_ebid_protocol_action"
             parent="menu_ebid_conf"
             sequence="10"

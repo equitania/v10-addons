@@ -12,9 +12,21 @@
                         <button string="Cancel" type="object" name="cancel" class="oe_link"/>
                     </header>
                     <separator string="Ebid Configuration"/>
-                    <group>
-                        <label for="id" string="General"/>
+                    <!--<group>-->
+                        <!--<label for="id" string="General"/>-->
                         <div>
+
+                            <group>
+                                <field name="eq_ebid_homepage" class="oe_inline" style="width:450px!important;"/>
+                                <field name="eq_ebid_service_match_url" class="oe_inline" style="width:450px!important;"/>
+                                <field name="eq_ebid_service_company_url" class="oe_inline" style="width:450px!important;"/>
+                                <field name="eq_ebid_user" class="oe_inline" style="width:200px!important;"/>
+                                <field name="eq_ebid_pw" class="oe_inline" password="True" style="width:200px!important;"/>
+                                <field name="eq_ebid_acceptance_rate" class="oe_inline"/>
+                                <field name="eq_ebid_activate_log" class="oe_inline"/>
+
+                            </group>
+                            <!--
                         	<div>
                                 <label for="eq_ebid_homepage"/>
                                 <field name="eq_ebid_homepage" class="oe_inline" style="width:300px!important;"/>
@@ -43,8 +55,9 @@
                                  <label for="eq_ebid_activate_log"/>
                                 <field name="eq_ebid_activate_log" class="oe_inline" />
                             </div>
+                            -->
                         </div>
-                    </group>
+                    <!--</group>-->
                 </form>
             </field>
         </record>
@@ -57,12 +70,6 @@
             <field name="target">inline</field>
         </record>
 
-        <!--<menuitem id="menu_eq_ebid_config_settings" name="Ebid" parent="base.menu_config"-->
-            <!--sequence="3" action="action_eq_ebid_config_settings"/>-->
-
-
-
-
         <menuitem
             id="menu_ebid_conf"
             name="EBID"
@@ -72,7 +79,7 @@
 
          <menuitem
             id="menu_eq_ebid_config_settings"
-            name="EBID Configuration"
+            name="Configuration"
             action="action_eq_ebid_config_settings"
             parent="menu_ebid_conf"
             sequence="3"

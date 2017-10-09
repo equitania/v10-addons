@@ -78,14 +78,15 @@ class eq_partner_ebid(models.Model):
 
     def eq_check_ebid_cron(self, ebid_search_mode=False, limit=0, check_interval=0):
         """
-        Funktion des Cronjobs zur Überprüfund der Adressdatensätze
+        Funktion des Cronjobs zur Überprüfung der Adressdatensätze
         :param ebid_search_mode: True: Kontrolle der Datensätze mit existierenden EBIDs
         :param limit:
-        :param check_interval: Anzahl der Datensätze, die in einem Durchlauf verarbeitet werden
+        :param check_interval: Anzahl der Tage seit der letzten Überprüfung
         :return:
         """
         if (ebid_search_mode):
-            # interval
+            # Kontrolle der Daten, für die die EBID-Nr gesetzt ist und für die der letzte Protokolleintrag mehr als
+            # der Wert für check_interval in Tagen zurückliegt
             if (check_interval <= 0):
                 check_interval = 1
             interval_text = "'" + str(check_interval) + " day'"
@@ -121,7 +122,7 @@ class eq_partner_ebid(models.Model):
                         check_partner.get_company_data_for_ebid()
             """
         else:
-            # sql
+            # Abarbeitung der Datensätze, für die noch keine EBID-Nr gesetzt wurde
             sql_select = "SELECT p.ID FROM res_partner p LEFT OUTER JOIN eq_ebid_protocol prot on prot.eq_res_id = p.id WHERE p.is_company AND (coalesce(p.eq_ebid_no,'') = '') AND prot.id is null"
             if ((limit > 0) and (isinstance(limit, int))):
                 sql_select += ' limit ' + str(limit)
@@ -144,6 +145,11 @@ class eq_partner_ebid(models.Model):
 
     @api.multi
     def show_data_for_ebid(self, args = None):
+        """
+        Öffnen der Seite für die Adresse im Unternehmensverzeichnis
+        :param args:
+        :return:
+        """
         if (not self.eq_ebid_no):
             return
         
@@ -159,6 +165,11 @@ class eq_partner_ebid(models.Model):
         
     @api.multi
     def get_company_data_for_ebid(self, args = None):
+        """
+        Auslesen der Daten aus dem Unternehmensverzeichnis über die EBID
+        :param args:
+        :return:
+        """
         if (not self):
             return
    
@@ -259,14 +270,15 @@ class eq_partner_ebid(models.Model):
             return self.show_message(_('Search for EBID'), req_result.message, req_result.res_id)
         
     @api.multi
-    def search_ebid(self, args = None):
+    def search_ebid(self, args=None):
         """
-        Tries to find an EBID number for a company
+        Ermittlung der EBID-Nummern für die Adressdaten
+        (Aufruf durch Cronjob)
         """
         if (not self):
             return
    
-        ebid_settings = self[0].get_ebid_settings();
+        ebid_settings = self[0].get_ebid_settings()
         
         if (not self[0].settings_ok(ebid_settings)):
             raise osv.except_osv(_('Error'), _('Check the configuration for EBID'))
@@ -278,7 +290,14 @@ class eq_partner_ebid(models.Model):
             
         return True
     
-    def proc_search_ebid_for_address(self, partner, ebid_settings, return_result = False):
+    def proc_search_ebid_for_address(self, partner, ebid_settings, return_result=False):
+        """
+        Ermittlung der EBID-Nr für die Adressdaten des übergebenen Partnerdatensatzes
+        :param partner: Adressdatensatz
+        :param ebid_settings:
+        :param return_result:
+        :return: Vom Typ request_result_info, falls return_result True
+        """
         eq_prot_obj = self[0].env['eq.ebid.protocol']
         eq_prot_position_obj = self[0].env['eq.ebid.protocol.position']
         
@@ -364,6 +383,13 @@ class eq_partner_ebid(models.Model):
             return eq_ebid_services.request_result_info(success, result_count, message, prot_id)
         
     def show_message(self, info, message_text, prot_id):
+        """
+        Anzeige einer Meldung in Odoo
+        :param info:
+        :param message_text:
+        :param prot_id:
+        :return:
+        """
         mod_obj = self.env['ir.model.data']
         view = mod_obj.get_object_reference('eq_partner_ebid_number', 'eq_message')
         

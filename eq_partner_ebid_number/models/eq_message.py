@@ -21,6 +21,11 @@
 
 from openerp import models, fields, api, _
 
+"""
+Hilfsklassen für die Anzeige von Meldungen in Odoo
+"""
+
+
 class eq_message(models.TransientModel):
     _name = "eq_message"
     
@@ -32,6 +37,3 @@ class eq_prot_message(models.TransientModel):
     _inherit = ['eq_message']
     
     eq_res_id = fields.Many2one('eq.ebid.protocol', string='Protocol', required=False)
-    
-    
-    

@@ -29,16 +29,26 @@ import logging
 _logger = logging.getLogger(__name__)
     
 
+"""
+Funktionen für die Webservicerequests zum Unternehmensverzeichnis
+"""
+
+
 def settings_ok(settings):
     return settings and settings.user and settings.pw and settings.urlMatch
 
 
 def get_ebid_settings(odoo_self):
+    """
+
+    :param odoo_self:
+    :return:
+    """
     config_params = odoo_self.env['ir.config_parameter']
-    match_url = config_params.get_param("eq.ebid.service.match.url",False)
-    company_url = config_params.get_param("eq.ebid.service.company.url",False)
+    match_url = config_params.get_param("eq.ebid.service.match.url", False)
+    company_url = config_params.get_param("eq.ebid.service.company.url", False)
     search_url = config_params.get_param("eq.ebid.service.search.url", False)
-    homepage_url = config_params.get_param("eq.ebid.homepage.url",False) or 'http://www.unternehmensverzeichnis.org/'
+    homepage_url = config_params.get_param("eq.ebid.homepage.url", False) or 'http://www.unternehmensverzeichnis.org/'
 
     # logging
     logging_active_conf_val = config_params.get_param("eq.ebid.activate.log", False)
@@ -55,9 +65,9 @@ def get_ebid_settings(odoo_self):
     if (search_url and not search_url.endswith('/')):
         search_url += '/'
         
-    user = config_params.get_param("eq.ebid.user",False)
-    pw = config_params.get_param("eq.ebid.pw",False)
-    rate_txt = config_params.get_param("eq.ebid.acceptance.rate",False)
+    user = config_params.get_param("eq.ebid.user", False)
+    pw = config_params.get_param("eq.ebid.pw", False)
+    rate_txt = config_params.get_param("eq.ebid.acceptance.rate", False)
 
     rate = 90
     if (rate_txt):
@@ -67,6 +77,11 @@ def get_ebid_settings(odoo_self):
 
 
 def set_partner_identifier(ebid_settings):
+    """
+    TODO Noch umzusetzen
+    :param ebid_settings:
+    :return:
+    """
     header = {'content-type': 'application/json'}
     contract_type = 'OdooAdminNutzer'
     eq_partner_key = 'TODO'
@@ -84,8 +99,7 @@ def set_partner_identifier(ebid_settings):
             write_to_log(ebid_settings.logging_active, 'Error in eq_ebid_services.set_partner_identifier: %s', True, e)
 
 
-
-def write_to_log(do_log, message, is_error=False, exc = None):
+def write_to_log(do_log, message, is_error=False, exc=None):
     if not do_log:
         return
 
@@ -95,16 +109,21 @@ def write_to_log(do_log, message, is_error=False, exc = None):
         _logger.info(message)
 
 
-
-
 def find_company(partner_id, searchParams, ebid_settings):
+    """
+    Ermittlung der EBID über eine Suche anhand der Adressdaten
+    :param partner_id:
+    :param searchParams:
+    :param ebid_settings:
+    :return: EBIDRequestSearchResult: Ergebnis der Suche
+    """
     header = {'content-type': 'application/json'}
     requestTxt = json.dumps(searchParams)
     try:
         requestRes = requests.post(ebid_settings.urlMatch, data=requestTxt, headers=header, auth=(ebid_settings.user, ebid_settings.pw))
         jsonRes = requestRes.json()
     except Exception, e:
-        findCompanyResult = GetEBIDRequestResult(partner_id, "res.partner", None, None, False, 'Error [request findCompany]: ' + str(e.message), 1, requestTxt,requestRes.text);
+        findCompanyResult = GetEBIDRequestResult(partner_id, "res.partner", None, None, False, 'Error [request findCompany]: ' + str(e.message), 1, requestTxt, requestRes.text)
 
         if ebid_settings.logging_active:
             write_to_log(ebid_settings.logging_active, 'Error in eq_ebid_services.find_company: %s', True, e)
@@ -114,7 +133,7 @@ def find_company(partner_id, searchParams, ebid_settings):
     success = False
     foundID = ""
     error = ""
-    searchResults = [] #EBIDRequestSearchResult
+    searchResults = []  # EBIDRequestSearchResult
 
     respAsText = ''
     if requestRes.status_code == 200:
@@ -134,7 +153,7 @@ def find_company(partner_id, searchParams, ebid_settings):
                         rate_arr_conv = (str(sub_rate) for sub_rate in rate_arr)
                         rate_arr_txt = '{' + ','.join(rate_arr_conv) + '}'
                     
-                respAsText +=  '[EBID: ' + str(foundID)+ ', Rate: ' + str(rate) + ', Rate_Arr: ' + rate_arr_txt + ']; '
+                respAsText += '[EBID: ' + str(foundID) + ', Rate: ' + str(rate) + ', Rate_Arr: ' + rate_arr_txt + ']; '
                 
                 searchResultItem = EBIDRequestSearchResult(success, "", foundID, rate, rate_arr_txt, rate > ebid_settings.acceptance_rate)
                 searchResults.append(searchResultItem)
@@ -146,12 +165,11 @@ def find_company(partner_id, searchParams, ebid_settings):
         if 'ErrorMessage' in jsonRes and jsonRes['ErrorMessage'] and ebid_settings.logging_active:
             write_to_log(ebid_settings.logging_active, 'Error in eq_ebid_services.find_company:' + jsonRes['ErrorMessage'])
 
-
         if (len(jsonRes) > 0) and 'ErrorMessage' in jsonRes:
-            error =  jsonRes['ErrorMessage']
+            error = jsonRes['ErrorMessage']
         else:
-            error = "Error" #Todo
-    findCompanyResult = GetEBIDRequestResult(partner_id, "res.partner", searchResults, None, success, error, 1, requestTxt,respAsText);#requestRes.text)
+            error = "Error"
+    findCompanyResult = GetEBIDRequestResult(partner_id, "res.partner", searchResults, None, success, error, 1, requestTxt, respAsText)  # requestRes.text)
     
     return findCompanyResult
 
@@ -165,7 +183,7 @@ def get_search_as_you_type_token(ebid_settings):
     except Exception, e:
         findCompanyResult = GetEBIDRequestResult(partner_id, "res.partner", None, None, False,
                                                  'Error [request get_company_for_ebid]: ' + e.message, 1,
-                                                 'ebid: ' + ebid, requestRes.text);
+                                                 'ebid: ' + ebid, requestRes.text)
         return findCompanyResult
 
 
@@ -185,7 +203,7 @@ def get_company_for_ebid(partner_id, ebid, ebid_settings):
         if ebid_settings.logging_active:
             write_to_log(ebid_settings.logging_active, 'Error in eq_ebid_services.get_company_for_ebid: %s', True, e)
 
-        findCompanyResult = GetEBIDRequestResult(partner_id, "res.partner", None, None, False, 'Error [request get_company_for_ebid]: ' + e.message, 1, 'ebid: ' + ebid,requestRes.text);
+        findCompanyResult = GetEBIDRequestResult(partner_id, "res.partner", None, None, False, 'Error [request get_company_for_ebid]: ' + e.message, 1, 'ebid: ' + ebid, requestRes.text)
         return findCompanyResult
      
     error = ''
@@ -201,25 +219,29 @@ def get_company_for_ebid(partner_id, ebid, ebid_settings):
         if 'ErrorMessage' in jsonRes and jsonRes['ErrorMessage'] and ebid_settings.logging_active:
             write_to_log(ebid_settings.logging_active, 'Error in eq_ebid_services.get_company_for_ebid:' + jsonRes['ErrorMessage'])
 
-
         respAsText = requestRes.text
         if (len(jsonRes) > 0) and 'ErrorMessage' in jsonRes:
-            error =  jsonRes['ErrorMessage']
+            error = jsonRes['ErrorMessage']
     
-    search_ebid_result = GetEBIDRequestResult(partner_id, "res.partner", None, search_res, success, error, 2, '',respAsText);
+    search_ebid_result = GetEBIDRequestResult(partner_id, "res.partner", None, search_res, success, error, 2, '', respAsText);
     
     return search_ebid_result
-        
+
+
 class request_result_info:
-    def __init__(self, success, result_count, message, res_id = 0):      
+    def __init__(self, success, result_count, message, res_id=0):
         self.success = success
         self.result_count = result_count
         self.message = message
         self.res_id = res_id
-        
+
+
 class EbidSettings:
-    
-    def __init__(self, user, pw, matchUrl, companyUrl, searchUrl, homepage, logging_active = False, acceptance_rate = 90):
+    """
+    Kapselung der Konfigurationsdaten
+    """
+
+    def __init__(self, user, pw, matchUrl, companyUrl, searchUrl, homepage, logging_active=False, acceptance_rate=90):
         self.user = user
         self.pw = pw 
         self.urlMatch = matchUrl
@@ -228,7 +250,8 @@ class EbidSettings:
         self.homepage = homepage
         self.logging_active = logging_active
         self.acceptance_rate = acceptance_rate
-        
+
+
 class GetEBIDRequestResult:
     def __init__(self, res_id, model, resultList, ebid_search_result, success, errorMsg, request_type, request="", response=""):
         self.res_id = res_id
@@ -244,15 +267,19 @@ class GetEBIDRequestResult:
 
 class EBIDRequestSearchResult:
     
-    def __init__(self, success, errorMsg, ebidno, rate = 0, arr_rate = '', above_rate = False):
+    def __init__(self, success, errorMsg, ebidno, rate=0, arr_rate='', above_rate=False):
         self.requestOK = success
         self.error = errorMsg
         self.ebid_no = ebidno
         self.rate = rate
         self.arr_rate = arr_rate
-        
+
+
 class SearchForEBIDResult:
-    
+    """
+    Hilfsklasse für Speicherung des Ergebnisses einer Suche über die EBID
+    """
+
     def __init__(self, ebidno, values):
         """
         Auslesen der Firmendaten aus Ergebnis des Company-Services
@@ -274,7 +301,6 @@ class SearchForEBIDResult:
         self.zip = ''
         self.country = ''
 
-
         if (values):
             company_name_res = values['companyName']
             address_dict = {}
@@ -282,7 +308,7 @@ class SearchForEBIDResult:
                 # neue API
                 address_dict = values.get('address', {})
                 self.company_name = company_name_res['value']
-                self.ustid_nr = values.get('vatNo','')
+                self.ustid_nr = values.get('vatNo', '')
 
                 if 'phoneNumbers' in values:
                     phoneNumbers = values['phoneNumbers']
@@ -292,11 +318,11 @@ class SearchForEBIDResult:
                             if 'priority' in phoneNo and phoneNo['priority'] != 'Primary':
                                 continue
                             if type == 'Phone':
-                                self.phone =phoneNo['number']
+                                self.phone = phoneNo['number']
                             if type == 'Fax':
-                                self.fax =phoneNo['number']
+                                self.fax = phoneNo['number']
                             if type == 'Mobile':  # ?
-                                self.mobile =phoneNo['number']
+                                self.mobile = phoneNo['number']
 
                 if 'emails' in values:
                     emails = values['emails']
@@ -304,7 +330,7 @@ class SearchForEBIDResult:
                         if 'email' in email:
                             if 'priority' in email and email['priority'] != 'Primary':
                                 continue
-                            self.email =email['email']
+                            self.email = email['email']
 
                 if 'urls' in values:
                     urls = values['urls']
@@ -312,7 +338,7 @@ class SearchForEBIDResult:
                         if 'url' in url:
                             if 'priority' in url and url['priority'] != 'Primary':
                                 continue
-                            self.url =url['url']
+                            self.url = url['url']
 
             else:
                 # alte API
@@ -332,9 +358,3 @@ class SearchForEBIDResult:
             self.city_part = address_dict['cityPart']
             self.zip = address_dict['zip']
             self.country = address_dict['country']
-
-
-
-
-            
-        
