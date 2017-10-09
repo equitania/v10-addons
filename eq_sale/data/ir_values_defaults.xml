@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <function model="ir.values" name="set_default">
+            <value>sale.order</value>
+            <value>eq_show_preview_button</value>
+            <value>False</value>
+        </function>
+
+    </data>
+</odoo>
