@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_eq_ebid_protocol,eq_ebid_protocol,model_eq_ebid_protocol,,1,1,1,0
+access_eq_ebid_protocol_position,eq_ebid_protocol_position,model_eq_ebid_protocol_position,,1,1,1,0

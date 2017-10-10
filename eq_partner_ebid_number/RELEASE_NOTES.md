@@ -1,6 +1,11 @@
 ## Modul eq_partner_ebid_number
 
 
+#### 10.10.2017
+#### Version 1.0.
+##### CHG
+- Defaultrechte gesetzt
+
 
 #### 09.10.2017
 #### Version 1.0.6

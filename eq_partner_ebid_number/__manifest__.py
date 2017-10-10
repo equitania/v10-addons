@@ -32,6 +32,7 @@
     #What it Improves e.g Sale, Purchase, Accounting
     'summary': '',
     'data': [
+        'security/ir.model.access.csv',
         'views/partner_view.xml',
         'views/eq_ebid_config_view.xml',
         'views/eq_ebid_check_job.xml',
