@@ -31,7 +31,7 @@
             <field name="view_mode">form</field>
             <field name="target">inline</field>
         </record>
-        <menuitem id="menu_eq_mail_configuration" parent="base.menu_administration"
+        <menuitem id="menu_eq_mail_configuration" parent="base_setup.menu_config"
             sequence="80" action="action_eq_mail_configuration" groups="base.group_erp_manager"/>
     </data>
 </odoo>

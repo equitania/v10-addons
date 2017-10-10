@@ -1,5 +1,13 @@
 ## Modul eq_mail_extension
 
+
+#### 10.10.2017
+#### Version 1.0.25
+##### CHG
+- VEP-146: Modul wandelt WYSIWYG-Editor nicht mehr in Text um
+- Menupunkt "E-Mail Einstellung" verschoben unter "Allgmeine Einstellungen"
+
+
 #### 28.07.2017
 #### Version 1.0.24
 ##### FIX
