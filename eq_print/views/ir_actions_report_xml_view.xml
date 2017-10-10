@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!-- Form View -->
+		<record id="eq_ir_actions_report_xml_form_printer" model="ir.ui.view">
+			<field name="name">eq.ir.actions.report.xml.form.printer</field>
+			<field name="model">ir.actions.report.xml</field>
+			<field name="inherit_id" ref="base.act_report_xml_view" />
+			<field name="arch" type="xml">
+				<field name="report_name" position="after">
+					<field name="eq_direct_print"/>
+				</field>
+			</field>
+		</record>
+
+	</data>
+</openerp>

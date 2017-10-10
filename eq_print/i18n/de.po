@@ -1,0 +1,194 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* eq_print
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0 Build 1511002\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-09 08:41+0000\n"
+"PO-Revision-Date: 2015-12-09 09:43+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: de\n"
+"X-Generator: Poedit 1.8.6\n"
+
+#. module: eq_print
+#: view:eq.print.wiz:eq_print.eq_print_wiz_form_view
+#: view:eq.spooltable:eq_print.eq_spooltable_form_view
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#. module: eq_print
+#: view:eq.spooltable:eq_print.eq_spooltable_search_view
+#: selection:eq.spooltable,state:0
+msgid "Canceled"
+msgstr "Abgebrochen"
+
+#. module: eq_print
+#: field:eq.print.wiz,eq_copies:0 field:eq.spooltable,eq_copies:0
+msgid "Copies"
+msgstr "Kopien"
+
+#. module: eq_print
+#: field:eq.print.wiz,create_uid:0 field:eq.printer,create_uid:0
+#: field:eq.spooltable,create_uid:0
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: eq_print
+#: field:eq.print.wiz,create_date:0 field:eq.printer,create_date:0
+#: field:eq.spooltable,create_date:0
+msgid "Created on"
+msgstr "Erstellt am"
+
+#. module: eq_print
+#: help:ir.actions.report.xml,eq_direct_print:0
+msgid "Currently work only with pentaho reports"
+msgstr "Currently work only with pentaho reports"
+
+#. module: eq_print
+#: field:res.users,eq_default_printer_id:0
+msgid "Default Printer"
+msgstr "Standarddrucken"
+
+#. module: eq_print
+#: model:ir.actions.act_window,name:eq_print.eq_print_wiz_action
+#: field:ir.actions.report.xml,eq_direct_print:0
+msgid "Remote Print"
+msgstr "Druck"
+
+#. module: eq_print
+#: view:eq.spooltable:eq_print.eq_spooltable_search_view
+#: field:eq.spooltable,eq_document_name:0
+msgid "Document Name"
+msgstr "Dokumentenname"
+
+#. module: eq_print
+#: view:eq.spooltable:eq_print.eq_spooltable_search_view
+#: selection:eq.spooltable,state:0
+msgid "Done"
+msgstr "Abgeschlossen"
+
+#. module: eq_print
+#: view:eq.spooltable:eq_print.eq_spooltable_search_view
+msgid "Group By"
+msgstr "Gruppieren nach …"
+
+#. module: eq_print
+#: field:eq.print.wiz,id:0 field:eq.printer,id:0 field:eq.spooltable,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: eq_print
+#: field:eq.print.wiz,write_uid:0 field:eq.printer,write_uid:0
+#: field:eq.spooltable,write_uid:0
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert von"
+
+#. module: eq_print
+#: field:eq.print.wiz,write_date:0 field:eq.printer,write_date:0
+#: field:eq.spooltable,write_date:0
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisier am"
+
+#. module: eq_print
+#: view:eq.spooltable:eq_print.eq_spooltable_search_view
+#: selection:eq.spooltable,state:0
+msgid "Open"
+msgstr "Offen"
+
+#. module: eq_print
+#: field:eq.spooltable,eq_file:0
+msgid "PDF File"
+msgstr "PDF Datei"
+
+#. module: eq_print
+#: field:res.users,eq_printer_ids:0
+msgid "Possible Printers"
+msgstr "Mögliche Drucker"
+
+#. module: eq_print
+#: view:eq.print.wiz:eq_print.eq_print_wiz_form_view
+msgid "Print"
+msgstr "Drucken"
+
+#. module: eq_print
+#: field:ir.actions.report.xml,eq_ir_values_id:0
+msgid "Print Menu"
+msgstr "Druckmenü"
+
+#. module: eq_print
+#: view:eq.print.wiz:eq_print.eq_print_wiz_form_view
+#: field:eq.print.wiz,eq_printer_id:0
+#: view:eq.printer:eq_print.eq_printer_form_view
+#: view:eq.printer:eq_print.eq_printer_tree_view
+#: view:eq.spooltable:eq_print.eq_spooltable_form_view
+#: view:eq.spooltable:eq_print.eq_spooltable_search_view
+#: view:eq.spooltable:eq_print.eq_spooltable_tree_view
+#: field:eq.spooltable,eq_printer_id:0
+#: model:ir.actions.act_window,name:eq_print.eq_printer_action
+#: model:ir.ui.menu,name:eq_print.menu_printer_config
+#: view:res.users:eq_print.eq_view_users_form_printer
+msgid "Printer"
+msgstr "Drucker"
+
+#. module: eq_print
+#: field:eq.printer,eq_name:0
+msgid "Printer Name"
+msgstr "Druckername"
+
+#. module: eq_print
+#: view:eq.spooltable:eq_print.eq_spooltable_search_view
+#: selection:eq.spooltable,state:0
+msgid "Printing"
+msgstr "Wird gedruckt"
+
+#. module: eq_print
+#: field:ir.actions.report.xml,eq_report_wiz_action:0
+msgid "Report Wizard Action"
+msgstr "Report Wizard Action"
+
+#. module: eq_print
+#: view:eq.spooltable:eq_print.eq_spooltable_search_view
+msgid "Search Spooltable"
+msgstr "Suche Spooltabelle"
+
+#. module: eq_print
+#: model:ir.actions.act_window,name:eq_print.eq_spooltable_action
+#: model:ir.ui.menu,name:eq_print.menu_spooltable
+#: model:ir.ui.menu,name:eq_print.menu_spooltable_config
+msgid "Spooltable"
+msgstr "Spooltabelle"
+
+#. module: eq_print
+#: view:eq.spooltable:eq_print.eq_spooltable_search_view
+#: field:eq.spooltable,state:0
+msgid "State"
+msgstr "Status"
+
+#. module: eq_print
+#: view:eq.printer:eq_print.eq_printer_form_view
+msgid "Usable for Users"
+msgstr "Auswahl für Benutzer"
+
+#. module: eq_print
+#: field:eq.print.wiz,eq_user_id:0
+#: view:eq.spooltable:eq_print.eq_spooltable_search_view
+#: field:eq.spooltable,eq_user_id:0
+msgid "User"
+msgstr "Benutzer"
+
+#. module: eq_print
+#: field:eq.printer,eq_user_ids:0 model:ir.model,name:eq_print.model_res_users
+msgid "Users"
+msgstr "Benutzer"
+
+#. module: eq_print
+#: view:eq.print.wiz:eq_print.eq_print_wiz_form_view
+msgid "or"
+msgstr "oder"

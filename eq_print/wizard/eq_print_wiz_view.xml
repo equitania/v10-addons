@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Form View -->
+		<record id="eq_print_wiz_form_view" model="ir.ui.view">
+			<field name="name">eq.print.wiz.form.view</field>
+			<field name="model">eq.print.wiz</field>
+			<field name="arch" type="xml">
+				<form string="Printer" version="7.0">
+					<group colspan="4">
+						<group>
+							<field name="eq_printer_id" domain="[('eq_user_ids', 'in', eq_user_id)]"/>
+						</group>
+						<group>
+							<field name="eq_copies" />
+							<field name="eq_user_id" invisible="1"/>
+						</group>
+					</group>
+					<footer>
+						<button name="print_document" string="Print" type="object" /> or <button special="cancel" string="Cancel" class="oe_link"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+
+		<!-- Action -->
+		<record id="eq_print_wiz_action" model="ir.actions.act_window">
+			<field name="name">Remote Print</field>
+			<field name="res_model">eq.print.wiz</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="eq_print_wiz_form_view" />
+			<field name="target">new</field>
+		</record>
+		
+	</data>
+</openerp>

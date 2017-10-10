@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!-- Form View -->
+		<record id="eq_view_users_form_printer" model="ir.ui.view">
+			<field name="name">eq.view.users.form.printer</field>
+			<field name="model">res.users</field>
+			<field name="inherit_id" ref="base.view_users_form" />
+			<field name="arch" type="xml">
+				<notebook position="inside">
+					<page string="Printer">
+						<group>
+							<field name="eq_default_printer_id" />
+							<field name="eq_printer_ids" />
+						</group>
+					</page>
+				</notebook>
+			</field>
+		</record>
+
+	</data>
+</openerp>

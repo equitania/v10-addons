@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<!-- Search View -->
+		<record id="eq_spooltable_search_view" model="ir.ui.view">
+			<field name="name">eq.spooltable.search.view</field>
+			<field name="model">eq.spooltable</field>
+			<field name="arch" type="xml">
+				<search string="Search Spooltable">
+                    <field name="eq_document_name"/>
+					<field name="eq_printer_id"/>
+					<field name="eq_user_id"/>
+					<field name="eq_copies"/>
+					<field name="create_date"/>
+					<field name="state"/>
+                    <separator/>						
+					<filter string="Open" name="filter_open" domain="[('state','=', 'open')]"/>
+					<filter string="Printing" name="filter_print" domain="[('state','=', 'print')]"/>
+					<filter string="Done" name="filter_done" domain="[('state','=', 'done')]"/>
+					<filter string="Canceled" name="filter_cancel" domain="[('state','=', 'cancel')]"/>
+                    <separator/>					
+					<group expand="0" string="Group By">
+					    <filter string="User" context="{'group_by' : 'eq_user_id'}"/>
+					    <filter string="Printer" context="{'group_by' : 'eq_printer_id'}"/>
+					    <filter string="Document Name" context="{'group_by' : 'eq_document_name'}"/>
+					    <filter string="State" context="{'group_by': 'state'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- Tree View -->
+		<record id="eq_spooltable_tree_view" model="ir.ui.view">
+			<field name="name">eq.spooltable.tree.view</field>
+			<field name="model">eq.spooltable</field>
+			<field name="arch" type="xml">
+				<tree string="Printer">
+					<field name="eq_document_name" />
+					<field name="eq_printer_id" />
+					<field name="eq_copies" />
+					<field name="eq_user_id" />
+					<field name="create_date" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- Form View -->
+		<record id="eq_spooltable_form_view" model="ir.ui.view">
+			<field name="name">eq.spooltable.form.view</field>
+			<field name="model">eq.spooltable</field>
+			<field name="arch" type="xml">
+				<form string="Printer" version="7.0">
+					<header>
+						<button name="do_cancel" string="Cancel" type="object"
+							states="open" />
+						<button name="do_reopen" string="Cancel" type="object"
+							states="cancel,done" />
+						<button name="do_done" string="Cancel" type="object"
+							states="print" />
+						<field name="state" widget="statusbar" statusbar_visible="open,print,done"
+							statusbar_colors='{"cancel":"grey","open":"blue"}' readonly="1" />
+					</header>
+					<sheet>
+						<group colspan="4">
+							<group>
+								<field name="eq_document_name" />
+								<field name="eq_printer_id" />
+								<field name="eq_copies" />
+							</group>
+							<group>
+								<field name="create_date" readonly="1"/>
+								<field name="eq_user_id" />
+								<field name="eq_file" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- Action -->
+		<record id="eq_spooltable_action" model="ir.actions.act_window">
+			<field name="name">Spooltable</field>
+			<field name="res_model">eq.spooltable</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem id="menu_spooltable" name="Spooltable"
+			parent="base_setup.menu_config" sequence="5" />
+		<menuitem id="menu_spooltable_config" name="Spooltable"
+			parent="menu_spooltable" action="eq_spooltable_action" sequence="10" />
+	</data>
+</openerp>
