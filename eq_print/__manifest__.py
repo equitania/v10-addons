@@ -21,7 +21,7 @@
 
 {
     'name': 'Equitania Printing',
-    'version': '1.0.10',
+    'version': '1.0.1',
     'summary': """
         Equitania Printing
     """,
