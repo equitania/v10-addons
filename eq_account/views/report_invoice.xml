@@ -731,6 +731,10 @@
                                 </span>
                             </p>
                         </div>-->
+
+                        <p t-if="o.payment_term_id">
+                            <!-- Diesen Container bitte nicht löschen, er wird vom OCA Modul account_payment_partner benötigt. JIRA Ticket OE10-10 -->
+                        </p>
                         <div class="oe_structure"/>
                     </div>
                 </t>

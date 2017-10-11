@@ -1,5 +1,11 @@
 ## Modul eq_account
 
+#### 11.10.2017
+#### Version 1.0.20
+##### ADD
+- In den Rechnungsreport ein p-Element mit einer Abfrage auf die payment_term_id hinzugefügt, welcher für die fehlerfreie Installation von dem OCA-Modul
+account_payment_partner notwendig ist.
+
 #### 05.09.2017
 #### Version 1.0.19
 ##### FIX
