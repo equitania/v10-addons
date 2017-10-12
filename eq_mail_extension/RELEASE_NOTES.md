@@ -1,5 +1,9 @@
 ## Modul eq_mail_extension
 
+#### 12.10.2017
+#### Version 1.0.26
+##### CHG
+- Ab jetzt wird auch Betreff der E-Mail korrekt gesetzt
 
 #### 10.10.2017
 #### Version 1.0.25
