@@ -182,6 +182,7 @@ class eq_mail_mail(models.Model):
             default_mail_address = False
 
         for mail in self.sudo().browse(self.ids):
+            subject = mail.subject              # hier müssen wir Betreff extra holen
             try:
                 # TDE note: remove me when model_id field is present on mail.message - done here to avoid doing it multiple times in the sub method
                 if mail.model:
@@ -268,7 +269,8 @@ class eq_mail_mail(models.Model):
                         msg = ir_mail_server.build_email(
                             email_from=default_mail_address,
                             email_to=email.get('email_to'),
-                            subject=email.get('subject'),
+                            #subject=email.get('subject'),                  # alte Version
+                            subject = subject,                              # neue Version - nur so können wir Betreff korrekt übergeben
                             body=email.get('body'),
                             body_alternative=email.get('body_alternative'),
                             email_cc=tools.email_split(mail.email_cc),
