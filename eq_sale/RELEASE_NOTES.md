@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 11.10.2017
+#### Version 1.0.49
+##### FIX
+- Da das Beschreibungsfeld in der Sale.Order.Line ein required Feld ist wird hier ein Leerzeichen gesetzt, sobald das ausgewählte Produkt keine Produktbeschreibung besitzt.
+
 #### 09.10.2017
 #### Version 1.0.48
 ##### ADD

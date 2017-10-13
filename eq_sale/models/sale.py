@@ -523,6 +523,8 @@ class eq_sale_order_line(models.Model):
 
             # Neue Version - Beispiel: Farbe: Blau, Typ: Klein
             self.name = self.generate_line_text_with_attributes(attributes, product_id, eq_use_internal_descriptionion)
+            if self.name == '':
+                self.name = ' '
 
         # vals['value']['delay'] = product_id.sale_delay
         return vals
