@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 17.10.2017
+#### Version 1.0.50
+##### FIX
+- Dependency zu 'website_quote' hinzugefügt.
+
 #### 11.10.2017
 #### Version 1.0.49
 ##### FIX
