@@ -1,5 +1,10 @@
 ## Modul eq_crm
 
+#### 17.10.2017
+#### Version 1.0.3
+##### CHG
+- CRM Equitania Felder werden jetzt beim Erstellen eines Partners aus einer Chance heraus berücksichtigt.
+
 #### 28.07.2017
 #### Version 1.0.2
 ##### CHG
