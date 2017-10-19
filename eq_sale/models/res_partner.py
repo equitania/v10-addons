@@ -92,7 +92,7 @@ class res_partner(models.Model):
                 # TODO - führt zu einem Fehler - Expected singleton: res.partner
                 #name = name + "\n" + self._display_address(record, without_company = True)  # record
                 name = name + "\n" + self._eq_display_address(record, without_company=True)
-                log(name)
+                #log(name)
 
             #name = name.replace('\n\n','\n')
             #name = name.replace('\n\n','\n')

@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 19.10.2017
+#### Version 1.0.51
+##### CHG
+- Logger deaktiviert. Ab jetzt zeigen wir die Debuginfos in der Konsole nicht mehr an
+
 #### 17.10.2017
 #### Version 1.0.50
 ##### FIX
