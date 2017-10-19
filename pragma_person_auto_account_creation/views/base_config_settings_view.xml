@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_account_config_settings">
+            <field name="name">pragma_person_auto_account_creation.view_account_config_settings</field>
+            <field name="model">account.config.settings</field>
+            <field name="inherit_id" ref="account.view_account_config_settings"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group[last()]" position="after">
+                    <separator
+                            string="Automatische Anlage (Debitoren-, Kreditorenkonto, Kundennummer, Lieferantennummer)"/>
+                    <group name="auto_datev">
+                        <label for="id" string="Configuration"/>
+                        <div>
+                            <div>
+                                <field name="default_auto_create" class="oe_inline"/>
+                                <label for="default_auto_create" string="Automatisches Anlegen aktivieren"/>
+                            </div>
+                            <separator/>
+                            <div name="default_auto_customer_ref">
+                                <field name="default_auto_customer_ref" class="oe_inline"/>
+                                <label for="default_auto_customer_ref"
+                                       string="Automatische Kundennummern aktivieren"/>
+                                <div name="auto_customer_ref_by_account">
+                                    <field name="auto_customer_ref_by_account" class="oe_inline"/>
+                                    <label for="auto_customer_ref_by_account" string="Kundennummer = Debitorkonto"/>
+                                </div>
+                            </div>
+                            <separator/>
+                            <div name="default_auto_supplier_ref">
+                                <field name="default_auto_supplier_ref" class="oe_inline"/>
+                                <label for="default_auto_supplier_ref"
+                                       string="Automatische Lieferantennummern aktivieren"/>
+                                <div name="auto_supplier_ref_by_account">
+                                    <field name="auto_supplier_ref_by_account" class="oe_inline"/>
+                                    <label for="auto_supplier_ref_by_account"
+                                           string="Lieferantennummer = Kreditorkonto"/>
+                                </div>
+                            </div>
+                            <separator/>
+                            <div name="receivable_parent_id">
+                                <label for="receivable_parent_id" string="Debitoren Oberkonto"/>
+                                <field name="receivable_parent_id" domain="[('user_type_id.type', '=', 'receivable')]"
+                                       string="Debitoren Oberkonto" class="oe_inline"/>
+                            </div>
+                            <div name="payable_parent_id">
+                                <label for="payable_parent_id" string="Kreditoren Oberkonto"/>
+                                <field name="payable_parent_id" domain="[('user_type_id.type', '=', 'payable')]"
+                                       string="Kreditoren Oberkonto" class="oe_inline"/>
+                            </div>
+                        </div>
+                    </group>
+                </xpath>
+                <xpath expr="//div[@name='default_auto_customer_ref']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('default_auto_create','=',False)]}</attribute>
+                </xpath>
+                <xpath expr="//div[@name='auto_customer_ref_by_account']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('default_auto_customer_ref','=',False)]}</attribute>
+                </xpath>
+                <xpath expr="//div[@name='default_auto_supplier_ref']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('default_auto_create','=',False)]}</attribute>
+                </xpath>
+                <xpath expr="//div[@name='auto_supplier_ref_by_account']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('default_auto_supplier_ref','=',False)]}</attribute>
+                </xpath>
+                <xpath expr="//div[@name='receivable_parent_id']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('default_auto_create','=',False)]}</attribute>
+                </xpath>
+                <xpath expr="//div[@name='payable_parent_id']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('default_auto_create','=',False)]}</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

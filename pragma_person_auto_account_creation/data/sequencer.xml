@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<odoo>
+    <data noupdate="1">
+        <record id="sequence_account_payable_code" model="ir.sequence">
+            <field name="name">Account Payable Number</field>
+            <field name="code">payable.account.number</field>
+            <field name="prefix"></field>
+            <field name="padding" eval="5"/>
+            <field name="number_next" eval="70000"/>
+        </record>
+
+        <record id="sequence_account_receivable_code" model="ir.sequence">
+            <field name="name">Account Receivable Number</field>
+            <field name="code">receivable.account.number</field>
+            <field name="prefix"></field>
+            <field name="padding" eval="5"/>
+            <field name="number_next" eval="10000"/>
+        </record>
+
+        <record id="sequence_customer_number" model="ir.sequence">
+            <field name="name">Customer Number</field>
+            <field name="code">customer.number</field>
+            <field name="prefix"></field>
+            <field name="padding" eval="6"/>
+        </record>
+
+        <record id="sequence_supplier_number" model="ir.sequence">
+            <field name="name">Supplier Number</field>
+            <field name="code">supplier.number</field>
+            <field name="prefix"></field>
+            <field name="padding" eval="6"/>
+        </record>
+    </data>
+</odoo>

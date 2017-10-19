@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="pragma_person_auto_account_creation.view_partner_form">
+            <field name="name">pragma_person_auto_account_creation.view_partner_form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='ref']" position="after">
+                    <field name="auto_ref" invisible="1"/>
+                    <field name="default_auto_customer_ref" invisible="1"/>
+                    <field name="default_auto_supplier_ref" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='ref']" position="attributes">
+                    <attribute name="attrs">{'readonly':[('auto_ref','=',True)]}</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
