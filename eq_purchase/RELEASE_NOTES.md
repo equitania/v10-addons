@@ -1,5 +1,10 @@
 ## Modul eq_purchase
 
+#### 25.10.2017
+#### Version 1.0.21
+##### FIX
+- Ticket 4952: Angebotsanfrage ohne Positionen kann jetzt gelöscht werden.
+
 #### 18.09.2017
 #### Version 1.0.20
 ##### CHG

@@ -21,6 +21,8 @@
 
 from odoo import models, fields, api, _
 import odoo.addons.decimal_precision as dp
+import datetime
+from openerp.tools import DEFAULT_SERVER_DATE_FORMAT as OE_DFORMAT
 
 
 class eq_purchase_order(models.Model):
@@ -37,6 +39,19 @@ class eq_purchase_order(models.Model):
 
     eq_use_page_break_after_header = fields.Boolean(string='Page break after header text')
     eq_use_page_break_before_footer = fields.Boolean(string='Page break before footer text')
+
+
+    @api.depends('order_line.date_planned')
+    def _compute_date_planned(self):
+        for order in self:
+            min_date = False
+            for line in order.order_line:
+                if not min_date or line.date_planned < min_date:
+                    min_date = line.date_planned
+            if min_date:
+                order.date_planned = min_date
+            else:
+                order.date_planned = order.date_order
 
     @api.onchange('partner_id')
     def onchange_partner_id(self):
