@@ -172,6 +172,23 @@ class ResPartner(models.Model):
         #     vals['ref'] = self.env['ir.sequence'].get('customer.sequence.number')
         self.is_code_valid(code, acctype)
 
+        # EQ - unsere Version
+        if 'company_name' in vals:
+            if vals['company_name']:
+                if 'eq_firstname' in vals:
+                    if vals['eq_firstname']:
+                        name = vals['company_name'] + ', ' + vals['eq_firstname'] + ' ' + name
+                else:
+                    name = vals['company_name'] + ', ' + name
+            else:
+                if 'eq_firstname' in vals:
+                    if vals['eq_firstname']:
+                        name = vals['eq_firstname'] + ' ' + name
+        else:
+            if 'eq_firstname' in vals:
+                if vals['eq_firstname']:
+                    name = vals['eq_firstname'] + ' ' + name
+
         if self.account_exists(acctype, name):
             raise ValidationError(_('An account for %s already exists!') % (name))
 
