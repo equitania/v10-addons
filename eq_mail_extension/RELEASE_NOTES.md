@@ -1,5 +1,10 @@
 ## Modul eq_mail_extension
 
+#### 06.11.2017
+#### Version 1.0.27
+##### ADD
+- Mail Template hinzugefügt 'Systembenachrichtigung'.
+
 #### 12.10.2017
 #### Version 1.0.26
 ##### CHG
