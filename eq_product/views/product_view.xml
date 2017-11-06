@@ -121,6 +121,7 @@
                 <!-- add only our 2 main fields and remove default_code..will be added below -->
 
                 <!-- code - Article no. -->
+                <field name="default_code" position="replace"/>
                 <xpath expr="//div[@class='oe_title']/h1" position="after">
                     <field name="default_code" placeholder="Article No."/>
                 </xpath>
@@ -155,6 +156,17 @@
 
             </field>
         </record>
+
+         <record id="eq_product_template_tree_view" model="ir.ui.view">
+            <field name="name">eq.product.template.tree.view</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_tree_view"/>
+            <field name="arch" type="xml">
+                <field name="default_code" position="replace">
+                    <field name="default_code" string="Default Code"/>
+                </field>
+            </field>
+         </record>
 
     </data>
 </odoo>

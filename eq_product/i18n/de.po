@@ -159,3 +159,8 @@ msgstr "Zeichnungsnummer"
 #: sql_constraint:product.template:0
 msgid "This Product No. is already in use!"
 msgstr "Diese Artikelnummer wird bereits verwendet! Bitte verwenden Sie eine andere Artikelnummer!"
+
+#. module: eq_product
+#: model:ir.ui.view,arch_db:eq_product.eq_product_template_tree_view
+msgid "Default Code"
+msgstr "Artikelnr."

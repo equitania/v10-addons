@@ -1,5 +1,11 @@
 ## Modul eq_product
 
+#### 06.11.2017
+#### Version 1.0.15
+##### FIX
+- Feld 'default_code' wurde bei dem Modell product.product zusätzlich eingefügt, wodurch eine Diskrepanz entstanden ist.
+- Tree View Product Template Interne Referenz in 'Artieklnr.' umbenannt.
+
 #### 31.08.2017
 #### Version 1.0.13
 ##### ADD
