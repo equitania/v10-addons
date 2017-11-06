@@ -1,6 +1,11 @@
 ## Modul eq_mail_extension
 
 #### 06.11.2017
+#### Version 1.0.28
+##### CHG
+- Es wird nur das eingefügte Template zuvor entfernt.
+
+#### 06.11.2017
 #### Version 1.0.27
 ##### ADD
 - Mail Template hinzugefügt 'Systembenachrichtigung'.
