@@ -1,5 +1,10 @@
 ## Modul eq_purchase
 
+#### 06.11.2017
+#### Version 1.0.22
+##### ADD
+- Mail Template 'RFQ und Bestellung' hinzugefügt.
+
 #### 25.10.2017
 #### Version 1.0.21
 ##### FIX
