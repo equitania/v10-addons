@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 06.11.2017
+#### Version 1.0.52
+##### ADD
+- Mail Template 'Sale order' hinzugefügt.
+
 #### 19.10.2017
 #### Version 1.0.51
 ##### CHG

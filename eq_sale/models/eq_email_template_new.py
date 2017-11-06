@@ -19,29 +19,22 @@
 #
 ##############################################################################
 
-{
-    'name': "Equitania Sale",
-    'license': 'AGPL-3',
-    'version': '1.0.52',
-    'category': 'sale',
-    'description': """Extensions for sale""",
-    'author': 'Equitania Software GmbH',
-    'summary': 'Sale Extension',
-    'website': 'www.myodoo.de',
-    "depends" : ['base', 'base_setup', 'sale', 'product', 'sales_team', 'sale_stock', 'delivery', 'eq_res_partner', 'eq_base_report','website_quote'],
-    'data': [
-            'security/equitania_security.xml',
-            'security/ir.model.access.csv',
-            'data/email_template_function.xml',
-            'data/decimal_precision.xml',
-            'data/ir_values_defaults.xml',
-            'data/sales_order_send_by_email.xml',
-            'views/report_sale_order.xml',
-            'views/product_view.xml',
-            'views/res_partner_view.xml',
-            'views/sale_views.xml',
-            'views/sale_layout_category_view.xml',
-             ],
-    "active": False,
-    "installable": True
-}
+from odoo import http, api, fields, models
+import logging
+
+_logger = logging.getLogger(__name__)
+
+class eq_install_func(models.Model):
+    """
+        Hilfsklasse mit Funktionen, die wir bei der Installation des Modules ausführen wollen..z.B. Defalt Email-Vorlagen löschen
+    """
+    _name = "eq_install_func"
+
+    def _eq_delete_default_templates(self):
+        """
+        Wir löschen hier Default E-Mail Vorlage für die Bestellbestätigung, die wir durch unsere Version ersetzen
+        """
+        _logger.info("** Deleting default email templates **")
+        email_templates = self.env['mail.template'].sudo().search([('eq_email_template_version','=',False)])
+        for record in email_templates:
+            record.unlink()
