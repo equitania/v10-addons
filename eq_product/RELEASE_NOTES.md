@@ -1,6 +1,11 @@
 ## Modul eq_product
 
 #### 06.11.2017
+#### Version 1.0.16
+##### FIX
+- Artikelnummer in Produktnummer umbenannt.
+
+#### 06.11.2017
 #### Version 1.0.15
 ##### FIX
 - Feld 'default_code' wurde bei dem Modell product.product zusätzlich eingefügt, wodurch eine Diskrepanz entstanden ist.
