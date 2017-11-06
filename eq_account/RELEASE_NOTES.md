@@ -1,5 +1,11 @@
 ## Modul eq_account
 
+#### 06.11.2017
+#### Version 1.0.21
+##### ADD
+- Mail Template hinzugefügt 'Rechnung'.
+
+
 #### 11.10.2017
 #### Version 1.0.20
 ##### ADD
