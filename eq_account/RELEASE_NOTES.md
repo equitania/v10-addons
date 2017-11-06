@@ -1,6 +1,11 @@
 ## Modul eq_account
 
 #### 06.11.2017
+#### Version 1.0.22
+##### CHG
+- Es wird nur das eingefügte Template zuvor entfernt.
+
+#### 06.11.2017
 #### Version 1.0.21
 ##### ADD
 - Mail Template hinzugefügt 'Rechnung'.
