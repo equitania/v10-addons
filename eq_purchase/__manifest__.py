@@ -22,7 +22,7 @@
 {
     'name': "Equitania Einkauf",
     'license': 'AGPL-3',
-    'version': '1.0.23',
+    'version': '1.0.24',
     'category': 'purchase',
     'description': """Extensions for purchase""",
     'author': 'Equitania Software GmbH',
