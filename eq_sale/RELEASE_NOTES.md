@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 07.11.2017
+#### Version 1.0.54
+##### ADD
+- Description angepasst.
+
 #### 06.11.2017
 #### Version 1.0.53
 ##### CHG
