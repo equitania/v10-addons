@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 07.11.2017
+#### Version 1.0.23
+##### CHG
+- Description angepasst
+
 #### 06.11.2017
 #### Version 1.0.22
 ##### CHG
