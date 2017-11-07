@@ -1,5 +1,10 @@
 ## Modul eq_product
 
+#### 07.11.2017
+#### Version 1.0.17
+##### FIX
+- Übersetzung Produktnummer angepasst.
+
 #### 06.11.2017
 #### Version 1.0.16
 ##### FIX

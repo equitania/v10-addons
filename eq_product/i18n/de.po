@@ -161,12 +161,8 @@ msgid "This Product No. is already in use!"
 msgstr "Diese Artikelnummer wird bereits verwendet! Bitte verwenden Sie eine andere Artikelnummer!"
 
 #. module: eq_product
-#: model:ir.ui.view,arch_db:eq_product.eq_product_template_tree_view
-msgid "Default Code"
-msgstr "Produktnr."
-
-#. module: eq_product
 #: model:ir.ui.view,arch_db:eq_product.eq_product_product_form_view
+#: model:ir.ui.view,arch_db:eq_product.eq_product_template_tree_view
 #: model:ir.ui.view,arch_db:eq_product.eq_product_template_only_form_view
 msgid "Product Number"
 msgstr "Produktnummer"

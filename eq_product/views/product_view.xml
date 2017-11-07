@@ -92,7 +92,7 @@
                 <!-- code - Article no. -->
                 <field name="default_code" position="replace"/>
                 <xpath expr="//div[@class='oe_title']/h1" position="after">
-                    <field name="default_code" placeholder="Article Number"/>
+                    <field name="default_code" placeholder="Product Number"/>
                 </xpath>
 
 
@@ -123,7 +123,7 @@
                 <!-- code - Article no. -->
                 <field name="default_code" position="replace"/>
                 <xpath expr="//div[@class='oe_title']/h1" position="after">
-                    <field name="default_code" placeholder="Article Number"/>
+                    <field name="default_code" placeholder="Product Number"/>
                 </xpath>
 
                 <xpath expr="//page[@name='general_information']/group" position="after">
