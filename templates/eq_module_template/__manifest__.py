@@ -22,7 +22,7 @@
 {
     'name': 'Equitania Module Template',
     'license': 'AGPL-3',
-    'version': '1.0.0',
+    'version': '1.0.1',
     'description': """
         Module Template for eq v10 modules
     """,
@@ -33,6 +33,7 @@
     'summary': 'Module Template',
 
     'data': [
+        #"security/ir.model.access.csv"
         "views/templates.xml",
 
     ],
