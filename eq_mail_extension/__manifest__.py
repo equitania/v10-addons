@@ -21,7 +21,7 @@
 
 {
     'name': "Equitania E-Mail-Erweiterung",
-    'version': '1.0.29',
+    'version': '1.0.30',
     'license': 'AGPL-3',
     'category': 'Mail',
     'description': """Using different smptp settings for user's outgoing emails
@@ -31,6 +31,7 @@
     'website': 'www.myodoo.de',
     "depends" : ['base', 'mail', 'base_setup', 'fetchmail'],
     'data': [
+             "security/ir.model.access.csv",
              "data/email_template_function.xml",
              "data/mail_template_data.xml",
              "views/eq_mail_extension_view.xml",

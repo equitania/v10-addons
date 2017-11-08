@@ -1,5 +1,10 @@
 ## Modul eq_mail_extension
 
+#### 08.11.2017
+#### Version 1.0.30
+##### ADD
+- Rechte hinzugefügt.
+
 #### 07.11.2017
 #### Version 1.0.29
 ##### ADD

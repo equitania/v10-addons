@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_eq_mail_password_change_base_user,eq_mail.password_change,model_eq_mail_password_change,base.group_user,1,1,1,0
+access_eq_install_func,access_eq_install_func,model_eq_install_func,base.group_user,1,1,1,1
