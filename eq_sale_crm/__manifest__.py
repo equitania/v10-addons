@@ -20,9 +20,9 @@
 ##############################################################################
 
 {
-    'name': 'Equitania Sale_CRM',
+    'name': 'Equitania Verkauf- & CRM Optimierungen',
     'license': 'AGPL-3',
-    'version': '1.0.2',
+    'version': '1.0.3',
     'description': """
         Extensions for sale_crm
     """,
