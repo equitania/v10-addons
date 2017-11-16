@@ -1,5 +1,10 @@
 ## Modul eq_crm
 
+#### 16.11.2017
+#### Version 1.0.4
+##### CHG
+- Modul umbenannt zu CRM Optimierungen
+
 #### 17.10.2017
 #### Version 1.0.3
 ##### CHG

@@ -20,9 +20,9 @@
 ##############################################################################
 
 {
-    'name': "Equitania CRM",
+    'name': "Equitania CRM Optimierungen",
     'license': 'AGPL-3',
-    'version': '1.0.3',
+    'version': '1.0.4',
     'category': 'crm',
     'description': """Extensions for crm leads""",
     'author': 'Equitania Software GmbH',
