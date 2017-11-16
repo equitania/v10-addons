@@ -20,9 +20,9 @@
 ##############################################################################
 
 {
-    'name': 'Equitania Report Pattern',
+    'name': 'Equitania Dokumenten Bausteine',
     'license': 'AGPL-3',
-    'version': '1.0.24',
+    'version': '1.0.25',
     'description': """
         Improves the odoo document templating, overwrites head- and foot-texttemplates
     """,

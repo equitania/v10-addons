@@ -1,5 +1,10 @@
 ## eq_report_pattern 
 
+#### 16.11.2017
+#### Version 1.0.25
+##### CHG
+- Modul zu "Dokumenten Bausteine" umbenannt
+
 #### 09.10.2017
 #### Version 1.0.24
 ##### CHG
