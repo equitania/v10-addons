@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 16.11.2017
+#### Version 1.0.24
+##### CHG
+- Modul umbenannt in Finanzen (vorher: Account)
+
 #### 07.11.2017
 #### Version 1.0.23
 ##### CHG

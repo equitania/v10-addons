@@ -20,9 +20,9 @@
 ##############################################################################
 
 {
-    'name': "Equitania Account",
+    'name': "Equitania Finanzen",
     'license': 'AGPL-3',
-    'version': '1.0.23',
+    'version': '1.0.24',
     'category': 'account',
     'description': """Extensions for account""",
     'author': 'Equitania Software GmbH',
