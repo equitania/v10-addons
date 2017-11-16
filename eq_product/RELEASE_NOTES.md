@@ -1,5 +1,11 @@
 ## Modul eq_product
 
+
+#### 16.11.2017
+#### Version 1.0.18
+##### CHG
+- Umbenennen des Moduls von Produkt zu Produkt Optimierungen
+
 #### 07.11.2017
 #### Version 1.0.17
 ##### FIX
