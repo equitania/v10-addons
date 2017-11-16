@@ -1,5 +1,10 @@
 ## Modul eq_purchase
 
+#### 16.11.2017
+#### Version 1.0.25
+##### CHG
+- Modul umbenannt zu Einkauf Optimierungen
+
 #### 07.11.2017
 #### Version 1.0.24
 ##### CHG
