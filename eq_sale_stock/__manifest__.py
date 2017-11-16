@@ -20,7 +20,7 @@
 ##############################################################################
 
 {
-    'name': "Equitania Sale Stock",
+    'name': "Equitania Verkauf & Lager",
     'license': 'AGPL-3',
     'version': '1.0.10',
     'category': 'sale_stock',

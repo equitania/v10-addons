@@ -1,6 +1,11 @@
 ## Modul eq_sale_stock
 
 
+#### 16.11.2017
+#### Version 1.0.11
+##### CHG
+- Umbenennung des Moduls von Sale Stock zu Verkauf & Lager
+
 #### 02.08.2017
 #### Version 1.0.10
 ##### CHG
