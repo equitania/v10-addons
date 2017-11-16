@@ -20,9 +20,9 @@
 ##############################################################################
 
 {
-    'name': 'Equitania HR',
+    'name': 'Equitania Personalwesen Optimierungen',
     'license': 'AGPL-3',
-    'version': '1.0.1',
+    'version': '1.0.2',
     'description': """
         Extensions for HR
     """,
