@@ -20,9 +20,9 @@
 ##############################################################################
 
 {
-    'name': 'EQ Report Basis',
+    'name': 'Equitania Ausdrucke Basis',
     'license': 'AGPL-3',
-    'version': '1.0.20',
+    'version': '1.0.21',
     'description': """
         Allgemeine Anpassungen für die Equitania Reports
     """,
