@@ -20,9 +20,9 @@
 ##############################################################################
 
 {
-    'name': 'Equitania Base',
+    'name': 'Equitania Basis',
     'license': 'AGPL-3',
-    'version': '1.0.5',
+    'version': '1.0.6',
     'description': """
         Basic fields for more EQ Modules
     """,
