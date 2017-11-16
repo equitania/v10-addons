@@ -1,5 +1,10 @@
 ## Modul eq_stock
 
+#### 16.11.2017
+#### Version 1.0.7
+##### CHG
+- Modul umbenannt zu Lager Optimierungen
+
 #### 10.08.2017
 #### Version 1.0.6
 ##### CHG
