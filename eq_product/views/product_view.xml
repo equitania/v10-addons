@@ -95,19 +95,19 @@
                     <field name="default_code" placeholder="Product Number"/>
                 </xpath>
 
-
                 <field name="default_code" position="after">
-                    <button name="eq_product_number_update" string="Generate number" type="object"
-                            class="oe_edit_only oe_link oe_inline"/>
+                    <!--
+                    <button name="eq_product_number_update" string="Generate number" type="object" class="oe_edit_only oe_link oe_inline"/>
+                    -->
+                    <div class="oe_edit_only oe_link oe_inline">Number is generated automatically, if not specified</div>
                     <newline/>
                 </field>
+
 
                 <xpath expr="//page[@name='general_information']/group" position="after">
                     <field name="description" placeholder="Describe the product characteristics..." />
                 </xpath>
 
-                <!--<group name="store" position="replace">-->
-                <!--</group>-->
             </field>
         </record>
 
@@ -133,26 +133,14 @@
 
                 <!--Button Generate number-->
 
+
                 <field name="default_code" position="after">
-                    <button name="eq_product_number_update" string="Generate number" type="object"
-                            class="oe_edit_only oe_link oe_inline"/>
+                    <!--
+                    <button name="eq_product_number_update" string="Generate number" type="object" class="oe_edit_only oe_link oe_inline"/>
+                    -->
+                    <div class="oe_edit_only oe_link oe_inline">Number is generated automatically, if not specified</div>
                     <newline/>
                 </field>
-
-                <!--<xpath expr="//div[@class='oe_title']" position="replace">-->
-                <!--<div class="oe_title" style="width: 390px;">-->
-                <!--<h3>-->
-                <!--<div>-->
-                <!--<field name="default_code" class="oe_form_required"/>-->
-                <!--<button name="eq_product_number_update" string="Generate number" type="object" class="oe_edit_only oe_link oe_inline"/>-->
-                <!--<newline/>-->
-                <!--</div>-->
-                <!--&lt;!&ndash; removed standard css class to archive bigger width for name &ndash;&gt;-->
-                <!--<field name="name"  modifiers="{'required': true}"/>-->
-                <!--</h3>-->
-                <!--<field name="attribute_value_ids" widget="many2many_tags"/>-->
-                <!--</div>-->
-                <!--</xpath>-->
 
             </field>
         </record>

@@ -1,5 +1,9 @@
 ## Modul eq_product
 
+#### 17.11.2017
+#### Version 1.0.19
+##### CHG
+- Änderung der Logik für Generierung der Produktnummer
 
 #### 16.11.2017
 #### Version 1.0.18

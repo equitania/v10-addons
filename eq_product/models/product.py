@@ -54,7 +54,6 @@ class eq_product_product(models.Model):
 
     @api.multi
     def eq_product_number_update(self, context):
-        print 'test'
         # Gets the product
         for product in self:
             # product = self # self.env['product.product'].browse(ids)
@@ -194,6 +193,22 @@ class eq_product_template(models.Model):
     #         result['context'] = result['context'][:-1] + ", 'search_default_in_and_out': 1" + result['context'][-1]
     #     return result
 
+    @api.model
+    def create(self, vals):
+        """
+        Unsere Erweiterung der CREATE Methode
+        :param vals:
+        :return:
+        """
+        res = super(eq_product_template, self).create(vals)
+
+        # Nummer wurde nicht eingegeben, wir müssen sie generieren
+        if 'default_code' not in vals or vals['default_code'] is False:
+            self.eq_product_number_update(res)
+            res.barcode = res.default_code
+
+        return res
+
     @api.multi
     def write(self, vals):
         """
@@ -202,6 +217,7 @@ class eq_product_template(models.Model):
         :param vals:
         :return:
         """
+
         if 'standard_price' in vals:
             old_price = self.standard_price
             new_price = vals['standard_price']
@@ -227,17 +243,19 @@ class eq_product_template(models.Model):
         return res
 
     @api.multi
-    def eq_product_number_update(self):
+    def eq_product_number_update(self, res):
         """
         Generierung der Produktnummer in product.template
         :param ids:
         :return:
         """
 
+        if self.id is False:
+            self = res
+
         product_obj = self.env['product.product']
         product = self.env['product.template'].browse(self.id)
         prod_rec = product[0].default_code
-        product_variant = product[0].product_variant_ids[0].id
 
         # Gets the config values for the product number
         ir_values = self.env['ir.values']
