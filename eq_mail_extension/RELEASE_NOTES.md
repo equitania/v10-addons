@@ -1,5 +1,10 @@
 ## Modul eq_mail_extension
 
+#### 20.11.2017
+#### Version 1.0.31
+##### CHG
+- Mail Templates Editor nun Widget Text (Problem wurde festgetsellt, dass es wieder eine Autokorrektur innerhalb von Schleifen gab).
+
 #### 08.11.2017
 #### Version 1.0.30
 ##### ADD
