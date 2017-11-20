@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 20.11.2017
+#### Version 1.0.55
+##### CHG
+- inherit_id entfernt, welche die Warning 'ir.actions.act_window.write() with unknown fields: inherit_id' verursachte.
+
 #### 07.11.2017
 #### Version 1.0.54
 ##### ADD

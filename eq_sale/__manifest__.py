@@ -22,7 +22,7 @@
 {
     'name': "Equitania Sale",
     'license': 'AGPL-3',
-    'version': '1.0.54',
+    'version': '1.0.55',
     'category': 'sale',
     'description': """Extensions for sale""",
     'author': 'Equitania Software GmbH',

@@ -161,7 +161,7 @@
             <field name="domain">[]</field>
             <field name="context">{'default_customer':1, 'search_default_customer':1}</field>
             <field name="filter" eval="True"/>
-             <field name="inherit_id" ref="base.action_partner_customer_form"/>
+             <!--<field name="inherit_id" ref="base.action_partner_customer_form"/>-->
         </record>
 
         <!--Anzeige weiterer Felder in der Treeview-->
