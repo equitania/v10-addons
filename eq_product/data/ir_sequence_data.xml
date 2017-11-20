@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="1">
+		<!-- Definition der Sequenze -->
+        <record id="seq_default_code" model="ir.sequence">
+            <field name="name">Product Number</field>
+            <field name="code">eq_product_no</field>
+            <field name="number_next">000001</field>
+            <field name="padding">6</field>
+            <field eval="1" name="number_increment"></field>
+        </record>
+	</data>
+</odoo>

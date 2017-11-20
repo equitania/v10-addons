@@ -1,5 +1,10 @@
 ## Modul eq_product
 
+#### 20.11.2017
+#### Version 1.0.20
+##### CHG
+- Nummergenerator 'eq_product_no' wird automatisch erzeugt (über XML Datei).
+
 #### 17.11.2017
 #### Version 1.0.19
 ##### CHG
