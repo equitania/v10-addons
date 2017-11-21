@@ -4,7 +4,7 @@
 
         <!-- Invoice Sent By Mail /Rechnung EN-->
         <record id="account.email_template_edi_invoice" model="mail.template">
-            <field name="name">Invoice -  Send by E-Mail</field>
+            <field name="name">Invoice - Send by E-Mail</field>
             <field name="eq_email_template_version">1</field>
             <field name="email_from">${(object.user_id.email and '%s &lt;%s&gt;' % (object.user_id.name, object.user_id.email) or '')|safe}</field>
             <field name="subject">${object.company_id.name} Invoice (Ref ${object.number or 'n/a'})</field>
@@ -88,6 +88,7 @@
 
         <record id="eq_invoice_mail_template_de" model="ir.translation">
             <field name="name">mail.template,body_html</field>
+            <field name="module">account</field>
             <!--<field name="res_id">21</field>-->
 			<field name="res_id" ref="account.email_template_edi_invoice"/>
             <field name="lang">de_DE</field>
@@ -173,6 +174,7 @@
             <field name="lang">de_DE</field>
             <field name="type">model</field>
             <field name="state">translated</field>
+            <field name="module">eq_account</field>
            <field name="value">Rechnung</field></record>
 
 
@@ -181,6 +183,7 @@
 			 <field name="res_id" ref="account.email_template_edi_invoice"/>
              <field name="lang">de_DE</field>
              <field name="state">translated</field>
+             <field name="module">eq_account</field>
             <field name="value">${object.company_id.name} Invoice (Ref ${object.number or 'n/a'})</field>
          </record>
 

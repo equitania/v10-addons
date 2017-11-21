@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 21.11.2017
+#### Version 1.0.25
+##### CHG
+- Löschfunktion mail.templates zu 'account' hinzugefügt.
+
 #### 16.11.2017
 #### Version 1.0.24
 ##### CHG
