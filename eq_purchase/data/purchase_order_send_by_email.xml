@@ -26,18 +26,18 @@
                         <p>Here is a ${object.state in ('draft', 'sent') and 'request for quotation' or 'purchase order confirmation'} from ${object.company_id.name}: </p>
 
                          <p style="border-left: 1px solid #002852; margin-left: 10px;">
-                           &nbsp;&nbsp;<strong>References</strong><br>
-                           &nbsp;&nbsp;Order number: <strong>${object.name}</strong><br>
-                           &nbsp;&nbsp;Order total: <strong>${('%0.2f' % (object.amount_total)).replace(".", ",")} ${object.currency_id.name}</strong><br>
-                           &nbsp;&nbsp;Order date: <strong>${object.date_order}<br></strong><br>
+                          <strong>References</strong><br>
+                           Order number: <strong>${object.name}</strong><br>
+                           Order total: <strong>${('%0.2f' % (object.amount_total)).replace(".", ",")} ${object.currency_id.name}</strong><br>
+                           Order date: <strong>${object.date_order}<br></strong><br>
                            % if object.origin:
-                           &nbsp;&nbsp;Order reference: ${object.origin}<br>
+                           Order reference: ${object.origin}<br>
                            % endif
                            % if object.partner_ref:
-                           &nbsp;&nbsp;Your reference: ${object.partner_ref}<br>
+                           Your reference: ${object.partner_ref}<br>
                            % endif
                            % if object.validator:
-                           &nbsp;&nbsp;Your contact: <a href="mailto:${object.validator.email or ''}?subject=Order%20${object.name}">${object.validator.name}</a>
+                           Your contact: <a href="mailto:${object.validator.email or ''}?subject=Order%20${object.name}">${object.validator.name}</a>
                            % endif
                         </p>
                         <br>
@@ -46,6 +46,7 @@
                         <br>
                         <p>Best regards,</p>
                         <br>
+                         <p>your ${object.company_id.name} Team</p>
                        <br>
                         <!--<div style="width: auto; margin: 0px; padding: 0px;">
                            <h3 style="margin: 0px; padding: 2px 14px; font-size: 16px;">
@@ -104,20 +105,20 @@
                         <p>Sehr geehrte(r) ${object.partner_id.name},</p>
 
                         <p>hiermit senden wir Ihnen die ${object.state in ('draft', 'sent') and 'Angebotsanfrage' or 'Bestellung'} für ${object.company_id.name}: </p>
-                        <p style="border-left: 1px solid #002852; margin-left: 10px;">
-                           &nbsp;&nbsp;<strong>Bestelldetails</strong><br>
-                           &nbsp;&nbsp;Bestellnummer: <strong>${object.name}</strong><br>
-                           &nbsp;&nbsp;Betrag: <strong>${('%0.2f' % (object.amount_total)).replace(".", ",")} ${object.currency_id.name}</strong><br>
+                        <p style="border-left: 1px solid #002852; ">
+                           <strong>Bestelldetails</strong><br>
+                           Bestellnummer: <strong>${object.name}</strong><br>
+                           Betrag: <strong>${('%0.2f' % (object.amount_total)).replace(".", ",")} ${object.currency_id.name}</strong><br>
 
-                           &nbsp;&nbsp;Datum: <strong>${object.date_order}</strong><br>
+                           Datum: <strong>${object.date_order}</strong><br>
                            % if object.origin:
-                           &nbsp;&nbsp;Unsere Referenz: ${object.origin}<br>
+                           Unsere Referenz: ${object.origin}<br>
                            % endif
                            % if object.partner_ref:
-                           &nbsp;&nbsp;Ihre Referenz: ${object.partner_ref}<br>
+                           Ihre Referenz: ${object.partner_ref}<br>
                            % endif
                            % if object.validator:
-                           &nbsp;&nbsp;Ihr Kontakt: <a href="mailto:${object.validator.email or ''}?subject=Order%20${object.name}">${object.validator.name}</a>
+                           &Ihr Kontakt: <a href="mailto:${object.validator.email or ''}?subject=Order%20${object.name}">${object.validator.name}</a>
                            % endif
                         </p>
 
@@ -127,6 +128,7 @@
                         <br>
                         <p>Mit freundlichen Grüßen,</p>
                         <br>
+                         <p>Ihr ${object.company_id.name} Team</p>
                          <br>
                           <br>
                         <!--<div style="width: auto; margin: 0px; padding: 0px;">

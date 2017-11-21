@@ -1,6 +1,11 @@
 ## Modul eq_purchase
 
 #### 21.11.2017
+#### Version 1.0.27
+##### CHG
+- Mailvorlage für Bestellung und RFQ (Angebotsanfrage) bearbeitet (nbsp entfernt; Schlussormel erweitert;)
+
+#### 21.11.2017
 #### Version 1.0.26
 ##### CHG
 - Textänderung in Beschreibung der Params. Kein [equitania] Text mehr

@@ -26,7 +26,7 @@
 
                     <p>Here is a ${object.state in ('draft', 'sent') and 'request for quotation' or 'purchase order confirmation'} from ${object.company_id.name}: </p>
 
-                   <p style="border-left: 1px solid #002852; margin-left: 10px;">
+                   <p style="border-left: 1px solid #002852;">
                        &nbsp;&nbsp;<strong>References</strong><br>
                        &nbsp;&nbsp;RFQ number: <strong>${object.name}</strong><br>
                        &nbsp;&nbsp;RFQ date: ${object.date_order}<br>
@@ -47,6 +47,7 @@
                     <br>
                     <p>Best regards,</p>
                     <br>
+                     <p>your ${object.company_id.name} Team</p>
                    <br>
 
                     <!--<div style="width: auto; margin: 0px; padding: 0px;">
@@ -78,7 +79,7 @@
                         % endif
                         % if object.company_id.website:
                             <div>
-                                Web :&nbsp;<a href="${object.company_id.website}">${object.company_id.website}</a>
+                                Web:&nbsp;<a href="${object.company_id.website}">${object.company_id.website}</a>
                             </div>
                         %endif
                         <p></p>
@@ -106,18 +107,18 @@
                         <p>Sehr geehrte(r) ${object.partner_id.name},</p>
 
                         <p>hiermit erhalten Sie die ${object.state in ('draft', 'sent') and 'Angebotsanfrage' or 'Bestellung'} von ${object.company_id.name}: </p>
-                        <p style="border-left: 1px solid #002852; margin-left: 10px;">
-                           &nbsp;&nbsp;<strong>Referenzen</strong><br>
-                           &nbsp;&nbsp;Angebotsanfrage: <strong>${object.name}</strong><br>
-                           &nbsp;&nbsp;Datum der Anfrage: ${object.date_order}<br>
+                        <p style="border-left: 1px solid #002852;">
+                           <strong>Referenzen</strong><br>
+                           Angebotsanfrage: <strong>${object.name}</strong><br>
+                           Datum der Anfrage: ${object.date_order}<br>
                            % if object.origin:
-                           &nbsp;&nbsp;Unsere Referenz: ${object.origin}<br>
+                           Unsere Referenz: ${object.origin}<br>
                            % endif
                            % if object.partner_ref:
-                           &nbsp;&nbsp;Ihre Referenz: ${object.partner_ref}<br>
+                           Ihre Referenz: ${object.partner_ref}<br>
                            % endif
                            % if object.validator:
-                           &nbsp;&nbsp;Ihr Ansprechpartner: <a href="mailto:${object.validator.email or ''}?subject=Order%20${object.name}">${object.validator.name}</a>
+                           Ihr Ansprechpartner: <a href="mailto:${object.validator.email or ''}?subject=Order%20${object.name}">${object.validator.name}</a>
                            % endif
                         </p>
 
@@ -127,6 +128,8 @@
                         <br>
                         <p>Mit freundlichen Grüßen,</p>
                         <br>
+
+                        <p>Ihr ${object.company_id.name} Team</p>
                          <br>
                           <br>
                         <!--<div style="width: auto; margin: 0px; padding: 0px;">
