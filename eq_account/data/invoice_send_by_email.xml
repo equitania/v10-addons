@@ -27,16 +27,16 @@
 
                     <p>A new invoice is available for you:</p>
 
-                    <p style="border-left: 1px solid #002852; margin-left: 10px;">
-                       &nbsp;&nbsp;<strong>References</strong><br>
-                       &nbsp;&nbsp;Invoice number: <strong>${object.number}</strong><br>
-                       &nbsp;&nbsp;Invoice total: <strong>${("%.2f" % (object.amount_total)).replace(".", ",")} ${object.currency_id.name}</strong><br>
-                       &nbsp;&nbsp;Invoice date:  <strong>${object.date_invoice} </strong><br>
+                    <p style="border-left: 1px solid #002852;">
+                       <strong>References</strong><br>
+                       Invoice number: <strong>${object.number}</strong><br>
+                       Invoice total: <strong>${("%.2f" % (object.amount_total)).replace(".", ",")} ${object.currency_id.name}</strong><br>
+                       Invoice date:  <strong>${object.date_invoice} </strong><br>
                        % if object.origin:
-                       &nbsp;&nbsp;Order reference:  <strong>${object.origin} </strong><br>
+                       Order reference:  <strong>${object.origin} </strong><br>
                        % endif
                        % if object.user_id:
-                       &nbsp;&nbsp;Your contact: ${object.user_id.title.name if object.user_id.title.name else ""} <a href="mailto:${object.user_id.email or ''}?subject=Invoice%20${object.number}"> ${object.user_id.name}</a>
+                      Your contact: ${object.user_id.title.name if object.user_id.title.name else ""} <a href="mailto:${object.user_id.email or ''}?subject=Invoice%20${object.number}"> ${object.user_id.name}</a>
                        % endif
                     </p>
 
@@ -75,7 +75,7 @@
                         % endif
                         % if object.company_id.website:
                             <div>
-                                Web :&nbsp;<a href="${object.company_id.website}">${object.company_id.website}</a>
+                                Web:&nbsp;<a href="${object.company_id.website}">${object.company_id.website}</a>
                             </div>
                         %endif
                         <p></p>-->
@@ -88,7 +88,6 @@
 
         <record id="eq_invoice_mail_template_de" model="ir.translation">
             <field name="name">mail.template,body_html</field>
-            <field name="module">account</field>
             <!--<field name="res_id">21</field>-->
 			<field name="res_id" ref="account.email_template_edi_invoice"/>
             <field name="lang">de_DE</field>
@@ -107,14 +106,14 @@
                     <p>
                   <strong><u>Ihre Rechnungsinformationen</u></strong><br>
                 <br>
-                        &nbsp;&nbsp;Rechnungsnummer: <strong>${object.number}</strong><br>
-                        &nbsp;&nbsp;Rechnungsbetrag: <strong>${("%.2f" % (object.amount_total)).replace(".", ",")} ${object.currency_id.name}</strong><br>
-                        &nbsp;&nbsp;Rechnungsdatum: <strong>${object.date_invoice}</strong><br>
+                        Rechnungsnummer: <strong>${object.number}</strong><br>
+                        Rechnungsbetrag: <strong>${("%.2f" % (object.amount_total)).replace(".", ",")} ${object.currency_id.name}</strong><br>
+                        Rechnungsdatum: <strong>${object.date_invoice}</strong><br>
                         % if object.origin:
-                        &nbsp;&nbsp;Bestellnummer: <strong>${object.origin}</strong><br>
+                        Bestellnummer: <strong>${object.origin}</strong><br>
                         % endif
                         % if object.user_id:
-                        &nbsp;&nbsp;Ihr Ansprechpartner:  ${object.user_id.title.name if object.user_id.title.name else ""}<a href="mailto:${object.user_id.email or ''}?subject=Invoice%20${object.number}">${object.user_id.name}</a>
+                        Ihr Ansprechpartner:  ${object.user_id.title.name if object.user_id.title.name else ""}<a href="mailto:${object.user_id.email or ''}?subject=Invoice%20${object.number}">${object.user_id.name}</a>
                         % endif
                     </p>
 
@@ -174,7 +173,6 @@
             <field name="lang">de_DE</field>
             <field name="type">model</field>
             <field name="state">translated</field>
-            <field name="module">eq_account</field>
            <field name="value">Rechnung</field></record>
 
 
@@ -183,7 +181,6 @@
 			 <field name="res_id" ref="account.email_template_edi_invoice"/>
              <field name="lang">de_DE</field>
              <field name="state">translated</field>
-             <field name="module">eq_account</field>
             <field name="value">${object.company_id.name} Invoice (Ref ${object.number or 'n/a'})</field>
          </record>
 

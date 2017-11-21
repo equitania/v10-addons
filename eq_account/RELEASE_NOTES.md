@@ -1,5 +1,11 @@
 ## Modul eq_account
 
+
+#### 21.11.2017
+#### Version 1.0.26
+##### CHG
+- invoice_send_by_email.xml bearbeitet (nbsp entfernt)
+
 #### 21.11.2017
 #### Version 1.0.25
 ##### CHG
