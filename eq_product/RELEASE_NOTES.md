@@ -1,5 +1,10 @@
 ## Modul eq_product
 
+#### 21.11.2017
+#### Version 1.0.21
+##### CHG
+- Logik für Produktnummererzeugung in Datenmodell 'product.product' verschoben (vorher 'product.template').
+
 #### 20.11.2017
 #### Version 1.0.20
 ##### CHG
