@@ -33,13 +33,13 @@ msgstr "Beschaffungsauftrag"
 
 #. module: eq_purchase
 #: model:ir.model.fields,field_description:eq_purchase.field_purchase_config_settings_default_show_planned_date
-msgid "Show the Planned Date on the Purchase Order [equitania]"
-msgstr "Das geplante Datum in der Bestellung anzeigen [equitania]"
+msgid "Show the Planned Date on the Purchase Order [eq_purchase]"
+msgstr "Das geplante Datum in der Bestellung anzeigen [eq_purchase]"
 
 #. module: eq_purchase
 #: model:ir.model.fields,field_description:eq_purchase.field_purchase_config_settings_default_use_calendar_week
-msgid "Show Calendar Week for Planned Date [equitania]"
-msgstr "Das geplante Datum als Kalenderwoche anzeigen [equitania]"
+msgid "Show Calendar Week for Planned Date [eq_purchase]"
+msgstr "Das geplante Datum als Kalenderwoche anzeigen [eq_purchase]"
 
 #. module: eq_purchase
 #: model:ir.model.fields,field_description:eq_purchase.field_purchase_order_show_planned_date
@@ -58,8 +58,8 @@ msgstr "Das geplante Datum wird als Kalenderwoche angezeigt."
 
 #. module: eq_purchase
 #: model:ir.model.fields,field_description:eq_purchase.field_purchase_order_use_calendar_week
-msgid "Use Calendar Week for Planned Date [equitania]"
-msgstr "Kalenderwoche anzeigen [equitania]"
+msgid "Use Calendar Week for Planned Date [eq_purchase]"
+msgstr "Kalenderwoche anzeigen [eq_purchase]"
 
 #. module: eq_purchase
 #: model:ir.ui.view,arch_db:eq_purchase.eq_view_purchase_config_settings_report_settings

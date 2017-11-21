@@ -35,7 +35,7 @@ class eq_purchase_order(models.Model):
 
     # Report
     show_planned_date = fields.Boolean(string='Show Planned Date')
-    use_calendar_week = fields.Boolean('Use Calendar Week for Planned Date [equitania]')
+    use_calendar_week = fields.Boolean('Use Calendar Week for Planned Date [eq_purchase]')
 
     eq_use_page_break_after_header = fields.Boolean(string='Page break after header text')
     eq_use_page_break_before_footer = fields.Boolean(string='Page break before footer text')
@@ -123,10 +123,10 @@ class eq_purchase_configuration_address(models.TransientModel):
         }
 
 
-    default_show_planned_date = fields.Boolean(string='Show the Planned Date on the Purchase Order [equitania]',
+    default_show_planned_date = fields.Boolean(string='Show the Planned Date on the Purchase Order [eq_purchase]',
                                                help='The planned date will be shown in the Purchase Order',
                                                default_model='purchase.order')
-    default_use_calendar_week = fields.Boolean('Show Calendar Week for Planned Date [equitania]',
+    default_use_calendar_week = fields.Boolean('Show Calendar Week for Planned Date [eq_purchase]',
                                                 help='The planned date will be shown as a calendar week',
                                                 default_model='purchase.order')
 

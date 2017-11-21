@@ -1,5 +1,10 @@
 ## Modul eq_purchase
 
+#### 21.11.2017
+#### Version 1.0.26
+##### CHG
+- Textänderung in Beschreibung der Params. Kein [equitania] Text mehr
+
 #### 16.11.2017
 #### Version 1.0.25
 ##### CHG
