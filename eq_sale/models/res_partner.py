@@ -263,6 +263,5 @@ class eq_partner_extension_base_config_settings(models.TransientModel):
     #         'default_reset_passwort': reset,
     #     }
 
-    default_creator_saleperson = fields.Boolean('The creator of the address dataset will be set automatically as sales person. [equitania]')
-    # 'default_reset_passwort': fields.boolean('Send a reset-password email, if a new user will created. [equitania]')
+    default_creator_saleperson = fields.Boolean('The creator of the address dataset will be set automatically as sales person. [eq_sale]')
 

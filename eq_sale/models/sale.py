@@ -217,7 +217,7 @@ class eq_sale_order_extension(models.Model):
 
     # Report
     show_delivery_date = fields.Boolean(string='Show Delivery Date')
-    use_calendar_week = fields.Boolean('Use Calendar Week for Delivery Date[equitania]')
+    use_calendar_week = fields.Boolean('Use Calendar Week for Delivery Date[eq_sale]')
 
     @api.depends('order_line.price_total')
     def _amount_all(self):
@@ -365,26 +365,26 @@ class eq_sale_configuration_address(models.TransientModel):
 
 
     default_show_address = fields.Boolean(
-            string='Show street and city in the partner search of the Sale and Purchase Order [equitania]',
+            string='Show street and city in the partner search of the Sale and Purchase Order [eq_sale]',
             help="This adds the street and the city to the results of the partner search of the Sale and Purchase Order.")
-    default_search_only_company = fields.Boolean(string='Only Search for Companies [equitania]',
+    default_search_only_company = fields.Boolean(string='Only Search for Companies [eq_sale]',
                                                       help="Only Companies will be shown in the Customer search of the Sale and Purchase Order.")
-    group_product_rrp = fields.Boolean(string='Show RRP for products [equitania]', implied_group='eq_sale.group_product_rrp')
-    default_show_delivery_date = fields.Boolean(string='Show the Delivery Date on the Sale Order [equitania]',
+    group_product_rrp = fields.Boolean(string='Show RRP for products [eq_sale]', implied_group='eq_sale.group_product_rrp')
+    default_show_delivery_date = fields.Boolean(string='Show the Delivery Date on the Sale Order [eq_sale]',
                                                  help='The delivery date will be shown in the Sale Order',
                                                  default_model='sale.order')
-    default_use_calendar_week = fields.Boolean('Show Calendar Week for Delivery Date [equitania]',
+    default_use_calendar_week = fields.Boolean('Show Calendar Week for Delivery Date [eq_sale]',
                                                 help='The delivery date will be shown as a calendar week',
                                                 default_model='sale.order')
-    default_eq_use_internal_description = fields.Boolean('Use internal description for sale orders [equitania]',
+    default_eq_use_internal_description = fields.Boolean('Use internal description for sale orders [eq_sale]',
                                                           help='The internal description will be used for sale orders not the sale description',
                                                           default_model='sale.order.line')
-    default_eq_show_preview_button = fields.Boolean(string="Show Preview-Button in Sale Order [equitania]")  # Angebots-Preview Button
-    eq_use_text_from_order = fields.Boolean(string="Use text from order [equitania]", required=False,
+    default_eq_show_preview_button = fields.Boolean(string="Show Preview-Button in Sale Order [eq_sale]")  # Angebots-Preview Button
+    eq_use_text_from_order = fields.Boolean(string="Use text from order [eq_sale]", required=False,
                                             default=False)  # Benutze Kopf- und Fusstext aus Auftrag
-    eq_head_text_invoice = fields.Html(string="Invoice head text [equitania]", required=False,
+    eq_head_text_invoice = fields.Html(string="Invoice head text [eq_sale]", required=False,
                                        default="")  # Kopftext - kann überall verwendet werden und ersetzt dadurch Odoo Standard
-    eq_foot_text_invoice = fields.Html(string="Invoice foot text [equitania]", required=False, default="")
+    eq_foot_text_invoice = fields.Html(string="Invoice foot text [eq_sale]", required=False, default="")
 
 
 class eq_sale_order_line(models.Model):

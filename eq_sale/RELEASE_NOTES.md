@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 21.11.2017
+#### Version 1.0.56
+##### CHG
+- Textänderung in Beschreibung der Params. Kein [equitania] Text mehr
+
 #### 20.11.2017
 #### Version 1.0.55
 ##### CHG

@@ -154,16 +154,16 @@
             <field name="arch" type="xml">
                 <data>
                 	<xpath expr="//group[@name='customers']" position="inside">
-						<label string="Customer search settings [equitania]"/>
+						<label string="Customer search settings [eq_sale]"/>
 						<div>
 							<div>
 								<field name="default_show_address" class="oe_inline"/>
-								<label for="default_show_address" string="Show street and city in the partner search of the saleorder [equitania]"/>
+								<label for="default_show_address" string="Show street and city in the partner search of the saleorder [eq_sale]"/>
 							</div>
 
 							<div>
 								<field name="default_search_only_company" class="oe_inline"/>
-								<label for="default_search_only_company" string="Only search for Companies in the Sale Order/Quotation [equitania]"/>
+								<label for="default_search_only_company" string="Only search for Companies in the Sale Order/Quotation [eq_sale]"/>
 							</div>
 						</div>
 					</xpath>

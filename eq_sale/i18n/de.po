@@ -63,8 +63,8 @@ msgstr "Verkäufe"
 
 #. module: eq_sale
 #: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_default_creator_saleperson
-msgid "The creator of the address dataset will be set automatically as sales person. [equitania]"
-msgstr "Der Ersteller eines Adressdatensatzes wird automatisch als Verkäufer gesetzt. [equitania]"
+msgid "The creator of the address dataset will be set automatically as sales person. [eq_sale]"
+msgstr "Der Ersteller eines Adressdatensatzes wird automatisch als Verkäufer gesetzt. [eq_sale]"
 
 
 #. module: eq_sale
@@ -302,8 +302,8 @@ msgstr "Lieferadresse:"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_view_sale_config_settings_show_address
-msgid "Customer search settings [equitania]"
-msgstr "Sucheinstellungen [equitania]"
+msgid "Customer search settings [eq_sale]"
+msgstr "Sucheinstellungen [eq_sale]"
 
 
 #. module: eq_sale
@@ -313,13 +313,13 @@ msgstr "Nur Unternehmen werden in der Partnersuche der Einkaufs- und Verkaufsauf
 
 #. module: eq_sale
 #: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_default_search_only_company
-msgid "Only Search for Companies [equitania]"
-msgstr "Suche auf Unternehmen beschränken [equitania]"
+msgid "Only Search for Companies [eq_sale]"
+msgstr "Suche auf Unternehmen beschränken [eq_sale]"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_view_sale_config_settings_show_address
-msgid "Only search for Companies in the Sale Order/Quotation [equitania]"
-msgstr "Suche nur nach Firmen in den Angeboten und Verkaufsaufträgen [equitania]"
+msgid "Only search for Companies in the Sale Order/Quotation [eq_sale]"
+msgstr "Suche nur nach Firmen in den Angeboten und Verkaufsaufträgen [eq_sale]"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_view_sale_config_settings_show_address
@@ -333,18 +333,18 @@ msgstr "UVP für Produkte anzeigen"
 
 #. module: eq_sale
 #: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_group_product_rrp
-msgid "Show RRP for products [equitania]"
-msgstr "UVP für Produkte anzeigen [equitania]"
+msgid "Show RRP for products [eq_sale]"
+msgstr "UVP für Produkte anzeigen [eq_sale]"
 
 #. module: eq_sale
 #: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_default_show_address
-msgid "Show street and city in the partner search of the Sale and Purchase Order [equitania]"
-msgstr "Zeige die Straße und den Ort in den Verkaufs- und Einkaufsaufträgen an [equitania]"
+msgid "Show street and city in the partner search of the Sale and Purchase Order [eq_sale]"
+msgstr "Zeige die Straße und den Ort in den Verkaufs- und Einkaufsaufträgen an [eq_sale]"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_view_sale_config_settings_show_address
-msgid "Show street and city in the partner search of the saleorder [equitania]"
-msgstr "Zeige Straße und Ort in der Kundensuche für Verkaufsaufträge [equitania]"
+msgid "Show street and city in the partner search of the saleorder [eq_sale]"
+msgstr "Zeige Straße und Ort in der Kundensuche für Verkaufsaufträge [eq_sale]"
 
 #. module: eq_sale
 #: model:ir.model.fields,help:eq_sale.field_sale_config_settings_default_show_address
@@ -419,8 +419,8 @@ msgstr "Wenn keine Auswahl getroffen ist, wird der Standardwert aus den Einstell
 
 #. module: eq_sale
 #: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_default_use_calendar_week
-msgid "Show Calendar Week for Delivery Date [equitania]"
-msgstr "Liefertermin als Kalenderwoche anzeigen [equitania]"
+msgid "Show Calendar Week for Delivery Date [eq_sale]"
+msgstr "Liefertermin als Kalenderwoche anzeigen [eq_sale]"
 
 
 #. module: eq_sale
@@ -430,8 +430,8 @@ msgstr "Liefertermin Anzeige"
 
 #. module: eq_sale
 #: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_default_show_delivery_date
-msgid "Show the Delivery Date on the Sale Order [equitania]"
-msgstr "Liefertermin auf Angebot und Auftragsbestätigung anzeigen [equitania]"
+msgid "Show the Delivery Date on the Sale Order [eq_sale]"
+msgstr "Liefertermin auf Angebot und Auftragsbestätigung anzeigen [eq_sale]"
 
 
 #. module: eq_sale
@@ -451,8 +451,8 @@ msgstr "Die interne Beschreibung wird in den Auftragspositionen anstatt der Verk
 
 #. module: eq_sale
 #: model:ir.model.fields,field_description:eq_sale.field_sale_order_use_calendar_week
-msgid "Use Calendar Week for Delivery Date[equitania]"
-msgstr "Kalenderwoche anzeigen[equitania]"
+msgid "Use Calendar Week for Delivery Date[eq_sale]"
+msgstr "Kalenderwoche anzeigen[eq_sale]"
 
 #. module: eq_sale
 #: model:ir.model.fields,field_description:eq_sale.field_sale_order_line_eq_use_internal_description
@@ -461,8 +461,8 @@ msgstr "Bei Angebote/Verkaufsaufträge wird die interne Beschreibung an Stelle d
 
 #. module: eq_sale
 #: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_default_eq_use_internal_description
-msgid "Use internal description for sale orders [equitania]"
-msgstr "Interne Beschreibung für die Angebote/Verkaufsaufträge verwenden [equitania]"
+msgid "Use internal description for sale orders [eq_sale]"
+msgstr "Interne Beschreibung für die Angebote/Verkaufsaufträge verwenden [eq_sale]"
 
 #. module: eq_sale
 #: model:ir.model.fields,field_description:eq_sale.field_sale_order_line_eq_delivery_date
@@ -512,18 +512,18 @@ msgstr "Rechnungen"
 
 #. module: eq_sale
 #: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_eq_use_text_from_order
-msgid "Use text from order [equitania]"
-msgstr "Benutze Kopf- und Fusstext aus Auftrag [equitania]"
+msgid "Use text from order [eq_sale]"
+msgstr "Benutze Kopf- und Fusstext aus Auftrag [eq_sale]"
 
 #. module: eq_sale
 #: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_eq_foot_text_invoice
-msgid "Invoice foot text [equitania]"
-msgstr "Fußtext [equitania]"
+msgid "Invoice foot text [eq_sale]"
+msgstr "Fußtext [eq_sale]"
 
 #. module: eq_sale
 #: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_eq_head_text_invoice
-msgid "Invoice head text [equitania]"
-msgstr "Kopftext [equitania]"
+msgid "Invoice head text [eq_sale]"
+msgstr "Kopftext [eq_sale]"
 
 
 #. module: eq_sale
@@ -623,5 +623,5 @@ msgstr "Vorschau Button"
 
 #. module: eq_sale
 #: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_default_eq_show_preview_button
-msgid "Show Preview-Button in Sale Order [equitania]"
-msgstr "Vorschau Button in Angeboten/Verkaufsaufträgen anzeigen [equitania]"
+msgid "Show Preview-Button in Sale Order [eq_sale]"
+msgstr "Vorschau Button in Angeboten/Verkaufsaufträgen anzeigen [eq_sale]"
