@@ -1,6 +1,11 @@
 ## Modul eq_account
 
 #### 22.11.2017
+#### Version 1.0.32
+##### CHG
+- RechnungsReport: Zahlungskonditionen werden nun aus dem Text der Zahlungskondition gezogen, statt vorher aus dem Namen
+
+#### 22.11.2017
 #### Version 1.0.31
 ##### CHG
 - Invoice Vorlage Default Template wird jetzt gezogen

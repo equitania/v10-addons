@@ -470,11 +470,11 @@
                             <div class="col-xs-5 pull-right">
                                 <div class="row" name="total">
                                     <table class="table table-condensed" rules="none" style=" page-break-inside:avoid !important;">
-                                        <tr style="border-top:none;"><!-- class="border-black" -->
-                                            <td id="price_netto" style="border-top:none;">
+                                        <tr ><!-- class="border-black" style="border-top:none;" -->
+                                            <td id="price_netto" > <!-- style="border-top:none;"-->
                                                 <span>Total without taxes</span>
                                             </td>
-                                            <td class="text-right" id="price_netto_amount" style="border-top:none;">
+                                            <td class="text-right" id="price_netto_amount" > <!-- style="border-top:none;"-->
                                                 <span t-field="o.amount_untaxed"
                                                       t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                             </td>
@@ -522,7 +522,7 @@
                                                 <strong>Payment Terms:</strong>
                                             </td>
                                             <td>
-                                                <span t-field="o.payment_term_id.name"/>
+                                                <span t-field="o.payment_term_id.note"/>
                                             </td>
                                         </tr>
                                         <tr t-if="o.incoterms_id">
