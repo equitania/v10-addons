@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 22.11.2017
+#### Version 1.0.57
+##### CHG
+- Anpassung Mail ID + Identifikator.
+
 #### 21.11.2017
 #### Version 1.0.56
 ##### CHG
