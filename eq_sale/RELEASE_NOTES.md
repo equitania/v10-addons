@@ -2,6 +2,11 @@
 
 
 #### 22.11.2017
+#### Version 1.0.60
+##### CHG
+- Sale Order Vorlage Default Template wird jetzt gezogen
+
+#### 22.11.2017
 #### Version 1.0.59
 ##### CHG
 - Sale_Order Vorlage mit Footer versehen (einkommentiert)
