@@ -40,7 +40,7 @@ class eq_account_invoice(models.Model):
             default_template_id=template and template.id or False,
             default_composition_mode='comment',
             mark_invoice_as_sent=True,
-            #custom_layout="account.mail_template_data_notification_email_account_invoice"
+            custom_layout="eq_account.eq_mail_template_data_invoice"
         )
         return {
             'name': _('Compose Email'),
