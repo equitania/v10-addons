@@ -1,6 +1,11 @@
 ## Modul eq_sale
 
 #### 22.11.2017
+#### Version 1.0.58
+##### CHG
+- Custom Layout entfernt.
+
+#### 22.11.2017
 #### Version 1.0.57
 ##### CHG
 - Anpassung Mail ID + Identifikator.

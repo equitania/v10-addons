@@ -62,7 +62,7 @@ class eq_sale_order_extension(models.Model):
             'default_template_id': template_id,
             'default_composition_mode': 'comment',
             'mark_so_as_sent': True,
-            'custom_layout': "sale.mail_template_data_notification_email_sale_order"
+            #'custom_layout': "sale.mail_template_data_notification_email_sale_order"
         })
         return {
             'type': 'ir.actions.act_window',
