@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 22.11.2017
+#### Version 1.0.27
+##### CHG
+- Wichtig: Rechnungsvorlage vor dem Update löschen. Dadurch wird das alte Template gelöscht und die Übersetzungen neu erstellt.
+- 'Übersetzung laden' überspielt nicht mehr die vorhandene Übersetzung.
 
 #### 21.11.2017
 #### Version 1.0.26
