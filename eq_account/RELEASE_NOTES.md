@@ -1,6 +1,11 @@
 ## Modul eq_account
 
 #### 22.11.2017
+#### Version 1.0.30
+##### CHG
+- Invoice Vorlage mit Footer versehen (einkommentiert)
+
+#### 22.11.2017
 #### Version 1.0.29
 ##### CHG
 - Custom Layout entfernt.

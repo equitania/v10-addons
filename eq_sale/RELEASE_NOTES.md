@@ -1,5 +1,11 @@
 ## Modul eq_sale
 
+
+#### 22.11.2017
+#### Version 1.0.59
+##### CHG
+- Sale_Order Vorlage mit Footer versehen (einkommentiert)
+
 #### 22.11.2017
 #### Version 1.0.58
 ##### CHG

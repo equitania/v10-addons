@@ -30,10 +30,6 @@
                     </p>
 
 
-
-
-
-
                 <table class="table table-condensed">
                     <thead>
                         <tr>
@@ -61,7 +57,7 @@
                     <p>Thank you for choosing ${object.company_id.name or 'us'}!</p>
                     <br>
                     <br>
-                    <!-- Footer <div style="width: auto; margin: 0px; padding: 0px;">
+                    <div style="width: auto; margin: 0px; padding: 0px;">
                         <h3 style="margin: 0px; padding: 2px 14px; font-size: 16px;">
                             <strong>${object.company_id.name}</strong></h3>
                     </div>
@@ -94,7 +90,7 @@
                             </div>
                         % endif
 
-                    </div>-->
+                    </div>
                 </div>
             </body>
             </html>
@@ -121,9 +117,7 @@
                             <p>Sehr geehrte(r) ${object.partner_id.title.name} ${object.partner_id.name},</p>
                         % endif
 
-                    <p>&nbsp;${object.state in ('draft', 'sent') and 'wir haben Ihre Anfrage erhalten und melden uns umgehend wegen der Bestellbestätigung bei Ihnen.' or 'hiermit bestätigen wir Ihnen folgende Bestellung.'}</p>
-
-
+                    <p>${object.state in ('draft', 'sent') and 'wir haben Ihre Anfrage erhalten und melden uns umgehend wegen der Bestellbestätigung bei Ihnen.' or 'hiermit bestätigen wir Ihnen folgende Bestellung.'}</p>
 
 
                 <table class="table table-condensed">
@@ -155,7 +149,7 @@
                     <p>Danke, dass Sie sich für  ${object.company_id.name or 'us'} entschieden haben!</p>
                     <br>
                     <br>
-                    <!--<div style="width: auto; margin: 0px; padding: 0px;">
+                    <div style="width: auto; margin: 0px; padding: 0px;">
                          <h3 style="margin: 0px; padding: 2px 14px; font-size: 16px;">
                                     <strong>${object.company_id.name}</strong></h3>
                     </div>
@@ -188,7 +182,7 @@
                             </div>
                         % endif
 
-                    </div>-->
+                    </div>
                 </div>
 
             </body>
