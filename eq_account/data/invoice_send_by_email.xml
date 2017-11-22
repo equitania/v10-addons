@@ -4,7 +4,7 @@
 
         <!-- Invoice Sent By Mail /Rechnung EN-->
         <record id="email_template_edi_invoice_new" model="mail.template">
-            <field name="name">Invoice - Send by E-Mail</field>
+            <field name="name">Invoice  - Send by E-Mail</field>
             <field name="eq_email_template_version">1</field>
             <field name="email_from">${(object.user_id.email and '%s &lt;%s&gt;' % (object.user_id.name, object.user_id.email) or '')|safe}</field>
             <field name="subject">${object.company_id.name} Invoice (Ref ${object.number or 'n/a'})</field>

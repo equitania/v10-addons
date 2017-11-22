@@ -1,6 +1,11 @@
 ## Modul eq_account
 
 #### 22.11.2017
+#### Version 1.0.28
+##### CHG
+- Anpassung Mail ID
+
+#### 22.11.2017
 #### Version 1.0.27
 ##### CHG
 - Wichtig: Rechnungsvorlage vor dem Update löschen. Dadurch wird das alte Template gelöscht und die Übersetzungen neu erstellt.
