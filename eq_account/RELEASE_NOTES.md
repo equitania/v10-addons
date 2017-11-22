@@ -1,6 +1,11 @@
 ## Modul eq_account
 
 #### 22.11.2017
+#### Version 1.0.29
+##### CHG
+- Custom Layout entfernt.
+
+#### 22.11.2017
 #### Version 1.0.28
 ##### CHG
 - Anpassung Mail ID
