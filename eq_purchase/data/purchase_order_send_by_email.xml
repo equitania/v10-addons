@@ -3,8 +3,8 @@
 	<data noupdate="1">
 
  <!---Purchase Order - Send by Email EN-->
-         <record id="purchase.email_template_edi_purchase_done" model="mail.template">
-            <field name="name">Purchase Order - Send by Email</field>
+         <record id="email_template_edi_purchase_done_new" model="mail.template">
+            <field name="name">Purchase Order - Send by E-Mail</field>
 			<field name="subject">${object.company_id.name} Order (Ref ${object.name or 'n/a' })</field>
              <field name="eq_email_template_version">1</field>
             <field name="model_id" ref="purchase.model_purchase_order"/>
@@ -89,10 +89,11 @@
         </record>
 
 <!---Purchase Order - Send by Email DE-->
-            <record id="email_template_edi_purchase_done_de" model="ir.translation">
+            <record id="email_template_edi_purchase_done_de_new" model="ir.translation">
                 <field name="name">mail.template,body_html</field>
                 <!--<field name="res_id">21</field>-->
-                <field name="res_id" ref="purchase.email_template_edi_purchase_done"/>
+                <field name="res_id" ref="eq_purchase.email_template_edi_purchase_done_new"/>
+                <field name="state">translated</field>
                 <field name="lang">de_DE</field>
                 <field name="value"><![CDATA[<html>
                 <head></head>
@@ -174,18 +175,18 @@
             </record>
 
 
-        <record id="eq_mail_template_purchase_order_name" model="ir.translation" >
+        <record id="eq_mail_template_purchase_order_name_de" model="ir.translation" >
             <field name="name">mail.template,name</field>
-			<field name="res_id" ref="purchase.email_template_edi_purchase_done"/>
+			<field name="res_id" ref="eq_purchase.email_template_edi_purchase_done_new"/>
             <field name="lang">de_DE</field>
             <field name="type">model</field>
             <field name="state">translated</field>
            <field name="value">Bestellung</field></record>
 
 
-         <record id="eq_mail_template_purchase_order_subject" model="ir.translation">
+         <record id="eq_mail_template_purchase_order_subject_de" model="ir.translation">
              <field name="name">mail.template,subject</field>
-			 <field name="res_id" ref="purchase.email_template_edi_purchase_done"/>
+			 <field name="res_id" ref="eq_purchase.email_template_edi_purchase_done_new"/>
              <field name="lang">de_DE</field>
              <field name="state">translated</field>
             <field name="value">${object.company_id.name} Bestellung (Ref ${object.name or 'n/a' })</field>
