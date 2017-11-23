@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 23.11.2017
+#### Version 1.0.33
+##### CHG
+Vorlage Rechnung - Footer angepasst (grauer HG - neu)
+
 #### 22.11.2017
 #### Version 1.0.32
 ##### CHG
