@@ -1,5 +1,11 @@
 ## Modul eq_account
 
+
+#### 24.11.2017
+#### Version 1.0.34
+##### CHG
+Anpassung IDs + Layout.
+
 #### 23.11.2017
 #### Version 1.0.33
 ##### CHG

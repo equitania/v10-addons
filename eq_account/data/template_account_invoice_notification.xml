@@ -3,10 +3,10 @@
 	<data noupdate="1">
 
 
-<record id="eq_mail_template_data_invoice" model="mail.template">
+<record id="eq_email_template_data_invoice" model="mail.template">
             <field name="name">Template Invoice</field>
             <field name="eq_email_template_version">1</field>
-			<field name="subject">Template</field>
+			<field name="subject">Invoice</field>
             <field name="model_id" ref="mail.model_mail_message"/>
             <field name="auto_delete" eval="False"/>
             <field name="body_html"><![CDATA[<html>
@@ -32,9 +32,9 @@
             ]]></field>
         </record>
 
-        <record id="eq_mail_template_data_invoice_subject" model="ir.translation">
+        <record id="eq_invoice_subject" model="ir.translation">
              <field name="name">mail.template,subject</field>
-			 <field name="res_id" ref="eq_account.eq_mail_template_data_invoice"/>
+			 <field name="res_id" ref="eq_email_template_data_invoice"/>
              <field name="lang">de_DE</field>
              <field name="state">translated</field>
             <field name="value">Rechnung</field>

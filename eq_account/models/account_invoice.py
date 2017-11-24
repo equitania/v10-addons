@@ -31,7 +31,7 @@ class eq_account_invoice(models.Model):
             message loaded by default
         """
         self.ensure_one()
-        template = self.env.ref('eq_account.email_template_edi_invoice_new', False)
+        template = self.env.ref('eq_account.edi_invoice_template', False)
         compose_form = self.env.ref('mail.email_compose_message_wizard_form', False)
         ctx = dict(
             default_model='account.invoice',
@@ -40,7 +40,7 @@ class eq_account_invoice(models.Model):
             default_template_id=template and template.id or False,
             default_composition_mode='comment',
             mark_invoice_as_sent=True,
-            custom_layout="eq_account.eq_mail_template_data_invoice"
+            custom_layout="eq_account.eq_email_template_data_invoice"
         )
         return {
             'name': _('Compose Email'),
