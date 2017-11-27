@@ -23,7 +23,7 @@
                         <p>Dear Sir or Madam,</p>
                     % endif
                     % if object.partner_id.is_company == False:
-                        <p>Dear ${object.partner_id.title.name} ${object.partner_id.name},</p>
+                        <p>Dear ${object.partner_id.title.name or ''} ${object.partner_id.name},</p>
                     % endif
                     <p>
                      ${object.state in ('draft', 'sent') and 'we have received your request and will contact you immediately because of the order confirmation.' or 'we hereby confirm the following order.'}

@@ -1,9 +1,10 @@
 ## Modul eq_sale
 
-#### 23.11.2017
+#### 27.11.2017
 #### Version 1.0.62
 ##### CHG
 - Neue ID Vergabe
+- Anrede berücksichtigt
 
 #### 23.11.2017
 #### Version 1.0.61
