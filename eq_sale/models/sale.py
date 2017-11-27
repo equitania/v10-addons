@@ -47,7 +47,7 @@ class eq_sale_order_extension(models.Model):
         self.ensure_one()
         ir_model_data = self.env['ir.model.data']
         try:
-            template_id = ir_model_data.get_object_reference('eq_sale', 'email_template_edi_sale_new')[1]
+            template_id = ir_model_data.get_object_reference('eq_sale', 'new_email_template_edi_sale')[1]
         except ValueError:
             template_id = False
         try:
@@ -62,7 +62,7 @@ class eq_sale_order_extension(models.Model):
             'default_template_id': template_id,
             'default_composition_mode': 'comment',
             'mark_so_as_sent': True,
-            'custom_layout': "eq_sale.eq_mail_template_data"
+            'custom_layout': "eq_sale.eq_data_template_mail"
         })
         return {
             'type': 'ir.actions.act_window',

@@ -3,7 +3,7 @@
 	<data noupdate="1">
 
 <!---Sales Order - Send by Email EN-->
-         <record id="email_template_edi_sale_new" model="mail.template">
+         <record id="new_email_template_edi_sale" model="mail.template">
             <field name="name">Sales Order - Send by E-Mail</field>
 			<field name="subject">${object.company_id.name|safe} ${object.state in ('draft', 'sent') and 'Quotation' or 'Order'} (Ref ${object.name or 'n/a' })</field>
             <field name="model_id" ref="sale.model_sale_order"/>
@@ -135,9 +135,10 @@
 
 
 <!---Sales Order - Send by Email DE-->
-          <record id="eq_mail_template_sale_email_de_new" model="ir.translation">
+          <record id="eq_sale_email_de_new" model="ir.translation">
             <field name="name">mail.template,body_html</field>
-			<field name="res_id" ref="eq_sale.email_template_edi_sale_new"/>
+			<field name="res_id" ref="eq_sale.new_email_template_edi_sale"/>
+              <field name="state">translated</field>
             <field name="lang">de_DE</field>
            <field name="value"><![CDATA[<html>
                 <head></head>
@@ -229,18 +230,18 @@
             ]]></field>
         </record>
 
-        <record id="eq_mail_template_sale_email_name_new" model="ir.translation" >
+        <record id="eq_sale_email_name_new" model="ir.translation" >
             <field name="name">mail.template,name</field>
-			<field name="res_id" ref="eq_sale.email_template_edi_sale_new"/>
+			<field name="res_id" ref="eq_sale.new_email_template_edi_sale"/>
             <field name="lang">de_DE</field>
             <field name="type">model</field>
             <field name="state">translated</field>
            <field name="value">Verkaufsauftrag</field></record>
 
 
-         <record id="eq_mail_template_sale_email_subject_new" model="ir.translation">
+         <record id="eq_sale_email_subject" model="ir.translation">
              <field name="name">mail.template,subject</field>
-			 <field name="res_id" ref="eq_sale.email_template_edi_sale_new"/>
+			 <field name="res_id" ref="eq_sale.new_email_template_edi_sale"/>
              <field name="lang">de_DE</field>
              <field name="state">translated</field>
             <field name="value">${object.company_id.name|safe} ${object.state in ('draft', 'sent') and 'Angebot' or 'Auftrag'} (Ref ${object.name or 'n/a' })</field>
