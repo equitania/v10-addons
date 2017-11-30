@@ -1,5 +1,11 @@
 ## Modul eq_web_responsive
 
+
+#### 30.11.2017
+#### Version 1.0.9
+##### CHG
+- Textfelder der Blöcke, in den Detailansichten oben rechts, werden nun mit Punkten "..." abgegürzt wenn der Inhalt zu lange ist.
+
 #### 16.11.2017
 #### Version 1.0.8
 ##### CHG

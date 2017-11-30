@@ -47,6 +47,8 @@ body {
         margin: 15px 0 5px 0; /*Mehr Abstand nach oben für eine bessere visuelle Trennung */
     }
    // Button box
+
+
     .oe_button_box {
 
         &, & + .oe_avatar {
@@ -54,6 +56,12 @@ body {
                 width: auto;
                 padding-right:40px;
             }
+        }
+        .oe_stat_button > span {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            top: 4px;
+            position: relative;
         }
     }
 
