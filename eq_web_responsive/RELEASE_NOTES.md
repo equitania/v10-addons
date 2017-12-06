@@ -1,5 +1,10 @@
 ## Modul eq_web_responsive
 
+#### 06.12.2017
+#### Version 1.0.10
+##### FIX
+- Stand von Version 1.0.8 wieder hergestellt (in der .less Datei), da das Backend online nichtmehr korrekt angezeigt wurde.
+
 
 #### 30.11.2017
 #### Version 1.0.9
