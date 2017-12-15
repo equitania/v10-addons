@@ -1,6 +1,11 @@
 ## Modul eq_account
 
 
+#### 15.12.2017
+#### Version 1.0.35
+##### ADD
+- Rechnungszeilen um das Liefer + Leistungsdatum ergänzt, für Artikel die versendet werden können
+
 #### 24.11.2017
 #### Version 1.0.34
 ##### CHG
