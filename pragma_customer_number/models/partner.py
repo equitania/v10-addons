@@ -28,7 +28,7 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
     _name = _inherit
 
-    customer_number = fields.Char(compute='_get_customer_number', reverse='_set_customer_number',
+    customer_number = fields.Char(compute='_get_customer_number', inverse='_set_customer_number',
                                   string=_('Customer Number'), store=False)
     cust_auto_ref = fields.Char(_('Customer Reference (automatically assigned)'), readonly=True, invisible=True)
     cust_no_auto_ref = fields.Char(_('Customer Reference (manually assigned)'), readonly=True, invisible=True)
