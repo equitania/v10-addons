@@ -1,6 +1,11 @@
 ## Modul eq_account
 
 #### 19.12.2017
+#### Version 1.0.39
+##### IMP
+- Beschreibungstexte bei Rechnungen nutzen nun eine größere Breite; Übersetzungen angepasst
+
+#### 19.12.2017
 #### Version 1.0.38
 ##### FIX
 - Rabatte haben die Spalten im RechnungsReport falsch verschoben

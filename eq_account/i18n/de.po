@@ -247,9 +247,9 @@ msgstr "Weitere Produkte"
 #. module: eq_account
 #: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
 msgid "<span>Your reference no.</span>"
-msgstr "<span>Ihre Referenz</span>"
+msgstr "<span>Ihre Referenznr.</span>"
 
 #. module: eq_account
 #: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
 msgid "<span>Our reference no.</span>"
-msgstr "<span>Unsere Referenz</span>"
+msgstr "<span>Unsere Referenznr.</span>"

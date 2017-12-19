@@ -425,32 +425,36 @@
                                         <span t-field="l.product_id.name"/>
                                     </strong>
                                     <br/>
-                                    <span t-field="l.name"/>
-                                    <t t-if="l.eq_move_id and l.eq_move_id.picking_id">
-                                        <div style="font-weight:bold;" id="deliveryservicedate">
-                                            <t t-if="l.eq_move_id and l.eq_move_id.picking_id.eq_ref_number">
-                                                <span>Customer Reference:</span>
-                                                <span t-field="l.eq_move_id.picking_id.eq_ref_number"/>
-                                            </t>
-                                            <t t-if="l.eq_move_id and l.eq_move_id.picking_id.eq_ref_number and l.eq_move_id and l.eq_move_id.picking_id.origin">
-                                                <span> / </span>
-                                            </t>
-                                            <t t-if="l.eq_move_id and l.eq_move_id.picking_id.origin">
-                                                <span>Order No.:</span>
-                                                <span t-field="l.eq_move_id.picking_id.origin"/>
-                                            </t>
-                                            <br/>
-                                            <t t-if="l.eq_move_id.picking_id.name">
-                                                <span>Delivery No.:</span> <span t-field="l.eq_move_id.picking_id.name" />
-                                                <t t-if="l.eq_move_id.picking_id.date_done">
-                                                    <span>from</span>
-                                                    <span
-                                                        t-esc="l.eq_move_id.picking_id.date_done.split(' ')[0].split('-')[2] + '.' + l.eq_move_id.picking_id.date_done.split(' ')[0].split('-')[1] + '.' + l.eq_move_id.picking_id.date_done.split(' ')[0].split('-')[0]" />
-                                                    <span>/ Delivery Date (the date of service)</span>
+                                    <div style="width:13cm; margin-right:-13cm; " class="table-description-invoice">
+                                        <t t-if="l.name and l.name != ' '">
+                                            <br/><span t-field="l.name"/>
+                                        </t>
+                                        <t t-if="l.eq_move_id and l.eq_move_id.picking_id">
+                                            <div style="font-weight:bold;" id="deliveryservicedate">
+                                                <t t-if="l.eq_move_id and l.eq_move_id.picking_id.eq_ref_number">
+                                                    <span>Customer Reference:</span>
+                                                    <span t-field="l.eq_move_id.picking_id.eq_ref_number"/>
                                                 </t>
-                                            </t>
-                                        </div>
-                                    </t>
+                                                <t t-if="l.eq_move_id and l.eq_move_id.picking_id.eq_ref_number and l.eq_move_id and l.eq_move_id.picking_id.origin">
+                                                    <span> / </span>
+                                                </t>
+                                                <t t-if="l.eq_move_id and l.eq_move_id.picking_id.origin">
+                                                    <span>Order No.:</span>
+                                                    <span t-field="l.eq_move_id.picking_id.origin"/>
+                                                </t>
+                                                <br/>
+                                                <t t-if="l.eq_move_id.picking_id.name">
+                                                    <span>Delivery No.:</span> <span t-field="l.eq_move_id.picking_id.name" />
+                                                    <t t-if="l.eq_move_id.picking_id.date_done">
+                                                        <span>from</span>
+                                                        <span
+                                                            t-esc="l.eq_move_id.picking_id.date_done.split(' ')[0].split('-')[2] + '.' + l.eq_move_id.picking_id.date_done.split(' ')[0].split('-')[1] + '.' + l.eq_move_id.picking_id.date_done.split(' ')[0].split('-')[0]" />
+                                                        <span>/ Delivery Date (the date of service)</span>
+                                                    </t>
+                                                </t>
+                                            </div>
+                                        </t>
+                                    </div>
                                 </td>
                                 <td class="text-right">
                                     <span t-field="l.quantity"/>
