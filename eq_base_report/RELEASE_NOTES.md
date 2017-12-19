@@ -1,5 +1,11 @@
 ## Modul eq_base_report
 
+#### 19.12.2017
+#### Version 1.0.22
+##### CHG
+- Reportstyle für Tabellen mit der Klasse "active" auf Tabellenzeile haben nun einen grauen Hintergrund (Anpassung für Sektionen)
+
+
 #### 16.11.2017
 #### Version 1.0.21
 ##### CHG

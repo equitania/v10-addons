@@ -135,7 +135,7 @@ msgstr "<span>Ansprechpartner</span>"
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "<span>Customer no.</span>"
-msgstr "<span>Kundennummer</span>"
+msgstr "<span>Kundennr.</span>"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
@@ -160,7 +160,7 @@ msgstr "<span>Angebotssdatum</span>"
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "<span>Order no.</span>"
-msgstr "<span>Auftragsnummer</span>"
+msgstr "<span>Auftragsnr.</span>"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
@@ -175,17 +175,17 @@ msgstr "<span>Angebotsdatum</span>"
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "<span>Quotation no.</span>"
-msgstr "<span>Angebotsnummer</span>"
+msgstr "<span>Angebotsnr.</span>"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "<span>Your reference no.</span>"
-msgstr "<span>Ihre Referenz</span>"
+msgstr "<span>Ihre Referenznr.</span>"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "<span>Our reference no.</span>"
-msgstr "<span>Unsere Referenz</span>"
+msgstr "<span>Unsere Referenznr.</span>"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
@@ -217,7 +217,7 @@ msgstr "<strong>Bei Fragen wenden Sie sich bitte an</strong>"
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "<strong>Item description</strong>"
-msgstr "<strong>Artikelbeschreibung</strong>"
+msgstr "<strong>Beschreibung</strong>"
 
 
 #. module: eq_sale
@@ -263,7 +263,7 @@ msgstr "<strong>Einheit</strong>"
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "<strong>VAT</strong>"
-msgstr "<strong>USt.</strong>"
+msgstr "<strong>Steuern</strong>"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
@@ -283,7 +283,7 @@ msgstr "<strong>Incoterm:</strong>"
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "<strong>Invoice address:</strong>"
-msgstr "<strong>Rechnungsanschrift:</strong>"
+msgstr "<strong>Rechnungsadresse:</strong>"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document

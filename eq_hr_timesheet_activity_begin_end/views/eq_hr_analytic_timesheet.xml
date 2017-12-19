@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record id="eq_project_task_form_view" model="ir.ui.view">
+            <field name="name">eq.project.task.form.inherited</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="hr_timesheet.view_task_form2_inherited" />
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/notebook/page[2]" position="replace">
+                    <page string="Timesheets" attrs="{'invisible': [('project_id', '=', False)]}">
+                        <field name="timesheet_ids" colspan="4" nolabel="1" context="{'default_user_id' : uid, 'default_project_id': project_id}"
+                                groups="base.group_user">
+                            <tree editable="top" string="Timesheet Activities">
+                                <field name="date"/>
+                                <field name="user_id" required="1"/>
+                                <field name="name"/>
+                                <field name="project_id" invisible="1" required="1"/>
+                                <field name="time_start" widget="float_time"/>
+                                <field name="time_stop" widget="float_time"/>
+                                <field name="unit_amount" string="Duration" widget="float_time"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -20,29 +20,25 @@
 ##############################################################################
 
 {
-    'name': "Equitania Sale",
+    'name': 'Equitania HR Timesheet Begin End Erweiterungen',
     'license': 'AGPL-3',
-    'version': '1.0.63',
-    'category': 'sale',
-    'description': """Extensions for sale""",
+    'version': '1.0.1',
+    'description': """
+        Equitania Erweiterungen für das HR Timesheet Begin End Modul der OCA
+    """,
     'author': 'Equitania Software GmbH',
-    'summary': 'Sale Extension',
     'website': 'www.myodoo.de',
-    "depends" : ['base', 'base_setup', 'sale', 'product', 'sales_team', 'sale_stock', 'delivery', 'eq_res_partner', 'eq_base_report','website_quote'],
+    'depends': ['hr_timesheet_activity_begin_end'],
+    'category' : 'Human Resources',
+    'summary': 'Equitania HR Timesheet Begin End Erweiterungen',
+
     'data': [
-            'security/equitania_security.xml',
-            'security/ir.model.access.csv',
-            'data/template_sale_order_notification.xml',
-            'data/email_template_function.xml',
-            'data/decimal_precision.xml',
-            'data/ir_values_defaults.xml',
-            'data/sales_order_send_by_email.xml',
-            'views/report_sale_order.xml',
-            'views/product_view.xml',
-            'views/res_partner_view.xml',
-            'views/sale_views.xml',
-            'views/sale_layout_category_view.xml',
-             ],
-    "active": False,
-    "installable": True
+        #"security/ir.model.access.csv"
+        "views/eq_hr_analytic_timesheet.xml",
+
+    ],
+    'demo': [],
+    'css': ['base.css'],
+    'installable': True,
+    'auto_install': False,
 }

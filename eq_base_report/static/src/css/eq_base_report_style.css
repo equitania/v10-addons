@@ -147,7 +147,7 @@ table.data > tbody > tr > td:first-child {
 }
 
 .table > tbody > tr.active > td {
-	background-color:#fff; /*alter wert: #ddd */
+	background-color:#ddd; /*alter wert: #ddd */
 	color:#000;
 }
 

@@ -84,28 +84,12 @@
                                                 <span t-field="o.partner_id.customer_number"/>
                                             </td>
                                         </tr>
-                                        <tr t-if="o.name">
-                                            <td>
-                                                <span>Your reference no.</span>
-                                            </td>
-                                            <td class="text-right">
-                                                <span t-field="o.name"/>
-                                            </td>
-                                        </tr>
                                         <tr t-if="o.number">
                                             <td>
                                                 <span>Invoice no.</span>
                                             </td>
                                             <td class="text-right">
                                                 <span t-field="o.number"/>
-                                            </td>
-                                        </tr>
-                                        <tr t-if="o.origin">
-                                            <td>
-                                                <span>Our reference no.</span>
-                                            </td>
-                                            <td class="text-right">
-                                                <span t-field="o.origin"/>
                                             </td>
                                         </tr>
                                         <tr t-if="o.date_invoice">
@@ -123,6 +107,22 @@
                                             </td>
                                             <td>
                                                 <p t-field="o.reference"/>
+                                            </td>
+                                        </tr>
+                                        <tr t-if="o.name">
+                                            <td>
+                                                <span>Your reference no.</span>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-field="o.name"/>
+                                            </td>
+                                        </tr>
+                                        <tr t-if="o.origin">
+                                            <td>
+                                                <span>Our reference no.</span>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-field="o.origin"/>
                                             </td>
                                         </tr>
                                         <t t-if="o.fiscal_position_id.name == 'Kunde EU Unternehmen (mit USt-ID)' or o.fiscal_position_id.name == 'Kunde EU Unternehmen (mit USt-ID) - SKR03' or o.fiscal_position_id.name == 'Kunde EU Unternehmen (mit USt-ID) - SKR04'">
@@ -150,7 +150,7 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                                <h style="line-height:3em; font-size:  0.8em;" t-if="o.user_id">
+                                <h style="line-height:3em;" t-if="o.user_id">
                                     <strong>For further information, please contact</strong>
                                 </h>
                                 <table style="width:100%; font-size: 0.8em; " t-if="o.user_id">
@@ -275,7 +275,12 @@
                             <p t-field="o.eq_head_text"/>
 
                         </div>
+<!-- Test um die Liefer und Leistungsdatum als Kopfdaten-Ersatz auszugeben. Bitte nicht löschen da es für den ein oder anderen Kunden ggf. als Vorlage zum Aufbau dienen kann -->
+<!--<div style="background-color:yellow">
+<t t-esc="o.order_lines_layouted()[0][0]['lines'][0].eq_move_id.picking_id.origin"/>
+    <t t-esc="o.order_lines_layouted()[0][0]['lines'][0].eq_move_id.picking_id.date_done"/>
 
+</div>-->
                         <!-- Pagebreak after headertext -->
                         <p t-if="o.eq_use_page_break_after_header" style="page-break-after:always;"> </p>
 
@@ -372,7 +377,7 @@
 
 
 
-<!-- VARIANTE 2 mit Kategorien  Funktioniert aber noch nicht korrekt -->
+<!-- VARIANTE 2 mit Kategorien -->
         <t  t-foreach="o.order_lines_layouted()" t-as="page"><!-- groups="sale.group_sale_layout" auskommentiert, um die Rechnungszeilen auch ohne aktivierte Kategorien anzuzeigen -->
             <table class="table table-condensed">
                 <thead>
@@ -380,7 +385,10 @@
                         <th>
                             <strong>Pos.</strong>
                         </th>
-                        <th><strong>Item description</strong></th>
+                        <th>
+                            <strong>Item No.</strong>
+                        </th>
+                        <th><strong>Description</strong></th>
                         <th class="text-center" colspan="2"><strong>Qty.</strong></th>
                         <th class="text-right"><strong>Unit Price</strong></th>
                         <th t-if="any([line.discount for line in o.invoice_line_ids])" class="text-right" groups="sale.group_discount_per_so_line"><strong>Discount (%)</strong></th><!--entfernt t-if="display_discount" -->
@@ -408,11 +416,40 @@
                                 <td>
                                     <span t-esc="pos"/>
                                 </td>
-                                <td><strong>
+                                <td>
+                                    <span t-field="l.product_id.default_code"/>
+                                </td>
+                                <td>
+                                    <strong>
                                         <span t-field="l.product_id.name"/>
                                     </strong>
                                     <br/>
                                     <span t-field="l.name"/>
+                                    <t t-if="l.eq_move_id and l.eq_move_id.picking_id">
+                                        <div style="font-weight:bold;" id="deliveryservicedate">
+                                            <t t-if="l.eq_move_id and l.eq_move_id.picking_id.eq_ref_number">
+                                                <span>Customer Reference:</span>
+                                                <span t-field="l.eq_move_id.picking_id.eq_ref_number"/>
+                                            </t>
+                                            <t t-if="l.eq_move_id and l.eq_move_id.picking_id.eq_ref_number and l.eq_move_id and l.eq_move_id.picking_id.origin">
+                                                <span> / </span>
+                                            </t>
+                                            <t t-if="l.eq_move_id and l.eq_move_id.picking_id.origin">
+                                                <span>Order No.:</span>
+                                                <span t-field="l.eq_move_id.picking_id.origin"/>
+                                            </t>
+                                            <br/>
+                                            <t t-if="l.eq_move_id.picking_id.name">
+                                                <span>Delivery No.:</span> <span t-field="l.eq_move_id.picking_id.name" />
+                                                <t t-if="l.eq_move_id.picking_id.date_done">
+                                                    <span>from</span>
+                                                    <span
+                                                        t-esc="l.eq_move_id.picking_id.date_done.split(' ')[0].split('-')[2] + '.' + l.eq_move_id.picking_id.date_done.split(' ')[0].split('-')[1] + '.' + l.eq_move_id.picking_id.date_done.split(' ')[0].split('-')[0]" />
+                                                    <span>/ Delivery Date (the date of service)</span>
+                                                </t>
+                                            </t>
+                                        </div>
+                                    </t>
                                 </td>
                                 <td class="text-right">
                                     <span t-field="l.quantity"/>
@@ -421,7 +458,7 @@
                                     <span t-field="l.uom_id"  groups="product.group_uom"/>
                                 </td>
                                 <td class="text-right">
-                                    <span t-field="l.price_unit"/>
+                                    <span t-field="l.price_unit" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                 </td>
                                 <td t-if="display_discount" class="text-right" groups="sale.group_discount_per_so_line">
                                     <span t-field="l.discount"/>
