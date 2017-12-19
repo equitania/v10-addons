@@ -66,8 +66,8 @@ msgstr "<span>Fax</span>"
 
 #. module: eq_stock
 #: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
-msgid "<span>Our reference no.</span>"
-msgstr "<span>Unsere Referenznr.</span>"
+msgid "<span>Order no.</span>"
+msgstr "<span>Auftragsnr.</span>"
 
 #. module: eq_stock
 #: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
