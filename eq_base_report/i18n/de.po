@@ -58,17 +58,17 @@ msgstr "<span>Rechnungsdatum</span>"
 #. module: eq_base_report
 #: model:ir.ui.view,arch_db:eq_base_report.eq_external_layout_header
 msgid "<span>Your reference no.</span>"
-msgstr "<span>Ihre Referenz</span>"
+msgstr "<span>Ihre Referenznr.</span>"
 
 #. module: eq_base_report
 #: model:ir.ui.view,arch_db:eq_base_report.eq_external_layout_header
 msgid "<span>Order no.</span>"
-msgstr "<span>Auftragsnummer</span>"
+msgstr "<span>Auftragsnr.</span>"
 
 #. module: eq_base_report
 #: model:ir.ui.view,arch_db:eq_base_report.eq_external_layout_header
 msgid "<span>Quotation no.</span>"
-msgstr "<span>Angebotsnummer</span>"
+msgstr "<span>Angebotsnr.</span>"
 
 #. module: eq_base_report
 #: model:ir.ui.view,arch_db:eq_base_report.eq_external_layout_header
