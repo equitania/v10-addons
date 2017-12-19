@@ -41,8 +41,8 @@ msgstr "<span>Kundennr.</span>"
 
 #. module: eq_stock
 #: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
-msgid "<span>Date</span>"
-msgstr "<span>Datum</span>"
+msgid "<span>Commitment Date</span>"
+msgstr "<span>Bestätigungsdatum</span>"
 
 #. module: eq_stock
 #: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
@@ -62,7 +62,7 @@ msgstr "<span>Fax</span>"
 #. module: eq_stock
 #: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
 msgid "<span>Our reference no.</span>"
-msgstr "<span>Unsere Referenz</span>"
+msgstr "<span>Unsere Referenznr.</span>"
 
 #. module: eq_stock
 #: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
@@ -136,7 +136,7 @@ msgstr "<strong>S/N</strong>"
 #: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
 #: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_packaging_doc
 msgid "<strong>Source</strong>"
-msgstr "<strong>Quelle</strong>"
+msgstr "<strong>Aus Lager</strong>"
 
 #. module: eq_stock
 #: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document

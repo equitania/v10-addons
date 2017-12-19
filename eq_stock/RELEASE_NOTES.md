@@ -1,5 +1,11 @@
 ## Modul eq_stock
 
+#### 19.12.2017
+#### Version 1.0.8
+##### CHG
+- Lieferschein Report: Übersetzungen gepflegt; Artikel Nr. + Code getrennt zu einzelnen Spalten; Barcode funktioniert nun, aber auskommentiert da vermutlich nicht benötigt.
+
+
 #### 16.11.2017
 #### Version 1.0.7
 ##### CHG

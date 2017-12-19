@@ -70,7 +70,7 @@
                         </t>
                         <t t-set="eq_stockpicking_extension_right_header">
                             <div class="col-xs-5 rightbox">
-                                <table style="width:100%;float:right; font-size: 0.8em;">
+                                <table style="width:100%;float:right;">
                                     <tbody>
                                         <tr>
                                             <td>
@@ -78,6 +78,14 @@
                                             </td>
                                             <td class="text-right">
                                                 <span t-field="o.partner_id.customer_number"/>
+                                            </td>
+                                        </tr>
+                                        <tr t-if="o.name">
+                                            <td>
+                                                <span>Delivery note</span>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-field="o.name"/>
                                             </td>
                                         </tr>
                                         <tr t-if="o.origin">
@@ -90,7 +98,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <span>Date</span>
+                                                <span>Commitment Date</span>
                                             </td>
                                             <td class="text-right">
                                                 <!--<span t-esc="picking_date"/>-->
@@ -114,10 +122,10 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                                <h style="line-height:3em; font-size: 0.8em;" t-if="user">
+                                <h style="line-height:3em;" t-if="user">
                                     <strong>For further information, please contact</strong>
                                 </h>
-                                <table style="width:100%; font-size: 0.8em;" t-if="user">
+                                <table style="width:100%;" t-if="user">
                                     <tbody>
                                         <tr>
                                             <td>
@@ -282,8 +290,13 @@
                             </tbody>
                         </table>
                         <table class="table table-condensed" t-if="o.pack_operation_ids">
+                            <!-- 1von3 Barcode funktionieren, aber werden derzeit nicht im Standard Lieferschein benötigt-->
+                            <!--<t t-set="has_barcode" t-value="any([pack_operation.product_id and pack_operation.product_id.sudo().barcode or pack_operation.package_id for pack_operation in o.pack_operation_ids])"/>-->
                             <thead>
                                 <tr>
+                                    <th>
+                                        <strong>Item no.</strong>
+                                    </th>
                                     <th>
                                         <strong>Item description</strong>
                                     </th>
@@ -295,9 +308,10 @@
                                             <strong>Source</strong>
                                         </th>
                                     </t>
-                                    <th>
+                                    <!-- 2von3 Barcode funktionieren, aber werden derzeit nicht im Standard Lieferschein benötigt-->
+                                    <!--<th t-if="has_barcode" class="text-center">
                                         <strong>Barcode</strong>
-                                    </th>
+                                    </th>-->
                                     <t t-if="o.picking_type_id.code != 'outgoing'">
                                         <th>
                                             <strong>Destination</strong>
@@ -308,8 +322,12 @@
                             <tbody>
                                 <tr t-foreach="o.pack_operation_ids" t-as="pack_operation"
                                     style="page-break-after:auto; page-break-inside:avoid !important; font-size: 0.8em;">
+
                                     <td>
-                                        <span t-field="pack_operation.product_id"/>
+                                        <span t-field="pack_operation.product_id.default_code"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="pack_operation.product_id.name"/>
                                         <t
                                                 t-if="not pack_operation.product_id and pack_operation.package_id">
                                             <span t-field="pack_operation.package_id"/>
@@ -328,7 +346,16 @@
                                             <span t-field="pack_operation.picking_id"/>
                                         </td>
                                     </t>
-                                    <td>
+                                    <!-- 3von3 Barcode funktionieren, aber werden derzeit nicht im Standard Lieferschein benötigt-->
+                                    <!--<td t-if="has_barcode">
+                                        <span t-if="pack_operation.product_id and pack_operation.product_id.barcode">
+                                            <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', pack_operation.product_id.barcode, 600, 100)" style="width:300px;height:50px"/>
+                                        </span>
+                                        <span t-if="pack_operation.package_id and not pack_operation.product_id">
+                                            <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', pack_operation.package_id.name, 600, 100)" style="width:300px;height:50px"/>
+                                        </span>
+                                    </td>-->
+                                    <!--<td>
                                         <span t-if="pack_operation.picking_id">
                                             <img
                                                     t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', pack_operation.picking_id.name, 600, 100)"
@@ -346,7 +373,7 @@
                                                     t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', pack_operation.package_id.name, 600, 100)"
                                                     style="width:300px;height:50px"/>
                                         </span>
-                                    </td>
+                                    </td>-->
                                     <t t-if="o.picking_type_id.code != 'outgoing'">
                                         <td>
                                             <span t-field="pack_operation.location_dest_id"/>
