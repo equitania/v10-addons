@@ -51,6 +51,11 @@ msgstr "<span>Lieferschein:</span>"
 
 #. module: eq_stock
 #: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<span>Delivery note</span>"
+msgstr "<span>Lieferscheinnr.</span>"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
 msgid "<span>E-Mail</span>"
 msgstr "<span>E-Mail</span>"
 
