@@ -353,16 +353,27 @@
                                                         <strong>
                                                             <span t-field="l.product_id.name"/>
                                                         </strong>
-                                                        <br/><span t-field="l.name"/>
-                                                        <t id="eq_drawing_number" />
-                                                        <!--<t t-if="doc.state not in ['draft','sent']">-->
-                                                            <t t-if="l.eq_delivery_date">
-                                                                <div class="clearfix"></div>
-                                                                Delivery date:
-                                                                    <span t-field="l.eq_delivery_date" />
+                                                        <br/>
+
+
+
+                                                        <div style="width:13cm; margin-right:-13cm; " class="table-description">
+                                                            <t t-if="l.name and l.name != ' '">
+                                                                <br/><span t-field="l.name"/>
                                                             </t>
-                                                        <!--</t>-->
-                                                        <div id="agreement_id"/>
+                                                            <t id="eq_drawing_number" />
+                                                            <!--<t t-if="doc.state not in ['draft','sent']">-->
+                                                                <t t-if="l.eq_delivery_date">
+                                                                    <div class="clearfix"></div>
+                                                                    Delivery date:
+                                                                        <span t-field="l.eq_delivery_date" />
+                                                                </t>
+                                                            <!--</t>-->
+                                                            <div id="agreement_id"/>
+                                                        </div>
+
+
+
                                                     </td>
                                                     <td class="text-right">
                                                         <span t-field="l.product_uom_qty"/>
