@@ -1,5 +1,9 @@
 ## Modul eq_account
 
+#### 19.12.2017
+#### Version 1.0.36
+##### CHG
+- Rechnungs-Report: Übersetzungen angepasst; Artikelnr. Zeile (Spalte) Hinzugefügt; Währungszeichen für "Einzelpreis" hinzugefügt
 
 #### 15.12.2017
 #### Version 1.0.35

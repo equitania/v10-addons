@@ -54,7 +54,7 @@ msgstr "Lieferant"
 #. module: eq_account
 #: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
 msgid "<span>Customer no.</span>"
-msgstr "<span>Kundennummer</span>"
+msgstr "<span>Kundennr.</span>"
 
 #. module: eq_account
 #: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
@@ -103,8 +103,13 @@ msgstr "<strong>Pos.</strong>"
 
 #. module: eq_account
 #: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
-msgid "<strong>Item description</strong>"
-msgstr "<strong>Artikelbeschreibung</strong>"
+msgid "<strong>Item No.</strong>"
+msgstr "<strong>Artikelnr.</strong>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<strong>Description</strong>"
+msgstr "<strong>Beschreibung</strong>"
 
 #. module: eq_account
 #: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
