@@ -1,6 +1,11 @@
 ## Modul eq_account
 
 #### 19.12.2017
+#### Version 1.0.37
+##### FIX
+- Mini Fix: RechnungsReport: Wenn mehrere Steuersätze verwendet werden.
+
+#### 19.12.2017
 #### Version 1.0.36
 ##### CHG
 - Rechnungs-Report: Übersetzungen angepasst; Artikelnr. Zeile (Spalte) Hinzugefügt; Währungszeichen für "Einzelpreis" hinzugefügt

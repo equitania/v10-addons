@@ -401,7 +401,7 @@
 
                         <t t-if="layout_category_size > 1 or page_size > 1" groups="sale.group_sale_layout">
                             <tr class="active">
-                                <td colspan="7" style="font-weight: bold; border-bottom: 1px solid black; border-top:0px;">
+                                <td colspan="10" style="font-weight: bold; border-bottom: 1px solid black; border-top:0px;">
                                     <!--<t t-esc="layout_category['name']"/>-->
                                     <t t-if="layout_category['name'] == 'Uncategorized'">Others</t>
                                     <t t-if="layout_category['name'] != 'Uncategorized'"><t t-esc="layout_category['name']"/></t>
@@ -477,7 +477,7 @@
 
                         <t t-if="(layout_category_size > 1 or page_size > 1) and layout_category['subtotal']" groups="sale.group_sale_layout">
                             <tr class="text-right">
-                                <td colspan="7">
+                                <td colspan="10">
                                     <strong>Subtotal: </strong>
                                     <t t-set="subtotal" t-value="sum(line.price_subtotal for line in layout_category['lines'])"/>
                                     <span t-esc="subtotal" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
