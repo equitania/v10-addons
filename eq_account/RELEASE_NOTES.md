@@ -1,6 +1,11 @@
 ## Modul eq_account
 
 #### 19.12.2017
+#### Version 1.0.38
+##### FIX
+- Rabatte haben die Spalten im RechnungsReport falsch verschoben
+
+#### 19.12.2017
 #### Version 1.0.37
 ##### FIX
 - Mini Fix: RechnungsReport: Wenn mehrere Steuersätze verwendet werden.

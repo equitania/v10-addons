@@ -378,6 +378,7 @@
 
 
 <!-- VARIANTE 2 mit Kategorien -->
+        <t t-set="display_discount" t-value="any([l.discount for l in o.invoice_line_ids])"/>
         <t  t-foreach="o.order_lines_layouted()" t-as="page"><!-- groups="sale.group_sale_layout" auskommentiert, um die Rechnungszeilen auch ohne aktivierte Kategorien anzuzeigen -->
             <table class="table table-condensed">
                 <thead>
@@ -391,7 +392,7 @@
                         <th><strong>Description</strong></th>
                         <th class="text-center" colspan="2"><strong>Qty.</strong></th>
                         <th class="text-right"><strong>Unit Price</strong></th>
-                        <th t-if="any([line.discount for line in o.invoice_line_ids])" class="text-right" groups="sale.group_discount_per_so_line"><strong>Discount (%)</strong></th><!--entfernt t-if="display_discount" -->
+                        <th t-if="display_discount" class="text-right" groups="sale.group_discount_per_so_line"><strong>Discount (%)</strong></th><!--entfernt t-if="any([line.discount for line in o.invoice_line_ids])" -->
                         <th class="text-right"><strong>Taxes</strong></th>
                         <th class="text-right" groups="sale.group_show_price_subtotal"><strong>Net price</strong></th>
                     </tr>
