@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 20.12.2017
+#### Version 1.0.40
+##### IMP
+- Übersetzung angepasst (Auftragsnr.)
+
 #### 19.12.2017
 #### Version 1.0.39
 ##### IMP
