@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="eq_view_account_analytic_account_journal_tree" model="ir.ui.view">
+        <field name="name">Contract list</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="contract.view_account_analytic_account_journal_tree" />
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="date_end"/>
+            </field>
+        </field>
+    </record>
+    </data>
+</odoo>
