@@ -1,6 +1,13 @@
 ## Modul eq_sql_exec
 
 
+
+### 04.01.2018
+### Version 1.0.12
+#### CHG
+- Updatestatement wird so wie übergeben ausgeführt und nicht nach Anwendung von upper
+
+
 ### 31.07.2017
 ### Version 1.0.11
 #### CHG

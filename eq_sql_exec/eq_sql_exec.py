@@ -68,27 +68,26 @@ class eq_sql_exec(models.Model):
 
         # no check for password
         if password !=  password_param:
-            print "Wrong password for execute_sql provided !"
+            print "Wrong password for execute_sql provided!"
             return False
 
-
         # now check for forbidden words
-        statement = statement.upper()
+        # statement = statement.upper()
+        test_statement = statement.upper()
         for word in self._forbidden_words:
-            index_check = statement.find(word);
+            index_check = test_statement.find(word)
             if index_check > -1:
-                print "Sql statement contains forbidden word !"
+                print "Sql statement contains forbidden word!"
                 return False
 
         try:
             self._cr.execute(statement)
             return True
-
         except:
             return False
 
     @api.model
-    def execute_sql_set_custom_translation(self,password, statement):
+    def execute_sql_set_custom_translation(self, password, statement):
         """
             Executes sql statement and returns True if excecution was ok
 
@@ -107,7 +106,7 @@ class eq_sql_exec(models.Model):
 
         # no check for password
         if password != password_param:
-            print "Wrong password for execute_sql provided !"
+            print "Wrong password for execute_sql provided!"
             return False
 
         # now check for forbidden words
@@ -115,7 +114,7 @@ class eq_sql_exec(models.Model):
         for word in self._forbidden_words:
             index_check = statement.find(word);
             if index_check > -1:
-                print "Sql statement contains forbidden word !"
+                print "Sql statement contains forbidden word!"
                 return False
 
         self._cr.execute(statement)
