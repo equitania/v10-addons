@@ -175,7 +175,7 @@ class eq_mail_mail(models.Model):
         ir_mail_server = self.env['ir.mail_server']
         ir_values = self.env['ir.values']
         default_mail_server = ir_values.get_default('mail.mail', 'mail_server_id')
-        existing_ir_mail_server = self.env['ir.mail_server'].search([('id','=',default_mail_server)])
+        existing_ir_mail_server = self.env['ir.mail_server'].sudo().search([('id','=',default_mail_server)])
         if len(existing_ir_mail_server) > 0:
             default_mail_address = existing_ir_mail_server.smtp_user
         else:

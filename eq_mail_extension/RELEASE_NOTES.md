@@ -1,5 +1,10 @@
 ## Modul eq_mail_extension
 
+#### 08.01.2018
+#### Version 1.0.32
+##### FIX
+- Ticket 5133: Funktion sudo() hinzugefügt, damit der Defaultserver gefunden werden kann.
+
 #### 20.11.2017
 #### Version 1.0.31
 ##### CHG
