@@ -364,9 +364,18 @@
                                                             <t id="eq_drawing_number" />
                                                             <!--<t t-if="doc.state not in ['draft','sent']">-->
                                                                 <t t-if="l.eq_delivery_date">
+                                                            <t t-if="l.get_delivery_date_flag()">
+                                                                <t t-if="l.get_delivery_date_kw_flag()">
+                                                                    <div class="clearfix"></div>
+                                                                    Delivery date: CW
+                                                                    <span t-esc="l.get_delivery_date_kw(l.eq_delivery_date)" />
+                                                                    </t>
+                                                                 <t t-if="l.get_delivery_date_kw_flag() == False or l.get_delivery_date_kw_flag() == None">
                                                                     <div class="clearfix"></div>
                                                                     Delivery date:
                                                                         <span t-field="l.eq_delivery_date" />
+                                                                 </t>
+                                                                </t>
                                                                 </t>
                                                             <!--</t>-->
                                                             <div id="agreement_id"/>

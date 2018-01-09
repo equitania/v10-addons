@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 09.01.2018
+#### Version 1.0.64
+##### ADD
+- Fehlende Reportlogik in sale.order hinzugefügt (Anzeige Lieferdatum und Anzeige Lieferdatum als KW). Konfigurationscheckboxen waren bereits vorhanden.
+
 #### 19.12.2017
 #### Version 1.0.63
 ##### CHG
