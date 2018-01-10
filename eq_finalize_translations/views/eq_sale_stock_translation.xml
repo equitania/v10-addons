@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+
+
+
+                <delete model="ir.translation" search="[('res_id','=', ref('sale_stock.field_sale_order_incoterm'))]"/>
+
+                <record id="eq_sale_stock_incoterm_translation" model="ir.translation">
+
+                            <field name="name">ir.model.fields,field_description</field>
+
+                            <field name="type">model</field>
+
+                            <field name="res_id" ref="sale_stock.field_sale_order_incoterm"/>
+
+                            <field name="module">sale_stock</field>
+
+                            <field name="state">translated</field>
+
+                            <field name="lang">de_DE</field> <!-- The code of the language you want to translate to -->
+
+                            <field name="src">Incoterms</field>
+
+                            <field name="value">Incoterms</field> <!-- vorher fehlerhafte Übersetzung 'Mininale Menge' -->
+
+                </record>
+
+
+
+                <delete model="ir.translation" search="[('res_id','=', ref('sale_stock.field_account_invoice_incoterms_id'))]"/>
+
+                <record id="eq_sale_stock_incoterm_invoice_translation" model="ir.translation">
+
+                            <field name="name">ir.model.fields,field_description</field>
+
+                            <field name="type">model</field>
+
+                            <field name="res_id" ref="sale_stock.field_account_invoice_incoterms_id"/>
+
+                            <field name="module">sale_stock</field>
+
+                            <field name="state">translated</field>
+
+                            <field name="lang">de_DE</field> <!-- The code of the language you want to translate to -->
+
+                            <field name="src">Incoterms</field>
+
+                            <field name="value">Incoterms</field> <!-- vorher fehlerhafte Übersetzung 'Mininale Menge' -->
+
+                </record>
+
+    </data>
+
+</odoo>
