@@ -22,7 +22,7 @@
 {
     'name': "Equitania Translation Modul",
     'license': 'AGPL-3',
-    'version': '1.0.0',
+    'version': '1.0.1',
     'category': 'sales',
     'description': """ Extension for the translation file""",
     'author': 'Equitania Software GmbH',
