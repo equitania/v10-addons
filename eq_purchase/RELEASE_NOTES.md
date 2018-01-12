@@ -1,5 +1,11 @@
 ## Modul eq_purchase
 
+#### 12.01.2018
+#### Version 1.0.29
+##### CHG
+- Checkboxen 'Das geplante Datum in der Bestellung anzeigen' und 'Das geplante Datum als Kalenderwoche anzeigen' in den Einkaufseinstellungen zeigen jetzt die gewollten Parameter im Report
+Bestellung/Angebotsanfrage.
+
 #### 22.11.2017
 #### Version 1.0.28
 ##### CHG

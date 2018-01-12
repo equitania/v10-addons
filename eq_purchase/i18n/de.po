@@ -265,3 +265,15 @@ msgstr "Seitenumbruch vor dem Fußtext"
 #: model:ir.ui.view,arch_db:eq_purchase.eq_purchase_view_partner_tree
 msgid "Supplier Number"
 msgstr "Lieferantennummer"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchasequotation_document
+msgid "Planned date:"
+msgstr "Geplantes Datum:"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchasequotation_document
+msgid "Planned date: CW"
+msgstr "Geplantes Datum: KW"
