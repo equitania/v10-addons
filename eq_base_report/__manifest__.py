@@ -35,8 +35,9 @@
     'data': [
         'views/footer.xml',
         'views/header.xml',
-        #'views/paper_format.xml', wirft noch einen Error
+        'views/paper_format.xml',
         'views/report_external_layout.xml',
+        'views/report_internal_layout.xml',
         'views/report_style.xml',
         'eq_res_config_view.xml'
 
