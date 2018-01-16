@@ -53,6 +53,7 @@ class AccountBankStatementLine(models.Model):
 
         super(AccountBankStatementLine, self).process_reconciliations(data)
 
+
 class AccountPayment(models.Model):
     _inherit = "account.payment"
     _name = _inherit
@@ -65,4 +66,6 @@ class AccountPayment(models.Model):
                 if len(self.communication) > 140:
                     self.communication = self.communication[:140]
 
-        super(AccountPayment, self)._check_communication_sepa()
+            super(AccountPayment, self)._check_communication_sepa()
+
+        return True
