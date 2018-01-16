@@ -3,7 +3,7 @@
 
 {
     'name': 'pragmasoft - Bugfixes for odoo',
-    'version': '1.0.0',
+    'version': '1.0.1',
     'category': 'Base',
     'description': """
         Fixes bugs in odoo which have not yet been fixed by odoo SA.
@@ -12,6 +12,7 @@
     'website': 'http://www.pragmasoft.de',
     'depends': [
         'base',
+        'account',
         'sale',
         'purchase',
     ],

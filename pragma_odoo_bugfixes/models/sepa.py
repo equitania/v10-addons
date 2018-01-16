@@ -20,6 +20,7 @@
 ##############################################################################
 
 from odoo import api, models, fields, _
+from odoo import modules
 
 
 class AccountBankStatementLine(models.Model):
@@ -59,8 +60,9 @@ class AccountPayment(models.Model):
     @api.one
     @api.constrains('payment_method_id', 'communication')
     def _check_communication_sepa(self):
-        if self.payment_method_id == self.env.ref('account_sepa.account_payment_method_sepa_ct'):
-            if len(self.communication) > 140:
-                self.communication = self.communication[:140]
+        if 'account_sepa' in modules.module.loaded:
+            if self.payment_method_id == self.env.ref('account_sepa.account_payment_method_sepa_ct'):
+                if len(self.communication) > 140:
+                    self.communication = self.communication[:140]
 
         super(AccountPayment, self)._check_communication_sepa()
