@@ -4,7 +4,7 @@
     <template id="eq_internal_layout" inherit_id="report.internal_layout">
         <xpath expr="//div[@class='header']" position="replace">
             <div class="header">
-                <div class="row" style="color:red!important;">
+                <div class="row">
                     <div class="col-xs-4">
                         <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/>
                     </div>

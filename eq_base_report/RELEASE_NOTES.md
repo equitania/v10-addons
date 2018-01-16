@@ -1,6 +1,11 @@
 ## Modul eq_base_report
 
 #### 16.01.2017
+#### Version 1.0.25
+##### CHG
+- Schriftfarbe für internen Reportheader auf schwarz geändert
+
+#### 16.01.2017
 #### Version 1.0.24
 ##### ADD
 - Report Papierformat für interne Dokumente erstellt
