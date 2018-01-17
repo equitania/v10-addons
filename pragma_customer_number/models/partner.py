@@ -127,7 +127,7 @@ class ResPartner(models.Model):
             # in allen anderen Fällen
             else:
                 # eine Kundennummer erzeugen
-                vals['cust_auto_ref'] = self.env['ir.sequence'].get('customer.number')
+                vals['cust_auto_ref'] = self.env['ir.sequence'].get('receivable.account.number')
                 vals['cust_no_auto_ref'] = vals['cust_auto_ref']
                 vals['cust_ref_print'] = vals['cust_auto_ref']
 
