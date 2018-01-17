@@ -172,6 +172,8 @@ class ResPartner(models.Model):
         #     vals['ref'] = self.env['ir.sequence'].get('customer.sequence.number')
         self.is_code_valid(code, acctype)
 
+        if not name:
+            name = ''
         # EQ - unsere Version
         if 'company_name' in vals:
             if vals['company_name']:

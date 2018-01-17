@@ -15,7 +15,7 @@ Available settings (in "Accounting - Settings"):
 
 -    Enable/disable the automatic account creation.
   """,
-    'version': '1.3',
+    'version': '1.4',
     'author': 'Josef Kaser',
     'category': 'Localization',
     'website': 'https://www.pragmasoft.de',
