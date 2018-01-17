@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     "name": "pragmasoft - Supplier Number",
-    "version": "1.1.1",
+    "version": "1.1.2",
     'author': 'Josef Kaser',
     'website': 'https://www.pragmasoft.de',
     "description": """
