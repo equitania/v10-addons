@@ -254,8 +254,10 @@
                         </table>
 
 
-                        <table class="table table-condensed" t-if="not o.pack_operation_ids"
+                        <table class="table table-condensed"
                                style="border-bottom: 1px solid #999999;">
+                            <!-- todo rausgenommen
+                             t-if="not o.pack_operation_ids" -->
                             <t t-raw="table_header"/>
                             <tbody class="sale_tbody">
                                 <t t-set="pos" t-value="1"/>
@@ -289,10 +291,10 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <table class="table table-condensed" t-if="o.pack_operation_ids">
+<!--                        <table class="table table-condensed" t-if="o.pack_operation_ids" >-->
                             <!-- 1von3 Barcode funktionieren, aber werden derzeit nicht im Standard Lieferschein benötigt-->
                             <!--<t t-set="has_barcode" t-value="any([pack_operation.product_id and pack_operation.product_id.sudo().barcode or pack_operation.package_id for pack_operation in o.pack_operation_ids])"/>-->
-                            <thead>
+<!--                            <thead>
                                 <tr>
                                     <th>
                                         <strong>Item no.</strong>
@@ -307,12 +309,12 @@
                                         <th>
                                             <strong>Source</strong>
                                         </th>
-                                    </t>
+                                    </t>-->
                                     <!-- 2von3 Barcode funktionieren, aber werden derzeit nicht im Standard Lieferschein benötigt-->
                                     <!--<th t-if="has_barcode" class="text-center">
                                         <strong>Barcode</strong>
                                     </th>-->
-                                    <t t-if="o.picking_type_id.code != 'outgoing'">
+<!--                                    <t t-if="o.picking_type_id.code != 'outgoing'">
                                         <th>
                                             <strong>Destination</strong>
                                         </th>
@@ -345,7 +347,7 @@
                                             <span t-if="pack_operation.picking_id">:</span>
                                             <span t-field="pack_operation.picking_id"/>
                                         </td>
-                                    </t>
+                                    </t>-->
                                     <!-- 3von3 Barcode funktionieren, aber werden derzeit nicht im Standard Lieferschein benötigt-->
                                     <!--<td t-if="has_barcode">
                                         <span t-if="pack_operation.product_id and pack_operation.product_id.barcode">
@@ -374,7 +376,7 @@
                                                     style="width:300px;height:50px"/>
                                         </span>
                                     </td>-->
-                                    <t t-if="o.picking_type_id.code != 'outgoing'">
+<!--                                    <t t-if="o.picking_type_id.code != 'outgoing'">
                                         <td>
                                             <span t-field="pack_operation.location_dest_id"/>
                                             <span t-if="pack_operation.result_package_id">:</span>
@@ -383,7 +385,7 @@
                                     </t>
                                 </tr>
                             </tbody>
-                        </table>
+                        </table>-->
                         <!-- Pagebreak before footertext -->
 
                         <p t-if="o.eq_use_page_break_before_footer" style="page-break-after:always;"> </p>

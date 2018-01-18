@@ -1,5 +1,10 @@
 ## Modul eq_stock
 
+#### 18.01.2018
+#### Version 1.0.10
+##### IMP
+- Lieferschein Report: Enthält nichtmehr die Anzeige für Packvorgänge. Zeigt stattdessen nun immer auch den Beschreibungstext welcher zum Produkt im Angebot/Auftrag mit hinterlegt wurde.
+
 #### 19.12.2017
 #### Version 1.0.9
 ##### CHG
