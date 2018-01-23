@@ -38,7 +38,7 @@
                 <field name="eq_show_preview_button" invisible="1"/>
 				</field>
                 <xpath expr="//header/button[@name='open_quotation']" position="replace">
-                    <button name="open_quotation" string="Preview" attrs="{'invisible': [('eq_show_preview_button', '=', False)]}"/>
+                    <button name="open_quotation" string="Preview" attrs="{'invisible': [('eq_show_preview_button', '=', False)]}" type="object"/>
                 </xpath>
             </field>
         </record>
