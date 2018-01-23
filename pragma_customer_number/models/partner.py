@@ -75,11 +75,14 @@ class ResPartner(models.Model):
                         partner.customer_number = _cust_auto_ref
 
                         if not partner.cust_ref_print or partner.cust_ref_print != _cust_auto_ref:
-                            self.write(
-                                {
-                                    'cust_ref_print': _cust_auto_ref
-                                }
-                            )
+                            if isinstance(self.id, models.NewId):
+                                pass
+                            else:
+                                self.write(
+                                    {
+                                        'cust_ref_print': _cust_auto_ref
+                                    }
+                                )
 
                 else:
                     _cust_no_auto_ref = partner.cust_no_auto_ref

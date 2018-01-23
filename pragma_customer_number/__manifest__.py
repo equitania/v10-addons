@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name": "pragmasoft - Customer Number",
-    "version": "1.1.4",
+    "version": "1.1.5",
     'author': 'Josef Kaser',
     'website': 'https://www.pragmasoft.de',
     "description": """
