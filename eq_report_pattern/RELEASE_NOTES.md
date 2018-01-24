@@ -1,5 +1,10 @@
 ## eq_report_pattern 
 
+#### 24.01.2018
+#### Version 1.0.26
+##### ADD
+- Dokumentenvorlage in Angebot hinzugefügt (Tree View)
+
 #### 16.11.2017
 #### Version 1.0.25
 ##### CHG
