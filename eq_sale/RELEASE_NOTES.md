@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 24.01.2018
+#### Version 1.0.66
+##### CHG
+- Preview-Button Einstellungen werden jetzt nur noch bei der Erstellung eines neuen Angebots gezogen (Verhindert jetzt die langen Ladezeiten in den Verkaufeinstellungen)
+
 #### 23.01.2018
 #### Version 1.0.65
 ##### FIX

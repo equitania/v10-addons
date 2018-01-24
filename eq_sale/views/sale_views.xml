@@ -34,8 +34,9 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="website_quote.sale_order_form_quote"/>
             <field name="arch" type="xml">
-				<field name="carrier_id" position="after">
-                <field name="eq_show_preview_button" invisible="1"/>
+				<field name="fiscal_position_id" position="after">
+					<field name="eq_show_preview_button" class="oe_inline" groups="base.group_no_one"/>
+
 				</field>
                 <xpath expr="//header/button[@name='open_quotation']" position="replace">
                     <button name="open_quotation" string="Preview" attrs="{'invisible': [('eq_show_preview_button', '=', False)]}" type="object"/>
