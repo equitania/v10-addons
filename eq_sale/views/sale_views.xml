@@ -2,6 +2,19 @@
 <odoo>
     <data>
 
+		<record id="eq_sale_quotation_tree" model="ir.ui.view">
+            <field name="name">sale_view_quotation.tree.eq</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree" />
+            <field name="arch" type="xml">
+
+                 <field name="user_id" position="after">
+                        <field name="amount_untaxed"/>
+
+				 </field>
+            </field>
+       	</record>
+
         <record id="eq_sale_stock_form_view" model="ir.ui.view">
 			<field name="name">eq_sale.sale_stock.form</field>
 			<field name="model">sale.order</field>
