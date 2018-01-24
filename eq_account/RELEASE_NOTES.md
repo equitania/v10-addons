@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 24.01.2018
+#### Version 1.0.40
+##### ADD
+- Spalte 'Netto' in Eingangs-und Ausgangsrechnungen hinzugefügt.
+
 #### 20.12.2017
 #### Version 1.0.40
 ##### IMP

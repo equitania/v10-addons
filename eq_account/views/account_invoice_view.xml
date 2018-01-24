@@ -46,6 +46,42 @@
             </field>
        	</record>
 
+
+		<record id="eq_account_invoice_tree" model="ir.ui.view">
+            <field name="name">account.invoice.tree.eq</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree" />
+            <field name="arch" type="xml">
+
+                 <field name="origin" position="after">
+                        <field name="amount_untaxed"/>
+
+				 </field>
+            </field>
+       	</record>
+
+
+		<record id="eq_account_invoice_supplier_tree" model="ir.ui.view">
+            <field name="name">account.invoice.supplier.tree.eq</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_tree" />
+            <field name="arch" type="xml">
+
+                 <field name="origin" position="after">
+                        <field name="amount_untaxed"/>
+
+				 </field>
+            </field>
+       	</record>
+
+
+
+
+
+
+
+
+
 	    <!-- extension of invoices OUT -->
 	    <record id="view_account_invoice_form_address_extension" model="ir.ui.view">
 	    	<field name="name">account.invoice_form.extension</field>
