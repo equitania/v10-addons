@@ -232,6 +232,20 @@
                                 </strong>
                                 <br/>
                                 <span t-field="line.name"/>
+                                <t t-if="line.date_planned">
+                                 <t t-if="line.get_delivery_date_flag()">
+                                    <t t-if="line.get_delivery_date_kw_flag()">
+                                        <div class="clearfix"></div>
+                                        Planned date: CW
+                                        <span t-esc="line.get_delivery_date_kw(line.date_planned)" />
+                                        </t>
+                                     <t t-if="line.get_delivery_date_kw_flag() == False or line.get_delivery_date_kw_flag() == None">
+                                        <div class="clearfix"></div>
+                                        Planned date:
+                                            <span t-esc="line.get_formatted_planned_date(line.date_planned)" />
+                                     </t>
+                                 </t>
+                                </t>
                                 <br/>
                                 <div id="agreement_id"/>
                             </td>

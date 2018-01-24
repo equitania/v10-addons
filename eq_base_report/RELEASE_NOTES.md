@@ -1,5 +1,20 @@
 ## Modul eq_base_report
 
+#### 17.01.2017
+#### Version 1.0.26
+##### IMP
+- Reportfooter: Umbruch nach einer Bank erzwingen. Notwendig wenn man 2 Bankkonten angegeben hat.
+
+#### 16.01.2017
+#### Version 1.0.25
+##### CHG
+- Schriftfarbe für internen Reportheader auf schwarz geändert
+
+#### 16.01.2017
+#### Version 1.0.24
+##### ADD
+- Report Papierformat für interne Dokumente erstellt
+
 #### 19.12.2017
 #### Version 1.0.23
 ##### CHG

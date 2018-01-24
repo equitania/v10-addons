@@ -37,7 +37,17 @@ class eq_sale_order_extension(models.Model):
 
     eq_use_page_break_after_header = fields.Boolean(string='Page break after header text')
     eq_use_page_break_before_footer = fields.Boolean(string='Page break before footer text')
-    eq_show_preview_button = fields.Boolean(default=False)
+    eq_show_preview_button = fields.Boolean(string='Show Preview Button',default=False)
+
+    @api.model
+    def create(self,vals):
+        if 'eq_show_preview_button' not in vals:
+            ir_values_obj = self.env['ir.values']
+            show_preview = ir_values_obj.get_default('sale.order','eq_show_preview_button')
+            vals['eq_show_preview_button'] = show_preview
+
+        result = super(eq_sale_order_extension, self).create(vals)
+        return result
 
     @api.multi
     def action_quotation_send(self):
@@ -388,17 +398,17 @@ class eq_sale_configuration_address(models.TransientModel):
             'eq_foot_text_invoice': eq_foot_text_invoice,
         }
 
-    @api.onchange('default_eq_show_preview_button')
-    def onchange_default_eq_show_preview_button(self):
-        sale_order_objs = self.env['sale.order'].search([])
-        if self.default_eq_show_preview_button:
-            for sale_order_obj in sale_order_objs:
-                values = {'eq_show_preview_button': True}
-                sale_order_obj.write(values)
-        else:
-            for sale_order_obj in sale_order_objs:
-                values = {'eq_show_preview_button' : False}
-                sale_order_obj.write(values)
+    # @api.onchange('default_eq_show_preview_button')
+    # def onchange_default_eq_show_preview_button(self):
+    #     sale_order_objs = self.env['sale.order'].search([('state','in',('draft','sent','sale'))])
+    #     if self.default_eq_show_preview_button:
+    #         for sale_order_obj in sale_order_objs:
+    #             values = {'eq_show_preview_button': True}
+    #             sale_order_obj.write(values)
+    #     else:
+    #         for sale_order_obj in sale_order_objs:
+    #             values = {'eq_show_preview_button' : False}
+    #             sale_order_obj.write(values)
 
 
     default_show_address = fields.Boolean(

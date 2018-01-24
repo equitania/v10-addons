@@ -75,11 +75,14 @@ class ResPartner(models.Model):
                         partner.customer_number = _cust_auto_ref
 
                         if not partner.cust_ref_print or partner.cust_ref_print != _cust_auto_ref:
-                            self.write(
-                                {
-                                    'cust_ref_print': _cust_auto_ref
-                                }
-                            )
+                            if isinstance(self.id, models.NewId):
+                                pass
+                            else:
+                                self.write(
+                                    {
+                                        'cust_ref_print': _cust_auto_ref
+                                    }
+                                )
 
                 else:
                     _cust_no_auto_ref = partner.cust_no_auto_ref
@@ -127,7 +130,7 @@ class ResPartner(models.Model):
             # in allen anderen Fällen
             else:
                 # eine Kundennummer erzeugen
-                vals['cust_auto_ref'] = self.env['ir.sequence'].get('customer.number')
+                vals['cust_auto_ref'] = self.env['ir.sequence'].get('receivable.account.number')
                 vals['cust_no_auto_ref'] = vals['cust_auto_ref']
                 vals['cust_ref_print'] = vals['cust_auto_ref']
 

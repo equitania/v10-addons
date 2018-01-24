@@ -22,13 +22,13 @@
 {
     'name': 'Equitania HR Timesheet Begin End Erweiterungen',
     'license': 'AGPL-3',
-    'version': '1.0.1',
+    'version': '1.0.2',
     'description': """
         Equitania Erweiterungen für das HR Timesheet Begin End Modul der OCA
     """,
     'author': 'Equitania Software GmbH',
     'website': 'www.myodoo.de',
-    'depends': ['hr_timesheet_activity_begin_end'],
+    'depends': ['hr_timesheet_activity_begin_end','sale_timesheet'],
     'category' : 'Human Resources',
     'summary': 'Equitania HR Timesheet Begin End Erweiterungen',
 

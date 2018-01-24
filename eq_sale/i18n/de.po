@@ -624,9 +624,19 @@ msgstr "Vorschau Button"
 #. module: eq_sale
 #: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_default_eq_show_preview_button
 msgid "Show Preview-Button in Sale Order [eq_sale]"
-msgstr "Vorschau Button in Angeboten/Verkaufsaufträgen anzeigen [eq_sale]"
+msgstr "Standardeinstellung Vorschau Button in Angeboten/Verkaufsaufträgen anzeigen [eq_sale]"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "Delivery date: CW"
 msgstr "Lieferdatum: KW"
+
+#. module: eq_sale
+#: model:ir.model.fields,field_description:eq_sale.field_sale_order_eq_show_preview_button
+msgid "Show Preview Button"
+msgstr "Vorschau Button anzeigen"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_sale_form_quote
+msgid "Preview"
+msgstr "Vorschau"

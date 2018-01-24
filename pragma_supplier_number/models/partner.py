@@ -123,7 +123,7 @@ class ResPartner(models.Model):
             # in allen anderen Fällen
             else:
                 # eine Lieferantennummer erzeugen
-                vals['supp_auto_ref'] = self.env['ir.sequence'].get('supplier.number')
+                vals['supp_auto_ref'] = self.env['ir.sequence'].get('payable.account.number')
                 vals['supp_no_auto_ref'] = vals['supp_auto_ref']
                 vals['supp_ref_print'] = vals['supp_auto_ref']
 
