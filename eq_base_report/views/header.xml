@@ -165,4 +165,63 @@
             </div>
         </div>
     </template>
+
+<!-- overrides the basic rendering of the standard report footers which are still in use by other report templates, such as website quotations -->
+<!-- This report's advantage is: it has the company address in its header - without the customer-address. Which is includet in the special reports like website quotation itself-->
+<template id="eq_basic_external_layout_header_replace" inherit_id="report.external_layout_header">
+    <xpath expr="//div[@class='header']" position="replace">
+
+        <div class="header padding-print">
+            <div class="row zero_min_height" style="padding-right:0.5cm;">
+                <div class="leftbox">
+                    <div name="company_address">
+                        <span t-field="company.partner_id"
+                        t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'
+                        style="border: 1px solid grey; border-radius:5px; padding:10px; display:inline-block;"/>
+                    </div>
+                </div>
+
+                <div class="rightbox" id="logo" >
+                    <!--<img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo"
+                         class="text-right" style="width: 7cm;border:1px solid green;"/>-->
+                    <img t-if="company.eq_report_logo" t-att-src="'data:image/png;base64,%s' % company.eq_report_logo" style="margin-right:15px; float:right;width: 7cm;" class="text-right"/>
+                    <div t-if="not company.eq_report_logo" style="color:#666;"><strong><i>Sie müssen noch Ihr Reportlogo konfigurieren</i></strong><br/><ul><li>Einstellungen &gt; Allgemeine Einstellungen</li><li>Unter <strong>Reportkonfigurationen</strong> können Sie<br/>Ihr Logo für Reports hochladen.</li></ul></div>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="header">
+            <div class="row">
+                <div class="col-xs-3">
+                    <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 45px;"/>
+                </div>
+                <div class="col-xs-9 text-right" style="margin-top:20px;" t-field="company.rml_header1"/>
+            </div>
+            <div class="row zero_min_height">
+                <div class="col-xs-12">
+                    <div style="border-bottom: 1px solid green;"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6" name="company_address">
+                    <span t-field="company.partner_id"
+                        t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'
+                        style="border-bottom: 1px solid black; display:inline-block;"/>
+                </div>
+            </div>
+        </div>-->
+
+    </xpath>
+</template>
+
+
+<!--<template id="eq_basic_layout_header_replace" inherit_id="report.external_layout">
+
+    <xpath expr="//t[@t-call='report.external_layout_header']" position="replace">
+		<t t-call="eq_base_report.eq_external_layout_header" />
+	</xpath>
+
+</template>-->
+
+
 </odoo>
