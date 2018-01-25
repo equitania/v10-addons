@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_eq_install_func,access_eq_install_func,model_eq_install_func,base.group_user,1,1,1,1
+access_eq_ir_mail_server,eq_ir_mail_server,model_ir_mail_server,base.group_user,1,1,0,0
+access_eq_fetchmail_server,eq_fetchmail_server,model_fetchmail_server,base.group_user,1,1,0,0
