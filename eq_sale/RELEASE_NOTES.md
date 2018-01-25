@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 25.01.2018
+#### Version 1.0.68
+##### FIX
+- BugFix: Sobald der type einers res.partner = False, war es nicht mehr möglich ein Angebot anzulegen. Abfrage hinzugefügt.
+
 #### 24.01.2018
 #### Version 1.0.67
 ##### ADD
