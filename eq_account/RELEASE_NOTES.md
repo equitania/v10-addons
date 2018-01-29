@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 29.01.2018
+#### Version 1.0.42
+##### FIX
+- stock.picking @api.model Decorator hinzugefügt, um Fehlermeldung bei der Erstellung eines Lagervorgangs zu vermeiden.
+
 #### 24.01.2018
 #### Version 1.0.40
 ##### ADD
