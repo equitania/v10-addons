@@ -45,6 +45,32 @@ class eq_res_partner(models.Model):
 
     #eq_complete_description = fields.Char(compute='_generate_complete_description', store=True)
 
+    @api.onchange('parent_id')
+    def onchange_parent_id(self):
+        # return values in result, as this method is used by _fields_sync()
+        if not self.parent_id:
+            return
+        result = {}
+        partner = getattr(self, '_origin', self)
+        if partner.parent_id and partner.parent_id != self.parent_id:
+            result['warning'] = {
+                'title': _('Warning'),
+                'message': _('Changing the company of a contact should only be done if it '
+                             'was never correctly set. If an existing contact starts working for a new '
+                             'company then a new contact should be created under that new '
+                             'company. You can use the "Discard" button to abandon this change.')}
+        if partner.type == 'contact' or self.type == 'contact':
+            if partner.street == '' or partner.street == None or partner.street == False:
+                # for contacts: copy the parent address, if set (aka, at least one
+                # value is set in the address: otherwise, keep the one from the
+                # contact)
+                address_fields = self._address_fields()
+                if any(self.parent_id[key] for key in address_fields):
+                    def convert(value):
+                        return value.id if isinstance(value, models.BaseModel) else value
+                    result['value'] = {key: convert(self.parent_id[key]) for key in address_fields}
+        return result
+
     @api.model
     def _address_fields(self):
         res = super(eq_res_partner, self)._address_fields()
