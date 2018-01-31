@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 30.01.2018
+#### Version 1.0.69
+##### FIX
+- Ticket 5101: Steuer bei prozentualer/fixer Rechnungserzeugung wurde nicht korrekt gesetzt.
+
 #### 25.01.2018
 #### Version 1.0.68
 ##### FIX
