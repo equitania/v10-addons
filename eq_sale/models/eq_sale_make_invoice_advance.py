@@ -76,6 +76,8 @@ class eqSaleAdvancePaymentInv(models.TransientModel):
                             tax_list.append(line.tax_id.id)
                     if len(tax_list) == 1:
                         taxes = order.order_line[0].tax_id
+                    else:
+                        taxes = self.product_id.taxes_id.filtered(lambda r: not order.company_id or r.company_id == order.company_id)
                 else:
                     taxes = self.product_id.taxes_id.filtered(lambda r: not order.company_id or r.company_id == order.company_id)
                 #
