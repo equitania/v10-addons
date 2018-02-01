@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 01.02.2018
+#### Version 1.0.70
+##### ADD
+- Felder Fußtext (sale.order) und Beschreibung (sale.order.line) jetzt mit translate = True definiert.
+
 #### 30.01.2018
 #### Version 1.0.69
 ##### FIX
