@@ -19,12 +19,25 @@
 #
 ##############################################################################
 
+{
+    'name': 'Equitania Website Angebote',
+    'license': 'AGPL-3',
+    'version': '1.0.1',
+    'description': """
+        Improvement of website_quote
+    """,
+    'author': 'Equitania Software GmbH',
+    'website': 'www.myodoo.de',
+    'depends': ['base_setup','sale','eq_sale','eq_base_report','website_quote'],
+    'category' : 'Website',
+    'summary': 'Improvement of website_quote',
 
-import product
-import eq_delivery_condition
-import res_partner
-import sale
-import sale_layout
-import eq_report_sale_order
-import eq_email_template_new
-import eq_sale_make_invoice_advance
+    'data': [
+        "views/templates.xml",
+
+    ],
+    'demo': [],
+    'css': ['base.css'],
+    'installable': True,
+    'auto_install': False,
+}

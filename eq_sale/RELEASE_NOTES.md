@@ -1,5 +1,20 @@
 ## Modul eq_sale
 
+#### 01.02.2018
+#### Version 1.0.70
+##### ADD
+- Felder Fußtext (sale.order) und Beschreibung (sale.order.line) jetzt mit translate = True definiert.
+
+#### 30.01.2018
+#### Version 1.0.69
+##### FIX
+- Ticket 5101: Steuer bei prozentualer/fixer Rechnungserzeugung wurde nicht korrekt gesetzt.
+
+#### 25.01.2018
+#### Version 1.0.68
+##### FIX
+- BugFix: Sobald der type einers res.partner = False, war es nicht mehr möglich ein Angebot anzulegen. Abfrage hinzugefügt.
+
 #### 24.01.2018
 #### Version 1.0.67
 ##### ADD

@@ -212,6 +212,8 @@ class res_partner(models.Model):
 
                 else:
                     type = partner_id.type
+                    if type == False:
+                        type = ''
                     if partner_id.type == 'contact':
                         type = _('contact')
                     elif partner_id.type == 'invoice':

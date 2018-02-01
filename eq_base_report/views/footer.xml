@@ -69,4 +69,18 @@
 	    </div>
 
     </template>
+
+
+
+<!-- overrides the basic rendering of the standard report footers which are still in use by other report templates, such as website quotations -->
+<template id="eq_odoostandard_layout_footer_replace" inherit_id="report.external_layout">
+
+    <xpath expr="//t[@t-call='report.external_layout_footer']" position="replace">
+		<t t-call="eq_base_report.eq_external_layout_footer" />
+	</xpath>
+
+</template>
+
+
+
 </odoo>

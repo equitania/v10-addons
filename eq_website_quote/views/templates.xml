@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+<template id="eq_website_quotation_content" inherit_id="website_quote.so_quotation_content">
+
+    <!-- Adding Headtext for Quotation from eq_sale-->
+    <xpath expr="//div[@t-field='quotation.website_description']" position="after">
+        <span t-field="quotation.eq_head_text" t-if="quotation.eq_head_text"/>
+    </xpath>
+
+    <!-- Adding IF request for Contact Person-->
+    <xpath expr="//div[@class='row mt32']/div[@class='col-md-6 col-xs-6'][2]/div[@class='row'][1]" position="attributes">
+        <attribute name="t-if">quotation.user_id</attribute>
+    </xpath>
+
+    <!-- Hide State for website Quotations, because the State is already defined in the saleorder-name -->
+    <xpath expr="//small[@t-field='quotation.state']" position="attributes">
+        <attribute name="style">display:none;</attribute>
+    </xpath>
+
+</template>
+
+
+
+<!--<template id="eq_website_quotation_report_outer_container" inherit_id="website_quote.report_quote">
+
+    <xpath expr="//t[@t-call='report.external_layout']" position="replace">
+
+        <t t-call="eq_base_report.eq_external_layout">
+            <t t-set="o" t-value="docs[0]"/>
+            <t t-foreach="docs" t-as="quotation">
+                <div class="page">
+                    <t t-call="website_quote.so_quotation_content"/>
+                </div>
+            </t>
+        </t>
+    </xpath>
+
+</template>-->
+
+        <!--
+
+
+
+        <template id="report_quote">
+            <t t-call="report.html_container">
+                <t t-set="data_report_margin_top" t-value="45"/>
+                <t t-set="data_report_header_spacing" t-value="40"/>
+                <t t-call="report.external_layout">
+                    <t t-set="o" t-value="docs[0]"/>
+                    <t t-foreach="docs" t-as="quotation">
+                        <div class="page">
+                            <t t-call="website_quote.so_quotation_content"/>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+-->
+
+    </data>
+</odoo>
+

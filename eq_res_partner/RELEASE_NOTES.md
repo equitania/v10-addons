@@ -1,5 +1,11 @@
 ## Modul eq_res_partner
 
+#### 31.01.2018
+#### Version 1.0.15
+##### ADD
+- Ticket 5215: Anpassung bei der Erstellung eines Unterkontakts.
+- Adresse der Mutter wird nur dann gezogen und bei dem Unterkontakt gespeichert ('Kontakt'), wenn keine Straße bei dem Unterkontakt gespeichert ist.
+
 #### 16.11.2017
 #### Version 1.0.14
 ##### CHG

@@ -1,5 +1,14 @@
 ## Modul eq_base_report
 
+#### 24.01.2017
+#### Version 1.0.27
+##### IMP
+- Diverse Anpassungen am Header, Footer & Styles:
+  - Reportfooter für Standard Report Dokumente wird nun durch den Equitania Footer ersetzt
+  - Reportheader für Standard Reports, welche z.B. noch von Online Website Angeboten angesprochen werden, werden nun durch eine optimierte Version erstzt und beinhalten weiterhin die Adresse der Firma
+  - Repoststyles haben nun Definitionen für H1 bis h5 in der Schriftgröße
+
+
 #### 17.01.2017
 #### Version 1.0.26
 ##### IMP

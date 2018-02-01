@@ -260,7 +260,7 @@ class eq_sale_order_extension(models.Model):
     eq_country = fields.Char(compute='_compute_country', string=" ", store=False)
 
     eq_head_text = fields.Html(string="Header", translate=True)
-    note = fields.Html('Terms and conditions') # überschrieben als HTML-Feld
+    note = fields.Html('Terms and conditions', translate=True) # überschrieben als HTML-Feld
 
     # Report
     show_delivery_date = fields.Boolean(string='Show Delivery Date')
@@ -579,5 +579,5 @@ class eq_sale_order_line(models.Model):
     eq_delivery_date = fields.Date('Delivery Date')
     get_delivery_date = fields.Char(compute="_get_delivery_date", string="Delivery", methode=True, store=False)
     eq_use_internal_description = fields.Boolean('Use internal description for sale orders')
-
+    name = fields.Text(string='Description', required=True, translate = True)
     eq_optional = fields.Boolean(string="Optional")

@@ -1,5 +1,10 @@
 ## Modul eq_mail_extension
 
+#### 25.01.2018
+#### Version 1.0.33
+##### FIX
+- Ticket 5238: Anpassung Rechte für einen normalen Benutzer.
+
 #### 08.01.2018
 #### Version 1.0.32
 ##### FIX

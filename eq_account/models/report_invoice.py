@@ -140,6 +140,7 @@ class eq_report_extension_stock_picking(models.Model):
 
     eq_ref_number = fields.Char('Sale Order Referenc', size=64)
 
+    @api.model
     def create(self, vals):
         """
             Adds the customer ref number to the picking list. Gets data from context which is set in the method action_ship_create of the sale.order

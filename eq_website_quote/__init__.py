@@ -18,13 +18,3 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-
-import product
-import eq_delivery_condition
-import res_partner
-import sale
-import sale_layout
-import eq_report_sale_order
-import eq_email_template_new
-import eq_sale_make_invoice_advance
