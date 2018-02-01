@@ -1,0 +1,210 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* eq_project
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-01 14:34+0000\n"
+"PO-Revision-Date: 2018-02-01 14:34+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_project_project_eq_total_hours
+msgid " total Time"
+msgstr "Gesamtzeit"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_tree_view_issue
+msgid "Account Issue"
+msgstr "Fall"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_tree_view_task
+msgid "Account Task"
+msgstr "Aufgabe"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view
+msgid "Account search"
+msgstr "Filter"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Task
+msgid "Account search Task"
+msgstr "Aufgabe_Filter"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+msgid "Account search Timesheet"
+msgstr "Zeiterfassung_Filter"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_project_project_eq_time_start
+msgid "Begin Hour"
+msgstr "Startzeit"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_project_project_eq_deadline
+msgid "Deadline Date"
+msgstr "Enddatum"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_form_view
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_form_view_Task
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_form_view_issue
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Task
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_tree_view
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_tree_view_issue
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_tree_view_task
+#: model:ir.ui.view,arch_db:eq_project.eq_project_issue_form_view
+msgid "Duration"
+msgstr "Dauer"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_project_project_eq_time_stop
+msgid "End Hour"
+msgstr "Endzeit"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_
+#: model:ir.ui.view,arch_db:eq_project.project_project_view_kanban
+msgid "Hour(s)"
+msgstr "Stunde(n)"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_
+#: model:ir.ui.view,arch_db:eq_project.project_project_view_kanban
+msgid "Hour(s)  /"
+msgstr "Stunde(n)  /"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_
+#: model:ir.ui.view,arch_db:eq_project.project_project_view_kanban
+msgid "Hours"
+msgstr "Stunden"
+
+#. module: eq_project
+#: model:ir.actions.act_window,name:eq_project.eq_issue_action
+msgid "Issue"
+msgstr "Fall"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view
+msgid "My Issue"
+msgstr "Meine Fälle"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Task
+msgid "My Task"
+msgstr "Meine Aufgaben"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+msgid "My Timesheet"
+msgstr "Meine Zeiterfassung"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.project_project_search_view
+msgid "My projects"
+msgstr "Meine Projekte"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_project_project_eq_project_number
+msgid "Number"
+msgstr "Nummer"
+
+#. module: eq_project
+#: model:ir.model,name:eq_project.model_project_project
+#: model:ir.ui.menu,name:eq_project.project_menu
+msgid "Project"
+msgstr "Projekt"
+
+#. module: eq_project
+#: model:ir.actions.act_window,name:eq_project.eq_task_action
+msgid "Task"
+msgstr "Aufgabe"
+
+#. module: eq_project
+#: model:ir.actions.act_window,help:eq_project.project_action
+#: model:ir.actions.act_window,help:eq_project.project_timesheet_action_
+msgid "The Odoo issues tracker allows you to efficiently manage things\n"
+"                            like internal requests, software development bugs, customer\n"
+"                            complaints, project troubles, material breakdowns, etc."
+msgstr "The Odoo issues tracker allows you to efficiently manage things\n"
+"                            like internal requests, software development bugs, customer\n"
+"                            complaints, project troubles, material breakdowns, etc."
+
+#. module: eq_project
+#: model:ir.actions.act_window,name:eq_project.project_timesheet_action_
+#: model:ir.ui.menu,name:eq_project.menu_project_timesheet
+#: model:ir.ui.view,arch_db:eq_project.project_timesheet_calendar_view
+msgid "Timesheet"
+msgstr "Zeiterfassung"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_issue_form_view
+msgid "Timesheet Activities"
+msgstr "Zeiterfassungsaktivitäten"
+
+#. module: eq_project
+#: model:ir.ui.menu,name:eq_project.menu_issue
+msgid "Timesheet(issues)"
+msgstr "Zeiterfassung(Fälle)"
+
+#. module: eq_project
+#: model:ir.ui.menu,name:eq_project.menu_task
+msgid "Timesheet(task)"
+msgstr "Zeiterfassung(Aufgabe)"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_issue_form_view
+msgid "Timesheets"
+msgstr "Zeiterfassung"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_tree_view
+msgid "Tree View Account"
+msgstr "Tree Ansicht"
+
+#. module: eq_project
+#: model:ir.actions.act_window,help:eq_project.eq_issue_action
+#: model:ir.actions.act_window,help:eq_project.eq_task_action
+msgid "click here to insert course data"
+msgstr "click here to insert course data"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.project_project_search_view
+#: model:ir.ui.view,arch_db:eq_project.project_project_tree_view
+msgid "project"
+msgstr "projekt"
+
+#. module: eq_project
+#: model:ir.actions.act_window,name:eq_project.project_action
+msgid "project_item"
+msgstr "projekte"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_project_project_eq_rest_hours
+msgid "rest Time"
+msgstr "Reststunde"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_
+#: model:ir.ui.view,arch_db:eq_project.project_project_view_kanban
+msgid "will be filled automaticaly"
+msgstr "wird automatisch ausgefüllt"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_project_project_eq_worked_hours
+msgid "worked Time"
+msgstr "Geliefertestunden"
+
