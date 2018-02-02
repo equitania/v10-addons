@@ -34,12 +34,16 @@
 
 
 
-
                  <record id="eq_project_extension_view" model="ir.ui.view">
                             <field name="name">project.extension</field>
                             <field name="model">project.project</field>
                             <field name="inherit_id" ref="project_recalculate.edit_project_recalculate"/>
                             <field name="arch" type="xml">
+                                <field name="name" position="after">
+                                     -<button type="object" name="nummer_generator" string="Project Number Automatically" class="oe_highlight"></button>
+                               </field>
+
+
                                <field name="name" position="before">
                                      <field name="eq_project_number" /> -
                                </field>
@@ -101,7 +105,7 @@
                                     <i class="fa fa-hourglass-end" aria-hidden="true"></i> <field name="eq_worked_hours"/> Hour(s)  /  <field name="eq_rest_hours"/> Hour(s)
                                  </div>
                                 <br/>
-                                 <i class="fa fa-clock-o" aria-hidden="true"></i> <field name="eq_deadline"/>
+                                 <i class="fa fa-clock-o" aria-hidden="true"></i> <field name="date"/>
                         </kanban>
                     </field>
                 </record>
@@ -150,7 +154,7 @@
                                         <field name="eq_total_hours"/>
                                         <field name="eq_worked_hours"/>
                                         <field name="eq_rest_hours"/>
-                                        <field name="eq_deadline"/>
+                                        <field name="date"/>
                                         <filter string="My projects" name="my_projects" domain="[('user_id','=',uid)]"/>
                                        <!--<filter string="My projects" name="my_projects" domain="[{'group_by':'user_id'}]"/>  -->
                                 </search>
@@ -170,7 +174,7 @@
                                         <field name="eq_total_hours"/>
                                         <field name="eq_worked_hours"/>
                                         <field name="eq_rest_hours"/>
-                                        <field name="eq_deadline"/>
+                                        <field name="date"/>
                                 </tree>
                             </field>
                  </record>

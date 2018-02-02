@@ -22,7 +22,7 @@
 {
     'name': "Equitania Projekt",
     'license': 'AGPL-3',
-    'version': '1.0.4',
+    'version': '1.0.6',
     'category': 'project',
     'description': """Extensions for project""",
     'author': 'Equitania Software GmbH',
@@ -33,6 +33,7 @@
             'data/ir_sequence_data.xml',
             'views/eq_project_extension_view.xml',
             'views/eq_issues_extension.xml',
+            'views/eq_extension_project_task_type.xml',
              ],
     "active": False,
     "installable": True

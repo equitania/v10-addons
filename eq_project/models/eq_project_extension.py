@@ -27,6 +27,16 @@ class eq_project_extension(models.Model):
     _inherit = 'project.project'
 
 
+    eq_project_number = fields.Char('Number')
+
+    eq_deadline = fields.Date (string='Deadline Date', compute='_deadline_date')
+    eq_rest_hours = fields.Float(string='rest Time', compute='_calculated_rest_time')
+    eq_total_hours = fields.Float(string=' total Time', compute='_calculated_total_time')
+    eq_worked_hours = fields.Float(string='worked Time', compute='_calculated_worked_time')
+
+    eq_time_start = fields.Float(string='Begin Hour')
+    eq_time_stop = fields.Float(string='End Hour')
+
 
 
     @api.model
@@ -36,8 +46,15 @@ class eq_project_extension(models.Model):
             return super(eq_project_extension, self).create(vals)
 
 
+    def nummer_generator(self):
+        print "print", self
+        seq = self.env['ir.sequence'].get('eq_project_number')
+        self.eq_project_number = seq
 
-    @api.onchange('planned_hours')
+
+
+
+    @api.onchange('eq_total_hours') #planned_hours
     def _calculated_total_time(self):
          eq_total_hour = 0.0
 
@@ -46,7 +63,7 @@ class eq_project_extension(models.Model):
 
              for task in task_obj:
 
-                 if (task.stage_id.id != 1) and (task.stage_id.id != 2) and (task.stage_id.id != 3) and (task.stage_id.id != 4):  # wenn stage_id not on state  (new,abgeschlossen,basic,advanced)
+                 if (task.stage_id.calculated_item):  # wenn stage_id only on state  (start & Umsetzung)
 
                      eq_total_hour = task.planned_hours + eq_total_hour
 
@@ -57,7 +74,7 @@ class eq_project_extension(models.Model):
              project.eq_total_hours = eq_total_hour
              eq_total_hour = 0.0
 
-    @api.onchange('planned_hours, progress')
+    @api.onchange('eq_total_hours','eq_worked_hours') #planned_hours, progress
     def _calculated_rest_time(self):
         eq_rest_hour = 0.0
 
@@ -65,8 +82,7 @@ class eq_project_extension(models.Model):
               task_obj = self.env['project.task'].search([('project_id', '=', project.id)])
 
               for task in task_obj:
-                  if (task.stage_id.id != 1) and (task.stage_id.id != 2) and (task.stage_id.id != 3) and (task.stage_id.id != 4):  # wenn stage_id not on state  (new,abgeschlossen,basic,advanced)
-
+                  if (task.stage_id.calculated_item):  # wenn stage_id only on state  (start & Umsetzung)
                       eq_rest_hour = (task.planned_hours-((task.progress *  task.planned_hours)/100) ) + eq_rest_hour #progress was in percent
 
                   else:
@@ -76,7 +92,7 @@ class eq_project_extension(models.Model):
 
 
 
-    @api.onchange('progress')
+    @api.onchange('eq_worked_hours')
     def _calculated_worked_time(self):
         eq_worked_hour = 0.0
 
@@ -84,44 +100,18 @@ class eq_project_extension(models.Model):
             task_obj = self.env['project.task'].search([('project_id', '=', project.id)])
 
             for task in task_obj:
-                if (task.stage_id.id != 1) and (task.stage_id.id != 2) and (task.stage_id.id != 3) and (task.stage_id.id != 4):  # wenn stage_id not on state  (new,abgeschlossen,basic,advanced)
-                        eq_worked_hour = ((task.progress *  task.planned_hours)/100 ) + eq_worked_hour #was in percent
+                if (task.stage_id.calculated_item):  # wenn stage_id only on state  (start & Umsetzung)
+                    eq_worked_hour = ((task.progress *  task.planned_hours)/100 ) + eq_worked_hour #was in percent
                 else:
                     pass
             project.eq_worked_hours = eq_worked_hour
             eq_worked_hour = 0.0
 
-    @api.onchange('date_deadline')
-    def _deadline_date(self):
-        eq_date = ''
-        for project in self:
-             task_obj = self.env['project.task'].search([('project_id', '=', project.id)])
-
-             for task in task_obj:
-
-                 if (task.stage_id.id != 1) and (task.stage_id.id != 2) and (task.stage_id.id != 3) and (task.stage_id.id != 4): #wenn stage_id not on state  (new,abgeschlossen,basic,advanced)
-                      if (task['date_deadline']) > eq_date :
-                          eq_date = task['date_deadline']
-                      else :
-                          pass
-                 else:
-                     pass
-
-             project.eq_deadline = eq_date
-             eq_date = ''
 
 
 
 
-    eq_project_number = fields.Char('Number')
 
-    eq_deadline = fields.Date (string='Deadline Date', compute='_deadline_date')
-    eq_rest_hours = fields.Float(string='rest Time', compute='_calculated_rest_time')
-    eq_total_hours = fields.Float(string=' total Time', compute='_calculated_total_time')
-    eq_worked_hours = fields.Float(string='worked Time', compute='_calculated_worked_time')
-
-    eq_time_start = fields.Float(string='Begin Hour')
-    eq_time_stop = fields.Float(string='End Hour')
 
 
 

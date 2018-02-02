@@ -1,4 +1,12 @@
 ## Modul eq_project
+#### 02.02.2018
+#### Version 1.0.6
+##### ADD
+- Berechnungsfunction für die Zeiterfassung angepasst.
+- Button eingesetzt für die automatische Generierung von Projekt_Nummer
+_ Erweiterung der Stufen_Ansicht für die Berechnung Option
+
+
 
 #### 02.02.2018
 #### Version 1.0.5
