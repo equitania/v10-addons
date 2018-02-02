@@ -41,7 +41,7 @@
                             <field name="inherit_id" ref="project.edit_project"/>
                             <field name="arch" type="xml">
                                    <field name="name" position="before">
-                                         <field name="eq_project_number" />
+                                         <field name="eq_project_number" /> -
                                    </field>
 
                             </field>

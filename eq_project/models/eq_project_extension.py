@@ -131,10 +131,10 @@ class eq_project_extension_2(models.Model):
         @api.onchange('project_id')
         def account_billiable(self):
               for account in self:
-                   project_obj= self.env['project.project'].search([('id', '=', account.project_id)])
+                   project_obj= self.env['project.project'].search([('id', '=', account.project_id.id)])
 
-                   for id in  project_obj:
-                       self.to_invoice = id.eq_to_invoice_id
+                   for obj in  project_obj:
+                       self.to_invoice = obj.eq_to_invoice_id
 
 
 

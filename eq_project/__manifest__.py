@@ -30,9 +30,9 @@
     'website': 'www.myodoo.de',
     "depends" : ['base','project','project_issue','hr_timesheet_activity_begin_end', 'analytic','project_parent',],  #no dependencies for stage was always in Project/Data/project_data.xml declared
     'data': [
-            'Data/ir_sequence_data.xml',
-            'Views/eq_project_extension_view.xml',
-            'Views/eq_issues_extension.xml',
+            'data/ir_sequence_data.xml',
+            'views/eq_project_extension_view.xml',
+            'views/eq_issues_extension.xml',
              ],
     "active": False,
     "installable": True
