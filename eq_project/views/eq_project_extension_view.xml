@@ -159,15 +159,15 @@
 
 <!-- project action-->
 
-                <record id="project_action" model="ir.actions.act_window">
+                <record id="eq_project_action" model="ir.actions.act_window">
                     <field name="name">project_item</field>
                     <field name="res_model">project.project</field>
                     <field name="view_mode">kanban,tree,form,calendar</field>
                     <field name="context">{'search_default_my_projects': 1, 'group_by':'parent_project_id'}</field>
                    <field name="view_ids"
                            eval="[(5, 0, 0),
+                                    (0, 0, {'view_mode': 'kanban', 'view_id': ref('eq_project_extension_')}),
                                   (0, 0, {'view_mode': 'tree', 'view_id': ref('project_project_tree_view')}),
-                                  (0, 0, {'view_mode': 'form', 'view_id': ref('project_project_form_view')}),
                                   ]"/>
                     <field name="help" type="html">
                         <p>
@@ -498,7 +498,7 @@
                                     action="eq_task_action" sequence="20"/>
 
                     <menuitem id="project_menu" name="Project" parent="project.menu_project_management"
-                                sequence="50" action="project_action" />
+                                sequence="50" action="eq_project_action" />
 
     </data>
 </odoo>

@@ -1,6 +1,11 @@
 ## Modul eq_project
 
 #### 02.02.2018
+#### Version 1.0.4
+##### ADD
+- Suche 'Projekt' => Erste Anzeige Kanban-View
+
+#### 02.02.2018
 #### Version 1.0.3
 ##### ADD
 - Aufruf Projekte Suchen Maske, ruft jetzt die korrekte Formansicht auf.
