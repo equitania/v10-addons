@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="eq_report_stock_barcode_replace" inherit_id="stock.external_layout_header_barcode_right" active="True" customize_show="True">
+<!-- Dieses Template überschreibt den vom Standard vorgesehenen Barcode auf dem Packschein, da wir diesen in unseren Reports selbst positionieren und es sonst Fehldarstellungen für andere Reports wie von Website_Quote ergibt. -->
+
+
+
+            <xpath expr="//div[@name='right_box']" position="replace">
+                test
+            </xpath>
+
+        </template>
+    </data>
+</odoo>

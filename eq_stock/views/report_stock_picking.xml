@@ -182,6 +182,7 @@
                             </div>
                         </t>
                         <t t-set="table_header">
+<t t-set="has_serial_number" t-value="o.pack_operation_ids.filtered('pack_lot_ids')" groups="stock.group_production_lot"/>
                             <thead>
                                 <tr>
                                     <th>
@@ -201,6 +202,9 @@
                                     </th>
                                     <th class="text-right">
                                         <strong>Unit</strong>
+                                    </th>
+                                    <th t-if="has_serial_number">
+                                        <strong>Lot/Serial Number</strong>
                                     </th>
                                 </tr>
                             </thead>
@@ -256,7 +260,7 @@
 
                         <table class="table table-condensed"
                                style="border-bottom: 1px solid #999999;">
-                            <!-- todo rausgenommen
+                            <!-- rausgenommen:
                              t-if="not o.pack_operation_ids" -->
                             <t t-raw="table_header"/>
                             <tbody class="sale_tbody">
@@ -286,6 +290,21 @@
                                     </td>
                                     <td class="text-right">
                                         <span t-field="line.product_uom.name"/>
+                                    </td>
+                                    <td style="padding:0px;" t-if="has_serial_number">
+                                        <table class="table table-condensed"  style="margin:0px;" ><!-- t-if="line.quant_ids.lot_id"-->
+                                            <tr t-foreach="line.quant_ids" t-as="quant">
+                                                <td>
+                                                    <span t-field="quant.lot_id" />
+                                                    <!--<t t-if="not quant.lot_id">
+                                                        <span t-field="quant.lot_name" />
+                                                    </t>-->
+                                                </td>
+                                                <td  t-if="quant.lot_id">
+                                                    <span t-field="quant.qty" /> <t t-if="o.picking_type_id.use_existing_lots and o.state!='done'"> / <span t-field="quant.qty_todo" /></t>
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </td>
                                     <t t-set="pos" t-value="pos + 1"/>
                                 </tr>

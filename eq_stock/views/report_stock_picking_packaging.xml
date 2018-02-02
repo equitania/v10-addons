@@ -145,7 +145,10 @@
                         </div>
                     </div>
                     <br/>
-                    <h1 t-field="o.name" class="mt0"/>
+                    <div>
+                        <h1 t-field="o.name" class="mt0" style="float:left;"/>
+                        <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.name, 600, 100)" style="width:300px;height:30px; float:right;"/>
+                    </div>
                     <table class="table table-condensed">
                         <thead>
                             <tr>
@@ -214,17 +217,16 @@
                                         <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', pack_operation.package_id.name, 600, 100)" style="width:300px;height:50px"/>
                                     </span>
                                 </td>
-                                <td t-if="has_serial_number">
-                                    <table class="table table-condensed" t-if="pack_operation.pack_lot_ids">
+                                <td t-if="has_serial_number" style="padding:0px;">
+                                    <table class="table table-condensed" t-if="pack_operation.pack_lot_ids" style="margin:0px;">
                                         <tr t-foreach="pack_operation.pack_lot_ids" t-as="packlot">
                                             <td>
-                                                <span t-field="packlot.lot_id"/>
+                                                <span t-field="packlot.lot_id" />
                                                 <t t-if="not packlot.lot_id">
-                                                    <span t-field="packlot.lot_name"/>
+                                                    <span t-field="packlot.lot_name" />
                                                 </t>
                                             </td>
-                                            <td>
-                                                <span t-field="packlot.qty"/> <t t-if="o.picking_type_id.use_existing_lots and o.state!='done'"> / <span t-field="packlot.qty_todo"/></t>
+                                            <td>                                                <span t-field="packlot.qty" /> <t t-if="o.picking_type_id.use_existing_lots and o.state!='done'"> / <span t-field="packlot.qty_todo" /></t>
                                             </td>
                                         </tr>
                                     </table>

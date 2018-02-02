@@ -1,5 +1,11 @@
 ## Modul eq_stock
 
+#### 02.02.2018
+#### Version 1.0.11
+##### IMP
+- Lieferschein Enthält nun Logik für Serien & Chargen-Nummern. Packschein enthält nun den Barcode der vorher in den Kopfdaten abgedruckt wird.
+
+
 #### 18.01.2018
 #### Version 1.0.10
 ##### IMP

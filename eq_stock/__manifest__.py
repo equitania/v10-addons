@@ -22,7 +22,7 @@
 {
     'name': 'Equitania Lager Optimierungen',
     'license': 'AGPL-3',
-    'version': '1.0.10',
+    'version': '1.0.11',
     'description': """
         Erweiterung für Lager
     """,
@@ -34,6 +34,7 @@
 
     'data': [
         "views/stock_picking_view.xml",
+        "views/report_stock_barcode.xml",
         "views/report_stock_picking.xml",
         "views/report_stock_picking_packaging.xml",
     ],
