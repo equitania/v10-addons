@@ -24,6 +24,10 @@ from datetime import datetime as DateTime
 
 
 class eq_project_extension(models.Model):
+    """
+    this class is used to calculate the time fields that will be displayed in the kanban
+
+    """
     _inherit = 'project.project'
 
 
@@ -41,13 +45,23 @@ class eq_project_extension(models.Model):
 
     @api.model
     def create(self, vals):
-            seq = self.env['ir.sequence'].get('eq_project_number')
-            vals['eq_project_number'] = seq
-            return super(eq_project_extension, self).create(vals)
+        """
+        This overwrites the create method. give a project number automatically
+
+        :param vals:
+        :return:
+        """
+
+        seq = self.env['ir.sequence'].get('eq_project_number')
+        vals['eq_project_number'] = seq
+        return super(eq_project_extension, self).create(vals)
 
 
     def nummer_generator(self):
-        print "print", self
+        """
+        give a project number automatically, if not set
+        :return:
+        """
         seq = self.env['ir.sequence'].get('eq_project_number')
         self.eq_project_number = seq
 
@@ -56,9 +70,12 @@ class eq_project_extension(models.Model):
 
     @api.onchange('eq_total_hours') #planned_hours
     def _calculated_total_time(self):
-         eq_total_hour = 0.0
-
-         for project in self:
+        """
+            calculate the total time invested in the project
+        :return:
+        """
+        eq_total_hour = 0.0
+        for project in self:
              task_obj = self.env['project.task'].search([('project_id', '=', project.id)])
 
              for task in task_obj:
@@ -76,6 +93,11 @@ class eq_project_extension(models.Model):
 
     @api.onchange('eq_total_hours','eq_worked_hours') #planned_hours, progress
     def _calculated_rest_time(self):
+        """
+        calculate the working time invested in the project
+        :param self:
+        :return:
+        """
         eq_rest_hour = 0.0
 
         for project in self:
@@ -94,6 +116,11 @@ class eq_project_extension(models.Model):
 
     @api.onchange('eq_worked_hours')
     def _calculated_worked_time(self):
+        """
+        calculate the remaining work time to invest in the project
+        :param self:
+        :return:
+        """
         eq_worked_hour = 0.0
 
         for project in self:
@@ -120,11 +147,15 @@ class eq_project_extension_2(models.Model):
 
         @api.onchange('project_id')
         def account_billiable(self):
-              for account in self:
-                   project_obj= self.env['project.project'].search([('id', '=', account.project_id.id)])
+            """
+            ensures that the field eq_to_invoice_id  automatically recorded in the account.analytic.line
+            :return:
+            """
+            for account in self:
+               project_obj= self.env['project.project'].search([('id', '=', account.project_id.id)])
 
-                   for obj in  project_obj:
-                       self.to_invoice = obj.eq_to_invoice_id
+               for obj in  project_obj:
+                   self.to_invoice = obj.eq_to_invoice_id
 
 
 

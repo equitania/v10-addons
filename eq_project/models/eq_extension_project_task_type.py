@@ -6,6 +6,10 @@ from odoo import fields, models
 
 
 class project_task_type_class(models.Model):
+    """
+    A Class for a boolean field to know if the stage is to calculate or not
+
+    """
     _inherit = 'project.task.type'
 
     calculated_item = fields.Boolean("Calculable level",default=False)

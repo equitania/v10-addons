@@ -8,6 +8,7 @@
 - Erweiterung der Stufen_Ansicht für die Berechnung Option
 - Anpassung Übersetzung
 - Projektnummererzeugungsbutton -> Link
+-Code dokumentiert
 
 #### 02.02.2018
 #### Version 1.0.5
