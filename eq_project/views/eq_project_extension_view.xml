@@ -92,25 +92,25 @@
 
 <!-- project form-->
 
-                <record id="project_project_form_view" model="ir.ui.view">
-                    <field name="name">project.project.form</field>
-                    <field name="model">project.project</field>
-                    <field name="arch" type="xml">
-                        <form>
-                            <sheet>
-                                <group>
+                <!--<record id="project_project_form_view" model="ir.ui.view">-->
+                    <!--<field name="name">project.project.form</field>-->
+                    <!--<field name="model">project.project</field>-->
+                    <!--<field name="arch" type="xml">-->
+                        <!--<form>-->
+                            <!--<sheet>-->
+                                <!--<group>-->
 
-                                     <field name="eq_project_number"/>
-                                        <field name="name"/>
-                                        <field name="eq_total_hours"/>
-                                        <field name="eq_worked_hours"/>
-                                        <field name="eq_rest_hours"/>
-                                        <field name="eq_deadline"/>
-                                </group>
-                            </sheet>
-                        </form>
-                    </field>
-                </record>
+                                     <!--<field name="eq_project_number"/>-->
+                                        <!--<field name="name"/>-->
+                                        <!--<field name="eq_total_hours"/>-->
+                                        <!--<field name="eq_worked_hours"/>-->
+                                        <!--<field name="eq_rest_hours"/>-->
+                                        <!--<field name="eq_deadline"/>-->
+                                <!--</group>-->
+                            <!--</sheet>-->
+                        <!--</form>-->
+                    <!--</field>-->
+                <!--</record>-->
 
         <!-- project tree-->
 
