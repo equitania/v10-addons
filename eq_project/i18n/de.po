@@ -208,3 +208,22 @@ msgstr "wird automatisch ausgefüllt"
 msgid "worked Time"
 msgstr "Geliefertestunden"
 
+#. module: eq_project
+#: model:ir.actions.act_window,name:eq_project.eq_project_action
+msgid "project_item"
+msgstr "Projekt"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.project_project_search_view_2
+msgid "My projects"
+msgstr "Meine Projekte"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_view
+msgid "Time Scheduling"
+msgstr "Zeitplanung"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_view
+msgid "Configuration"
+msgstr "Konfiguration"

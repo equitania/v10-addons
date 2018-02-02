@@ -1,6 +1,13 @@
 ## Modul eq_project
 
 #### 02.02.2018
+#### Version 1.0.5
+##### ADD
+- Reihenfolge, Arbeitszeit, Startdatum, Ablaufdatum und Berechnungsart werden jetzt auch außerhalb des Debugmodus eingeblendet.
+- Übersetzung angepasst
+- Filter überarbeitet und wieder einkommentiert.
+
+#### 02.02.2018
 #### Version 1.0.4
 ##### ADD
 - Suche 'Projekt' => Erste Anzeige Kanban-View

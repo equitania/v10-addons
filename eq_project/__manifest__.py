@@ -28,7 +28,7 @@
     'author': 'Equitania Software GmbH',
     'summary': 'Project Extension',
     'website': 'www.myodoo.de',
-    "depends" : ['base','project','project_issue','hr_timesheet_activity_begin_end', 'analytic','project_parent',],  #no dependencies for stage was always in Project/Data/project_data.xml declared
+    "depends" : ['base','project','project_issue','hr_timesheet_activity_begin_end', 'analytic','project_parent','project_recalculate'],  #no dependencies for stage was always in Project/Data/project_data.xml declared
     'data': [
             'data/ir_sequence_data.xml',
             'views/eq_project_extension_view.xml',

@@ -23,7 +23,7 @@
                                                 <i class="fa fa-hourglass-end" aria-hidden="true"></i> <field name="eq_worked_hours"/> Hour(s)  /  <field name="eq_rest_hours"/> Hour(s)
                                              </div>
                                             <br/>
-                                             <i class="fa fa-clock-o" aria-hidden="true"></i> <field name="eq_deadline"/>
+                                             <i class="fa fa-clock-o" aria-hidden="true"></i> <field name="date"/>
 
                                     </xpath>
 
@@ -38,11 +38,31 @@
                  <record id="eq_project_extension_view" model="ir.ui.view">
                             <field name="name">project.extension</field>
                             <field name="model">project.project</field>
-                            <field name="inherit_id" ref="project.edit_project"/>
+                            <field name="inherit_id" ref="project_recalculate.edit_project_recalculate"/>
                             <field name="arch" type="xml">
-                                   <field name="name" position="before">
-                                         <field name="eq_project_number" /> -
-                                   </field>
+                               <field name="name" position="before">
+                                     <field name="eq_project_number" /> -
+                               </field>
+
+                                <xpath expr="//group[@name='misc']" position="replace">
+                                    <group name="misc">
+                                        <group string="Configuration">
+                                            <field name="sequence" />
+                                        </group>
+                                        <group string="Time Scheduling">
+                                            <field name="resource_calendar_id"/>
+                                            <field name="date_start" attrs="{'readonly': [('calculation_type', '=', 'date_end')]}" groups="base.group_user"/>
+                                            <field name="date" attrs="{'readonly': [('calculation_type', '=', 'date_begin')]}" groups="base.group_user"/>
+                                            <field name="calculation_type" groups="base.group_user"/>
+                                                <button name="project_recalculate.wizard_project_recalculate"
+                                                        type="action"
+                                                        string="Recalculate project"
+                                                        icon="fa-cogs"
+                                                        attrs="{'invisible': [('calculation_type', '=', False)]}"
+                                                />
+                                        </group>
+                                    </group>
+                                </xpath>
 
                             </field>
                  </record>
@@ -280,8 +300,8 @@
                                     </group>
 
                                     <group>
-                                        <field name="to_invoice"/>
                                         <field name="project_id"  required="1"/>
+                                        <field name="to_invoice"/>
                                         <field name="invoice_id"/>
                                         <field name="user_id" required="1"/>
                                     </group>
@@ -307,8 +327,8 @@
                                         </group>
 
                                         <group>
-                                            <field name="to_invoice"/>
                                             <field name="project_id"  required="1"/>
+                                            <field name="to_invoice"/>
                                             <field name="invoice_id"/>
                                             <field name="task_id"/>
                                             <field name="user_id" required="1"/>
@@ -336,8 +356,8 @@
                                         </group>
 
                                         <group>
-                                            <field name="to_invoice"/>
                                             <field name="project_id"  required="1"/>
+                                            <field name="to_invoice"/>
                                             <field name="invoice_id"/>
                                             <field name="issue_id"/>
                                             <field name="user_id" required="1"/>
@@ -414,7 +434,7 @@
                     <field name="res_model">account.analytic.line</field>
                     <field name="view_mode">kanban,tree,calendar</field>
                     <!--<field name="view_id" eval="False"/>-->
-                    <!--<field name="domain">[('sheet_id','=',False),('issue_id','=',False),('task_id','=',False)]</field>-->
+                    <field name="domain">[('sheet_id','=',False),('issue_id','=',False),('task_id','=',False)]</field>
                    <field name="context">{'search_default_my_timesheets': 1}</field>
                    <field name="search_view_id" ref="account_analytic_search_view_Time"/>
                     <field name="view_ids"
@@ -449,7 +469,7 @@
 
                                       ]"/>
                      <field name="search_view_id" ref="account_analytic_search_view"/>
-
+                    <field name="domain">[('issue_id','!=',False)]</field>
 
                   <field name="help" type="html">
                          <p class="oe_view_nocontent_create">click here to insert course data </p>
@@ -474,7 +494,7 @@
 
 
 
-                            <!--<field name="domain">[('task_id','!=',False)]</field>-->
+                  <field name="domain">[('task_id','!=',False)]</field>
                   <field name="help" type="html">
                          <p class="oe_view_nocontent_create">click here to insert course data </p>
                   </field>
