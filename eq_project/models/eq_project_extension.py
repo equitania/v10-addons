@@ -20,8 +20,7 @@
 ##############################################################################
 
 from odoo import models, fields, api, _
-from datetime import datetime as DateTime
-
+from datetime import datetime
 
 class eq_project_extension(models.Model):
     """
@@ -32,6 +31,7 @@ class eq_project_extension(models.Model):
 
 
     eq_project_number = fields.Char('Number')
+
 
     eq_deadline = fields.Date (string='Deadline Date', compute='_deadline_date')
     eq_rest_hours = fields.Float(string='rest Time', compute='_calculated_rest_time')
@@ -62,8 +62,11 @@ class eq_project_extension(models.Model):
         give a project number automatically, if not set
         :return:
         """
-        seq = self.env['ir.sequence'].next_by_code('eq_project_number')
-        self.eq_project_number = seq
+        if self.eq_project_number=="": # do not overwrite project nummer
+            seq = self.env['ir.sequence'].next_by_code('eq_project_number')
+            self.eq_project_number = seq
+        else:
+            pass
 
 
 
@@ -143,6 +146,8 @@ class eq_project_extension(models.Model):
 
 class eq_project_extension_2(models.Model):
         _inherit = 'account.analytic.line'
+        eq_startdate = fields.Char(string='Start Date')
+        eq_time_start = fields.Float(string='time start')
 
         @api.onchange('project_id')
         def account_billiable(self):
@@ -155,6 +160,49 @@ class eq_project_extension_2(models.Model):
 
                for obj in  project_obj:
                    self.to_invoice = obj.eq_to_invoice_id
+
+
+        @api.onchange('project_id')
+        def set_time_onchange(self):
+
+            eq_time_start = 0.0
+
+            #
+            # search hier im account.analytic.line where id = self.project_id dann for schleife
+            check_existing_number = self.env['account.analytic.line'].search([('project_id', '=', self.project_id.id)])
+            for  time  in check_existing_number:
+                  if time.time_stop > eq_time_start:
+                      eq_time_start= time.time_stop
+            self.time_start = eq_time_start
+
+
+
+        @api.onchange('project_id')
+        def set_Date_onchange(self):
+
+          eq_startdate = "1992-04-21" # default date in the pass to compare
+
+          check_existing_number = self.env['account.analytic.line'].search([('project_id', '=', self.project_id.id)])
+
+          if len(check_existing_number)>0:
+              for time in check_existing_number:
+
+                 if (time.date) > eq_startdate:
+                          eq_startdate= time.date
+                 self.date = eq_startdate
+
+          else:
+                pass
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,6 +1,14 @@
 ## Modul eq_project
 
 #### 05.02.2018
+#### Version 1.0.9
+##### ADD
+- Projekt nummern werden nicht mehr Überschrieben.
+- startdatum & startzeit automatisch einnehmen.
+- Produkt spalte in Zeiterfassung hinzugefügt.
+- Übersetzung  angepasst
+
+#### 05.02.2018
 #### Version 1.0.8
 ##### ADD
 - Berechnung angepasst.

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-01 14:34+0000\n"
-"PO-Revision-Date: 2018-02-01 14:34+0000\n"
+"POT-Creation-Date: 2018-02-05 16:14+0000\n"
+"PO-Revision-Date: 2018-02-05 16:14+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -46,9 +46,24 @@ msgid "Account search Timesheet"
 msgstr "Zeiterfassung_Filter"
 
 #. module: eq_project
+#: model:ir.model,name:eq_project.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Kostenposition"
+
+#. module: eq_project
 #: model:ir.model.fields,field_description:eq_project.field_project_project_eq_time_start
 msgid "Begin Hour"
 msgstr "Startzeit"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_project_task_type_calculated_item
+msgid "Calculable level"
+msgstr "berechnenbare stufe"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_view
+msgid "Configuration"
+msgstr "Konfiguration"
 
 #. module: eq_project
 #: model:ir.model.fields,field_description:eq_project.field_project_project_eq_deadline
@@ -113,7 +128,7 @@ msgid "My Timesheet"
 msgstr "Meine Zeiterfassung"
 
 #. module: eq_project
-#: model:ir.ui.view,arch_db:eq_project.project_project_search_view
+#: model:ir.ui.view,arch_db:eq_project.project_project_search_view_2
 msgid "My projects"
 msgstr "Meine Projekte"
 
@@ -129,12 +144,32 @@ msgid "Project"
 msgstr "Projekt"
 
 #. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_view
+msgid "Project Number Automatically"
+msgstr "Projektnummer erzeugen"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_view
+msgid "Recalculate project"
+msgstr "Projekt neu kalkulieren"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_account_analytic_line_eq_startdate
+msgid "Start Date"
+msgstr "Startdatum"
+
+#. module: eq_project
 #: model:ir.actions.act_window,name:eq_project.eq_task_action
 msgid "Task"
 msgstr "Aufgabe"
 
 #. module: eq_project
-#: model:ir.actions.act_window,help:eq_project.project_action
+#: model:ir.model,name:eq_project.model_project_task_type
+msgid "Task Stage"
+msgstr "Aufgabenstufe"
+
+#. module: eq_project
+#: model:ir.actions.act_window,help:eq_project.eq_project_action
 #: model:ir.actions.act_window,help:eq_project.project_timesheet_action_
 msgid "The Odoo issues tracker allows you to efficiently manage things\n"
 "                            like internal requests, software development bugs, customer\n"
@@ -142,6 +177,11 @@ msgid "The Odoo issues tracker allows you to efficiently manage things\n"
 msgstr "The Odoo issues tracker allows you to efficiently manage things\n"
 "                            like internal requests, software development bugs, customer\n"
 "                            complaints, project troubles, material breakdowns, etc."
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_view
+msgid "Time Scheduling"
+msgstr "Zeitplanung"
 
 #. module: eq_project
 #: model:ir.actions.act_window,name:eq_project.project_timesheet_action_
@@ -182,13 +222,13 @@ msgid "click here to insert course data"
 msgstr "click here to insert course data"
 
 #. module: eq_project
-#: model:ir.ui.view,arch_db:eq_project.project_project_search_view
+#: model:ir.ui.view,arch_db:eq_project.project_project_search_view_2
 #: model:ir.ui.view,arch_db:eq_project.project_project_tree_view
 msgid "project"
 msgstr "projekt"
 
 #. module: eq_project
-#: model:ir.actions.act_window,name:eq_project.project_action
+#: model:ir.actions.act_window,name:eq_project.eq_project_action
 msgid "project_item"
 msgstr "projekte"
 
@@ -196,6 +236,11 @@ msgstr "projekte"
 #: model:ir.model.fields,field_description:eq_project.field_project_project_eq_rest_hours
 msgid "rest Time"
 msgstr "Reststunde"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_account_analytic_line_eq_time_start
+msgid "time start"
+msgstr "time start"
 
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.eq_project_extension_
@@ -207,29 +252,4 @@ msgstr "wird automatisch ausgefüllt"
 #: model:ir.model.fields,field_description:eq_project.field_project_project_eq_worked_hours
 msgid "worked Time"
 msgstr "Geliefertestunden"
-
-#. module: eq_project
-#: model:ir.actions.act_window,name:eq_project.eq_project_action
-msgid "project_item"
-msgstr "Projekte"
-
-#. module: eq_project
-#: model:ir.ui.view,arch_db:eq_project.project_project_search_view_2
-msgid "My projects"
-msgstr "Meine Projekte"
-
-#. module: eq_project
-#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_view
-msgid "Time Scheduling"
-msgstr "Zeitplanung"
-
-#. module: eq_project
-#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_view
-msgid "Configuration"
-msgstr "Konfiguration"
-
-#. module: eq_project
-#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_view
-msgid "Project Number Automatically"
-msgstr "Projektnummer erzeugen"
 

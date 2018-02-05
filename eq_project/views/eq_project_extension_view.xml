@@ -40,7 +40,7 @@
                             <field name="inherit_id" ref="project_recalculate.edit_project_recalculate"/>
                             <field name="arch" type="xml">
                                <field name="name" position="before">
-                                     <field name="eq_project_number" /><button type="object" name="nummer_generator" string="Project Number Automatically" class="oe_edit_only oe_link oe_inline"/> -
+                                     <field name="eq_project_number"/><button type="object" name="nummer_generator" string="Project Number Automatically" class="oe_edit_only oe_link oe_inline"/> -
                                </field>
 
                                 <xpath expr="//group[@name='misc']" position="replace">
@@ -278,6 +278,7 @@
                             <field name="project_id"  required="1"/>
                             <field name="invoice_id"/>
                             <field name="user_id" required="1"/>
+                            <field name="product_id"/>
                         </tree>
                     </field>
                 </record>
@@ -303,6 +304,7 @@
                                         <field name="to_invoice"/>
                                         <field name="invoice_id"/>
                                         <field name="user_id" required="1"/>
+                                        <field name="product_id"/>
                                     </group>
                                 </group>
                             </sheet>
@@ -331,6 +333,7 @@
                                             <field name="invoice_id"/>
                                             <field name="task_id"/>
                                             <field name="user_id" required="1"/>
+                                            <field name="product_id"/>
                                         </group>
                                     </group>
                                 </sheet>
@@ -360,6 +363,7 @@
                                             <field name="invoice_id"/>
                                             <field name="issue_id"/>
                                             <field name="user_id" required="1"/>
+                                            <field name="product_id"/>
                                         </group>
                                     </group>
                                 </sheet>
@@ -383,7 +387,7 @@
                              <field name="task_id"/>
                             <field name="invoice_id"/>
                             <field name="user_id" required="1"/>
-
+                            <field name="product_id"/>
                         </tree>
                     </field>
                 </record>
@@ -404,6 +408,7 @@
                             <field name="issue_id"/>
                             <field name="invoice_id"/>
                             <field name="user_id" required="1"/>
+                            <field name="product_id"/>
                         </tree>
                     </field>
                 </record>
