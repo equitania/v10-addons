@@ -52,7 +52,7 @@ class eq_project_extension(models.Model):
         :return:
         """
 
-        seq = self.env['ir.sequence'].get('eq_project_number')
+        seq = self.env['ir.sequence'].next_by_code('eq_project_number')
         vals['eq_project_number'] = seq
         return super(eq_project_extension, self).create(vals)
 
@@ -62,7 +62,7 @@ class eq_project_extension(models.Model):
         give a project number automatically, if not set
         :return:
         """
-        seq = self.env['ir.sequence'].get('eq_project_number')
+        seq = self.env['ir.sequence'].next_by_code('eq_project_number')
         self.eq_project_number = seq
 
 

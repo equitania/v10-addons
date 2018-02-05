@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 05.02.2018
+#### Version 1.0.7
+##### ADD
+- ir_sequence.next_by_code() anstatt ir_sequence.get() (war deprecated)
+
 #### 02.02.2018
 #### Version 1.0.6
 ##### ADD
@@ -8,7 +13,7 @@
 - Erweiterung der Stufen_Ansicht für die Berechnung Option
 - Anpassung Übersetzung
 - Projektnummererzeugungsbutton -> Link
--Code dokumentiert
+- Code dokumentiert
 
 #### 02.02.2018
 #### Version 1.0.5
