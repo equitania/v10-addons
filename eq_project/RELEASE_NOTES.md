@@ -1,6 +1,11 @@
 ## Modul eq_project
 
 #### 05.02.2018
+#### Version 1.0.8
+##### ADD
+- Berechnung angepasst.
+
+#### 05.02.2018
 #### Version 1.0.7
 ##### ADD
 - ir_sequence.next_by_code() anstatt ir_sequence.get() (war deprecated)

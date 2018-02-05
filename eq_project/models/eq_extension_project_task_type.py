@@ -12,4 +12,4 @@ class project_task_type_class(models.Model):
     """
     _inherit = 'project.task.type'
 
-    calculated_item = fields.Boolean("Calculable level",default=False)
+    calculated_item = fields.Boolean("Calculable level",default=True)

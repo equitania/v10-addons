@@ -68,71 +68,70 @@ class eq_project_extension(models.Model):
 
 
 
-    @api.onchange('eq_total_hours') #planned_hours
+    #@api.onchange('eq_total_hours') #planned_hours
     def _calculated_total_time(self):
         """
             calculate the total time invested in the project
         :return:
         """
+
         eq_total_hour = 0.0
         for project in self:
-             task_obj = self.env['project.task'].search([('project_id', '=', project.id)])
+            task_obj = self.env['project.task'].search([('project_id', '=', project.id)])
 
-             for task in task_obj:
+            for task in task_obj:
 
-                 if (task.stage_id.calculated_item):  # wenn stage_id only on state  (start & Umsetzung)
+                if (task.stage_id.calculated_item) or len(task.stage_id) == 0:  # wenn stage_id only on state  (start & Umsetzung)
 
-                     eq_total_hour = task.planned_hours + eq_total_hour
+                    eq_total_hour = task.planned_hours + eq_total_hour
 
 
-                 else:
-                     pass
+                else:
+                    pass
 
-             project.eq_total_hours = eq_total_hour
-             eq_total_hour = 0.0
+            project.eq_total_hours = eq_total_hour
+            eq_total_hour = 0.0
 
-    @api.onchange('eq_total_hours','eq_worked_hours') #planned_hours, progress
+
     def _calculated_rest_time(self):
         """
         calculate the working time invested in the project
         :param self:
         :return:
         """
-        eq_rest_hour = 0.0
+
 
         for project in self:
+              eq_rest_hour = 0.0
               task_obj = self.env['project.task'].search([('project_id', '=', project.id)])
-
               for task in task_obj:
-                  if (task.stage_id.calculated_item):  # wenn stage_id only on state  (start & Umsetzung)
-                      eq_rest_hour = (task.planned_hours-((task.progress *  task.planned_hours)/100) ) + eq_rest_hour #progress was in percent
-
+                  if (task.stage_id.calculated_item) or len(task.stage_id) == 0:  # wenn stage_id only on state  (start & Umsetzung)
+                    eq_rest_hour = (task.planned_hours-((task.progress *  task.planned_hours)/100) ) + eq_rest_hour #progress was in percent
                   else:
                       pass
+
               project.eq_rest_hours = eq_rest_hour
-              eq_rest_hour= 0.0
 
 
 
-    @api.onchange('eq_worked_hours')
     def _calculated_worked_time(self):
         """
         calculate the remaining work time to invest in the project
         :param self:
         :return:
         """
-        eq_worked_hour = 0.0
 
         for project in self:
             task_obj = self.env['project.task'].search([('project_id', '=', project.id)])
-
+            eq_worked_hour = 0.0
             for task in task_obj:
-                if (task.stage_id.calculated_item):  # wenn stage_id only on state  (start & Umsetzung)
+                if (task.stage_id.calculated_item) or len(task.stage_id) == 0:  # wenn stage_id only on state  (start & Umsetzung)
                     eq_worked_hour = ((task.progress *  task.planned_hours)/100 ) + eq_worked_hour #was in percent
                 else:
                     pass
+
             project.eq_worked_hours = eq_worked_hour
-            eq_worked_hour = 0.0
+
 
 
 
