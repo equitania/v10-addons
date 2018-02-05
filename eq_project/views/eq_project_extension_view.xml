@@ -97,7 +97,7 @@
 
 
                                  <div style="border:1px solid grey; border-radius:3px; padding:3px; display:inline-block;">
-                                    <i class="fa fa-hourglass-end" aria-hidden="true"></i> <field name="eq_worked_hours"/> Hour(s)  /  <field name="eq_rest_hours"/> Hour(s)
+                                    <i class="fa fa-hourglass-end" aria-hidden="true"></i> <field name="eq_worked_hours"/>   /  <field name="eq_rest_hours"/> Hour(s)
                                  </div>
                                 <br/>
                                  <i class="fa fa-clock-o" aria-hidden="true"></i> <field name="date"/>
@@ -205,13 +205,13 @@
                             <field name="model">account.analytic.line</field>
                             <field name="arch" type="xml">
                                 <search string="Account search">
+                                    <field name="project_id"  required="1"/>
                                     <field name="date"/>
                                     <field name="name"/>
                                     <field name="time_start" widget="float_time"/>
                                     <field name="time_stop" widget="float_time"/>
                                     <field name="unit_amount" string="Duration" widget="float_time"/>
                                     <field name="to_invoice"/>
-                                    <field name="project_id"  required="1"/>
                                     <field name="invoice_id"/>
                                     <field name="user_id" required="1"/>
                                     <!--<filter string="My Timesheet" name="my_timesheets" domain="[('user_id','=',uid)]"/>-->
@@ -227,13 +227,13 @@
                             <field name="model">account.analytic.line</field>
                             <field name="arch" type="xml">
                                 <search string="Account search Timesheet">
+                                    <field name="project_id"  required="1"/>
                                     <field name="date"/>
                                     <field name="name"/>
                                     <field name="time_start" widget="float_time"/>
                                     <field name="time_stop" widget="float_time"/>
                                     <field name="unit_amount" string="Duration" widget="float_time"/>
                                     <field name="to_invoice"/>
-                                    <field name="project_id"  required="1"/>
                                     <field name="invoice_id"/>
                                     <field name="user_id" required="1"/>
                                     <filter string="My Timesheet" name="my_timesheets" domain="[('user_id','=',uid)]"/>
@@ -246,13 +246,13 @@
                             <field name="model">account.analytic.line</field>
                             <field name="arch" type="xml">
                                 <search string="Account search Task">
+                                    <field name="project_id"  required="1"/>
                                     <field name="date"/>
                                     <field name="name"/>
                                     <field name="time_start" widget="float_time"/>
                                     <field name="time_stop" widget="float_time"/>
                                     <field name="unit_amount" string="Duration" widget="float_time"/>
                                     <field name="to_invoice"/>
-                                    <field name="project_id"  required="1"/>
                                     <field name="invoice_id"/>
                                     <field name="user_id" required="1"/>
                                     <filter string="My Task" name="my_tasks" domain="[('user_id','=',uid)]"/>
@@ -269,13 +269,13 @@
                     <field name="model">account.analytic.line</field>
                     <field name="arch" type="xml">
                         <tree string=" Tree View Account">
+                            <field name="project_id"  required="1"/>
                             <field name="date"/>
                             <field name="name"/>
                             <field name="time_start" widget="float_time"/>
                             <field name="time_stop" widget="float_time"/>
                             <field name="unit_amount" string="Duration" widget="float_time"/>
                             <field name="to_invoice"/>
-                            <field name="project_id"  required="1"/>
                             <field name="invoice_id"/>
                             <field name="user_id" required="1"/>
                             <field name="product_id"/>
@@ -292,6 +292,7 @@
                             <sheet>
                                 <group>
                                     <group>
+                                        <field name="project_id"  required="1"/>
                                         <field name="date"/>
                                         <field name="name"/>
                                         <field name="time_start" widget="float_time"/>
@@ -300,7 +301,6 @@
                                     </group>
 
                                     <group>
-                                        <field name="project_id"  required="1"/>
                                         <field name="to_invoice"/>
                                         <field name="invoice_id"/>
                                         <field name="user_id" required="1"/>
@@ -320,6 +320,7 @@
                                 <sheet>
                                     <group>
                                         <group>
+                                            <field name="project_id"  required="1"/>
                                             <field name="date"/>
                                             <field name="name"/>
                                             <field name="time_start" widget="float_time"/>
@@ -328,7 +329,6 @@
                                         </group>
 
                                         <group>
-                                            <field name="project_id"  required="1"/>
                                             <field name="to_invoice"/>
                                             <field name="invoice_id"/>
                                             <field name="task_id"/>
@@ -350,6 +350,7 @@
                                 <sheet>
                                     <group>
                                         <group>
+                                            <field name="project_id"  required="1"/>
                                             <field name="date"/>
                                             <field name="name"/>
                                             <field name="time_start" widget="float_time"/>
@@ -358,7 +359,6 @@
                                         </group>
 
                                         <group>
-                                            <field name="project_id"  required="1"/>
                                             <field name="to_invoice"/>
                                             <field name="invoice_id"/>
                                             <field name="issue_id"/>
@@ -377,13 +377,13 @@
                     <field name="model">account.analytic.line</field>
                     <field name="arch" type="xml">
                         <tree string="Account Task">
+                            <field name="project_id"  required="1"/>
                             <field name="date"/>
                             <field name="name"/>
                             <field name="time_start" widget="float_time"/>
                             <field name="time_stop" widget="float_time"/>
                             <field name="unit_amount" string="Duration" widget="float_time"/>
                             <field name="to_invoice"/>
-                            <field name="project_id"  required="1"/>
                              <field name="task_id"/>
                             <field name="invoice_id"/>
                             <field name="user_id" required="1"/>
@@ -398,13 +398,13 @@
                     <field name="model">account.analytic.line</field>
                     <field name="arch" type="xml">
                         <tree string="Account Issue">
+                            <field name="project_id"  required="1"/>
                             <field name="date"/>
                             <field name="name"/>
                             <field name="time_start" widget="float_time"/>
                             <field name="time_stop" widget="float_time"/>
                             <field name="unit_amount" string="Duration" widget="float_time"/>
                             <field name="to_invoice"/>
-                            <field name="project_id"  required="1"/>
                             <field name="issue_id"/>
                             <field name="invoice_id"/>
                             <field name="user_id" required="1"/>
