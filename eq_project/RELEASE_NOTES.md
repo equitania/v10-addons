@@ -1,5 +1,12 @@
 ## Modul eq_project
 
+
+#### 06.02.2018
+#### Version 1.0.11
+##### IMP
+- Projekt Einstellungen: Entfernen der Enterprise-Information für Stundenzettel-App
+
+
 #### 05.02.2018
 #### Version 1.0.9
 ##### ADD

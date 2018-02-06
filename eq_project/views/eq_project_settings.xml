@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="eq_project_enterprise_replace" model="ir.ui.view">
+        <field name="name">eq.project.enterprise.replace</field>
+        <field name="model">project.config.settings</field>
+        <field name="inherit_id" ref="hr_timesheet_sheet.view_config_settings_form_inherit_hr_timesheet_sheet"/>
+        <field name="arch" type="xml">
+            <!-- overwrites the enterprise information-->
+            <xpath expr="//div/field[@name='module_project_timesheet_synchro']" position="replace">
+            </xpath>
+            <xpath expr="//div/label[@for='module_project_timesheet_synchro']" position="replace">
+            </xpath>
+            <xpath expr="//div/a[@href='https://www.odoo.com/page/timesheet']" position="replace">
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>
