@@ -1,5 +1,10 @@
 ## Modul eq_base
 
+#### 06.02.2018
+#### Version 1.0.7
+##### ADD
+- erweiterte Suchlogik aus V8 übernommen.
+
 #### 16.11.2017
 #### Version 1.0.6
 ##### CHG

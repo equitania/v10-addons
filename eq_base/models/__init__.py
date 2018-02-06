@@ -23,3 +23,4 @@
 import res_company
 import res_country
 import eq_res_users
+import eq_models
