@@ -150,6 +150,8 @@ class eq_project_extension_2(models.Model):
         eq_time_start = fields.Float(string='time start')
         name = fields.Text(string='Description', required=True)
 
+        eq_counter = fields.Boolean(string='Counter')
+
         @api.onchange('project_id')
         def account_billiable(self):
             """
@@ -161,6 +163,11 @@ class eq_project_extension_2(models.Model):
 
                for obj in  project_obj:
                    self.to_invoice = obj.eq_to_invoice_id
+
+
+
+
+
 
 
         @api.onchange('project_id')
@@ -178,31 +185,56 @@ class eq_project_extension_2(models.Model):
 
 
 
-        @api.onchange('project_id')
-        def set_Date_onchange(self):
 
-          eq_startdate = "1992-04-21" # default date in the pass to compare
+        # @api.onchange('project_id')
+        # def set_project_onchange(self):
+        #
+        #     check_existing_id = self.env['account.analytic.line'].search([('project_id', '=', self.project_id.id)])
+        #     for id in check_existing_id:
+        #         self.eq_counter = self.eq_counter + 1
+        #
+        #         if self.eq_counter >1 :
+        #             self.project_id =
 
-          check_existing_number = self.env['account.analytic.line'].search([('project_id', '=', self.project_id.id)])
 
-          if len(check_existing_number)>0:
-              for time in check_existing_number:
 
-                 if (time.date) > eq_startdate:
-                          eq_startdate= time.date
-                 self.date = eq_startdate
 
-          else:
+        @api.onchange('time_start')
+        def set_time_start_onchange(self):
+
+
+
+            if self.time_start > 23.59:
+                # warning Message
+                self.time_start = 0.0
+               # raise Warning(_("Please enter a valid Hour"))
+
+            else:
+                pass
+
+
+        @api.onchange('time_stop')
+        def set_time_stop_onchange(self):
+
+            if self.time_stop > 23.59:
+                # warning Message
+                self.time_stop = 0.0
+                #raise Warning(_("Please enter a valid Hour"))
+
+            else:
                 pass
 
 
 
 
-
-
-
-
-
+        # @api.onchange('project_id')
+        # def set_time_onchange(self):
+        #     # search hier im account.analytic.line where id = self.project_id dann for schleife
+        #     pool = self.env['account.analytic.line']
+        #     eq_item =0
+        #     for ids in pool:
+        #         if ids['project_id'] > eq_item:
+        #             eq_item = ids['project_id']
 
 
 
