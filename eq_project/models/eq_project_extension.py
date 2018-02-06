@@ -148,6 +148,7 @@ class eq_project_extension_2(models.Model):
         _inherit = 'account.analytic.line'
         eq_startdate = fields.Char(string='Start Date')
         eq_time_start = fields.Float(string='time start')
+        name = fields.Text(string='Description', required=True)
 
         @api.onchange('project_id')
         def account_billiable(self):
