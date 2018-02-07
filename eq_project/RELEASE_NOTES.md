@@ -1,6 +1,12 @@
 ## Modul eq_project
 
 
+
+#### 07.02.2018
+#### Version 1.0.13
+##### IMP
+- Refactoring und Erweiterung der Dokumentation
+
 #### 07.02.2018
 #### Version 1.0.12
 ##### CHG/FIX

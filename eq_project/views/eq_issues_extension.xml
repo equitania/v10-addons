@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <!-- Extenstion of project issue form -->
          <record id="eq_project_issue_form_view" model="ir.ui.view">
             <field name="name">eq.project.issue.form.inherited</field>
             <field name="model">project.issue</field>

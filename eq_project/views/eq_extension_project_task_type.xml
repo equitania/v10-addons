@@ -1,31 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-                <record id="task_type_view" model="ir.ui.view">
-                    <field name="name">project.task.type.view</field>
-                    <field name="model">project.task.type</field>
-                    <field name="inherit_id" ref="project.task_type_edit" />
-                    <field name="arch" type="xml">
-                         <field name='name' position="after">
-                                <field name="calculated_item"/>
-                        </field>
-
-                    </field>
-                </record>
-
-<!--
-         <record id="task_type_view" model="ir.ui.view">
-                    <field name="name">project.task.type.view</field>
-                    <field name="model">project.task.type</field>
-                    <field name="inherit_id" ref="project.task_type_tree" />
-                    <field name="arch" type="xml">
-                         <field name='name' position="after">
-                                <field name="calculated_item" clickable="True" />
-                        </field>
-
-                    </field>
-         </record>-->
-
-
+        <!-- Extension of project type edit -->
+        <record id="task_type_view" model="ir.ui.view">
+            <field name="name">project.task.type.view</field>
+            <field name="model">project.task.type</field>
+            <field name="inherit_id" ref="project.task_type_edit" />
+            <field name="arch" type="xml">
+                 <field name='name' position="after">
+                        <field name="calculated_item"/>
+                </field>
+            </field>
+        </record>
     </data>
 </odoo>

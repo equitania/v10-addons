@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
+    <!-- Extension of settings -->
     <record id="eq_project_enterprise_replace" model="ir.ui.view">
         <field name="name">eq.project.enterprise.replace</field>
         <field name="model">project.config.settings</field>
@@ -15,6 +15,4 @@
             </xpath>
         </field>
     </record>
-
-
 </odoo>

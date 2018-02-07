@@ -1,542 +1,446 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-
-                     <record id="eq_project_extension_" model="ir.ui.view">
-                                <field name="name">project.extension.kanban</field>
-                                <field name="model">project.project</field>
-                                <field name="mode">primary</field>
-                                <field name="inherit_id" ref="project.view_project_kanban"/>
-                                <field name="arch" type="xml">
-                                    <xpath expr="//div[@class='o_primary']" position="replace">
-                                            <div style="font-weight:bold;">
-                                                <field name="eq_project_number"  placeholder=" will be filled automaticaly "/> -
-                                                <field name="name"/>
-                                            </div>
-                                            <br/>
-                                            <div>
-                                                <field name="eq_total_hours"/> Hours
-                                            </div>
-
-
-                                             <div style="border:1px solid grey; border-radius:3px; padding:3px; display:inline-block;">
-                                                <i class="fa fa-hourglass-end" aria-hidden="true"></i> <field name="eq_worked_hours"/> Hour(s)  /  <field name="eq_rest_hours"/> Hour(s)
-                                             </div>
-                                            <br/>
-                                             <i class="fa fa-clock-o" aria-hidden="true"></i> <field name="date"/>
-
-                                    </xpath>
-
-
-                                </field>
-                     </record>
-
-
-
-
-                 <record id="eq_project_extension_view" model="ir.ui.view">
-                            <field name="name">project.extension</field>
-                            <field name="model">project.project</field>
-                            <field name="inherit_id" ref="project_recalculate.edit_project_recalculate"/>
-                            <field name="arch" type="xml">
-                               <field name="name" position="before">
-                                     <field name="eq_project_number"/><button type="object" name="nummer_generator" string="Project Number Automatically" class="oe_edit_only oe_link oe_inline"/> -
-                               </field>
-
-                                <xpath expr="//group[@name='misc']" position="replace">
-                                    <group name="misc">
-                                        <group string="Configuration">
-                                            <field name="sequence" />
-                                        </group>
-                                        <group string="Time Scheduling">
-                                            <field name="resource_calendar_id"/>
-                                            <field name="date_start" attrs="{'readonly': [('calculation_type', '=', 'date_end')]}" groups="base.group_user"/>
-                                            <field name="date" attrs="{'readonly': [('calculation_type', '=', 'date_begin')]}" groups="base.group_user"/>
-                                            <field name="calculation_type" groups="base.group_user"/>
-                                                <button name="project_recalculate.wizard_project_recalculate"
-                                                        type="action"
-                                                        string="Recalculate project"
-                                                        icon="fa-cogs"
-                                                        attrs="{'invisible': [('calculation_type', '=', False)]}"
-                                                />
-                                        </group>
-                                    </group>
-                                </xpath>
-
-                            </field>
-                 </record>
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <!-- Project Kanban-->
-                <record id="project_project_view_kanban" model="ir.ui.view">
-                    <field name="name">project.view.kanban</field>
-                    <field name="model">project.project</field>
-                    <field name="mode">primary</field>
-                    <field name="priority">32</field>
-                    <field name="arch" type="xml">
-                        <kanban>
-                                 <div style="font-weight:bold;">
-                                    <field name="eq_project_number"  placeholder=" will be filled automaticaly "/> -
-                                    <field name="name"/>
-                                </div>
-                                <br/>
-                                <div>
-                                    <field name="eq_total_hours"/> Hours
-                                </div>
-
-
-                                 <div style="border:1px solid grey; border-radius:3px; padding:3px; display:inline-block;">
-                                    <i class="fa fa-hourglass-end" aria-hidden="true"></i> <field name="eq_worked_hours"/>   /  <field name="eq_rest_hours"/> Hour(s)
-                                 </div>
-                                <br/>
-                                 <i class="fa fa-clock-o" aria-hidden="true"></i> <field name="date"/>
-                        </kanban>
-                    </field>
-                </record>
-
-
-
-
-
-<!-- project form-->
-
-                <!--<record id="project_project_form_view" model="ir.ui.view">-->
-                    <!--<field name="name">project.project.form</field>-->
-                    <!--<field name="model">project.project</field>-->
-                    <!--<field name="arch" type="xml">-->
-                        <!--<form>-->
-                            <!--<sheet>-->
-                                <!--<group>-->
-
-                                     <!--<field name="eq_project_number"/>-->
-                                        <!--<field name="name"/>-->
-                                        <!--<field name="eq_total_hours"/>-->
-                                        <!--<field name="eq_worked_hours"/>-->
-                                        <!--<field name="eq_rest_hours"/>-->
-                                        <!--<field name="eq_deadline"/>-->
-                                <!--</group>-->
-                            <!--</sheet>-->
-                        <!--</form>-->
-                    <!--</field>-->
-                <!--</record>-->
-
-        <!-- project tree-->
-
-
-
-
-
-
-
-                 <record id="project_project_search_view_2" model="ir.ui.view">
-                            <field name="name">project.project.search</field>
-                            <field name="model">project.project</field>
-                            <field name="arch" type="xml">
-                                <search string="project">
-                                        <field name="eq_project_number"/>
-                                        <field name="name"/>
-                                        <field name="eq_total_hours"/>
-                                        <field name="eq_worked_hours"/>
-                                        <field name="eq_rest_hours"/>
-                                        <field name="date"/>
-                                        <filter string="My projects" name="my_projects" domain="[('user_id','=',uid)]"/>
-                                       <!--<filter string="My projects" name="my_projects" domain="[{'group_by':'user_id'}]"/>  -->
-                                </search>
-                            </field>
-                 </record>
-
-
-
-
-                 <record id="project_project_tree_view" model="ir.ui.view">
-                            <field name="name">project.project.tree</field>
-                            <field name="model">project.project</field>
-                            <field name="arch" type="xml">
-                                <tree string="project">
-                                        <field name="eq_project_number"/>
-                                        <field name="name"/>
-                                        <field name="eq_total_hours"/>
-                                        <field name="eq_worked_hours"/>
-                                        <field name="eq_rest_hours"/>
-                                        <field name="date"/>
-                                </tree>
-                            </field>
-                 </record>
-
- <!-- calendar project-->
-
-          <record id="project_calendar_view_" model="ir.ui.view">
-                    <field name="name">project.calendar.view</field>
-                    <field name="model">project.project</field>
-                    <field name="priority" eval="2"/>
-                    <field name="arch" type="xml">
-                        <calendar string="Calendar View" date_start="date_start" date_stop="date" color="user_id">
-                                               <field name="name"/>
-                        </calendar>
-                    </field>
-                </record>
-
-
-
-<!-- project action-->
-
-                <record id="eq_project_action_2" model="ir.actions.act_window">
-                    <field name="name">project</field>
-                    <field name="res_model">project.project</field>
-                    <field name="view_mode">kanban,tree,form,calendar</field>
-                    <field name="context">{'search_default_my_projects': 1, 'group_by':'parent_project_id'}</field>
-                   <field name="view_ids"
-                           eval="[(5, 0, 0),
-                                    (0, 0, {'view_mode': 'kanban', 'view_id': ref('eq_project_extension_')}),
-                                    (0, 0, {'view_mode': 'tree', 'view_id': ref('project_project_tree_view')}),
-                                    (0, 0, {'view_mode': 'calendar', 'view_id': ref('project_calendar_view_')}),
-                                  ]"/>
-                    <field name="help" type="html">
-                        <p>
-                            The Odoo issues tracker allows you to efficiently manage things
-                            like internal requests, software development bugs, customer
-                            complaints, project troubles, material breakdowns, etc.
-                        </p>
-                    </field>
-               </record>
-
-
-<!-- search view -->
-
-                  <record id="account_analytic_search_view" model="ir.ui.view">
-                            <field name="name">account.analytic.search</field>
-                            <field name="model">account.analytic.line</field>
-                            <field name="arch" type="xml">
-                                <search string="Account search">
-                                    <field name="project_id"  required="1"/>
-                                    <field name="date"/>
-                                    <field name="name"/>
-                                    <field name="time_start" widget="float_time"/>
-                                    <field name="time_stop" widget="float_time"/>
-                                    <field name="unit_amount" string="Duration" widget="float_time"/>
-                                    <field name="to_invoice"/>
-                                    <field name="invoice_id"/>
-                                    <field name="user_id" required="1"/>
-                                    <!--<filter string="My Timesheet" name="my_timesheets" domain="[('user_id','=',uid)]"/>-->
-                                    <!--<filter string="My Task" name="my_tasks" domain="[('user_id','=',uid)]"/>-->
-                                    <filter string="My Issue" name="my_issues" domain="[('user_id','=',uid)]"/>
-                                </search>
-                            </field>
-                  </record>
-
-
-                  <record id="account_analytic_search_view_Time" model="ir.ui.view">
-                            <field name="name">account.analytic.search.time</field>
-                            <field name="model">account.analytic.line</field>
-                            <field name="arch" type="xml">
-                                <search string="Account search Timesheet">
-                                    <field name="project_id"  required="1"/>
-                                    <field name="date"/>
-                                    <field name="name"/>
-                                    <field name="time_start" widget="float_time"/>
-                                    <field name="time_stop" widget="float_time"/>
-                                    <field name="unit_amount" string="Duration" widget="float_time"/>
-                                    <field name="to_invoice"/>
-                                    <field name="invoice_id"/>
-                                    <field name="user_id" required="1"/>
-                                    <filter string="My Timesheet" name="my_timesheets" domain="[('user_id','=',uid)]"/>
-                                </search>
-                            </field>
-                  </record>
-
-                  <record id="account_analytic_search_view_Task" model="ir.ui.view">
-                            <field name="name">account.analytic.search.task</field>
-                            <field name="model">account.analytic.line</field>
-                            <field name="arch" type="xml">
-                                <search string="Account search Task">
-                                    <field name="project_id"  required="1"/>
-                                    <field name="date"/>
-                                    <field name="name"/>
-                                    <field name="time_start" widget="float_time"/>
-                                    <field name="time_stop" widget="float_time"/>
-                                    <field name="unit_amount" string="Duration" widget="float_time"/>
-                                    <field name="to_invoice"/>
-                                    <field name="invoice_id"/>
-                                    <field name="user_id" required="1"/>
-                                    <filter string="My Task" name="my_tasks" domain="[('user_id','=',uid)]"/>
-
-                                </search>
-                            </field>
-                  </record>
-
-
-
-<!-- timesheet tree-->
-                <record id="account_analytic_tree_view" model="ir.ui.view">
-                    <field name="name">account.analytic.tree</field>
-                    <field name="model">account.analytic.line</field>
-                    <field name="arch" type="xml">
-                        <tree string=" Tree View Account">
-                            <field name="project_id"  required="1"/>
-                            <field name="date"/>
-                            <field name="name"/>
-                            <field name="time_start" widget="float_time"/>
-                            <field name="time_stop" widget="float_time"/>
-                            <field name="unit_amount" string="Duration" widget="float_time"/>
-                            <field name="to_invoice"/>
-                            <field name="invoice_id"/>
-                            <field name="user_id" required="1"/>
-                            <field name="product_id"/>
-                        </tree>
-                    </field>
-                </record>
-
-
-                <record id="account_analytic_form_view" model="ir.ui.view">
-                    <field name="name">account.analytic.form</field>
-                    <field name="model">account.analytic.line</field>
-                    <field name="arch" type="xml">
-                        <form>
-                            <sheet>
+        <!-- Extension of project kanban -->
+        <record id="eq_project_extension_" model="ir.ui.view">
+            <field name="name">project.extension.kanban</field>
+            <field name="model">project.project</field>
+            <field name="mode">primary</field>
+            <field name="inherit_id" ref="project.view_project_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='o_primary']" position="replace">
+                    <div style="font-weight:bold;">
+                        <field name="eq_project_number"  placeholder=" will be filled automaticaly "/> -
+                        <field name="name"/>
+                    </div>
+                    <br/>
+                    <div>
+                        <field name="eq_total_hours"/> Hours
+                    </div>
+                     <div style="border:1px solid grey; border-radius:3px; padding:3px; display:inline-block;">
+                        <i class="fa fa-hourglass-end" aria-hidden="true"></i> <field name="eq_worked_hours"/> Hour(s)  /  <field name="eq_rest_hours"/> Hour(s)
+                     </div>
+                    <br/>
+                     <i class="fa fa-clock-o" aria-hidden="true"></i> <field name="date"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Extension of edit project view -->
+        <record id="eq_project_extension_view" model="ir.ui.view">
+            <field name="name">project.extension</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project_recalculate.edit_project_recalculate"/>
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="eq_project_number"/><button type="object" name="generate_number" string="Project Number Automatically" class="oe_edit_only oe_link oe_inline"/> -
+                </field>
+                <xpath expr="//group[@name='misc']" position="replace">
+                    <group name="misc">
+                        <group string="Configuration">
+                            <field name="sequence" />
+                        </group>
+                        <group string="Time Scheduling">
+                            <field name="resource_calendar_id"/>
+                            <field name="date_start" attrs="{'readonly': [('calculation_type', '=', 'date_end')]}" groups="base.group_user"/>
+                            <field name="date" attrs="{'readonly': [('calculation_type', '=', 'date_begin')]}" groups="base.group_user"/>
+                            <field name="calculation_type" groups="base.group_user"/>
+                                <button name="project_recalculate.wizard_project_recalculate"
+                                        type="action"
+                                        string="Recalculate project"
+                                        icon="fa-cogs"
+                                        attrs="{'invisible': [('calculation_type', '=', False)]}"
+                                />
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- New defined project kanban-->
+        <record id="project_project_view_kanban" model="ir.ui.view">
+            <field name="name">project.view.kanban</field>
+            <field name="model">project.project</field>
+            <field name="mode">primary</field>
+            <field name="priority">32</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <div style="font-weight:bold;">
+                        <field name="eq_project_number"  placeholder=" will be filled automaticaly "/> -
+                        <field name="name"/>
+                    </div>
+                    <br/>
+                    <div>
+                        <field name="eq_total_hours"/> Hours
+                    </div>
+                    <div style="border:1px solid grey; border-radius:3px; padding:3px; display:inline-block;">
+                        <i class="fa fa-hourglass-end" aria-hidden="true"></i> <field name="eq_worked_hours"/>   /  <field name="eq_rest_hours"/> Hour(s)
+                    </div>
+                    <br/>
+                    <i class="fa fa-clock-o" aria-hidden="true"></i> <field name="date"/>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- New defined search view for project -->
+        <record id="project_project_search_view_2" model="ir.ui.view">
+            <field name="name">project.project.search</field>
+            <field name="model">project.project</field>
+            <field name="arch" type="xml">
+                <search string="project">
+                    <field name="eq_project_number"/>
+                    <field name="name"/>
+                    <field name="eq_total_hours"/>
+                    <field name="eq_worked_hours"/>
+                    <field name="eq_rest_hours"/>
+                    <field name="date"/>
+                    <filter string="My projects" name="my_projects" domain="[('user_id','=',uid)]"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- New defined project treeview -->
+        <record id="project_project_tree_view" model="ir.ui.view">
+            <field name="name">project.project.tree</field>
+            <field name="model">project.project</field>
+            <field name="arch" type="xml">
+                <tree string="project">
+                    <field name="eq_project_number"/>
+                    <field name="name"/>
+                    <field name="eq_total_hours"/>
+                    <field name="eq_worked_hours"/>
+                    <field name="eq_rest_hours"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- New defined project calender -->
+        <record id="project_calendar_view_" model="ir.ui.view">
+            <field name="name">project.calendar.view</field>
+            <field name="model">project.project</field>
+            <field name="priority" eval="2"/>
+            <field name="arch" type="xml">
+                <calendar string="Calendar View" date_start="date_start" date_stop="date" color="user_id">
+                    <field name="name"/>
+                </calendar>
+            </field>
+        </record>
+
+        <!-- project action-->
+        <record id="eq_project_action_2" model="ir.actions.act_window">
+            <field name="name">project</field>
+            <field name="res_model">project.project</field>
+            <field name="view_mode">kanban,tree,form,calendar</field>
+            <field name="context">{'search_default_my_projects': 1, 'group_by':'parent_project_id'}</field>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                            (0, 0, {'view_mode': 'kanban', 'view_id': ref('eq_project_extension_')}),
+                            (0, 0, {'view_mode': 'tree', 'view_id': ref('project_project_tree_view')}),
+                            (0, 0, {'view_mode': 'calendar', 'view_id': ref('project_calendar_view_')}),
+                          ]"/>
+            <field name="help" type="html">
+                <p>
+                    The Odoo issues tracker allows you to efficiently manage things
+                    like internal requests, software development bugs, customer
+                    complaints, project troubles, material breakdowns, etc.
+                </p>
+            </field>
+        </record>
+
+        <!-- search view -->
+        <record id="account_analytic_search_view" model="ir.ui.view">
+            <field name="name">account.analytic.search</field>
+            <field name="model">account.analytic.line</field>
+            <field name="arch" type="xml">
+                <search string="Account search">
+                    <field name="project_id"  required="1"/>
+                    <field name="date"/>
+                    <field name="name"/>
+                    <field name="time_start" widget="float_time"/>
+                    <field name="time_stop" widget="float_time"/>
+                    <field name="unit_amount" string="Duration" widget="float_time"/>
+                    <field name="to_invoice"/>
+                    <field name="invoice_id"/>
+                    <field name="user_id" required="1"/>
+                    <filter string="My Issue" name="my_issues" domain="[('user_id','=',uid)]"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Search view for time -->
+        <record id="account_analytic_search_view_Time" model="ir.ui.view">
+            <field name="name">account.analytic.search.time</field>
+            <field name="model">account.analytic.line</field>
+            <field name="arch" type="xml">
+                <search string="Account search Timesheet">
+                    <field name="project_id"  required="1"/>
+                    <field name="date"/>
+                    <field name="name"/>
+                    <field name="time_start" widget="float_time"/>
+                    <field name="time_stop" widget="float_time"/>
+                    <field name="unit_amount" string="Duration" widget="float_time"/>
+                    <field name="to_invoice"/>
+                    <field name="invoice_id"/>
+                    <field name="user_id" required="1"/>
+                    <filter string="My Timesheet" name="my_timesheets" domain="[('user_id','=',uid)]"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Search view for task -->
+        <record id="account_analytic_search_view_Task" model="ir.ui.view">
+            <field name="name">account.analytic.search.task</field>
+            <field name="model">account.analytic.line</field>
+            <field name="arch" type="xml">
+                <search string="Account search Task">
+                    <field name="project_id"  required="1"/>
+                    <field name="date"/>
+                    <field name="name"/>
+                    <field name="time_start" widget="float_time"/>
+                    <field name="time_stop" widget="float_time"/>
+                    <field name="unit_amount" string="Duration" widget="float_time"/>
+                    <field name="to_invoice"/>
+                    <field name="invoice_id"/>
+                    <field name="user_id" required="1"/>
+                    <filter string="My Task" name="my_tasks" domain="[('user_id','=',uid)]"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Timesheet tree-->
+        <record id="account_analytic_tree_view" model="ir.ui.view">
+            <field name="name">account.analytic.tree</field>
+            <field name="model">account.analytic.line</field>
+            <field name="arch" type="xml">
+                <tree string=" Tree View Account">
+                    <field name="project_id"  required="1"/>
+                    <field name="date"/>
+                    <field name="name"/>
+                    <field name="time_start" widget="float_time"/>
+                    <field name="time_stop" widget="float_time"/>
+                    <field name="unit_amount" string="Duration" widget="float_time"/>
+                    <field name="to_invoice"/>
+                    <field name="invoice_id"/>
+                    <field name="user_id" required="1"/>
+                    <field name="product_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Analytic form -->
+        <record id="account_analytic_form_view" model="ir.ui.view">
+            <field name="name">account.analytic.form</field>
+            <field name="model">account.analytic.line</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="project_id"  required="1"/>
+                                <field name="date"/>
+                                <field name="name"/>
+                                <field name="time_start" widget="float_time"/>
+                                <field name="time_stop" widget="float_time"/>
+                                <field name="unit_amount" string="Duration" widget="float_time"/>
+                            </group>
+                            <group>
+                                <field name="to_invoice"/>
+                                <field name="invoice_id"/>
+                                <field name="user_id" required="1"/>
+                                <field name="product_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Task form -->
+        <record id="account_analytic_form_view_Task" model="ir.ui.view">
+                <field name="name">account.analytic.form.task</field>
+                <field name="model">account.analytic.line</field>
+                <field name="arch" type="xml">
+                    <form>
+                        <sheet>
+                            <group>
                                 <group>
-                                    <group>
-                                        <field name="project_id"  required="1"/>
-                                        <field name="date"/>
-                                        <field name="name"/>
-                                        <field name="time_start" widget="float_time"/>
-                                        <field name="time_stop" widget="float_time"/>
-                                        <field name="unit_amount" string="Duration" widget="float_time"/>
-                                    </group>
-
-                                    <group>
-                                        <field name="to_invoice"/>
-                                        <field name="invoice_id"/>
-                                        <field name="user_id" required="1"/>
-                                        <field name="product_id"/>
-                                    </group>
+                                    <field name="project_id"  required="1"/>
+                                    <field name="date"/>
+                                    <field name="name"/>
+                                    <field name="time_start" widget="float_time"/>
+                                    <field name="time_stop" widget="float_time"/>
+                                    <field name="unit_amount" string="Duration" widget="float_time"/>
                                 </group>
-                            </sheet>
-                        </form>
-                    </field>
-                </record>
 
-                <record id="account_analytic_form_view_Task" model="ir.ui.view">
-                        <field name="name">account.analytic.form.task</field>
-                        <field name="model">account.analytic.line</field>
-                        <field name="arch" type="xml">
-                            <form>
-                                <sheet>
-                                    <group>
-                                        <group>
-                                            <field name="project_id"  required="1"/>
-                                            <field name="date"/>
-                                            <field name="name"/>
-                                            <field name="time_start" widget="float_time"/>
-                                            <field name="time_stop" widget="float_time"/>
-                                            <field name="unit_amount" string="Duration" widget="float_time"/>
-                                        </group>
+                                <group>
+                                    <field name="to_invoice"/>
+                                    <field name="invoice_id"/>
+                                    <field name="task_id"/>
+                                    <field name="user_id" required="1"/>
+                                    <field name="product_id"/>
+                                </group>
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+        </record>
 
-                                        <group>
-                                            <field name="to_invoice"/>
-                                            <field name="invoice_id"/>
-                                            <field name="task_id"/>
-                                            <field name="user_id" required="1"/>
-                                            <field name="product_id"/>
-                                        </group>
-                                    </group>
-                                </sheet>
-                            </form>
-                        </field>
-                </record>
+        <!-- Issue form -->
+        <record id="account_analytic_form_view_issue" model="ir.ui.view">
+                <field name="name">account.analytic.form.issue</field>
+                <field name="model">account.analytic.line</field>
+                <field name="arch" type="xml">
+                    <form>
+                        <sheet>
+                            <group>
+                                <group>
+                                    <field name="project_id"  required="1"/>
+                                    <field name="date"/>
+                                    <field name="name"/>
+                                    <field name="time_start" widget="float_time"/>
+                                    <field name="time_stop" widget="float_time"/>
+                                    <field name="unit_amount" string="Duration" widget="float_time"/>
+                                </group>
 
+                                <group>
+                                    <field name="to_invoice"/>
+                                    <field name="invoice_id"/>
+                                    <field name="issue_id"/>
+                                    <field name="user_id" required="1"/>
+                                    <field name="product_id"/>
+                                </group>
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+        </record>
 
-                <record id="account_analytic_form_view_issue" model="ir.ui.view">
-                        <field name="name">account.analytic.form.issue</field>
-                        <field name="model">account.analytic.line</field>
-                        <field name="arch" type="xml">
-                            <form>
-                                <sheet>
-                                    <group>
-                                        <group>
-                                            <field name="project_id"  required="1"/>
-                                            <field name="date"/>
-                                            <field name="name"/>
-                                            <field name="time_start" widget="float_time"/>
-                                            <field name="time_stop" widget="float_time"/>
-                                            <field name="unit_amount" string="Duration" widget="float_time"/>
-                                        </group>
+        <!-- Task treeview -->
+        <record id="account_analytic_tree_view_task" model="ir.ui.view">
+            <field name="name">account.analytic.task.tree</field>
+            <field name="model">account.analytic.line</field>
+            <field name="arch" type="xml">
+                <tree string="Account Task">
+                    <field name="project_id"  required="1"/>
+                    <field name="date"/>
+                    <field name="name"/>
+                    <field name="time_start" widget="float_time"/>
+                    <field name="time_stop" widget="float_time"/>
+                    <field name="unit_amount" string="Duration" widget="float_time"/>
+                    <field name="to_invoice"/>
+                     <field name="task_id"/>
+                    <field name="invoice_id"/>
+                    <field name="user_id" required="1"/>
+                    <field name="product_id"/>
+                </tree>
+            </field>
+        </record>
 
-                                        <group>
-                                            <field name="to_invoice"/>
-                                            <field name="invoice_id"/>
-                                            <field name="issue_id"/>
-                                            <field name="user_id" required="1"/>
-                                            <field name="product_id"/>
-                                        </group>
-                                    </group>
-                                </sheet>
-                            </form>
-                        </field>
-                </record>
+        <!-- Issue treeview -->
+        <record id="account_analytic_tree_view_issue" model="ir.ui.view">
+            <field name="name">account.analytic.issue.tree</field>
+            <field name="model">account.analytic.line</field>
+            <field name="arch" type="xml">
+                <tree string="Account Issue">
+                    <field name="project_id"  required="1"/>
+                    <field name="date"/>
+                    <field name="name"/>
+                    <field name="time_start" widget="float_time"/>
+                    <field name="time_stop" widget="float_time"/>
+                    <field name="unit_amount" string="Duration" widget="float_time"/>
+                    <field name="to_invoice"/>
+                    <field name="issue_id"/>
+                    <field name="invoice_id"/>
+                    <field name="user_id" required="1"/>
+                    <field name="product_id"/>
+                </tree>
+            </field>
+        </record>
 
+        <!-- Timesheet calendar-->
+        <record id="project_timesheet_calendar_view" model="ir.ui.view">
+            <field name="name">project.timesheet.calendar.view</field>
+            <field name="model">account.analytic.line</field>
+            <field name="priority" eval="2"/>
+            <field name="arch" type="xml">
+                <calendar color="user_id" date_delay="unit_amount" date_start="date" string="Timesheet">
+                    <field name="name"/>
+                    <field name="project_id"/>
+                </calendar>
+            </field>
+        </record>
 
-                <record id="account_analytic_tree_view_task" model="ir.ui.view">
-                    <field name="name">account.analytic.task.tree</field>
-                    <field name="model">account.analytic.line</field>
-                    <field name="arch" type="xml">
-                        <tree string="Account Task">
-                            <field name="project_id"  required="1"/>
-                            <field name="date"/>
-                            <field name="name"/>
-                            <field name="time_start" widget="float_time"/>
-                            <field name="time_stop" widget="float_time"/>
-                            <field name="unit_amount" string="Duration" widget="float_time"/>
-                            <field name="to_invoice"/>
-                             <field name="task_id"/>
-                            <field name="invoice_id"/>
-                            <field name="user_id" required="1"/>
-                            <field name="product_id"/>
-                        </tree>
-                    </field>
-                </record>
+        <!-- Timesheet action-->
+        <record id="project_timesheet_action_" model="ir.actions.act_window">
+            <field name="name">Timesheet</field>
+            <field name="res_model">account.analytic.line</field>
+            <field name="view_mode">kanban,tree,calendar</field>
+            <field name="domain">[('sheet_id','=',False),('issue_id','=',False),('task_id','=',False)]</field>
+           <field name="context">{'search_default_my_timesheets': 1}</field>
+           <field name="search_view_id" ref="account_analytic_search_view_Time"/>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('account_analytic_tree_view')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('account_analytic_form_view')}),
 
+                          ]"/>
+            <field name="help" type="html">
+                <p>
+                    The Odoo issues tracker allows you to efficiently manage things
+                    like internal requests, software development bugs, customer
+                    complaints, project troubles, material breakdowns, etc.
+                </p>
+            </field>
+        </record>
 
-                <record id="account_analytic_tree_view_issue" model="ir.ui.view">
-                    <field name="name">account.analytic.issue.tree</field>
-                    <field name="model">account.analytic.line</field>
-                    <field name="arch" type="xml">
-                        <tree string="Account Issue">
-                            <field name="project_id"  required="1"/>
-                            <field name="date"/>
-                            <field name="name"/>
-                            <field name="time_start" widget="float_time"/>
-                            <field name="time_stop" widget="float_time"/>
-                            <field name="unit_amount" string="Duration" widget="float_time"/>
-                            <field name="to_invoice"/>
-                            <field name="issue_id"/>
-                            <field name="invoice_id"/>
-                            <field name="user_id" required="1"/>
-                            <field name="product_id"/>
-                        </tree>
-                    </field>
-                </record>
+        <!-- Action for Issue -->
+        <record id="eq_issue_action" model="ir.actions.act_window">
+            <field name="name">Issue</field>
+            <field name="res_model">account.analytic.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_my_issues': 1}</field>
+            <field name="search_view_id" ref="account_analytic_search_view_Time"/>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('account_analytic_tree_view_issue')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('account_analytic_form_view_issue')}),
 
-<!-- timesheet calendar-->
-                <record id="project_timesheet_calendar_view" model="ir.ui.view">
-                    <field name="name">project.timesheet.calendar.view</field>
-                    <field name="model">account.analytic.line</field>
-                    <field name="priority" eval="2"/>
-                    <field name="arch" type="xml">
-                            <!--<field name="name"/>
-                            <field name="time_start" widget="float_time"/>
-                            <field name="time_stop" widget="float_time"/>-->
-                       <!-- </calendar>-->
+                          ]"/>
+            <field name="search_view_id" ref="account_analytic_search_view"/>
+            <field name="domain">[('issue_id','!=',False)]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">click here to insert course data </p>
+            </field>
+        </record>
 
-                        <calendar color="user_id" date_delay="unit_amount" date_start="date" string="Timesheet">
-                            <field name="name"/>
-                            <field name="project_id"/>
-                        </calendar>
-                    </field>
-                </record>
+        <!-- Action for Task -->
+        <record id="eq_task_action" model="ir.actions.act_window">
+            <field name="name">Task</field>
+            <field name="res_model">account.analytic.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_my_tasks': 1}</field>
+            <field name="search_view_id" ref="account_analytic_search_view_Time"/>
+                <field name="view_ids"
+                       eval="[(5, 0, 0),
+                              (0, 0, {'view_mode': 'tree', 'view_id': ref('account_analytic_tree_view_task')}),
+                              (0, 0, {'view_mode': 'form', 'view_id': ref('account_analytic_form_view_Task')}),
 
-<!-- timesheet action-->
-
-               <record id="project_timesheet_action_" model="ir.actions.act_window">
-                    <field name="name">Timesheet</field>
-                    <field name="res_model">account.analytic.line</field>
-                    <field name="view_mode">kanban,tree,calendar</field>
-                    <!--<field name="view_id" eval="False"/>-->
-                    <field name="domain">[('sheet_id','=',False),('issue_id','=',False),('task_id','=',False)]</field>
-                   <field name="context">{'search_default_my_timesheets': 1}</field>
-                   <field name="search_view_id" ref="account_analytic_search_view_Time"/>
-                    <field name="view_ids"
-                           eval="[(5, 0, 0),
-                                  (0, 0, {'view_mode': 'tree', 'view_id': ref('account_analytic_tree_view')}),
-                                  (0, 0, {'view_mode': 'form', 'view_id': ref('account_analytic_form_view')}),
-
-                                  ]"/>
-                    <field name="help" type="html">
-                        <p>
-                            The Odoo issues tracker allows you to efficiently manage things
-                            like internal requests, software development bugs, customer
-                            complaints, project troubles, material breakdowns, etc.
-                        </p>
-                    </field>
-               </record>
-
-
-
-                <record id="eq_issue_action" model="ir.actions.act_window">
-                  <field name="name">Issue</field>
-                  <field name="res_model">account.analytic.line</field>
-                  <field name="view_type">form</field>
-                  <field name="view_mode">tree,form</field>
-                    <field name="context">{'search_default_my_issues': 1}</field>
-
-                        <field name="search_view_id" ref="account_analytic_search_view_Time"/>
-                        <field name="view_ids"
-                               eval="[(5, 0, 0),
-                                      (0, 0, {'view_mode': 'tree', 'view_id': ref('account_analytic_tree_view_issue')}),
-                                      (0, 0, {'view_mode': 'form', 'view_id': ref('account_analytic_form_view_issue')}),
-
-                                      ]"/>
-                     <field name="search_view_id" ref="account_analytic_search_view"/>
-                    <field name="domain">[('issue_id','!=',False)]</field>
-
-                  <field name="help" type="html">
-                         <p class="oe_view_nocontent_create">click here to insert course data </p>
-                  </field>
-                </record>
+                              ]"/>
+            <field name="search_view_id" ref="account_analytic_search_view_Task"/>
+            <field name="domain">[('task_id','!=',False)]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">click here to insert course data </p>
+            </field>
+        </record>
 
 
-                <record id="eq_task_action" model="ir.actions.act_window">
-                  <field name="name">Task</field>
-                  <field name="res_model">account.analytic.line</field>
-                  <field name="view_type">form</field>
-                  <field name="view_mode">tree,form</field>
-                    <field name="context">{'search_default_my_tasks': 1}</field>
-                     <field name="search_view_id" ref="account_analytic_search_view_Time"/>
-                        <field name="view_ids"
-                               eval="[(5, 0, 0),
-                                      (0, 0, {'view_mode': 'tree', 'view_id': ref('account_analytic_tree_view_task')}),
-                                      (0, 0, {'view_mode': 'form', 'view_id': ref('account_analytic_form_view_Task')}),
-
-                                      ]"/>
-                     <field name="search_view_id" ref="account_analytic_search_view_Task"/>
-
-
-
-                  <field name="domain">[('task_id','!=',False)]</field>
-                  <field name="help" type="html">
-                         <p class="oe_view_nocontent_create">click here to insert course data </p>
-                  </field>
-                </record>
-
-
-
-
-
-
-
-
-
-                    <menuitem id="menu_project_timesheet" name="Timesheet" parent="project.menu_project_management"
-                            action="project_timesheet_action_" sequence="15"/>
-
-                    <menuitem id="menu_issue" name="Timesheet(issues)" parent="project.menu_project_management"
-                                    action="eq_issue_action" sequence="20"/>
-
-                    <menuitem id="menu_task" name="Timesheet(task)" parent="project.menu_project_management"
-                                    action="eq_task_action" sequence="20"/>
-
-                    <menuitem id="project_menu" name="Project" parent="project.menu_project_management"
-                                sequence="50" action="eq_project_action_2" />
-
+        <!-- Menus -->
+        <menuitem id="menu_project_timesheet" name="Timesheet" parent="project.menu_project_management" action="project_timesheet_action_" sequence="15"/>
+        <menuitem id="menu_issue" name="Timesheet(issues)" parent="project.menu_project_management" action="eq_issue_action" sequence="20"/>
+        <menuitem id="menu_task" name="Timesheet(task)" parent="project.menu_project_management" action="eq_task_action" sequence="20"/>
+        <menuitem id="project_menu" name="Project" parent="project.menu_project_management" sequence="50" action="eq_project_action_2" />
     </data>
 </odoo>
