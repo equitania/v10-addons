@@ -20,7 +20,10 @@
 ##############################################################################
 
 from odoo import models, fields, api, _
-from datetime import datetime
+from datetime import datetime, timedelta
+from odoo.tools import DEFAULT_SERVER_DATE_FORMAT as OE_DFORMAT
+import time
+from odoo.exceptions import Warning
 
 class eq_project_extension(models.Model):
     """
@@ -144,56 +147,86 @@ class eq_project_extension(models.Model):
 
 
 
-class eq_project_extension_2(models.Model):
+class eq_project_extension(models.Model):
         _inherit = 'account.analytic.line'
+
+
+        def _get_project_from_context(self):
+            objs = self.search([], order='id desc')
+            if len(objs) > 0:
+                obj = objs[0]
+                project_id = obj.project_id
+                return project_id
+
         eq_startdate = fields.Char(string='Start Date')
         eq_time_start = fields.Float(string='time start')
         name = fields.Text(string='Description', required=True)
+        project_id = fields.Many2one('project.project', 'Project', domain=[('allow_timesheets', '=', True)], default=_get_project_from_context)
+        sheet_id = fields.Many2one('hr_timesheet_sheet.sheet', compute='_compute_sheet', string='Sheet', store=True)
 
-        @api.onchange('project_id')
-        def account_billiable(self):
-            """
-            ensures that the field eq_to_invoice_id  automatically recorded in the account.analytic.line
-            :return:
-            """
-            for account in self:
-               project_obj= self.env['project.project'].search([('id', '=', account.project_id.id)])
+        @api.model
+        def create(self,vals):
 
-               for obj in  project_obj:
-                   self.to_invoice = obj.eq_to_invoice_id
+            if 'time_start' in vals:
+                if vals['time_start'] >= 24.00:
+                    raise Warning(_("Please enter a valid Hour"))
+            if 'time_stop' in vals:
+                if vals['time_stop'] >= 24.00:
+                    raise Warning(_("Please enter a valid Hour"))
+            res = super(eq_project_extension,self).create(vals)
 
+            return res
+
+        @api.multi
+        def write(self,vals):
+            if 'time_start' in vals:
+                if vals['time_start'] >= 24.00:
+                    raise Warning(_("Please enter a valid Hour"))
+            if 'time_stop' in vals:
+                if vals['time_stop'] >= 24.00:
+                    raise Warning(_("Please enter a valid Hour"))
+            return super(eq_project_extension, self).write(vals)
 
         @api.onchange('project_id')
         def set_time_onchange(self):
 
             eq_time_start = 0.0
-
-            #
-            # search hier im account.analytic.line where id = self.project_id dann for schleife
-            check_existing_number = self.env['account.analytic.line'].search([('project_id', '=', self.project_id.id)])
-            for  time  in check_existing_number:
-                  if time.time_stop > eq_time_start:
-                      eq_time_start= time.time_stop
-            self.time_start = eq_time_start
+            eq_startdate = "1992-04-21"
 
 
-
-        @api.onchange('project_id')
-        def set_Date_onchange(self):
-
-          eq_startdate = "1992-04-21" # default date in the pass to compare
-
-          check_existing_number = self.env['account.analytic.line'].search([('project_id', '=', self.project_id.id)])
-
-          if len(check_existing_number)>0:
-              for time in check_existing_number:
-
-                 if (time.date) > eq_startdate:
-                          eq_startdate= time.date
-                 self.date = eq_startdate
-
-          else:
+            if self.project_id.id == False:
                 pass
+
+            else:
+
+                account_analytic_objs = self.env['account.analytic.line'].search([('project_id', '=', self.project_id.id),('time_start','!=',False),('time_stop','!=',False)],order='date desc,time_stop desc')
+                project_objs = self.env['project.project'].search([('id', '=', self.project_id.id)])
+                if len(project_objs) > 0:
+                    project_obj = project_objs[0]
+                    self.to_invoice = project_obj.eq_to_invoice_id
+
+
+                if len(account_analytic_objs) > 0:
+                    account_analytic_obj = account_analytic_objs[0]
+                    if account_analytic_obj.time_stop > eq_time_start:
+                        eq_time_start = account_analytic_obj.time_stop
+                    if (account_analytic_obj.date) > eq_startdate:
+                        eq_startdate = account_analytic_obj.date
+
+
+                if eq_time_start > 23.97:
+                    eq_time_start = 0.00
+                    last_date = account_analytic_obj.date
+                    date = datetime.strptime(last_date,'%Y-%m-%d')
+                    self.date = date + timedelta(days=1)
+
+
+                else:
+                    self.date = eq_startdate
+
+                self.time_start = eq_time_start
+
+
 
 
 

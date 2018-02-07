@@ -1,6 +1,11 @@
 ## Modul eq_project
 
 
+#### 07.02.2018
+#### Version 1.0.12
+##### CHG/FIX
+- diverse BUgFixes
+
 #### 06.02.2018
 #### Version 1.0.11
 ##### IMP

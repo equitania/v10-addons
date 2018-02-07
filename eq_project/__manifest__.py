@@ -22,14 +22,14 @@
 {
     'name': "Equitania Projekt",
     'license': 'AGPL-3',
-    'version': '1.0.11',
+    'version': '1.0.12',
     'category': 'project',
     'description': """Extensions for project""",
     'author': 'Equitania Software GmbH',
     'summary': 'Project Extension',
     'website': 'www.myodoo.de',
     "depends" : ['base','project','project_issue','hr_timesheet_activity_begin_end','hr_timesheet_sheet', 'analytic','project_parent','project_recalculate',
-                 'timesheet_invoice','project_description','project_issue_code','project_stage_state',
+                 'timesheet_invoice','project_description',
                  'project_task_category','project_task_code','project_task_report','project_timeline','project_timesheet_time_control'],  #no dependencies for stage was always in Project/Data/project_data.xml declared
     'data': [
             'data/ir_sequence_data.xml',
