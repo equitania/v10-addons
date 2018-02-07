@@ -1,19 +1,21 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* eq_project
+# 	* eq_project
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-05 16:14+0000\n"
-"PO-Revision-Date: 2018-02-05 16:14+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2018-02-07 19:25+0000\n"
+"PO-Revision-Date: 2018-02-07 20:29+0100\n"
+"Last-Translator: Martin Schmid <m.schmid@equitania.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
+"Language: de\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #. module: eq_project
 #: model:ir.model.fields,field_description:eq_project.field_project_project_eq_total_hours
@@ -23,7 +25,7 @@ msgstr "Gesamtzeit"
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_tree_view_issue
 msgid "Account Issue"
-msgstr "Fall"
+msgstr "Fall/Problem"
 
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_tree_view_task
@@ -58,7 +60,12 @@ msgstr "Startzeit"
 #. module: eq_project
 #: model:ir.model.fields,field_description:eq_project.field_project_task_type_calculated_item
 msgid "Calculable level"
-msgstr "berechnenbare stufe"
+msgstr "Berechnenbare Stufe"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.project_calendar_view_
+msgid "Calendar View"
+msgstr "Kalenderansicht"
 
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.eq_project_extension_view
@@ -97,7 +104,6 @@ msgstr "Stunde(n)"
 
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.eq_project_extension_
-#: model:ir.ui.view,arch_db:eq_project.project_project_view_kanban
 msgid "Hour(s)  /"
 msgstr "Stunde(n)  /"
 
@@ -110,7 +116,7 @@ msgstr "Stunden"
 #. module: eq_project
 #: model:ir.actions.act_window,name:eq_project.eq_issue_action
 msgid "Issue"
-msgstr "Fall"
+msgstr "Fall/Problem"
 
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view
@@ -136,6 +142,15 @@ msgstr "Meine Projekte"
 #: model:ir.model.fields,field_description:eq_project.field_project_project_eq_project_number
 msgid "Number"
 msgstr "Nummer"
+
+#. module: eq_project
+#: code:addons/eq_project/models/eq_project_extension.py:154
+#: code:addons/eq_project/models/eq_project_extension.py:157
+#: code:addons/eq_project/models/eq_project_extension.py:170
+#: code:addons/eq_project/models/eq_project_extension.py:173
+#, python-format
+msgid "Please enter a valid Hour"
+msgstr "Die Zeitangaben ist ungültig"
 
 #. module: eq_project
 #: model:ir.model,name:eq_project.model_project_project
@@ -169,14 +184,16 @@ msgid "Task Stage"
 msgstr "Aufgabenstufe"
 
 #. module: eq_project
-#: model:ir.actions.act_window,help:eq_project.eq_project_action
+#: model:ir.actions.act_window,help:eq_project.eq_project_action_2
 #: model:ir.actions.act_window,help:eq_project.project_timesheet_action_
-msgid "The Odoo issues tracker allows you to efficiently manage things\n"
-"                            like internal requests, software development bugs, customer\n"
-"                            complaints, project troubles, material breakdowns, etc."
-msgstr "The Odoo issues tracker allows you to efficiently manage things\n"
-"                            like internal requests, software development bugs, customer\n"
-"                            complaints, project troubles, material breakdowns, etc."
+msgid ""
+"The Odoo issues tracker allows you to efficiently manage things\n"
+"                    like internal requests, software development bugs, customer\n"
+"                    complaints, project troubles, material breakdowns, etc."
+msgstr ""
+"Der Odoo Issues Tracker ermöglicht es Ihnen, Dinge effizient zu verwalten.\n"
+"                    wie interne Anfragen, Softwareentwicklungsfehler, Kundenanfragen\n"
+"                    Reklamationen, Projektstörungen, Materialausfälle, etc."
 
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.eq_project_extension_view
@@ -198,12 +215,12 @@ msgstr "Zeiterfassungsaktivitäten"
 #. module: eq_project
 #: model:ir.ui.menu,name:eq_project.menu_issue
 msgid "Timesheet(issues)"
-msgstr "Zeiterfassung(Fälle)"
+msgstr "Zeiterfassung(Fälle/Probleme)"
 
 #. module: eq_project
 #: model:ir.ui.menu,name:eq_project.menu_task
 msgid "Timesheet(task)"
-msgstr "Zeiterfassung(Aufgabe)"
+msgstr "Zeiterfassung(Aufgaben)"
 
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.eq_project_issue_form_view
@@ -213,24 +230,20 @@ msgstr "Zeiterfassung"
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_tree_view
 msgid "Tree View Account"
-msgstr "Tree Ansicht"
+msgstr "Baumstruktursicht"
 
 #. module: eq_project
 #: model:ir.actions.act_window,help:eq_project.eq_issue_action
 #: model:ir.actions.act_window,help:eq_project.eq_task_action
 msgid "click here to insert course data"
-msgstr "click here to insert course data"
+msgstr "Klicken Sie hier um Daten zu erfassen"
 
 #. module: eq_project
+#: model:ir.actions.act_window,name:eq_project.eq_project_action_2
 #: model:ir.ui.view,arch_db:eq_project.project_project_search_view_2
 #: model:ir.ui.view,arch_db:eq_project.project_project_tree_view
 msgid "project"
-msgstr "projekt"
-
-#. module: eq_project
-#: model:ir.actions.act_window,name:eq_project.eq_project_action
-msgid "project_item"
-msgstr "projekte"
+msgstr "Projekt"
 
 #. module: eq_project
 #: model:ir.model.fields,field_description:eq_project.field_project_project_eq_rest_hours
@@ -240,7 +253,7 @@ msgstr "Reststunde"
 #. module: eq_project
 #: model:ir.model.fields,field_description:eq_project.field_account_analytic_line_eq_time_start
 msgid "time start"
-msgstr "time start"
+msgstr "Startzeit"
 
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.eq_project_extension_
@@ -251,5 +264,4 @@ msgstr "wird automatisch ausgefüllt"
 #. module: eq_project
 #: model:ir.model.fields,field_description:eq_project.field_project_project_eq_worked_hours
 msgid "worked Time"
-msgstr "Geliefertestunden"
-
+msgstr "Geleistete Stunden"
