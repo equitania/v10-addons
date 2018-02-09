@@ -111,6 +111,7 @@ table.data > tbody > tr > td:first-child {
 
 .rightbox {
 	float:right;
+	padding-left:0px;
 }
 
 #returnaddress {

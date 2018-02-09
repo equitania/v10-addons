@@ -1,5 +1,10 @@
 ## Modul eq_base_report
 
+#### 09.02.2017
+#### Version 1.0.28
+##### FIX
+- (VW-148) Reportstyle: Informationsblock oben rechts in Reports haben nun keine Padding-left mehr, dadurch ist der Block korrekt ausgerichtet zum Report-Logo
+
 #### 24.01.2017
 #### Version 1.0.27
 ##### IMP
