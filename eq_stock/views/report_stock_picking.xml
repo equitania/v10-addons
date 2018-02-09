@@ -152,11 +152,9 @@
                                             </td>
                                         </tr>
                                         <tr t-if="user.email">
-                                            <td>
-                                                <span>E-Mail</span>
-                                            </td>
-                                            <td class="text-right">
-                                                <span t-field="user.email"/>
+                                            <td colspan="2">
+                                                <span style="float:left; padding-right:10px;">E-Mail</span>
+                                                <span t-field="user.email" style="float:right;"/>
                                             </td>
                                         </tr>
                                     </tbody>

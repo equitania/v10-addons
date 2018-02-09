@@ -1,10 +1,14 @@
 ## Modul eq_stock
 
+#### 09.02.2018
+#### Version 1.0.12
+##### IMP
+- (#5313 - VEP-177) Lieferscheinreport: Kontakt E-Mailadresse hat nun mehr Platz und bricht bei zu langen Adressen nun um, statt den Block zu verziehen.
+
 #### 02.02.2018
 #### Version 1.0.11
 ##### IMP
 - Lieferschein Enthält nun Logik für Serien & Chargen-Nummern. Packschein enthält nun den Barcode der vorher in den Kopfdaten abgedruckt wird.
-
 
 #### 18.01.2018
 #### Version 1.0.10
@@ -21,7 +25,6 @@
 ##### CHG
 - Lieferschein Report: Übersetzungen gepflegt; Artikel Nr. + Code getrennt zu einzelnen Spalten; Barcode funktioniert nun, aber auskommentiert da vermutlich nicht benötigt.
 
-
 #### 16.11.2017
 #### Version 1.0.7
 ##### CHG
@@ -37,12 +40,10 @@
 ##### IMP
 Report: Kopf und Fußtext hinzugefügt, inkl. Seitenumbruch
 
-
 #### 01.08.2017
 #### Version 1.0.4
 ##### CHG
 - Erweiterungen für stock_picking: Kopf- und Fußtexte
-
 
 #### 28.07.2017
 #### Version 1.0.3
