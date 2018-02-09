@@ -146,11 +146,9 @@
                                     </td>
                                 </tr>
                                 <tr t-if="o.user_id.email">
-                                    <td>
-                                        <span>E-Mail</span>
-                                    </td>
-                                    <td class="text-right">
-                                        <span t-field="o.user_id.email"/>
+                                    <td colspan="2">
+                                        <span style="float:left; padding-right:10px;">E-Mail</span>
+                                        <span t-field="o.user_id.email" style="float:right;"/>
                                     </td>
                                 </tr>
                             </tbody>
@@ -288,9 +286,9 @@
                                 <td class="text-left">
                                     <span>Total VAT</span>
                                 </td>
-                                <td class="text-right" t-if="o.order_line[0].taxes_id">
+                                <td class="text-right" >
                                     <span t-field="o.amount_tax"
-                                          t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                          t-options="{'widget': 'monetary', 'display_currency': o.currency_id}" t-if="o.order_line[0].taxes_id"/>
                                 </td>
                             </tr>
                             <tr class="border-black">

@@ -1,5 +1,10 @@
 ## Modul eq_purchase
 
+#### 09.02.2018
+#### Version 1.0.30
+##### IMP
+- (#5313 - VEP-177) Einkaufsreports: Kontakt E-Mailadresse hat nun mehr Platz und bricht bei zu langen Adressen nun um, statt den Block zu verziehen.
+
 #### 12.01.2018
 #### Version 1.0.29
 ##### CHG
