@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 09.02.2018
+#### Version 1.0.43
+##### IMP
+- Rechnungsreport: Kontakt E-Mailadresse hat nun mehr Platz und bricht bei zu langen Adressen nun um, statt den Block zu verziehen.
+
 #### 29.01.2018
 #### Version 1.0.42
 ##### FIX
