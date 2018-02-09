@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 09.02.2018
+#### Version 1.0.71
+##### IMP
+- (#5313 - VEP-177) Verkaufsreport: Kontakt E-Mailadresse hat nun mehr Platz und bricht bei zu langen Adressen nun um, statt den Block zu verziehen.
+
 #### 01.02.2018
 #### Version 1.0.70
 ##### ADD
