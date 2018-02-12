@@ -180,7 +180,7 @@ class eq_account_analytic_line(models.Model):
         OnChangeHandler for project_id - recalculate and set time
         """
         eq_time_start = 0.0
-        eq_startdate = "1992-04-21"
+        eq_startdate = "2018-01-01"
 
         if self.project_id.id == False:
             pass
