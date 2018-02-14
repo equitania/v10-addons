@@ -1,6 +1,10 @@
 ## Modul eq_project
 
 
+#### 07.02.2018
+#### Version 1.0.15
+##### CHG
+- Defaultwert von Startdate wird ab jetzt als DateTime.Now gesetzt
 
 #### 07.02.2018
 #### Version 1.0.13

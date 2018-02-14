@@ -143,7 +143,7 @@ class eq_account_analytic_line(models.Model):
     sheet_id = fields.Many2one('hr_timesheet_sheet.sheet', compute='_compute_sheet', string='Sheet', store=True)
 
     @api.model
-    def create(self,vals):
+    def create(self, vals):
         """
         Create new record in account.analytic.line and return id of new created record back
         :param vals: All values that will be saved
@@ -159,7 +159,7 @@ class eq_account_analytic_line(models.Model):
         return super(eq_account_analytic_line,self).create(vals)
 
     @api.multi
-    def write(self,vals):
+    def write(self, vals):
         """
         Update an existing record in account.analytic.line and return id of updated record back
         :param vals: All values that will be saved
@@ -180,7 +180,7 @@ class eq_account_analytic_line(models.Model):
         OnChangeHandler for project_id - recalculate and set time
         """
         eq_time_start = 0.0
-        eq_startdate = "2018-01-01"
+        eq_startdate = time.strftime("%Y-%m-%d")            # set today's date as default date
 
         if self.project_id.id == False:
             pass
