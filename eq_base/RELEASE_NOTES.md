@@ -1,5 +1,10 @@
 ## Modul eq_base
 
+#### 23.02.2018
+#### Version 1.0.8
+##### CHG
+- deactivate eq_models on 23.02.2018 because of problems with calendar view
+
 #### 06.02.2018
 #### Version 1.0.7
 ##### ADD
