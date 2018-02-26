@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 26.02.2018
+#### Version 1.0.44
+##### FIX
+- Übersetzung Rechnungsreport: Proforma Invoice zu Proforma Rechnung
+
 #### 09.02.2018
 #### Version 1.0.43
 ##### IMP

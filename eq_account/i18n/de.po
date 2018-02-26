@@ -253,3 +253,10 @@ msgstr "<span>Ihre Referenznr.</span>"
 #: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
 msgid "<span>Our reference no.</span>"
 msgstr "<span>Auftragsnr.</span>"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "Proforma Invoice"
+msgstr "Proforma Rechnung"
+
+
