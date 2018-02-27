@@ -23,4 +23,4 @@
 import res_company
 import res_country
 import eq_res_users
-#import eq_models       # deactivate on 23.02.2018 because of problems with calendar view
+import eq_models

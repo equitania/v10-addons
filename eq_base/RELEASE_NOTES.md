@@ -1,5 +1,11 @@
 ## Modul eq_base
 
+#### 27.02.2018
+#### Version 1.0.9
+##### FIX
+- activate eq_models
+- Anpassungen innerhalb der search_read, sodass sowohl die Kalenderview als auch die Erweiterte Suche funktioniert.
+
 #### 23.02.2018
 #### Version 1.0.8
 ##### CHG

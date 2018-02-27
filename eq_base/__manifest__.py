@@ -22,7 +22,7 @@
 {
     'name': 'Equitania Basis',
     'license': 'AGPL-3',
-    'version': '1.0.8',
+    'version': '1.0.9',
     'description': """
         Basic fields for more EQ Modules
     """,

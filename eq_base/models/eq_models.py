@@ -44,7 +44,7 @@ class BaseModelExtend(models.AbstractModel):
                     if dom[2][0] == "|":
                         dom[1] = "=ilike"
                         dom[2] = dom[2][1:]
-                    elif ' ' in dom[2]:
+                    elif ' ' in dom[2] and isinstance(dom[2], str):
                         empty_space_found = True
                         split_condition = dom[2].split(' ')
                         for _ in range(0, len(split_condition) - 1):
