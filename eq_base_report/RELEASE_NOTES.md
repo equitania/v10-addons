@@ -1,5 +1,10 @@
 ## Modul eq_base_report
 
+#### 01.03.2018
+#### Version 1.0.29
+##### FIX
+- reformat_string Funktion überarbeitet, welche bei einem negativen Wert noch einen Punkt vor den Zahlenwert gesetzt hat.
+
 #### 09.02.2017
 #### Version 1.0.28
 ##### FIX

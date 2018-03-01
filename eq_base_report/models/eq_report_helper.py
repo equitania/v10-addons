@@ -59,9 +59,10 @@ class eq_report_helper(models.TransientModel):
         precision = self.env['decimal.precision'].precision_get(param_name)
         string = ("%%5.%df" % precision)
         result = (string % value)
-
+        print"result1: ", result
         # parse string and generate correct number format
         result = self.reformat_string(result, precision, language)
+        print"result2: ", result
         # Currency Symbol is added
         if currency_id:
             result += (' %s' % currency_id.symbol)
@@ -256,6 +257,7 @@ class eq_report_helper(models.TransientModel):
         if len(decimal_part) > 0:
             finalResult += decimal_part
 
+        finalResult = finalResult.replace('-.','-')
         return finalResult
 
     def get_sum_without_optional_positions(self, category_positions):
