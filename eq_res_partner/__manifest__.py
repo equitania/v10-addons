@@ -28,7 +28,7 @@
     'author': 'Equitania Software GmbH',
     'summary': 'Partner Extension',
     'website': 'www.myodoo.de',
-    "depends" : ['base', 'base_setup',"pragma_supplier_number", "pragma_customer_number"],
+    "depends" : ['base', 'base_setup',"syscoon_partner_account_company"],
     'data': [
             "views/eq_res_partner_view.xml",
              ],
