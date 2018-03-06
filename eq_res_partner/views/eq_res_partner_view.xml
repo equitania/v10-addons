@@ -31,10 +31,10 @@
 			<field name="arch" type="xml">
 
 				<!--Felder Kunden- und Lieferantennr von pragmasoft verschieben-->
-				 <xpath expr="//field[@name='supplier_number']" position="replace">
-                </xpath>
-				<xpath expr="//field[@name='customer_number']" position="replace">
-                </xpath>
+				 <!--<xpath expr="//field[@name='supplier_number']" position="replace">-->
+                <!--</xpath>-->
+				<!--<xpath expr="//field[@name='customer_number']" position="replace">-->
+                <!--</xpath>-->
 
 				<xpath expr="//field[@name='phone']" position="after">
 					<field name="eq_phone2" widget="phone" />
@@ -60,16 +60,16 @@
 							attrs="{'invisible': [('is_company', '=', False)]}" />
 
 						<!--Felder Kunden- und Lieferantennr von pragmasoft-->
-						<div>
-							<label for="customer_number" string="Customer Number" attrs="{'invisible':[('customer', '=', False)]}"/>
-							<div attrs="{'invisible':[('customer', '=', False)]}">
-								<field name="customer_number" attrs="{'invisible':[('customer', '=', False)], 'readonly':[('auto_customer_ref','=',True)]}" />
-							</div>
-							<label for="supplier_number" string="Supplier Number" attrs="{'invisible':[('supplier', '=', False)]}" />
-							<div attrs="{'invisible':[('supplier', '=', False)]}" >
-								<field name="supplier_number" attrs="{'invisible':[('supplier', '=', False)], 'readonly': [('auto_supplier_ref','=',True)]}" />
-							</div>
-						</div>
+						<!--<div>-->
+							<!--<label for="customer_number" string="Customer Number" attrs="{'invisible':[('customer', '=', False)]}"/>-->
+							<!--<div attrs="{'invisible':[('customer', '=', False)]}">-->
+								<!--<field name="customer_number" attrs="{'invisible':[('customer', '=', False)]}" />-->
+							<!--</div>-->
+							<!--<label for="supplier_number" string="Supplier Number" attrs="{'invisible':[('supplier', '=', False)]}" />-->
+							<!--<div attrs="{'invisible':[('supplier', '=', False)]}" >-->
+								<!--<field name="supplier_number" attrs="{'invisible':[('supplier', '=', False)]}" />-->
+							<!--</div>-->
+						<!--</div>-->
 					</div>
 
 				</xpath>

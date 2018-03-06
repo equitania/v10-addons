@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 06.03.2018
+#### Version 1.0.16
+##### ADD
+- Kundennummer/Lieferantennumer Anzeige entfernt.
+
 #### 31.01.2018
 #### Version 1.0.15
 ##### ADD
