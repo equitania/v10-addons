@@ -1,5 +1,9 @@
 ## Modul eq_project
 
+#### 05.03.2018
+#### Version 1.0.16
+##### ADD
+- added a new icon
 
 #### 07.02.2018
 #### Version 1.0.15
