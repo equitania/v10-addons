@@ -45,6 +45,38 @@ class eq_res_partner(models.Model):
 
     #eq_complete_description = fields.Char(compute='_generate_complete_description', store=True)
 
+    @api.multi
+    def _fields_sync(self, values):
+        """ Sync commercial fields and address fields from company and to children after create/update,
+        just as if those were all modeled as fields.related to the parent """
+        # 1. From UPSTREAM: sync from parent
+        if values.get('parent_id') or values.get('type', 'contact'):
+            # 1a. Commercial fields: sync if parent changed
+            if values.get('parent_id'):
+                self._commercial_sync_from_company()
+            # 1b. Address fields: sync if parent or use_parent changed *and* both are now set
+            if self.parent_id and self.type == 'contact':
+                onchange_vals = self.onchange_parent_id().get('value', {})
+                self.update_address(onchange_vals)
+
+        # 2. To DOWNSTREAM: sync children
+        if self.child_ids:
+            # 2a. Commercial Fields: sync if commercial entity
+            if self.commercial_partner_id == self:
+                commercial_fields = self._commercial_fields()
+                if any(field in values for field in commercial_fields):
+                    self._commercial_sync_to_children()
+            for child in self.child_ids.filtered(lambda c: not c.is_company):
+                if child.commercial_partner_id != self.commercial_partner_id:
+                    self._commercial_sync_to_children()
+                    break
+            # 2b. Address fields: sync if address changed
+            address_fields = self._address_fields()
+            if any(field in values for field in address_fields):
+                contacts = self.child_ids.filtered(lambda c: c.type == 'contact')
+                if contacts.street == '' or contacts.street == None or contacts.street == False:
+                    contacts.update_address(values)
+
     @api.onchange('parent_id')
     def onchange_parent_id(self):
         # return values in result, as this method is used by _fields_sync()

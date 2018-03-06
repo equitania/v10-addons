@@ -1,6 +1,12 @@
 ## Modul eq_res_partner
 
 #### 06.03.2018
+#### Version 1.0.17
+##### ADD
+- Ticket 5402: Anpassung: Sofern bei dem Unterkontakt eine Straße gepflegt ist, wird diese bei der Änderung der Straße der Mutter nicht mehr überschrieben.
+- Ist bei dem Kindkontakt keine Straße hinterlegt, so wird die Straße der Mutter übernommen.
+
+#### 06.03.2018
 #### Version 1.0.16
 ##### ADD
 - Kundennummer/Lieferantennumer Anzeige entfernt.
