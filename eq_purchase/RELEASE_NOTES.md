@@ -1,5 +1,10 @@
 ## Modul eq_purchase
 
+#### 06.03.2018
+#### Version 1.0.31
+##### CHG
+- Kundennummer/Lieferantennumer Anzeige entfernt.
+
 #### 09.02.2018
 #### Version 1.0.30
 ##### IMP
