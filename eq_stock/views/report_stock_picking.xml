@@ -80,6 +80,14 @@
                                                 <span t-field="o.partner_id.customer_number"/>
                                             </td>
                                         </tr>
+                                         <tr>
+                                            <td>
+                                                <span>Customer Reference</span>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-field="o.eq_sale_order_id.client_order_ref"/>
+                                            </td>
+                                        </tr>
                                         <tr t-if="o.name">
                                             <td>
                                                 <span>Delivery note</span>

@@ -228,3 +228,8 @@ msgstr "<strong>Chargen-/Seriennr.</strong>"
 msgid "<strong>Lot/Serial Number</strong>"
 msgstr "<strong>Chargen-/Seriennr.</strong>"
 
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_report_stockpicking_document
+msgid "<span>Customer Reference</span>"
+msgstr "<span>Kundenreferenz</span>"
+

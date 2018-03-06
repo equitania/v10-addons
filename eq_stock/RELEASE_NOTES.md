@@ -1,5 +1,10 @@
 ## Modul eq_stock
 
+#### 06.03.2018
+#### Version 1.0.13
+##### ADD
+- Kundenreferenz wird jetzt auch im Lieferschein angezeigt.
+
 #### 09.02.2018
 #### Version 1.0.12
 ##### IMP
