@@ -1,5 +1,9 @@
 ## Modul eq_sale_stock
 
+#### 06.03.2017
+#### Version 1.0.12
+##### CHG
+- Kundennummer/Lieferantennumer Anzeige entfernt.
 
 #### 16.11.2017
 #### Version 1.0.11

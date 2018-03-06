@@ -10,7 +10,7 @@
 					<!--<field name="eq_pos"/>-->
 					<field name="eq_order_id"/>
 					<field name="eq_client_order_ref"/>
-					<field name="eq_customer_no"/>
+					<!--<field name="eq_customer_no"/>-->
 					<field name="eq_customer"/>
 					<field name="eq_delivery_date"/>
 					<field name="eq_quantity" sum="Total Quantity"/>
@@ -33,7 +33,7 @@
 							<!--<field name="eq_pos"/>-->
 							<field name="eq_state" />
 							<field name="eq_client_order_ref" />
-							<field name="eq_customer" required="1"/>
+							<!--<field name="eq_customer" required="1"/>-->
 							<field name="eq_product_no" required="1"/>
 							<field name="eq_order_id" required="1"/>
 							<field name="eq_customer_no" />
@@ -53,7 +53,7 @@
 				<search string="Search Partner">
 	                    <field name="eq_order_id" filter_domain="['|','|','|',('eq_order_id','ilike',self),('eq_client_order_ref','ilike',self),('eq_product_no','ilike',self),('eq_customer','=',self)]"/>
 						<field name="eq_client_order_ref"/>
-						<field name="eq_customer_no"/>
+						<!--<field name="eq_customer_no"/>-->
 						<field name="eq_customer"/>
 						<field name="eq_delivery_date"/>
 						<!--<field name="eq_pos"/>-->

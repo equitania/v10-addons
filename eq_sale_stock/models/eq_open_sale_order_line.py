@@ -70,9 +70,9 @@ class eq_open_sale_order_line(models.Model):
                     WHERE
                         sale_order.id = main.order_id
                 ) AS eq_client_order_ref,
-                (
+                /*(
                     SELECT
-                        res_partner.cust_auto_ref
+                        res_partner.customer_number
                     FROM
                         res_partner
                     WHERE res_partner.id = (
@@ -83,7 +83,7 @@ class eq_open_sale_order_line(models.Model):
                         WHERE
                             sale_order.id = main.order_id
                         )
-                ) AS eq_customer_no,
+                ) AS eq_customer_no,*/
                 (
                     SELECT
                         sale_order.partner_id
@@ -165,9 +165,9 @@ class eq_open_sale_order_line(models.Model):
                     WHERE
                         sale_order.id = main.order_id
                 ),
-                (
+                /*(
                     SELECT
-                        res_partner.cust_auto_ref
+                        res_partner.customer_number
                     FROM
                         res_partner
                     WHERE
@@ -179,7 +179,7 @@ class eq_open_sale_order_line(models.Model):
                             WHERE
                                 sale_order.id = main.order_id
                             )
-                ),
+                ),*/
                 (
                     SELECT
                         sale_order.partner_id
