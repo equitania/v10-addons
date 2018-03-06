@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 06.03.2018
+#### Version 1.0.72
+##### IMP
+- Kundennummer/Lieferantennumer Anzeige entfernt.
+
 #### 09.02.2018
 #### Version 1.0.71
 ##### IMP

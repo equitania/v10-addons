@@ -164,23 +164,23 @@
              <!--<field name="inherit_id" ref="base.action_partner_customer_form"/>-->
         </record>
 
-        <!--Anzeige weiterer Felder in der Treeview-->
-        <record id="eq_sale_view_partner_tree" model="ir.ui.view">
-            <field name="name">eq_sale.partner.extension.view.tree</field>
-            <field name="model">res.partner</field>
-            <field name="type">tree</field>
-            <field name="inherit_id" ref="base.view_partner_tree"/>
-            <field name="arch" type="xml">
+        <!--&lt;!&ndash;Anzeige weiterer Felder in der Treeview&ndash;&gt;-->
+        <!--<record id="eq_sale_view_partner_tree" model="ir.ui.view">-->
+            <!--<field name="name">eq_sale.partner.extension.view.tree</field>-->
+            <!--<field name="model">res.partner</field>-->
+            <!--<field name="type">tree</field>-->
+            <!--<field name="inherit_id" ref="base.view_partner_tree"/>-->
+            <!--<field name="arch" type="xml">-->
 
-                <field name="display_name" position="after">
-                    <field name="customer_number" string="Customer Number"></field>
-                </field>
+                <!--<field name="display_name" position="after">-->
+                    <!--<field name="customer_number" string="Customer Number"></field>-->
+                <!--</field>-->
 
-                 <field name="email" position="after">
-                    <field name="city"></field>
-                </field>
-            </field>
-        </record>
+                 <!--<field name="email" position="after">-->
+                    <!--<field name="city"></field>-->
+                <!--</field>-->
+            <!--</field>-->
+        <!--</record>-->
 
     </data>
 </odoo>
