@@ -1,5 +1,10 @@
 ## Modul eq_base_report
 
+#### 07.03.2018
+#### Version 1.0.30
+##### CHG
+- Print Statements entfernt
+
 #### 01.03.2018
 #### Version 1.0.29
 ##### FIX
