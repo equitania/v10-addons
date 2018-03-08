@@ -80,6 +80,17 @@ class report_account_invoice_line(models.Model):
     eq_move_id = fields.Many2one('stock.move', string="Move")   #Funktioniert, nur nicht bei Teillieferungen
 
     @api.multi
+    def get_subtotal(self, price_per_unit, qty):
+        """
+        Berechnung des Preis pro Zeile
+        :param price_per_unit:
+        :param qty:
+        :return:
+        """
+        price = price_per_unit * qty
+        return price
+
+    @api.multi
     def get_price(self, value, currency_id, language):
         """
         Formatierung eines Preises mit Berücksichtigung der Einstellung Dezimalstellen Sale Price Report

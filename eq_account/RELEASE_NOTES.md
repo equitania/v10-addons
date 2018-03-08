@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 08.03.2018
+#### Version 1.0.45
+##### ADD
+- Jira-Issue VAAB-1 und Jira-Issue VEP-176: Rechnungen beinhalten nun auch Teillieferungen.
+
 #### 26.02.2018
 #### Version 1.0.44
 ##### FIX
