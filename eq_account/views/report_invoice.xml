@@ -430,13 +430,13 @@
 
                                             <t t-if="eq_move_id and eq_move_id.picking_id">
                                                 <div style="font-weight:bold;" id="deliveryservicedate">
-                                                    <t t-if="eq_move_id and eq_move_id.picking_id.eq_ref_number">
-                                                        <span>Customer Reference:</span>
-                                                        <span t-field="eq_move_id.picking_id.eq_ref_number"/>
-                                                    </t>
-                                                    <t t-if="eq_move_id and eq_move_id.picking_id.eq_ref_number and eq_move_id and eq_move_id.picking_id.origin">
-                                                        <span> / </span>
-                                                    </t>
+                                                    <!--<t t-if="eq_move_id and eq_move_id.picking_id.eq_ref_number">-->
+                                                        <!--<span>Customer Reference:</span>-->
+                                                        <!--<span t-field="eq_move_id.picking_id.eq_ref_number"/>-->
+                                                    <!--</t>-->
+                                                    <!--<t t-if="eq_move_id and eq_move_id.picking_id.eq_ref_number and eq_move_id and eq_move_id.picking_id.origin">-->
+                                                        <!--<span> / </span>-->
+                                                    <!--</t>-->
                                                     <t t-if="eq_move_id and eq_move_id.picking_id.origin">
                                                         <span>Order No.:</span>
                                                         <span t-field="eq_move_id.picking_id.origin"/>
