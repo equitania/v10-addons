@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 08.03.2018
+#### Version 1.0.73
+##### CHG
+- Domain zum Verkäufer im Verkaufsauftrag angepasst, sodass nur 'Interne Nutzer' hierbei aufgelistet werden.
+
 #### 06.03.2018
 #### Version 1.0.72
 ##### IMP

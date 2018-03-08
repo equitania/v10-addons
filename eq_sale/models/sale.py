@@ -38,6 +38,7 @@ class eq_sale_order_extension(models.Model):
     eq_use_page_break_after_header = fields.Boolean(string='Page break after header text')
     eq_use_page_break_before_footer = fields.Boolean(string='Page break before footer text')
     eq_show_preview_button = fields.Boolean(string='Show Preview Button',default=False)
+    user_id = fields.Many2one('res.users', string='Salesperson', index=True, track_visibility='onchange',default=lambda self: self.env.user, domain="[('share','=',False)]")
 
     @api.model
     def create(self,vals):
