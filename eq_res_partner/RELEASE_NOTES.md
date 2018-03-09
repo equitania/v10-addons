@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 09.03.2018
+#### Version 1.0.18
+##### ADD
+- add field supplier_number and customer_number
+
 #### 06.03.2018
 #### Version 1.0.17
 ##### ADD

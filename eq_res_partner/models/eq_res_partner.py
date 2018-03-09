@@ -42,6 +42,9 @@ class eq_res_partner(models.Model):
 
     eq_deb_cred_number = fields.Char(compute="_show_deb_cred_number", store=False)
 
+    customer_number = fields.Char(string=_('Customer Number'))
+    supplier_number = fields.Char(string=_('Supplier Number'))
+
 
     #eq_complete_description = fields.Char(compute='_generate_complete_description', store=True)
 
