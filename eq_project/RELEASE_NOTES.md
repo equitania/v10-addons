@@ -1,6 +1,11 @@
 ## Modul eq_project
 
 #### 05.03.2018
+#### Version 1.0.17
+##### ADD
+- add time_start and time_stop at project.task timesheet
+
+#### 05.03.2018
 #### Version 1.0.16
 ##### ADD
 - added a new icon

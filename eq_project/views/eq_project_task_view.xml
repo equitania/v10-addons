@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record id="eq_project_task_form_view" model="ir.ui.view">
+            <field name="name">eq.project.task.form.inherited</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="hr_timesheet.view_task_form2_inherited" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='timesheet_ids']//field[@name='unit_amount']" position="before">
+                    <field name="time_start" widget="float_time"/>
+                    <field name="time_stop" widget="float_time"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
