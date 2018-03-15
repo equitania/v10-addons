@@ -1,5 +1,10 @@
 ## eq_report_pattern 
 
+#### 15.03.2018
+#### Version 1.0.27
+##### ADD
+- Dokumentenvorlage in Verkaufsauftrag hinzugefügt (Tree View)
+
 #### 24.01.2018
 #### Version 1.0.26
 ##### ADD

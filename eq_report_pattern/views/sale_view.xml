@@ -2,6 +2,32 @@
 <odoo>
     <data>
 
+        <record id="eq_sale_order_tree_" model="ir.ui.view">
+            <field name="name">sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+
+                 <field name="partner_id" position="after">
+                        <field name="document_template_id"/>
+
+				 </field>
+            </field>
+       	</record>
+
+		<record id="eq_sale_order_order_tree_" model="ir.ui.view">
+            <field name="name">sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+
+                 <field name="partner_id" position="after">
+                        <field name="document_template_id"/>
+
+				 </field>
+            </field>
+       	</record>
+
         <record id="website_quote.sale_order_form_quote" model="ir.ui.view">
         <field name="name">sale.order.form.payment</field>
         <field name="model">sale.order</field>
