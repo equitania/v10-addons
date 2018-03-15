@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 15.03.2018
+#### Version 1.0.74
+##### ADD
+- Nettobetrag bei der Tree-View der Verkaufsaufträge hinzugefügt.
+
 #### 08.03.2018
 #### Version 1.0.73
 ##### CHG
