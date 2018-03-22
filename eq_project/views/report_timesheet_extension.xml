@@ -1,0 +1,27 @@
+<odoo>
+
+    <template id="eq_project_report_timesheet_extension" inherit_id="hr_timesheet.report_timesheet">
+
+        <xpath expr="//div[@class='page']/div[@class='row'][1]" position="after">
+            <!-- setting the value to ask, if there is only ONE Project selected to print-->
+            <t t-set="show_project_single" t-value="len(docs.mapped('project_id')) == 1"/>
+            <t t-if="show_project_single">
+                <!-- Query to ask for CustomerName - but its not needed because the customername is already written in the project name-->
+                <!--<t t-if="docs[0].project_id.partner_id">
+                    <h4 style="margin-top:0; margin-bottom:0;"><span t-field="docs[0].project_id.partner_id.name"></span></h4>
+                </t>-->
+                <h5 style="margin-top:0.2cm; margin-bottom:0.5cm;"><span t-field="docs[0].project_id.name"></span></h5>
+                <div t-if="docs[0].project_id.eq_project_number" style="margin-top:-0.3cm; margin-bottom:0.5cm;"><span>Projectno.:</span> <span t-field="docs[0].project_id.eq_project_number"/></div>
+            </t>
+        </xpath>
+
+        <xpath expr="//div[@class='page']/div[@class='row'][2]" position="after">
+            <div id="signatureblock">
+                <hr style="border-color:black; width:40%; margin-top:1cm; margin-bottom:0cm;"></hr>
+                <span>Date, signature</span>
+            </div>
+        </xpath>
+
+    </template>
+
+</odoo>

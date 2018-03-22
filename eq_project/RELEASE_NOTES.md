@@ -1,5 +1,11 @@
 ## Modul eq_project
 
+#### 22.03.2018
+#### Version 1.0.18
+##### ADD
+- Timesheet Report: improved the standard timesheet report with the projectname and projectno (if avaiblable).
+As well as an signing-field under the project table
+
 #### 09.03.2018
 #### Version 1.0.17
 ##### ADD

@@ -265,3 +265,14 @@ msgstr "wird automatisch ausgefüllt"
 #: model:ir.model.fields,field_description:eq_project.field_project_project_eq_worked_hours
 msgid "worked Time"
 msgstr "Geleistete Stunden"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
+msgid "<span>Date, signature</span>"
+msgstr "<span>Datum, Unterschrift</span>"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
+msgid "<span>Projectno.:</span>"
+msgstr "<span>Projektnr.:</span>"
+
