@@ -28,9 +28,10 @@
     'author': 'Equitania Software GmbH',
     'summary': 'Partner Extension',
     'website': 'www.myodoo.de',
-    "depends" : ['base', 'base_setup'],
+    "depends" : ['base', 'base_setup', 'mail'],
     'data': [
             "views/eq_res_partner_view.xml",
+            "views/eq_res_partner_mails.xml",
              ],
     "active": False,
     "installable": True

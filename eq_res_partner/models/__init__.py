@@ -21,3 +21,4 @@
 
 
 import eq_res_partner
+import eq_res_partner_mails

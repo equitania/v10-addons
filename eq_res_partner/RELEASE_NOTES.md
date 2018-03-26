@@ -1,5 +1,12 @@
 ## Modul eq_res_partner
 
+#### 26.03.2018
+#### Version 1.0.19
+##### CHG
+- Two new buttons on the form view of the customer
+- Send mails are for seeing the mails that are sent to the current customer
+- Received mails are for see the mails that are received from the current customer
+
 #### 09.03.2018
 #### Version 1.0.18
 ##### ADD

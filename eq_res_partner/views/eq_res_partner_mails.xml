@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    	
+    	<!-- Creating a button for showing the number of send mails-->
+		<record model="ir.ui.view"  id="eq_res_partner_view_send_mails" >
+            <field name="name">eq_res.partner.view.send.mails</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='oe_button_box']" position="inside">
+                    <button class="oe_stat_button" type="object" name="eq_act_view_count_send_mails" icon="fa-share">
+                        <field string="Send Mails" name='eq_send_mails' widget="statinfo"/>
+                    </button>
+                </xpath>
+              </field>
+        </record>
+
+        <!-- Creating a button for showing the number of received mails-->
+    	<record model="ir.ui.view" id="eq_view_res_partner_received_mails" >
+            <field name="name">eq_res.partner.view.received.mails</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+              	<xpath expr="//div[@class='oe_button_box']" position="inside">
+                 	<button class="oe_stat_button" type="object" name="eq_act_view_count_received_mails" icon="fa-reply">
+                        <field string="Received Mails" name='eq_received_mails' widget="statinfo"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
