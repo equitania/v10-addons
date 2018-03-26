@@ -1,5 +1,10 @@
 ## Modul eq_stock
 
+#### 26.03.2018
+#### Version 1.0.14
+##### ADD/CHG
+- stock.picking shows all locations of parent location.
+
 #### 06.03.2018
 #### Version 1.0.13
 ##### ADD

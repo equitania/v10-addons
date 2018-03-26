@@ -233,3 +233,8 @@ msgstr "<strong>Chargen-/Seriennr.</strong>"
 msgid "<span>Customer Reference</span>"
 msgstr "<span>Kundenreferenz</span>"
 
+#. module: eq_stock
+#: model:ir.model.fields,field_description:eq_stock.field_stock_pack_operation_eq_parent_source_location_id
+msgid "Parent Location"
+msgstr "Hauptlagerort"
+

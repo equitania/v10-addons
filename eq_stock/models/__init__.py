@@ -21,3 +21,4 @@
 
 import eq_report_stock
 import eq_stock_picking
+import eq_stock_pack_operation

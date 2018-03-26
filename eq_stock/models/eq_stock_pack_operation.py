@@ -18,29 +18,9 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+from odoo import models, fields, api, _
 
-{
-    'name': 'Equitania Lager Optimierungen',
-    'license': 'AGPL-3',
-    'version': '1.0.14',
-    'description': """
-        Erweiterung für Lager
-    """,
-    'author': 'Equitania Software GmbH',
-    'website': 'www.myodoo.de',
-    'depends': ['base', 'base_setup','delivery', 'stock',],
-    'category' : 'stock',
-    'summary': 'Equitania Lager Erweiterung',
+class eq_stock_pack_operation(models.Model):
+    _inherit = 'stock.pack.operation'
 
-    'data': [
-        "views/stock_picking_view.xml",
-        "views/eq_stock_pack_operation_view.xml",
-        "views/report_stock_barcode.xml",
-        "views/report_stock_picking.xml",
-        "views/report_stock_picking_packaging.xml",
-    ],
-    'demo': [],
-    'css': ['base.css'],
-    'installable': True,
-    'auto_install': False,
-}
+    eq_parent_source_location_id = fields.Many2one('stock.location', string='Parent Location', related='picking_id.location_id.location_id')
