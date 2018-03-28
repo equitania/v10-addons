@@ -33,7 +33,7 @@ class eq_open_sale_order_line(models.Model):
     # Felder
     eq_order_id = fields.Many2one('sale.order', string="Sale Order")
     eq_client_order_ref = fields.Char(string="Client Order Reference")
-    eq_customer_no = fields.Char(size=64, string="Customer No") # TODO
+    #eq_customer_no = fields.Char(size=64, string="Customer No") # TODO
     eq_customer = fields.Many2one('res.partner', string="Customer")    
     eq_delivery_date = fields.Date(string="Delivery date")
     eq_pos = fields.Integer(string="Seq")

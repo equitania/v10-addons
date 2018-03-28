@@ -1,5 +1,11 @@
 ## Modul eq_sale_stock
 
+
+#### 28.03.2017
+#### Version 1.0.13
+##### FIX
+- sale.order.line list now reachable
+
 #### 06.03.2017
 #### Version 1.0.12
 ##### CHG

@@ -36,7 +36,7 @@
 							<!--<field name="eq_customer" required="1"/>-->
 							<field name="eq_product_no" required="1"/>
 							<field name="eq_order_id" required="1"/>
-							<field name="eq_customer_no" />
+							<!--<field name="eq_customer_no" />-->
 							<field name="eq_delivery_date" />
 							<field name="eq_quantity_left" />
 						</group>
