@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 28.03.2018
+#### Version 1.0.20
+##### FIX
+- Ticket 5479: contact of company creation caused a odoo error.
+
 #### 26.03.2018
 #### Version 1.0.19
 ##### CHG

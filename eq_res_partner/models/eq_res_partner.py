@@ -77,8 +77,9 @@ class eq_res_partner(models.Model):
             address_fields = self._address_fields()
             if any(field in values for field in address_fields):
                 contacts = self.child_ids.filtered(lambda c: c.type == 'contact')
-                if contacts.street == '' or contacts.street == None or contacts.street == False:
-                    contacts.update_address(values)
+                for contact in contacts:
+                    if contact.street == '' or contact.street == None or contact.street == False:
+                        contact.update_address(values)
 
     @api.onchange('parent_id')
     def onchange_parent_id(self):
