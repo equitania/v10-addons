@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 29.03.2018
+#### Version 1.0.21
+##### FIX
+- update apps caused a odoo error, when you want to open a res.partner
+
 #### 28.03.2018
 #### Version 1.0.20
 ##### FIX

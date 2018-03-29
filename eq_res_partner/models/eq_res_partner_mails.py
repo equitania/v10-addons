@@ -31,18 +31,12 @@ class eq_res_partner_mails(models.Model):
     @api.multi
     def eq_received_mails_count(self):
         # Counting the number of received mails
-
-        mails = self.env['mail.message'].search([])
         for res in self:
-            eq_received_mails = 0
-            if mails:
-                for mail in mails:
-                    if res.id == mail.author_id.id:
-                        eq_received_mails += 1
-                        mail.write({'eq_partner_id_received': res.id})
-                    else:
-                        mail.write({'eq_partner_id_received': 0})
-                res.eq_received_mails = eq_received_mails
+            mails = self.env['mail.message'].search([('author_id','=',res.id)])
+            if len(mails) > 0:
+                res.eq_received_mails = len(mails)
+            else:
+                res.eq_received_mails = 0
 
     @api.multi
     def eq_act_view_count_send_mails(self):
