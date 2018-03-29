@@ -69,7 +69,8 @@ class eq_res_partner_mails(models.Model):
             'res_model': 'mail.message',
             'view_id': tree_view_id,
             'type': 'ir.actions.act_window',
-            'domain': [('eq_partner_id_received', '=', self.id)],
+            'domain': [('author_id', '=', self.id)],
+
         }
 
 
