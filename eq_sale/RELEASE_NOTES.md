@@ -1,5 +1,12 @@
 ## Modul eq_sale
 
+#### 29.03.2018
+#### Version 1.0.75
+##### CHG
+- Changing the template.
+- Setting the template to be updated after upgrade of the module.
+- Deleting the template and creating again for changes to be shown.
+
 #### 15.03.2018
 #### Version 1.0.74
 ##### ADD
