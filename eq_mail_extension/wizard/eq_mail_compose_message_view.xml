@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="eq_email_compose_message_wizard_form">
+            <field name="name">eq.mail.compose.message.form</field>
+            <field name="model">mail.compose.message</field>
+            <field name="inherit_id" ref="mail.email_compose_message_wizard_form" />
+            <field name="groups_id" eval="[(4,ref('base.group_user'))]"/>
+            <field name="arch" type="xml">
+                <field name="subject" position="attributes">
+                    <attribute name="attrs">{'readonly':[('template_id', '!=', False)]}</attribute>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

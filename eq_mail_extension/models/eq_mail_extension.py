@@ -181,7 +181,9 @@ class eq_mail_mail(models.Model):
         else:
             default_mail_address = False
 
+
         for mail in self.sudo().browse(self.ids):
+
             subject = mail.subject              # hier müssen wir Betreff extra holen
             try:
                 # TDE note: remove me when model_id field is present on mail.message - done here to avoid doing it multiple times in the sub method
@@ -193,6 +195,7 @@ class eq_mail_mail(models.Model):
                     model = None
                 if model:
                     mail = mail.with_context(model_name=model.name)
+
 
 
                 # load attachment binary data with a separate read(), as prefetching all
@@ -290,7 +293,7 @@ class eq_mail_mail(models.Model):
                         msg = ir_mail_server.build_email(
                             email_from=mail.email_from,
                             email_to=email.get('email_to'),
-                            subject=email.get('subject'),
+                            subject=subject,
                             body=email.get('body'),
                             body_alternative=email.get('body_alternative'),
                             email_cc=tools.email_split(mail.email_cc),

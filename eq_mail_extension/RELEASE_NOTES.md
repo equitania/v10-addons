@@ -1,5 +1,10 @@
 ## Modul eq_mail_extension
 
+#### 03.04.2018
+#### Version 1.0.34
+##### ADD
+- Overriding the view for mail message compose wizard and making a subject field read-only if the template is selected.
+
 #### 25.01.2018
 #### Version 1.0.33
 ##### FIX
