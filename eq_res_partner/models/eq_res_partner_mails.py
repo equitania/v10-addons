@@ -10,22 +10,12 @@ class eq_res_partner_mails(models.Model):
     eq_send_mails = fields.Integer(string='Send Mails', compute='eq_send_mails_count', default=0)
     eq_received_mails = fields.Integer(string='Received Mails', compute='eq_received_mails_count', default=0)
 
-    @api.multi
     def eq_send_mails_count(self):
-        #Counting the number of send mails
-
-        mails = self.env['mail.message'].search([])
-        for res in self:
-            eq_send_mails = 0
-            if mails:
-                for mail in mails:
-                    for partner in mail.partner_ids:
-                        if partner.id == res.id:
-                            eq_send_mails += 1
-                            mail.write({'eq_partner_id_send': res.id})
-                        else:
-                            mail.write({'eq_partner_id_send': 0})
-                res.eq_send_mails = eq_send_mails
+        object = self.env['mail.message']
+        for partner in self:
+            record = object.search([('partner_ids','in',partner.id)])
+            message_count = len(record)
+            partner.eq_send_mails = str(message_count)
 
 
     @api.multi
@@ -52,7 +42,7 @@ class eq_res_partner_mails(models.Model):
             'res_model': 'mail.message',
             'view_id': tree_view_id,
             'type': 'ir.actions.act_window',
-            'domain': [('eq_partner_id_send','=', self.id)],
+            'domain': [('partner_ids','in', self.id)],
         }
 
     @api.multi
@@ -72,10 +62,3 @@ class eq_res_partner_mails(models.Model):
             'domain': [('author_id', '=', self.id)],
 
         }
-
-
-class eq_mail_message(models.Model):
-    _inherit = 'mail.message'
-
-    eq_partner_id_send = fields.Integer("Partner Send ID", default = 0)
-    eq_partner_id_received = fields.Integer("Partner Received ID", default=0)

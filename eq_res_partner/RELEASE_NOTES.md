@@ -1,6 +1,11 @@
 ## Modul eq_res_partner
 
 #### 03.04.2018
+#### Version 1.0.23
+##### FIX
+- performance issue in res.partner is now resolved
+
+#### 03.04.2018
 #### Version 1.0.22
 ##### CHG
 - update of po-file with new German translations
