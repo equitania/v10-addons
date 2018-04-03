@@ -142,3 +142,32 @@ msgstr "Adresse"
 #: model:ir.ui.view,arch_db:eq_res_partner.eq_partner_extension_form_view
 msgid "Dear Sir or Madam,"
 msgstr "Sehr geehrte Damen und Herren,"
+
+
+#. module: eq_res_partner
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_received_mails
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_received_mails
+#: model:ir.ui.view,arch_db:eq_res_partner.eq_view_res_partner_received_mails
+msgid "Received Mails"
+msgstr "Empfangene Mails"
+
+#. module: eq_res_partner
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_send_mails
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_send_mails
+#: model:ir.ui.view,arch_db:eq_res_partner.eq_res_partner_view_send_mails
+msgid "Send Mails"
+msgstr "Gesendete Mails"
+
+#. module: eq_res_partner
+#: model:ir.model.fields,field_description:eq_res_partner.field_mail_compose_message_eq_partner_id_received
+#: model:ir.model.fields,field_description:eq_res_partner.field_mail_mail_eq_partner_id_received
+#: model:ir.model.fields,field_description:eq_res_partner.field_mail_message_eq_partner_id_received
+msgid "Partner Received ID"
+msgstr "Partner Empfangs-ID"
+
+#. module: eq_res_partner
+#: model:ir.model.fields,field_description:eq_res_partner.field_mail_compose_message_eq_partner_id_send
+#: model:ir.model.fields,field_description:eq_res_partner.field_mail_mail_eq_partner_id_send
+#: model:ir.model.fields,field_description:eq_res_partner.field_mail_message_eq_partner_id_send
+msgid "Partner Send ID"
+msgstr "Partner Sender-ID"
