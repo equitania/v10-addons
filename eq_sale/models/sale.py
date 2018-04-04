@@ -29,7 +29,7 @@ from openerp.tools import DEFAULT_SERVER_DATE_FORMAT as OE_DFORMAT
 class eq_sale_order_extension(models.Model):
     _inherit = 'sale.order'
 
-
+    eq_incoterm_location = fields.Char(string='Delivered at place')
     eq_delivery_condition_id = fields.Many2one('eq.delivery.conditions', 'Delivery Condition')
         # 'partner_id': fields.many2one('res.partner', 'Customer', readonly=True,
         #                               states={'draft': [('readonly', False)], 'sent': [('readonly', False)]},

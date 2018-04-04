@@ -534,6 +534,14 @@
                                                 <td>
                                                     <span t-field="doc.incoterm.name"/>
                                                 </td>
+                                                <tr t-if="doc.eq_incoterm_location and doc.incoterm.code == 'DAP'">
+                                                    <td style="padding-right:0.5cm;">
+                                                        <strong>Delivered at place:</strong>
+                                                    </td>
+                                                    <td>
+                                                        <span t-field="doc.eq_incoterm_location"/>
+                                                    </td>
+                                                </tr>
                                             </tr>
                                             <tr
                                                     t-if="doc.partner_invoice_id != doc.partner_id and doc.partner_invoice_id != False">

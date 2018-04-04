@@ -1,6 +1,11 @@
 ## Modul eq_sale
 
 #### 29.03.2018
+#### Version 1.0.76
+##### ADD
+- add delivered at place in sale report, if 'DAP' is set as incoterm.
+
+#### 29.03.2018
 #### Version 1.0.75
 ##### CHG
 - Changing the template.

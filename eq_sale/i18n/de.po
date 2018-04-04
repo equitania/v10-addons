@@ -640,3 +640,14 @@ msgstr "Vorschau Button anzeigen"
 #: model:ir.ui.view,arch_db:eq_sale.eq_sale_form_quote
 msgid "Preview"
 msgstr "Vorschau"
+
+#. module: eq_account
+#: model:ir.model.fields,field_description:eq_account.field_account_invoice_eq_incoterm_location
+msgid "Delivered at place"
+msgstr "benannter Ort"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<strong>Delivered at place:</strong>"
+msgstr "<strong>benannter Ort:</strong>"
+
