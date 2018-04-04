@@ -1,6 +1,11 @@
 ## Modul eq_purchase
 
 #### 06.03.2018
+#### Version 1.0.32
+##### ADD
+- add delivered at place in purchase report, if 'DAP' is set as incoterm.
+
+#### 06.03.2018
 #### Version 1.0.31
 ##### CHG
 - Kundennummer/Lieferantennumer Anzeige entfernt.

@@ -284,6 +284,14 @@
                                     <td>
                                         <span t-field="o.incoterm_id.name"/>
                                     </td>
+                                    <tr t-if="o.eq_incoterm_location and o.incoterm_id.code == 'DAP'">
+                                        <td style="padding-right:0.5cm;">
+                                            <strong>Delivered at place:</strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="o.eq_incoterm_location"/>
+                                        </td>
+                                    </tr>
                                 </tr>
                                 <tr t-if="o.dest_address_id or o.picking_type_id.warehouse_id.partner_id" style="vertical-align:top;">
                                     <td style="padding-right:0.5cm;padding-top:0.5cm;">

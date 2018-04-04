@@ -29,6 +29,10 @@
                     <field name="user_id"/>
                 </xpath>
 
+                <field name="incoterm_id" position="after">
+                    <field name="eq_incoterm_location"/>
+                </field>
+
             </field>
         </record>
 

@@ -277,3 +277,14 @@ msgstr "Geplantes Datum:"
 #: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchasequotation_document
 msgid "Planned date: CW"
 msgstr "Geplantes Datum: KW"
+
+#. module: eq_purchase
+#: model:ir.model.fields,field_description:eq_purchase.field_purchase_order_eq_incoterm_location
+msgid "Delivered at place"
+msgstr "benannter Ort"
+
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchasequotation_document
+msgid "<strong>Delivered at place:</strong>"
+msgstr "<strong>benannter Ort:</strong>"
