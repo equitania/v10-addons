@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 04.04.2018
+#### Version 1.0.24
+##### CHG/FIX
+- another performance issue: change kanban view in res.partner form view (contacts) to list view.
+
 #### 03.04.2018
 #### Version 1.0.23
 ##### FIX
