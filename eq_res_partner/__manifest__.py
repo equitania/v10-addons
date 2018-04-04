@@ -22,13 +22,13 @@
 {
     'name': "Equitania Kontakt Optimierungen",
     'license': 'AGPL-3',
-    'version': '1.0.24',
+    'version': '1.0.25',
     'category': 'Partner',
     'description': """Extensions for res_partner""",
     'author': 'Equitania Software GmbH',
     'summary': 'Partner Extension',
     'website': 'www.myodoo.de',
-    "depends" : ['base', 'base_setup', 'mail'],
+    "depends" : ['base', 'base_setup', 'mail','contacts'],
     'data': [
             "views/eq_res_partner_view.xml",
             "views/eq_res_partner_mails.xml",
