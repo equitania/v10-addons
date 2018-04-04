@@ -19,10 +19,21 @@
                		<field name="eq_zip_city" attrs="{'invisible': [('eq_zip_city', '=', False)]}" />
                		<field name="eq_country" attrs="{'invisible': [('eq_country', '=', False)]}" />
             	</xpath>
-
-
 	    	</field>
 	    </record>
+
+		<record id="eq_invoice_form_inherit_sale_stock" model="ir.ui.view">
+        <field name="name">eq.account.invoice.form.sale.stock</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="sale_stock.invoice_form_inherit_sale_stock"/>
+        <field name="arch" type="xml">
+            <data>
+                <field name="incoterms_id" position="after">
+					<field name="eq_incoterm_location"/>
+				</field>
+            </data>
+        </field>
+    </record>
 
 		<record id="eq_account_invoice_supplier_form" model="ir.ui.view">
             <field name="name">account.invoice.supplier.form.eq</field>

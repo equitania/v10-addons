@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 04.04.2018
+#### Version 1.0.46
+##### ADD
+- add delivered at place in invoice report, if 'DAP' is set as incoterm.
+
 #### 08.03.2018
 #### Version 1.0.45
 ##### ADD

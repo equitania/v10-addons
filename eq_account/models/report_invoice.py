@@ -130,6 +130,14 @@ class report_account_invoice_line(models.Model):
         stock_move_list = []
         account_invoice_line = res
         sale_line_id = account_invoice_line.sale_line_ids.id
+        sale_order_obj = account_invoice_line.sale_line_ids.order_id
+        if len(sale_order_obj) > 0:
+            incoterm_location = sale_order_obj.eq_incoterm_location
+            account_invoice_obj = account_invoice_line.invoice_id
+            vals = {
+                'eq_incoterm_location': incoterm_location,
+            }
+            account_invoice_obj.write(vals)
         if sale_line_id:
             stock_move_objs = self.env['stock.move'].search([('sale_line_id', '=', sale_line_id),('state','=','done')])
             for stock_move_obj in stock_move_objs:

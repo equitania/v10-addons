@@ -259,4 +259,12 @@ msgstr "<span>Auftragsnr.</span>"
 msgid "Proforma Invoice"
 msgstr "Proforma Rechnung"
 
+#. module: eq_account
+#: model:ir.model.fields,field_description:eq_account.field_account_invoice_eq_incoterm_location
+msgid "Delivered at place"
+msgstr "benannter Ort"
 
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
+msgid "<strong>Delivered at place:</strong>"
+msgstr "<strong>benannter Ort:</strong>"

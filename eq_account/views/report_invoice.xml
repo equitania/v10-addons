@@ -574,6 +574,16 @@
                                             <td>
                                                 <span t-field="o.incoterms_id"/>
                                             </td>
+
+                                            <tr t-if="o.eq_incoterm_location and o.incoterms_id.code == 'DAP'">
+                                                <td style="padding-right:0.5cm;">
+                                                    <strong>Delivered at place:</strong>
+                                                </td>
+                                                <td>
+                                                    <span t-field="o.eq_incoterm_location"/>
+                                                </td>
+                                            </tr>
+
                                         </tr>
                                         <tr groups="sale.group_delivery_invoice_address"  t-if="o.partner_shipping_id != o.partner_id">
                                             <td style="padding-right:1em;">
