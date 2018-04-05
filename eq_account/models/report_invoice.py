@@ -80,14 +80,17 @@ class report_account_invoice_line(models.Model):
     eq_move_id = fields.Many2one('stock.move', string="Move")   #Funktioniert, nur nicht bei Teillieferungen
 
     @api.multi
-    def get_subtotal(self, price_per_unit, qty):
+    def get_subtotal(self, price_per_unit, discount, qty):
         """
         Berechnung des Preis pro Zeile
         :param price_per_unit:
         :param qty:
         :return:
         """
-        price = price_per_unit * qty
+        if discount and discount != 0.0:
+            price = (discount/100) * price_per_unit * qty
+        else:
+            price = price_per_unit * qty
         return price
 
     @api.multi

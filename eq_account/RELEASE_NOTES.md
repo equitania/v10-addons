@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 05.04.2018
+#### Version 1.0.47
+##### FIX
+- include discount into the computation of a invoice line.
+
 #### 04.04.2018
 #### Version 1.0.46
 ##### ADD
