@@ -28,7 +28,7 @@
     'author': 'Equitania Software GmbH',
     'summary': 'Account Extension',
     'website': 'www.myodoo.de',
-    "depends" : ['base', 'base_setup', 'account','stock','eq_sale_stock'],
+    "depends" : ['base', 'base_setup', 'account','stock','eq_sale_stock','eq_mail_templates'],
     'data': [
             'views/account_invoice_view.xml',
             'views/report_invoice.xml',
