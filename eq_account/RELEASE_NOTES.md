@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 06.04.2018
+#### Version 1.0.48
+##### CHG
+- move templates into new module eq_mail_templates
+
 #### 05.04.2018
 #### Version 1.0.47
 ##### FIX

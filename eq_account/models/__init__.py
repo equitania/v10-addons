@@ -22,4 +22,3 @@
 
 import account_invoice
 import report_invoice
-import eq_email_template_new
