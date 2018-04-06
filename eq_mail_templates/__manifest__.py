@@ -28,7 +28,7 @@
     """,
     'author': 'Equitania Software GmbH',
     'website': 'www.myodoo.de',
-    'depends': ['base_setup','mail'],
+    'depends': ['base_setup','mail','eq_account','eq_sale','eq_purchase'],
     'category' : 'General Improvements',
     'summary': 'Mail Templates',
 
