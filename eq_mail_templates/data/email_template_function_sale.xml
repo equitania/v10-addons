@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+         <!-- Bei der Installation des Modules wollen wir diese Funktion ausführen -->
+        <function model="eq_delete_mail_func" name="_eq_delete_default_templates_sale" eval="[('eq_mail_templates')]"/>
+    </data>
+</odoo>

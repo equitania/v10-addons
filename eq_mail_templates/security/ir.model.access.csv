@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_eq_delete_mail_func,access_eq_delete_mail_func,model_eq_delete_mail_func,,1,1,1,1
