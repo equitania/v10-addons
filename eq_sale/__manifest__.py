@@ -28,7 +28,7 @@
     'author': 'Equitania Software GmbH',
     'summary': 'Sale Extension',
     'website': 'www.myodoo.de',
-    "depends" : ['base', 'base_setup', 'sale', 'product', 'sales_team', 'sale_stock', 'delivery', 'eq_res_partner', 'eq_base_report','website_quote','eq_mail_templates'],
+    "depends" : ['base', 'base_setup', 'sale', 'product', 'sales_team', 'sale_stock', 'delivery', 'eq_res_partner', 'eq_base_report','website_quote'],
     'data': [
             'security/equitania_security.xml',
             'security/ir.model.access.csv',
