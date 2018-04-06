@@ -28,7 +28,7 @@
     'author': 'Equitania Software GmbH',
     'summary': 'Purchase Extension',
     'website': 'www.myodoo.de',
-    "depends": ['base', 'base_setup', 'purchase', 'eq_res_partner'],
+    "depends": ['base', 'base_setup', 'purchase', 'eq_res_partner','eq_mail_templates'],
     'data': [
         'data/decimal_precision.xml',
         'views/purchase_view.xml',
