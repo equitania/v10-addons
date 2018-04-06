@@ -3,5 +3,19 @@
 	<data>
          <!-- Bei der Installation des Modules wollen wir diese Funktion ausführen -->
         <function model="eq_delete_mail_func" name="_eq_delete_default_templates_invoice" eval="[('eq_mail_templates')]"/>
+
+        <record id="eq_email_template_version_form" model="ir.ui.view">
+            <field name="name">eq_email_template_version_form</field>
+            <field name="model">mail.template</field>
+            <field name="inherit_id" ref="mail.email_template_form" />
+            <field name="arch" type="xml">
+            	<field name="model_id" position="after">
+            		<field name="eq_email_template_version"/>
+            	</field>
+            	<field name="body_html" position="replace">
+            		<field name="body_html" widget="text"/>
+            	</field>
+            </field>
+        </record>
     </data>
 </odoo>

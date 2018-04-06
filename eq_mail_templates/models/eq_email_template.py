@@ -24,6 +24,12 @@ import logging
 
 _logger = logging.getLogger(__name__)
 
+
+class email_template(models.Model):
+    _inherit = 'mail.template'
+
+    eq_email_template_version = fields.Integer(string="Version Number")
+
 class eq_install_func(models.Model):
     """
         Hilfsklasse mit Funktionen, die wir bei der Installation des Modules ausführen wollen..z.B. Defalt Email-Vorlagen löschen
