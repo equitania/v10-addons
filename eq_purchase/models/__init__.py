@@ -23,4 +23,3 @@
 import purchase
 import res_partner
 import report_purchase_order
-import eq_email_template_new

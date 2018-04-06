@@ -1,5 +1,10 @@
 ## Modul eq_purchase
 
+#### 06.04.2018
+#### Version 1.0.33
+##### ADD
+- move templates into new module eq_mail_templates
+
 #### 06.03.2018
 #### Version 1.0.32
 ##### ADD

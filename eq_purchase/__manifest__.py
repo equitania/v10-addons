@@ -22,7 +22,7 @@
 {
     'name': "Equitania Einkauf Optimierungen",
     'license': 'AGPL-3',
-    'version': '1.0.32',
+    'version': '1.0.33',
     'category': 'purchase',
     'description': """Extensions for purchase""",
     'author': 'Equitania Software GmbH',
@@ -31,9 +31,6 @@
     "depends": ['base', 'base_setup', 'purchase', 'eq_res_partner'],
     'data': [
         'data/decimal_precision.xml',
-        'data/email_template_function.xml',
-        'data/purchase_order_send_by_email.xml',
-        'data/rfq_send_by_email.xml',
         'views/purchase_view.xml',
         'views/report_purchase_order.xml',
         'views/report_purchase_quotation.xml',
