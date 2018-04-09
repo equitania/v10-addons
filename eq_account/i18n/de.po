@@ -268,3 +268,8 @@ msgstr "benannter Ort"
 #: model:ir.ui.view,arch_db:eq_account.eq_report_invoice_document
 msgid "<strong>Delivered at place:</strong>"
 msgstr "<strong>benannter Ort:</strong>"
+
+#. module: account
+#: model:account.payment.term,note:account.account_payment_term_immediate
+msgid "Payment term: Immediate Payment"
+msgstr "Sofortige Zahlung"

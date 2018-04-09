@@ -1,5 +1,11 @@
 ## Modul eq_account
 
+
+#### 09.04.2018
+#### Version 1.0.49
+##### FIX
+- correct translation for account_payment_term_immediate in account module (odoo core bug)
+
 #### 06.04.2018
 #### Version 1.0.48
 ##### CHG
