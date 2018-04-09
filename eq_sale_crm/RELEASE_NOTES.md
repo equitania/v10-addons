@@ -1,5 +1,10 @@
 ## Modul eq_sale_crm
 
+#### 09.04.2018
+#### Version 1.0.4
+##### CHG
+- Change of 2 smartbuttons (quotations and orders) on "your pipeline - crm_lead" -> we're able to show correct count of records and open correct listviews with data (just like it with res_partner is)
+
 #### 09.08.2017
 #### Version 1.0.3
 ##### CHG

@@ -21,7 +21,22 @@ msgid "Lead/Opportunity"
 msgstr "Interessent / Chance"
 
 #. module: eq_sale_crm
-#: model:ir.actions.act_window,name:eq_sale_crm.eq_open_purchases_crm_action
+#: model:ir.actions.act_window,name:eq_sale_crm.eq_open_quotation_crm_action
 #: model:ir.model.fields,field_description:eq_sale_crm.field_crm_lead_total_quot_crm
 msgid "Quotations"
 msgstr "Angebote"
+
+#. module: eq_sale_crm
+#: model:ir.ui.view,arch_db:eq_sale_crm.eq_sale_crm_view_buttons
+msgid "<span class=\"o_stat_text\">Orders</span>"
+msgstr "<span class=\"o_stat_text\">Verkäufe</span>"
+
+#. module: eq_sale_crm
+#: model:ir.ui.view,arch_db:eq_sale_crm.eq_sale_crm_view_buttons
+msgid "<span class=\"o_stat_text\">Quotations</span>"
+msgstr "<span class=\"o_stat_text\">Angebote</span>"
+
+#. module: eq_sale_crm
+#: model:ir.actions.act_window,name:eq_sale_crm.eq_open_orders_crm_action
+msgid "Orders"
+msgstr "Verkäufe"

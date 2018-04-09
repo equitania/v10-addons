@@ -1,42 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        	<!-- Smart Button Angebote unter Chancen -->
-	    <record id="eq_open_purchases_crm_action" model="ir.actions.act_window">
+		<!-- 1. Smartbutton "quotations only" -->
+	    <record id="eq_open_quotation_crm_action" model="ir.actions.act_window">
 			<field name="name">Quotations</field>
 			<field name="res_model">sale.order</field>
 			<field name="domain">[('state', 'in', ('draft', 'sent', 'cancel'))]</field>
 			<field name="context">{'search_default_partner_id': id_active}</field>
-			<!-- <field name="view_id" ref="document.view_document_file_tree" /> -->
 		</record>
 
-        <record model="ir.ui.view" id="eq_sale_crm_view_buttons">
+		<!-- 2. Smartbutton "orders only" -->
+		<record id="eq_open_orders_crm_action" model="ir.actions.act_window">
+			<field name="name">Orders</field>
+			<field name="res_model">sale.order</field>
+			<field name="domain">[('state', 'not in', ('draft', 'sent', 'cancel'))]</field>
+			<field name="context">{'search_default_partner_id': id_active}</field>
+		</record>
+
+		<!-- Extension of crm_case_form_view_oppor -->
+        <record id="eq_sale_crm_view_buttons" model="ir.ui.view" >
 			<field name="name">eq_sale.crm.view.buttons</field>
 			<field name="model">crm.lead</field>
 			<field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
 			<field name="priority" eval="20" />
 			<field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']/button[@name='%(sale_crm.sale_action_quotations)d']" position="replace">
 
-                <xpath expr="//div[@name='button_box']/button[@name='action_schedule_meeting']" position="after">
+					<!-- 1. Smartbutton "quotations only" -->
+					<button type="action" class="oe_stat_button"
+						name="%(eq_sale_crm.eq_open_quotation_crm_action)d" context = "{'id_active' : partner_id}" icon="fa-strikethrough">
+						<div class="o_stat_info">
+							<field name="eq_count_quotations" class="o_stat_value"/>
+							<span class="o_stat_text">Quotations</span>
+						</div>
+					</button>
 
-
-
-					<button type="action" class="oe_stat_button" icon="fa-strikethrough"
-						name="%(eq_sale_crm.eq_open_purchases_crm_action)d" context = "{'id_active' : partner_id}">
-						<!-- context="{'search_default_partner_id': active_id,'default_partner_id':
-							active_id}"> -->
-						<!--<div>-->
-							<!--<strong>-->
-								<field name="total_quot_crm"  widget="statinfo"/>
-
-							<!--</strong>-->
-							<!--<br />-->
-							<!--Quotations-->
-						<!--</div>-->
+					<!-- 2. Smartbutton "orders only" -->
+					<button type="action" class="oe_stat_button"
+						name="%(eq_sale_crm.eq_open_orders_crm_action)d" context = "{'id_active' : partner_id}" icon="fa-strikethrough">
+						<div class="o_stat_info">
+							<field name="eq_count_orders" class="o_stat_value"/>
+							<span class="o_stat_text">Orders</span>
+						</div>
 					</button>
 				</xpath>
 			</field>
 		</record>
-
 	</data>
 </odoo>
