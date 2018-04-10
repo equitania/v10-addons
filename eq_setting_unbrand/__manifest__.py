@@ -22,7 +22,7 @@
 {
     'name': "Equitania Setting Unbrand",
     'license': 'AGPL-3',
-    'version': '1.0.5',
+    'version': '1.0.6',
     'category': 'Settings',
     'description': """ Entfernt die Odoo Brandings und ersetzt Sie durch MyOdoo Links und Wiki-links """,
     'author': 'Equitania Software GmbH',

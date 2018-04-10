@@ -1,5 +1,10 @@
 ## Modul eq_setting_unbrand
 
+### 10.04.2018
+#### Version 1.0.6
+##### DEL
+- Removed Facebook-Link in Settings-Dashboard
+
 ### 01.09.2017
 #### Version 1.0.5
 ##### CHG
