@@ -1,6 +1,11 @@
 ## Modul eq_sale
 
 #### 06.04.2018
+#### Version 1.0.78
+##### CHG
+- delete action for sending sale_order (now in eq_mail_templates)
+
+#### 06.04.2018
 #### Version 1.0.77
 ##### ADD
 - move templates into new module eq_mail_templates
