@@ -145,16 +145,20 @@ msgstr "Sehr geehrte Damen und Herren,"
 
 
 #. module: eq_res_partner
+#: code:addons/eq_res_partner/models/eq_res_partner_mails.py:38
 #: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_received_mails
 #: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_received_mails
 #: model:ir.ui.view,arch_db:eq_res_partner.eq_view_res_partner_received_mails
+#, python-format
 msgid "Received Mails"
 msgstr "Empfangene Mails"
 
 #. module: eq_res_partner
+#: code:addons/eq_res_partner/models/eq_res_partner_mails.py:55
 #: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_send_mails
 #: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_send_mails
 #: model:ir.ui.view,arch_db:eq_res_partner.eq_res_partner_view_send_mails
+#, python-format
 msgid "Send Mails"
 msgstr "Gesendete Mails"
 

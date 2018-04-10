@@ -35,7 +35,7 @@ class eq_res_partner_mails(models.Model):
         tree_view_id = self.env.ref('mail.view_message_tree').id
         form_view_id = self.env.ref('mail.view_message_form').id
         return {
-            'name': 'Send Mails',
+            'name': _('Received Mails'),
             'view_type': 'form',
             'view_mode': 'tree,form',
             'views': [(tree_view_id, 'tree'),(form_view_id,'form')],
@@ -52,7 +52,7 @@ class eq_res_partner_mails(models.Model):
         tree_view_id = self.env.ref('mail.view_message_tree').id
         form_view_id = self.env.ref('mail.view_message_form').id
         return {
-            'name': 'Received Mails',
+            'name': _('Send Mails'),
             'view_type': 'form',
             'view_mode': 'tree,form',
             'views': [(tree_view_id, 'tree'), (form_view_id, 'form')],
