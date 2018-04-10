@@ -1,5 +1,10 @@
 ## Modul eq_purchase
 
+#### 10.04.2018
+#### Version 1.0.34
+##### ADD
+- delete action for sending purchases (now in eq_mail_templates)
+
 #### 06.04.2018
 #### Version 1.0.33
 ##### ADD
