@@ -161,7 +161,7 @@
                 <table class="table table-condensed">
                     <thead>
                         <tr>
-                            <th>Produktnr</th>
+                            <th>Produktnr.</th>
                             <th>Produkt</th>
                             <th style="text-align:right">Menge</th>
                             <th style="text-align:right">Preis/Stück</th>
