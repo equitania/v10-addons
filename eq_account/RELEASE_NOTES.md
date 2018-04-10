@@ -1,5 +1,9 @@
 ## Modul eq_account
 
+#### 10.04.2018
+#### Version 1.0.50
+##### CHG
+- delete action for sending invoice (now in eq_mail_templates)
 
 #### 09.04.2018
 #### Version 1.0.49
