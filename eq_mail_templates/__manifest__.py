@@ -22,9 +22,9 @@
 {
     'name': 'Equitania Mail Templates',
     'license': 'AGPL-3',
-    'version': '1.0.1',
+    'version': '1.0.2',
     'description': """
-        Mail Templates
+        Verbesserte Mail Templates für Sales / Purchase / Account Invoice
     """,
     'author': 'Equitania Software GmbH',
     'website': 'www.myodoo.de',
