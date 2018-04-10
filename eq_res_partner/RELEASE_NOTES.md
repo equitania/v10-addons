@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 10.04.2018
+#### Version 1.0.26
+##### FIX
+- wrong smart button and action send/received mails
+
 #### 04.04.2018
 #### Version 1.0.25
 ##### CHG
