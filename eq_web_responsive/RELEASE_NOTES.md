@@ -1,10 +1,14 @@
 ## Modul eq_web_responsive
 
+#### 10.04.2018
+#### Version 1.0.11
+##### IMP
+- Styling of Function-Button Text (cutting text on border of the button)
+
 #### 06.12.2017
 #### Version 1.0.10
 ##### FIX
 - Stand von Version 1.0.8 wieder hergestellt (in der .less Datei), da das Backend online nichtmehr korrekt angezeigt wurde.
-
 
 #### 30.11.2017
 #### Version 1.0.9

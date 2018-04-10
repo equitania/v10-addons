@@ -22,7 +22,7 @@
 {
     'name': 'Equitania Responsive Interface',
     'license': 'AGPL-3',
-    'version': '1.0.10',
+    'version': '1.0.11',
     'description': """
         Anpassung für das Backend Theme web_responsive
     """,
