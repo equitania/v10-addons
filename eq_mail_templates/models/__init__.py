@@ -22,3 +22,4 @@ import eq_email_template
 import eq_sale_order
 import eq_purchase
 import eq_account_invoice
+import eq_res_users
