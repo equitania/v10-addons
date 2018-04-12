@@ -39,7 +39,8 @@ class eq_account_invoice(models.Model):
             default_use_template=bool(template),
             default_template_id=template and template.id or False,
             default_composition_mode='comment',
-            mark_invoice_as_sent=True
+            mark_invoice_as_sent=True,
+            custom_layout="eq_mail_templates.eq_email_template_data_invoice"
         )
         return {
             'name': _('Compose Email'),
