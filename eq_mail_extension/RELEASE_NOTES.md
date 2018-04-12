@@ -1,5 +1,10 @@
 ## Modul eq_mail_extension
 
+#### 12.04.2018
+#### Version 1.0.35
+##### CHG
+- Subject now not readonlyif a template is set
+
 #### 03.04.2018
 #### Version 1.0.34
 ##### ADD

@@ -27,7 +27,7 @@ class eq_base_config_settings(models.TransientModel):
     @api.model
     def delete_alias_domain(self):
         config_parameters = self.env["ir.config_parameter"]
-        config_parameters.set_param("mail.catchall.domain", '')
+        #config_parameters.set_param("mail.catchall.domain", '')
 
         return True
                 
