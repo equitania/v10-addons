@@ -49,6 +49,7 @@ class eq_sale_order(models.Model):
             'default_template_id': template_id,
             'default_composition_mode': 'comment',
             'mark_so_as_sent': True,
+            'custom_layout': "eq_mail_templates.eq_data_template_mail"
         })
         return {
             'type': 'ir.actions.act_window',

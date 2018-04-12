@@ -5,7 +5,7 @@
 
 <record id="eq_data_template_mail" model="mail.template">
             <field name="name">Template Sale Order</field>
-            <field name="subject"></field>
+            <field name="subject">${object.subject}</field>
             <field name="eq_email_template_version">1</field>
             <field name="model_id" ref="mail.model_mail_message"/>
             <field name="auto_delete" eval="False"/>
@@ -37,7 +37,7 @@
 			 <field name="res_id" ref="eq_mail_templates.eq_data_template_mail"/>
              <field name="lang">de_DE</field>
              <field name="state">translated</field>
-            <field name="value">Bestellbestätigung</field>
+            <field name="value">${object.subject}</field>
          </record>
 
     </data>
