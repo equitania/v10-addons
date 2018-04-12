@@ -22,7 +22,7 @@
 {
     'name': 'Equitania Mail Templates',
     'license': 'AGPL-3',
-    'version': '1.0.2',
+    'version': '1.0.3',
     'description': """
         Verbesserte Mail Templates für Sales / Purchase / Account Invoice
     """,
