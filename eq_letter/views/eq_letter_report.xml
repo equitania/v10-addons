@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- QWeb Reports -->
+        <report
+                id="letter_show"
+                model="eq_letter"
+                string="Show"
+                report_type="qweb-pdf"
+                name="eq_letter.report_show"
+                file="eq_letter.report_show"
+                attachment_use="True"
+                attachment="'eq-letter.eq_letter.pdf'"
+        />
+    </data>
+</odoo>

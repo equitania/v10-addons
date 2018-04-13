@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="eq_letter.report_show_document">
+       <!-- <t t-call="report.external_layout">-->
+            <div class="page">
+                <div class="row">
+                    <span t-field="o.eq_letter_from"/><br/>
+                    <span t-field="o.eq_letter_from.street"/>
+                    <span t-field="o.eq_letter_from.zip"/>
+                    <span t-field="o.eq_letter_from.city"/><br/>
+                    <span t-field="o.eq_letter_from.country_id"/>
+                    <span t-field="o.eq_letter_from.state_id"/><br/><br/><br/><br/>
+
+                    <div class="col-xs-5 col-xs-offset-7"><br/><br/><br/>
+                        <strong><span t-field="o.write_date"/></strong><br/><br/>
+                    </div>
+                    <span t-field="o.eq_letter_to"/><br/>
+                    <span t-field="o.eq_letter_to.street"/><br/>
+                    <span t-field="o.eq_letter_to.zip"/>
+                    <span t-field="o.eq_letter_to.city"/><br/>
+                    <span t-field="o.eq_letter_to.country_id"/>
+                    <span t-field="o.eq_letter_to.state_id"/><br/><br/><br/><br/>
+                    <span t-field="o.eq_letter_subject"/><br/><br/><br/><br/>
+                    <span t-field="o.eq_text"/><br/>
+                </div>
+            </div>
+        <!--</t>-->
+    </template>
+
+    <template id="report_show">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="eq_letter.report_show_document"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Letter From View -->
+        <record id="letter_form_view" model="ir.ui.view">
+            <field name="name">Letters</field>
+            <field name="model">eq_letter</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <label for="eq_letter_to"/>
+                                <div>
+                            <field name="eq_letter_to"/>
+                                </div>
+                        </group>
+                        <group>
+                            <label for="eq_letter_from"/>
+                                <div>
+                            <field name="eq_letter_from"/>
+                                </div>
+                        </group>
+                        <group>
+                            <label for="eq_letter_subject"/>
+                                <div>
+                            <field name="eq_letter_subject"/>
+                                </div>
+                        </group>
+                        <group>
+                            <label for="eq_text"/>
+                                <div>
+                            <field name="eq_text"/>
+                                </div>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Letter Tree View -->
+        <record id="letter_tree_view" model="ir.ui.view">
+            <field name="name">Letters</field>
+            <field name="model">eq_letter</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="eq_letter_to"/>
+                    <field name="eq_letter_from"/>
+                    <field name="eq_letter_subject"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--Action-->
+        <record id="letter_action" model="ir.actions.act_window">
+            <field name="name">Letters</field>
+            <field name="res_model">eq_letter</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Click here to write a Letter</p>
+            </field>
+        </record>
+
+        <!-- Menuitems -->
+        <menuitem id="eq_letter_menu" name="Letter" sequence="100"/>
+            <menuitem id="eq_letter" name="Letter" parent="eq_letter_menu"/>
+
+            <menuitem id="letter_menu" name="Letters" parent="eq_letter" action="letter_action"/>
+
+    </data>
+</odoo>
