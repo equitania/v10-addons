@@ -27,7 +27,10 @@ import time
 from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT
 
 class eq_sale_quote_line(models.Model):
-    _inherit = 'sale.quote.line'
+    _name = "eq.sale.quote.line"
+    _inherit = "sale.quote.line"
+
+    quote_id = fields.Many2one('eq.document.template', 'Quotation Template Reference', required=True, ondelete='cascade', select=True)
 
 
     @api.model
@@ -36,11 +39,11 @@ class eq_sale_quote_line(models.Model):
             return super(eq_sale_quote_line, self).create(values)
         else:
             quote_id = values['quote_id']
-            quote_tmpl_obj = self.env['sale.quote.template'].search([('id','=',quote_id)])
+            quote_tmpl_obj = self.env['eq.document.template'].search([('id','=',quote_id)])
             if len(quote_tmpl_obj):
                 return super(eq_sale_quote_line, self).create(values)
             else:
-                tmpl_pool = self.env['sale.quote.template']
+                tmpl_pool = self.env['eq.document.template']
                 create_vals = {
                     'number_of_days': 30,
                     'name': values['name'],

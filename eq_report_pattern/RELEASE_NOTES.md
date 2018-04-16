@@ -1,5 +1,10 @@
 ## eq_report_pattern 
 
+#### 16.04.2018
+#### Version 1.0.28
+##### FIX
+- lines changed to eq.sale.quote.line like v8
+
 #### 15.03.2018
 #### Version 1.0.27
 ##### ADD
