@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 16.04.2018
+#### Version 1.0.19
+##### ADD
+- add dependency to OCA-module 'project_parent'
+
 #### 22.03.2018
 #### Version 1.0.18
 ##### ADD
