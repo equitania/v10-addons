@@ -30,7 +30,7 @@ class eq_sale_quote_line(models.Model):
     _name = "eq.sale.quote.line"
     _inherit = "sale.quote.line"
 
-    quote_id = fields.Many2one('eq.document.template', 'Quotation Template Reference', required=True, ondelete='cascade', select=True)
+    quote_id = fields.Many2one('eq.document.template', 'Quotation Template Reference', required=True, ondelete='cascade', index=True)
 
 
     @api.model
