@@ -23,14 +23,14 @@
     'name': 'Equitania Printing',
     'version': '1.0.1',
     'summary': """
-        Equitania Printing
+        Modul um PDF's sofort auszudrucken
     """,
     'author': 'Equitania Software GmbH',
     'website': 'www.myodoo.de',
     'depends': ['base', 'base_setup'],
     'category' : 'tools',
     'description': """
-     
+     Modul um PDF's sofort auszudrucken
     """,
     'data': [
              'security/ir.model.access.csv',
