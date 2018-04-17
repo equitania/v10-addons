@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 17.04.2018
+#### Version 1.0.27
+##### ADD
+- now it's possible to search for customer number and supplier number.
+
 #### 10.04.2018
 #### Version 1.0.26
 ##### FIX

@@ -19,6 +19,18 @@
         </field>
     </record>
 
+	<record id="eq_view_res_partner_filter" model="ir.ui.view">
+		<field name="name">eq.res.partner.select</field>
+		<field name="model">res.partner</field>
+		<field name="inherit_id" ref="base.view_res_partner_filter" />
+		<field name="arch" type="xml">
+			<field name="name" position="after">
+				<field name="customer_number" string="Customer Number"/>
+				<field name="supplier_number" string="Supplier Number"/>
+			</field>
+		</field>
+	</record>
+
     <record id="contacts.action_contacts_view_kanban" model="ir.actions.act_window.view">
         <field name="sequence" eval="2"/>
         <field name="view_mode">kanban</field>

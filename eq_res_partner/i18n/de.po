@@ -95,11 +95,13 @@ msgstr "Straße..."
 
 #. module: eq_res_partner
 #: model:ir.ui.view,arch_db:eq_res_partner.eq_partner_extension_form_view
+#: model:ir.ui.view,arch_db:eq_res_partner.eq_view_res_partner_filter
 msgid "Customer Number"
 msgstr "Kundennummer"
 
 #. module: eq_res_partner
 #: model:ir.ui.view,arch_db:eq_res_partner.eq_partner_extension_form_view
+#: model:ir.ui.view,arch_db:eq_res_partner.eq_view_res_partner_filter
 msgid "Supplier Number"
 msgstr "Lieferantennummer"
 
