@@ -132,7 +132,7 @@
             <field name="name">project</field>
             <field name="res_model">project.project</field>
             <field name="view_mode">kanban,tree,form,calendar</field>
-            <field name="context">{'search_default_my_projects': 1, 'group_by':'parent_project_id'}</field>
+            <field name="context">{'search_default_my_projects': 1, 'group_by':'stage_id'}</field>
             <field name="view_ids"
                    eval="[(5, 0, 0),
                             (0, 0, {'view_mode': 'kanban', 'view_id': ref('eq_project_extension_')}),

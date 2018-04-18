@@ -1,6 +1,11 @@
 ## Modul eq_project
 
 #### 16.04.2018
+#### Version 1.0.20
+##### ADD
+- different project stages in project kanban view
+
+#### 16.04.2018
 #### Version 1.0.19
 ##### ADD
 - add dependency to OCA-module 'project_parent'

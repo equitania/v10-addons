@@ -20,3 +20,4 @@
 ##############################################################################
 import eq_project_extension
 import eq_extension_project_task_type
+import eq_project
