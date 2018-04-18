@@ -1,5 +1,10 @@
 ## Modul eq_product
 
+#### 18.04.2018
+#### Version 1.0.22
+##### CHG
+- insert sequence into product.supplierinfo tree view from module eq_mrp_base.
+
 #### 21.11.2017
 #### Version 1.0.21
 ##### CHG
