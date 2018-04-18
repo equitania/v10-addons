@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 18.04.2018
+#### Version 1.0.79
+##### ADD
+- add sequence to sale.order.lines tree view in a sale.order.
+
 #### 06.04.2018
 #### Version 1.0.78
 ##### CHG
