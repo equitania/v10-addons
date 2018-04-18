@@ -17,112 +17,32 @@
                 <table border="0" width="100%" cellpadding="0" bgcolor="#ededed" style="padding: 20px; background-color: #ededed" summary="o_mail_notification">
                     <tbody>
 
-                      <!-- HEADER -->
-                      <!--<tr>
-                        <td align="center" style="min-width: 590px;">
-                          <table width="590" border="0" cellpadding="0" bgcolor="blue" style="min-width: 590px; background-color: blue; padding: 20px;">
-                            <tr>
-                              <td valign="middle">
-                                  <span style="font-size:20px; color:white; font-weight: bold;">
-                                      ${object.record_name}
-                                  </span>
-                              </td>
-                              <td valign="middle" align="right">
-                                 <img src="/logo.png?company=${company.id}" style="padding: 0px; margin: 0px; height: auto; width: 80px;" alt="${company.name}">
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>-->
+
 
                       <!-- CONTENT -->
                       <tr>
                         <td align="center" style="min-width: 590px;">
-                          <table width="590" border="0" cellpadding="0" bgcolor="#ffffff" style="min-width: 590px; background-color: rgb(255, 255, 255); padding: 20px;">
+                          <table width="590" border="0" cellpadding="0" bgcolor="#ededed" style="min-width: 590px; padding: 20px;">
                             <tbody>
-                              <td valign="top" style="font-family:Arial,Helvetica,sans-serif; color: #555; font-size: 14px;">
-                                ${object.body | safe}
-                              </td>
+
+                                 ${object.body | safe}
+                                % if ctx.get('tracking'):
+
+                                    % for tracking in ctx['tracking']
+                                       <p>${tracking[0]} : ${tracking[1]} -&gt; ${tracking[2]}</p>
+                                    % endfor
+
+                                % endif
+
+                                % if ctx.get('signature'):
+                                    ${ctx['signature'] | safe}
+                                % endif
+                                <br/>
                             </tbody>
                           </table>
                         </td>
                       </tr>
 
-                      <!-- FOOTER -->
-                      <tr>
-                        <td align="center" style="min-width: 590px;">
-                          <table width="590" border="0" cellpadding="0" bgcolor="#575757" style="min-width: 590px; background-color: #575757; padding: 20px;">
-                            <tr>
-                              <td valign="middle" align="left" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
-                                <strong>${company.name}</strong><br/>
-                                ${company.street} ${company.eq__house_no or ''}<br/>
-                                ${company.zip or ''} ${company.city or ''}<br/>
-                                ${company.country_id.name or ''}
-                              </td>
-                              <td valign="middle" align="right" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
-                                <t t-if="company.website">
-                                    <a href="${company.website}" style="text-decoration:none; color: white;">
-                                        ${company.website}
-                                    </a>
-                                    <br/>
-                                    Phone: ${company.phone or ''}
-                                </t>
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                    </tbody>
-                </table>
-                </body>
-                </html>
-            ]]></field>
-        </record>
-
-
-	  	<record id="mail_template_data_notification_email_default_de" model="ir.translation">
-            <field name="name">mail.template,body_html</field>
-            <!--<field name="res_id">21</field>-->
-			<field name="res_id" ref="mail.mail_template_data_notification_email_default"/>
-            <field name="lang">de_DE</field>
-			<field name="value"><![CDATA[<html>
-                <head></head>
-                % set record = ctx.get('record')
-                % set company = record and record.company_id or user.company_id
-                <body style="margin: 0; padding: 0;">
-                <table border="0" width="100%" cellpadding="0" bgcolor="#ededed" style="padding: 20px; background-color: #ededed" summary="o_mail_notification">
-                    <tbody>
-
-                      <!-- HEADER -->
-                      <!--<tr>
-                        <td align="center" style="min-width: 590px;">
-                          <table width="590" border="0" cellpadding="0" bgcolor="blue" style="min-width: 590px; background-color: blue; padding: 20px;">
-                            <tr>
-                              <td valign="middle">
-                                  <span style="font-size:20px; color:white; font-weight: bold;">
-                                      ${object.record_name}
-                                  </span>
-                              </td>
-                              <td valign="middle" align="right">
-                                 <img src="/logo.png?company=${company.id}" style="padding: 0px; margin: 0px; height: auto; width: 80px;" alt="${company.name}">
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>-->
-
-                      <!-- CONTENT -->
-                      <tr>
-                        <td align="center" style="min-width: 590px;">
-                          <table width="590" border="0" cellpadding="0" bgcolor="#ffffff" style="min-width: 590px; background-color: rgb(255, 255, 255); padding: 20px;">
-                            <tbody>
-                              <td valign="top" style="font-family:Arial,Helvetica,sans-serif; color: #555; font-size: 14px;">
-                                ${object.body | safe}
-                              </td>
-                            </tbody>
-                          </table>
-                        </td>
-                      </tr>
 
                       <!-- FOOTER -->
                       <tr>
@@ -152,9 +72,79 @@
                 </table>
                 </body>
                 </html>
-            ]]>
+            ]]></field>
+        </record>
 
-			</field>
+
+	  	<record id="mail_template_data_notification_email_default_de" model="ir.translation">
+            <field name="name">mail.template,body_html</field>
+            <!--<field name="res_id">21</field>-->
+			<field name="res_id" ref="mail.mail_template_data_notification_email_default"/>
+            <field name="lang">de_DE</field>
+			<field name="value"><![CDATA[<html>
+                <head></head>
+                % set record = ctx.get('record')
+                % set company = record and record.company_id or user.company_id
+                <body style="margin: 0; padding: 0;">
+                <table border="0" width="100%" cellpadding="0" bgcolor="#ededed" style="padding: 20px; background-color: #ededed" summary="o_mail_notification">
+                    <tbody>
+
+
+
+                      <!-- CONTENT -->
+                      <tr>
+                        <td align="center" style="min-width: 590px;">
+                          <table width="590" border="0" cellpadding="0" bgcolor="#ededed" style="min-width: 590px; padding: 20px;">
+                            <tbody>
+
+                                 ${object.body | safe}
+                                % if ctx.get('tracking'):
+
+                                    % for tracking in ctx['tracking']
+                                       <p>${tracking[0]} : ${tracking[1]} -&gt; ${tracking[2]}</p>
+                                    % endfor
+
+                                % endif
+
+                                % if ctx.get('signature'):
+                                    ${ctx['signature'] | safe}
+                                % endif
+                                <br/>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+
+
+                      <!-- FOOTER -->
+                      <tr>
+                        <td align="center" style="min-width: 590px;">
+                          <table width="590" border="0" cellpadding="0" bgcolor="#575757" style="min-width: 590px; background-color: #575757; padding: 20px;">
+                            <tr>
+                              <td valign="middle" align="left" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
+                                <strong>${company.name}</strong><br/>
+                                ${company.street} ${company.eq__house_no or ''}<br/>
+                                ${company.zip or ''} ${company.city or ''}<br/>
+                                ${company.country_id.name or ''}
+                              </td>
+                              <td valign="middle" align="right" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
+                                <t t-if="company.website">
+                                    <a href="${company.website}" style="text-decoration:none; color: white;">
+                                        ${company.website}
+                                    </a>
+                                    <br/>
+                                    Telefon: ${company.phone or ''}
+                                </t>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+                </body>
+                </html>
+            ]]></field>
 		</record>
 
 
