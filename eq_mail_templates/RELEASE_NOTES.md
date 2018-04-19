@@ -1,5 +1,10 @@
 ## Modul eq_mail_templates
 
+#### 19.04.2018
+#### Version 1.0.4
+##### ADD
+- add german translation for 'Version Number'.
+
 #### 10.04.2018
 #### Version 1.0.3
 ##### FIX
