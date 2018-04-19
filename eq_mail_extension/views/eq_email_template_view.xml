@@ -6,9 +6,9 @@
             <field name="model">mail.template</field>
             <field name="inherit_id" ref="mail.email_template_form" />
             <field name="arch" type="xml">
-            	<field name="model_id" position="after">
-            		<field name="eq_email_template_version"/>
-            	</field>
+            	<!--<field name="model_id" position="after">-->
+            		<!--<field name="eq_email_template_version"/>-->
+            	<!--</field>-->
             	<field name="body_html" position="replace">
             		<field name="body_html" widget="text"/>
             	</field>

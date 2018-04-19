@@ -1,5 +1,11 @@
 ## Modul eq_mail_extension
 
+
+#### 19.04.2018
+#### Version 1.0.37
+##### CHG
+- remove versionsnumber from mail.template form view.
+
 #### 18.04.2018
 #### Version 1.0.36
 ##### CHG
