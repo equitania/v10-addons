@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 19.04.2018
+#### Version 1.0.51
+##### FIX
+- bugfix in discount computation.
+
 #### 10.04.2018
 #### Version 1.0.50
 ##### CHG

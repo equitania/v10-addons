@@ -88,7 +88,8 @@ class report_account_invoice_line(models.Model):
         :return:
         """
         if discount and discount != 0.0:
-            price = (discount/100) * price_per_unit * qty
+            #price = (discount/100) * price_per_unit * qty
+            price = (price_per_unit - ((discount / 100) * price_per_unit)) * qty
         else:
             price = price_per_unit * qty
         return price
