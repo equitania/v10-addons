@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 20.04.2018
+#### Version 1.0.28
+##### CHG
+- Add contact type to sub contact tree view of a res.partner
+
 #### 17.04.2018
 #### Version 1.0.27
 ##### ADD
