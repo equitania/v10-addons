@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 23.04.2018
+#### Version 1.0.52
+##### FIX
+- fix in account invoice report when only a service product is in the lines, it will be shown now.
+
 #### 19.04.2018
 #### Version 1.0.51
 ##### FIX
