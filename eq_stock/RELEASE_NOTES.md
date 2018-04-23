@@ -1,5 +1,10 @@
 ## Modul eq_stock
 
+#### 23.04.2018
+#### Version 1.0.15
+##### CHG
+- Adding some name-classes to some TD/TH Tabelobjects in report, to fix some installproblems of other LOT-Modules
+
 #### 26.03.2018
 #### Version 1.0.14
 ##### ADD/CHG

@@ -209,7 +209,7 @@
                                     <th class="text-right">
                                         <strong>Unit</strong>
                                     </th>
-                                    <th t-if="has_serial_number">
+                                    <th name="lot_serial" t-if="has_serial_number">
                                         <strong>Lot/Serial Number</strong>
                                     </th>
                                 </tr>
@@ -297,7 +297,7 @@
                                     <td class="text-right">
                                         <span t-field="line.product_uom.name"/>
                                     </td>
-                                    <td style="padding:0px;" t-if="has_serial_number">
+                                    <td name="lot_qty" style="padding:0px;" t-if="has_serial_number">
                                         <table class="table table-condensed"  style="margin:0px;" ><!-- t-if="line.quant_ids.lot_id"-->
                                             <tr t-foreach="line.quant_ids" t-as="quant">
                                                 <td>

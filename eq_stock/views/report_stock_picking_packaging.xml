@@ -226,7 +226,7 @@
                                                     <span t-field="packlot.lot_name" />
                                                 </t>
                                             </td>
-                                            <td>                                                <span t-field="packlot.qty" /> <t t-if="o.picking_type_id.use_existing_lots and o.state!='done'"> / <span t-field="packlot.qty_todo" /></t>
+                                            <td name="lot_qty">                                                <span t-field="packlot.qty" /> <t t-if="o.picking_type_id.use_existing_lots and o.state!='done'"> / <span t-field="packlot.qty_todo" /></t>
                                             </td>
                                         </tr>
                                     </table>
