@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 24.04.2018
+#### Version 1.0.29
+##### ADD
+- add eq_house_no to res.company
+
 #### 20.04.2018
 #### Version 1.0.28
 ##### CHG

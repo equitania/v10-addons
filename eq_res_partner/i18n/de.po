@@ -58,6 +58,12 @@ msgid "House no"
 msgstr "Hausnr."
 
 #. module: eq_res_partner
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_company_eq_house_no
+#: model:ir.ui.view,arch_db:eq_res_partner.eq_res_company_extension_form
+msgid "House Number"
+msgstr "Hausnr."
+
+#. module: eq_res_partner
 #: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_house_no
 #: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_house_no
 msgid "House number"
