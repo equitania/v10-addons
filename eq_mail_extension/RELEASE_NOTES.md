@@ -1,5 +1,9 @@
 ## Modul eq_mail_extension
 
+#### 24.04.2018
+#### Version 1.0.38
+##### IMP
+- improved check if bounce_alias is set or empty
 
 #### 19.04.2018
 #### Version 1.0.37

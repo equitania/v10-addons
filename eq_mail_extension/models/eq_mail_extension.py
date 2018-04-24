@@ -228,7 +228,8 @@ class eq_mail_mail(models.Model):
 
 ### Übernahme der Anpassung vom Equitania Modul (siehe ReleaseNotes des Equitania Moduls vom 15.01.2016)
                 if bounce_alias and catchall_domain:
-                    headers['Return-Path'] = '%s@%s' % (bounce_alias, catchall_domain)
+                    if len(bounce_alias) > 1 and len(catchall_domain) > 1:                      # better control, just to be sure
+                        headers['Return-Path'] = '%s@%s' % (bounce_alias, catchall_domain)
                 else:
                     headers['Return-Path'] = mail.email_from
 
