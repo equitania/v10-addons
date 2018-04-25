@@ -7,9 +7,43 @@
 			<field name="model">stock.picking</field>
 			<field name="inherit_id" ref="stock.view_picking_form" />
 			<field name="arch" type="xml">
-
+				<xpath expr="//form/sheet/notebook/page[2]" position="replace">
+				<page string="Initial Demand">
+						<field name="move_lines" options="{'reload_on_button': True}" mode="tree,kanban" context="{'address_in_id': partner_id, 'form_view_ref':'stock.view_move_picking_form', 'tree_view_ref':'eq_stock.eq_view_move_picking_tree', 'default_picking_type_id': picking_type_id, 'default_location_id': location_id, 'default_location_dest_id': location_dest_id}">
+								<kanban class="o_kanban_mobile">
+								<field name="product_id"/>
+								<field name="availability"/>
+								<field name="product_uom_qty"/>
+								<field name="product_uom" options="{'no_open': True, 'no_create': True}"/>
+								<field name="location_dest_id"/>
+								<field name="scrapped"/>
+								<field name="state"/>
+								<templates>
+									<t t-name="kanban-box">
+										<div t-attf-class="oe_kanban_card oe_kanban_global_click">
+											<div class="row">
+												<div class="col-xs-12">
+													<strong><span><t t-esc="record.product_id.value"/></span></strong>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-8 text-muted">
+													<span><t t-esc="record.availability.value"/> on <t t-esc="record.product_uom_qty.value"/> <t t-esc="record.product_uom.value"/></span>
+												</div>
+												<div class="col-xs-4 text-muted">
+													<span class="pull-right text-right"><t t-esc="record.location_dest_id.value"/></span>
+												</div>
+											</div>
+										</div>
+									</t>
+								</templates>
+							</kanban>
+						</field>
+						<field name="pack_operation_exist" invisible="1"/>
+						<field name="note" placeholder="Add an internal note that will be printed on the Picking Operations sheet" class="oe_inline"/>
+                        </page>
+				</xpath>
 				<notebook position="inside">
-
 					<page string="Header Text">
 						<field name="eq_use_page_break_after_header"></field>
                     	<label string="Page break after header text"></label>

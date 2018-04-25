@@ -1,6 +1,11 @@
 ## Modul eq_stock
 
 #### 23.04.2018
+#### Version 1.0.16
+##### CHG
+- opportunity to change the description in a stock.picking initial demand.
+
+#### 23.04.2018
 #### Version 1.0.15
 ##### CHG
 - Adding some name-classes to some TD/TH Tabelobjects in report, to fix some installproblems of other LOT-Modules

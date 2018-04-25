@@ -238,3 +238,14 @@ msgstr "<span>Kundenreferenz</span>"
 msgid "Parent Location"
 msgstr "Hauptlagerort"
 
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_stock_view_doc_template_ext
+msgid "Initial Demand"
+msgstr "Anfangsnachfrage"
+
+#. module: eq_stock
+#: model:ir.ui.view,arch_db:eq_stock.eq_view_move_picking_tree
+msgid "Unit of Measure"
+msgstr "Mengeneinheit"
+
+
