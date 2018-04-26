@@ -16,6 +16,9 @@ class eq_res_partner_mails(models.Model):
             record = object.search([('partner_ids','in',partner.id)])
             message_count = len(record)
             partner.eq_received_mails = str(message_count)
+            for contact in partner.child_ids:
+                mails = self.env['mail.message'].search([('partner_ids','in',contact.id)])
+                partner.eq_received_mails = int(partner.eq_received_mails) + len(mails)
 
 
     @api.multi
@@ -27,6 +30,10 @@ class eq_res_partner_mails(models.Model):
                 res.eq_send_mails = len(mails)
             else:
                 res.eq_send_mails = 0
+            for contact in res.child_ids:
+                mails = self.env['mail.message'].search([('author_id', '=', contact.id)])
+                res.eq_send_mails = int(res.eq_send_mails) + len(mails)
+
 
     @api.multi
     def eq_act_view_count_received_mails(self):
@@ -34,6 +41,11 @@ class eq_res_partner_mails(models.Model):
 
         tree_view_id = self.env.ref('mail.view_message_tree').id
         form_view_id = self.env.ref('mail.view_message_form').id
+        child_list = []
+        for id in self.child_ids:
+            child_list.append(id.id)
+        child_list.append(self.id)
+
         return {
             'name': _('Received Mails'),
             'view_type': 'form',
@@ -42,7 +54,7 @@ class eq_res_partner_mails(models.Model):
             'res_model': 'mail.message',
             'view_id': tree_view_id,
             'type': 'ir.actions.act_window',
-            'domain': [('partner_ids','in', self.id)],
+            'domain': [('partner_ids','in', child_list)],
         }
 
     @api.multi
@@ -51,6 +63,10 @@ class eq_res_partner_mails(models.Model):
 
         tree_view_id = self.env.ref('mail.view_message_tree').id
         form_view_id = self.env.ref('mail.view_message_form').id
+        child_list=[]
+        for id in self.child_ids:
+            child_list.append(id.id)
+        child_list.append(self.id)
         return {
             'name': _('Send Mails'),
             'view_type': 'form',
@@ -59,6 +75,6 @@ class eq_res_partner_mails(models.Model):
             'res_model': 'mail.message',
             'view_id': tree_view_id,
             'type': 'ir.actions.act_window',
-            'domain': [('author_id', '=', self.id)],
+            'domain': [('author_id', 'in', child_list)],
 
         }

@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 26.04.2018
+#### Version 1.0.30
+##### CHG
+- All received/send mails of the subcontacts are shown under the smart buttons Received/Send Mails
+
 #### 24.04.2018
 #### Version 1.0.29
 ##### ADD
