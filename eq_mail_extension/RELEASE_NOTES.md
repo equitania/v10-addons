@@ -1,5 +1,10 @@
 ## Modul eq_mail_extension
 
+#### 27.04.2018
+#### Version 1.0.39
+##### CHG
+- owner in ir.mail.server is now required
+
 #### 24.04.2018
 #### Version 1.0.38
 ##### IMP

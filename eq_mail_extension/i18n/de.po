@@ -137,7 +137,7 @@ msgstr "Postausgang"
 #. module: eq_mail_extension
 #: field:fetchmail.server,user_id:0
 #: field:ir.mail_server,user_id:0
-msgid "Owner"
+msgid "user_id"
 msgstr "Eigentümer"
 
 #. module: eq_mail_extension
