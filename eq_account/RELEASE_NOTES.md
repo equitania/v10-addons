@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 27.04.2018
+#### Version 1.0.53
+##### CHG
+- t t-if clause change with another t t-if clause from default_code (first with eq_move_ids, secound without eq_move_ids)
+
 #### 23.04.2018
 #### Version 1.0.52
 ##### FIX
