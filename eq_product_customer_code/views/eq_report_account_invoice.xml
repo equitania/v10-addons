@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="eq_product_customer_number_report_accountinvoice_document" inherit_id="eq_account.eq_report_invoice_document">
+            <xpath expr="//span[@t-field='l.product_id.default_code']" position="replace">
+                <span t-field="l.product_id.default_code"/> <br/>
+                <span t-esc="o.get_customer_product_code(o.partner_id,l.product_id)" />
+            </xpath>
+        </template>
+
+        <template id="eq_product_customer_number_report_accountinvoice">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="eq_product_customer_code.eq_product_customer_number_report_accountinvoice_document"
+                       t-lang="doc.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>
