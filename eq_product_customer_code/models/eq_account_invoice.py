@@ -30,15 +30,11 @@ class eq_report_account_invoice(models.Model):
         :param product: product.product object
         :return: product customer code
         """
-        print"partner: ", partner
-        print"product: ", product
 
         product_customer_obj = self.env['product.customer.code'].search([('product_id','=',product.id),('partner_id','=',partner.id)])
-        print"product_customer_obj: ",product_customer_obj
 
         code = product_customer_obj.product_code
 
-        print"code: ", code
 
         if code:
             return str(code)
