@@ -125,22 +125,22 @@ msgstr "Nummerngenerator"
 #. module: eq_product
 #: model:ir.model.fields,field_description:eq_product.field_sale_config_settings_default_eq_max_prefix_count
 msgid "Max prefix lenght [equitania]"
-msgstr "Max Prefixlänge [equitania]"
+msgstr "Max Prefixlänge [eq_product]"
 
 #. module: eq_product
 #: model:ir.model.fields,field_description:eq_product.field_sale_config_settings_default_eq_min_prefix_count
 msgid "Min prefix lenght [equitania]"
-msgstr "Min Prefixlänge [equitania]"
+msgstr "Min Prefixlänge [eq_product]"
 
 #. module: eq_product
 #: model:ir.model.fields,field_description:eq_product.field_sale_config_settings_default_eq_seperator
 msgid "Seperator [equitania]"
-msgstr "Trennzeichen [equitania]"
+msgstr "Trennzeichen [eq_product]"
 
 #. module: eq_product
 #: model:ir.model.fields,field_description:eq_product.field_sale_config_settings_default_eq_prod_num_lenght
 msgid "Product number lenght [equitania]"
-msgstr "Länge der Produktnummer [equitania]"
+msgstr "Länge der Produktnummer [eq_product]"
 
 #. module: eq_product
 #: model:ir.ui.view,arch_db:eq_product.eq_product_product_form_view

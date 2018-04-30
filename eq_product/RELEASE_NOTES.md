@@ -1,5 +1,10 @@
 ## Modul eq_product
 
+#### 30.04.2018
+#### Version 1.0.23
+##### ADD
+- add specific number generator
+
 #### 18.04.2018
 #### Version 1.0.22
 ##### CHG
