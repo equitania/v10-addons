@@ -60,11 +60,31 @@ class eq_product_product(models.Model):
         :return:
         """
 
+        ir_values = self.env['ir.values']
+        min_prefix_count = ir_values.get_default('product.product', 'default_eq_min_prefix_count')
+        max_prefix_count = ir_values.get_default('product.product', 'default_eq_max_prefix_count')
+        prod_num_lenght = ir_values.get_default('product.product', 'default_eq_prod_num_lenght')
+        seperator = ir_values.get_default('product.product', 'default_eq_seperator')
+
 
         # Nummer wurde nicht eingegeben, wir müssen sie generieren
+        # if 'default_code' not in vals or vals['default_code'] is False:
+        #     seq = self.env['ir.sequence'].get('eq_product_no')
+        #     vals['default_code'] = seq
         if 'default_code' not in vals or vals['default_code'] is False:
             seq = self.env['ir.sequence'].get('eq_product_no')
+
             vals['default_code'] = seq
+            return super(eq_product_product, self).create(vals)
+        else:
+            prod_rec = vals['default_code']
+            if len(prod_rec) >= min_prefix_count and len(prod_rec) <= max_prefix_count:
+                res = super(eq_product_product, self).create(vals)
+                res.eq_product_number_update()
+                return res
+
+            else:
+                return super(eq_product_template, self).create(vals)
 
         return super(eq_product_product, self).create(vals)
 
@@ -216,6 +236,14 @@ class eq_product_template(models.Model):
         :param vals:
         :return:
         """
+
+        ir_values = self.env['ir.values']
+        min_prefix_count = ir_values.get_default('product.product', 'default_eq_min_prefix_count')
+        max_prefix_count = ir_values.get_default('product.product', 'default_eq_max_prefix_count')
+        prod_num_lenght = ir_values.get_default('product.product', 'default_eq_prod_num_lenght')
+        seperator = ir_values.get_default('product.product', 'default_eq_seperator')
+
+
         # Nummer wurde nicht eingegeben, wir müssen sie generieren
         if 'default_code' not in vals or vals['default_code'] is False:
             seq = self.env['ir.sequence'].get('eq_product_no')
@@ -225,8 +253,18 @@ class eq_product_template(models.Model):
                 vals['barcode'] = seq
 
             vals['default_code'] = seq
+            return super(eq_product_template, self).create(vals)
+        else:
+            prod_rec = vals['default_code']
+            if len(prod_rec) >= min_prefix_count and len(prod_rec) <= max_prefix_count:
+                res = super(eq_product_template, self).create(vals)
+                res.eq_product_number_update()
+                return res
 
-        return super(eq_product_template, self).create(vals)
+            else:
+                return super(eq_product_template, self).create(vals)
+
+
 
     @api.multi
     def write(self, vals):
@@ -263,15 +301,13 @@ class eq_product_template(models.Model):
 
 
     @api.multi
-    def eq_product_number_update(self, res):
+    def eq_product_number_update(self):
         """
         Generierung der Produktnummer in product.template
         :param ids:
         :return:
         """
 
-        if self.id is False:
-            self = res
 
         product_obj = self.env['product.product']
         product = self.env['product.template'].browse(self.id)

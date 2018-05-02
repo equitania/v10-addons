@@ -1,5 +1,10 @@
 ## Modul eq_product
 
+#### 02.05.2018
+#### Version 1.0.24
+##### ADD
+- dynamic generation of the number generator.
+
 #### 30.04.2018
 #### Version 1.0.23
 ##### ADD
