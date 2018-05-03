@@ -84,7 +84,7 @@ class eq_product_product(models.Model):
                 return res
 
             else:
-                return super(eq_product_template, self).create(vals)
+                return super(eq_product_product, self).create(vals)
 
         return super(eq_product_product, self).create(vals)
 
@@ -247,10 +247,11 @@ class eq_product_template(models.Model):
         # Nummer wurde nicht eingegeben, wir müssen sie generieren
         if 'default_code' not in vals or vals['default_code'] is False:
             seq = self.env['ir.sequence'].get('eq_product_no')
-            if vals['barcode']:
-                pass
-            else:
-                vals['barcode'] = seq
+            if 'barcode' in vals:
+                if vals['barcode']:
+                    pass
+                else:
+                    vals['barcode'] = seq
 
             vals['default_code'] = seq
             return super(eq_product_template, self).create(vals)

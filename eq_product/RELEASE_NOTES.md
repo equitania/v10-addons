@@ -1,5 +1,10 @@
 ## Modul eq_product
 
+#### 03.05.2018
+#### Version 1.0.25
+##### FIX
+- fix of the super method in product.product create
+
 #### 02.05.2018
 #### Version 1.0.24
 ##### ADD
