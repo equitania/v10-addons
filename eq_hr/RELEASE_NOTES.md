@@ -1,6 +1,11 @@
 ## Modul eq_hr
 
 #### 04.05.2018
+#### Version 1.0.5
+##### CHG
+- remove access rights over eval not more over xml deletion.
+
+#### 04.05.2018
 #### Version 1.0.4
 ##### ADD
 - Ticket #5625: add access rights and groups to employee/calendar.

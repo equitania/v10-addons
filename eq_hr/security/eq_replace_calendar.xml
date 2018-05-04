@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
-        <delete id="calendar.calendar_event_rule_employee" model="ir.rule"/>
+    <data>
+        <!--<delete id="calendar.calendar_event_rule_employee" model="ir.rule"/>-->
 
-        <record id="calendar_event_rule_employee" model="ir.rule">
+        <record id="calendar.calendar_event_rule_employee" model="ir.rule">
             <field ref="calendar.model_calendar_event" name="model_id"/>
             <field name="name">All Calendar Event for employees</field>
             <field name="domain_force">[(1,'=',1)]</field>
@@ -11,6 +11,7 @@
             <field name="perm_write">False</field>
             <field name="perm_unlink">False</field>
             <field name="perm_create">False</field>
+            <field eval="[(3,ref('base.group_user'))]" name="groups"/>
         </record>
 
     </data>
