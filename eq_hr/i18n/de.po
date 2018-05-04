@@ -25,3 +25,18 @@ msgstr "Mitarbeiter"
 #: model:ir.model,name:eq_hr.model_res_users
 msgid "Users"
 msgstr "Benutzer"
+
+#. module: eq_hr
+#: model:ir.module.category,name:eq_hr.module_eq_hr_calendar
+msgid "Calendar"
+msgstr "Kalender"
+
+#. module: eq_hr
+#: model:res.groups,name:eq_hr.group_calendar_see_all_events
+msgid "See all events"
+msgstr "Alle Termine sehen"
+
+#. module: eq_hr
+#: model:res.groups,name:eq_hr.group_calendar_see_all_events_and_edit
+msgid "See all events and edit"
+msgstr "Alle Termine editieren"

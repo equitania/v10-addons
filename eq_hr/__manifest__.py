@@ -22,19 +22,21 @@
 {
     'name': 'Equitania Personalwesen Optimierungen',
     'license': 'AGPL-3',
-    'version': '1.0.3',
+    'version': '1.0.4',
     'description': """
         Extensions for HR
     """,
     'author': 'Equitania Software GmbH',
     'website': 'www.myodoo.de',
-    'depends': ['base_setup', 'base', 'hr','hr_expense'],
+    'depends': ['base_setup', 'base', 'hr','hr_expense','calendar'],
     'category': 'hr',
     'summary': 'HR Extensions',
 
     'data': [
         "views/eq_res_users_view.xml",
         "views/eq_hr_expense_view.xml",
+        "security/eq_replace_calendar.xml",
+        "security/eq_calendar_security.xml",
 
     ],
     'demo': [],
