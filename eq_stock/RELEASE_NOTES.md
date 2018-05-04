@@ -1,5 +1,10 @@
 ## Modul eq_stock
 
+#### 04.05.2018
+#### Version 1.0.17
+##### ADD
+- added new incoterms together with deactivation of old ones
+
 #### 23.04.2018
 #### Version 1.0.16
 ##### CHG

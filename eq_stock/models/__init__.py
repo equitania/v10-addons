@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
 import eq_report_stock
 import eq_stock_picking
 import eq_stock_pack_operation
+import eq_deactivate_old_records_func

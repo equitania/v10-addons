@@ -18,31 +18,25 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+from odoo import models, fields, api, _
 
-{
-    'name': 'Equitania Lager Optimierungen',
-    'license': 'AGPL-3',
-    'version': '1.0.17',
-    'description': """
-        Erweiterung für Lager
-    """,
-    'author': 'Equitania Software GmbH',
-    'website': 'www.myodoo.de',
-    'depends': ['base', 'base_setup','delivery', 'stock',],
-    'category' : 'stock',
-    'summary': 'Equitania Lager Erweiterung',
 
-    'data': [
-        "data/eq_stock_incoterms_data.xml",
-        "views/eq_stock_move_views.xml",
-        "views/stock_picking_view.xml",
-        "views/eq_stock_pack_operation_view.xml",
-        "views/report_stock_barcode.xml",
-        "views/report_stock_picking.xml",
-        "views/report_stock_picking_packaging.xml",
-    ],
-    'demo': [],
-    'css': ['base.css'],
-    'installable': True,
-    'auto_install': False,
-}
+class eq_deactivate_old_records_func(models.Model):
+    """
+    Simple helper class that will be executed during each update of this module
+    """
+    _name = "eq_deactivate_old_records_func"
+
+    def _deactivate_old_records(self):
+        """
+        Deactivate old records - we don't need them anymore
+        """
+        record_ids = self.env['stock.incoterms'].search([])
+        old_record_names = [
+            "EX WORKS", "FREE CARRIER", "FREE ALONGSIDE SHIP", "FREE ON BOARD", "COST AND FREIGHT", "COST, INSURANCE AND FREIGHT", "CARRIAGE PAID TO",
+            "CARRIAGE AND INSURANCE PAID TO", "DELIVERED AT FRONTIER", "DELIVERED EX SHIP", "DELIVERED EX QUAY", "DELIVERED DUTY UNPAID",
+            "DELIVERED AT TERMINAL", "DELIVERED AT PLACE", "DELIVERED DUTY PAID"
+        ]
+        for record in record_ids:
+            if record.name in old_record_names:
+                record.active = False

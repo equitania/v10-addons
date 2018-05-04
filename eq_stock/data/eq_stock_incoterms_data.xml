@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- deactivate old incoterms -->
+    <data noupdate="0">
+        <function model="eq_deactivate_old_records_func" name="_deactivate_old_records" eval="[('eq_stock')]"/>
+    </data>
+
+
+    <!-- Insert new incoterms -->
+    <data>
+        <record id="incoterm_CFR" model="stock.incoterms">
+            <field name="code">CFR (INCOTERM 2010)</field>
+            <field name="name">CFR (INCOTERM 2010)</field>
+        </record>
+        <record id="incoterm_CIF" model="stock.incoterms">
+            <field name="code">CIF (INCOTERM 2010)</field>
+            <field name="name">CIF (INCOTERM 2010)</field>
+        </record>
+        <record id="incoterm_CIP" model="stock.incoterms">
+            <field name="code">CIP (INCOTERM 2010)</field>
+            <field name="name">CIP (INCOTERM 2010)</field>
+        </record>
+        <record id="incoterm_CPT" model="stock.incoterms">
+            <field name="code">CPT (INCOTERM 2010)</field>
+            <field name="name">CPT (INCOTERM 2010)</field>
+        </record>
+        <record id="incoterm_DAP" model="stock.incoterms">
+            <field name="code">DAP (INCOTERM 2010)</field>
+            <field name="name">DAP (INCOTERM 2010) </field>
+        </record>
+        <record id="incoterm_DAT" model="stock.incoterms">
+            <field name="code">DAT (INCOTERM 2010)</field>
+            <field name="name">DAT (INCOTERM 2010)</field>
+        </record>
+        <record id="incoterm_DDP" model="stock.incoterms">
+            <field name="code">DDP (INCOTERM 2010)</field>
+            <field name="name">DDP (INCOTERM 2010)</field>
+        </record>
+        <record id="incoterm_EXW" model="stock.incoterms">
+            <field name="code">EXW (INCOTERM 2010)</field>
+            <field name="name">EXW (INCOTERM 2010)</field>
+        </record>
+        <record id="incoterm_FAS" model="stock.incoterms">
+            <field name="code">FAS (INCOTERM 2010)</field>
+            <field name="name">FAS (INCOTERM 2010)</field>
+        </record>
+        <record id="incoterm_FCA" model="stock.incoterms">
+            <field name="code">FCA (INCOTERM 2010)</field>
+            <field name="name">FCA (INCOTERM 2010)</field>
+        </record>
+        <record id="incoterm_FOB" model="stock.incoterms">
+            <field name="code">FOB (INCOTERM 2010)</field>
+            <field name="name">FOB (INCOTERM 2010)</field>
+        </record>
+    </data>
+</odoo>
