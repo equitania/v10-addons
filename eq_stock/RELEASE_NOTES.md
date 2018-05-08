@@ -1,5 +1,10 @@
 ## Modul eq_stock
 
+#### 08.05.2018
+#### Version 1.0.18
+##### ADD
+- Access rules for the model eq_deactivate_old_records_func
+
 #### 04.05.2018
 #### Version 1.0.17
 ##### ADD
