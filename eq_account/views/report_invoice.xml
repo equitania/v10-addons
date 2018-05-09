@@ -473,7 +473,7 @@
                                         <span t-esc="', '.join(map(lambda x: x.description or x.name, l.invoice_line_tax_ids))"/>
                                     </td>
                                     <td class="text-right" groups="sale.group_show_price_subtotal">
-                                        <span t-esc="l.get_subtotal(l.price_unit, l.discount, eq_move_id.product_qty)"
+                                        <span t-esc="l.get_subtotal(l.price_unit, l.discount, l.quantity)"
                                             t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                     </td>
 
