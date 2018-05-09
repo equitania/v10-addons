@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 09.05.2018
+#### Version 1.0.54
+##### FIX
+- fix if you use a product_uom like 8x1 pieces.
+
 #### 27.04.2018
 #### Version 1.0.53
 ##### CHG
