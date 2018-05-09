@@ -1,5 +1,10 @@
 ## Modul eq_mail_templates
 
+#### 10.05.2018
+#### Version 1.0.5
+#####  CHG
+- changes in mail footer based on the change in eq_res_partner for company eq_house_no; delete <br> after street ( LO-15 )
+
 #### 19.04.2018
 #### Version 1.0.4
 ##### ADD

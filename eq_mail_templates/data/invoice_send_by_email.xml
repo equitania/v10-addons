@@ -53,7 +53,7 @@
                               <td valign="middle" align="left" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
                                 ${object.company_id.name}<br/>
                                 % if object.company_id.street:
-                                    ${object.company_id.street}<br>
+                                    ${object.company_id.street}
                                 % endif
                                 % if object.company_id.eq_house_no:
                                    ${object.company_id.eq_house_no}<br>
@@ -145,7 +145,7 @@
                               <td valign="middle" align="left" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
                                 ${object.company_id.name}<br/>
                                 % if object.company_id.street:
-                                    ${object.company_id.street}<br>
+                                    ${object.company_id.street}
                                 % endif
                                 % if object.company_id.eq_house_no:
                                    ${object.company_id.eq_house_no}<br>
