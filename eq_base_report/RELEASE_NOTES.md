@@ -1,5 +1,10 @@
 ## Modul eq_base_report
 
+#### 17.05.2018
+#### Version 1.0.31
+##### CHG
+- add css class for eq_hr_time_management
+
 #### 07.03.2018
 #### Version 1.0.30
 ##### CHG

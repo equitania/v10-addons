@@ -18,6 +18,10 @@ td {
 	font-size: 11px!important;
 }
 
+table.eq-hr-timemangement td {
+	font-size:8px!important;
+}
+
 .border-black td {
 	border-top: 1px solid black !important;
 }
