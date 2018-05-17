@@ -14,7 +14,7 @@
                     <separator string="Email Settings"/>
                     <div>
                         <p>
-                            <label string="You need to select a System Mail Server. Otherwiese it will run into an error."/>
+                            <label string="You need to select a System Mail Server. Otherwise it will run into an error."/>
                         </p>
                     </div>
                     <group>

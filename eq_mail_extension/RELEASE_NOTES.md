@@ -1,5 +1,10 @@
 ## Modul eq_mail_extension
 
+#### 17.05.2018
+#### Version 1.0.40
+##### FIX
+- correct writing of Otherwiese into Otherwise in xml & po-files
+
 #### 27.04.2018
 #### Version 1.0.39
 ##### CHG

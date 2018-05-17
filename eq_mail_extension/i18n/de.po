@@ -186,6 +186,6 @@ msgstr "Benutzer"
 
 #. module: eq_mail_extension
 #: view:eq_mail_config.settings:eq_mail_extension.view_eq_mail_configuration
-msgid "You need to select a System Mail Server. Otherwiese it will run into an error."
+msgid "You need to select a System Mail Server. Otherwise it will run into an error."
 msgstr "Sie müssen einen Standard Mail Server erfassen, sonst können keine System E-Mails versandt werden."
 
