@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 22.05.2018
+#### Version 1.0.31
+##### CHG
+- Remove readonly from plz for contact type 'contact'.
+
 #### 26.04.2018
 #### Version 1.0.30
 ##### CHG
