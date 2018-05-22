@@ -1,6 +1,11 @@
 ## Modul eq_stock
 
 #### 08.05.2018
+#### Version 1.0.19
+##### CHG
+- change name field of stock.move from char to text (qmk mail).
+
+#### 08.05.2018
 #### Version 1.0.18
 ##### ADD
 - Access rules for the model eq_deactivate_old_records_func

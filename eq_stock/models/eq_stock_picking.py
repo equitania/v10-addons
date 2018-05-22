@@ -29,3 +29,9 @@ class eq_stock_picking(models.Model):
     eq_footer_text = fields.Html(string="Footer")
     eq_use_page_break_after_header = fields.Boolean(string='Page break after header text')
     eq_use_page_break_before_footer = fields.Boolean(string='Page break before footer text')
+
+
+class eq_stock_move(models.Model):
+    _inherit = 'stock.move'
+
+    name = fields.Text('Description', index=True, required=True)
