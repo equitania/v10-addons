@@ -18,7 +18,7 @@ msgstr ""
 #. module: eq_website_cookie_notice
 #: model:ir.ui.view,arch_db:eq_website_cookie_notice.message
 msgid ". To disable them, configure your browser properly. If you keep using this website, you are accepting those."
-msgstr ". Um sie zu deaktivieren, konfigurieren Sie Ihren Browser richtig. Wenn Sie diese Website weiter nutzen, akzeptieren Sie diese."
+msgstr " "
 
 #. module: eq_website_cookie_notice
 #: model:ir.ui.view,arch_db:eq_website_cookie_notice.message
@@ -28,10 +28,10 @@ msgstr "OK"
 #. module: eq_website_cookie_notice
 #: model:ir.ui.view,arch_db:eq_website_cookie_notice.message
 msgid "We use cookies in this website. Read about them in our"
-msgstr "Wir verwenden Cookies in dieser Webseite. Lesen Sie mehr zu diesen in unserer"
+msgstr "Diese Webseite verwendet Cookies. Cookies helfen uns bei der Bereitstellung unserer Dienste. Durch die Nutzung unserer Dienste erklären Sie sich damit einverstanden. Um Cookies zu deaktivieren, werden Sie gebeten die entsprechende Option in den Systemeinstellungen Ihres Browsers zu deaktivieren. Lesen Sie mehr dazu in unserer "
 
 #. module: eq_website_cookie_notice
 #: model:ir.ui.view,arch_db:eq_website_cookie_notice.message
 msgid "privacy policy"
-msgstr "Datenschutzerklärung"
+msgstr "Datenschutzerklärung "
 
