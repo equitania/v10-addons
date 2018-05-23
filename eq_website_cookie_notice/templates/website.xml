@@ -11,7 +11,7 @@
 
 	<template id="message" name="Cookies notice">
 		<div t-if="request and
-			not request.session.get('accepted_cookies')"
+			not request.session.get('accepted_cookies') and not request.httprequest.cookies.get('accepted_cookies')"
 			id="eq_website_cookie_notice"
 			class="container-fluid bg-warning cc-cookies">
 			<div class="container">

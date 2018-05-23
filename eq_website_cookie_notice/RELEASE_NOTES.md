@@ -1,5 +1,10 @@
 ## Modul eq_website_cookie_notice
 
+### 23.05.2018
+#### Version 1.0.7
+##### CHG
+- Change of logic for validity of created cookie
+
 ### 22.09.2017
 #### Version 1.0.6
 ##### FIX

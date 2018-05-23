@@ -23,7 +23,7 @@
     'name': 'Equitania Cookie Notiz',
     'summary': 'Verbesserte Version der Cookie Notiz für Website',
     'description': 'Cookie Notiz für Website',
-    'version': '1.0.6',
+    'version': '1.0.7',
     'category': 'Website',
     'author': "Equitania Software GmbH",
 
