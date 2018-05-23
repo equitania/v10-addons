@@ -1,5 +1,10 @@
 ## Modul eq_product
 
+#### 23.05.2018
+#### Version 1.0.26
+##### ADD
+- Add function 'eq_product_number_update' to view of product.template and product.product
+
 #### 03.05.2018
 #### Version 1.0.25
 ##### FIX
