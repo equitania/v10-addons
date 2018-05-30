@@ -363,7 +363,11 @@
                                         <t
                                                 t-if="not o.dest_address_id and o.picking_type_id and o.picking_type_id.warehouse_id">
                                             <div t-field="o.picking_type_id.warehouse_id.partner_id.name"/>
-                                            <div t-field="o.picking_type_id.warehouse_id.partner_id.street"/>
+                                            <div>
+                                                <h t-field="o.picking_type_id.warehouse_id.partner_id.street"/><h t-if="o.picking_type_id.warehouse_id.partner_id.eq_house_no">
+                                                <h t-field="o.picking_type_id.warehouse_id.partner_id.eq_house_no"/>
+                                                </h>
+                                            </div>
                                             <div t-if="o.picking_type_id.warehouse_id.partner_id.street2">
                                                 <div t-field="o.picking_type_id.warehouse_id.partner_id.street2"/>
                                             </div>

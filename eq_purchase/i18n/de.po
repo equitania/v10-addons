@@ -136,7 +136,7 @@ msgstr "<span>Angebotsdatum</span>"
 #: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
 #: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchasequotation_document
 msgid "<span>Purchase quotation</span>"
-msgstr "<span>Einkaufsanfrage</span>"
+msgstr "<span>Angebotsanfrage</span>"
 
 #. module: eq_purchase
 #: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document

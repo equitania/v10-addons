@@ -1,5 +1,11 @@
 ## Modul eq_purchase
 
+#### 30.05.2018
+#### Version 1.0.35
+##### FIX
+- fixing the reports report_puchase_quotation & report_purchase_order with missing eq_house_nr for deliver address
+- change german translation of "Purchase quotation" in Angebotsanfrage
+
 #### 10.04.2018
 #### Version 1.0.34
 ##### ADD
