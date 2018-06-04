@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="1">
+
+		<!--Default Notification Email template -->
+        <record id="eq_mail_template_data_notification_email_default" model="mail.template">
+            <field name="name">Notification Email</field>
+			<field name="eq_email_template_version">1</field>
+			<field name="subject">${object.subject or (object.record_name and 'Re: %s' % object.record_name) or (object.parent_id and object.parent_id.subject and 'Re: %s' % object.parent_id.subject) or (object.parent_id and object.parent_id.record_name and 'Re: %s' % object.parent_id.record_name)}</field>
+            <field name="model_id" ref="mail.model_mail_message"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html"><![CDATA[<html>
+                <head></head>
+                % set record = ctx.get('record')
+                % set company = record and record.company_id or user.company_id
+                <body style="margin: 0; padding: 0;">
+                <table border="0" width="100%" cellpadding="0" bgcolor="#ededed" style="padding: 20px; background-color: #ededed" summary="o_mail_notification">
+                    <tbody>
+
+
+
+                      <!-- CONTENT -->
+                      <tr>
+                        <td align="center" style="min-width: 590px;">
+                          <table width="590" border="0" cellpadding="0" bgcolor="#ededed" style="min-width: 590px; padding: 20px;">
+                            <tbody>
+
+                                 ${object.body | safe}
+                                % if ctx.get('tracking'):
+
+                                    % for tracking in ctx['tracking']
+                                       <p>${tracking[0]} : ${tracking[1]} -&gt; ${tracking[2]}</p>
+                                    % endfor
+
+                                % endif
+
+                                % if ctx.get('signature'):
+                                    ${ctx['signature'] | safe}
+                                % endif
+                                <br/>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+
+
+                      <!-- FOOTER -->
+                      <tr>
+                        <td align="center" style="min-width: 590px;">
+                          <table width="590" border="0" cellpadding="0" bgcolor="#575757" style="min-width: 590px; background-color: #575757; padding: 20px;">
+                            <tr>
+                              <td valign="middle" align="left" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
+                                <strong>${company.name}</strong><br/>
+                                ${company.street} ${company.eq__house_no or ''}<br/>
+                                ${company.zip or ''} ${company.city or ''}<br/>
+                                ${company.country_id.name or ''}
+                              </td>
+                              <td valign="middle" align="right" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
+                                <t t-if="company.website">
+                                    <a href="${company.website}" style="text-decoration:none; color: white;">
+                                        ${company.website}
+                                    </a>
+                                    <br/>
+                                    Telefon: ${company.phone or ''}
+                                </t>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+                </body>
+                </html>
+            ]]></field>
+        </record>
+
+
+	  	<record id="eq_mail_template_data_notification_email_default_de" model="ir.translation">
+            <field name="name">mail.template,body_html</field>
+            <!--<field name="res_id">21</field>-->
+			<field name="res_id" ref="eq_mail_template_data_notification_email_default"/>
+            <field name="lang">de_DE</field>
+			<field name="value"><![CDATA[<html>
+                <head></head>
+                % set record = ctx.get('record')
+                % set company = record and record.company_id or user.company_id
+                <body style="margin: 0; padding: 0;">
+                <table border="0" width="100%" cellpadding="0" bgcolor="#ededed" style="padding: 20px; background-color: #ededed" summary="o_mail_notification">
+                    <tbody>
+
+
+
+                      <!-- CONTENT -->
+                      <tr>
+                        <td align="center" style="min-width: 590px;">
+                          <table width="590" border="0" cellpadding="0" bgcolor="#ededed" style="min-width: 590px; padding: 20px;">
+                            <tbody>
+
+                                 ${object.body | safe}
+                                % if ctx.get('tracking'):
+
+                                    % for tracking in ctx['tracking']
+                                       <p>${tracking[0]} : ${tracking[1]} -&gt; ${tracking[2]}</p>
+                                    % endfor
+
+                                % endif
+
+                                % if ctx.get('signature'):
+                                    ${ctx['signature'] | safe}
+                                % endif
+                                <br/>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+
+
+                      <!-- FOOTER -->
+                      <tr>
+                        <td align="center" style="min-width: 590px;">
+                          <table width="590" border="0" cellpadding="0" bgcolor="#575757" style="min-width: 590px; background-color: #575757; padding: 20px;">
+                            <tr>
+                              <td valign="middle" align="left" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
+                                <strong>${company.name}</strong><br/>
+                                ${company.street} ${company.eq__house_no or ''}<br/>
+                                ${company.zip or ''} ${company.city or ''}<br/>
+                                ${company.country_id.name or ''}
+                              </td>
+                              <td valign="middle" align="right" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
+                                <t t-if="company.website">
+                                    <a href="${company.website}" style="text-decoration:none; color: white;">
+                                        ${company.website}
+                                    </a>
+                                    <br/>
+                                    Telefon: ${company.phone or ''}
+                                </t>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+                </body>
+                </html>
+            ]]></field>
+		</record>
+
+
+		<record id="eq_mail_template_data_notification_email_default_name" model="ir.translation" >
+            <field name="name">mail.template,name</field>
+			<field name="res_id" ref="eq_mail_template_data_notification_email_default"/>
+            <field name="lang">de_DE</field>
+            <field name="type">model</field>
+            <field name="state">translated</field>
+           <field name="value">Benachrichtigung</field></record>
+
+
+         <record id="eq_mail_template_data_notification_email_default_subject" model="ir.translation">
+             <field name="name">mail.template,subject</field>
+			 <field name="res_id" ref="eq_mail_template_data_notification_email_default"/>
+             <field name="lang">de_DE</field>
+             <field name="state">translated</field>
+            <field name="value">${object.subject or (object.record_name and 'Re: %s' % object.record_name) or (object.parent_id and object.parent_id.subject and 'Re: %s' % object.parent_id.subject) or (object.parent_id and object.parent_id.record_name and 'Re: %s' % object.parent_id.record_name)}</field>
+         </record>
+
+
+
+
+	</data>
+</odoo>
