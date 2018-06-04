@@ -1,5 +1,10 @@
 ## Modul eq_product
 
+#### 04.06.2018
+#### Version 1.0.27
+##### FIX
+- generate numbers in product.product was calculate in +2 step (BugFix)
+
 #### 23.05.2018
 #### Version 1.0.26
 ##### ADD

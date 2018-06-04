@@ -72,10 +72,24 @@ class eq_product_product(models.Model):
         #     seq = self.env['ir.sequence'].get('eq_product_no')
         #     vals['default_code'] = seq
         if 'default_code' not in vals or vals['default_code'] is False:
-            seq = self.env['ir.sequence'].get('eq_product_no')
+            if 'product_tmpl_id' in vals:
+                if 'attribute_value_ids' in vals:
+                    if len(vals['attribute_value_ids'][0][2]) > 0:
+                        seq = self.env['ir.sequence'].get('eq_product_no')
 
-            vals['default_code'] = seq
-            return super(eq_product_product, self).create(vals)
+                        vals['default_code'] = seq
+                        return super(eq_product_product, self).create(vals)
+                    else:
+                        return super(eq_product_product, self).create(vals)
+
+                else:
+                    return super(eq_product_product, self).create(vals)
+            else:
+                seq = self.env['ir.sequence'].get('eq_product_no')
+
+                vals['default_code'] = seq
+                return super(eq_product_product, self).create(vals)
+
         else:
             prod_rec = vals['default_code']
             if len(prod_rec) >= min_prefix_count and len(prod_rec) <= max_prefix_count:
@@ -246,15 +260,19 @@ class eq_product_template(models.Model):
 
         # Nummer wurde nicht eingegeben, wir müssen sie generieren
         if 'default_code' not in vals or vals['default_code'] is False:
-            seq = self.env['ir.sequence'].get('eq_product_no')
-            if 'barcode' in vals:
-                if vals['barcode']:
-                    pass
-                else:
-                    vals['barcode'] = seq
+            if 'create_product_product' in self._context:
+                if self._context['create_product_product'] == True:
+                    return super(eq_product_template, self).create(vals)
+            else:
+                seq = self.env['ir.sequence'].get('eq_product_no')
+                if 'barcode' in vals:
+                    if vals['barcode']:
+                        pass
+                    else:
+                        vals['barcode'] = seq
 
-            vals['default_code'] = seq
-            return super(eq_product_template, self).create(vals)
+                vals['default_code'] = seq
+                return super(eq_product_template, self).create(vals)
         else:
             prod_rec = vals['default_code']
             if len(prod_rec) >= min_prefix_count and len(prod_rec) <= max_prefix_count:
