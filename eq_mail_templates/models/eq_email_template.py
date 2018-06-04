@@ -52,13 +52,17 @@ class eq_install_func(models.Model):
 
         delete_default_template = self.env['mail.template'].sudo().search([('name', '=', 'Invoice - Send by Email')])
         delete_template = self.env['mail.template'].sudo().search([('name', '=', 'Invoice -  Send by E-Mail')])
-        delete_template_3 = self.env['mail.template'].sudo().search([('eq_email_template_version', '=', 0), ('name', '=', 'Rechnung')])
+        delete_template_3 = self.env['mail.template'].sudo().search([('eq_email_template_version', '=', 0),('name', '=', 'Rechnung')])
+        delete_template_4 = self.env['mail.template'].sudo().search([('eq_email_template_version', '=', 0),('name', '=', 'Notification Email')])
+
         for delf_default_record in delete_default_template:
             delf_default_record.unlink()
         for del_record in delete_template:
             del_record.unlink()
         for del_3_record in delete_template_3:
             del_3_record.unlink()
+        for del_4_record in delete_template_4:
+            del_4_record.unlink()
 
     def _eq_delete_default_templates_purchase(self):
         """

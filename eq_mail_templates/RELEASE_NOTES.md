@@ -1,5 +1,10 @@
 ## Modul eq_mail_templates
 
+#### 04.06.2018
+#### Version 1.0.6
+#####  ADD
+- insert notification mail from module eq_mail_extension
+
 #### 10.05.2018
 #### Version 1.0.5
 #####  CHG
