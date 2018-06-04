@@ -21,7 +21,7 @@
 
 {
     'name': "Equitania E-Mail-Erweiterung",
-    'version': '1.0.40',
+    'version': '1.0.41',
     'license': 'AGPL-3',
     'category': 'Mail',
     'description': """Using different smptp settings for user's outgoing emails
@@ -33,7 +33,7 @@
     'data': [
              "security/ir.model.access.csv",
              "data/email_template_function.xml",
-             "data/mail_template_data.xml",
+             #"data/mail_template_data.xml",
              "views/eq_mail_extension_view.xml",
              "views/eq_mail_config_view.xml",
              "views/eq_base_config_settings_view.xml",

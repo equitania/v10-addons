@@ -1,5 +1,10 @@
 ## Modul eq_mail_extension
 
+#### 04.06.2018
+#### Version 1.0.41
+##### CHG
+- commented out mail_template_data.xml
+
 #### 17.05.2018
 #### Version 1.0.40
 ##### FIX
