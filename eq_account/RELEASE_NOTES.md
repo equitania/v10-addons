@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 06.06.2018
+#### Version 1.0.55
+##### FIX
+- add account_account Security for sales_team view all documents.
+
 #### 09.05.2018
 #### Version 1.0.54
 ##### FIX
