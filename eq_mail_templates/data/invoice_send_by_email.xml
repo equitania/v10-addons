@@ -10,7 +10,7 @@
             <field name="subject">${object.company_id.name} Invoice (Ref ${object.number or 'n/a'})</field>
             <field name="partner_to">${object.partner_id.id}</field>
             <field name="model_id" ref="account.model_account_invoice"/>
-            <field name="auto_delete" eval="True"/>
+            <field name="auto_delete" eval="False"/>
             <field name="report_template" ref="account.account_invoices"/>
             <field name="report_name">Invoice_${(object.number or '').replace('/','_')}_${object.state == 'draft' and 'draft' or ''}</field>
             <field name="lang">${object.partner_id.lang}</field>
@@ -48,7 +48,7 @@
                     <br>
 
                        <div align="center" style="min-width: 590px;">
-                          <table width="590" border="0" cellpadding="0" bgcolor="#626262" style="min-width: 590px; background-color: rgb(98,98,98); padding: 20px; border-collapse:separate;">
+                          <table border="0" cellpadding="0" bgcolor="#626262" style="width: 100%; background-color: rgb(98,98,98); padding: 20px; border-collapse:separate;">
                             <tr>
                               <td valign="middle" align="left" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
                                 ${object.company_id.name}<br/>
@@ -104,7 +104,7 @@
                     <tbody>
                       <tr>
                         <td align="center" style="min-width: 590px;">
-                          <table width="590" border="0" cellpadding="0" bgcolor="#ffffff" style="min-width: 590px; background-color: rgb(255, 255, 255); padding: 20px;">
+                          <table border="0" cellpadding="0" bgcolor="#ffffff" style="width: 100%; background-color: rgb(255, 255, 255); padding: 20px;">
                             <tbody>
                               <td valign="top" style="font-family:Arial,Helvetica,sans-serif; color: #555; font-size: 14px;">
                                  % set record = ctx.get('record')
@@ -140,7 +140,7 @@
                     <br>
                     <!-- Footer -->
                     <div align="center" style="min-width: 590px;">
-                          <table width="590" border="0" cellpadding="0" bgcolor="#626262" style="min-width: 590px; background-color: rgb(98,98,98); padding: 20px; border-collapse:separate;">
+                          <table border="0" cellpadding="0" bgcolor="#626262" style="width: 100%; background-color: rgb(98,98,98); padding: 20px; border-collapse:separate;">
                             <tr>
                               <td valign="middle" align="left" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
                                 ${object.company_id.name}<br/>
@@ -244,87 +244,6 @@
              <field name="state">translated</field>
             <field name="value">${object.company_id.name} Rechnung (Ref ${object.number or 'n/a'})</field>
          </record>
-
-
-        <!--Default Notification Email template for invoices
-		Änderung der Vorlage - wir wollen keine Infozeile mit "Powered by" in der E-Mail ausgeben
-		-->
-        <!--<record id="sale.mail_template_data_notification_email_sale_order" model="mail.template">
-            <field name="name">Template</field>
-            <field name="eq_email_template_version">1</field>
-			<field name="subject">Template</field>
-            <field name="model_id" ref="mail.model_mail_message"/>
-            <field name="auto_delete" eval="False"/>
-            <field name="body_html"><![CDATA[<html>
-                <head></head>
-                % set record = ctx.get('record')
-                % set company = record and record.company_id or user.company_id
-                <body style="margin: 0; padding: 0;">
-                <table border="0" width="100%" cellpadding="0" bgcolor="#ededed" style="padding: 20px; background-color: #ededed" summary="o_mail_notification">
-                    <tbody>
-
-                      &lt;!&ndash; HEADER &ndash;&gt;
-                      &lt;!&ndash;<tr>
-                        <td align="center" style="min-width: 590px;">
-                          <table width="590" border="0" cellpadding="0" bgcolor="blue" style="min-width: 590px; background-color: blue; padding: 20px;">
-                            <tr>
-                              <td valign="middle">
-                                  <span style="font-size:20px; color:white; font-weight: bold;">
-                                      ${object.record_name}
-                                  </span>
-                              </td>
-                              <td valign="middle" align="right">
-                                 <img src="/logo.png?company=${company.id}" style="padding: 0px; margin: 0px; height: auto; width: 80px;" alt="${company.name}">
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>&ndash;&gt;
-
-                      &lt;!&ndash; CONTENT &ndash;&gt;
-                      <tr>
-                        <td align="center" style="min-width: 590px;">
-                          <table width="590" border="0" cellpadding="0" bgcolor="#ffffff" style="min-width: 590px; background-color: rgb(255, 255, 255); padding: 20px;">
-                            <tbody>
-                              <td valign="top" style="font-family:Arial,Helvetica,sans-serif; color: #555; font-size: 14px;">
-                                ${object.body | safe}
-                              </td>
-                            </tbody>
-                          </table>
-                        </td>
-                      </tr>
-
-                      &lt;!&ndash; FOOTER &ndash;&gt;
-                      <tr>
-                        <td align="center" style="min-width: 590px;">
-                          <table width="590" border="0" cellpadding="0" bgcolor="#575757" style="min-width: 590px; background-color: #575757; padding: 20px;">
-                            <tr>
-                              <td valign="middle" align="left" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
-                                <strong>${company.name}</strong><br/>
-                                ${company.street} ${company.eq__house_no or ''}<br/>
-                                ${company.zip or ''} ${company.city or ''}<br/>
-                                ${company.country_id.name or ''}
-                              </td>
-                              <td valign="middle" align="right" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
-                                <t t-if="company.website">
-                                    <a href="${company.website}" style="text-decoration:none; color: white;">
-                                        ${company.website}
-                                    </a>
-                                    &lt;!&ndash;<br/>
-                                    ${company.phone or ''}&ndash;&gt;
-                                </t>
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                    </tbody>
-                </table>
-                </body>
-                </html>
-            ]]></field>
-        </record>-->
-
 
 	</data>
 </odoo>

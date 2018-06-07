@@ -22,19 +22,20 @@
 {
     'name': 'Equitania Mail Templates',
     'license': 'AGPL-3',
-    'version': '1.0.6',
+    'version': '1.0.7',
     'description': """
         Verbesserte Mail Templates für Sales / Purchase / Account Invoice
     """,
     'author': 'Equitania Software GmbH',
     'website': 'www.myodoo.de',
     'depends': ['base_setup','mail','eq_account','eq_sale','eq_purchase'],
-    'category' : 'General Improvements',
+    'category': 'General Improvements',
     'summary': 'Mail Templates',
 
     'data': [
         "security/ir.model.access.csv",
         "data/mail_template_data.xml",
+        "data/auth_signup.xml",
         "data/email_template_function_invoice.xml",
         "data/email_template_function_purchase.xml",
         "data/email_template_function_reset_pw.xml",
