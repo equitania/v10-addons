@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 08.06.2018
+#### Version 1.0.32
+##### CHG
+- Ticket #5777: when type of adress now not set => 'contact'
+
 #### 22.05.2018
 #### Version 1.0.31
 ##### CHG

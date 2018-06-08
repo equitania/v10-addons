@@ -129,3 +129,19 @@ class eq_res_partner(models.Model):
             elif partner.supplier_number != 'False' and partner.supplier_number:
                 deb_cred = partner.supplier_number
             partner.eq_deb_cred_number = deb_cred
+
+    @api.model
+    def create(self, vals):
+        res = super(eq_res_partner, self).create(vals)
+        if self.parent_id:
+            if not self.type:
+                self.type = 'contact'
+        return res
+
+    @api.multi
+    def write(self, vals):
+        res = super(eq_res_partner, self).write(vals)
+        if self.parent_id:
+            if not self.type:
+                self.type = 'contact'
+        return res

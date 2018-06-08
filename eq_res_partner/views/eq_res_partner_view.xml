@@ -86,6 +86,10 @@
 				<!--<xpath expr="//field[@name='customer_number']" position="replace">-->
                 <!--</xpath>-->
 
+				<!--<xpath expr="//field[@name='type']" position="replace">-->
+					<!--<field name="type" attrs="{'required' : [('parent_id', '=', True)], 'invisible': [('parent_id','=', False)]}"/>-->
+                <!--</xpath>-->
+
 				<xpath expr="//field[@name='phone']" position="after">
 					<field name="eq_phone2" widget="phone" />
                 </xpath>
