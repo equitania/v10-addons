@@ -1,5 +1,11 @@
 ## Modul eq_account
 
+#### 11.06.2018
+#### Version 1.0.56
+##### FIX
+- Ticket 5800: fix in invoice report when there is a backorder_id.
+- Ticket 5802: fix change to product_uom_qty (check also with wdm)
+
 #### 06.06.2018
 #### Version 1.0.55
 ##### FIX

@@ -413,6 +413,8 @@
                         <t t-foreach="layout_category['lines']" t-as="l">
                             <t t-if="l.eq_move_ids">
                                 <tr t-foreach="l.eq_move_ids" t-as="eq_move_id">
+                                    <t t-if="l.check_retoure(eq_move_id)">
+                                    <!--<t t-if="eq_move_id and not eq_move_id.picking_id.backorder_id">-->
                                     <td>
                                         <span t-esc="pos"/>
                                     </td>
@@ -473,11 +475,13 @@
                                         <span t-esc="', '.join(map(lambda x: x.description or x.name, l.invoice_line_tax_ids))"/>
                                     </td>
                                     <td class="text-right" groups="sale.group_show_price_subtotal">
-                                        <span t-esc="l.get_subtotal(l.price_unit, l.discount, l.quantity)"
+                                        <span t-esc="l.get_subtotal(l.price_unit, l.discount, eq_move_id.product_uom_qty)"
                                             t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                     </td>
 
                                     <t t-set="pos" t-value="pos + 1"/>
+                                    <!--</t>-->
+                                    </t>
                                 </tr>
                             </t>
 

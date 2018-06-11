@@ -80,6 +80,15 @@ class report_account_invoice_line(models.Model):
     eq_move_id = fields.Many2one('stock.move', string="Move")   #Funktioniert, nur nicht bei Teillieferungen
 
     @api.multi
+    def check_retoure(self, move):
+        name = move.picking_id.name
+        picking_obj = self.env['stock.picking'].search([('origin','=', name),('picking_type_code','=','incoming')])
+        if len(picking_obj) > 0:
+            return False
+        else:
+            return True
+
+    @api.multi
     def get_subtotal(self, price_per_unit, discount, qty):
         """
         Berechnung des Preis pro Zeile
