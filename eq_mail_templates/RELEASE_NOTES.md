@@ -1,5 +1,15 @@
 ## Modul eq_mail_templates
 
+#### 11.06.2018
+#### Version 1.0.7
+#####  ADD
+- Adding five new E-Mail Templates...
+Calendar: Date Update
+Calendar: Meeting Invitation
+Calendar: Reminder
+Email Contract Template
+Portal: new use
+
 #### 04.06.2018
 #### Version 1.0.6
 #####  ADD
