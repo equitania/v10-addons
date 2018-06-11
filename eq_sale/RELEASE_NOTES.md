@@ -1,5 +1,11 @@
 ## Modul eq_sale
 
+#### 11.06.2018
+#### Version 1.0.80
+##### CHG
+- delete sequence from sale.order.lines tree view because now oca module sale_order_line_sequence
+- add dependency to sale_order_line_sequence
+
 #### 18.04.2018
 #### Version 1.0.79
 ##### ADD
