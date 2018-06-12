@@ -35,18 +35,18 @@
     'data': [
         "security/ir.model.access.csv",
         "data/mail_template_data.xml",
-        "data/calendar_date_updated.xml",
-        "data/calendar_meeting_invitation.xml",
-        "data/calendar_reminder.xml",
-        "data/contract_template.xml",
-        "data/crm_lead_data.xml",
-        "data/auth_signup.xml",
+        #"data/calendar_date_updated.xml",        #neu
+        #"data/calendar_meeting_invitation.xml",        #neu
+        #"data/calendar_reminder.xml",        #neu
+        #"data/contract_template.xml",        #neu
+        #"data/crm_lead_data.xml",        #neu
+        #"data/auth_signup.xml",        #neu
         "data/email_template_function_invoice.xml",
         "data/email_template_function_purchase.xml",
         "data/email_template_function_reset_pw.xml",
         "data/email_template_function_sale.xml",
         "data/invoice_send_by_email.xml",
-        "data/portal_data.xml",
+        #"data/portal_data.xml",        #neu
         "data/purchase_order_send_by_email.xml",
         "data/reset_password.xml",
         "data/rfq_send_by_email.xml",
