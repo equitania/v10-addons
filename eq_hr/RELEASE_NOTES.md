@@ -1,5 +1,10 @@
 ## Modul eq_hr
 
+#### 12.06.2018
+#### Version 1.0.6
+##### CHG
+- Ticket 5808: access rights problem solved => add sudo to _get_users_to_subscribe function.
+
 #### 04.05.2018
 #### Version 1.0.5
 ##### CHG
