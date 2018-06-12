@@ -1,5 +1,10 @@
 ## Modul eq_mail_templates
 
+#### 12.06.2018
+#### Version 1.0.8
+#####  ADD
+- Lead: Reminder (in EN/DE)
+
 #### 11.06.2018
 #### Version 1.0.7
 #####  ADD
