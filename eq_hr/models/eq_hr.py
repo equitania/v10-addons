@@ -98,3 +98,17 @@ class eq_hr_employee(models.Model):
         res = super(eq_hr_employee, self).write(values)
 
         return res
+
+class eq_hr_employee(models.Model):
+    _inherit = 'hr.expense.sheet'
+
+    def _get_users_to_subscribe(self, employee=False):
+        users = self.env['res.users']
+        employee = employee or self.employee_id
+        if employee.user_id:
+            users |= employee.user_id
+        if employee.parent_id:
+            users |= employee.sudo().parent_id.user_id
+        if employee.department_id and employee.department_id.manager_id and employee.parent_id != employee.department_id.manager_id:
+            users |= employee.department_id.manager_id.user_id
+        return users
