@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 12.06.2018
+#### Version 1.0.57
+##### FIX
+- Ticket 5800: addition bugfix.
+
 #### 11.06.2018
 #### Version 1.0.56
 ##### FIX

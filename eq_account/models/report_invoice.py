@@ -81,10 +81,16 @@ class report_account_invoice_line(models.Model):
 
     @api.multi
     def check_retoure(self, move):
+
         name = move.picking_id.name
         picking_obj = self.env['stock.picking'].search([('origin','=', name),('picking_type_code','=','incoming')])
+        return_move = self.env['stock.move'].search([('picking_id','=',picking_obj.id)])
+
         if len(picking_obj) > 0:
-            return False
+            for r_move in return_move:
+                if r_move.product_id.id == move.product_id.id:
+                    return False
+            return True
         else:
             return True
 
