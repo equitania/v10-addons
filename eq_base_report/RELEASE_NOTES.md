@@ -1,5 +1,10 @@
 ## Modul eq_base_report
 
+#### 12.06.2018
+#### Version 1.0.32
+##### ADD
+- eq_house_no into the report-Footer
+
 #### 17.05.2018
 #### Version 1.0.31
 ##### CHG

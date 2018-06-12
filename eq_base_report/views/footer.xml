@@ -13,7 +13,7 @@
 	            <tr>
 	                <td style="">
 	                    <span t-field="company.name"/><br/>
-	                    <h t-field="company.street"/><!--<span t-if="company.eq_house_no"> <span t-field="company.eq_house_no"/></span>--><br/>
+	                    <h t-field="company.street"/> <span t-if="company.eq_house_no"> <span t-field="company.eq_house_no"/></span><br/>
 						<div t-if="company.street2" >
 							<div t-field="company.street2"/>
 						</div>
