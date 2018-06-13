@@ -40,5 +40,13 @@
             <field name="value">${object.subject}</field>
          </record>
 
+        <record id="eq_data_name_mail" model="ir.translation">
+             <field name="name">mail.template,name</field>
+			 <field name="res_id" ref="eq_mail_templates.eq_data_template_mail"/>
+             <field name="lang">de_DE</field>
+             <field name="state">translated</field>
+            <field name="value">Template Verkaufsauftrag</field>
+         </record>
+
     </data>
 </odoo>

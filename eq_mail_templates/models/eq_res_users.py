@@ -53,7 +53,7 @@ class eq_res_users(models.Model):
         template = False
         if create_mode:
             try:
-                template = self.env.ref('auth_signup.set_password_email', raise_if_not_found=False)
+                template = self.env.ref('eq_mail_templates.eq_reset_password_email', raise_if_not_found=False)
             except ValueError:
                 pass
         if not template:

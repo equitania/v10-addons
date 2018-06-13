@@ -1,5 +1,11 @@
 ## Modul eq_mail_templates
 
+#### 13.06.2018
+#### Version 1.0.9
+#####  ADD
+- functionality for new templates
+- delete functionality for old templates
+
 #### 12.06.2018
 #### Version 1.0.8
 #####  ADD

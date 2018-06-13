@@ -3,8 +3,9 @@
 	<data noupdate="1">
 
         <!-- Calendar Meeting Invitation EN-->
-         <record id="eq_calendar_template_meeting_invitation" model="mail.template">
+         <record id="equitania_calendar_template_meeting_invitation" model="mail.template">
              <field name="name">Calendar: Meeting Invitation</field>
+             <field name="eq_email_template_version">1</field>
             <field name="email_from">${object.event_id.user_id.email or ''}</field>
             <field name="subject">${object.event_id.name} invitation</field>
             <field name="model_id" ref="calendar.model_calendar_attendee"/>
@@ -89,10 +90,10 @@
         </record>
 
         <!-- Calendar Meeting Invitation DE -->
-        <record id="eq_calendar_template_meeting_invitation_de" model="ir.translation">
+        <record id="equitania_calendar_template_meeting_invitation_de" model="ir.translation">
             <field name="name">mail.template,body_html</field>
             <!--<field name="res_id">21</field>-->
-			<field name="res_id" ref="eq_calendar_template_meeting_invitation"/>
+			<field name="res_id" ref="equitania_calendar_template_meeting_invitation"/>
             <field name="lang">de_DE</field>
             <field name="value"><![CDATA[
 <div summary="o_mail_template" style="padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top 100%;color:#777777">
@@ -170,17 +171,17 @@
 </div>]]></field>
         </record>
 
-       <record id="eq_calendar_template_meeting_invitation_name" model="ir.translation" >
+       <record id="equitania_calendar_template_meeting_invitation_name" model="ir.translation" >
             <field name="name">mail.template,name</field>
-			<field name="res_id" ref="eq_calendar_template_meeting_invitation"/>
+			<field name="res_id" ref="equitania_calendar_template_meeting_invitation"/>
             <field name="lang">de_DE</field>
             <field name="type">model</field>
             <field name="state">translated</field>
            <field name="value">Kalender: Einladung zum Meeting</field>
        </record>
-        <record id="eq_calendar_template_meeting_invitation_subject" model="ir.translation">
+        <record id="equitania_calendar_template_meeting_invitation_subject" model="ir.translation">
              <field name="name">mail.template,subject</field>
-             <field name="res_id" ref="eq_calendar_template_meeting_invitation"/>
+             <field name="res_id" ref="equitania_calendar_template_meeting_invitation"/>
              <field name="lang">de_DE</field>
              <field name="state">translated</field>
             <field name="value">${object.event_id.name} Einladung</field>

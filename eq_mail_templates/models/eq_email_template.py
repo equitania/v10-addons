@@ -92,3 +92,51 @@ class eq_install_func(models.Model):
         email_templates = self.env['mail.template'].sudo().search([('name','=','Sales Order - Send by Email')])
         for record in email_templates:
             record.unlink()
+
+        email_templates = self.env['mail.template'].sudo().search([('eq_email_template_version', '=', False),('name', '=', 'Notification Email')])
+        for record in email_templates:
+            record.unlink()
+
+    ################################### Version 2
+
+    def _eq_delete_default_templates_contract(self):
+        """
+        Wir löschen hier Default E-Mail Vorlage für die Sale, die wir durch unsere Version ersetzen
+        """
+        _logger.info("** Deleting default email templates **")
+        email_templates = self.env['mail.template'].sudo().search([('eq_email_template_version', '=', False),('name','=','Email Contract Template')])
+        for record in email_templates:
+            record.unlink()
+
+    def _eq_delete_default_templates_calendar(self):
+        """
+        Wir löschen hier Default E-Mail Vorlage für die Sale, die wir durch unsere Version ersetzen
+        """
+        _logger.info("** Deleting default email templates **")
+        email_templates = self.env['mail.template'].sudo().search([('eq_email_template_version', '=', False),('name','=','Calendar: Date updated')])
+        for record in email_templates:
+            record.unlink()
+        email_templates_2 = self.env['mail.template'].sudo().search([('eq_email_template_version', '=', False),('name', '=', 'Calendar: Meeting Invitation')])
+        for record in email_templates_2:
+            record.unlink()
+        email_templates_3 = self.env['mail.template'].sudo().search([('eq_email_template_version', '=', False),('name', '=', 'Calendar: Reminder')])
+        for record in email_templates_3:
+            record.unlink()
+
+    def _eq_delete_default_templates_auth(self):
+        """
+        Wir löschen hier Default E-Mail Vorlage für die Sale, die wir durch unsere Version ersetzen
+        """
+        _logger.info("** Deleting default email templates **")
+        email_templates = self.env['mail.template'].sudo().search([('eq_email_template_version', '=', False),('name','=','Auth Signup: Odoo Connection')])
+        for record in email_templates:
+            record.unlink()
+
+    def _eq_delete_default_templates_crm(self):
+        """
+        Wir löschen hier Default E-Mail Vorlage für die Sale, die wir durch unsere Version ersetzen
+        """
+        _logger.info("** Deleting default email templates **")
+        email_templates = self.env['mail.template'].sudo().search([('eq_email_template_version', '=', False),('name','=','Lead: Reminder')])
+        for record in email_templates:
+            record.unlink()

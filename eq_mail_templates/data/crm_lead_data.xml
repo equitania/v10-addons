@@ -3,8 +3,9 @@
 	<data noupdate="1">
 
         <!-- crm Lead EN-->
-         <record id="eq_email_template_opportunity_reminder_mail" model="mail.template">
+         <record id="equitania_email_template_opportunity_reminder_mail" model="mail.template">
             <field name="name">Lead: Reminder</field>
+             <field name="eq_email_template_version">1</field>
             <field name="model_id" ref="crm.model_crm_lead"/>
             <field name="auto_delete" eval="False"/>
             <field name="email_from">${(object.user_id.email or '')|safe}</field>
@@ -21,10 +22,10 @@
         </record>
 
         <!-- crm Lead DE -->
-        <record id="eq_email_template_opportunity_reminder_mail_de" model="ir.translation">
+        <record id="equitania_email_template_opportunity_reminder_mail_de" model="ir.translation">
             <field name="name">mail.template,body_html</field>
             <!--<field name="res_id">21</field>-->
-			<field name="res_id" ref="eq_email_template_opportunity_reminder_mail"/>
+			<field name="res_id" ref="equitania_email_template_opportunity_reminder_mail"/>
             <field name="lang">de_DE</field>
             <field name="value"><![CDATA[
 <p>Sehr geehrte(r) ${object.user_id and object.user_id.name or ''},</p>
@@ -36,17 +37,17 @@
 ]]></field>
         </record>
 
-       <record id="eq_email_template_opportunity_reminder_mail_name" model="ir.translation" >
+       <record id="equitania_email_template_opportunity_reminder_mail_name" model="ir.translation" >
             <field name="name">mail.template,name</field>
-			<field name="res_id" ref="eq_email_template_opportunity_reminder_mail"/>
+			<field name="res_id" ref="equitania_email_template_opportunity_reminder_mail"/>
             <field name="lang">de_DE</field>
             <field name="type">model</field>
             <field name="state">translated</field>
            <field name="value">Interessent: Erinnerung</field>
        </record>
-        <record id="eq_email_template_opportunity_reminder_mail_subject" model="ir.translation">
+        <record id="equitania_email_template_opportunity_reminder_mail_subject" model="ir.translation">
              <field name="name">mail.template,subject</field>
-             <field name="res_id" ref="eq_email_template_opportunity_reminder_mail"/>
+             <field name="res_id" ref="equitania_email_template_opportunity_reminder_mail"/>
              <field name="lang">de_DE</field>
              <field name="state">translated</field>
             <field name="value">Erinnerung: Interessent ${object.name} von ${object.partner_id != False and object.partner_id.name or object.contact_name}</field>

@@ -4,8 +4,8 @@
 
 <!-- Info: Diese E-mail wird auch verwendet um aus dem Backend die "Anleitung mit Odoo zu verbinden" E-Mail zu senden -->
 <!-- Auth Signup EN-->
-         <record id="eq_set_password_email" model="mail.template">
-            <field name="name">A Auth Signup: Odoo Connection</field>
+         <record id="equitania_set_password_email" model="mail.template">
+            <field name="name">Auth Signup: Odoo Connection</field>
 			<field name="subject"><![CDATA[${object.company_id.name} invitation to connect on Odoo]]></field>
              <field name="eq_email_template_version">1</field>
              <field name="model_id" ref="base.model_res_users"/>
@@ -78,10 +78,10 @@
         </record>
 
 <!-- Auth Signup DE -->
-        <record id="eq_set_password_email_de_new" model="ir.translation">
+        <record id="equitania_set_password_email_de_new" model="ir.translation">
             <field name="name">mail.template,body_html</field>
             <!--<field name="res_id">21</field>-->
-			<field name="res_id" ref="eq_set_password_email"/>
+			<field name="res_id" ref="equitania_set_password_email"/>
             <field name="lang">de_DE</field>
             <field name="value"><![CDATA[<html>
               <head></head>
@@ -146,17 +146,17 @@
             ]]></field>
         </record>
 
-       <record id="eq_set_password_email_name" model="ir.translation" >
+       <record id="equitania_set_password_email_name" model="ir.translation" >
             <field name="name">mail.template,name</field>
-			<field name="res_id" ref="eq_set_password_email"/>
+			<field name="res_id" ref="equitania_set_password_email"/>
             <field name="lang">de_DE</field>
             <field name="type">model</field>
             <field name="state">translated</field>
            <field name="value">Einladung zum System</field>
        </record>
-        <record id="eq_set_password_email_subject" model="ir.translation">
+        <record id="equitania_set_password_email_subject" model="ir.translation">
              <field name="name">mail.template,subject</field>
-             <field name="res_id" ref="eq_set_password_email"/>
+             <field name="res_id" ref="equitania_set_password_email"/>
              <field name="lang">de_DE</field>
              <field name="state">translated</field>
             <field name="value">Einladung zum System von ${object.company_id.name}</field>
