@@ -22,7 +22,7 @@
 {
     'name': 'Equitania Verträge Erweiterungen',
     'license': 'AGPL-3',
-    'version': '1.0.0',
+    'version': '1.0.1',
     'description': """
         Equitania Erweiterungen für das Contract Modul der OCA
     """,
@@ -35,6 +35,8 @@
     'data': [
         #"security/ir.model.access.csv"
         "views/eq_contract_view.xml",
+        "data/email_template_function_contract.xml",
+        "data/contract_template.xml",        #neu
 
     ],
     'demo': [],
