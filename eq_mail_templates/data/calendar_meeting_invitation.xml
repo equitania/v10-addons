@@ -23,7 +23,13 @@
                 <p style="font-size: 20px; text-align: center;">Invitation to</p>
                 <p style="font-size: 20px; text-align: center;"><strong>${object.event_id.name}</strong></p>
                 <p>
-                    <strong>Dear ${object.common_name}</strong>,<br />
+                    % if object.partner_id.is_company:
+                        <p>Dear Sir or Madam,</p>
+                    % endif
+                    % if object.partner_id.is_company == False:
+                        <p>Dear ${object.partner_id.title.name or ''} ${object.partner_id.name},<br/>
+                    % endif
+                    <!--<strong>Dear ${object.common_name}</strong>,<br />-->
                     ${object.event_id.user_id.partner_id.name} invited you for the ${object.event_id.name} meeting of ${object.event_id.user_id.company_id.name}.
                 </p>
 
@@ -100,7 +106,13 @@
                 <p style="font-size: 20px; text-align: center;">Einladung zu</p>
                 <p style="font-size: 20px; text-align: center;"><strong>${object.event_id.name}</strong></p>
                 <p>
-                    <strong>Sehr geehrte(r) ${object.common_name}</strong>,<br />
+                    % if object.partner_id.is_company:
+                        <p>Sehr geehrte Damen &amp; Herren,</p>
+                    % endif
+                    % if object.partner_id.is_company == False:
+                        <p>Sehr geehrte(r) ${object.partner_id.title.name or ''} ${object.partner_id.name},<br/>
+                    % endif
+                    <!--<strong>Sehr geehrte(r) ${object.common_name}</strong>,<br />-->
                     ${object.event_id.user_id.partner_id.name} hat Sie eingeladen zu ${object.event_id.name} in einem Meeting von ${object.event_id.user_id.company_id.name}.
                 </p>
                 <table style="margin-top: 20px;"><tr>

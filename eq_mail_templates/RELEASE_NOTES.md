@@ -1,5 +1,9 @@
 ## Modul eq_mail_templates
 
+#### 14.06.2018
+#### Version 1.0.11
+#####  FIX
+- Fixing LAMBDA Error and adding the title for the receiver of the e-mail
 
 #### 14.06.2018
 #### Version 1.0.10

@@ -43,40 +43,6 @@
                     </tbody>
                 </table>
                 <br>
-                <div align="left" style="min-width: 590px;color: #fff;">
-                     <table width="auto" border="0" cellpadding="0" bgcolor="#626262" style="width: 100%; background-color: rgb(98,98,98); padding: 20px; border-collapse:separate;">
-                        <tr>
-                          <td valign="middle" align="left" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
-                            ${object.company_id.name}<br/>
-                            % if object.company_id.street:
-                                ${object.company_id.street}
-                            % endif
-                            % if object.company_id.eq_house_no:
-                               ${object.company_id.eq_house_no}<br>
-                            % endif
-
-                            % if object.company_id.city or object.company_id.zip:
-                                ${object.company_id.zip} ${object.company_id.city}<br>
-                            % endif
-                            % if object.company_id.country_id:
-                              ${object.company_id.country_id.name or ''}<br>
-                            % endif
-
-                          </td>
-                          <td valign="middle" align="right" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
-                            % if object.company_id.email:
-                            <a href="mailto:${object.company_id.email}" style="text-decoration:none; color: #fff;">${object.company_id.email}</a><br/>
-                            % endif
-                            ${object.company_id.phone or ''}<br/>
-                            % if object.company_id.website:
-                                <a href="${object.company_id.website}" style="text-decoration:none; color: #fff;">
-                                    ${object.company_id.website}
-                                </a>
-                            % endif
-                          </td>
-                        </tr>
-                      </table>
-                  </div>
                 </body>
                 </html>
             ]]></field>
@@ -122,40 +88,6 @@
                     </tbody>
                 </table>
                 <br>
-                <div align="left" style="min-width: 590px;color: #fff;">
-                     <table width="auto" border="0" cellpadding="0" bgcolor="#626262" style="width: 100%; background-color: rgb(98,98,98); padding: 20px; border-collapse:separate;">
-                        <tr>
-                          <td valign="middle" align="left" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
-                            ${object.company_id.name}<br/>
-                            % if object.company_id.street:
-                                ${object.company_id.street}
-                            % endif
-                            % if object.company_id.eq_house_no:
-                               ${object.company_id.eq_house_no}<br>
-                            % endif
-
-                            % if object.company_id.city or object.company_id.zip:
-                                ${object.company_id.zip} ${object.company_id.city}<br>
-                            % endif
-                            % if object.company_id.country_id:
-                              ${object.company_id.country_id.name or ''}<br>
-                            % endif
-
-                          </td>
-                          <td valign="middle" align="right" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
-                            % if object.company_id.email:
-                            <a href="mailto:${object.company_id.email}" style="text-decoration:none; color: #fff;">${object.company_id.email}</a><br/>
-                            % endif
-                            ${object.company_id.phone or ''}<br/>
-                            % if object.company_id.website:
-                                <a href="${object.company_id.website}" style="text-decoration:none; color: #fff;">
-                                    ${object.company_id.website}
-                                </a>
-                            % endif
-                          </td>
-                        </tr>
-                      </table>
-                  </div>
                 </body>
                 </html>
             ]]></field>

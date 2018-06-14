@@ -33,22 +33,22 @@
                 <table class="table table-condensed">
                     <thead>
                         <tr>
-                            <th>Productnumber</th>
-                            <th>Product</th>
-                            <th style="text-align:right">Quantity</th>
-                            <th style="text-align:right">Price/unit</th>
-                            <th style="text-align:right">Total</th>
+                            <th style="padding:3px;">Productnumber</th>
+                            <th style="padding:3px;">Product</th>
+                            <th style="text-align:right;padding:3px;">Quantity</th>
+                            <th style="text-align:right;padding:3px;">Price/unit</th>
+                            <th style="text-align:right;padding:3px;">Total</th>
                         </tr>
 
                     </thead>
                 <tbody>
                 %for line in object.order_line:
                 <tr>
-                        <td>${line.product_id.default_code}</td>
-                        <td>${line.product_id.name}</td>
-                        <td style="text-align:right">${'%0.0f' % line.product_uom_qty}</td>
-                        <td style="text-align:right">${('%0.2f' % (line.price_unit)).replace(".", ",")} ${object.currency_id.symbol}</td>
-                       <td style="text-align:right">${('%0.2f' % (line.price_unit * line.product_uom_qty)).replace(".", ",")} ${object.currency_id.symbol}</td>
+                        <td style="padding:3px;">${line.product_id.default_code}</td>
+                        <td style="padding:3px;">${line.product_id.name}</td>
+                        <td style="text-align:right;padding:3px;">${'%0.0f' % line.product_uom_qty}</td>
+                        <td style="text-align:right;padding:3px;">${('%0.2f' % (line.price_unit)).replace(".", ",")} ${object.currency_id.symbol}</td>
+                       <td style="text-align:right;padding:3px;">${('%0.2f' % (line.price_unit * line.product_uom_qty)).replace(".", ",")} ${object.currency_id.symbol}</td>
                 </tr>
                 % endfor
                 </tbody>
@@ -126,24 +126,24 @@
                     <p>${object.state in ('draft', 'sent') and 'wir haben Ihre Anfrage erhalten und melden uns umgehend wegen der Bestellbestätigung bei Ihnen.' or 'hiermit bestätigen wir Ihnen folgende Bestellung.'}</p>
 
 
-                <table class="table table-condensed">
+                <table class="table table-condensed" style="padding:3px;">
                     <thead>
                         <tr>
-                            <th>Produktnr.</th>
-                            <th>Produkt</th>
-                            <th style="text-align:right">Menge</th>
-                            <th style="text-align:right">Preis/Stück</th>
-                            <th style="text-align:right">Summe</th>
+                            <th style="padding:3px;">Produktnr.</th>
+                            <th style="padding:3px;">Produkt</th>
+                            <th style="text-align:right;padding:3px;">Menge</th>
+                            <th style="text-align:right;padding:3px;">Preis/Stück</th>
+                            <th style="text-align:right;padding:3px;">Summe</th>
                         </tr>
                     </thead>
                 <tbody>
                  % for line in object.order_line:
                  <tr>
-                        <td>${line.product_id.default_code}</td>
-                        <td>${line.product_id.name}</td>
-                        <td style="text-align:right">${'%0.0f' % line.product_uom_qty}</td>
-                        <td style="text-align:right">${('%0.2f' % (line.price_unit)).replace(".", ",")} ${object.currency_id.symbol}  </td>
-                         <td style="text-align:right">${('%0.2f' % (line.price_unit * line.product_uom_qty)).replace(".", ",")} ${object.currency_id.symbol}</td>
+                        <td style="padding:3px;">${line.product_id.default_code}</td>
+                        <td style="padding:3px;">${line.product_id.name}</td>
+                        <td style="text-align:right;padding:3px;">${'%0.0f' % line.product_uom_qty}</td>
+                        <td style="text-align:right;padding:3px;">${('%0.2f' % (line.price_unit)).replace(".", ",")} ${object.currency_id.symbol}  </td>
+                         <td style="text-align:right;padding:3px;">${('%0.2f' % (line.price_unit * line.product_uom_qty)).replace(".", ",")} ${object.currency_id.symbol}</td>
                  </tr>
                  % endfor
                  </tbody>
@@ -165,12 +165,12 @@
                               <td valign="middle" align="left" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
                                 ${object.company_id.name}<br/>
                                 % if object.company_id.street:
-                                    ${object.company_id.street}<br>
+                                    ${object.company_id.street}
                                 % endif
                                 % if object.company_id.eq_house_no:
-                                   ${object.company_id.eq_house_no}<br>
+                                   ${object.company_id.eq_house_no}
                                 % endif
-
+                                <br>
                                 % if object.company_id.city or object.company_id.zip:
                                     ${object.company_id.zip} ${object.company_id.city}<br>
                                 % endif
