@@ -150,6 +150,10 @@ class eq_res_partner(models.Model):
     @api.multi
     def write(self, vals):
         res = super(eq_res_partner, self).write(vals)
+
+        for child in self.child_ids:
+            child.customer_number = self.customer_number
+
         if self.parent_id:
             if not self.type:
                 self.type = 'contact'
