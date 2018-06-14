@@ -22,7 +22,7 @@
 {
     'name': 'Equitania Mail Templates',
     'license': 'AGPL-3',
-    'version': '1.0.9',
+    'version': '1.0.10',
     'description': """
         Verbesserte Mail Templates für Sales / Purchase / Account Invoice
     """,
@@ -35,11 +35,11 @@
     'data': [
         "security/ir.model.access.csv",
         "data/mail_template_data.xml",
-        "data/calendar_date_updated.xml",        #neu
-        "data/calendar_meeting_invitation.xml",        #neu
-        "data/calendar_reminder.xml",        #neu
-        "data/crm_lead_data.xml",        #neu
-        "data/auth_signup.xml",        #neu
+        #"data/calendar_date_updated.xml",        #not in use, because: the super-write method tries to load the old template which would be overwritten by our template
+        "data/calendar_meeting_invitation.xml",
+        "data/calendar_reminder.xml",
+        "data/crm_lead_data.xml",
+        "data/auth_signup.xml",
         "data/email_template_function_auth_signup.xml",
         "data/email_template_function_calendar.xml",
         "data/email_template_function_crm.xml",

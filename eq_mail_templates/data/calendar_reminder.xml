@@ -15,15 +15,6 @@
             <field name="body_html"><![CDATA[
 <div summary="o_mail_template" style="padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top 100%;color:#777777">
 % set colors = {'needsAction': 'grey', 'accepted': 'green', 'tentative': '#FFFF00',  'declined': 'red'}
-    <table cellspacing="0" cellpadding="0" style="width:600px;border-collapse:collapse;background:inherit;color:inherit">
-        <tbody><tr>
-            <td valign="top" style="width:600px; padding:10px 10px 10px 5px;">
-                <div>
-                    <hr width="100%" style="background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0;margin:15px auto;padding:0">
-                </div>
-            </td>
-        </tr></tbody>
-    </table>
 </div>
 <div style="padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top 100%;color:#777777">
     <table cellspacing="0" cellpadding="0" style="width:600px;border-collapse:collapse;background:inherit;color:inherit">
@@ -61,7 +52,7 @@
                             <li>Duration: ${('%dH %02d' % (object.event_id.duration,(object.event_id.duration*60)%60))}</li>
                         % endif
                         <li>Attendees
-                        <ul>
+                        <ul style="list-style-type:none;">
                         % for attendee in object.event_id.attendee_ids:
                             <li>
                                 <div style="display:inline-block; border-radius: 50%; width:10px; height:10px;background:${colors[attendee.state] or 'white'};"></div>
@@ -98,15 +89,6 @@
             <field name="value"><![CDATA[
 <div summary="o_mail_template" style="padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top 100%;color:#777777">
 % set colors = {'needsAction': 'grey', 'accepted': 'green', 'tentative': '#FFFF00',  'declined': 'red'}
-    <table cellspacing="0" cellpadding="0" style="width:600px;border-collapse:collapse;background:inherit;color:inherit">
-        <tbody><tr>
-            <td valign="top" style="width:600px; padding:10px 10px 10px 5px;">
-                <div>
-                    <hr width="100%" style="background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0;margin:15px auto;padding:0">
-                </div>
-            </td>
-        </tr></tbody>
-    </table>
 </div>
 <div style="padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top 100%;color:#777777">
     <table cellspacing="0" cellpadding="0" style="width:600px;border-collapse:collapse;background:inherit;color:inherit">
@@ -144,7 +126,7 @@
                             <li>Dauer: ${('%dH %02d' % (object.event_id.duration,(object.event_id.duration*60)%60))}</li>
                         % endif
                         <li>Teilnehmer
-                        <ul>
+                        <ul style="list-style-type:none;">
                         % for attendee in object.event_id.attendee_ids:
                             <li>
                                 <div style="display:inline-block; border-radius: 50%; width:10px; height:10px;background:${colors[attendee.state] or 'white'};"></div>

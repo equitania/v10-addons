@@ -34,11 +34,6 @@
                     <strong>Dear ${object.common_name}</strong>,<br />
                     The date of the meeting has been upated. The meeting  ${object.event_id.name} created by ${object.event_id.user_id.partner_id.name} is now scheduled for ${object.event_id.get_display_time_tz(tz=object.partner_id.tz)}.
                 </p>
-                <p>
-                    <a href="/calendar/meeting/accept?db=${'dbname' in ctx and ctx['dbname'] or ''}&token=${object.access_token}&action=${'action_id' in ctx and ctx['action_id'] or ''}&id=${object.event_id.id}" style="padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#002851; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: #002851; border: 1px solid #002851; border-radius:3px">Accept</a>
-                    <a href="/calendar/meeting/decline?db=${'dbname' in ctx and ctx['dbname'] or '' }&token=${object.access_token}&action=${'action_id' in ctx and ctx['action_id'] or ''}&id=${object.event_id.id}" style="padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#002851; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: #002851; border: 1px solid #002851; border-radius:3px">Decline</a>
-                    <a href="/calendar/meeting/view?db=${'dbname' in ctx and ctx['dbname'] or ''}&token=${object.access_token}&action=${'action_id' in ctx and ctx['action_id'] or ''}&id=${object.event_id.id}" style="padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#002851; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: #002851; border: 1px solid #002851; border-radius:3px">View</a>
-                </p>
                 <table style="margin-top: 20px;"><tr>
                     <td>
                         <div style="border-top-left-radius:3px;border-top-right-radius:3px;font-size:12px;border-collapse:separate;text-align:center;font-weight:bold;color:#ffffff;width:130px;min-height: 18px;background:#002851;padding-top: 4px;">
@@ -66,7 +61,7 @@
                             <li>Duration: ${('%dH %02d' % (object.event_id.duration,(object.event_id.duration*60)%60))}</li>
                         % endif
                         <li>Attendees
-                        <ul>
+                        <ul style="list-style-type:none;">
                         % for attendee in object.event_id.attendee_ids:
                             <li>
                                 <div style="display:inline-block; border-radius: 50%; width:10px; height:10px;background:${colors[attendee.state] or 'white'};"></div>
@@ -81,6 +76,13 @@
                         </ul>
                     </td>
                 </tr></table>
+                <br />
+                <br />
+                <p>
+                    <a href="/calendar/meeting/accept?db=${'dbname' in ctx and ctx['dbname'] or ''}&token=${object.access_token}&action=${'action_id' in ctx and ctx['action_id'] or ''}&id=${object.event_id.id}" style="padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#002851; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: #002851; border: 1px solid #002851; border-radius:3px">Accept</a>
+                    <a href="/calendar/meeting/decline?db=${'dbname' in ctx and ctx['dbname'] or '' }&token=${object.access_token}&action=${'action_id' in ctx and ctx['action_id'] or ''}&id=${object.event_id.id}" style="padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#002851; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: #002851; border: 1px solid #002851; border-radius:3px">Decline</a>
+                    <a href="/calendar/meeting/view?db=${'dbname' in ctx and ctx['dbname'] or ''}&token=${object.access_token}&action=${'action_id' in ctx and ctx['action_id'] or ''}&id=${object.event_id.id}" style="padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#002851; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: #002851; border: 1px solid #002851; border-radius:3px">View</a>
+                </p>
             </td>
         </tr></tbody>
     </table>
@@ -116,11 +118,6 @@
                     <strong>Sehr geehrte(r) ${object.common_name}</strong>,<br />
                     Das Datum der Sitzung wurde aktualisiert. Die Sitzung  ${object.event_id.name} erstellt von ${object.event_id.user_id.partner_id.name} ist nun geplant für ${object.event_id.get_display_time_tz(tz=object.partner_id.tz)}.
                 </p>
-                <p>
-                    <a href="/calendar/meeting/accept?db=${'dbname' in ctx and ctx['dbname'] or ''}&token=${object.access_token}&action=${'action_id' in ctx and ctx['action_id'] or ''}&id=${object.event_id.id}" style="padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#002851; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: #002851; border: 1px solid #002851; border-radius:3px">Bestätigen</a>
-                    <a href="/calendar/meeting/decline?db=${'dbname' in ctx and ctx['dbname'] or '' }&token=${object.access_token}&action=${'action_id' in ctx and ctx['action_id'] or ''}&id=${object.event_id.id}" style="padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#002851; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: #002851; border: 1px solid #002851; border-radius:3px">Ablehnen</a>
-                    <a href="/calendar/meeting/view?db=${'dbname' in ctx and ctx['dbname'] or ''}&token=${object.access_token}&action=${'action_id' in ctx and ctx['action_id'] or ''}&id=${object.event_id.id}" style="padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#002851; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: #002851; border: 1px solid #002851; border-radius:3px">Ansehen</a>
-                </p>
                 <table style="margin-top: 20px;"><tr>
                     <td>
                         <div style="border-top-left-radius:3px;border-top-right-radius:3px;font-size:12px;border-collapse:separate;text-align:center;font-weight:bold;color:#ffffff;width:130px;min-height: 18px;background:#002851;padding-top: 4px;">
@@ -148,7 +145,7 @@
                             <li>Dauer: ${('%dH %02d' % (object.event_id.duration,(object.event_id.duration*60)%60))}</li>
                         % endif
                         <li>Teilnehmer
-                        <ul>
+                        <ul style="list-style-type:none;">
                         % for attendee in object.event_id.attendee_ids:
                             <li>
                                 <div style="display:inline-block; border-radius: 50%; width:10px; height:10px;background:${colors[attendee.state] or 'white'};"></div>
@@ -163,6 +160,13 @@
                         </ul>
                     </td>
                 </tr></table>
+                <br />
+                <br />
+                <p>
+                    <a href="/calendar/meeting/accept?db=${'dbname' in ctx and ctx['dbname'] or ''}&token=${object.access_token}&action=${'action_id' in ctx and ctx['action_id'] or ''}&id=${object.event_id.id}" style="padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#002851; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: #002851; border: 1px solid #002851; border-radius:3px">Bestätigen</a>
+                    <a href="/calendar/meeting/decline?db=${'dbname' in ctx and ctx['dbname'] or '' }&token=${object.access_token}&action=${'action_id' in ctx and ctx['action_id'] or ''}&id=${object.event_id.id}" style="padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#002851; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: #002851; border: 1px solid #002851; border-radius:3px">Ablehnen</a>
+                    <a href="/calendar/meeting/view?db=${'dbname' in ctx and ctx['dbname'] or ''}&token=${object.access_token}&action=${'action_id' in ctx and ctx['action_id'] or ''}&id=${object.event_id.id}" style="padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#002851; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: #002851; border: 1px solid #002851; border-radius:3px">Ansehen</a>
+                </p>
             </td>
         </tr></tbody>
     </table>

@@ -113,9 +113,9 @@ class eq_install_func(models.Model):
         Wir löschen hier Default E-Mail Vorlage für die Sale, die wir durch unsere Version ersetzen
         """
         _logger.info("** Deleting default email templates **")
-        email_templates = self.env['mail.template'].sudo().search([('eq_email_template_version', '=', False),('name','=','Calendar: Date updated')])
-        for record in email_templates:
-            record.unlink()
+        # email_templates = self.env['mail.template'].sudo().search([('eq_email_template_version', '=', False),('name','=','Calendar: Date updated')])
+        # for record in email_templates:
+        #     record.unlink()
         email_templates_2 = self.env['mail.template'].sudo().search([('eq_email_template_version', '=', False),('name', '=', 'Calendar: Meeting Invitation')])
         for record in email_templates_2:
             record.unlink()

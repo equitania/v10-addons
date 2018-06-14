@@ -1,5 +1,12 @@
 ## Modul eq_mail_templates
 
+
+#### 14.06.2018
+#### Version 1.0.10
+#####  IMP/FIX
+- Improved visual templates
+- Fixed calendar functionality to be able to update an existing calendar meeting again 
+
 #### 13.06.2018
 #### Version 1.0.9
 #####  ADD
