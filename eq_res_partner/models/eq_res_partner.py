@@ -132,7 +132,16 @@ class eq_res_partner(models.Model):
 
     @api.model
     def create(self, vals):
+        """
+        Our new extension of create handler to be able to set the same customer number by company and contact person
+        :param vals: All posted values
+        :return: Result of created object
+        """
         res = super(eq_res_partner, self).create(vals)
+        if res.parent_id:
+            if res.parent_id.customer_number is not False:
+                res.customer_number = res.parent_id.customer_number
+
         if self.parent_id:
             if not self.type:
                 self.type = 'contact'

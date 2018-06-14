@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 14.06.2018
+#### Version 1.0.33
+##### CHG
+- Our new extension of create handler to be able to set the same customer number by company and contact person
+
 #### 08.06.2018
 #### Version 1.0.32
 ##### CHG
