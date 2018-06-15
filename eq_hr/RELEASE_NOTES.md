@@ -1,5 +1,10 @@
 ## Modul eq_hr
 
+#### 15.06.2018
+#### Version 1.0.7
+##### CHG
+- chg classname eq_hr_expense_sheet
+
 #### 12.06.2018
 #### Version 1.0.6
 ##### CHG

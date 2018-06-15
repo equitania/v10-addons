@@ -99,7 +99,7 @@ class eq_hr_employee(models.Model):
 
         return res
 
-class eq_hr_employee(models.Model):
+class eq_hr_expense_sheet(models.Model):
     _inherit = 'hr.expense.sheet'
 
     def _get_users_to_subscribe(self, employee=False):
