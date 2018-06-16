@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 16.06.2018
+#### Version 1.0.58
+##### FIX
+- Correct customer no functionality on INVOICE Report
+
 #### 12.06.2018
 #### Version 1.0.57
 ##### FIX

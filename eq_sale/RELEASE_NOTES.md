@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 16.06.2018
+#### Version 1.0.81
+##### FIX
+- Correct customer no functionality on sale order Report
+
 #### 11.06.2018
 #### Version 1.0.80
 ##### CHG

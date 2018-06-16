@@ -72,15 +72,24 @@
                             <div class="col-xs-5 rightbox">
                                 <table style="width:100%;float:right;">
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <span>Customer no.</span>
-                                            </td>
-                                            <td class="text-right">
-                                                <span t-field="o.partner_id.customer_number"/>
-                                            </td>
-                                        </tr>
-                                         <tr>
+                                          <tr t-if="o.partner_id.customer_number">
+                                                <td>
+                                                    <span>Customer no.</span>
+                                                </td>
+                                                <td t-if="o.partner_id.company_type != ['company']" class="text-right">
+                                                    <span t-field="o.partner_id.customer_number"/>
+                                                </td>
+                                            </tr>
+                                            <tr t-if="o.partner_id.parent_id.customer_number">
+                                                <td>
+                                                    <span>Customer no.</span>
+                                                </td>
+                                                <td t-if="o.partner_id.company_type != ['person']" class="text-right">
+                                                    <span t-field="o.partner_id.parent_id.customer_number"/>
+                                                </td>
+                                            </tr>
+
+                                           <tr t-if="o.eq_sale_order_id.client_order_ref">
                                             <td>
                                                 <span>Customer Reference</span>
                                             </td>

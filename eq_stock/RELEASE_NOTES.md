@@ -1,5 +1,10 @@
 ## Modul eq_stock
 
+#### 16.06.2018
+#### Version 1.0.20
+##### FIX
+- Correct customer no functionality on STOCKPICKING Report
+
 #### 08.05.2018
 #### Version 1.0.19
 ##### CHG
