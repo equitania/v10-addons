@@ -1,5 +1,10 @@
 ## Modul eq_purchase
 
+#### 18.06.2018
+#### Version 1.0.36
+##### IMP
+- Correct Supplier No. functionality on delivery and packaging Report with and without parent Contact
+
 #### 30.05.2018
 #### Version 1.0.35
 ##### FIX
