@@ -20,9 +20,9 @@
                       <!-- CONTENT -->
                       <tr>
                         <td align="center" style="min-width: 590px;">
-                          <table width="590" border="0" cellpadding="0" bgcolor="#ededed" style="min-width: 590px; padding: 20px;">
+                          <table width="590" border="0" cellpadding="0" bgcolor="#ffffff" style="min-width: 590px; padding: 20px;">
                             <tbody>
-
+<tr><td>
                                  ${object.body | safe}
                                 % if ctx.get('tracking'):
 
@@ -36,6 +36,7 @@
                                     ${ctx['signature'] | safe}
                                 % endif
                                 <br/>
+                                </td></tr>
                             </tbody>
                           </table>
                         </td>
@@ -65,9 +66,9 @@
                       <!-- CONTENT -->
                       <tr>
                         <td align="center" style="min-width: 590px;">
-                          <table width="590" border="0" cellpadding="0" bgcolor="#ededed" style="min-width: 590px; padding: 20px;">
+                          <table width="590" border="0" cellpadding="0" bgcolor="#ffffff" style="min-width: 590px; padding: 20px;">
                             <tbody>
-
+<tr><td>
                                  ${object.body | safe}
                                 % if ctx.get('tracking'):
 
@@ -81,6 +82,7 @@
                                     ${ctx['signature'] | safe}
                                 % endif
                                 <br/>
+                                </td></tr>
                             </tbody>
                           </table>
                         </td>

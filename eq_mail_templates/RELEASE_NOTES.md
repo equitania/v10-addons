@@ -1,5 +1,10 @@
 ## Modul eq_mail_templates
 
+#### 16.06.2018
+#### Version 1.0.12
+#####  FIX
+- Fixing the Table template for general notification E-mails
+
 #### 14.06.2018
 #### Version 1.0.11
 #####  FIX
