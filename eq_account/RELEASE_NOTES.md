@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 18.06.2018
+#### Version 1.0.59
+##### IMP
+- Improve IF Statements for Correct customer No
+
 #### 16.06.2018
 #### Version 1.0.58
 ##### FIX
