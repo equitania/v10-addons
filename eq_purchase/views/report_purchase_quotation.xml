@@ -66,7 +66,7 @@
                                         <span t-esc="o.partner_id.supplier_number"/>
                                     </td>
                                 </tr>
-                                <tr t-if="o.partner_id.parent_id.customer_number">
+                                <tr t-if="o.partner_id.parent_id.supplier_number">
                                     <td>
                                         <span>Supplier no.</span>
                                     </td>
