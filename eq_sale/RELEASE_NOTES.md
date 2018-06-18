@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 18.06.2018
+#### Version 1.0.82
+##### IMP
+- Improve IF Statements for Correct customer No
+
 #### 16.06.2018
 #### Version 1.0.81
 ##### FIX

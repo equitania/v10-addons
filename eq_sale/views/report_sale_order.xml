@@ -60,11 +60,11 @@
                                 <div class="col-xs-5 rightbox">
                                     <table style="width:100%;float:right; font-size: 0.8em;">
                                         <tbody>
-                                           <tr t-if="doc.partner_id.customer_number">
+                                           <tr t-if="not doc.partner_id.parent_id.customer_number and doc.partner_id.customer_number">
                                                 <td>
                                                     <span>Customer no.</span>
                                                 </td>
-                                                <td t-if="doc.partner_id.company_type != ['company']" class="text-right">
+                                                <td class="text-right">
                                                     <span t-field="doc.partner_id.customer_number"/>
                                                 </td>
                                             </tr>
@@ -72,10 +72,25 @@
                                                 <td>
                                                     <span>Customer no.</span>
                                                 </td>
-                                                <td t-if="doc.partner_id.company_type != ['person']" class="text-right">
+                                                <td class="text-right">
                                                     <span t-field="doc.partner_id.parent_id.customer_number"/>
                                                 </td>
                                             </tr>
+
+
+                                            <!--<tr t-if="doc.partner_id.parent_id.customer_number or doc.partner_id.customer_number">
+                                                <td>
+                                                    <span>Customer no.</span>
+                                                    <span t-field="doc.partner_id.company_type"></span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span style="color:red;" t-if="doc.partner_id.customer_number" t-field="doc.partner_id.customer_number"/>
+                                                    <span style="color:green;" t-if="doc.partner_id.parent_id.customer_number" t-field="doc.partner_id.parent_id.customer_number"/>
+                                                </td>
+                                            </tr>-->
+
+
+
 
                                             <tr t-if="doc.name">
                                                 <td t-if="doc.state not in ['draft','sent']">
