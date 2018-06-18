@@ -1,5 +1,11 @@
 ## Modul eq_stock
 
+
+#### 18.06.2018
+#### Version 1.0.21
+##### IMP
+- Improve IF Statements for Correct customer No
+
 #### 16.06.2018
 #### Version 1.0.20
 ##### FIX
