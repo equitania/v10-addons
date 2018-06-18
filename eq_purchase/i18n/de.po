@@ -92,7 +92,7 @@ msgstr "Benutzer"
 #: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
 #: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchasequotation_document
 msgid "<span>Supplier no.</span>"
-msgstr "<span>Supplier no.</span>"
+msgstr "<span>Lieferantennr.</span>"
 
 #. module: eq_purchase
 #: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
