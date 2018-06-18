@@ -132,16 +132,28 @@ class eq_res_partner(models.Model):
 
     @api.model
     def create(self, vals):
+        """
+        Createhandler
+        :param vals: All posted data
+        :return: Result of call of super method
+        """
         res = super(eq_res_partner, self).create(vals)
-        if self.parent_id:
-            if not self.type:
-                self.type = 'contact'
+        for object in self:
+            if object.parent_id:
+                if not object.type:
+                    object.type = 'contact'
         return res
 
     @api.multi
     def write(self, vals):
+        """
+        Updatehandler
+        :param vals: All posted data
+        :return: Result of call of super method
+        """
         res = super(eq_res_partner, self).write(vals)
-        if self.parent_id:
-            if not self.type:
-                self.type = 'contact'
+        for object in self:
+            if object.parent_id:
+                if not object.type:
+                    object.type = 'contact'
         return res

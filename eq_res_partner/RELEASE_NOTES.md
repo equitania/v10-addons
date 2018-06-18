@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 18.06.2018
+#### Version 1.0.35
+##### CHG
+- Changed logic of write() and create() method, Zendesk-5835
+
 #### 14.06.2018
 #### Version 1.0.34
 ##### CHG
