@@ -10,33 +10,33 @@ class eq_res_partner_mails(models.Model):
     eq_received_mails = fields.Integer(string='Received Mails', compute='eq_received_mails_count', default=0)
     eq_send_mails = fields.Integer(string='Send Mails', compute='eq_send_mails_count', default=0)
 
-    def eq_received_mails_count(self):
+    def eq_send_mails_count(self):
         object = self.env['mail.message']
         for partner in self:
             record = object.search([('partner_ids','in',partner.id)])
             message_count = len(record)
-            partner.eq_received_mails = str(message_count)
+            partner.eq_send_mails = str(message_count)
             for contact in partner.child_ids:
                 mails = self.env['mail.message'].search([('partner_ids','in',contact.id)])
-                partner.eq_received_mails = int(partner.eq_received_mails) + len(mails)
+                partner.eq_send_mails = int(partner.eq_send_mails) + len(mails)
 
 
     @api.multi
-    def eq_send_mails_count(self):
+    def eq_received_mails_count(self):
         # Counting the number of received mails
         for res in self:
             mails = self.env['mail.message'].search([('author_id','=',res.id)])
             if len(mails) > 0:
-                res.eq_send_mails = len(mails)
+                res.eq_received_mails = len(mails)
             else:
-                res.eq_send_mails = 0
+                res.eq_received_mails = 0
             for contact in res.child_ids:
                 mails = self.env['mail.message'].search([('author_id', '=', contact.id)])
-                res.eq_send_mails = int(res.eq_send_mails) + len(mails)
+                res.eq_received_mails = int(res.eq_received_mails) + len(mails)
 
 
     @api.multi
-    def eq_act_view_count_received_mails(self):
+    def eq_act_view_count_send_mails(self):
         # Showing the tree view with the messages sent to the current customer after click on the button Send Mails
 
         tree_view_id = self.env.ref('mail.view_message_tree').id
@@ -47,7 +47,7 @@ class eq_res_partner_mails(models.Model):
         child_list.append(self.id)
 
         return {
-            'name': _('Received Mails'),
+            'name': _('Send Mails'),
             'view_type': 'form',
             'view_mode': 'tree,form',
             'views': [(tree_view_id, 'tree'),(form_view_id,'form')],
@@ -58,7 +58,7 @@ class eq_res_partner_mails(models.Model):
         }
 
     @api.multi
-    def eq_act_view_count_send_mails(self):
+    def eq_act_view_count_received_mails(self):
         # Showing the tree view with the messages received from the current customer after click on the button Received Mails
 
         tree_view_id = self.env.ref('mail.view_message_tree').id
@@ -68,7 +68,7 @@ class eq_res_partner_mails(models.Model):
             child_list.append(id.id)
         child_list.append(self.id)
         return {
-            'name': _('Send Mails'),
+            'name': _('Received Mails'),
             'view_type': 'form',
             'view_mode': 'tree,form',
             'views': [(tree_view_id, 'tree'), (form_view_id, 'form')],

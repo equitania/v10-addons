@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 19.06.2018
+#### Version 1.0.36
+##### FIX
+- Switching the meaning of received/send-emails
+
 #### 18.06.2018
 #### Version 1.0.35
 ##### CHG
