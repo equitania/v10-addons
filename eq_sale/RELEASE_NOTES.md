@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 19.06.2018
+#### Version 1.0.83
+##### FIX
+- Fixing bug with wrong Sequence-No. when using optional products in Sales Order
+
 #### 18.06.2018
 #### Version 1.0.82
 ##### IMP

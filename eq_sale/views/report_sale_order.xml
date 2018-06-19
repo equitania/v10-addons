@@ -428,7 +428,7 @@
                                                         <t t-if="not l.eq_optional"><span t-field="l.price_subtotal"
                                                             t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
 
-                                                            <t t-set="pos" t-value="pos + 1"/>
+
                                                         </t>
                                                     </td>
                                                     <td class="text-right" groups="sale.group_show_price_total">
@@ -436,6 +436,7 @@
                                                             t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
                                                     </td>
                                                 </tr>
+                                                <t t-set="pos" t-value="pos + 1"/>
                                             </t>
 
                                             <!-- Zwischensummer der Kategorie - hier wird die optionale Position ignoriert -->
