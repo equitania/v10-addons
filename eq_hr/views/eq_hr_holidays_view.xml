@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Holidays: Leave Request -->
+        <record id="eq_view_holiday_new_calendar" model="ir.ui.view">
+            <field name="name">Leave Request</field>
+            <field name="model">hr.holidays</field>
+            <field name="inherit_id" ref="hr_holidays.view_holiday_new_calendar"/>
+            <field name="arch" type="xml">
+                <field name="display_name" position="replace">
+                <field name="name"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

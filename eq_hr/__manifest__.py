@@ -22,7 +22,7 @@
 {
     'name': 'Equitania Personalwesen Optimierungen',
     'license': 'AGPL-3',
-    'version': '1.0.7',
+    'version': '1.0.8',
     'description': """
         Extensions for HR
     """,
@@ -35,6 +35,8 @@
     'data': [
         "views/eq_res_users_view.xml",
         "views/eq_hr_expense_view.xml",
+        "views/eq_hr_holidays.xml",
+        "views/eq_hr_holidays_view.xml",
         "security/eq_replace_calendar.xml",
         "security/eq_calendar_security.xml",
 

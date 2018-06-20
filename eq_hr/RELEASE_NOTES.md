@@ -1,5 +1,10 @@
 ## Modul eq_hr
 
+#### 20.06.2018
+#### Version 1.0.8
+##### CHG
+- Hidden display name and time from hr.holidays calendar view, now is shown only description
+
 #### 15.06.2018
 #### Version 1.0.7
 ##### CHG
