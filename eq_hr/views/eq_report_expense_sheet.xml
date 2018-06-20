@@ -97,6 +97,7 @@
                             </table>
                         </div>
                     </div>
+                    <hr style="width:7cm; border-color:#999999; margin-bottom:0px;" class="signature-hr"></hr>
                     <p>Employee,<br/>(Date and signature).<br/><br/></p>
                 </div>
             </xpath>

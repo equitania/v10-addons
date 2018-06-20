@@ -4,6 +4,7 @@
 #### Version 1.0.10
 ##### CHG
 - parse date field in report
+- adding german translation to the new report sheet
 
 #### 20.06.2018
 #### Version 1.0.9
