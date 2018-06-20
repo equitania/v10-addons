@@ -42,7 +42,7 @@
                             <tr>
                                 <th>Date</th>
                                 <th>Name</th>
-                                <th class="text-center">Ref.</th>
+                                <th>Ref.</th>
                                 <th>Unit Price</th>
                                 <th>Taxes</th>
                                 <th class="text-center">Qty</th>
@@ -57,7 +57,7 @@
                                     <span t-field="line.description"/><br/>
                                     <span t-field="line.analytic_account_id.name"/>
                                 </td>
-                                <td style="text-center">
+                                <td>
                                     <span t-field="line.reference"/>
                                 </td>
                                 <td>

@@ -16,20 +16,86 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: eq_hr
+#: model:ir.ui.view,arch_db:eq_hr.eq_report_expense_sheet
+msgid "<strong>Date:</strong>"
+msgstr "<strong>Datum:</strong>"
+
+#. module: eq_hr
+#: model:ir.ui.view,arch_db:eq_hr.eq_report_expense_sheet
+msgid "<strong>Description:</strong>"
+msgstr "<strong>Beschreibung:</strong>"
+
+#. module: eq_hr
+#: model:ir.ui.view,arch_db:eq_hr.eq_report_expense_sheet
+msgid "<strong>Employee:</strong>"
+msgstr "<strong>Mitarbeiter:</strong>"
+
+#. module: eq_hr
+#: model:ir.ui.view,arch_db:eq_hr.eq_report_expense_sheet
+msgid "<strong>Payment By:</strong>"
+msgstr "<strong>Zahlung per:</strong>"
+
+#. module: eq_hr
+#: model:ir.ui.view,arch_db:eq_hr.eq_report_expense_sheet
+msgid "<strong>Total</strong>"
+msgstr "<strong>Gesamt</strong>"
+
+#. module: eq_hr
+#: model:ir.ui.view,arch_db:eq_hr.eq_report_expense_sheet
+msgid "<strong>Validated By:</strong>"
+msgstr "<strong>Bestätigt von:</strong>"
+
+#. module: eq_hr
+#: model:ir.module.category,name:eq_hr.module_eq_hr_calendar
+msgid "Calendar"
+msgstr "Kalender"
+
+#. module: eq_hr
+#: model:ir.ui.view,arch_db:eq_hr.eq_report_expense_sheet
+msgid "Date"
+msgstr "Datum"
+
+#. module: eq_hr
 #: model:ir.model,name:eq_hr.model_hr_employee
 #: model:ir.model.fields,field_description:eq_hr.field_res_users_eq_employee_id
 msgid "Employee"
 msgstr "Mitarbeiter"
 
 #. module: eq_hr
-#: model:ir.model,name:eq_hr.model_res_users
-msgid "Users"
-msgstr "Benutzer"
+#: model:ir.ui.view,arch_db:eq_hr.eq_report_expense_sheet
+msgid "Employee,<br/>(Date and signature).<br/><br/>"
+msgstr "Mitarbeiter<br/>\n"
+"(Datum und Unterschrift)<br/><br/>"
 
 #. module: eq_hr
-#: model:ir.module.category,name:eq_hr.module_eq_hr_calendar
-msgid "Calendar"
-msgstr "Kalender"
+#: model:ir.model,name:eq_hr.model_hr_expense_sheet
+msgid "Expense Report"
+msgstr "Spesenbericht"
+
+#. module: eq_hr
+#: model:ir.ui.view,arch_db:eq_hr.eq_report_expense_sheet
+msgid "Expenses Report"
+msgstr "Spesenbericht"
+
+#. module: eq_hr
+#: model:ir.ui.view,arch_db:eq_hr.eq_report_expense_sheet
+msgid "Name"
+msgstr "Name"
+
+#. module: eq_hr
+#: model:ir.ui.view,arch_db:eq_hr.eq_report_expense_sheet
+msgid "Price"
+msgstr "Preis"
+
+#. module: eq_hr
+#: model:ir.ui.view,arch_db:eq_hr.eq_report_expense_sheet
+msgid "Qty"
+msgstr "Anz."
+
+#. module: eq_hr
+#: model:ir.ui.view,arch_db:eq_hr.eq_report_expense_sheet
+msgid "Ref."
+msgstr "Ref."
 
 #. module: eq_hr
 #: model:res.groups,name:eq_hr.group_calendar_see_all_events
@@ -42,8 +108,21 @@ msgid "See all events and edit"
 msgstr "Alle Termine editieren"
 
 #. module: eq_hr
+#: model:ir.model.fields,field_description:eq_hr.field_hr_expense_sheet_sequence_id
+msgid "Sequence"
+msgstr "Reihenfolge"
+
+#. module: eq_hr
 #: model:ir.ui.view,arch_db:eq_hr.eq_report_expense_sheet
-msgid "Employee,<br/>(Date and signature).<br/><br/>"
-msgstr ""
-"Mitarbeiter<br/>\n"
-"(Datum und Unterschrift)<br/><br/>"
+msgid "Taxes"
+msgstr "Steuern"
+
+#. module: eq_hr
+#: model:ir.ui.view,arch_db:eq_hr.eq_report_expense_sheet
+msgid "Unit Price"
+msgstr "Preis pro ME"
+
+#. module: eq_hr
+#: model:ir.model,name:eq_hr.model_res_users
+msgid "Users"
+msgstr "Benutzer"
