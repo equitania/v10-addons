@@ -40,3 +40,10 @@ msgstr "Alle Termine sehen"
 #: model:res.groups,name:eq_hr.group_calendar_see_all_events_and_edit
 msgid "See all events and edit"
 msgstr "Alle Termine editieren"
+
+#. module: eq_hr
+#: model:ir.ui.view,arch_db:eq_hr.eq_report_expense_sheet
+msgid "Employee,<br/>(Date and signature).<br/><br/>"
+msgstr ""
+"Mitarbeiter<br/>\n"
+"(Datum und Unterschrift)<br/><br/>"

@@ -102,6 +102,14 @@ class eq_hr_employee(models.Model):
 class eq_hr_expense_sheet(models.Model):
     _inherit = 'hr.expense.sheet'
 
+    sequence_id = fields.Char('Sequence', readonly=True)
+
+    @api.model
+    def create(self, vals):
+        seq = self.env['ir.sequence'].next_by_code('hr_expense_sequence')
+        vals['sequence_id'] = seq
+        return super(eq_hr_expense_sheet, self).create(vals)
+
     def _get_users_to_subscribe(self, employee=False):
         users = self.env['res.users']
         employee = employee or self.employee_id
