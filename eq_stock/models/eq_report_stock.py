@@ -59,6 +59,16 @@ class report_stock_picking(models.Model):
     #     """
     #     return self.env["eq_report_helper"].get_qty(value, language, 'Sale Quantity Report')
 
+    def check_show_quantity(self,product,picking):
+        stock_ops = self.env['stock.pack.operation'].search([('product_id','=',product.id),('picking_id','=',picking.id)])
+        if len(stock_ops) > 0:
+            stock_op = stock_ops[0]
+            if stock_op.qty_done > 0:
+                return True
+            else:
+                return False
+        return True
+
     @api.multi
     def html_text_is_set(self, value):
         """

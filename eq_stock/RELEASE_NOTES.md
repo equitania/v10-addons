@@ -1,6 +1,11 @@
 ## Modul eq_stock
 
 
+#### 20.06.2018
+#### Version 1.0.22
+##### IMP
+- Stock Delivery report: shows only products which have Quantity Done (qty_done) bigger then 0.
+
 #### 18.06.2018
 #### Version 1.0.21
 ##### IMP
