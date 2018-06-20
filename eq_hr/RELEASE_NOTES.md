@@ -1,6 +1,11 @@
 ## Modul eq_hr
 
 #### 20.06.2018
+#### Version 1.0.10
+##### CHG
+- parse date field in report
+
+#### 20.06.2018
 #### Version 1.0.9
 ##### CHG
 - Changes in report_expense_sheet, creating sequence_id, setting the date and changing the text

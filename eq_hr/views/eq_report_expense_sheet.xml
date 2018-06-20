@@ -20,7 +20,7 @@
                                         <t t-set="date" t-value="line.date"/>
                                     </t>
                                 </t>
-                                <p t-esc="date"/>
+                                <p t-esc="time.strftime('%d.%m.%Y', time.strptime(date,'%Y-%m-%d'))"/>
                             </t>
                         </div>
                         <div class="col-xs-3">
