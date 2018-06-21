@@ -19,3 +19,23 @@ msgstr ""
 #: model:ir.ui.view,arch_db:eq_mail_templates.eq_email_template_version_form
 msgid "Version Number"
 msgstr "Versionsnummer"
+
+
+#. module: mail
+#: model:ir.ui.view,arch_db:mail.message_user_assigned
+msgid "<br/>\n"
+"            <br/>\n"
+"                Send by ${object.company_id.name or 'us'}<br/>\n"
+"                % if object.company_id.website:"
+msgstr "<br/>\n"
+"            <br/>\n"
+"                Gesendet von ${object.company_id.name or 'us'}<br/>\n"
+"                % if object.company_id.website:"
+
+#. module: mail
+#: code:addons/mail/models/mail_thread.py:671
+#: code:addons/mail/models/mail_thread.py:673
+#: model:ir.ui.view,arch_db:mail.message_user_assigned
+#, python-format
+msgid "View"
+msgstr "Öffne"

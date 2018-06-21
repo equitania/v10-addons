@@ -1,5 +1,10 @@
 ## Modul eq_mail_templates
 
+#### 21.06.2018
+#### Version 1.0.13
+#####  ADD
+- Adding Template for "Message User Assigned" and translation
+
 #### 16.06.2018
 #### Version 1.0.12
 #####  FIX

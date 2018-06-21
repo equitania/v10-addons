@@ -22,7 +22,7 @@
 {
     'name': 'Equitania Mail Templates',
     'license': 'AGPL-3',
-    'version': '1.0.12',
+    'version': '1.0.13',
     'description': """
         Verbesserte Mail Templates für Sales / Purchase / Account Invoice
     """,
@@ -54,6 +54,7 @@
         "data/sales_order_send_by_email.xml",
         "data/template_account_invoice_notification.xml",
         "data/template_sale_order_notification.xml",
+        "views/mail_message_user_assigned.xml",
 
     ],
     'demo': [],

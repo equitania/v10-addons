@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="mail.message_user_assigned" >
+
+            <div style="font-family: Open Sans, 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 13px;">
+                <p>Dear <t t-esc="object.user_id.name"/>,</p>
+                <p>You have been assigned to the <a t-att-href="'/mail/view?model=%s&amp;res_id=%s' % (object._name, object.id)" style="font-size: 13px; text-decoration: underline; color: #002851;"><t t-esc="object._description.lower()"/> <t t-esc="object.name_get()[0][1]"/></a>.</p>
+                <br/>
+                <p>
+                    <a t-att-href="'/mail/view?model=%s&amp;res_id=%s' % (object._name, object.id)"
+                            style="background-color: #002851; margin-top: 10px; padding: 10px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                        <t t-esc="object._description.lower()"/> <t t-esc="object.name_get()[0][1]"/>
+                    </a>
+                </p>
+                <br/>
+                    Send by ${object.company_id.name or 'us'}<br/>
+                    % if object.company_id.website:
+                            <a href="${object.company_id.website}" style="text-decoration:none; color: #002851;">
+                                ${object.company_id.website}
+                            </a>
+                        % endif
+                    <br/>
+            </div>
+
+
+        </template>
+
+    </data>
+</odoo>
