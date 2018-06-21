@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 21.06.2018
+#### Version 1.0.37
+##### CHG
+- Changing customer_number if parent_id is set, and write the customer_number to this parent_id
+
 #### 19.06.2018
 #### Version 1.0.36
 ##### FIX

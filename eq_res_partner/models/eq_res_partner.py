@@ -82,6 +82,14 @@ class eq_res_partner(models.Model):
                         contact.update_address(values)
 
     @api.onchange('parent_id')
+    def _onchange_parent_id(self):
+        # onchange function which changes the value of customer_number which depends from parent_id
+        if self.parent_id:
+            if self.parent_id.customer_number:
+                self.customer_number = self.parent_id.customer_number
+
+
+    @api.onchange('parent_id')
     def onchange_parent_id(self):
         # return values in result, as this method is used by _fields_sync()
         if not self.parent_id:
@@ -137,7 +145,12 @@ class eq_res_partner(models.Model):
         :param vals: All posted data
         :return: Result of call of super method
         """
+        if self.parent_id:
+            if self.parent_id.customer_number:
+                vals.update({'customer_number': self.parent_id.customer_number})
+
         res = super(eq_res_partner, self).create(vals)
+
         for object in self:
             if object.parent_id:
                 if not object.type:
@@ -151,7 +164,12 @@ class eq_res_partner(models.Model):
         :param vals: All posted data
         :return: Result of call of super method
         """
+        if self.parent_id:
+            if self.parent_id.customer_number:
+                vals.update({'customer_number': self.parent_id.customer_number})
+
         res = super(eq_res_partner, self).write(vals)
+
         for object in self:
             if object.parent_id:
                 if not object.type:
