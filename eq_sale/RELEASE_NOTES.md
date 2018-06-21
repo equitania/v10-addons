@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 21.06.2018
+#### Version 1.0.84
+##### CHG
+- change id in translation for 'benannter Ort'
+
 #### 19.06.2018
 #### Version 1.0.83
 ##### FIX
