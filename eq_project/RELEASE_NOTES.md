@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 25.06.2018
+#### Version 1.0.21
+##### ADD
+- add to_invoice to project_issue and project_task 
+
 #### 16.04.2018
 #### Version 1.0.20
 ##### ADD

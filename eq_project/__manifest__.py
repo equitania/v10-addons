@@ -21,7 +21,7 @@
 {
     'name': "Equitania Projekt",
     'license': 'AGPL-3',
-    'version': '1.0.20',
+    'version': '1.0.21',
     'category': 'project',
     'description': """Extensions for project""",
     'author': 'Equitania Software GmbH',
@@ -29,7 +29,7 @@
     'website': 'www.myodoo.de',
     "depends" : ['base','project','project_issue','hr_timesheet_activity_begin_end','hr_timesheet_sheet', 'analytic','project_recalculate',
                  'timesheet_invoice','project_description','sale_timesheet',
-                 'project_task_category','project_task_code','project_task_report','project_timeline','project_timesheet_time_control','project_parent'],  #no dependencies for stage was always in Project/Data/project_data.xml declared
+                 'project_task_category','project_task_code','project_task_report','project_timeline','project_timesheet_time_control','project_parent','project_issue_sheet'],  #no dependencies for stage was always in Project/Data/project_data.xml declared
     'data': [
             'data/ir_sequence_data.xml',
             'views/eq_project_extension_view.xml',
