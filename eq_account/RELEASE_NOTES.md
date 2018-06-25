@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 25.06.2018
+#### Version 1.0.60
+##### FIX
+- Ticket 5891: fix invoice report with retoure
+
 #### 18.06.2018
 #### Version 1.0.59
 ##### IMP

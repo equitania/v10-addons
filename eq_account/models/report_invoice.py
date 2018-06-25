@@ -83,13 +83,19 @@ class report_account_invoice_line(models.Model):
     def check_retoure(self, move):
 
         name = move.picking_id.name
+        pack_operation = self.env['stock.pack.operation'].search([('picking_id', '=', move.picking_id.id), ('product_id', '=', move.product_id.id)])
         picking_obj = self.env['stock.picking'].search([('origin','=', name),('picking_type_code','=','incoming')])
         return_move = self.env['stock.move'].search([('picking_id','=',picking_obj.id)])
+        pack_operation_retour = self.env['stock.pack.operation'].search([('picking_id', '=', picking_obj.id), ('product_id', '=', move.product_id.id)])
+
 
         if len(picking_obj) > 0:
             for r_move in return_move:
                 if r_move.product_id.id == move.product_id.id:
-                    return False
+                    if len(pack_operation) > 0:
+                        if len(pack_operation_retour) > 0:
+                            if pack_operation.qty_done <= pack_operation_retour.qty_done:
+                                return False
             return True
         else:
             return True
