@@ -668,3 +668,8 @@ msgstr "Unmittelbar nach der Validierung der Website-Bestellung und Speichern ei
 #: selection:sale.quote.template,require_payment:0
 msgid "Not mandatory on website quote validation"
 msgstr "Nicht obligatorisch bei der Angebotsvalidierung auf der Website"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_date_order
+msgid "Order Date"
+msgstr "Erstelldatum"
