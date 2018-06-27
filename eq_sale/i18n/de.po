@@ -125,7 +125,7 @@ msgstr "eq.delivery.conditions"
 #: model:ir.model.fields,field_description:eq_sale.field_sale_config_settings_eq_delivery_condition_id
 #: model:ir.model.fields,field_description:eq_sale.field_sale_order_eq_delivery_condition_id
 msgid "Delivery Condition"
-msgstr "Lieferbedingungen"
+msgstr "Lieferbedingungen (freie)"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
@@ -673,3 +673,9 @@ msgstr "Nicht obligatorisch bei der Angebotsvalidierung auf der Website"
 #: model:ir.model.fields,field_description:sale.field_sale_order_date_order
 msgid "Order Date"
 msgstr "Erstelldatum"
+
+#. module: sale_stock
+#: model:ir.model.fields,field_description:sale_stock.field_account_invoice_incoterms_id
+#: model:ir.model.fields,field_description:sale_stock.field_sale_order_incoterm
+msgid "Incoterms"
+msgstr "Incoterms"

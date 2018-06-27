@@ -4,6 +4,7 @@
 #### Version 1.0.86
 ##### ADD
 - date_order translation with 'Erstelldatum'.
+- incoterms translation in 'Incoterms'.
 
 #### 21706.2018
 #### Version 1.0.85
