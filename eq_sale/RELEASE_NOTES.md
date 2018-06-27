@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 21706.2018
+#### Version 1.0.85
+##### ADD
+- add website_quote translation for require_payment in a sale order.
+
 #### 21.06.2018
 #### Version 1.0.84
 ##### CHG
