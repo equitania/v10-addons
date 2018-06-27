@@ -1,5 +1,11 @@
 ## Modul eq_account
 
+#### 27.06.2018
+#### Version 1.0.61
+##### ADD
+- Creating new function for payment placeholders
+- Showing payment note in report invoice
+
 #### 25.06.2018
 #### Version 1.0.60
 ##### FIX

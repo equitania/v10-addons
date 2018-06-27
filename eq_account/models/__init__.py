@@ -22,3 +22,4 @@
 
 import account_invoice
 import report_invoice
+import eq_report_helper

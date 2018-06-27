@@ -647,7 +647,7 @@
                                                 <strong>Payment Terms:</strong>
                                             </td>
                                             <td>
-                                                <span t-field="o.payment_term_id.note"/>
+                                                <span t-esc="o.get_eq_payment_terms(o.partner_id.lang, o.currency_id)"/>
                                             </td>
                                         </tr>
                                         <tr t-if="o.incoterms_id">
@@ -673,7 +673,6 @@
                                                 <strong>Shipping address:</strong>
                                             </td>
                                             <td>
-
 
 
                                                 <t t-if="o.partner_shipping_id.parent_id">
@@ -705,11 +704,6 @@
                                                     </h>
                                                 </h>
                                                 <div t-field="o.partner_shipping_id.country_id.name"/>
-
-
-
-
-
 
                                                 <!--<div t-field="o.partner_shipping_id"
                                             t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'/>

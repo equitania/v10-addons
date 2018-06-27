@@ -22,7 +22,7 @@
 {
     'name': "Equitania Finanzen",
     'license': 'AGPL-3',
-    'version': '1.0.60',
+    'version': '1.0.61',
     'category': 'account',
     'description': """Extensions for account""",
     'author': 'Equitania Software GmbH',
@@ -32,6 +32,7 @@
     'data': [
             'views/account_invoice_view.xml',
             'views/report_invoice.xml',
+            'views/eq_account_payment_term.xml',
             'security/ir.model.access.csv',
              ],
     "active": False,

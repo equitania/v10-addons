@@ -2,7 +2,7 @@
 
 from odoo import api, models, fields, _
 from odoo.exceptions import ValidationError
-
+import datetime
 
 class report_account_invoice(models.Model):
     _inherit = 'account.invoice'
@@ -49,6 +49,19 @@ class report_account_invoice(models.Model):
         value = value.strip()
         return value != ''
 
+    def get_eq_payment_terms(self, language, currency_id):
+        """
+            Show payment terms with custom text using 2 kinds of placeholders.
+            Date1 & Date2 = Placeholder for Date that will be calculated and replaced
+            Value1 % Value2 = Placehold for Value that will be calculated and replaced
+            @object: account.invoice object
+            @language: actual language
+            @currency_id: actual currency_id of given invoice
+            @return: Return new string with formated & calculated date and prices
+        """
+
+        object = self
+        return self.env['eq_report_helper'].get_eq_payment_terms(object, language, currency_id)
 
 class StockMove(models.Model):
     _inherit = 'stock.move'
