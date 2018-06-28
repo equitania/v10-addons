@@ -205,7 +205,7 @@ msgstr "Zeitplanung"
 #: model:ir.ui.menu,name:eq_project.menu_project_timesheet
 #: model:ir.ui.view,arch_db:eq_project.project_timesheet_calendar_view
 msgid "Timesheet"
-msgstr "Zeiterfassung"
+msgstr "Zeiterfassung (ohne Zuordnung)"
 
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.eq_project_issue_form_view
@@ -276,3 +276,7 @@ msgstr "<span>Datum, Unterschrift</span>"
 msgid "<span>Projectno.:</span>"
 msgstr "<span>Projektnr.:</span>"
 
+#. module: eq_project
+#: model:ir.ui.menu,name:eq_project.eq_menu_hr_working_hours
+msgid "Timesheet (all)"
+msgstr "Zeiterfassung (alle)"

@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 28.06.2018
+#### Version 1.0.22
+##### ADD
+- add Timesheet (all) under search menu in project. 
+
 #### 25.06.2018
 #### Version 1.0.21
 ##### ADD
