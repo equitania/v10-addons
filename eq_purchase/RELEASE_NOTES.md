@@ -1,5 +1,10 @@
 ## Modul eq_purchase
 
+#### 02.07.2018
+#### Version 1.0.37
+##### CHG
+- change always visible for origin in purchase order
+
 #### 18.06.2018
 #### Version 1.0.36
 ##### IMP

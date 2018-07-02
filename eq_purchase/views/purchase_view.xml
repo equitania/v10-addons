@@ -8,6 +8,10 @@
             <field name="inherit_id" ref="purchase.purchase_order_form"/>
             <field name="arch" type="xml">
 
+                <field name="origin" position="replace">
+                    <field name="origin"/>
+                </field>
+
                 <xpath expr="//field[@name='notes']" position="replace">
                 </xpath>
 
