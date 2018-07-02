@@ -1,5 +1,9 @@
 ## Modul eq_stock
 
+#### 02.07.2018
+#### Version 1.0.23
+##### CHG
+- Ticket 5880: Change translation
 
 #### 20.06.2018
 #### Version 1.0.22
