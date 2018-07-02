@@ -154,6 +154,16 @@ class eq_mail_mail(models.Model):
     lambda self, cr, uid, context: self.env['ir.values'].get_default('mail.mail', 'mail_server_id')
     lambda self, cr, uid, context: self.env['ir.values'].get_default('mail.mail', 'mail_server_address')
 
+    @api.multi
+    def _postprocess_sent_message(self, mail_sent=True):
+        for mail in self:
+            if mail_sent and mail.model == 'sale.order':
+                order = self.env['sale.order'].browse(mail.res_id)
+                partner = order.partner_id
+                if partner in order.message_partner_ids:
+                    order.message_unsubscribe([partner.id])
+        return super(eq_mail_mail, self)._postprocess_sent_message(mail_sent=mail_sent)
+
     #def send(self, cr, uid, ids, auto_commit=False, raise_exception=False, context=None):
     @api.multi
     def send(self, auto_commit=False, raise_exception=False):

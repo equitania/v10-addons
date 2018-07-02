@@ -1,5 +1,10 @@
 ## Modul eq_mail_extension
 
+#### 02.07.2018
+#### Version 1.0.42
+##### CHG
+- Ticket 5585: unsubscribe partner from sale order
+
 #### 04.06.2018
 #### Version 1.0.41
 ##### CHG
