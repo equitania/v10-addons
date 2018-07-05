@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 05.07.2018
+#### Version 1.0.38
+##### FIX
+- Ticket 5923: singleton fix.
+
 #### 21.06.2018
 #### Version 1.0.37
 ##### CHG

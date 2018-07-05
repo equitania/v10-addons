@@ -145,9 +145,10 @@ class eq_res_partner(models.Model):
         :param vals: All posted data
         :return: Result of call of super method
         """
-        if self.parent_id:
-            if self.parent_id.customer_number:
-                vals.update({'customer_number': self.parent_id.customer_number})
+        for obj in self:
+            if obj.parent_id:
+                if obj.parent_id.customer_number:
+                    vals.update({'customer_number': obj.parent_id.customer_number})
 
         res = super(eq_res_partner, self).create(vals)
 
@@ -164,9 +165,10 @@ class eq_res_partner(models.Model):
         :param vals: All posted data
         :return: Result of call of super method
         """
-        if self.parent_id:
-            if self.parent_id.customer_number:
-                vals.update({'customer_number': self.parent_id.customer_number})
+        for obj in self:
+            if obj.parent_id:
+                if obj.parent_id.customer_number:
+                    vals.update({'customer_number': obj.parent_id.customer_number})
 
         res = super(eq_res_partner, self).write(vals)
 
