@@ -221,6 +221,7 @@
                     <field name="time_stop" widget="float_time"/>
                     <field name="unit_amount" string="Duration" widget="float_time"/>
                     <field name="to_invoice"/>
+                    <field name="eq_storno_flag" readonly="1"/>
                     <field name="invoice_id"/>
                     <field name="user_id" required="1"/>
                     <field name="product_id"/>
@@ -247,6 +248,7 @@
                             <group>
                                 <field name="to_invoice"/>
                                 <field name="invoice_id"/>
+                                <field name="eq_storno_flag" readonly="1"/>
                                 <field name="user_id" required="1"/>
                                 <field name="product_id"/>
                             </group>
@@ -276,6 +278,7 @@
                                 <group>
                                     <field name="to_invoice"/>
                                     <field name="invoice_id"/>
+                                    <field name="eq_storno_flag" readonly="1"/>
                                     <field name="task_id"/>
                                     <field name="user_id" required="1"/>
                                     <field name="product_id"/>
@@ -306,6 +309,7 @@
                                 <group>
                                     <field name="to_invoice"/>
                                     <field name="invoice_id"/>
+                                    <field name="eq_storno_flag" readonly="1"/>
                                     <field name="issue_id"/>
                                     <field name="user_id" required="1"/>
                                     <field name="product_id"/>
@@ -329,7 +333,8 @@
                     <field name="time_stop" widget="float_time"/>
                     <field name="unit_amount" string="Duration" widget="float_time"/>
                     <field name="to_invoice"/>
-                     <field name="task_id"/>
+                    <field name="eq_storno_flag" readonly="1"/>
+                    <field name="task_id"/>
                     <field name="invoice_id"/>
                     <field name="user_id" required="1"/>
                     <field name="product_id"/>
@@ -350,6 +355,7 @@
                     <field name="time_stop" widget="float_time"/>
                     <field name="unit_amount" string="Duration" widget="float_time"/>
                     <field name="to_invoice"/>
+                    <field name="eq_storno_flag" readonly="1"/>
                     <field name="issue_id"/>
                     <field name="invoice_id"/>
                     <field name="user_id" required="1"/>
@@ -435,6 +441,20 @@
                 <p class="oe_view_nocontent_create">click here to insert course data </p>
             </field>
         </record>
+
+        <record id="eq_hr_timesheet_line_tree" model="ir.ui.view">
+        <field name="name">timesheet.line.tree</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree"/>
+        <field name="arch" type="xml">
+            <field name="unit_amount" position="after">
+                <field name="to_invoice"/>
+                <field name="eq_storno_flag" readonly="1"/>
+                <field name="invoice_id" readonly="1"/>
+                <field name="product_id"/>
+            </field>
+        </field>
+    </record>
 
 
         <!-- Menus -->

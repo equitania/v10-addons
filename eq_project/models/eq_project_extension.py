@@ -116,7 +116,7 @@ class eq_project_extension(models.Model):
             project.eq_worked_hours = eq_worked_hour
 
 
-class eq_account_analytic_line(models.Model):
+class eq_account_analytic_line_project(models.Model):
     """
     Extension of account.analytic.line
     Changed logic on create, write and added new functions to be able to archive better useability
@@ -124,6 +124,12 @@ class eq_account_analytic_line(models.Model):
     _inherit = 'account.analytic.line'
 
     MAX_POSSIBLE_HOURS = 24.00
+
+    def invoice_cost_create(self, data=None):
+        res = super(eq_account_analytic_line_project, self).invoice_cost_create(data)
+        for obj in self:
+            obj.write({'eq_storno_flag': False})
+        return res
 
     def _get_project_from_context(self):
         """
@@ -141,6 +147,7 @@ class eq_account_analytic_line(models.Model):
     name = fields.Text(string='Description', required=True)
     project_id = fields.Many2one('project.project', 'Project', domain=[('allow_timesheets', '=', True)], default=_get_project_from_context)
     sheet_id = fields.Many2one('hr_timesheet_sheet.sheet', compute='_compute_sheet', string='Sheet', store=True)
+    eq_storno_flag = fields.Boolean(string='storniert', default=False)
 
     @api.model
     def create(self, vals):
@@ -156,7 +163,7 @@ class eq_account_analytic_line(models.Model):
             if vals['time_stop'] >= self.MAX_POSSIBLE_HOURS:
                 raise Warning(_("Please enter a valid Hour"))
 
-        return super(eq_account_analytic_line,self).create(vals)
+        return super(eq_account_analytic_line_project,self).create(vals)
 
     @api.multi
     def write(self, vals):
@@ -172,7 +179,7 @@ class eq_account_analytic_line(models.Model):
             if vals['time_stop'] >= self.MAX_POSSIBLE_HOURS:
                 raise Warning(_("Please enter a valid Hour"))
 
-        return super(eq_account_analytic_line, self).write(vals)
+        return super(eq_account_analytic_line_project, self).write(vals)
 
     @api.onchange('project_id')
     def set_time_onchange(self):

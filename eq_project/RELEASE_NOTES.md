@@ -1,5 +1,11 @@
 ## Modul eq_project
 
+#### 06.07.2018
+#### Version 1.0.23
+##### ADD
+- storno flag to account.analytic.line
+- remove link to invoice when you cancel a invoice (in account.analytic.line)
+
 #### 28.06.2018
 #### Version 1.0.22
 ##### ADD

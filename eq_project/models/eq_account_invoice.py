@@ -18,7 +18,16 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-import eq_project_extension
-import eq_extension_project_task_type
-import eq_project
-import eq_account_invoice
+from odoo import models, fields, api, _
+from datetime import datetime, timedelta
+
+class eq_account_invoice_project(models.Model):
+    _inherit = "account.invoice"
+
+    @api.multi
+    def action_invoice_cancel(self):
+        res = super(eq_account_invoice_project, self).action_invoice_cancel()
+        del_line_links = self.env['account.analytic.line'].search([('invoice_id', '=', self.id)])
+        for del_line_link in del_line_links:
+            del_line_link.write({'invoice_id': False, 'eq_storno_flag': 'True'})
+        return res
