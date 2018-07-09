@@ -26,7 +26,9 @@
                                         <h t-if="doc.company_id.partner_id.country_id.name != doc.partner_id.country_id.name" t-field="doc.company_id.partner_id.country_id.name"/>
                                     </p>
                                     <t t-if="doc.partner_id.parent_id">
-                                        <div t-field="doc.partner_id.parent_id.name" style="clear:left;"/>
+                                        <t t-if="doc.partner_id.parent_id.company_type == 'company'">
+                                            <div t-field="doc.partner_id.parent_id.name" style="clear:left;"/>
+                                        </t>
                                     </t>
                                     <div  style="clear:left;">
                                         <h t-if="doc.partner_id.title.name" t-field="doc.partner_id.title.name"  />
@@ -577,7 +579,10 @@
                                                     <div>
                                                         <!-- falls es einen übergeordneten Partner gibt, dann dessen Namen ausgeben -->
                                                         <t t-if="doc.partner_invoice_id.parent_id">
-                                                            <div t-field="doc.partner_invoice_id.parent_id.name" style="clear:left;"/>
+                                                            <!-- Namen nur anzeigen wenn der Oberkontakt eine Firma ist -->
+                                                            <t t-if="doc.partner_invoice_id.parent_id.company_type == 'company'">
+                                                                <div t-field="doc.partner_invoice_id.parent_id.name" style="clear:left;"/>
+                                                            </t>
                                                         </t>
                                                         <div  style="clear:left;">
                                                             <h t-if="doc.partner_invoice_id.title.name" t-field="doc.partner_invoice_id.title.name"  />
@@ -614,8 +619,12 @@
                                                 </td>
                                                 <td style="padding-top:0.5cm;">
                                                     <div>
+                                                        <!-- falls es einen übergeordneten Partner gibt, dann dessen Namen ausgeben -->
                                                         <t t-if="doc.partner_shipping_id.parent_id">
-                                                            <div t-field="doc.partner_shipping_id.parent_id.name" style="clear:left;"/>
+                                                            <!-- Namen nur anzeigen wenn der Oberkontakt eine Firma ist -->
+                                                            <t t-if="doc.partner_shipping_id.parent_id.company_type == 'company'">
+                                                                <div t-field="doc.partner_shipping_id.parent_id.name" style="clear:left;"/>
+                                                            </t>
                                                         </t>
                                                         <div  style="clear:left;">
                                                             <h t-if="doc.partner_shipping_id.title.name" t-field="doc.partner_shipping_id.title.name"  />

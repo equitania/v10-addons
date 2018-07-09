@@ -1,12 +1,18 @@
 ## Modul eq_sale
 
-#### 21706.2018
+
+#### 09.07.2018
+#### Version 1.0.87
+##### FIX
+- (Ticket 5943) Changing Sale Report Address-IF-statements for, if parent address is a company, then show parent company name (instead of "if parent-contact has a name")
+
+#### 21.06.2018
 #### Version 1.0.86
 ##### ADD
 - date_order translation with 'Erstelldatum'.
 - incoterms translation in 'Incoterms'.
 
-#### 21706.2018
+#### 21.06.2018
 #### Version 1.0.85
 ##### ADD
 - add website_quote translation for require_payment in a sale order.
