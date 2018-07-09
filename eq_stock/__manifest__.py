@@ -22,7 +22,7 @@
 {
     'name': 'Equitania Lager Optimierungen',
     'license': 'AGPL-3',
-    'version': '1.0.23',
+    'version': '1.0.24',
     'description': """
         Erweiterung für Lager
     """,

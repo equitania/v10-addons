@@ -1,5 +1,10 @@
 ## Modul eq_stock
 
+#### 09.07.2018
+#### Version 1.0.24
+##### FIX
+- (Ticket 5943) Changing Stock & Picking Report Address-IF-statements for, if parent address is a company, then show parent company name (instead of "if parent-contact has a name")
+
 #### 02.07.2018
 #### Version 1.0.23
 ##### CHG

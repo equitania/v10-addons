@@ -11,81 +11,85 @@
                         <div class="col-xs-6">
                             <div t-if="o.move_lines and o.move_lines[0].partner_id and o.move_lines[0].partner_id.id != o.partner_id.id">
                                 <span><strong>Delivery Address:</strong></span>
-                                                <t t-if="o.move_lines[0].partner_id.parent_id">
-                                                    <div t-field="o.move_lines[0].partner_id.parent_id.name" style="clear:left;"/>
-                                                </t>
-                                                <div  style="clear:left;">
-                                                    <h t-if="o.move_lines[0].partner_id.title.name" t-field="o.move_lines[0].partner_id.title.name"  />
-                                                    <h t-if="o.move_lines[0].partner_id.eq_firstname" t-field="o.move_lines[0].partner_id.eq_firstname" />
-                                                    <h t-field="o.move_lines[0].partner_id.name" />
-                                                </div>
-                                                <!--<div t-esc="print_name" style="clear:left;"/>-->
-                                                <div t-if="o.move_lines[0].partner_id.eq_name2" style="clear:left;">
-                                                    <div t-field="o.move_lines[0].partner_id.eq_name2"/>
-                                                </div>
-                                                <div t-if="o.move_lines[0].partner_id.eq_name3" style="clear:left;">
-                                                    <div t-field="o.move_lines[0].partner_id.eq_name3"/>
-                                                </div>
-                                                <div style="clear:left;">
-                                                    <span t-field="o.move_lines[0].partner_id.street"/>
-                                                    <h t-if="o.move_lines[0].partner_id.eq_house_no">
-                                                        <span t-field="o.move_lines[0].partner_id.eq_house_no" />
-                                                    </h>
-                                                </div>
-                                                <div t-if="o.move_lines[0].partner_id.street2">
-                                                    <div t-field="o.move_lines[0].partner_id.street2"/>
-                                                </div>
-                                                <h>
-                                                    <h t-field="o.move_lines[0].partner_id.zip"/>
-                                                    <span>
-                                                    </span>
-                                                    <h t-field="o.move_lines[0].partner_id.city"/>
-                                                    <h t-if="o.move_lines[0].partner_id.eq_citypart">
-                                                        -
-                                                        <h t-field="o.move_lines[0].partner_id.eq_citypart" />
-                                                    </h>
-                                                </h>
-                                                <div t-field="o.move_lines[0].partner_id.country_id.name"/>
+                                    <t t-if="o.move_lines[0].partner_id.parent_id">
+                                        <t t-if="o.move_lines[0].partner_id.parent_id.company_type == 'company'">
+                                            <div t-field="o.move_lines[0].partner_id.parent_id.name" style="clear:left;"/>
+                                        </t>
+                                    </t>
+                                    <div  style="clear:left;">
+                                        <h t-if="o.move_lines[0].partner_id.title.name" t-field="o.move_lines[0].partner_id.title.name"  />
+                                        <h t-if="o.move_lines[0].partner_id.eq_firstname" t-field="o.move_lines[0].partner_id.eq_firstname" />
+                                        <h t-field="o.move_lines[0].partner_id.name" />
+                                    </div>
+                                    <!--<div t-esc="print_name" style="clear:left;"/>-->
+                                    <div t-if="o.move_lines[0].partner_id.eq_name2" style="clear:left;">
+                                        <div t-field="o.move_lines[0].partner_id.eq_name2"/>
+                                    </div>
+                                    <div t-if="o.move_lines[0].partner_id.eq_name3" style="clear:left;">
+                                        <div t-field="o.move_lines[0].partner_id.eq_name3"/>
+                                    </div>
+                                    <div style="clear:left;">
+                                        <span t-field="o.move_lines[0].partner_id.street"/>
+                                        <h t-if="o.move_lines[0].partner_id.eq_house_no">
+                                            <span t-field="o.move_lines[0].partner_id.eq_house_no" />
+                                        </h>
+                                    </div>
+                                    <div t-if="o.move_lines[0].partner_id.street2">
+                                        <div t-field="o.move_lines[0].partner_id.street2"/>
+                                    </div>
+                                    <h>
+                                        <h t-field="o.move_lines[0].partner_id.zip"/>
+                                        <span>
+                                        </span>
+                                        <h t-field="o.move_lines[0].partner_id.city"/>
+                                        <h t-if="o.move_lines[0].partner_id.eq_citypart">
+                                            -
+                                            <h t-field="o.move_lines[0].partner_id.eq_citypart" />
+                                        </h>
+                                    </h>
+                                    <div t-field="o.move_lines[0].partner_id.country_id.name"/>
                                 <!--<div t-field="o.move_lines[0].partner_id"
                                     t-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": True, "phone_icons": True}'/>-->
                             </div>
                             <div t-if="o.picking_type_id.code != 'internal' and (not o.move_lines or not o.move_lines[0].partner_id) and o.picking_type_id.warehouse_id.partner_id">
                                 <span><strong>Warehouse Address:</strong></span>
-                                                <t t-if="o.picking_type_id.warehouse_id.partner_id.parent_id">
-                                                    <div t-field="o.picking_type_id.warehouse_id.partner_id.parent_id.name" style="clear:left;"/>
-                                                </t>
-                                                <div  style="clear:left;">
-                                                    <h t-if="o.picking_type_id.warehouse_id.partner_id.title.name" t-field="o.picking_type_id.warehouse_id.partner_id.title.name"  />
-                                                    <h t-if="o.picking_type_id.warehouse_id.partner_id.eq_firstname" t-field="o.picking_type_id.warehouse_id.partner_id.eq_firstname" />
-                                                    <h t-field="o.picking_type_id.warehouse_id.partner_id.name" />
-                                                </div>
-                                                <!--<div t-esc="print_name" style="clear:left;"/>-->
-                                                <div t-if="o.picking_type_id.warehouse_id.partner_id.eq_name2" style="clear:left;">
-                                                    <div t-field="o.picking_type_id.warehouse_id.partner_id.eq_name2"/>
-                                                </div>
-                                                <div t-if="o.picking_type_id.warehouse_id.partner_id.eq_name3" style="clear:left;">
-                                                    <div t-field="o.picking_type_id.warehouse_id.partner_id.eq_name3"/>
-                                                </div>
-                                                <div style="clear:left;">
-                                                    <span t-field="o.picking_type_id.warehouse_id.partner_id.street"/>
-                                                    <h t-if="o.picking_type_id.warehouse_id.partner_id.eq_house_no">
-                                                        <span t-field="o.picking_type_id.warehouse_id.partner_id.eq_house_no" />
-                                                    </h>
-                                                </div>
-                                                <div t-if="o.picking_type_id.warehouse_id.partner_id.street2">
-                                                    <div t-field="o.picking_type_id.warehouse_id.partner_id.street2"/>
-                                                </div>
-                                                <h>
-                                                    <h t-field="o.picking_type_id.warehouse_id.partner_id.zip"/>
-                                                    <span>
-                                                    </span>
-                                                    <h t-field="o.picking_type_id.warehouse_id.partner_id.city"/>
-                                                    <h t-if="o.picking_type_id.warehouse_id.partner_id.eq_citypart">
-                                                        -
-                                                        <h t-field="o.picking_type_id.warehouse_id.partner_id.eq_citypart" />
-                                                    </h>
-                                                </h>
-                                                <div t-field="o.picking_type_id.warehouse_id.partner_id.country_id.name"/>
+                                    <t t-if="o.picking_type_id.warehouse_id.partner_id.parent_id">
+                                        <t t-if="o.picking_type_id.warehouse_id.partner_id.parent_id.company_type == 'company'">
+                                            <div t-field="o.picking_type_id.warehouse_id.partner_id.parent_id.name" style="clear:left;"/>
+                                        </t>
+                                    </t>
+                                    <div  style="clear:left;">
+                                        <h t-if="o.picking_type_id.warehouse_id.partner_id.title.name" t-field="o.picking_type_id.warehouse_id.partner_id.title.name"  />
+                                        <h t-if="o.picking_type_id.warehouse_id.partner_id.eq_firstname" t-field="o.picking_type_id.warehouse_id.partner_id.eq_firstname" />
+                                        <h t-field="o.picking_type_id.warehouse_id.partner_id.name" />
+                                    </div>
+                                    <!--<div t-esc="print_name" style="clear:left;"/>-->
+                                    <div t-if="o.picking_type_id.warehouse_id.partner_id.eq_name2" style="clear:left;">
+                                        <div t-field="o.picking_type_id.warehouse_id.partner_id.eq_name2"/>
+                                    </div>
+                                    <div t-if="o.picking_type_id.warehouse_id.partner_id.eq_name3" style="clear:left;">
+                                        <div t-field="o.picking_type_id.warehouse_id.partner_id.eq_name3"/>
+                                    </div>
+                                    <div style="clear:left;">
+                                        <span t-field="o.picking_type_id.warehouse_id.partner_id.street"/>
+                                        <h t-if="o.picking_type_id.warehouse_id.partner_id.eq_house_no">
+                                            <span t-field="o.picking_type_id.warehouse_id.partner_id.eq_house_no" />
+                                        </h>
+                                    </div>
+                                    <div t-if="o.picking_type_id.warehouse_id.partner_id.street2">
+                                        <div t-field="o.picking_type_id.warehouse_id.partner_id.street2"/>
+                                    </div>
+                                    <h>
+                                        <h t-field="o.picking_type_id.warehouse_id.partner_id.zip"/>
+                                        <span>
+                                        </span>
+                                        <h t-field="o.picking_type_id.warehouse_id.partner_id.city"/>
+                                        <h t-if="o.picking_type_id.warehouse_id.partner_id.eq_citypart">
+                                            -
+                                            <h t-field="o.picking_type_id.warehouse_id.partner_id.eq_citypart" />
+                                        </h>
+                                    </h>
+                                    <div t-field="o.picking_type_id.warehouse_id.partner_id.country_id.name"/>
                                 <!--<div t-field="o.picking_type_id.warehouse_id.partner_id"
                                     t-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": True, "phone_icons": True}'/>-->
                             </div>
@@ -102,41 +106,43 @@
                             </div>
                             <div t-if="o.partner_id" name="partner_header">
                                 <div>
-                                                <t t-if="o.partner_id.parent_id">
-                                                    <div t-field="o.partner_id.parent_id.name" style="clear:left;"/>
-                                                </t>
-                                                <div  style="clear:left;">
-                                                    <h t-if="o.partner_id.title.name" t-field="o.partner_id.title.name"  />
-                                                    <h t-if="o.partner_id.eq_firstname" t-field="o.partner_id.eq_firstname" />
-                                                    <h t-field="o.partner_id.name" />
-                                                </div>
-                                                <!--<div t-esc="print_name" style="clear:left;"/>-->
-                                                <div t-if="o.partner_id.eq_name2" style="clear:left;">
-                                                    <div t-field="o.partner_id.eq_name2"/>
-                                                </div>
-                                                <div t-if="o.partner_id.eq_name3" style="clear:left;">
-                                                    <div t-field="o.partner_id.eq_name3"/>
-                                                </div>
-                                                <div style="clear:left;">
-                                                    <span t-field="o.partner_id.street"/>
-                                                    <h t-if="o.partner_id.eq_house_no">
-                                                        <span t-field="o.partner_id.eq_house_no" />
-                                                    </h>
-                                                </div>
-                                                <div t-if="o.partner_id.street2">
-                                                    <div t-field="o.partner_id.street2"/>
-                                                </div>
-                                                <h>
-                                                    <h t-field="o.partner_id.zip"/>
-                                                    <span>
-                                                    </span>
-                                                    <h t-field="o.partner_id.city"/>
-                                                    <h t-if="o.partner_id.eq_citypart">
-                                                        -
-                                                        <h t-field="o.partner_id.eq_citypart" />
-                                                    </h>
-                                                </h>
-                                                <div t-field="o.partner_id.country_id.name"/>
+                                    <t t-if="o.partner_id.parent_id">
+                                        <t t-if="o.partner_id.parent_id.company_type == 'company'">
+                                            <div t-field="o.partner_id.parent_id.name" style="clear:left;"/>
+                                        </t>
+                                    </t>
+                                    <div  style="clear:left;">
+                                        <h t-if="o.partner_id.title.name" t-field="o.partner_id.title.name"  />
+                                        <h t-if="o.partner_id.eq_firstname" t-field="o.partner_id.eq_firstname" />
+                                        <h t-field="o.partner_id.name" />
+                                    </div>
+                                    <!--<div t-esc="print_name" style="clear:left;"/>-->
+                                    <div t-if="o.partner_id.eq_name2" style="clear:left;">
+                                        <div t-field="o.partner_id.eq_name2"/>
+                                    </div>
+                                    <div t-if="o.partner_id.eq_name3" style="clear:left;">
+                                        <div t-field="o.partner_id.eq_name3"/>
+                                    </div>
+                                    <div style="clear:left;">
+                                        <span t-field="o.partner_id.street"/>
+                                        <h t-if="o.partner_id.eq_house_no">
+                                            <span t-field="o.partner_id.eq_house_no" />
+                                        </h>
+                                    </div>
+                                    <div t-if="o.partner_id.street2">
+                                        <div t-field="o.partner_id.street2"/>
+                                    </div>
+                                    <h>
+                                        <h t-field="o.partner_id.zip"/>
+                                        <span>
+                                        </span>
+                                        <h t-field="o.partner_id.city"/>
+                                        <h t-if="o.partner_id.eq_citypart">
+                                            -
+                                            <h t-field="o.partner_id.eq_citypart" />
+                                        </h>
+                                    </h>
+                                    <div t-field="o.partner_id.country_id.name"/>
                                 </div>
                                 <!--<div t-field="o.partner_id"
                                    t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}'/>-->
