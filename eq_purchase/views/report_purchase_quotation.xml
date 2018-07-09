@@ -95,14 +95,10 @@
                                 </tr>
                                 <tr t-if="o.origin">
                                     <td>
-                                        <!--
                                         <span>Our reference no.</span>
-                                        -->
                                     </td>
                                     <td class="text-right">
-                                        <!--
                                         <span t-field="o.origin" />
-                                        -->
                                     </td>
                                 </tr>
                                 <tr>

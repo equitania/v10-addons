@@ -112,6 +112,12 @@ msgstr "<span>Auftragsnummer</span>"
 msgid "<span>Our order reference</span>"
 msgstr "<span>Unsere Bestellnr.</span>"
 
+#. module: eq_purchase
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document
+#: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchasequotation_document
+msgid "<span>Our reference no.</span>"
+msgstr "<span>Referenzbeleg</span>"
+
 
 #. module: eq_purchase
 #: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchaseorder_document

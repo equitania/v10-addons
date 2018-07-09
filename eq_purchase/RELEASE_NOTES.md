@@ -1,5 +1,10 @@
 ## Modul eq_purchase
 
+#### 09.07.2018
+#### Version 1.0.38
+##### ADD
+- Purchase and Quotation Reports: Adding Reference "origin" to the reports
+
 #### 02.07.2018
 #### Version 1.0.37
 ##### CHG
