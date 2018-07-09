@@ -38,7 +38,9 @@
                                     <h t-if="o.company_id.partner_id.country_id.name != o.partner_id.country_id.name" t-field="o.company_id.partner_id.country_id.name"/>
                                 </p>
                                 <t t-if="o.partner_id.parent_id">
-                                    <div t-field="o.partner_id.parent_id.name" style="clear:left;"/>
+                                    <t t-if="o.partner_id.parent_id.company_type == 'company'">
+                                        <div t-field="o.partner_id.parent_id.name" style="clear:left;"/>
+                                    </t>
                                 </t>
                                 <div  style="clear:left;">
                                     <h t-if="o.partner_id.title.name" t-field="o.partner_id.title.name"  />
@@ -673,10 +675,10 @@
                                                 <strong>Shipping address:</strong>
                                             </td>
                                             <td>
-
-
                                                 <t t-if="o.partner_shipping_id.parent_id">
-                                                    <div t-field="o.partner_shipping_id.parent_id.name" style="clear:left;"/>
+                                                    <t t-if="o.partner_shipping_id.parent_id.company_type == 'company'">
+                                                        <div t-field="o.partner_shipping_id.parent_id.name" style="clear:left;"/>
+                                                    </t>
                                                 </t>
                                                 <div  style="clear:left;">
                                                     <h t-if="o.partner_shipping_id.title.name" t-field="o.partner_shipping_id.title.name"  />

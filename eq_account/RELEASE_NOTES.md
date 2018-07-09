@@ -1,6 +1,11 @@
 ## Modul eq_account
 
 #### 27.06.2018
+#### Version 1.0.62
+##### ADD
+- (Ticket 5943) Changing Invoice Report Address-IF-statements for, if parent address is a company, then show parent company name (instead of "if parent-contact has a name")
+
+#### 27.06.2018
 #### Version 1.0.61
 ##### ADD
 - Creating new function for payment placeholders
