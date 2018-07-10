@@ -1,5 +1,9 @@
 ## Modul eq_sale
 
+#### 10.07.2018
+#### Version 1.0.88
+##### FIX
+- fix sale report language, change o in doc
 
 #### 09.07.2018
 #### Version 1.0.87

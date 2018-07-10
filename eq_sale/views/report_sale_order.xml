@@ -4,7 +4,7 @@
         <template id="eq_report_saleorder_document" inherit_id="sale.report_saleorder_document">
             <xpath expr="//t[@t-call='report.external_layout']" position="replace">
                 <t t-call="eq_base_report.eq_external_layout">
-                    <t t-set="o" t-value="doc.with_context({'lang':doc.partner_id.lang})"/>
+                    <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})"/>
                     <!--<div class="padding-print">-->
                         <div class="page"><!-- klasse entfernt: padding-print-->
                             <div class="oe_structure"/>
@@ -679,7 +679,7 @@
 
         <template id="eq_report_saleorder">
             <t t-call="report.html_container">
-                <t t-foreach="docs" t-as="o">
+                <t t-foreach="docs" t-as="doc">
                     <t t-call="eq_sale.eq_report_saleorder_document"
                        t-lang="doc.partner_id.lang"/>
                 </t>
