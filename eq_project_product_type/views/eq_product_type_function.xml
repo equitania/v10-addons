@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="1">
+        <function model="eq_product_type" name="generate_default_product_objects"/>
+</data>
+</odoo>

@@ -1,0 +1,74 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* eq_project_myodoo
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.20180701\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-03 07:50+0000\n"
+"PO-Revision-Date: 2018-07-03 07:50+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: eq_project_product_type
+#: model:ir.model,name:eq_project_product_type.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Kostenposition"
+
+#. module: eq_project_product_type
+#: model:ir.model.fields,field_description:eq_project_product_type.field_eq_product_type_create_uid
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: eq_project_product_type
+#: model:ir.model.fields,field_description:eq_project_product_type.field_eq_product_type_create_date
+msgid "Created on"
+msgstr "Angelegt am"
+
+#. module: eq_project_product_type
+#: model:ir.model.fields,field_description:eq_project_product_type.field_eq_product_type_display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: eq_project_product_type
+#: model:ir.model.fields,field_description:eq_project_product_type.field_eq_product_type_id
+msgid "ID"
+msgstr "ID"
+
+#. module: eq_project_product_type
+#: model:ir.model.fields,field_description:eq_project_product_type.field_eq_product_type___last_update
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
+
+#. module: eq_project_product_type
+#: model:ir.model.fields,field_description:eq_project_product_type.field_eq_product_type_write_uid
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert durch"
+
+#. module: eq_project_product_type
+#: model:ir.model.fields,field_description:eq_project_product_type.field_eq_product_type_write_date
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: eq_project_product_type
+#: model:ir.model.fields,field_description:eq_project_product_type.field_eq_product_type_eq_name
+msgid "Name"
+msgstr "Name"
+
+#. module: eq_project_product_type
+#: model:ir.model.fields,field_description:eq_project_product_type.field_account_analytic_line_eq_product_type_id
+#: model:ir.model.fields,field_description:eq_project_product_type.field_account_invoice_eq_product_type_id
+#: model:ir.model.fields,field_description:eq_project_product_type.field_account_invoice_line_eq_product_type_id
+msgid "Product Type"
+msgstr "Typ"
+
+#. module: eq_project_product_type
+#: model:ir.model,name:eq_project_product_type.model_eq_product_type
+msgid "eq_product_type"
+msgstr "Typ"
+
