@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 13.07.2018
+#### Version 1.0.24
+##### ADD
+- add invoice_refund functionality for eq_storno_flag
+
 #### 06.07.2018
 #### Version 1.0.23
 ##### ADD

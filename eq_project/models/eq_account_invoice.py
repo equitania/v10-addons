@@ -31,3 +31,25 @@ class eq_account_invoice_project(models.Model):
         for del_line_link in del_line_links:
             del_line_link.write({'invoice_id': False, 'eq_storno_flag': 'True'})
         return res
+
+class eq_projectAccountInvoiceRefund(models.TransientModel):
+    """Refunds invoice"""
+
+    _inherit = "account.invoice.refund"
+
+    @api.multi
+    def invoice_refund(self):
+        res = super(eq_projectAccountInvoiceRefund, self).invoice_refund()
+        context = self._context
+        if 'active_id' in context:
+            active_id = context['active_id']
+            del_line_links = self.env['account.analytic.line'].search([('invoice_id', '=', active_id)])
+            for del_line_link in del_line_links:
+                del_line_link.write({'invoice_id': False, 'eq_storno_flag': 'True'})
+        elif 'active_ids' in context:
+            active_ids = context['active_ids']
+            for active_id in active_ids:
+                del_line_links = self.env['account.analytic.line'].search([('invoice_id', '=', active_id)])
+                for del_line_link in del_line_links:
+                    del_line_link.write({'invoice_id': False, 'eq_storno_flag': 'True'})
+        return res

@@ -163,6 +163,8 @@ class eq_account_analytic_line_project(models.Model):
             if vals['time_stop'] >= self.MAX_POSSIBLE_HOURS:
                 raise Warning(_("Please enter a valid Hour"))
 
+        vals['eq_storno_flag'] = False
+
         return super(eq_account_analytic_line_project,self).create(vals)
 
     @api.multi
