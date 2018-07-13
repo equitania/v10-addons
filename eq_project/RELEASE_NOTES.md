@@ -1,6 +1,11 @@
 ## Modul eq_project
 
 #### 13.07.2018
+#### Version 1.0.25
+##### ADD
+- add domain to timesheet (all). Only timesheets without move_id will shown.
+
+#### 13.07.2018
 #### Version 1.0.24
 ##### ADD
 - add invoice_refund functionality for eq_storno_flag

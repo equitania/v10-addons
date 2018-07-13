@@ -456,9 +456,25 @@
         </field>
     </record>
 
+        <record id="eq_act_hr_timesheet_line" model="ir.actions.act_window">
+            <field name="name">Activities</field>
+            <field name="res_model">account.analytic.line</field>
+            <field name="domain">[('project_id', '!=', False),('move_id','=', False)]</field>
+            <field name="search_view_id" ref="hr_timesheet.hr_timesheet_line_search"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to record activities.
+              </p><p>
+                You can register and track your workings hours by project every
+                day. Every time spent on a project will become a cost and can be re-invoiced to
+                customers if required.
+              </p>
+            </field>
+        </record>
+
 
         <!-- Menus -->
-        <menuitem id="eq_menu_hr_working_hours" parent="project.menu_project_management" action="hr_timesheet.act_hr_timesheet_line" name="Timesheet (all)" sequence="17"/>
+        <menuitem id="eq_menu_hr_working_hours" parent="project.menu_project_management" action="eq_act_hr_timesheet_line" name="Timesheet (all)" sequence="17"/>
         <menuitem id="menu_project_timesheet" name="Timesheet" parent="project.menu_project_management" action="project_timesheet_action_" sequence="15"/>
         <menuitem id="menu_issue" name="Timesheet(issues)" parent="project.menu_project_management" action="eq_issue_action" sequence="20"/>
         <menuitem id="menu_task" name="Timesheet(task)" parent="project.menu_project_management" action="eq_task_action" sequence="20"/>
