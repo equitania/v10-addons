@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 17.07.2018
+#### Version 1.0.63
+##### ADD
+- change decorator account.invoice.line from api.multi to api.model
+
 #### 27.06.2018
 #### Version 1.0.62
 ##### ADD

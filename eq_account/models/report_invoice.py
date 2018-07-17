@@ -151,7 +151,7 @@ class report_account_invoice_line(models.Model):
         return self.env["eq_report_helper"].get_qty(value, language, 'Sale Unit of Measure Report [eq_sale]')
 
 
-    @api.multi
+    @api.model
     def create(self, vals):
         """
             let's get original sequence no from deliverynote and save it for every position on delivery note
