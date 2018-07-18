@@ -27,6 +27,14 @@ class eq_account_analytic_line(models.Model):
 
     eq_product_type_id = fields.Many2one('eq_product_type', string='Product Type', required=True)
 
+    @api.model
+    def create(self,vals):
+        if 'eq_product_type_id' not in vals:
+            if 'invoice' in self._context:
+                vals['eq_product_type_id'] = self._context['invoice'].eq_product_type_id.id
+        res = super(eq_account_analytic_line, self).create(vals)
+        return res
+
 
     def invoice_cost_create(self, data=None):
         invoices = self.env['account.invoice']

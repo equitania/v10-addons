@@ -1,6 +1,11 @@
 ## Modul eq_project_product_type
 
 #### 18.07.2018
+#### Version 1.0.3
+##### FIX
+- add eq_product_type_id in create vals of account.analytic.line
+
+#### 18.07.2018
 #### Version 1.0.2
 ##### ADD
 - add user error message
