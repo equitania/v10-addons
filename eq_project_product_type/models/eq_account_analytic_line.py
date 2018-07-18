@@ -20,6 +20,7 @@
 ##############################################################################
 #New API, Remove Old API import if the New API is used. Otherwise you'll get an import error.
 from odoo import models, fields, api, _
+from odoo.exceptions import UserError
 
 class eq_account_analytic_line(models.Model):
     _inherit = 'account.analytic.line'
