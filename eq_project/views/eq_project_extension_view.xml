@@ -325,7 +325,7 @@
             <field name="name">account.analytic.task.tree</field>
             <field name="model">account.analytic.line</field>
             <field name="arch" type="xml">
-                <tree string="Account Task">
+                <tree string="Account Task" editable="bottom">
                     <field name="project_id"  required="1"/>
                     <field name="date"/>
                     <field name="name"/>
@@ -347,7 +347,7 @@
             <field name="name">account.analytic.issue.tree</field>
             <field name="model">account.analytic.line</field>
             <field name="arch" type="xml">
-                <tree string="Account Issue">
+                <tree string="Account Issue" editable="bottom">
                     <field name="project_id"  required="1"/>
                     <field name="date"/>
                     <field name="name"/>

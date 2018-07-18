@@ -4,6 +4,7 @@
 #### Version 1.0.26
 ##### ADD
 - remove domain filter 'project_id' from account.analytic.line tree view.
+- editable bottom in tree views
 
 #### 13.07.2018
 #### Version 1.0.25
