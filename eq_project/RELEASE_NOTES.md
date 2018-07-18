@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 18.07.2018
+#### Version 1.0.26
+##### ADD
+- remove domain filter 'project_id' from account.analytic.line tree view.
+
 #### 13.07.2018
 #### Version 1.0.25
 ##### ADD
