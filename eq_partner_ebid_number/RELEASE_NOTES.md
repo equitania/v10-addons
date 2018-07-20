@@ -4,7 +4,7 @@
 #### 10.10.2017
 #### Version 1.0.
 ##### CHG
-- Defaultrechte gesetzt
+- Default permissions setted
 
 
 #### 09.10.2017
