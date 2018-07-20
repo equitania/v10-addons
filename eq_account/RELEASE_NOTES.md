@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 20.07.2018
+#### Version 1.0.64
+##### ADD
+- Adding css inside xml tags for making new lines in payment term note
+
 #### 17.07.2018
 #### Version 1.0.63
 ##### ADD
