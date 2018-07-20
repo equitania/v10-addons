@@ -4,7 +4,7 @@
 #### Version 1.0.9
 ##### FIX
 - activate eq_models
-- Anpassungen innerhalb der search_read, sodass sowohl die Kalenderview als auch die Erweiterte Suche funktioniert.
+- Adjustments within search_read, so that both the calendar view and the advanced search work
 
 #### 23.02.2018
 #### Version 1.0.8
