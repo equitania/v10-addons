@@ -3,7 +3,7 @@
 #### 16.11.2017
 #### Version 1.0.4
 ##### CHG
-- Modul umbenannt zu CRM Optimierungen
+- Modul name changed to "CRM Optimization"
 
 #### 17.10.2017
 #### Version 1.0.3
