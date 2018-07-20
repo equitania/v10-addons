@@ -4,7 +4,7 @@
 #### 16.11.2017
 #### Version 1.0.5
 ##### CHG
-- Umbenennen des Moduls zu Preislisten Optimierungen
+- Rename the module to price list optimizations
 
 #### 04.09.2017
 #### Version 1.0.4
