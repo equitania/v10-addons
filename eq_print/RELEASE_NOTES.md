@@ -4,7 +4,7 @@ Menu: Einstellungen -> Allgemeine Einstellungen -> Spooltabelle
 ### 20.10.2017 - 1.0.1
 ### eq_print
 #### ADD
-- Skript für Abruf der Spooltabelle hinzugefügt
+- Script for retrieving the spool table added
 
 ### 10.10.2017 - 1.0.1
 ### eq_print
