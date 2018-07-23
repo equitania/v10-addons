@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 23.07.2018
+#### Version 1.0.65
+##### CHG
+- payment term: changing CSS Construction from pre-line to pre-wrap without a DIV container
+
 #### 20.07.2018
 #### Version 1.0.64
 ##### ADD

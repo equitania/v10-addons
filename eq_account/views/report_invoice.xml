@@ -641,20 +641,16 @@
 
                             <div id="informations" class="col-xs-12"
                                  style="margin-top:1em; margin-bottom:1em; margin-left:0px; padding-left:0px; page-break-inside:avoid !important;">
-                                <table class="col-xs-3"
-                                       style="width:auto!important; max-width:50%; margin-left:0px; padding-left:0px; font-size: 0.8em;">
+                                <table style="width:auto!important; margin-left:0px; padding-left:0px; font-size: 0.8em;">
                                     <tbody>
                                         <tr t-if="o.payment_term_id" >
-
                                             <td style="padding-right:1em;">
                                                 <strong>Payment Terms:</strong>
                                             </td>
                                             <td>
-                                                <div style="white-space: pre-line;margin-top:1.4em">
-                                                <span t-esc="o.get_eq_payment_terms(o.partner_id.lang, o.currency_id)"/>
-                                                </div>
+                                                <span style="white-space: pre-wrap;"
+                                                      t-esc="o.get_eq_payment_terms(o.partner_id.lang, o.currency_id)"/>
                                             </td>
-
                                         </tr>
                                         <tr t-if="o.incoterms_id">
                                             <td style="padding-right:0.5cm;">
