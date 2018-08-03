@@ -221,6 +221,7 @@
                     <field name="time_stop" widget="float_time"/>
                     <field name="unit_amount" string="Duration" widget="float_time"/>
                     <field name="to_invoice"/>
+                    <field name="eq_time_invoice"/>
                     <field name="eq_storno_flag" readonly="1"/>
                     <field name="invoice_id"/>
                     <field name="user_id" required="1"/>
@@ -244,6 +245,7 @@
                                 <field name="time_start" widget="float_time"/>
                                 <field name="time_stop" widget="float_time"/>
                                 <field name="unit_amount" string="Duration" widget="float_time"/>
+                                <field name="eq_time_invoice"/>
                             </group>
                             <group>
                                 <field name="to_invoice"/>
@@ -273,6 +275,7 @@
                                     <field name="time_start" widget="float_time"/>
                                     <field name="time_stop" widget="float_time"/>
                                     <field name="unit_amount" string="Duration" widget="float_time"/>
+                                    <field name="eq_time_invoice"/>
                                 </group>
 
                                 <group>
@@ -304,6 +307,7 @@
                                     <field name="time_start" widget="float_time"/>
                                     <field name="time_stop" widget="float_time"/>
                                     <field name="unit_amount" string="Duration" widget="float_time"/>
+                                    <field name="eq_time_invoice"/>
                                 </group>
 
                                 <group>
@@ -333,6 +337,7 @@
                     <field name="time_stop" widget="float_time"/>
                     <field name="unit_amount" string="Duration" widget="float_time"/>
                     <field name="to_invoice"/>
+                    <field name="eq_time_invoice"/>
                     <field name="eq_storno_flag" readonly="1"/>
                     <field name="task_id"/>
                     <field name="invoice_id"/>
@@ -355,6 +360,7 @@
                     <field name="time_stop" widget="float_time"/>
                     <field name="unit_amount" string="Duration" widget="float_time"/>
                     <field name="to_invoice"/>
+                    <field name="eq_time_invoice"/>
                     <field name="eq_storno_flag" readonly="1"/>
                     <field name="issue_id"/>
                     <field name="invoice_id"/>
@@ -449,6 +455,7 @@
         <field name="arch" type="xml">
             <field name="unit_amount" position="after">
                 <field name="to_invoice"/>
+                <field name="eq_time_invoice"/>
                 <field name="eq_storno_flag" readonly="1"/>
                 <field name="invoice_id" readonly="1"/>
                 <field name="product_id"/>

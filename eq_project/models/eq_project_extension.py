@@ -62,7 +62,7 @@ class eq_project_extension(models.Model):
         else:
             pass
 
-    def _deadline_date(selfs):
+    def _deadline_date(self):
         """
         Simple forward definition of this function - it was defined by Kevin
         :return: Nothing yet
@@ -142,12 +142,19 @@ class eq_account_analytic_line_project(models.Model):
             project_id = obj.project_id
             return project_id
 
+    @api.onchange('to_invoice','unit_amount')
+    def _compute_time_invoice(self):
+        for line in self:
+            to_invoice = ((100 - line.to_invoice.factor) / 100) * line.unit_amount
+            line.eq_time_invoice = to_invoice
+
     eq_startdate = fields.Char(string='Start Date')
     eq_time_start = fields.Float(string='time start')
     name = fields.Text(string='Description', required=True)
     project_id = fields.Many2one('project.project', 'Project', domain=[('allow_timesheets', '=', True)], default=_get_project_from_context)
     sheet_id = fields.Many2one('hr_timesheet_sheet.sheet', compute='_compute_sheet', string='Sheet', store=True)
     eq_storno_flag = fields.Boolean(string='storniert', default=False)
+    eq_time_invoice = fields.Float(string="Time to Invoice", compute=_compute_time_invoice)
 
     @api.model
     def create(self, vals):

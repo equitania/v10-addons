@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 03.08.2018
+#### Version 1.0.27
+##### ADD
+- add invoice time to account.analytic.line
+
 #### 18.07.2018
 #### Version 1.0.26
 ##### ADD

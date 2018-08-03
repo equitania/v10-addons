@@ -280,3 +280,8 @@ msgstr "<span>Projektnr.:</span>"
 #: model:ir.ui.menu,name:eq_project.eq_menu_hr_working_hours
 msgid "Timesheet (all)"
 msgstr "Zeiterfassung (alle)"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_account_analytic_line_eq_time_invoice
+msgid "Time to Invoice"
+msgstr "Abgerechnete Dauer"
