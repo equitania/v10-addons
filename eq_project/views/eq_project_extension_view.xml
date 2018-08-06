@@ -32,6 +32,12 @@
             <field name="model">project.project</field>
             <field name="inherit_id" ref="project_recalculate.edit_project_recalculate"/>
             <field name="arch" type="xml">
+                 <xpath expr="//div[@name='button_box']" position="inside">
+                    <button class="oe_stat_button" type="object" name="contract_action"
+                        icon="fa-puzzle-piece">
+                        <field string="Contract" name="contract_count" widget="statinfo"/>
+                    </button>
+                </xpath>
                 <field name="name" position="before">
                     <field name="eq_project_number"/><button type="object" name="generate_number" string="Project Number Automatically" class="oe_edit_only oe_link oe_inline"/> -
                 </field>

@@ -31,7 +31,33 @@ class ProjectProject(models.Model):
         stage_ids = self.env['project.task.type'].search([])
         return stage_ids
 
+    def _compute_contract_count(self):
+        for project in self:
+            if project.analytic_account_id.id:
+                project.contract_count = 1
+            else:
+                project.contract_count = 0
+
     stage_id = fields.Many2one('project.task.type', group_expand='_read_group_stage_ids')
+    contract_count = fields.Integer(compute='_compute_contract_count', string='Project Count')
+
+    @api.multi
+    def contract_action(self):
+        contracts = self.with_context(active_test=False).mapped('analytic_account_id')
+        result = {
+            "type": "ir.actions.act_window",
+            "res_model": "account.analytic.account",
+            "views": [[False, "tree"], [False, "form"]],
+            "domain": [["id", "in", contracts.ids]],
+            "context": {"create": False},
+            "name": "Contracts",
+        }
+        if len(contracts) == 1:
+            result['views'] = [(False, "form")]
+            result['res_id'] = contracts.id
+        else:
+            result = {'type': 'ir.actions.act_window_close'}
+        return result
 
 
 
