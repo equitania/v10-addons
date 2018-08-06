@@ -4,6 +4,7 @@
 #### Version 1.0.29
 ##### ADD
 - add project proceeds smart button to project.project form view
+- ignore invoice refunds in project proceeds
 
 #### 06.08.2018
 #### Version 1.0.28

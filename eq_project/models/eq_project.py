@@ -42,10 +42,10 @@ class ProjectProject(models.Model):
         for project in self:
             total_proceed = 0.0
             account_line_objs = self.env['account.analytic.line'].search([('project_id','=',project.id),('move_id','=',False),('invoice_id','!=',False)])
-
             for account_line_obj in account_line_objs:
-                proceed = account_line_obj.product_id.standard_price * account_line_obj.eq_time_invoice
-                total_proceed = total_proceed + proceed
+                if account_line_obj.invoice_id.state != 'draft':
+                    proceed = account_line_obj.product_id.standard_price * account_line_obj.eq_time_invoice
+                    total_proceed = total_proceed + proceed
             project.eq_project_proceeds = total_proceed
 
 
@@ -74,11 +74,16 @@ class ProjectProject(models.Model):
     @api.multi
     def proceed_action(self):
         account_analytic_lines = self.env['account.analytic.line'].search([('project_id','=',self.id),('move_id','=',False),('invoice_id','!=',False)])
+        line_list = []
+        for account_analytic_line in account_analytic_lines:
+            if account_analytic_line.invoice_id.state != 'draft':
+                line_list.append(account_analytic_line.id)
+
         result = {
             "type": "ir.actions.act_window",
             "res_model": "account.analytic.line",
             "views": [[False, "tree"], [False, "form"]],
-            "domain": [["id", "in", account_analytic_lines.ids]],
+            "domain": [["id", "in", line_list]],
             "context": {"create": False},
             "name": _("Timesheet"),
         }
