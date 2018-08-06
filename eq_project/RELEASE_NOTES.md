@@ -1,6 +1,13 @@
 ## Modul eq_project
 
 #### 06.08.2018
+#### Version 1.0.32
+##### ADD
+- Adding "invoiceable" column to the timesheet report
+- Adding responsible Persons Name under the invoice description
+- Changing Translations
+
+#### 06.08.2018
 #### Version 1.0.31
 ##### ADD
 - add proceed to line

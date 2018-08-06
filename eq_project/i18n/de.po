@@ -312,3 +312,19 @@ msgstr "Vertrag"
 #: model:ir.model.fields,field_description:eq_project.field_account_analytic_line_eq_proceed
 msgid "Proceed"
 msgstr "Erlös"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
+msgid "Time"
+msgstr "Dauer"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
+msgid "Invoiceable"
+msgstr "Verrechenbar"
+
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_report_account_extension
+msgid "<br/>Responsible:"
+msgstr "<br/>Verantwortlich:"

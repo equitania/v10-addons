@@ -1,0 +1,13 @@
+<odoo>
+
+    <template id="eq_project_report_account_extension" inherit_id="eq_account.eq_report_invoice_document">
+        <!-- this situation for lines with eq_move_ids shouldnt be used in general -->
+        <!--<xpath expr="//t[@t-if='l.eq_move_ids']/tr/t/td[3]/div[@class='table-description-invoice']" position="inside">
+            <br/>Responsible: <span t-field="l.eq_user_id" style="color:red!important;">111</span>
+        </xpath>-->
+        <xpath expr="//t[@t-if='not l.eq_move_ids']/tr/td[3]/div[@class='table-description-invoice']" position="inside">
+            <br/>Responsible: <span t-field="l.eq_user_id">222</span>
+        </xpath>
+    </template>
+
+</odoo>
