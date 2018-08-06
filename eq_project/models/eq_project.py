@@ -47,16 +47,23 @@ class ProjectProject(models.Model):
                     proceed = account_line_obj.eq_invoice_line_id.price_subtotal
                     total_proceed = total_proceed + proceed
             refund_account_line_objs = self.env['account.analytic.line'].search([('project_id','=',project.id),('invoice_id','!=',False),('move_id','!=',False)])
+            bool_run = False
             for refund_account_line_obj in refund_account_line_objs:
                 if refund_account_line_obj.invoice_id.state != 'draft' and refund_account_line_obj.invoice_id.type == 'out_refund':
-                    refund_proceed = refund_account_line_obj.invoice_id.amount_untaxed
-                    total_proceed = total_proceed - refund_proceed
-            project.eq_project_proceeds = total_proceed
+                    if bool_run == False:
+                        for invoice_line in refund_account_line_obj.invoice_id.invoice_line_ids:
+                            refund_proceed = invoice_line.price_subtotal
+                            total_proceed = total_proceed - refund_proceed
+                            bool_run = True
+            if total_proceed > 0:
+                project.eq_project_proceeds = '+' + str(total_proceed)
+            else:
+                project.eq_project_proceeds = str(total_proceed)
 
 
     stage_id = fields.Many2one('project.task.type', group_expand='_read_group_stage_ids')
     contract_count = fields.Integer(compute='_compute_contract_count', string='Project Count')
-    eq_project_proceeds = fields.Float(compute='_compute_proceeds', string='Product Proceeds')
+    eq_project_proceeds = fields.Char(compute='_compute_proceeds', string='Product Proceeds')
 
     @api.multi
     def contract_action(self):

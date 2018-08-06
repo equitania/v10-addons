@@ -148,6 +148,18 @@ class eq_account_analytic_line_project(models.Model):
             to_invoice = ((100 - line.to_invoice.factor) / 100) * line.unit_amount
             line.eq_time_invoice = to_invoice
 
+    def _compute_proceed(self):
+
+        for line in self:
+            if line.eq_invoice_line_id:
+                line.eq_proceed = line.eq_invoice_line_id.price_subtotal
+            else:
+                if len(line.invoice_id.invoice_line_ids) > 0:
+                    invoice_line_id = self.env['account.invoice.line'].search([('invoice_id','=',line.invoice_id.id),('product_id','=',line.product_id.id),('eq_user_id','=',line.user_id.id),('quantity','=',line.unit_amount)])
+                    if len(invoice_line_id) > 0:
+                        line.eq_proceed = -1 * invoice_line_id[0].price_subtotal
+
+
     eq_startdate = fields.Char(string='Start Date')
     eq_time_start = fields.Float(string='time start')
     name = fields.Text(string='Description', required=True)
@@ -155,6 +167,8 @@ class eq_account_analytic_line_project(models.Model):
     sheet_id = fields.Many2one('hr_timesheet_sheet.sheet', compute='_compute_sheet', string='Sheet', store=True)
     eq_storno_flag = fields.Boolean(string='storniert', default=False)
     eq_time_invoice = fields.Float(string="Time to Invoice", compute=_compute_time_invoice)
+
+    eq_proceed = fields.Float(string='Proceed', compute=_compute_proceed)
 
     @api.model
     def create(self, vals):

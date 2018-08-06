@@ -1,6 +1,11 @@
 ## Modul eq_project
 
 #### 06.08.2018
+#### Version 1.0.31
+##### ADD
+- add proceed to line
+
+#### 06.08.2018
 #### Version 1.0.30
 ##### ADD
 - calculate refund and compute proceed - refund

@@ -371,6 +371,7 @@
                     <field name="unit_amount" string="Duration" widget="float_time"/>
                     <field name="to_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                     <field name="eq_time_invoice"/>
+                    <field name="eq_proceed"/>
                     <field name="eq_storno_flag" readonly="1"/>
                     <field name="issue_id"/>
                     <field name="invoice_id"/>

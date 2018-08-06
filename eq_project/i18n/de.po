@@ -307,3 +307,8 @@ msgstr "Produkt Erlöse"
 #, python-format
 msgid "Contracts"
 msgstr "Vertrag"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_account_analytic_line_eq_proceed
+msgid "Proceed"
+msgstr "Erlös"
