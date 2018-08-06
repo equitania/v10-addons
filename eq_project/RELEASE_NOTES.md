@@ -1,6 +1,11 @@
 ## Modul eq_project
 
 #### 06.08.2018
+#### Version 1.0.29
+##### ADD
+- add project proceeds smart button to project.project form view
+
+#### 06.08.2018
 #### Version 1.0.28
 ##### ADD
 - add contract smart button to project form view.

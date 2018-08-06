@@ -38,8 +38,20 @@ class ProjectProject(models.Model):
             else:
                 project.contract_count = 0
 
+    def _compute_proceeds(self):
+        for project in self:
+            total_proceed = 0.0
+            account_line_objs = self.env['account.analytic.line'].search([('project_id','=',project.id),('move_id','=',False),('invoice_id','!=',False)])
+
+            for account_line_obj in account_line_objs:
+                proceed = account_line_obj.product_id.standard_price * account_line_obj.eq_time_invoice
+                total_proceed = total_proceed + proceed
+            project.eq_project_proceeds = total_proceed
+
+
     stage_id = fields.Many2one('project.task.type', group_expand='_read_group_stage_ids')
     contract_count = fields.Integer(compute='_compute_contract_count', string='Project Count')
+    eq_project_proceeds = fields.Float(compute='_compute_proceeds', string='Product Proceeds')
 
     @api.multi
     def contract_action(self):
@@ -50,13 +62,26 @@ class ProjectProject(models.Model):
             "views": [[False, "tree"], [False, "form"]],
             "domain": [["id", "in", contracts.ids]],
             "context": {"create": False},
-            "name": "Contracts",
+            "name": _("Contracts"),
         }
         if len(contracts) == 1:
             result['views'] = [(False, "form")]
             result['res_id'] = contracts.id
         else:
             result = {'type': 'ir.actions.act_window_close'}
+        return result
+
+    @api.multi
+    def proceed_action(self):
+        account_analytic_lines = self.env['account.analytic.line'].search([('project_id','=',self.id),('move_id','=',False),('invoice_id','!=',False)])
+        result = {
+            "type": "ir.actions.act_window",
+            "res_model": "account.analytic.line",
+            "views": [[False, "tree"], [False, "form"]],
+            "domain": [["id", "in", account_analytic_lines.ids]],
+            "context": {"create": False},
+            "name": _("Timesheet"),
+        }
         return result
 
 

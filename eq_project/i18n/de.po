@@ -201,6 +201,7 @@ msgid "Time Scheduling"
 msgstr "Zeitplanung"
 
 #. module: eq_project
+#: code:addons/eq_project/models/eq_project.py:83
 #: model:ir.actions.act_window,name:eq_project.project_timesheet_action_
 #: model:ir.ui.menu,name:eq_project.menu_project_timesheet
 #: model:ir.ui.view,arch_db:eq_project.project_timesheet_calendar_view
@@ -285,3 +286,24 @@ msgstr "Zeiterfassung (alle)"
 #: model:ir.model.fields,field_description:eq_project.field_account_analytic_line_eq_time_invoice
 msgid "Time to Invoice"
 msgstr "Abgerechnete Dauer"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_view
+msgid "Contract"
+msgstr "Vertrag"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_view
+msgid "Proceeds"
+msgstr "Erlöse"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_project_project_eq_project_proceeds
+msgid "Product Proceeds"
+msgstr "Produkt Erlöse"
+
+#. module: eq_project
+#: code:addons/eq_project/models/eq_project.py:65
+#, python-format
+msgid "Contracts"
+msgstr "Vertrag"

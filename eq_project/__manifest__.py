@@ -21,7 +21,7 @@
 {
     'name': "Equitania Projekt",
     'license': 'AGPL-3',
-    'version': '1.0.28',
+    'version': '1.0.29',
     'category': 'project',
     'description': """Extensions for project""",
     'author': 'Equitania Software GmbH',
