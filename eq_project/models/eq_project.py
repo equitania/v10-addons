@@ -41,11 +41,16 @@ class ProjectProject(models.Model):
     def _compute_proceeds(self):
         for project in self:
             total_proceed = 0.0
-            account_line_objs = self.env['account.analytic.line'].search([('project_id','=',project.id),('move_id','=',False),('invoice_id','!=',False)])
+            account_line_objs = self.env['account.analytic.line'].search([('project_id','=',project.id),('move_id','=',False),('eq_invoice_line_id','!=',False)])
             for account_line_obj in account_line_objs:
                 if account_line_obj.invoice_id.state != 'draft':
-                    proceed = account_line_obj.product_id.standard_price * account_line_obj.eq_time_invoice
+                    proceed = account_line_obj.eq_invoice_line_id.price_subtotal
                     total_proceed = total_proceed + proceed
+            refund_account_line_objs = self.env['account.analytic.line'].search([('project_id','=',project.id),('invoice_id','!=',False),('move_id','!=',False)])
+            for refund_account_line_obj in refund_account_line_objs:
+                if refund_account_line_obj.invoice_id.state != 'draft' and refund_account_line_obj.invoice_id.type == 'out_refund':
+                    refund_proceed = refund_account_line_obj.invoice_id.amount_untaxed
+                    total_proceed = total_proceed - refund_proceed
             project.eq_project_proceeds = total_proceed
 
 
@@ -73,11 +78,16 @@ class ProjectProject(models.Model):
 
     @api.multi
     def proceed_action(self):
-        account_analytic_lines = self.env['account.analytic.line'].search([('project_id','=',self.id),('move_id','=',False),('invoice_id','!=',False)])
+        account_analytic_lines = self.env['account.analytic.line'].search([('project_id','=',self.id),('move_id','=',False),('eq_invoice_line_id','!=',False)])
         line_list = []
         for account_analytic_line in account_analytic_lines:
             if account_analytic_line.invoice_id.state != 'draft':
                 line_list.append(account_analytic_line.id)
+
+        refund_account_line_objs = self.env['account.analytic.line'].search([('project_id', '=', self.id), ('invoice_id', '!=', False), ('move_id', '!=', False)])
+        for refund_account_line_obj in refund_account_line_objs:
+            if refund_account_line_obj.invoice_id.state != 'draft' and refund_account_line_obj.invoice_id.type == 'out_refund':
+                line_list.append(refund_account_line_obj.id)
 
         result = {
             "type": "ir.actions.act_window",

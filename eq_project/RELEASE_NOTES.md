@@ -1,6 +1,11 @@
 ## Modul eq_project
 
 #### 06.08.2018
+#### Version 1.0.30
+##### ADD
+- calculate refund and compute proceed - refund
+
+#### 06.08.2018
 #### Version 1.0.29
 ##### ADD
 - add project proceeds smart button to project.project form view
