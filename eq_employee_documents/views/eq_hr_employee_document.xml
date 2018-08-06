@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Employee Documents Form View -->
+		<record id="eq_hr_employee_document_form_view" model="ir.ui.view">
+			<field name="name">eq.hr.employee.document.form</field>
+			<field name="model">hr.employee.document</field>
+			<field name="inherit_id" ref="oh_employee_documents_expiry.employee_document_form_view" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='name']" position="replace">
+     				<field name="name" attrs="{'readonly':True, 'required':False}"/>
+				</xpath>
+			</field>
+		</record>
+
+		<!-- Employee Documents Tree View -->
+		<record id="eq_hr_employee_document_tree_view" model="ir.ui.view">
+			<field name="name">eq.hr.employee.document.tree</field>
+			<field name="model">hr.employee.document</field>
+			<field name="inherit_id" ref="oh_employee_documents_expiry.employee_document_tree_view" />
+			<field name="arch" type="xml">
+               		<field name="name" position="after">
+                    	<field name="document_name"/>
+                    	<field name="doc_attachment_id"/>
+               		</field>
+			</field>
+		</record>
+
+		<!-- Employee Documents Kanban View -->
+		<record id="eq_hr_employee_document_kanban_view" model="ir.ui.view">
+			<field name="name">eq.hr.employee.document.kanban</field>
+			<field name="model">hr.employee.document</field>
+			<field name="type">kanban</field>
+			<field name="arch" type="xml">
+			<kanban>
+				<field name="name"/>
+				 <templates>
+					<t t-name="kanban-box">
+						<div class ="oe_kanban_global_click">
+							<ul>
+								<li t-if="record.name.raw_value"><field name="name"/></li>
+							</ul>
+						</div>
+					</t>
+            	</templates>
+			</kanban>
+			</field>
+		</record>
+
+    </data>
+</odoo>

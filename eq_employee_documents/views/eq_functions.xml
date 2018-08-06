@@ -1,0 +1,5 @@
+<odoo>
+    <data noupdate="1">
+        <function id="eq_employee_documents_create_sequence" model="hr.employee.document" name="_create_sequence"/>
+    </data>
+</odoo>
