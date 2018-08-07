@@ -19,6 +19,9 @@
 			<field name="model">hr.employee.document</field>
 			<field name="inherit_id" ref="oh_employee_documents_expiry.employee_document_tree_view" />
 			<field name="arch" type="xml">
+					<field name="name" position="before">
+						<field name="image_small" widget="image" height = "30"/>
+               		</field>
                		<field name="name" position="after">
                     	<field name="document_name"/>
                     	<field name="doc_attachment_id"/>
@@ -33,13 +36,24 @@
 			<field name="type">kanban</field>
 			<field name="arch" type="xml">
 			<kanban>
+				<field name="doc_attachment_id"/>
 				<field name="name"/>
+				<field name="document_name"/>
+				<field name="issue_date"/>
 				 <templates>
 					<t t-name="kanban-box">
 						<div class ="oe_kanban_global_click">
-							<ul>
-								<li t-if="record.name.raw_value"><field name="name"/></li>
-							</ul>
+							 <div class="o_kanban_image">
+            					<img t-att-src="kanban_image('hr.employee.document', 'image_small', record.id.value)"/>
+        					</div>
+							<div class="o_kanban_details">
+            					<ul>
+									<li t-if="record.name.raw_value"><field name="doc_attachment_id"/></li>
+									<li t-if="record.name.raw_value"><field name="name"/></li>
+									<li t-if="record.name.raw_value"><field name="document_name"/></li>
+									<li t-if="record.name.raw_value"><field name="issue_date"/></li>
+								</ul>
+        					</div>
 						</div>
 					</t>
             	</templates>

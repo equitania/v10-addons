@@ -20,10 +20,15 @@
 ##############################################################################
 
 from odoo import models, fields, api, _
-
-
+import os
+import base64
 class eq_hr_employee_document(models.Model):
     _inherit = 'hr.employee.document'
+
+    image_small = fields.Binary("File Format", attachment=True,
+                                help="Small-sized photo of the document type. It is automatically "
+                                     "resized as a 64x64px image, with aspect ratio preserved. "
+                                     "Use this field anywhere a small image is required.")
 
     @api.model
     def _create_sequence(self):
@@ -39,10 +44,23 @@ class eq_hr_employee_document(models.Model):
     @api.model
     def create(self, vals):
         """
-        Overrided base create function for document number sequence creation
+        Overrided base create function for document number sequence creation and showing image for file format
         :param vals: vals
         :return: result
         """
+        image_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'static/img'))
+
+        attachment_id = vals['doc_attachment_id'][0][2][0]
+        attachment_name = self.env['ir.attachment'].search([('id','=', attachment_id)]).name
+        file_format = attachment_name.split('.')[1]
+
+        try:
+            with open(image_path+"/"+file_format+".png", "rb") as image_file:
+                image = base64.b64encode(image_file.read())
+            vals['image_small'] = image
+        except:
+            print('There is no image for this file format')
+
         vals['name'] = self.env['ir.sequence'].next_by_code('hr.employee.document')
         result = super(eq_hr_employee_document, self).create(vals)
         return result
