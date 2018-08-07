@@ -1,6 +1,12 @@
 ## Modul eq_employee_documents
 
 #### 07.08.2018
+#### Version 1.0.3
+##### ADD
+- New menu item 'Documents' with all documents from all employees
+- Adding eml and jpeg file format icons
+
+#### 07.08.2018
 #### Version 1.0.2
 ##### ADD
 - Overriding write function in hr.employee.document model for storing the images in documents

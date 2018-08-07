@@ -61,5 +61,13 @@
 			</field>
 		</record>
 
+		<record id="eq_employee_documents_action" model="ir.actions.act_window">
+			<field name="name">Documents</field>
+			<field name="res_model">hr.employee.document</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,kanban,form</field>
+		</record>
+
+		<menuitem action="eq_employee_documents_action" id="eq_employee_documents_action_menuitem" parent="hr.menu_hr_root" name="Documents" sequence="10"/>
     </data>
 </odoo>

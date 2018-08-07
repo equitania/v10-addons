@@ -22,13 +22,13 @@
 {
     'name': 'Equitania Employee Documents Expiry Module',
     'license': 'AGPL-3',
-    'version': '1.0.2',
+    'version': '1.0.3',
     'description': """
         Extensions for module oh_employee_documents_expiry
     """,
     'author': 'Equitania Software GmbH',
     'website': 'www.myodoo.de',
-    'depends': ['base_setup', 'base', 'oh_employee_documents_expiry', 'web_tree_image'],
+    'depends': ['base_setup', 'base', 'hr', 'oh_employee_documents_expiry', 'web_tree_image'],
     'category': 'hr',
     'summary': 'oh_employee_documents_expiry Extensions',
 
