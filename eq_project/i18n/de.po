@@ -323,6 +323,10 @@ msgstr "Dauer"
 msgid "Invoiceable"
 msgstr "Verrechenbar"
 
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
+msgid "Billed Duration"
+msgstr "Abgerechnete Dauer"
 
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.eq_project_report_account_extension

@@ -1,18 +1,29 @@
 <odoo>
 
     <template id="eq_project_report_timesheet_extension" inherit_id="hr_timesheet.report_timesheet">
+        <!-- TABLE HEAD-->
         <xpath expr="//table[@class='table table-condensed']/thead/tr/th[@class='text-right']" position="replace">
-            <th>Invoiceable</th>
             <th class="text-right">Time</th>
         </xpath>
-        <xpath expr="//table[@class='table table-condensed']/tbody/t/tr/td[@class='text-right']" position="before">
-            <td><!--adding invoiceable tabledata-->
+        <!-- TABLE CONTENT -->
+        <xpath expr="//table[@class='table table-condensed']/thead/tr/th[@class='text-right']" position="after">
+            <th>Invoiceable</th>
+            <th class="text-right">Billed Duration</th>
+        </xpath>
+        <xpath expr="//table[@class='table table-condensed']/tbody/t/tr/td[@class='text-right']" position="after">
+            <td class="text-right"><!--adding invoiceable tabledata-->
                 <span t-if="l.to_invoice" t-field="l.to_invoice"/>
             </td>
+            <!--<td class="text-right">
+                <span t-esc="'%s:%02.0f' % tuple(int(round(x)) for x in divmod(l.unit_amount*60,60))"/>
+            </td>-->
+            <td class="text-right"><span t-esc="'%s:%02.0f' % tuple(int(round(x)) for x in divmod(l.eq_time_invoice*60,60))"/></td>
         </xpath>
-        <xpath expr="//table[@class='table table-condensed']/tbody/tr/td[1]" position="before">
-            <td>
-                <!-- leave this TD empty, this is added for footerrow because of new column for invoiceable-->
+        <!--TABLE FOOTER-->
+        <xpath expr="//table[@class='table table-condensed']/tbody/tr/td[@class='text-right'][2]" position="after">
+            <td><!-- leave this TD empty for INVOICEABLE Text--></td>
+            <td class="text-right" >
+                <strong t-esc="'%s:%02.0f' % tuple(int(round(x)) for x in divmod(sum(docs.mapped('eq_time_invoice'))*60,60))"/>
             </td>
         </xpath>
         <xpath expr="//div[@class='page']/div[@class='row'][1]" position="after">

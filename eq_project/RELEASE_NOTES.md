@@ -1,6 +1,11 @@
 ## Modul eq_project
 
 #### 07.08.2018
+#### Version 1.0.35
+##### ADD
+- adding eq_time_invoice into timesheet-report
+
+#### 07.08.2018
 #### Version 1.0.34
 ##### CHG
 - change status of shown proceeds
