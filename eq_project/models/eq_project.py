@@ -43,13 +43,13 @@ class ProjectProject(models.Model):
             total_proceed = 0.0
             account_line_objs = self.env['account.analytic.line'].search([('project_id','=',project.id),('move_id','=',False),('eq_invoice_line_id','!=',False)])
             for account_line_obj in account_line_objs:
-                if account_line_obj.invoice_id.state != 'draft':
+                if account_line_obj.eq_invoice_line_id.invoice_id.state in ('open','paid'):
                     proceed = account_line_obj.eq_invoice_line_id.price_subtotal
                     total_proceed = total_proceed + proceed
             refund_account_line_objs = self.env['account.analytic.line'].search([('project_id','=',project.id),('invoice_id','!=',False),('move_id','!=',False)])
             bool_run = False
             for refund_account_line_obj in refund_account_line_objs:
-                if refund_account_line_obj.invoice_id.state != 'draft' and refund_account_line_obj.invoice_id.type == 'out_refund':
+                if refund_account_line_obj.invoice_id.state in ('open','paid') and refund_account_line_obj.invoice_id.type == 'out_refund':
                     if bool_run == False:
                         for invoice_line in refund_account_line_obj.invoice_id.invoice_line_ids:
                             refund_proceed = invoice_line.price_subtotal
@@ -88,12 +88,12 @@ class ProjectProject(models.Model):
         account_analytic_lines = self.env['account.analytic.line'].search([('project_id','=',self.id),('move_id','=',False),('eq_invoice_line_id','!=',False)])
         line_list = []
         for account_analytic_line in account_analytic_lines:
-            if account_analytic_line.invoice_id.state != 'draft':
+            if account_analytic_line.eq_invoice_line_id.invoice_id.state in ('open','paid'):
                 line_list.append(account_analytic_line.id)
 
         refund_account_line_objs = self.env['account.analytic.line'].search([('project_id', '=', self.id), ('invoice_id', '!=', False), ('move_id', '!=', False)])
         for refund_account_line_obj in refund_account_line_objs:
-            if refund_account_line_obj.invoice_id.state != 'draft' and refund_account_line_obj.invoice_id.type == 'out_refund':
+            if refund_account_line_obj.invoice_id.state in ('open','paid') and refund_account_line_obj.invoice_id.type == 'out_refund':
                 line_list.append(refund_account_line_obj.id)
 
         result = {

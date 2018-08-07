@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 07.08.2018
+#### Version 1.0.34
+##### CHG
+- change status of shown proceeds
+
 #### 06.08.2018
 #### Version 1.0.33
 ##### ADD
