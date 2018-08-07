@@ -20,9 +20,9 @@
 ##############################################################################
 
 {
-    'name': 'Equitania Employee Documents Expiry Module',
+    'name': 'Equitania Mitarbeiterdokumente',
     'license': 'AGPL-3',
-    'version': '1.0.3',
+    'version': '1.0.4',
     'description': """
         Extensions for module oh_employee_documents_expiry
     """,

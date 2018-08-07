@@ -1,6 +1,11 @@
 ## Modul eq_employee_documents
 
 #### 07.08.2018
+#### Version 1.0.4
+##### ADD
+- German translation
+
+#### 07.08.2018
 #### Version 1.0.3
 ##### ADD
 - New menu item 'Documents' with all documents from all employees
