@@ -50,17 +50,44 @@ class eq_hr_employee_document(models.Model):
         """
         image_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'static/img'))
 
-        attachment_id = vals['doc_attachment_id'][0][2][0]
-        attachment_name = self.env['ir.attachment'].search([('id','=', attachment_id)]).name
-        file_format = attachment_name.split('.')[1]
+        if 'doc_attachment_id' in vals and vals['doc_attachment_id']:
+            if vals['doc_attachment_id'][0][2]:
+                attachment_id = vals['doc_attachment_id'][0][2][0]
+                attachment_name = self.env['ir.attachment'].search([('id','=', attachment_id)]).name
+                file_format = attachment_name.split('.')[1]
 
-        try:
-            with open(image_path+"/"+file_format+".png", "rb") as image_file:
-                image = base64.b64encode(image_file.read())
-            vals['image_small'] = image
-        except:
-            print('There is no image for this file format')
+                try:
+                    with open(image_path+"/"+file_format+".png", "rb") as image_file:
+                        image = base64.b64encode(image_file.read())
+                    vals['image_small'] = image
+                except:
+                    print('There is no image for this file format')
 
         vals['name'] = self.env['ir.sequence'].next_by_code('hr.employee.document')
         result = super(eq_hr_employee_document, self).create(vals)
+        return result
+
+    @api.multi
+    def write(self,vals):
+        """
+           Overrided base write function for showing image for file format
+           :param vals: vals
+           :return: result
+        """
+        image_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'static/img'))
+
+        if 'doc_attachment_id' in vals and vals['doc_attachment_id']:
+            if vals['doc_attachment_id'][0][2]:
+                attachment_id = vals['doc_attachment_id'][0][2][0]
+                attachment_name = self.env['ir.attachment'].search([('id', '=', attachment_id)]).name
+                file_format = attachment_name.split('.')[1]
+
+                try:
+                    with open(image_path + "/" + file_format + ".png", "rb") as image_file:
+                        image = base64.b64encode(image_file.read())
+                    vals['image_small'] = image
+                except:
+                    print('There is no image for this file format')
+
+        result = super(eq_hr_employee_document, self).write(vals)
         return result
