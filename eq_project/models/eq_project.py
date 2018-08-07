@@ -56,9 +56,9 @@ class ProjectProject(models.Model):
                             total_proceed = total_proceed - refund_proceed
                             bool_run = True
             if total_proceed > 0:
-                project.eq_project_proceeds = '+' + str(total_proceed)
+                project.eq_project_proceeds = '+' + str(total_proceed) + ' €'
             else:
-                project.eq_project_proceeds = str(total_proceed)
+                project.eq_project_proceeds = str(total_proceed) + ' €'
 
 
     stage_id = fields.Many2one('project.task.type', group_expand='_read_group_stage_ids')

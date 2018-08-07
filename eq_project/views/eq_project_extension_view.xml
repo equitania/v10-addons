@@ -34,11 +34,11 @@
             <field name="arch" type="xml">
                  <xpath expr="//div[@name='button_box']" position="inside">
                     <button class="oe_stat_button" type="object" name="contract_action"
-                        icon="fa-puzzle-piece">
+                        icon="fa-book">
                         <field string="Contract" name="contract_count" widget="statinfo"/>
                     </button>
                      <button class="oe_stat_button" type="object" name="proceed_action"
-                        icon="fa-puzzle-piece">
+                        icon="fa-pencil-square-o">
                         <field string="Proceeds" name="eq_project_proceeds" widget="statinfo"/>
                     </button>
                 </xpath>

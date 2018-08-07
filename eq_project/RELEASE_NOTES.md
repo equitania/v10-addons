@@ -1,6 +1,11 @@
 ## Modul eq_project
 
 #### 06.08.2018
+#### Version 1.0.33
+##### ADD
+- new icon for contracts and proceeds.
+
+#### 06.08.2018
 #### Version 1.0.32
 ##### ADD
 - Adding "invoiceable" column to the timesheet report
