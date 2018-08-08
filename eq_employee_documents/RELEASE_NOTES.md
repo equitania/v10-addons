@@ -1,5 +1,10 @@
 ## Modul eq_employee_documents
 
+#### 08.08.2018
+#### Version 1.0.5
+##### ADD
+- German translation of two new fields.
+
 #### 07.08.2018
 #### Version 1.0.4
 ##### ADD

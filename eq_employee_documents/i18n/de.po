@@ -30,6 +30,8 @@ msgstr ""
 
 #. module: eq_employee_documents
 #: code:addons/eq_employee_documents/models/eq_hr_employee.py:37
+#: model:ir.actions.act_window,name:eq_employee_documents.eq_employee_documents_action
+#: model:ir.ui.menu,name:eq_employee_documents.eq_employee_documents_action_menuitem
 #, python-format
 msgid "Documents"
 msgstr "Dokumente"
@@ -43,3 +45,8 @@ msgstr "Mitarbeiter"
 #: model:ir.model,name:eq_employee_documents.model_hr_employee_document
 msgid "HR Employee Documents"
 msgstr "HR Mitarbeiter Dokumente"
+
+#. module: eq_employee_documents
+#: model:ir.model.fields,field_description:eq_employee_documents.field_hr_employee_document_image_small
+msgid "File Format"
+msgstr "Dateiformat"
