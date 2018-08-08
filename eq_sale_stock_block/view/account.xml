@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_account_payment_term_form_inherit" model="ir.ui.view">
+            <field name="model">account.payment.term</field>
+            <field name="inherit_id" ref="account.view_payment_term_form"/>
+            <field name="arch" type="xml">
+                <field name="active" position="after">
+                    <field name="block_picking"/>
+                    <field name="block_delivery"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="sale_view_form_inherit" model="ir.ui.view">
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_stock.view_order_form_inherit_sale_stock"/>
+            <field name="priority">200</field>
+            <field name="arch" type="xml">
+                <button name="action_quotation_send" position="before">
+                    <field name="procurement_group_id" invisible="1"/>
+                    <button name="unblock_pickings" string="Unblock pickings" type="object"
+                            attrs="{'invisible': ['|',('state', '!=', 'sale'),('picking_blocked', '=', False)]}"
+                            class="btn-primary"
+
+                    />
+                    <button name="unblock_delivery" string="Unblock Delivery" type="object"
+                            attrs="{'invisible': ['|',('state', '!=', 'sale'),('delivery_blocked', '=', False)]}"
+                            class="btn-primary"
+
+                    />
+                </button>
+                <field name="picking_policy" position="after">
+                    <field name="picking_blocked" attrs="{'readonly': [('state', 'not in', ('draft','sent'))]}"/>
+                    <field name="delivery_blocked" attrs="{'readonly': [('state', 'not in', ('draft','sent'))]}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>
