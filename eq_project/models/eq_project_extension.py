@@ -190,8 +190,9 @@ class eq_account_analytic_line_project(models.Model):
         vals['eq_storno_flag'] = False
 
         res = super(eq_account_analytic_line_project,self).create(vals)
-        if vals['amount'] < 0:
-            res.write({'unit_amount': -1 * res.unit_amount})
+        if 'amount' in vals:
+            if vals['amount'] < 0:
+                res.write({'unit_amount': -1 * res.unit_amount})
         return res
 
     @api.multi
