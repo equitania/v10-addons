@@ -374,6 +374,7 @@
                     <field name="eq_proceed"/>
                     <field name="eq_storno_flag" readonly="1"/>
                     <field name="issue_id"/>
+                    <field name="task_id"/>
                     <field name="invoice_id"/>
                     <field name="user_id" required="1"/>
                     <field name="product_id"/>
