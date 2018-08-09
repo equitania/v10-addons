@@ -155,7 +155,7 @@ class eq_account_analytic_line_project(models.Model):
                 line.eq_proceed = line.eq_invoice_line_id.price_subtotal
             else:
                 if len(line.invoice_id.invoice_line_ids) > 0:
-                    invoice_line_id = self.env['account.invoice.line'].search([('invoice_id','=',line.invoice_id.id),('product_id','=',line.product_id.id),('eq_user_id','=',line.user_id.id),('quantity','=',line.unit_amount)])
+                    invoice_line_id = self.env['account.invoice.line'].search([('invoice_id','=',line.invoice_id.id),('product_id','=',line.product_id.id),('eq_user_id','=',line.user_id.id),('quantity','=',-1 * line.unit_amount)])
                     if len(invoice_line_id) > 0:
                         line.eq_proceed = -1 * invoice_line_id[0].price_subtotal
 
@@ -186,7 +186,10 @@ class eq_account_analytic_line_project(models.Model):
 
         vals['eq_storno_flag'] = False
 
-        return super(eq_account_analytic_line_project,self).create(vals)
+        res = super(eq_account_analytic_line_project,self).create(vals)
+        if vals['amount'] < 0:
+            res.write({'unit_amount': -1 * res.unit_amount})
+        return res
 
     @api.multi
     def write(self, vals):
