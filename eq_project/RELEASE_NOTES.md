@@ -4,6 +4,7 @@
 #### Version 1.0.36
 ##### ADD
 - unit_amount negative when invoice refund.
+- select issue and task only from project.
 
 #### 07.08.2018
 #### Version 1.0.35

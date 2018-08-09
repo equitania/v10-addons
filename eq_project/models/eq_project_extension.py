@@ -170,6 +170,9 @@ class eq_account_analytic_line_project(models.Model):
 
     eq_proceed = fields.Float(string='Proceed', compute=_compute_proceed)
 
+    issue_id = fields.Many2one('project.issue', 'Issue', copy=True, domain="[('project_id', '=', project_id)]")
+    task_id = fields.Many2one('project.task', 'Task', copy=True, domain="[('project_id', '=', project_id)]")
+
     @api.model
     def create(self, vals):
         """
