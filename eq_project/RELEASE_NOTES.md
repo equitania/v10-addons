@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 10.08.2018
+#### Version 1.0.37
+##### ADD
+- add select product on line in account.analytic.line
+
 #### 07.08.2018
 #### Version 1.0.36
 ##### ADD

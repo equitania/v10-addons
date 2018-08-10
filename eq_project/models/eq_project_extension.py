@@ -160,6 +160,37 @@ class eq_account_analytic_line_project(models.Model):
                         line.eq_proceed = -1 * invoice_line_id[0].price_subtotal
 
 
+    @api.onchange('project_id')
+    def onchange_project_id(self):
+        for line in self:
+            user_id = line.env.context.get('user_id', self.env.user.id)
+            project_obj = line.project_id
+            employee = self.env['hr.employee'].search([('user_id', '=', user_id)])
+            if project_obj:
+                if project_obj.eq_product_id.id:
+                    line.product_id = project_obj.eq_product_id
+                elif employee.product_id.id:
+                    line.product_id = employee.product_id
+                else:
+                    ir_values_obj = self.env['ir.values']
+                    product_id = ir_values_obj.get_default('project.task', 'default_project_product')
+                    prod_obj = self.env['product.product'].search([('id', '=', product_id)])
+                    if len(prod_obj) > 1:
+                        prod_obj = prod_obj[0]
+                        line.product_id = prod_obj
+            else:
+                if employee.product_id.id:
+                    line.product_id = employee.product_id
+                else:
+                    ir_values_obj = self.env['ir.values']
+                    product_id = ir_values_obj.get_default('project.task', 'default_project_product')
+                    prod_obj = self.env['product.product'].search([('id', '=', product_id)])
+                    if len(prod_obj) > 1:
+                        prod_obj = prod_obj[0]
+                    line.product_id = prod_obj
+
+
+
     eq_startdate = fields.Char(string='Start Date')
     eq_time_start = fields.Float(string='time start')
     name = fields.Text(string='Description', required=True)
