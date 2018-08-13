@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 13.08.2018
+#### Version 1.0.39
+##### FIX
+- Zendesk-6084, fixed an error in call of search. We'll use sudo
+
 #### 05.07.2018
 #### Version 1.0.38
 ##### FIX

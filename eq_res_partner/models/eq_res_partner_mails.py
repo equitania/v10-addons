@@ -25,13 +25,15 @@ class eq_res_partner_mails(models.Model):
     def eq_received_mails_count(self):
         # Counting the number of received mails
         for res in self:
-            mails = self.env['mail.message'].search([('author_id','=',res.id)])
+            #mails = self.env['mail.message'].search([('author_id','=',res.id)])                    # old version
+            mails = self.env['mail.message'].sudo().search([('author_id', '=', res.id)])
             if len(mails) > 0:
                 res.eq_received_mails = len(mails)
             else:
                 res.eq_received_mails = 0
             for contact in res.child_ids:
-                mails = self.env['mail.message'].search([('author_id', '=', contact.id)])
+                # mails = self.env['mail.message'].search([('author_id','=',res.id)])               # old version
+                mails = self.env['mail.message'].sudo().search([('author_id', '=', contact.id)])
                 res.eq_received_mails = int(res.eq_received_mails) + len(mails)
 
 
