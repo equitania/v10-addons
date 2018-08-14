@@ -275,3 +275,14 @@ class eq_account_analytic_line_project(models.Model):
                 self.date = eq_startdate
 
             self.time_start = eq_time_start
+
+        # Show the issues from the selected project
+        res = {}
+        if self.project_id:
+            project = self.project_id
+            if project != self.issue_id.project_id:
+                self.issue_id = False
+            res['domain'] = {'issue_id': [('project_id', '=', project.id)]}
+        else:
+            res['domain'] = {'issue_id': []}
+        return res

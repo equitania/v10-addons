@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 14.08.2018
+#### Version 1.0.38
+##### FIX
+- Adding domain in issue_id field in onchange project_id function
+
 #### 10.08.2018
 #### Version 1.0.37
 ##### ADD
