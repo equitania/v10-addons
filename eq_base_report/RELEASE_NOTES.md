@@ -1,5 +1,10 @@
 ## Modul eq_base_report
 
+#### 16.08.2018
+#### Version 1.0.33
+##### ADD
+- Included new css class for optional text-colors in sale orders
+
 #### 12.06.2018
 #### Version 1.0.32
 ##### ADD
