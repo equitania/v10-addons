@@ -1,6 +1,11 @@
 ## Modul eq_sale
 
 #### 10.07.2018
+#### Version 1.0.89
+##### CHG
+- Included new css class for optional text-colors in sale orders
+
+#### 10.07.2018
 #### Version 1.0.88
 ##### FIX
 - fix sale report language, change o in doc

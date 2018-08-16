@@ -371,16 +371,16 @@
                                             <!-- Lines associated -->
                                             <t t-foreach="layout_category['lines']" t-as="l">
                                                 <tr>
+
                                                     <td><span t-esc="pos"/></td>
                                                     <td><span t-field="l.product_id.default_code" /></td>
                                                     <td>
+                                                        <!-- optionale Position -->
+                                                        <span t-if="l.eq_optional" class="optional" style="font-style:italic;">Optional: </span>
                                                         <strong>
                                                             <span t-field="l.product_id.name"/>
                                                         </strong>
                                                         <br/>
-
-
-
                                                         <div style="width:13cm; margin-right:-13cm; " class="table-description">
                                                             <t t-if="l.name and l.name != ' '">
                                                                 <br/><span t-field="l.name"/>
@@ -423,7 +423,7 @@
                                                     </td>
                                                     <td class="text-right" groups="sale.group_show_price_subtotal">
                                                         <!-- optionale Position -->
-                                                        <t t-if="l.eq_optional">(<span style="font-style:italic;" t-field="l.price_subtotal"
+                                                        <t t-if="l.eq_optional">(<span style="font-style:italic;" class="optional"  t-field="l.price_subtotal"
                                                             t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>)
                                                         </t>
                                                         <!-- normale Position -->
