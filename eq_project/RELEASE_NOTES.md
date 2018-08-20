@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 20.08.2018
+#### Version 1.0.39
+##### DEL
+- delete domain from 1.0.38
+
 #### 14.08.2018
 #### Version 1.0.38
 ##### FIX
