@@ -63,11 +63,24 @@
 			</field>
 		</record>
 
+		<record id="eq_employee_document_search_view" model="ir.ui.view">
+            <field name="name">eq.employee.document.search</field>
+            <field name="model">hr.employee.document</field>
+            <field name="arch" type="xml">
+                <search string="Search HR Employee Document" create="false">
+					<group expand="0" string="Group By">
+                        <filter name="employee_ref" string="Employee" domain="[]" context="{'group_by': 'employee_ref'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
 		<record id="eq_employee_documents_action" model="ir.actions.act_window">
 			<field name="name">Documents</field>
 			<field name="res_model">hr.employee.document</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">tree,kanban,form</field>
+			<field name="context">{'search_default_employee_ref':1}</field>
 		</record>
 
 		<menuitem action="eq_employee_documents_action" id="eq_employee_documents_action_menuitem" parent="hr.menu_hr_root" name="Documents" sequence="10"/>

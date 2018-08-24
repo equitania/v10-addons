@@ -38,6 +38,7 @@ msgstr "Dokumente"
 
 #. module: eq_employee_documents
 #: model:ir.model,name:eq_employee_documents.model_hr_employee
+#: model:ir.ui.view,arch_db:eq_employee_documents.eq_employee_document_search_view
 msgid "Employee"
 msgstr "Mitarbeiter"
 
@@ -50,3 +51,13 @@ msgstr "HR Mitarbeiter Dokumente"
 #: model:ir.model.fields,field_description:eq_employee_documents.field_hr_employee_document_image_small
 msgid "File Format"
 msgstr "Dateiformat"
+
+#. module: eq_employee_documents
+#: model:ir.ui.view,arch_db:eq_employee_documents.eq_employee_document_search_view
+msgid "Search HR Employee Document"
+msgstr "Search HR Employee Document"
+
+#. module: eq_employee_documents
+#: model:ir.ui.view,arch_db:eq_employee_documents.eq_employee_document_search_view
+msgid "Group By"
+msgstr "Gruppiert nach..."

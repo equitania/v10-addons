@@ -4,6 +4,8 @@
 #### Version 1.0.6
 ##### ADD
 - add employee to document tree view.
+- add search view for employee documents
+- add group_by filter for employee_ref
 
 #### 08.08.2018
 #### Version 1.0.5
