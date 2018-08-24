@@ -23,6 +23,7 @@
 						<field name="image_small" widget="image" height = "30"/>
                		</field>
                		<field name="name" position="after">
+						<field name="employee_ref"/>
                     	<field name="document_name"/>
                     	<field name="doc_attachment_id"/>
                		</field>
@@ -51,6 +52,7 @@
 									<li t-if="record.name.raw_value"><field name="doc_attachment_id"/></li>
 									<li t-if="record.name.raw_value"><field name="name"/></li>
 									<li t-if="record.name.raw_value"><field name="document_name"/></li>
+									<li t-if="record.name.raw_value"><field name="employee_ref"/></li>
 									<li t-if="record.name.raw_value"><field name="issue_date"/></li>
 								</ul>
         					</div>
