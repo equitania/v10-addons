@@ -1,5 +1,10 @@
 ## Modul eq_web_responsive
 
+#### 04.09.2018
+#### Version 1.0.12
+##### IMP
+- remove templates.xml (menutiem 'General Settings' moved to eq_base)
+
 #### 10.04.2018
 #### Version 1.0.11
 ##### IMP
