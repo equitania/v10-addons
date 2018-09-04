@@ -1,5 +1,10 @@
 ## Modul eq_base
 
+#### 04.09.2018
+#### Version 1.0.10
+##### FIX
+- add menuitem 'General Settings' to config (from 'eq_web_responsive')
+
 #### 27.02.2018
 #### Version 1.0.9
 ##### FIX

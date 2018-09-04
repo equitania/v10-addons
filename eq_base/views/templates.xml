@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+            <menuitem action="base_setup.action_general_configuration" id="submenu_general_settings" parent="base_setup.menu_config" sequence="1"
+                  groups="base.group_system"/>
+    </data>
+</odoo>
