@@ -1,0 +1,472 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* timesheet_invoice
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-07 19:31+0000\n"
+"PO-Revision-Date: 2018-02-07 20:34+0100\n"
+"Last-Translator: Martin Schmid <m.schmid@equitania.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: de\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: timesheet_invoice
+#: model:timesheet.invoice.factor,name:timesheet_invoice.timesheet_invoice_factor3
+msgid "50%"
+msgstr "50%"
+
+#. module: timesheet_invoice
+#: model:timesheet.invoice.factor,name:timesheet_invoice.timesheet_invoice_factor4
+msgid "80%"
+msgstr "80%"
+
+#. module: timesheet_invoice
+#: model:timesheet.invoice.factor,name:timesheet_invoice.timesheet_invoice_factor2
+msgid "90%"
+msgstr "90%"
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:timesheet_invoice.account_analytic_account_invoice_form
+msgid ""
+"<span attrs=\"{'invisible': [('ca_to_invoice','&lt;&gt;',0.0)]}\" class=\"oe_grey\">\n"
+"                                Nothing to invoice, create\n"
+"                            </span>"
+msgstr ""
+"<span attrs=\"{'invisible': [('ca_to_invoice','&lt;&gt;',0.0)]}\" class=\"oe_grey\">\n"
+"                                Nichts zu berechenen oder zu erstellen\n"
+"                            </span>"
+
+#. module: timesheet_invoice
+#: model:ir.model,name:timesheet_invoice.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "Kostenstelle"
+
+#. module: timesheet_invoice
+#: model:ir.model,name:timesheet_invoice.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Kostenposition"
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:timesheet_invoice.view_timesheet_invoice_create
+msgid "Billing Data"
+msgstr "Rechnungsdaten"
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:timesheet_invoice.view_timesheet_invoice_create
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#. module: timesheet_invoice
+#: model:ir.actions.act_window,help:timesheet_invoice.action_timesheet_invoice_factor_form
+msgid "Click to add a new type of invoicing."
+msgstr "Klicken Sie hier, um eine neue Art der Rechnungsstellung hinzuzufügen."
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,help:timesheet_invoice.field_account_analytic_account_remaining_hours_to_invoice
+#: model:ir.model.fields,help:timesheet_invoice.field_project_project_remaining_hours_to_invoice
+msgid "Computed using the formula: Expected on timesheets - Total invoiced on timesheets"
+msgstr "Berechnet nach der Formel: Basierend auf Stundenzetteln - Fakturierte Summe der Stundenzettel"
+
+#. module: timesheet_invoice
+#: code:addons/timesheet_invoice/models/models.py:273
+#, python-format
+msgid "Configuration Error!"
+msgstr "Konfigurationsfehler"
+
+#. module: timesheet_invoice
+#: code:addons/timesheet_invoice/models/models.py:340
+#, python-format
+msgid "Contract incomplete. Please fill in the Customer and Pricelist fields for %s."
+msgstr "Vertrag unvollständig. Bitte füllen Sie die Kunden- und Preislistenfelder für %s aus."
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_timesheet_invoice_create_price
+msgid "Cost"
+msgstr "Kosten"
+
+#. module: timesheet_invoice
+#: model:ir.actions.act_window,name:timesheet_invoice.action_timesheet_invoice_create
+#: model:ir.ui.view,arch_db:timesheet_invoice.view_timesheet_invoice_create
+msgid "Create Invoice"
+msgstr "Rechnung erzeugen"
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:timesheet_invoice.view_timesheet_invoice_create
+msgid "Create Invoices"
+msgstr "Rechnungen erstellen"
+
+#. module: timesheet_invoice
+#: model:ir.model,name:timesheet_invoice.model_timesheet_invoice_create
+msgid "Create invoice from timesheet"
+msgstr "Rechnung aus Arbeitszeittabelle erstellen"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_timesheet_invoice_create_create_uid
+#: model:ir.model.fields,field_description:timesheet_invoice.field_timesheet_invoice_factor_create_uid
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_timesheet_invoice_create_create_date
+#: model:ir.model.fields,field_description:timesheet_invoice.field_timesheet_invoice_factor_create_date
+msgid "Created on"
+msgstr "Angelegt am"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_timesheet_invoice_create_date
+msgid "Date"
+msgstr "Datum"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_project_config_settings_default_project_product
+msgid "Default product for service [timesheet_invoice]"
+msgstr "Standard Projekt-Dienstleistungsprodukt [timesheet_invoice]"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_timesheet_invoice_create_name
+msgid "Description"
+msgstr "Beschreibung"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_timesheet_invoice_factor_factor
+msgid "Discount (%)"
+msgstr "Rabatt (%)"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,help:timesheet_invoice.field_timesheet_invoice_factor_factor
+msgid "Discount in percentage"
+msgstr "Rabatt in Prozent"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_timesheet_invoice_create_display_name
+#: model:ir.model.fields,field_description:timesheet_invoice.field_timesheet_invoice_factor_display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:timesheet_invoice.view_timesheet_invoice_create
+msgid "Do you want to show details of work in invoice?"
+msgstr "Möchten Sie Details der Aufwände in der Rechnung zeigen?"
+
+#. module: timesheet_invoice
+#: model:ir.model,name:timesheet_invoice.model_hr_employee
+msgid "Employee"
+msgstr "Mitarbeiter"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_account_analytic_account_hours_qtt_est
+#: model:ir.model.fields,field_description:timesheet_invoice.field_project_project_hours_qtt_est
+msgid "Estimation of Hours to Invoice"
+msgstr "Schätzung der Stunden zur Abrechnung"
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:timesheet_invoice.account_analytic_account_invoice_form
+msgid "Expected"
+msgstr "Erwartet"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,help:timesheet_invoice.field_timesheet_invoice_create_product
+msgid "Fill this field only if you want to force to use a specific product. Keep empty to use the real product that comes from the cost."
+msgstr "Füllen Sie dieses Feld nur aus, wenn Sie die Verwendung eines bestimmten Produkts erzwingen möchten. Bleib leer, um das echte Produkt zu verwenden, das von den Kosten kommt."
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_timesheet_invoice_create_product
+msgid "Force Product"
+msgstr "Produkt erzwingen"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_timesheet_invoice_create_id
+#: model:ir.model.fields,field_description:timesheet_invoice.field_timesheet_invoice_factor_id
+msgid "ID"
+msgstr "ID"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,help:timesheet_invoice.field_account_analytic_account_ca_to_invoice
+#: model:ir.model.fields,help:timesheet_invoice.field_project_project_ca_to_invoice
+msgid "If invoice from analytic account, the remaining amount you can invoice to the customer based on the total costs."
+msgstr "Sie könnten dem Kunden den offenen Betrag für diese Kostenstelle/Projekt in Rechnung stellen."
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,help:timesheet_invoice.field_hr_employee_product_id
+msgid "If you want to reinvoice working time of employees, link this employee to a service to determinate the cost price of the job."
+msgstr "Wenn Sie die Arbeitszeit von Mitarbeitern neu vereinbaren möchten, verknüpfen Sie diesen Mitarbeiter mit einem Service, um den Selbstkostenpreis des Jobs zu bestimmen."
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_timesheet_invoice_factor_name
+msgid "Internal Name"
+msgstr "Interner Name"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_account_analytic_line_invoice_id
+msgid "Invoice"
+msgstr "Rechnung"
+
+#. module: timesheet_invoice
+#: model:ir.model,name:timesheet_invoice.model_timesheet_invoice_factor
+#: model:ir.model.fields,field_description:timesheet_invoice.field_project_project_eq_to_invoice_id
+msgid "Invoice Rate"
+msgstr "Rechnungsrate"
+
+#. module: timesheet_invoice
+#: code:addons/timesheet_invoice/models/models.py:436
+#, python-format
+msgid "Invoice is already linked to some of the analytic line(s)!"
+msgstr "Die Rechnung ist bereits mit einigen der Analysezeilen verknüpft!"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_account_analytic_line_to_invoice
+msgid "Invoiceable"
+msgstr "Verrechenbar"
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:timesheet_invoice.account_analytic_account_invoice_form
+msgid "Invoiced"
+msgstr "Abgerechnet"
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:timesheet_invoice.account_analytic_account_invoice_form
+msgid "Invoicing"
+msgstr "Abrechnung"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,help:timesheet_invoice.field_account_analytic_line_to_invoice
+msgid "It allows to set the discount while making invoice, keep empty if the activities should not be invoiced."
+msgstr "Es erlaubt den Rabatt bei der Rechnungsstellung einzustellen leer zu halten, wenn die Aktivitäten nicht in Rechnung gestellt werden sollen."
+
+#. module: timesheet_invoice
+#: model:ir.model,name:timesheet_invoice.model_account_move_line
+msgid "Journal Item"
+msgstr "Buchungszeile"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,help:timesheet_invoice.field_timesheet_invoice_factor_customer_name
+msgid "Label for the customer"
+msgstr "Bezeichnung des Kunden"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_timesheet_invoice_create___last_update
+#: model:ir.model.fields,field_description:timesheet_invoice.field_timesheet_invoice_factor___last_update
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_timesheet_invoice_create_write_uid
+#: model:ir.model.fields,field_description:timesheet_invoice.field_timesheet_invoice_factor_write_uid
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert durch"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_timesheet_invoice_create_write_date
+#: model:ir.model.fields,field_description:timesheet_invoice.field_timesheet_invoice_factor_write_date
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_timesheet_invoice_factor_customer_name
+msgid "Name"
+msgstr "Name"
+
+#. module: timesheet_invoice
+#: model:ir.actions.act_window,help:timesheet_invoice.action_timesheet_invoice_factor_form
+msgid ""
+"Odoo allows you to create default invoicing types. You might\n"
+"                have to regularly assign discounts because of a specific\n"
+"                contract or agreement with a customer. From this menu, you can\n"
+"                create additional types of invoicing to speed up your\n"
+"                invoicing."
+msgstr "Mit Odoo können Sie Standard-Fakturierungsarten erstellen. Möglicherweise müssen Sie Rabatte aufgrund eines bestimmten Vertrags oder einer Vereinbarung mit einem Kunden regelmäßig zuweisen. In diesem Menü können Sie zusätzliche Fakturierungsarten erstellen, um Ihre Rechnungsstellung zu beschleunigen."
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_account_analytic_account_invoice_on_timesheets
+#: model:ir.model.fields,field_description:timesheet_invoice.field_project_project_invoice_on_timesheets
+msgid "On Timesheets"
+msgstr "Auf Stundenzetteln"
+
+#. module: timesheet_invoice
+#: code:addons/timesheet_invoice/models/models.py:273
+#, python-format
+msgid "Please define income account for product '%s'."
+msgstr "Bitte definieren Sie das Einkommenskonto für das Produkt '%s'."
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_hr_employee_product_id
+msgid "Product"
+msgstr "Produkt"
+
+#. module: timesheet_invoice
+#: model:ir.model,name:timesheet_invoice.model_project_project
+msgid "Project"
+msgstr "Projekt"
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:timesheet_invoice.account_analytic_account_invoice_form
+msgid "Remaining"
+msgstr "Verbleibend"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_account_analytic_account_remaining_hours_to_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_account_analytic_account_timesheet_ca_invoiced
+#: model:ir.model.fields,field_description:timesheet_invoice.field_project_project_remaining_hours_to_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_project_project_timesheet_ca_invoiced
+msgid "Remaining Time"
+msgstr "Verbleibende Zeit"
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:timesheet_invoice.view_account_analytic_line_search_inherit
+msgid "Sales"
+msgstr "Verkauf"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,help:timesheet_invoice.field_account_analytic_account_timesheet_ca_invoiced
+#: model:ir.model.fields,help:timesheet_invoice.field_project_project_timesheet_ca_invoiced
+msgid "Sum of timesheet lines invoiced for this contract."
+msgstr "Summe in Rechnung gestellter Arbeitszeitpositionen innerhalb dieses Vertrages."
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,help:timesheet_invoice.field_timesheet_invoice_create_price
+msgid "The cost of each work done will be displayed on the invoice. You probably don't want to check this"
+msgstr "Die Kosten für jede geleistete Arbeit werden auf der Rechnung angezeigt. Sie wollen das wahrscheinlich nicht überprüfen."
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,help:timesheet_invoice.field_timesheet_invoice_create_name
+msgid "The detail of each work done will be displayed on the invoice"
+msgstr "Das Detail jeder durchgeführten Arbeit wird auf der Rechnung angezeigt"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,help:timesheet_invoice.field_timesheet_invoice_create_date
+msgid "The real date of each work will be displayed on the invoice"
+msgstr "Das tatsächliche Datum jeder Arbeit wird auf der Rechnung angezeigt"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,help:timesheet_invoice.field_timesheet_invoice_create_time
+msgid "The time of each work done will be displayed on the invoice"
+msgstr "Der Zeitpunkt für jede geleistete Arbeit wird auf der Rechnung angezeigt"
+
+#. module: timesheet_invoice
+#: code:addons/timesheet_invoice/models/models.py:246
+#, python-format
+msgid "There's a line without product."
+msgstr "Es gibt eine Zeile ohne Produkt."
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_timesheet_invoice_create_time
+msgid "Time spent"
+msgstr "Verwendete Zeit"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_account_analytic_account_to_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_project_project_to_invoice
+msgid "Timesheet Invoicing Ratio"
+msgstr "Stundenzettel Rechnungsverhältnis"
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:timesheet_invoice.account_analytic_account_invoice_form
+#: model:ir.ui.view,arch_db:timesheet_invoice.view_employee_form
+msgid "Timesheets"
+msgstr "Zeiterfassung"
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:timesheet_invoice.view_account_analytic_line_search_inherit
+msgid "Timesheets Invoiced"
+msgstr "Stundenzettel in Rechnung gestellt"
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:timesheet_invoice.view_account_analytic_line_search_inherit
+msgid "Timesheets Not Invoiced"
+msgstr "Stundenzettel NICHT in Rechnung gestellt"
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:timesheet_invoice.view_account_analytic_line_search_inherit
+msgid "Timesheets To Invoice"
+msgstr "Stundenzettel in Rechnung zu stellen"
+
+#. module: timesheet_invoice
+#: code:addons/timesheet_invoice/models/models.py:128
+#, python-format
+msgid "Timesheets to Invoice of %s"
+msgstr "Abzurechnende Stundenzettel von  %s"
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:timesheet_invoice.account_analytic_account_invoice_form
+msgid "To Invoice"
+msgstr "Abzurechnen"
+
+#. module: timesheet_invoice
+#: code:addons/timesheet_invoice/models/models.py:363
+#, python-format
+msgid "Trying to invoice non invoiceable line for %s."
+msgstr "Es wird versucht, eine nicht abrechenbare Zeile für %s zu berechnen."
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:timesheet_invoice.view_timesheet_invoice_factor_form
+#: model:ir.ui.view,arch_db:timesheet_invoice.view_timesheet_invoice_factor_search
+msgid "Type of invoicing"
+msgstr "Art der Rechnungsstellung"
+
+#. module: timesheet_invoice
+#: model:ir.actions.act_window,name:timesheet_invoice.action_timesheet_invoice_factor_form
+#: model:ir.ui.menu,name:timesheet_invoice.timesheet_invoice_factor_view
+msgid "Types of Invoicing"
+msgstr "Arten der Rechnungsstellung"
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:timesheet_invoice.view_timesheet_invoice_factor_tree
+msgid "Types of invoicing"
+msgstr "Arten der Rechnungsstellung"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_account_analytic_account_ca_to_invoice
+#: model:ir.model.fields,field_description:timesheet_invoice.field_project_project_ca_to_invoice
+msgid "Uninvoiced Amount"
+msgstr "Nicht in Rechnung gestellter Betrag"
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:timesheet_invoice.account_analytic_account_invoice_form
+msgid ""
+"When reinvoicing costs, Odoo uses the\n"
+"                        pricelist of the contract which uses the price\n"
+"                        defined on the product related (e.g timesheet\n"
+"                        products are defined on each employee)."
+msgstr ""
+"Wenn Kosten wieder in Rechnung gestellt werden, verwendet des System\n"
+"                            die dem Vertrag zu Grunde liegende Preisliste unter Berücksichtigung des Preises\n"
+"                            des Produktes  (z.B. Stundenzettel \n"
+"                            dies kann für jeden Benutzer individuell bestimmt werden)."
+
+#. module: timesheet_invoice
+#: model:timesheet.invoice.factor,name:timesheet_invoice.timesheet_invoice_factor1
+msgid "Yes (100%)"
+msgstr "Ja (100%)"
+
+#. module: timesheet_invoice
+#: model:ir.model.fields,help:timesheet_invoice.field_account_analytic_account_to_invoice
+#: model:ir.model.fields,help:timesheet_invoice.field_project_project_to_invoice
+msgid "You usually invoice 100% of the timesheets. But if you mix fixed price and timesheet invoicing, you may use another ratio. For instance, if you do a 20% advance invoice (fixed price, based on a sales order), you should invoice the rest on timesheet with a 80% ratio."
+msgstr "Normalerweise fakturieren Sie 100% der Arbeitszeittabellen. Wenn Sie jedoch die Festpreis- und Arbeitszeittabellenabrechnung kombinieren, können Sie ein anderes Verhältnis verwenden. Wenn Sie beispielsweise eine Vorauszahlung in Höhe von 20% leisten (Festpreis basierend auf einem Kundenauftrag), sollten Sie den Rest in der Arbeitszeittabelle mit einem Verhältnis von 80% in Rechnung stellen."
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:timesheet_invoice.view_timesheet_invoice_create
+msgid "or"
+msgstr "oder"
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:timesheet_invoice.account_analytic_account_invoice_form
+msgid "or view"
+msgstr "oder ansehen"
+
+#. module: timesheet_invoice
+#: model:ir.model,name:timesheet_invoice.model_project_config_settings
+msgid "project.config.settings"
+msgstr "project.config.settings"
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:timesheet_invoice.account_analytic_account_invoice_form
+msgid "⇒ Invoice"
+msgstr "⇒ Rechnung"
