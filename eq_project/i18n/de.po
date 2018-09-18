@@ -330,5 +330,5 @@ msgstr "Abgerechnete Dauer"
 
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.eq_project_report_account_extension
-msgid "<br/>Responsible:"
-msgstr "<br/>Verantwortlich:"
+msgid "Responsible:"
+msgstr "Verantwortlich:"

@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 18.09.2018
+#### Version 1.0.40
+##### FIX
+- Fixing report-line, when no responsible person is selected
+
 #### 20.08.2018
 #### Version 1.0.39
 ##### DEL

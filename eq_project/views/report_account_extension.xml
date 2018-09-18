@@ -6,7 +6,9 @@
             <br/>Responsible: <span t-field="l.eq_user_id" style="color:red!important;">111</span>
         </xpath>-->
         <xpath expr="//t[@t-if='not l.eq_move_ids']/tr/td[3]/div[@class='table-description-invoice']" position="inside">
-            <br/>Responsible: <span t-field="l.eq_user_id">222</span>
+            <t t-if="l.eq_user_id">
+                <div style="float:left;">Responsible: <span t-field="l.eq_user_id"/></div>
+            </t>
         </xpath>
     </template>
 
