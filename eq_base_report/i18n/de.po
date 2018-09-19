@@ -94,3 +94,26 @@ msgstr "<span>Lieferschein</span>"
 #: model:ir.ui.view,arch_db:eq_base_report.eq_external_layout_header
 msgid "<span>Date</span>"
 msgstr "<span>Datum</span>"
+
+#. module: eq_base_report
+#: model:ir.model.fields,field_description:eq_base_report.field_base_config_settings_eq_report_logo
+#: model:ir.model.fields,field_description:eq_base_report.field_res_company_eq_report_logo
+msgid "Company Report Logo"
+msgstr "Reportlogo Unternehmen"
+
+#. module: eq_base_report
+#: code:addons/eq_base_report/models/report_footer.py:30
+#, python-format
+msgid "You can only select one bank account to be printed on the report."
+msgstr "Sie können nur ein Bankkonto für den Druck auswählen."
+
+#. module: eq_base_report
+#: code:addons/eq_base_report/models/report_footer.py:25
+#, python-format
+msgid "Please select exactly one bank account to be printed on the report."
+msgstr "Wählen Sie exakt ein Bankkonto für den Druck."
+
+#. module: base_setup
+#: model:ir.model.fields,field_description:base_setup.field_base_config_settings_rml_paper_format
+msgid "Paper Format *"
+msgstr "Papierformat"

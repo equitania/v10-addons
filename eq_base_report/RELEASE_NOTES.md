@@ -1,5 +1,10 @@
 ## Modul eq_base_report
 
+#### 19.09.2018
+#### Version 1.0.34
+##### FIX
+- missing german translations
+
 #### 16.08.2018
 #### Version 1.0.33
 ##### ADD
