@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 26.09.2018
+#### Version 1.0.41
+##### FIX
+- Overwrite given view to set the task_id in context.
+
 #### 18.09.2018
 #### Version 1.0.40
 ##### FIX
