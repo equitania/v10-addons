@@ -31,3 +31,14 @@ class eq_product_template(models.Model):
     _sql_constraints = [
         ('default_code_unique', 'check(1=1)', "This Product No. is already in use!"),
     ]
+
+
+class eq_product_product(models.Model):
+    _inherit = 'product.product'
+
+
+    #Überschreibt Constraint aus product.template, sodass dieser immer wahr ist.
+
+    _sql_constraints = [
+        ('default_code_unique', 'check(1=1)', "This Product No. is already in use!"),
+    ]
