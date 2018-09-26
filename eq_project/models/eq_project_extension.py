@@ -165,8 +165,25 @@ class eq_account_analytic_line_project(models.Model):
         for line in self:
             user_id = line.env.context.get('user_id', self.env.user.id)
             project_obj = line.project_id
+            if 'default_task_id' in self._context:
+                task_id = self._context['default_task_id']
+                task_obj = self.env['project.task'].browse(task_id)
             employee = self.env['hr.employee'].search([('user_id', '=', user_id)])
-            if project_obj:
+            if task_obj:
+                if task_obj.eq_product_id.id:
+                    line.product_id = task_obj.eq_product_id.id
+                elif project_obj.eq_product_id.id:
+                    line.product_id = project_obj.eq_product_id.id
+                elif employee.product_id.id:
+                    line.product_id = employee.product_id.id
+                else:
+                    ir_values_obj = self.env['ir.values']
+                    product_id = ir_values_obj.get_default('project.task', 'default_project_product')
+                    prod_obj = self.env['product.product'].search([('id', '=', product_id)])
+                    if len(prod_obj) > 1:
+                        prod_obj = prod_obj[0]
+                    line.product_id = prod_obj.id
+            elif project_obj:
                 if project_obj.eq_product_id.id:
                     line.product_id = project_obj.eq_product_id
                 elif employee.product_id.id:
