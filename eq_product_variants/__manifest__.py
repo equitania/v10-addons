@@ -22,7 +22,7 @@
 {
     'name': 'Equitania Produktvarianten',
     'license': 'AGPL-3',
-    'version': '1.0.0',
+    'version': '1.0.1',
     'description': """
         Remove SQL Contraint from product.template (eq.product)
     """,
