@@ -165,6 +165,7 @@ class eq_account_analytic_line_project(models.Model):
         for line in self:
             user_id = line.env.context.get('user_id', self.env.user.id)
             project_obj = line.project_id
+            task_obj = False
             if 'default_task_id' in self._context:
                 task_id = self._context['default_task_id']
                 task_obj = self.env['project.task'].browse(task_id)

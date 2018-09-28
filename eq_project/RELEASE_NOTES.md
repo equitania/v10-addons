@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 28.09.2018
+#### Version 1.0.42
+##### FIX
+- initialize task_obj
+
 #### 26.09.2018
 #### Version 1.0.41
 ##### FIX
