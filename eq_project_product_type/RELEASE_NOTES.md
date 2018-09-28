@@ -1,5 +1,10 @@
 ## Modul eq_project_product_type
 
+#### 28.09.2018
+#### Version 1.0.4
+##### FIX/CHG
+- change new view for project.task
+
 #### 18.07.2018
 #### Version 1.0.3
 ##### FIX
