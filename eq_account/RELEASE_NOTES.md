@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 02.10.2018
+#### Version 1.0.66
+##### FIX
+- Ticket 6238: fix expected singleton issue with loop.
+
 #### 23.07.2018
 #### Version 1.0.65
 ##### CHG
