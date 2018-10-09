@@ -98,16 +98,18 @@ class report_account_invoice_line(models.Model):
         name = move.picking_id.name
         pack_operation = self.env['stock.pack.operation'].search([('picking_id', '=', move.picking_id.id), ('product_id', '=', move.product_id.id)])
         picking_obj = self.env['stock.picking'].search([('origin','=', name),('picking_type_code','=','incoming')])
-        return_move = self.env['stock.move'].search([('picking_id','=',picking_obj.id)])
-        pack_operation_retour = self.env['stock.pack.operation'].search([('picking_id', '=', picking_obj.id), ('product_id', '=', move.product_id.id)])
-
+        return_move = self.env['stock.move'].search([('picking_id','in',picking_obj._ids)])
+        pack_operation_retours = self.env['stock.pack.operation'].search([('picking_id', 'in', picking_obj._ids), ('product_id', '=', move.product_id.id)])
+        full_qty = 0
 
         if len(picking_obj) > 0:
             for r_move in return_move:
                 if r_move.product_id.id == move.product_id.id:
                     if len(pack_operation) > 0:
-                        if len(pack_operation_retour) > 0:
-                            if pack_operation.qty_done <= pack_operation_retour.qty_done:
+                        if len(pack_operation_retours) > 0:
+                            for pack_operation_retour in pack_operation_retours:
+                                full_qty = full_qty + pack_operation_retour.qty_done
+                            if pack_operation.qty_done <= full_qty:
                                 return False
             return True
         else:

@@ -20,21 +20,23 @@
 ##############################################################################
 
 {
-    'name': "Equitania Finanzen",
+    'name': 'Enable HTML in list view',
     'license': 'AGPL-3',
-    'version': '1.0.66',
-    'category': 'account',
-    'description': """Extensions for account""",
+    'version': '1.0.0',
+    'description': """
+        Enable HTML tags to be formatted in list view.
+    """,
     'author': 'Equitania Software GmbH',
-    'summary': 'Account Extension',
     'website': 'www.myodoo.de',
-    "depends" : ['base', 'base_setup', 'account','stock','eq_sale_stock'],
+    'depends': ['base'],
+    'category' : 'General Improvements',
+    'summary': 'Enable HTML in list view',
+
     'data': [
-            'views/account_invoice_view.xml',
-            'views/report_invoice.xml',
-            'views/eq_account_payment_term.xml',
-            'security/ir.model.access.csv',
-             ],
-    "active": False,
-    "installable": True
+        'views/template_main.xml'
+    ],
+    'demo': [],
+    'css': [],
+    'installable': True,
+    'auto_install': False,
 }
