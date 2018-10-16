@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 16.10.2018
+#### Version 1.0.67
+##### IMP
+- Ticket 6268: Setting Title and Firstname only when the contact is NOT a company
+
 #### 02.10.2018
 #### Version 1.0.66
 ##### FIX
