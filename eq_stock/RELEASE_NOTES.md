@@ -1,5 +1,10 @@
 ## Modul eq_stock
 
+#### 16.10.2018
+#### Version 1.0.25
+##### FIX
+- Ticket 6268: Reports: Setting Title and Firstname only when the contact is NOT a company
+
 #### 09.07.2018
 #### Version 1.0.24
 ##### FIX
