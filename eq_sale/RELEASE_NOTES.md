@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 16.10.2018
+#### Version 1.0.90
+##### IMP
+- Ticket 6268: Reports: Setting Title and Firstname only when the contact is NOT a company
+
 #### 16.08.2018
 #### Version 1.0.89
 ##### CHG

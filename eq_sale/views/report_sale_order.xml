@@ -31,12 +31,15 @@
                                         </t>
                                     </t>
                                     <div  style="clear:left;">
-                                        <h t-if="doc.partner_id.title.name" t-field="doc.partner_id.title.name"  />
-                                        <h t-if="doc.partner_id.eq_firstname" t-field="doc.partner_id.eq_firstname" />
+                                        <h t-if="doc.partner_id.title.name and doc.partner_id.company_type != 'company'" t-field="doc.partner_id.title.name"  />
+                                        <h t-if="doc.partner_id.eq_firstname and doc.partner_id.company_type != 'company'" t-field="doc.partner_id.eq_firstname" />
                                         <h t-field="doc.partner_id.name" />
                                     </div>
                                     <div t-if="doc.partner_id.eq_name2" style="clear:left;">
                                         <div t-field="doc.partner_id.eq_name2"/>
+                                    </div>
+                                    <div t-if="doc.partner_id.eq_name3 and doc.partner_id.company_type == 'company'" style="clear:left;">
+                                        <div t-field="doc.partner_id.eq_name3"/>
                                     </div>
                                     <div style="clear:left;">
                                         <span t-field="doc.partner_id.street"/>
@@ -585,8 +588,8 @@
                                                             </t>
                                                         </t>
                                                         <div  style="clear:left;">
-                                                            <h t-if="doc.partner_invoice_id.title.name" t-field="doc.partner_invoice_id.title.name"  />
-                                                            <h t-if="doc.partner_invoice_id.eq_firstname" t-field="doc.partner_invoice_id.eq_firstname" />
+                                                            <h t-if="doc.partner_invoice_id.title.name and doc.partner_invoice_id.company_type != 'company'" t-field="doc.partner_invoice_id.title.name"  />
+                                                            <h t-if="doc.partner_invoice_id.eq_firstname and doc.partner_invoice_id.company_type != 'company'" t-field="doc.partner_invoice_id.eq_firstname" />
                                                             <h t-field="doc.partner_invoice_id.name" />
                                                         </div>
                                                         <div t-if="doc.partner_invoice_id.eq_name2" style="clear:left;">
@@ -627,8 +630,8 @@
                                                             </t>
                                                         </t>
                                                         <div  style="clear:left;">
-                                                            <h t-if="doc.partner_shipping_id.title.name" t-field="doc.partner_shipping_id.title.name"  />
-                                                            <h t-if="doc.partner_shipping_id.eq_firstname" t-field="doc.partner_shipping_id.eq_firstname" />
+                                                            <h t-if="doc.partner_shipping_id.title.name and doc.partner_shipping_id.company_type != 'company'" t-field="doc.partner_shipping_id.title.name"  />
+                                                            <h t-if="doc.partner_shipping_id.eq_firstname and doc.partner_shipping_id.company_type != 'company'" t-field="doc.partner_shipping_id.eq_firstname" />
                                                             <h t-field="doc.partner_shipping_id.name" />
                                                         </div>
                                                         <div t-if="doc.partner_shipping_id.eq_name2" style="clear:left;">
