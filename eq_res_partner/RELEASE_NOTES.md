@@ -1,5 +1,11 @@
 ## Modul eq_res_partner
 
+#### 17.10.2018
+#### Version 1.0.40
+##### CHG
+- Contact: The Title now will only be shown when the contact is a person, not a company
+- Fixed Break above the name-field when its a company
+
 #### 13.08.2018
 #### Version 1.0.39
 ##### FIX
