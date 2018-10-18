@@ -40,8 +40,8 @@
                                     </t>
                                 </t>
                                 <div  style="clear:left;">
-                                    <h t-if="o.partner_id.title.name" t-field="o.partner_id.title.name"  />
-                                    <h t-if="o.partner_id.eq_firstname" t-field="o.partner_id.eq_firstname" />
+                                    <h t-if="o.partner_id.title.name and o.partner_id.company_type != 'company'" t-field="o.partner_id.title.name"  />
+                                    <h t-if="o.partner_id.eq_firstname and o.partner_id.company_type != 'company'" t-field="o.partner_id.eq_firstname" />
                                     <h t-field="o.partner_id.name" />
                                 </div>
                                 <!--<div t-esc="print_name" style="clear:left;"/>-->
@@ -457,8 +457,8 @@
                                                     </t>
                                                 </t>
                                                 <div  style="clear:left;">
-                                                    <h t-if="o.sale_id.partner_invoice_id.title.name" t-field="o.sale_id.partner_invoice_id.title.name"  />
-                                                    <h t-if="o.sale_id.partner_invoice_id.eq_firstname" t-field="o.sale_id.partner_invoice_id.eq_firstname" />
+                                                    <h t-if="o.sale_id.partner_invoice_id.title.name and o.sale_id.partner_invoice_id.company_type != 'company'" t-field="o.sale_id.partner_invoice_id.title.name"  />
+                                                    <h t-if="o.sale_id.partner_invoice_id.eq_firstname and o.sale_id.partner_invoice_id.company_type != 'company'" t-field="o.sale_id.partner_invoice_id.eq_firstname" />
                                                     <h t-field="o.sale_id.partner_invoice_id.name" />
                                                 </div>
                                                 <!--<div t-field="o.partner_invoice_id.name" style="clear:left;"/>-->

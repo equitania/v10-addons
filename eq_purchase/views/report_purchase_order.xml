@@ -255,7 +255,7 @@
                                 <span t-field="line.product_qty"/>
                             </td>
                             <td class="text-right">
-                                <span t-field="line.product_id.uom_po_id.name"/>
+                                <span t-field="line.product_uom"/>
                             </td>
                             <td class="text-right">
                                 <span t-if="line.taxes_id">

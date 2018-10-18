@@ -1,5 +1,10 @@
 ## Modul eq_purchase
 
+#### 17.10.2018
+#### Version 1.0.39
+##### CHG
+- Reports: Purchase & purchase quotation: Product UOM (unit of measurement) was used from the product UOM. Now it shows the UOM used in the purchase/quotation lines. 
+
 #### 09.07.2018
 #### Version 1.0.38
 ##### ADD
