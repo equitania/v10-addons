@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 22.10.2018
+#### Version 1.0.43
+##### FIX
+- remove dependency to project_timesheet_time_control
+
 #### 28.09.2018
 #### Version 1.0.42
 ##### FIX
