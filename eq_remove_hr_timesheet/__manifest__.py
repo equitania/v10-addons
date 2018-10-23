@@ -18,28 +18,26 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+
 {
-    'name': "Equitania Projekt",
+    'name': 'Equitania Remove HR Timesheet',
     'license': 'AGPL-3',
-    'version': '1.0.43',
-    'category': 'project',
-    'description': """Extensions for project""",
+    'version': '1.0.0',
+    'description': """
+        Equitania Remove HR Timesheet
+    """,
     'author': 'Equitania Software GmbH',
-    'summary': 'Project Extension',
     'website': 'www.myodoo.de',
-    "depends" : ['base','project','project_issue','hr_timesheet_activity_begin_end','hr_timesheet_sheet', 'analytic','project_recalculate',
-                 'timesheet_invoice','project_description','sale_timesheet',
-                 'project_task_category','project_task_code','project_task_report','project_timeline','project_parent','project_issue_sheet','eq_account'],  #no dependencies for stage was always in Project/Data/project_data.xml declared
+    'depends': ['base_setup','hr_timesheet'],
+    'category' : 'General Improvements',
+    'summary': 'This module makes the HR Timesheet menuitem invisible',
+
     'data': [
-            'data/ir_sequence_data.xml',
-            'views/eq_project_extension_view.xml',
-            'views/eq_issues_extension.xml',
-            'views/eq_project_task_view.xml',
-            'views/eq_extension_project_task_type.xml',
-            'views/eq_project_settings.xml',
-            'views/report_account_extension.xml',
-            'views/report_timesheet_extension.xml',
-             ],
-    "active": False,
-    "installable": True
+        "views/templates.xml",
+
+    ],
+    'demo': [],
+    'css': ['base.css'],
+    'installable': True,
+    'auto_install': False,
 }
