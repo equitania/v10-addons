@@ -332,3 +332,11 @@ msgstr "Abgerechnete Dauer"
 #: model:ir.ui.view,arch_db:eq_project.eq_project_report_account_extension
 msgid "Responsible:"
 msgstr "Verantwortlich:"
+
+#. module: eq_project
+#: code:addons/eq_project/models/eq_project_extension.py:248
+#: code:addons/eq_project/models/eq_project_extension.py:268
+#: code:addons/eq_project/models/eq_project_extension.py:321
+#, python-format
+msgid "Duration should be a positive time."
+msgstr "Die Dauer sollte eine positive Zeit sein."

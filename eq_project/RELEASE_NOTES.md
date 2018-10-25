@@ -1,5 +1,11 @@
 ## Modul eq_project
 
+#### 25.10.2018
+#### Version 1.0.44
+##### ADD
+- Warning if duration field in account.analytic.line in negative time
+- Added translation
+
 #### 22.10.2018
 #### Version 1.0.43
 ##### FIX

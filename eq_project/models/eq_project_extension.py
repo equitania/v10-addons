@@ -242,6 +242,11 @@ class eq_account_analytic_line_project(models.Model):
         if 'amount' in vals:
             if vals['amount'] < 0:
                 res.write({'unit_amount': -1 * res.unit_amount})
+
+        if 'unit_amount' in vals:
+            if vals['unit_amount'] < 0:
+                raise Warning(_("Duration should be a positive time."))
+
         return res
 
     @api.multi
@@ -257,6 +262,10 @@ class eq_account_analytic_line_project(models.Model):
         if 'time_stop' in vals:
             if vals['time_stop'] >= self.MAX_POSSIBLE_HOURS:
                 raise Warning(_("Please enter a valid Hour"))
+
+        if 'unit_amount' in vals:
+            if vals['unit_amount'] < 0:
+                raise Warning(_("Duration should be a positive time."))
 
         return super(eq_account_analytic_line_project, self).write(vals)
 
@@ -304,3 +313,9 @@ class eq_account_analytic_line_project(models.Model):
         # else:
         #     res['domain'] = {'issue_id': []}
         # return res
+
+    @api.multi
+    @api.onchange('unit_amount')
+    def onchange_unit_amount(self):
+        if self.unit_amount < 0:
+            raise Warning(_("Duration should be a positive time."))
