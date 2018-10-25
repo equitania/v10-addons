@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 25.10.2018
+#### Version 1.0.68
+##### FIX
+- Ticket 6288: Invoice Report: for move_line quantity, changing the product_qty to product_uom_qty
+
 #### 16.10.2018
 #### Version 1.0.67
 ##### IMP
