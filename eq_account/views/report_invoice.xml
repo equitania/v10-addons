@@ -470,7 +470,7 @@
                                         </div>
                                     </td>
                                     <td class="text-right">
-                                        <span t-field="eq_move_id.product_qty"/>
+                                        <span t-field="eq_move_id.product_uom_qty"/>
                                     </td>
                                     <td class="text-left">
                                         <span t-field="eq_move_id.product_uom"  groups="product.group_uom"/>
