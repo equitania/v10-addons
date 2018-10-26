@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Set all important settings for reports -->
+    <data noupdate="0">
+        <function model="eq_install_default_reports_func" name="_set_default_reports" eval="[('eq_init_reports')]"/>
+    </data>
+</odoo>
