@@ -340,3 +340,8 @@ msgstr "Verantwortlich:"
 #, python-format
 msgid "Duration should be a positive time."
 msgstr "Die Dauer sollte eine positive Zeit sein."
+
+#. module: eq_project
+#: model:ir.actions.act_window,name:eq_project.eq_act_hr_timesheet_line
+msgid "Activities"
+msgstr "Aktivitäten"

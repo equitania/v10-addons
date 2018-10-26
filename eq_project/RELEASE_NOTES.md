@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 26.10.2018
+#### Version 1.0.45
+##### CHG   
+- german translation for Activities 
+
 #### 25.10.2018
 #### Version 1.0.44
 ##### ADD
