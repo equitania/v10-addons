@@ -1,5 +1,10 @@
 ## Modul eq_stock
 
+#### 29.10.2018
+#### Version 1.0.26
+##### FIX
+- Ticket 6321: stockpicking report: changing product_qty to product_uom_qty
+
 #### 16.10.2018
 #### Version 1.0.25
 ##### FIX
