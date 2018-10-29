@@ -46,7 +46,7 @@ class eq_install_default_reports_func(models.Model):
         if report_name == "Invoices":                       # Rechnung
             attachment = print_report_name = "(object.state in ('open','paid')) and ('Rechnung-'+(object.number or '').replace('/','')+'.pdf')"
         elif report_name == "Request for Quotation":        # Angebotsanfrage
-            attachment = print_report_name = "('Einkaufanfrage-' + (object.name or '').replace('/','')+'.pdf')"
+            attachment = print_report_name = "('Einkaufsanfrage-' + (object.name or '').replace('/','')+'.pdf')"
         elif report_name == "Purchase Order":               # Beschaffungsauftrag
             attachment = print_report_name =  "('Einkauf-' + (object.name or '').replace('/','')+'.pdf')"
         elif report_name == "Quotation / Order":            # Angebot
