@@ -44,11 +44,11 @@ class eq_install_default_reports_func(models.Model):
         """
         attachment = print_report_name = ""
         if report_name == "Invoices":                       # Rechnung
-            attachment = print_report_name = "(object.state in ('open','paid')) and ('Rechnung-'+(object.number or '').replace('/','')+'.pdf')"
+            attachment = print_report_name = "(object.state in ('open','paid')) and ('Rechnung-'+(object.number or '').replace('/','')+'.pdf') or (object.state in ('draft')) and ('Rechnungsentwurf'+(object.number or '').replace('/','')+'.pdf')"
         elif report_name == "Request for Quotation":        # Angebotsanfrage
             attachment = print_report_name = "('Einkaufsanfrage-' + (object.name or '').replace('/','')+'.pdf')"
         elif report_name == "Purchase Order":               # Beschaffungsauftrag
-            attachment = print_report_name =  "('Einkauf-' + (object.name or '').replace('/','')+'.pdf')"
+            attachment = print_report_name = "('Einkauf-' + (object.name or '').replace('/','')+'.pdf')"
         elif report_name == "Quotation / Order":            # Angebot
             attachment = print_report_name = "(object.state in ('draft','sent')) and ('Angebot-' + (object.name or '').replace('/','')+'.pdf') or (object.state in ('sale','done')) and ('Auftrag-' + (object.name or '').replace('/','')+'.pdf')"
         elif report_name == "Delivery Slip":                # Lieferschein (Lager)
