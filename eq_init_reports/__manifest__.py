@@ -21,7 +21,7 @@
 {
     'name': 'Reportsettings QWeb',
     'license': 'AGPL-3',
-    'version': '1.0.3',
+    'version': '1.0.4',
     'description': """
     Reporteinstellungen
     """,
