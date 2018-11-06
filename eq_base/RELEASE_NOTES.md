@@ -1,5 +1,10 @@
 ## Modul eq_base
 
+#### 06.11.2018
+#### Version 1.0.12
+##### FIX
+- fix standard search
+
 #### 04.09.2018
 #### Version 1.0.10
 ##### FIX

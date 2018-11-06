@@ -41,18 +41,20 @@ class BaseModelExtend(models.AbstractModel):
             empty_space_found = False
             for dom in domain:
                 if isinstance(dom, list) and isinstance(dom[2], unicode):
-                    if dom[2][0] == "|":
-                        dom[1] = "=ilike"
-                        dom[2] = dom[2][1:]
-                    elif ' ' in dom[2] and isinstance(dom[2], str):
-                        empty_space_found = True
-                        split_condition = dom[2].split(' ')
-                        for _ in range(0, len(split_condition) - 1):
-                            new_dom.append('&')
-                        for cond in split_condition:
-                            # new_dom.append(dom)
-                            new_dom.append([dom[0], 'ilike', cond])
-                        continue
+                    if len(dom) > 2:
+                        if len(dom[2]) > 0:
+                            if dom[2][0] == "|":
+                                dom[1] = "=ilike"
+                                dom[2] = dom[2][1:]
+                            elif ' ' in dom[2] and isinstance(dom[2], str):
+                                empty_space_found = True
+                                split_condition = dom[2].split(' ')
+                                for _ in range(0, len(split_condition) - 1):
+                                    new_dom.append('&')
+                                for cond in split_condition:
+                                    # new_dom.append(dom)
+                                    new_dom.append([dom[0], 'ilike', cond])
+                                continue
 
                 new_dom.append(dom)
             if empty_space_found:
