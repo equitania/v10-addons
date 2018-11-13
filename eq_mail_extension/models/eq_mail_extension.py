@@ -272,11 +272,15 @@ class eq_mail_mail(models.Model):
 
                 if user != self.sudo():
                     mail_server = ir_mail_server.search([('user_id', '=', user)])
+                    if not mail_server:
+                        mail_server = ir_mail_server.search([('user_id', '=', None)])
                 else:
                     partner_id = mail.author_id.id
                     res_users_pool = self.env['res.users']
                     res_users_id = res_users_pool.search([('partner_id', '=', partner_id)])
                     mail_server = ir_mail_server.search([('user_id', '=', res_users_id.id)])
+                    if not mail_server:
+                        mail_server = ir_mail_server.search([('user_id', '=', None)])
 
                 for email in email_list:
                     if len(mail_server) == 0 and default_mail_address:
@@ -425,17 +429,21 @@ class eq_mail_password_change(models.TransientModel):
         #ir.mail_server Object and Dataset id for the user.
         ir_mail_server_obj = self.env['ir.mail_server']
         ir_mail_server_id = ir_mail_server_obj.search([('user_id', '=', self._uid)])
+        if not ir_mail_server_id:
+            ir_mail_server_id = ir_mail_server_obj.search([('user_id', '=', None)])
         #fetchmail.server Object and Dataset id for the user.
         fetchmail_server_obj = self.env['fetchmail.server']
         fetchmail_server_id = fetchmail_server_obj.search([('user_id', '=', self._uid)])
+        if not fetchmail_server_id:
+            fetchmail_server_id = fetchmail_server_obj.search([('user_id', '=', None)])
         #eq_mail.password_change Dataset
         password = self.browse(self.ids)
         #ir.mail_server Dataset
         ir_mail_server = ir_mail_server_id
         if len(ir_mail_server_id) == 0 and len(fetchmail_server_id) == 0:
-            raise exceptions.UserError(_('There is no incoming and outgoing mailserver for this user./nPlease contact an administrator.' ))
+            raise exceptions.UserError(_('There is no default incoming and outgoing mailserver./nPlease contact an administrator.' ))
         elif len(ir_mail_server_id) == 0:
-            raise exceptions.UserError(_('There is no outgoing mailserver for this user./nPlease contact an administrator.' ))
+            raise exceptions.UserError(_('There is no default outgoing mailserver./nPlease contact an administrator.' ))
         else:
             if password.eq_old_password != ir_mail_server.smtp_pass:
                 raise exceptions.UserError(_('The old password does not match.' ))
@@ -444,14 +452,16 @@ class eq_mail_password_change(models.TransientModel):
                     raise exceptions.UserError(_('The two new passwords do not match.' ))
                 else:
                     #Set password for ir_mail_server
-                    ir_mail_server_values = {
-                              'smtp_pass': password.eq_password
-                              }
-                    ir_mail_server.write(ir_mail_server_values)
-                    if len(fetchmail_server_id) != 0:
-                    #Set password for fetchmail_server
-                        fetchmail_server_values = {
-                                  'password': password.eq_password,
+                    if ir_mail_server.user_id:
+                        ir_mail_server_values = {
+                                  'smtp_pass': password.eq_password
                                   }
-                        fetchmail_server_id.write(fetchmail_server_values)
+                        ir_mail_server.write(ir_mail_server_values)
+                    #Set password for fetchmail_server
+                    if fetchmail_server_id.user_id:
+                        if len(fetchmail_server_id) != 0:
+                            fetchmail_server_values = {
+                                      'password': password.eq_password,
+                                      }
+                            fetchmail_server_id.write(fetchmail_server_values)
                     return True
