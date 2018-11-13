@@ -1,6 +1,11 @@
 ## Modul eq_mail_extension
 
 #### 13.11.2018
+#### Version 1.0.44
+##### CHG
+- Search for mail server created with Owner, if not default mail server from eq_mail_config.settings
+
+#### 13.11.2018
 #### Version 1.0.43
 ##### CHG
 - Owner field is no longer required field
