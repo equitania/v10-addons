@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 19.11.2018
+#### Version 1.0.46
+##### FIX   
+- do not allow negative unit_amount.
+
 #### 26.10.2018
 #### Version 1.0.45
 ##### CHG   

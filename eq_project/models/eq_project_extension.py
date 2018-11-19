@@ -240,7 +240,7 @@ class eq_account_analytic_line_project(models.Model):
 
         res = super(eq_account_analytic_line_project,self).create(vals)
         if 'amount' in vals:
-            if vals['amount'] < 0:
+            if vals['amount'] < 0 and res['unit_amount'] < 0:
                 res.write({'unit_amount': -1 * res.unit_amount})
 
         if 'unit_amount' in vals:
