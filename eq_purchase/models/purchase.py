@@ -21,7 +21,9 @@
 
 from odoo import models, fields, api, _
 import odoo.addons.decimal_precision as dp
-import datetime
+#import datetime#
+from datetime import datetime, timedelta
+import re
 from openerp.tools import DEFAULT_SERVER_DATE_FORMAT as OE_DFORMAT
 
 
@@ -119,7 +121,10 @@ class eq_purchase_order_line(models.Model):
         result = {}
         for purchase_line in self:
             if purchase_line.order_id.show_planned_date and purchase_line.date_planned:
-                planned_date = datetime.strptime(purchase_line.date_planned, OE_DFORMAT)
+                # planned_date = datetime.strptime(purchase_line.date_planned, OE_DFORMAT)          # old version
+                match = re.search(r'\d{4}-\d{2}-\d{2}', purchase_line.date_planned)                 # extract only DATE and ignore time
+                planned_date = datetime.strptime(match.group(), OE_DFORMAT)
+
                 if purchase_line.order_id.partner_id.eq_planned_date_type_purchase:
                     if purchase_line.order_id.partner_id.eq_planned_date_type_purchase == 'cw':
                         result[purchase_line.id] = 'KW ' + planned_date.strftime('%V/%Y')

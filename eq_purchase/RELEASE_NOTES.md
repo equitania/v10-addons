@@ -1,5 +1,10 @@
 ## Modul eq_purchase
 
+#### 30.11.2018
+#### Version 1.0.40
+##### FIX
+- fixed an error in conversion of date
+
 #### 17.10.2018
 #### Version 1.0.39
 ##### CHG
