@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 03.12.2018
+#### Version 1.0.69
+##### CHG
+- Account-Report: adding class for future use at report-title
+
 #### 25.10.2018
 #### Version 1.0.68
 ##### FIX
