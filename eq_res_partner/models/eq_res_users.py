@@ -19,8 +19,12 @@
 #
 ##############################################################################
 
+from odoo import models, fields, api, _
 
-import eq_res_partner
-import eq_res_partner_mails
-import eq_res_company
-import eq_res_users
+class eq_res_users(models.Model):
+
+    _inherit = 'res.users'
+    
+    eq_firstname = fields.Char(related='partner_id.eq_firstname', inherited=True)
+
+    

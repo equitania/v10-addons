@@ -1,5 +1,11 @@
 ## Modul eq_res_partner
 
+#### 04.12.2018
+#### Version 1.0.41
+##### ADD
+- New field eq_firstname in res.users model, related to eq_firstname field in res.partner
+- Added to Tree and Form view
+
 #### 17.10.2018
 #### Version 1.0.40
 ##### CHG
