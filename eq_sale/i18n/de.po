@@ -155,7 +155,7 @@ msgstr "<span>Auftragsdatum</span>"
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "<span>Quotation date</span>"
-msgstr "<span>Angebotssdatum</span>"
+msgstr "<span>Angebotsdatum</span>"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
@@ -166,11 +166,6 @@ msgstr "<span>Auftragsnr.</span>"
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
 msgid "<span>Phone</span>"
 msgstr "<span>Telefon</span>"
-
-#. module: eq_sale
-#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
-msgid "<span>Quotation date</span>"
-msgstr "<span>Angebotsdatum</span>"
 
 #. module: eq_sale
 #: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document

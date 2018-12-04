@@ -1,5 +1,11 @@
 ## Modul eq_sale
 
+#### 04.12.2018
+#### Version 1.0.91
+##### IMP
+- Fixing german translation for "Angebotssdatum"
+- Sale Report: Remove Bottom margin for footertext 
+
 #### 16.10.2018
 #### Version 1.0.90
 ##### IMP
