@@ -1,5 +1,10 @@
 ## Modul eq_base_report
 
+#### 04.12.2018
+#### Version 1.0.35
+##### FIX
+- Fixing Text and Logo Size on Reports, after odoo changed behaviour of DPI on Reports
+
 #### 19.09.2018
 #### Version 1.0.34
 ##### FIX

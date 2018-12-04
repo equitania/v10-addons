@@ -78,12 +78,7 @@ msgstr "<span>Auftragsdatum</span>"
 #. module: eq_base_report
 #: model:ir.ui.view,arch_db:eq_base_report.eq_external_layout_header
 msgid "<span>Quotation date</span>"
-msgstr "<span>Angebotssdatum</span>"
-
-#. module: eq_base_report
-#: model:ir.ui.view,arch_db:eq_base_report.eq_external_layout_header
-msgid "<span>Quotation date</span>"
-msgstr "<span>Angebotssdatum</span>"
+msgstr "<span>Angebotsdatum</span>"
 
 #. module: eq_base_report
 #: model:ir.ui.view,arch_db:eq_base_report.eq_external_layout_header
