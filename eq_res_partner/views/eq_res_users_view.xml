@@ -19,8 +19,8 @@
 			<field name="type">tree</field>
 			<field name="inherit_id" ref="base.view_users_tree" />
 			<field name="arch" type="xml">
-				<field name="name" position="after">
-                    <field name="eq_firstname"/>
+				<field name="name" position="replace">
+                    <field name="display_name"/>
                 </field>
             </field>
         </record>

@@ -1,6 +1,11 @@
 ## Modul eq_res_partner
 
 #### 04.12.2018
+#### Version 1.0.42
+##### ADD
+- New computed field display_name in res.users
+
+#### 04.12.2018
 #### Version 1.0.41
 ##### ADD
 - New field eq_firstname in res.users model, related to eq_firstname field in res.partner
