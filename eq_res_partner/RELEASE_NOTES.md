@@ -1,5 +1,12 @@
 ## Modul eq_res_partner
 
+#### 05.12.2018
+#### Version 1.0.43
+##### ADD
+- Overrided base java script function from UserMenu, for showing the full name in topbar_name
+- Overrided _compute_display_name function in res.partner
+- Full name is shown in Preferences too
+
 #### 04.12.2018
 #### Version 1.0.42
 ##### ADD
