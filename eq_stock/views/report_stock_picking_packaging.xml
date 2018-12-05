@@ -106,9 +106,11 @@
                             </div>
                             <div t-if="o.partner_id" name="partner_header">
                                 <div>
-                                    <t t-if="o.partner_id.parent_id">
-                                        <t t-if="o.partner_id.parent_id.company_type == 'company'">
-                                            <div t-field="o.partner_id.parent_id.name" style="clear:left;"/>
+                                    <t t-if="o.partner_id.company_type != 'company'">
+                                        <t t-if="o.partner_id.parent_id">
+                                            <t t-if="o.partner_id.parent_id.company_type == 'company'">
+                                                <div t-field="o.partner_id.parent_id.name" style="clear:left;"/>
+                                            </t>
                                         </t>
                                     </t>
                                     <div  style="clear:left;">
