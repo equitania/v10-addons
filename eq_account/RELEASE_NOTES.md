@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 05.12.2018
+#### Version 1.0.70
+##### IMP
+- Invoice Report: Parent Company name will not be printed anymore when the address is a company as well.
+
 #### 03.12.2018
 #### Version 1.0.69
 ##### CHG
