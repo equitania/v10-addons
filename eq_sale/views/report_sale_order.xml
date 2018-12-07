@@ -515,7 +515,7 @@
                                 <p t-if="doc.eq_use_page_break_before_footer" style="page-break-after:always;"> </p>
 
                                 <div t-if="doc.html_text_is_set(doc.note)"  class="eq_footertext" style="width:100%;float:left; display:block;page-break-inside:avoid !important;" >
-                                    <p t-field="doc.note" style="margin-bottom:3em;"/>
+                                    <p t-field="doc.note"/>
                                 </div>
 
                                 <!--<div class="col-xs-12"

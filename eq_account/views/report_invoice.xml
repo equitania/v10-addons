@@ -37,9 +37,11 @@
                                     <h t-field="o.company_id.partner_id.city"/>
                                     <h t-if="o.company_id.partner_id.country_id.name != o.partner_id.country_id.name" t-field="o.company_id.partner_id.country_id.name"/>
                                 </p>
-                                <t t-if="o.partner_id.parent_id">
-                                    <t t-if="o.partner_id.parent_id.company_type == 'company'">
-                                        <div t-field="o.partner_id.parent_id.name" style="clear:left;"/>
+                                <t t-if="o.partner_id.company_type != 'company'">
+                                    <t t-if="o.partner_id.parent_id">
+                                        <t t-if="o.partner_id.parent_id.company_type == 'company'">
+                                            <div t-field="o.partner_id.parent_id.name" style="clear:left;"/>
+                                        </t>
                                     </t>
                                 </t>
                                 <div  style="clear:left;">
@@ -263,7 +265,7 @@
                             <t t-raw="eq_invoice_extension_address_header"/>
                             <t t-raw="eq_invoice_extension_right_header"/>
                         </div>
-                        <div style="margin-bottom:25px; margin-top:25px; font-size: 1.7em;">
+                        <div style="margin-bottom:25px; margin-top:25px; font-size: 1.7em;" class="eq_title">
                             <span t-if="o.type == 'out_invoice' and o.state in ['proforma','proforma2']">Proforma Invoice
                             </span>
                             <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>

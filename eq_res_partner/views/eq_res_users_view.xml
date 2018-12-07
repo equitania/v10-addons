@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="eq_users_extension_form_view" model="ir.ui.view">
+			<field name="name">eq_partner_extension.form</field>
+			<field name="model">res.users</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="base.view_users_form" />
+			<field name="arch" type="xml">
+				<label for="name" position="before">
+				    <label for="eq_firstname" class="oe_edit_only"/>
+                    <h1><field name="eq_firstname"/></h1>
+                </label>
+            </field>
+        </record>
+        <record id="eq_users_extension_tree_view" model="ir.ui.view">
+			<field name="name">eq_users_extension.tree</field>
+			<field name="model">res.users</field>
+			<field name="type">tree</field>
+			<field name="inherit_id" ref="base.view_users_tree" />
+			<field name="arch" type="xml">
+				<field name="name" position="replace">
+                    <field name="display_name"/>
+                </field>
+            </field>
+        </record>
+        <record id="eq_view_users_simple_form" model="ir.ui.view">
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form_simple_modif"/>
+            <field name="arch" type="xml">
+            <field name="name" position="replace">
+                <field name="display_name"/>
+            </field>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,5 +1,10 @@
 ## Modul eq_stock
 
+#### 05.12.2018
+#### Version 1.0.27
+##### IMP
+- Report: Delivery and Packlist: Parent Company name will not be printed anymore when the address is a company as well.
+
 #### 29.10.2018
 #### Version 1.0.26
 ##### FIX

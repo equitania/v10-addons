@@ -19,27 +19,22 @@
 #
 ##############################################################################
 
-{
-    'name': "Equitania Sale",
-    'license': 'AGPL-3',
-    'version': '1.0.91',
-    'category': 'sale',
-    'description': """Extensions for sale""",
-    'author': 'Equitania Software GmbH',
-    'summary': 'Sale Extension',
-    'website': 'www.myodoo.de',
-    "depends" : ['base', 'base_setup', 'sale', 'product', 'sales_team', 'sale_stock', 'delivery', 'eq_res_partner', 'eq_base_report','website_quote', 'sale_order_line_sequence'],
-    'data': [
-            'security/equitania_security.xml',
-            'security/ir.model.access.csv',
-            'data/decimal_precision.xml',
-            'data/ir_values_defaults.xml',
-            'views/report_sale_order.xml',
-            'views/product_view.xml',
-            'views/res_partner_view.xml',
-            'views/sale_views.xml',
-            'views/sale_layout_category_view.xml',
-             ],
-    "active": False,
-    "installable": True
-}
+from odoo import models, fields, api, _
+
+class eq_res_users(models.Model):
+
+    _inherit = 'res.users'
+    _rec_name = 'display_name'
+    
+    eq_firstname = fields.Char(related='partner_id.eq_firstname', inherited=True)
+    display_name = fields.Char(compute='_compute_display_name', string = 'Name')
+    
+    def _compute_display_name(self):
+        # Display the full name (eq_firstname + name), or display only the name
+        
+        for user in self:
+            if user.eq_firstname and user.name:
+                user.display_name = user.eq_firstname + ' ' + user.name
+            else:
+                user.display_name = user.name
+            

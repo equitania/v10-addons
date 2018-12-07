@@ -1,5 +1,23 @@
 ## Modul eq_res_partner
 
+#### 05.12.2018
+#### Version 1.0.43
+##### ADD
+- Overrided base java script function from UserMenu, for showing the full name in topbar_name
+- Overrided _compute_display_name function in res.partner
+- Full name is shown in Preferences too
+
+#### 04.12.2018
+#### Version 1.0.42
+##### ADD
+- New computed field display_name in res.users
+
+#### 04.12.2018
+#### Version 1.0.41
+##### ADD
+- New field eq_firstname in res.users model, related to eq_firstname field in res.partner
+- Added to Tree and Form view
+
 #### 17.10.2018
 #### Version 1.0.40
 ##### CHG
