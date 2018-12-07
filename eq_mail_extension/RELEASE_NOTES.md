@@ -1,5 +1,10 @@
 ## Modul eq_mail_extension
 
+#### 07.12.2018
+#### Version 1.0.45
+##### CHG
+- extension for letter symbol in internal notice. Now all recipients are shown.
+
 #### 13.11.2018
 #### Version 1.0.44
 ##### CHG
