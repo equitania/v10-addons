@@ -1,5 +1,10 @@
 ## Modul eq_base_report
 
+#### 12.12.2018
+#### Version 1.0.36
+##### CHG
+- Report Footer Style: setting a smaller padding for footer columns, to get the same usable space as before the odoo DPI changes been made
+
 #### 04.12.2018
 #### Version 1.0.35
 ##### FIX
