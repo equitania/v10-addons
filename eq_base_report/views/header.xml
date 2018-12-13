@@ -172,7 +172,7 @@
     <xpath expr="//div[@class='header']" position="replace">
 
         <div class="header padding-print">
-            <div class="row zero_min_height" style="padding-right:0.5cm;">
+            <div class="row zero_min_height internalheaderbox" style="padding-right:0.5cm;">
                 <div class="leftbox">
                     <div name="company_address">
                         <span t-field="company.partner_id"
@@ -181,10 +181,10 @@
                     </div>
                 </div>
 
-                <div class="rightbox" id="logo" >
+                <div class="rightbox internrightbox" id="logo" >
                     <!--<img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo"
                          class="text-right" style="width: 7cm;border:1px solid green;"/>-->
-                    <img t-if="company.eq_report_logo" t-att-src="'data:image/png;base64,%s' % company.eq_report_logo" class="text-right"/>
+                    <img t-if="company.eq_report_logo" t-att-src="'data:image/png;base64,%s' % company.eq_report_logo" class="text-right" />
                     <div t-if="not company.eq_report_logo" style="color:#666;"><strong><i>Sie müssen noch Ihr Reportlogo konfigurieren</i></strong><br/><ul><li>Einstellungen &gt; Allgemeine Einstellungen</li><li>Unter <strong>Reportkonfigurationen</strong> können Sie<br/>Ihr Logo für Reports hochladen.</li></ul></div>
                 </div>
             </div>

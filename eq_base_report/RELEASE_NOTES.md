@@ -1,5 +1,10 @@
 ## Modul eq_base_report
 
+#### 13.12.2018
+#### Version 1.0.37
+##### IMP
+- intern basic report header, set new max-sizes for reportlogo and using a smaller font size for own company 
+
 #### 12.12.2018
 #### Version 1.0.36
 ##### CHG

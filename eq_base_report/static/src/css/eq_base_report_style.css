@@ -90,6 +90,14 @@ table.eq-hr-timemangement td {
 	padding-right:0px;
 }
 
+div.internalheaderbox div.internrightbox { /* this class is used in the external layout header for the internal documents logo, such as report_overdue // fällige zahlungen */
+	max-width:70mm!important;
+}
+
+div.internalheaderbox div.leftbox {
+	font-size:80%;
+}
+
 .addressmargin {
 	margin-top:2.5cm;
 	height: 4.8cm;
