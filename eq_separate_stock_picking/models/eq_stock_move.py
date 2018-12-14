@@ -67,8 +67,17 @@ class EqStockMove(models.Model):
             # record won't be found.
             if recompute:
                 move.recompute()
+            
+            # With this part, message for the origin of the transfer is created on Delivery Order
+            if move.picking_id and move.picking_id.group_id:
+                picking = move.picking_id
+                order = self.env['sale.order'].sudo().search([('procurement_group_id', '=', picking.group_id.id)])
+                picking.message_post_with_view(
+                    'mail.message_origin_link',
+                    values={'self': picking, 'origin': order},
+                    subtype_id=self.env.ref('mail.mt_note').id)
         return True
-
+    
     def _get_new_picking_values(self):
         # Overrided base _get_new_picking_values function
         """ Prepares a new picking for this move as it could not be assigned to
