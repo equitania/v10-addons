@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- überschreibt den oberen rechten Adressenblock des Kunden da wir den Header hierfür auf den Standard EQ Header umstellen -->
+        <template id="eq_report_overdue_document" inherit_id="account.report_overdue_document">
+            <xpath expr="//div[@class='col-xs-5 col-xs-offset-7']" position="replace">
+                <div style="display:block; width:100%; height:6cm;"></div>
+                <!--<div class="col-xs-5 col-xs-offset-7">
+                    <span t-field="o.name"/><br/>
+                    <span t-raw="o.contact_address.replace('\n\n', '\n').replace('\n', '&lt;br&gt;')"/>
+                    <span t-field="o.vat"/>
+                </div>-->
+            </xpath>
+
+            <xpath expr="//div[@class='row']/p" position="replace">
+                <div style="font-size: 1.7em; margin-bottom:20px;" class="eq_title">
+                    <span>Overdue payment</span>
+                </div>
+            </xpath>
+
+        </template>
+
+    </data>
+</odoo>

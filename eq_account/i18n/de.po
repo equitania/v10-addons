@@ -273,3 +273,8 @@ msgstr "<strong>benannter Ort:</strong>"
 #: model:account.payment.term,note:account.account_payment_term_immediate
 msgid "Payment term: Immediate Payment"
 msgstr "Sofortige Zahlung"
+
+#. module: eq_account
+#: model:ir.ui.view,arch_db:eq_account.eq_report_overdue_document
+msgid "<span>Overdue payment</span>"
+msgstr "<span>Fällige Zahlungen</span>"

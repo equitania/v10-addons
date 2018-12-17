@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 17.12.2018
+#### Version 1.0.71
+##### ADD
+- Report: overdue payment improvements and first changes of the original odoo reports
+
 #### 05.12.2018
 #### Version 1.0.70
 ##### IMP
