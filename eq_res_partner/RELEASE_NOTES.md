@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 17.12.2018
+#### Version 1.0.44
+##### FIX
+- Commented the part for udpate the customer_number in write method
+
 #### 05.12.2018
 #### Version 1.0.43
 ##### ADD

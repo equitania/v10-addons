@@ -165,10 +165,12 @@ class eq_res_partner(models.Model):
         :param vals: All posted data
         :return: Result of call of super method
         """
-        for obj in self:
-            if obj.parent_id:
-                if obj.parent_id.customer_number:
-                    vals.update({'customer_number': obj.parent_id.customer_number})
+        
+        # Commented on 17.12.2018 after meeting with Julia and Robin
+        # for obj in self:
+        #     if obj.parent_id:
+        #         if obj.parent_id.customer_number:
+        #             vals.update({'customer_number': obj.parent_id.customer_number})
 
         res = super(eq_res_partner, self).write(vals)
 
