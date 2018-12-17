@@ -1,5 +1,10 @@
 ## Modul eq_base_report
 
+#### 17.12.2018
+#### Version 1.0.38
+##### ADD
+- Report: overdue payment improvements
+
 #### 13.12.2018
 #### Version 1.0.37
 ##### IMP

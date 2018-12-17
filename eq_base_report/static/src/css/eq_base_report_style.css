@@ -88,6 +88,7 @@ table.eq-hr-timemangement td {
 	float:right;
 	margin-right:0px;
 	padding-right:0px;
+    display:block;
 }
 
 div.internalheaderbox div.rightbox { /* this class is used in the external layout header for the internal documents logo, such as report_overdue // fällige zahlungen */

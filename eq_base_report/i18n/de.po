@@ -46,9 +46,15 @@ msgid "<span>Invoice no.</span>"
 msgstr "<span>Rechnungsnr.</span>"
 
 #. module: eq_base_report
+#: model:ir.ui.view,arch_db:eq_base_report.eq_basic_external_layout_header_replace
 #: model:ir.ui.view,arch_db:eq_base_report.eq_external_layout_header
 msgid "<span>Customer no.</span>"
 msgstr "<span>Kundennr.</span>"
+
+#. module: eq_base_report
+#: model:ir.ui.view,arch_db:eq_base_report.eq_basic_external_layout_header_replace
+msgid "<span>Customer ref.</span>"
+msgstr "<span>Customer ref.</span>"
 
 #. module: eq_base_report
 #: model:ir.ui.view,arch_db:eq_base_report.eq_external_layout_header
@@ -86,6 +92,7 @@ msgid "<span>Delivery note</span>"
 msgstr "<span>Lieferschein</span>"
 
 #. module: eq_base_report
+#: model:ir.ui.view,arch_db:eq_base_report.eq_basic_external_layout_header_replace
 #: model:ir.ui.view,arch_db:eq_base_report.eq_external_layout_header
 msgid "<span>Date</span>"
 msgstr "<span>Datum</span>"

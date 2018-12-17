@@ -156,6 +156,7 @@
                          class="text-right" style="width: 7cm;border:1px solid green;"/>-->
                     <img t-if="company.eq_report_logo" t-att-src="'data:image/png;base64,%s' % company.eq_report_logo" class="text-right"/>
                     <div t-if="not company.eq_report_logo" style="color:#666;"><strong><i>Sie müssen noch Ihr Reportlogo konfigurieren</i></strong><br/><ul><li>Einstellungen &gt; Allgemeine Einstellungen</li><li>Unter <strong>Reportkonfigurationen</strong> können Sie<br/>Ihr Logo für Reports hochladen.</li></ul></div>
+
                 </div>
             </div>
             <div class="row zero_min_height">
@@ -166,9 +167,139 @@
         </div>
     </template>
 
+
 <!-- overrides the basic rendering of the standard report footers which are still in use by other report templates, such as website quotations -->
 <!-- This report's advantage is: it has the company address in its header - without the customer-address. Which is includet in the special reports like website quotation itself-->
 <template id="eq_basic_external_layout_header_replace" inherit_id="report.external_layout_header">
+    <xpath expr="//div[@class='header']" position="replace">
+
+        <div class="header padding-print">
+<!-- Für Kundenprints wie "Fällige Zahlungen" (report_overdue)-->
+            <t t-if="doc_model == 'res.partner'">
+                <div class="row zero_min_height" style="padding-right:0.5cm;">
+                    <div id="address" class="col-xs-7 leftbox" >
+                        <p id="returnaddress" style="margin-top:32mm;">
+                            <h t-field="o.company_id.name"/>
+                            <span>-</span>
+                            <h t-field="o.company_id.street"/>
+                            <h t-if="o.company_id.eq_house_no">
+                                <h t-field="o.company_id.eq_house_no" />
+                            </h>
+                            <span>-</span>
+                            <h t-field="o.company_id.zip"/>
+                            <span>
+                            </span>
+                            <h t-field="o.company_id.city"/>
+                            <h t-if="o.company_id.country_id.name != o.country_id.name" t-field="o.company_id.country_id.name"/>
+                        </p>
+                        <t t-if="o.company_type != 'company'">
+                            <t t-if="o.parent_id">
+                                <t t-if="o.parent_id.company_type == 'company'">
+                                    <div t-field="o.parent_id.name" style="clear:left;"/>
+                                </t>
+                            </t>
+                        </t>
+                        <div  style="clear:left;">
+                            <h t-if="o.title.name and o.company_type != 'company'" t-field="o.title.name"  />
+                            <h t-if="o.eq_firstname and o.company_type != 'company'" t-field="o.eq_firstname" />
+                            <h t-field="o.name" />
+                        </div>
+                        <div t-if="o.eq_name2" style="clear:left;">
+                            <div t-field="o.eq_name2"/>
+                        </div>
+                        <div style="clear:left;">
+                            <span t-field="o.street"/>
+                            <h t-if="o.eq_house_no">
+                                <span t-field="o.eq_house_no" />
+                            </h>
+                        </div>
+                        <div t-if="o.street2">
+                            <div t-field="o.street2"/>
+                        </div>
+                        <h>
+                            <span t-field="o.zip"/>
+                            <span t-field="o.city"/>
+                            <h t-if="o.eq_citypart">
+                                -
+                                <h t-field="o.eq_citypart" />
+                            </h>
+                        </h>
+                        <div t-field="o.country_id.name"/>
+                    </div>
+                    <!--<div class="leftbox">
+                        <div name="company_address">
+                            <span>TEST</span>
+                            <span t-field="company.partner_id"
+                            t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'
+                            style="border: 1px solid grey; border-radius:5px; padding:10px; display:inline-block;"/>
+                        </div>
+                    </div>-->
+
+                    <div class="rightbox col-xs-5" id="logo" >
+                        <!--<img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo"
+                             class="text-right" style="width: 7cm;border:1px solid green;"/>-->
+                        <img t-if="company.eq_report_logo" t-att-src="'data:image/png;base64,%s' % company.eq_report_logo" class="text-right" style="margin-bottom:10mm;" />
+                        <div t-if="not company.eq_report_logo" style="color:#666;"><strong><i>Sie müssen noch Ihr Reportlogo konfigurieren</i></strong><br/><ul><li>Einstellungen &gt; Allgemeine Einstellungen</li><li>Unter <strong>Reportkonfigurationen</strong> können Sie<br/>Ihr Logo für Reports hochladen.</li></ul></div>
+
+                        <table style="width:100%;float:right; font-size: 0.8em;">
+                            <tbody>
+                                 <tr>
+                                    <td>
+                                        <span>Date</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-esc="time.strftime('%d.%m.%Y')"/>
+                                    </td>
+                                </tr>
+                                <tr t-if="o.customer_number">
+                                    <td>
+                                        <span>Customer no.</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="o.customer_number"/>
+                                    </td>
+                                </tr>
+                                <tr t-if="o.ref">
+                                    <td>
+                                        <span>Customer ref.</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="o.ref"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </t>
+            <t t-if="not doc_model == 'res.partner'">
+                <div class="header">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 45px;"/>
+                        </div>
+                        <div class="col-xs-9 text-right" style="margin-top:20px;" t-field="company.rml_header1"/>
+                    </div>
+                    <div class="row zero_min_height">
+                        <div class="col-xs-12">
+                            <div style="border-bottom: 1px solid green;"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6" name="company_address">
+                            <span t-field="company.partner_id"
+                                t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'
+                                style="border-bottom: 1px solid black; display:inline-block;"/>
+                        </div>
+                    </div>
+                </div>
+            </t>
+
+        </div>
+    </xpath>
+</template>
+
+<template id="eq_basic_external_layout_header_replace_OLD" inherit_id="report.external_layout_header"  active="False">
     <xpath expr="//div[@class='header']" position="replace">
 
         <div class="header padding-print">
