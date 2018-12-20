@@ -1,5 +1,9 @@
 ## Modul eq_sale_stock
 
+#### 20.12.2018
+#### Version 1.0.14
+##### FIX
+- eq_sale_order_id is now set by a compute function not with origin from stock_picking.
 
 #### 28.03.2017
 #### Version 1.0.13

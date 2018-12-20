@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <function model="stock.picking" name="eq_drop_eq_sale_order_id" eval="[()]"/>
+    </data>
+</odoo>
