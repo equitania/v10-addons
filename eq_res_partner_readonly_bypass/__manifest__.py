@@ -20,16 +20,18 @@
 ##############################################################################
 
 {
-    'name': "Equitania Separate Stock Picking",
+    'name': "Equitania Kontakt Erweiterung",
     'license': 'AGPL-3',
-    'version': '1.0.2',
-    'category': 'sale_stock',
-    'description': """Separate stock_picking creation after sale_order confirmation""",
+    'version': '1.0.0',
+    'category': 'Partner',
+    'description': """Extensions for eq_res_partner""",
     'author': 'Equitania Software GmbH',
-    'summary': 'StockMove Extension',
+    'summary': 'Partner Extension',
     'website': 'www.myodoo.de',
-    "depends" : ['eq_sale_stock'],
-    'data': [ ],
+    "depends" : ['base', 'eq_res_partner','web_readonly_bypass'],
+    'data': [
+            "views/eq_res_partner_view.xml",
+             ],
     "active": False,
     "installable": True
 }
