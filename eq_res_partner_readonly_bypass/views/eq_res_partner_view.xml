@@ -4,5 +4,38 @@
         <record id="contacts.action_contacts" model="ir.actions.act_window">
             <field name="context">{'readonly_by_pass': True}</field>
         </record>
+        
+        <record id="base.action_partner_form" model="ir.actions.act_window">
+            <field name="context">{'readonly_by_pass': True, "search_default_customer": 1}</field>
+        </record>
+        
+        <record id="base.action_partner_customer_form" model="ir.actions.act_window">
+            <field name="context">{'readonly_by_pass': True, 'default_customer':1, 'search_default_customer':1, 'default_company_type': 'company','default_is_company': 1}</field>
+        </record>
+        
+        <record id="base.action_partner_supplier_form" model="ir.actions.act_window">
+            <field name="context">{'readonly_by_pass': True, 'search_default_supplier': 1,'default_customer': 0,'default_supplier': 1, 'default_company_type': 'company'}</field>
+        </record>
+        
+        <record id="base.action_partner_employee_form" model="ir.actions.act_window">
+            <field name="context">{'readonly_by_pass': True, 'default_supplier':0 , 'default_employee':1}</field>
+        </record>
+        
+        <record id="base.action_partner_other_form" model="ir.actions.act_window">
+            <field name="context">{'readonly_by_pass': True}</field>
+        </record>
+        
+        <record id="eq_res_partner_customer_number" model="ir.ui.view">
+			<field name="name">eq_partner_extension_customer_number.form</field>
+			<field name="model">res.partner</field>
+			<field name="priority">17</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="eq_res_partner.eq_partner_extension_form_view" />
+			<field name="arch" type="xml">
+			<xpath expr="//field[@name='child_ids']/tree" position="inside">
+					<field name="customer_number" invisible="1"/>
+            </xpath>
+            </field>
+        </record>
     </data>
 </odoo>
