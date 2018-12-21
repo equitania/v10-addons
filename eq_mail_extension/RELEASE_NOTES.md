@@ -1,5 +1,10 @@
 ## Modul eq_mail_extension
 
+#### 21.12.2018
+#### Version 1.0.46
+##### FIX
+- Ticket 9500 fix for login.
+
 #### 07.12.2018
 #### Version 1.0.45
 ##### CHG

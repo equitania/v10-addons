@@ -98,7 +98,8 @@ class eqMailMessage(models.Model):
 
             customer_email_data = []
             for notification in message.notification_ids:
-                customer_email_data.append((partner_tree[notification.res_partner_id.id][0], partner_tree[notification.res_partner_id.id][1], notification.email_status))
+                if notification.res_partner_id.id in partner_tree:
+                    customer_email_data.append((partner_tree[notification.res_partner_id.id][0], partner_tree[notification.res_partner_id.id][1], notification.email_status))
 
             attachment_ids = []
             for attachment in message.attachment_ids:
