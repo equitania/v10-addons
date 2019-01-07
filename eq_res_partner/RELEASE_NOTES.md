@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 07.01.2019
+#### Version 1.0.45
+##### ADD
+- add placeholder to zip on res.partner form view.
+
 #### 17.12.2018
 #### Version 1.0.44
 ##### FIX

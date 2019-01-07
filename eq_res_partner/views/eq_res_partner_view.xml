@@ -137,7 +137,7 @@
 				</field>
 
 				<field name="zip" position="replace">
-					<field name="zip" class="o_address_zip"/>
+					<field name="zip" placeholder="ZIP" class="o_address_zip"/>
 				</field>
 
 				<xpath expr="//field[@name='state_id']" position="replace">
