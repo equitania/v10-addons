@@ -1,5 +1,10 @@
 ## Modul eq_separate_stock_picking
 
+#### 07.01.2018
+#### Version 1.0.4
+##### FIX
+- Ticket 9534: Fix singleton Fehler zu stock_move
+
 #### 18.12.2018
 #### Version 1.0.2
 ##### ADD

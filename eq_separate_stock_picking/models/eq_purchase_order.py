@@ -53,7 +53,8 @@ class EqPurchaseOrder(models.Model):
                         picking = StockPicking.create(res)
                         
                     moves_obj = order_line_id._create_stock_moves(picking)
-                    moves.append(moves_obj.id)
+                    for move_obj in moves_obj:
+                        moves.append(move_obj.id)
                 moves = self.env['stock.move'].browse(moves)
                 moves = moves.filtered(lambda x: x.state not in ('done', 'cancel')).action_confirm()
                 seq = 0

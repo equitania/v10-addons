@@ -22,7 +22,7 @@
 {
     'name': "Equitania Separate Stock Picking",
     'license': 'AGPL-3',
-    'version': '1.0.2',
+    'version': '1.0.4',
     'category': 'sale_stock',
     'description': """Separate stock_picking creation after sale_order confirmation""",
     'author': 'Equitania Software GmbH',
