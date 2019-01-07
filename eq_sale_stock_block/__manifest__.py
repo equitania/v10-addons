@@ -21,7 +21,7 @@
 {
     'name': 'Equitania Sale Stock Block'
             '',
-    'version': '1.3',
+    'version': '1.4',
     'license': 'AGPL-3',
     'author': 'Equitania Software GmbH',
     'category': 'Custom',

@@ -33,6 +33,9 @@ class StockMove(Model):
     @api.multi
     def action_done(self):
         """ Process completely the moves given and if all moves are done, it will finish the picking. """
+
+        result = super(StockMove, self).action_done()
+
         self.filtered(lambda move: move.state == 'draft').action_confirm()
 
         Uom = self.env['product.uom']
@@ -179,7 +182,7 @@ class StockMove(Model):
                     self.browse(list(move_dest_ids)).action_assign()
         pickings.filtered(lambda picking: picking.state == 'done' and not picking.date_done).write(
             {'date_done': time.strftime(DEFAULT_SERVER_DATETIME_FORMAT)})
-        return True
+        return result
 
     @api.multi
     def assign_picking(self):
