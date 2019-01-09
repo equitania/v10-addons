@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 09.01.2019
+#### Version 1.0.92
+##### IMP
+- Reports: Changing product quantity and price fields to use the decimal accuracy settings from odoo
+
 #### 04.12.2018
 #### Version 1.0.91
 ##### IMP

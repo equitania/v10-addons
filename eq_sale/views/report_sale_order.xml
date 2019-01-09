@@ -412,11 +412,15 @@
 
                                                     </td>
                                                     <td class="text-right">
-                                                        <span t-field="l.product_uom_qty"/>
+                                                        <!--<span t-field="l.product_uom_qty"/>-->
+                                                        <!-- this new following esc-method will give possibility to use the decimal accuracy in the odoo settings-->
+                                                        <span t-esc="doc.get_qty(l.product_uom_qty, doc.partner_id.lang)" />
                                                         <span t-field="l.product_uom"  groups="product.group_uom" />
                                                     </td>
                                                     <td class="text-right">
-                                                        <span t-field="l.price_unit" t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
+                                                        <!--<span t-field="l.price_unit" t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>-->
+                                                        <!-- this new following esc-method will give possibility to use the "sale price report" decimal accuracy in the odoo settings-->
+                                                        <span t-esc="doc.get_price(l.price_unit, doc.pricelist_id.currency_id, doc.partner_id.lang)" />
                                                     </td>
                                                     <td t-if="display_discount" class="text-right" groups="sale.group_discount_per_so_line">
                                                         <span t-field="l.discount"/>
