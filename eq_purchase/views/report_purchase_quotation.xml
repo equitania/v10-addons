@@ -244,7 +244,9 @@
                                 <div id="agreement_id"/>
                             </td>
                             <td class="text-right">
-                                <span t-field="line.product_qty"/>
+                                <!-- this new following esc-method will give possibility to use the decimal accuracy in the odoo settings-->
+                                <span t-esc="o.get_qty(line.product_qty, o.partner_id.lang)" />
+                                <!--<span t-field="line.product_qty"/>-->
                             </td>
                             <td class="text-right">
                                 <span t-field="line.product_uom"/>

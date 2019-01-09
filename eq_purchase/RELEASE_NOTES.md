@@ -1,5 +1,10 @@
 ## Modul eq_purchase
 
+#### 09.01.2019
+#### Version 1.0.41
+##### IMP
+- Reports: Changing product quantity and price fields to use the decimal accuracy settings from odoo
+
 #### 30.11.2018
 #### Version 1.0.40
 ##### FIX

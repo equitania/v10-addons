@@ -252,7 +252,9 @@
                                 <div id="agreement_id"/>
                             </td>
                             <td class="text-right">
-                                <span t-field="line.product_qty"/>
+                                <!-- this new following esc-method will give possibility to use the decimal accuracy in the odoo settings-->
+                                <span t-esc="o.get_qty(line.product_qty, o.partner_id.lang)" />
+                                <!--<span t-field="line.product_qty"/>-->
                             </td>
                             <td class="text-right">
                                 <span t-field="line.product_uom"/>
@@ -263,8 +265,10 @@
                                 </span>
                             </td>
                             <td class="text-right">
-                                <span t-field="line.price_unit"
-                                      t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                <!--<span t-field="line.price_unit"
+                                      t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>-->
+                                <!-- this new following esc-method will give possibility to use the decimal accuracy in the odoo settings-->
+                                <span t-esc="o.get_price(line.price_unit, o.currency_id, o.partner_id.lang)" />
                             </td>
                             <td class="text-right">
                                 <span t-field="line.price_subtotal"
