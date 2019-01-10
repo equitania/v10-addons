@@ -34,7 +34,21 @@
 			<field name="arch" type="xml">
 			<xpath expr="//field[@name='child_ids']/tree" position="inside">
 					<field name="customer_number" invisible="1"/>
+					<field name="supplier_number" invisible="1"/>
             </xpath>
+            </field>
+        </record>
+        
+        <record id="eq_partner_extension_supplier_number_form_view" model="ir.ui.view">
+			<field name="name">eq_partner_supplier_number_extension.form</field>
+			<field name="model">res.partner</field>
+			<field name="priority">17</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="eq_res_partner.eq_partner_extension_form_view" />
+			<field name="arch" type="xml">
+			    <xpath expr="//field[@name='supplier_number']" position="attributes">
+                    <attribute name="attrs">{'invisible':[('supplier', '=', False)],'readonly':[('parent_id','!=', False)]}</attribute>
+                </xpath>
             </field>
         </record>
     </data>
