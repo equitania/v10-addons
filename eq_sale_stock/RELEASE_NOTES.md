@@ -1,5 +1,10 @@
 ## Modul eq_sale_stock
 
+#### 15.01.2019
+#### Version 1.0.15
+##### CHG
+- move eq_sale_order_id to head form after origin.
+
 #### 20.12.2018
 #### Version 1.0.14
 ##### FIX
