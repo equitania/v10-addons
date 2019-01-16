@@ -63,11 +63,8 @@
 
         <!-- Menuitems -->
         <menuitem id="eq_letter_menu" name="Letter" sequence="100" web_icon="eq_letter,static/description/icon_eq_letter.png"/>
-            <menuitem id="eq_letter" name="Letter" parent="eq_letter_menu"/>
-
-            <menuitem id="letter_menu" name="Letters" parent="eq_letter" action="letter_action"/>
-
-
+        <menuitem id="eq_letter" name="Letter" parent="eq_letter_menu"/>
+        <menuitem id="letter_menu" name="Letters" parent="eq_letter" action="letter_action"/>
 
     </data>
 </odoo>

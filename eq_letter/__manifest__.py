@@ -22,7 +22,7 @@
 {
     'name': 'Equitania Letter',
     'license': 'AGPL-3',
-    'version': '1.0.1',
+    'version': '1.0.2',
     'description': """
         Equitania Letter
     """,
