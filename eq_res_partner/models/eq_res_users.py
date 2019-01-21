@@ -27,14 +27,18 @@ class eq_res_users(models.Model):
     _rec_name = 'display_name'
     
     eq_firstname = fields.Char(related='partner_id.eq_firstname', inherited=True)
-    display_name = fields.Char(compute='_compute_display_name', string = 'Name')
-    
-    def _compute_display_name(self):
-        # Display the full name (eq_firstname + name), or display only the name
-        
+
+
+    def _compute_clean_display_name(self):
+        """
+        Our custom version of display_name method
+        Display the full name (eq_firstname + name), or display only the name
+        :return: Generated display name
+        """
         for user in self:
             if user.eq_firstname and user.name:
                 user.display_name = user.eq_firstname + ' ' + user.name
             else:
                 user.display_name = user.name
-            
+
+    display_name = fields.Char(compute='_compute_display_name', string = 'Name')
