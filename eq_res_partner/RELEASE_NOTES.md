@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 22.01.2019
+#### Version 1.0.47
+##### CHG
+- restored old logic for generating of display_name
+
 #### 21.01.2019
 #### Version 1.0.46
 ##### CHG
