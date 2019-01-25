@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    	
+		<!-- Overrided base menu root item for hr_expense to allow acces only for users with group User or Manager -->
+		<menuitem id="hr_expense.menu_hr_expense_root" 
+			name="Expenses" 
+			sequence="100" 
+			web_icon="hr_expense,static/description/icon.png"
+			groups="hr_expense.group_hr_expense_user"/>
+    </data>    	
+</odoo>

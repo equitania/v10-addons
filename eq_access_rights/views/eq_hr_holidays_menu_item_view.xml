@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    	
+    
+		<!-- Overrided base menu root item for hr_holidays to allow acces only for users with group User or Manager -->
+		<menuitem
+            name="Leaves"
+            id="hr_holidays.menu_hr_holidays_root"
+            sequence="95"
+            web_icon="hr_holidays,static/description/icon.png"
+            groups= "hr_holidays.group_hr_holidays_user"/>
+            
+        <menuitem
+            id="hr_holidays.menu_hr_holidays_my_leaves"
+            name="My Leaves"
+            parent="hr_holidays.menu_hr_holidays_root"
+            sequence="2"
+            groups= "hr_holidays.group_hr_holidays_user"/>
+            
+    </data>    	
+</odoo>
