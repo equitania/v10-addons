@@ -20,8 +20,6 @@
 ##############################################################################
 
 from odoo import models, fields, api, _
-from odoo.exceptions import UserError
-from collections import namedtuple
 
 class eq_stock_picking_extension(models.Model):
     _inherit = 'stock.picking'

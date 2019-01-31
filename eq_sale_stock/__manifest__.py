@@ -22,7 +22,7 @@
 {
     'name': "Equitania Verkauf & Lager",
     'license': 'AGPL-3',
-    'version': '1.0.16',
+    'version': '1.0.17',
     'category': 'sale_stock',
     'description': """ Improved view for order items""",
     'author': 'Equitania Software GmbH',

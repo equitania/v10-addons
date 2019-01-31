@@ -1,6 +1,11 @@
 ## Modul eq_sale_stock
 
 #### 31.01.2019
+#### Version 1.0.17
+##### CHG
+- Removed unnecessary functions import
+
+#### 31.01.2019
 #### Version 1.0.16
 ##### ADD
 - Add new field - eq_description in stock.pack.operation
