@@ -212,3 +212,8 @@ msgstr "Fußtext"
 #: model:ir.model.fields,field_description:eq_sale_stock.field_eq_open_sale_order_line_eq_drawing_no
 msgid "Drawing number"
 msgstr "Zeichnungsnummer"
+
+#. module: eq_sale_stock
+#: model:ir.model.fields,field_description:eq_sale_stock.field_stock_pack_operation_eq_description
+msgid "Description"
+msgstr "Beschreibung"

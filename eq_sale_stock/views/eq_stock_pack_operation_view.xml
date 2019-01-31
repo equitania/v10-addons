@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+        <record id="eq_pack_operation_details_form_view" model="ir.ui.view">
+            <field name="name">eq.stock.pack.operation.details.form</field>
+            <field name="model">stock.pack.operation</field>
+            <field name="inherit_id" ref="stock.view_pack_operation_details_form"/>
+            <field name="arch" type="xml">
+                <field name="location_id" position="before">
+                    <field name="eq_description"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

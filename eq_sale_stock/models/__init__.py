@@ -21,3 +21,4 @@
 
 import stock
 import eq_open_sale_order_line
+import eq_stock_pack_operation

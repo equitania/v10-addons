@@ -1,5 +1,11 @@
 ## Modul eq_sale_stock
 
+#### 31.01.2019
+#### Version 1.0.16
+##### ADD
+- Add new field - eq_description in stock.pack.operation
+- Extension in _prepare_pack_ops, the value of eq_description is the name of the corresponding move
+
 #### 15.01.2019
 #### Version 1.0.15
 ##### CHG
