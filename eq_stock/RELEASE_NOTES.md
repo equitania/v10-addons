@@ -1,5 +1,15 @@
 ## Modul eq_stock
 
+#### 31.01.2019
+#### Version 1.0.29
+##### FIX
+- Fixed missing "float_compared" 
+
+#### 22.01.2019
+#### Version 1.0.28
+##### FIX
+- FIX odoo standard in action_assign from stock_move when an ancestor exists and product type is consu. Then check if the state of ancestor is done, if yes continue with move_assign. 
+
 #### 22.01.2019
 #### Version 1.0.28
 ##### FIX

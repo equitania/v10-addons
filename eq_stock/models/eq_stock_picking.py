@@ -19,6 +19,7 @@
 #
 ##############################################################################
 from odoo import models, fields, api, _
+from odoo.tools.float_utils import float_compare
 
 
 
