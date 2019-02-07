@@ -180,8 +180,16 @@ class report_account_invoice_line(models.Model):
             account_invoice_obj.write(vals)
         if sale_line_id:
             stock_move_objs = self.env['stock.move'].search([('sale_line_id', '=', sale_line_id),('state','=','done')])
+            eq_invoices = account_invoice_line.sale_line_ids.order_id.invoice_ids
+            eq_existing_move_ids = []
+            for eq_invoice in eq_invoices:
+                for eq_invoice_line in eq_invoice.invoice_line_ids:
+                    if eq_invoice_line.eq_move_ids:
+                        eq_existing_move_ids = eq_existing_move_ids + eq_invoice_line.eq_move_ids.ids
+                    if eq_invoice_line.eq_move_id.ids:
+                        eq_existing_move_ids.append(eq_invoice_line.eq_move_id.id)
             for stock_move_obj in stock_move_objs:
-                if len(stock_move_obj.origin_returned_move_id) == 0:
+                if len(stock_move_obj.origin_returned_move_id) == 0 and stock_move_obj.id not in eq_existing_move_ids:
                     stock_move_list.append(stock_move_obj.id)
                     ################ Obsolete sobald Report angepasst wurde
                     res.update({'eq_move_id': stock_move_obj.id})

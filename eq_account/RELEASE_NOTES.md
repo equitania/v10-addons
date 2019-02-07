@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 07.02.2019
+#### Version 1.0.72
+##### FIX
+- Ticket 9697: Invoice Report showed more (already invoiced) invoice-lines when the same product is shipped and paid more then once, like in partial deliveries.
+
 #### 17.12.2018
 #### Version 1.0.71
 ##### ADD
