@@ -1,5 +1,13 @@
 ## eq_report_pattern 
 
+#### 07.02.2019
+#### Version 1.0.29
+##### ADD
+- Added Document template for purchase orders.
+- Two types of Document Templates one for Sale Orders and One for Purchase Orders.
+- For Purchase Orders Templates the cost price is taken by default.
+- Added menu in the purchase app to see Templates. 
+
 #### 16.04.2018
 #### Version 1.0.28
 ##### FIX

@@ -7,10 +7,8 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_quotation_tree"/>
             <field name="arch" type="xml">
-
                  <field name="partner_id" position="after">
                         <field name="document_template_id"/>
-
 				 </field>
             </field>
        	</record>
@@ -20,10 +18,8 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_tree"/>
             <field name="arch" type="xml">
-
                  <field name="partner_id" position="after">
                         <field name="document_template_id"/>
-
 				 </field>
             </field>
        	</record>
@@ -69,7 +65,7 @@
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='payment_term_id']" position="after">
-                    <field name="document_template_id" context="{'company_id': company_id}"/>
+                    <field name="document_template_id" context="{'company_id': company_id,'default_eq_model':'sale.order'}"/>
                 </xpath>
             </field>
         </record>

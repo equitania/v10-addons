@@ -7,15 +7,12 @@
 	    	<field name="inherit_id" ref="purchase.purchase_order_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='date_order']" position="after">                 
-               		<field name="document_template_id" />          	             	
-            	</xpath>            	 
-            	<!-- 
-            	<field name="template_id" position="attributes">
-                    <attribute name="attrs">{'invisible':True}</attribute>
-				</field>   	
-				-->
+               		<field name="document_template_id" context="{'default_eq_model':'purchase.order'}"/>
+            	</xpath>
             </field>
 	    </record>
+        <menuitem id="eq_menu_purchase_template" action="eq_action_sale_quotation_template"
+                  parent="purchase.menu_purchase_config" sequence="1" name="EQ Quotation Templates"/>
 
     </data>
 </odoo>
