@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 12.02.2019
+#### Version 1.0.47
+##### FIX  
+- Clean up project's timesheet menus and views 
+
 #### 19.11.2018
 #### Version 1.0.46
 ##### FIX   

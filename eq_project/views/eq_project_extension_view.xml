@@ -158,26 +158,6 @@
             </field>
         </record>
 
-        <!-- search view -->
-        <record id="account_analytic_search_view" model="ir.ui.view">
-            <field name="name">account.analytic.search</field>
-            <field name="model">account.analytic.line</field>
-            <field name="arch" type="xml">
-                <search string="Account search">
-                    <field name="project_id"  required="1"/>
-                    <field name="date"/>
-                    <field name="name"/>
-                    <field name="time_start" widget="float_time"/>
-                    <field name="time_stop" widget="float_time"/>
-                    <field name="unit_amount" string="Duration" widget="float_time"/>
-                    <field name="to_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
-                    <field name="invoice_id"/>
-                    <field name="user_id" required="1"/>
-                    <filter string="My Issue" name="my_issues" domain="[('user_id','=',uid)]"/>
-                </search>
-            </field>
-        </record>
-
         <!-- Search view for time -->
         <record id="account_analytic_search_view_Time" model="ir.ui.view">
             <field name="name">account.analytic.search.time</field>
@@ -193,27 +173,32 @@
                     <field name="to_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                     <field name="invoice_id"/>
                     <field name="user_id" required="1"/>
-                    <filter string="My Timesheet" name="my_timesheets" domain="[('user_id','=',uid)]"/>
-                </search>
-            </field>
-        </record>
+                    <field name="account_id"/>
+                    <filter string="My Timesheet" name="my_timesheets" domain="[('user_id','=',uid),('sheet_id','=',False),('issue_id','=',False),('task_id','=',False)]"/>
+                    <filter string="My Issue" name="my_issues" domain="[('user_id','=',uid),('issue_id','!=',False)]"/>
+                    <filter string="My Task" name="my_issues" domain="[('user_id','=',uid),('task_id','!=',False)]"/>
+                    <filter string="Timesheet(all)" name="timesheet_all" domain="[('move_id','=', False)]"/>
+                    <filter string="Timesheet(issues)" name="timesheet_issues" domain="[('issue_id','!=',False)]"/>
+                    <filter string="Timesheet(task)" name="timesheet_task" domain="[('task_id','!=',False)]"/>
+                    <separator/>
+                    <filter name="timesheets_to_invoice" string="Timesheets To Invoice" context="{'to_invoice': 1}"
+                            domain="[('project_id','!=',False), ('invoice_id','=',False), ('to_invoice','!=',False)]"/>
+                    <separator/>
+                    <filter name="timesheets_invoiced" string="Timesheets Invoiced"
+                            domain="[('project_id','!=',False), ('invoice_id','!=',False)]"/>
+                    <filter name="timesheets_not_invoiced" string="Timesheets Not Invoiced"
+                            domain="[('project_id','!=',False), ('invoice_id','=',False)]"/>
+                    <separator/>
+                    <filter name="sales" string="Sales"
+                            domain="[('project_id','=',False)]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Users" domain="[]" context="{'group_by':'user_id'}"/>
+                        <filter string="Project" domain="[]" context="{'group_by':'project_id'}"/>
+                        <filter string="Task" domain="[]" context="{'group_by':'task_id'}"/>
+                        <filter string="Product" domain="[]" context="{'group_by':'product_id'}"/>
+                        <filter string="Timesheet Month" domain="[]" context="{'group_by':'date'}" help="Timesheet by Month"/>
+                    </group>
 
-        <!-- Search view for task -->
-        <record id="account_analytic_search_view_Task" model="ir.ui.view">
-            <field name="name">account.analytic.search.task</field>
-            <field name="model">account.analytic.line</field>
-            <field name="arch" type="xml">
-                <search string="Account search Task">
-                    <field name="project_id"  required="1"/>
-                    <field name="date"/>
-                    <field name="name"/>
-                    <field name="time_start" widget="float_time"/>
-                    <field name="time_stop" widget="float_time"/>
-                    <field name="unit_amount" string="Duration" widget="float_time"/>
-                    <field name="to_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
-                    <field name="invoice_id"/>
-                    <field name="user_id" required="1"/>
-                    <filter string="My Task" name="my_tasks" domain="[('user_id','=',uid)]"/>
                 </search>
             </field>
         </record>
@@ -223,19 +208,21 @@
             <field name="name">account.analytic.tree</field>
             <field name="model">account.analytic.line</field>
             <field name="arch" type="xml">
-                <tree string=" Tree View Account">
-                    <field name="project_id"  required="1"/>
-                    <field name="date"/>
-                    <field name="name"/>
-                    <field name="time_start" widget="float_time"/>
-                    <field name="time_stop" widget="float_time"/>
-                    <field name="unit_amount" string="Duration" widget="float_time"/>
+                <tree string="Tree View Account">
+                    <field name="date" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                    <field name="name" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                    <field name="time_start" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                    <field name="time_stop" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                    <field name="unit_amount" string="Duration" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                    <field name="project_id" required="1" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                    <field name="task_id" context="{'default_project_id': project_id}" domain="[('project_id', '=', project_id)]" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                    <field name="issue_id" context="{'default_project_id': project_id}" domain="[('project_id', '=', project_id)]" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                     <field name="to_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
-                    <field name="eq_time_invoice" widget="float_time"/>
-                    <field name="eq_storno_flag" readonly="1"/>
-                    <field name="invoice_id"/>
-                    <field name="user_id" required="1"/>
+                    <field name="eq_time_invoice" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                     <field name="product_id"/>
+                    <field name="user_id" required="1" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                    <field name="invoice_id" readonly="1"/>
+                    <field name="eq_storno_flag" readonly="1"/>
                 </tree>
             </field>
         </record>
@@ -249,7 +236,9 @@
                     <sheet>
                         <group>
                             <group>
-                                <field name="project_id"  required="1"/>
+                                <field name="project_id" required="1"/>
+                                <field name="task_id" context="{'default_project_id': project_id}" domain="[('project_id', '=', project_id)]"/>
+                                <field name="issue_id" context="{'default_project_id': project_id}" domain="[('project_id', '=', project_id)]"/>
                                 <field name="date"/>
                                 <field name="name"/>
                                 <field name="time_start" widget="float_time"/>
@@ -259,7 +248,7 @@
                             </group>
                             <group>
                                 <field name="to_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
-                                <field name="invoice_id"/>
+                                <field name="invoice_id" readonly="1"/>
                                 <field name="eq_storno_flag" readonly="1"/>
                                 <field name="user_id" required="1"/>
                                 <field name="product_id"/>
@@ -267,118 +256,6 @@
                         </group>
                     </sheet>
                 </form>
-            </field>
-        </record>
-
-        <!-- Task form -->
-        <record id="account_analytic_form_view_Task" model="ir.ui.view">
-                <field name="name">account.analytic.form.task</field>
-                <field name="model">account.analytic.line</field>
-                <field name="arch" type="xml">
-                    <form>
-                        <sheet>
-                            <group>
-                                <group>
-                                    <field name="project_id"  required="1"/>
-                                    <field name="date"/>
-                                    <field name="name"/>
-                                    <field name="time_start" widget="float_time"/>
-                                    <field name="time_stop" widget="float_time"/>
-                                    <field name="unit_amount" string="Duration" widget="float_time"/>
-                                    <field name="eq_time_invoice" widget="float_time"/>
-                                </group>
-
-                                <group>
-                                    <field name="to_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
-                                    <field name="invoice_id"/>
-                                    <field name="eq_storno_flag" readonly="1"/>
-                                    <field name="task_id"/>
-                                    <field name="user_id" required="1"/>
-                                    <field name="product_id"/>
-                                </group>
-                            </group>
-                        </sheet>
-                    </form>
-                </field>
-        </record>
-
-        <!-- Issue form -->
-        <record id="account_analytic_form_view_issue" model="ir.ui.view">
-                <field name="name">account.analytic.form.issue</field>
-                <field name="model">account.analytic.line</field>
-                <field name="arch" type="xml">
-                    <form>
-                        <sheet>
-                            <group>
-                                <group>
-                                    <field name="project_id"  required="1"/>
-                                    <field name="date"/>
-                                    <field name="name"/>
-                                    <field name="time_start" widget="float_time"/>
-                                    <field name="time_stop" widget="float_time"/>
-                                    <field name="unit_amount" string="Duration" widget="float_time"/>
-                                    <field name="eq_time_invoice" widget="float_time"/>
-                                </group>
-
-                                <group>
-                                    <field name="to_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
-                                    <field name="invoice_id"/>
-                                    <field name="eq_storno_flag" readonly="1"/>
-                                    <field name="issue_id"/>
-                                    <field name="user_id" required="1"/>
-                                    <field name="product_id"/>
-                                </group>
-                            </group>
-                        </sheet>
-                    </form>
-                </field>
-        </record>
-
-        <!-- Task treeview -->
-        <record id="account_analytic_tree_view_task" model="ir.ui.view">
-            <field name="name">account.analytic.task.tree</field>
-            <field name="model">account.analytic.line</field>
-            <field name="arch" type="xml">
-                <tree string="Account Task" editable="bottom">
-                    <field name="project_id"  required="1"/>
-                    <field name="date"/>
-                    <field name="name"/>
-                    <field name="time_start" widget="float_time"/>
-                    <field name="time_stop" widget="float_time"/>
-                    <field name="unit_amount" string="Duration" widget="float_time"/>
-                    <field name="to_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
-                    <field name="eq_time_invoice" widget="float_time"/>
-                    <field name="eq_storno_flag" readonly="1"/>
-                    <field name="task_id"/>
-                    <field name="invoice_id"/>
-                    <field name="user_id" required="1"/>
-                    <field name="product_id"/>
-                </tree>
-            </field>
-        </record>
-
-        <!-- Issue treeview -->
-        <record id="account_analytic_tree_view_issue" model="ir.ui.view">
-            <field name="name">account.analytic.issue.tree</field>
-            <field name="model">account.analytic.line</field>
-            <field name="arch" type="xml">
-                <tree string="Account Issue" editable="bottom">
-                    <field name="project_id"  required="1"/>
-                    <field name="date"/>
-                    <field name="name"/>
-                    <field name="time_start" widget="float_time"/>
-                    <field name="time_stop" widget="float_time"/>
-                    <field name="unit_amount" string="Duration" widget="float_time"/>
-                    <field name="to_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
-                    <field name="eq_time_invoice" widget="float_time"/>
-                    <field name="eq_proceed"/>
-                    <field name="eq_storno_flag" readonly="1"/>
-                    <field name="issue_id"/>
-                    <field name="task_id"/>
-                    <field name="invoice_id"/>
-                    <field name="user_id" required="1"/>
-                    <field name="product_id"/>
-                </tree>
             </field>
         </record>
 
@@ -399,16 +276,17 @@
         <record id="project_timesheet_action_" model="ir.actions.act_window">
             <field name="name">Timesheet</field>
             <field name="res_model">account.analytic.line</field>
-            <field name="view_mode">kanban,tree,calendar</field>
-            <field name="domain">[('sheet_id','=',False),('issue_id','=',False),('task_id','=',False)]</field>
-           <field name="context">{'search_default_my_timesheets': 1}</field>
-           <field name="search_view_id" ref="account_analytic_search_view_Time"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,form,tree,calendar</field>
+            <field name="context">{'search_default_my_timesheets': 1}</field>
+            <field name="search_view_id" ref="account_analytic_search_view_Time"/>
             <field name="view_ids"
                    eval="[(5, 0, 0),
                           (0, 0, {'view_mode': 'tree', 'view_id': ref('account_analytic_tree_view')}),
                           (0, 0, {'view_mode': 'form', 'view_id': ref('account_analytic_form_view')}),
 
                           ]"/>
+            <field name="domain">[]</field>
             <field name="help" type="html">
                 <p>
                     The Odoo issues tracker allows you to efficiently manage things
@@ -418,85 +296,23 @@
             </field>
         </record>
 
-        <!-- Action for Issue -->
-        <record id="eq_issue_action" model="ir.actions.act_window">
-            <field name="name">Issue</field>
-            <field name="res_model">account.analytic.line</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="context">{'search_default_my_issues': 1}</field>
-            <field name="search_view_id" ref="account_analytic_search_view_Time"/>
-            <field name="view_ids"
-                   eval="[(5, 0, 0),
-                          (0, 0, {'view_mode': 'tree', 'view_id': ref('account_analytic_tree_view_issue')}),
-                          (0, 0, {'view_mode': 'form', 'view_id': ref('account_analytic_form_view_issue')}),
-
-                          ]"/>
-            <field name="search_view_id" ref="account_analytic_search_view"/>
-            <field name="domain">[('issue_id','!=',False)]</field>
-            <field name="help" type="html">
-                <p class="oe_view_nocontent_create">click here to insert course data </p>
-            </field>
-        </record>
-
-        <!-- Action for Task -->
-        <record id="eq_task_action" model="ir.actions.act_window">
-            <field name="name">Task</field>
-            <field name="res_model">account.analytic.line</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="context">{'search_default_my_tasks': 1}</field>
-            <field name="search_view_id" ref="account_analytic_search_view_Time"/>
-                <field name="view_ids"
-                       eval="[(5, 0, 0),
-                              (0, 0, {'view_mode': 'tree', 'view_id': ref('account_analytic_tree_view_task')}),
-                              (0, 0, {'view_mode': 'form', 'view_id': ref('account_analytic_form_view_Task')}),
-
-                              ]"/>
-            <field name="search_view_id" ref="account_analytic_search_view_Task"/>
-            <field name="domain">[('task_id','!=',False)]</field>
-            <field name="help" type="html">
-                <p class="oe_view_nocontent_create">click here to insert course data </p>
-            </field>
-        </record>
-
         <record id="eq_hr_timesheet_line_tree" model="ir.ui.view">
-        <field name="name">timesheet.line.tree</field>
-        <field name="model">account.analytic.line</field>
-        <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree"/>
-        <field name="arch" type="xml">
-            <field name="unit_amount" position="after">
-                <field name="to_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
-                <field name="eq_time_invoice" widget="float_time"/>
-                <field name="eq_storno_flag" readonly="1"/>
-                <field name="invoice_id" readonly="1"/>
-                <field name="product_id"/>
-            </field>
-        </field>
-    </record>
-
-        <record id="eq_act_hr_timesheet_line" model="ir.actions.act_window">
-            <field name="name">Activities</field>
-            <field name="res_model">account.analytic.line</field>
-            <field name="domain">[('move_id','=', False)]</field>
-            <field name="search_view_id" ref="hr_timesheet.hr_timesheet_line_search"/>
-            <field name="help" type="html">
-              <p class="oe_view_nocontent_create">
-                Click to record activities.
-              </p><p>
-                You can register and track your workings hours by project every
-                day. Every time spent on a project will become a cost and can be re-invoiced to
-                customers if required.
-              </p>
+            <field name="name">timesheet.line.tree</field>
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree"/>
+            <field name="arch" type="xml">
+                <field name="unit_amount" position="after">
+                    <field name="to_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                    <field name="eq_time_invoice" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                    <field name="eq_storno_flag" readonly="1"/>
+                    <field name="invoice_id" readonly="1"/>
+                    <field name="product_id" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                </field>
             </field>
         </record>
-
 
         <!-- Menus -->
-        <menuitem id="eq_menu_hr_working_hours" parent="project.menu_project_management" action="eq_act_hr_timesheet_line" name="Timesheet (all)" sequence="17"/>
         <menuitem id="menu_project_timesheet" name="Timesheet" parent="project.menu_project_management" action="project_timesheet_action_" sequence="15"/>
-        <menuitem id="menu_issue" name="Timesheet(issues)" parent="project.menu_project_management" action="eq_issue_action" sequence="20"/>
-        <menuitem id="menu_task" name="Timesheet(task)" parent="project.menu_project_management" action="eq_task_action" sequence="20"/>
         <menuitem id="project_menu" name="Project" parent="project.menu_project_management" sequence="50" action="eq_project_action_2" />
     </data>
 </odoo>
