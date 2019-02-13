@@ -1,5 +1,10 @@
 ## Modul eq_project_product_type
 
+#### 13.02.2019
+#### Version 1.0.5
+##### CHG
+- Clean up timesheet issue,task and all, form and tree view from eq_project
+
 #### 28.09.2018
 #### Version 1.0.4
 ##### FIX/CHG
