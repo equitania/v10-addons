@@ -38,11 +38,6 @@ msgid "Account search"
 msgstr "Filter"
 
 #. module: eq_project
-#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Task
-msgid "Account search Task"
-msgstr "Aufgabe_Filter"
-
-#. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
 msgid "Account search Timesheet"
 msgstr "Zeiterfassung_Filter"
@@ -82,7 +77,6 @@ msgstr "Enddatum"
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_form_view_Task
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_form_view_issue
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view
-#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Task
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_tree_view
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_tree_view_issue
@@ -114,17 +108,12 @@ msgid "Hours"
 msgstr "Stunden"
 
 #. module: eq_project
-#: model:ir.actions.act_window,name:eq_project.eq_issue_action
-msgid "Issue"
-msgstr "Fall/Problem"
-
-#. module: eq_project
-#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
 msgid "My Issue"
 msgstr "Meine Fälle"
 
 #. module: eq_project
-#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Task
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
 msgid "My Task"
 msgstr "Meine Aufgaben"
 
@@ -174,11 +163,6 @@ msgid "Start Date"
 msgstr "Startdatum"
 
 #. module: eq_project
-#: model:ir.actions.act_window,name:eq_project.eq_task_action
-msgid "Task"
-msgstr "Aufgabe"
-
-#. module: eq_project
 #: model:ir.model,name:eq_project.model_project_task_type
 msgid "Task Stage"
 msgstr "Aufgabenstufe"
@@ -214,12 +198,12 @@ msgid "Timesheet Activities"
 msgstr "Zeiterfassungsaktivitäten"
 
 #. module: eq_project
-#: model:ir.ui.menu,name:eq_project.menu_issue
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
 msgid "Timesheet(issues)"
 msgstr "Zeiterfassung(Fälle/Probleme)"
 
 #. module: eq_project
-#: model:ir.ui.menu,name:eq_project.menu_task
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
 msgid "Timesheet(task)"
 msgstr "Zeiterfassung(Aufgaben)"
 
@@ -232,12 +216,6 @@ msgstr "Zeiterfassung"
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_tree_view
 msgid "Tree View Account"
 msgstr "Baumstruktursicht"
-
-#. module: eq_project
-#: model:ir.actions.act_window,help:eq_project.eq_issue_action
-#: model:ir.actions.act_window,help:eq_project.eq_task_action
-msgid "click here to insert course data"
-msgstr "Klicken Sie hier um Daten zu erfassen"
 
 #. module: eq_project
 #: model:ir.actions.act_window,name:eq_project.eq_project_action_2
@@ -278,9 +256,9 @@ msgid "<span>Projectno.:</span>"
 msgstr "<span>Projektnr.:</span>"
 
 #. module: eq_project
-#: model:ir.ui.menu,name:eq_project.eq_menu_hr_working_hours
-msgid "Timesheet (all)"
-msgstr "Zeiterfassung (alle)"
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+msgid "Timesheet(all)"
+msgstr "Zeiterfassung(alle)"
 
 #. module: eq_project
 #: model:ir.model.fields,field_description:eq_project.field_account_analytic_line_eq_time_invoice
@@ -341,7 +319,37 @@ msgstr "Verantwortlich:"
 msgid "Duration should be a positive time."
 msgstr "Die Dauer sollte eine positive Zeit sein."
 
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+msgid "Timesheets Invoiced"
+msgstr "Stundenzettel in Rechnung gestellt"
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+msgid "Timesheets Not Invoiced"
+msgstr "Stundenzettel NICHT in Rechnung gestellt"
+
+#. module: timesheet_invoice
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+msgid "Timesheets To Invoice"
+msgstr "Stundenzettel in Rechnung zu stellen"
+
+#. module: product_margin
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+msgid "Sales"
+msgstr "Verkauf"
+
 #. module: eq_project
-#: model:ir.actions.act_window,name:eq_project.eq_act_hr_timesheet_line
-msgid "Activities"
-msgstr "Aktivitäten"
+#: model:ir.ui.view,arch_db:eq_project.eq_project_issue_form_view
+msgid "planed duration"
+msgstr "Geplante Dauer"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_issue_form_view
+msgid "planed execution date"
+msgstr "Geplante Durchführung"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_issue_form_view
+msgid "planed finish date"
+msgstr "Geplante Fertigstellung"

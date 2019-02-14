@@ -1,5 +1,11 @@
 ## Modul eq_project
 
+#### 14.02.2019
+#### Version 1.0.48
+##### CHG  
+- Changed project, project issue and project task view
+- Added translation
+
 #### 12.02.2019
 #### Version 1.0.47
 ##### FIX  

@@ -9,7 +9,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//form/sheet/notebook/page[2]" position="replace">
                     <page string="Timesheets" attrs="{'invisible': [('project_id', '=', False)]}">
-                        <field name="timesheet_ids" colspan="4" nolabel="1" context="{'default_user_id' : uid, 'default_project_id': project_id}"
+                        <field name="timesheet_ids" colspan="4" nolabel="1" context="{'default_user_id' : uid, 'default_project_id': project_id,'default_task_id': task_id, 'default_issue_id': id}"
                                 groups="base.group_user">
                             <tree editable="top" string="Timesheet Activities">
                                 <field name="date"/>
@@ -19,11 +19,18 @@
                                 <field name="project_id" invisible="1" required="1"/>
                                 <field name="time_start" widget="float_time"/>
                                 <field name="time_stop" widget="float_time"/>
+                                <field name="invoice_id"/>
                                 <field name="unit_amount" string="Duration" widget="float_time"/>
                             </tree>
                         </field>
                     </page>
                 </xpath>
+                <field name="tag_ids" position="after">
+                    <field name="create_date" readonly="1"/>
+                    <field string="planed finish date" name="date_deadline"/>
+                    <field string="planed duration" name="duration"/>
+                    <field string="planed execution date" name="date"/>
+                </field>
             </field>
         </record>
     </data>
