@@ -1,6 +1,11 @@
 ## Modul eq_project
 
 #### 14.02.2019
+#### Version 1.0.49
+##### CHG  
+- user_id and project_id readonly when invoice_id is set
+
+#### 14.02.2019
 #### Version 1.0.48
 ##### CHG  
 - Changed project, project issue and project task view

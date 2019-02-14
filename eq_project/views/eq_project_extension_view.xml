@@ -313,6 +313,12 @@
                 <field name="time_stop" position="attributes">
                     <attribute name="attrs">{'readonly': [('invoice_id', '!=', False)]}</attribute>
                 </field>
+                <field name="user_id" position="attributes">
+                    <attribute name="attrs">{'readonly': [('invoice_id', '!=', False)]}</attribute>
+                </field>
+                <field name="project_id" position="attributes">
+                    <attribute name="attrs">{'readonly': [('invoice_id', '!=', False)]}</attribute>
+                </field>
             </field>
         </record>
 
