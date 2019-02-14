@@ -36,7 +36,7 @@
             </field>
         </record>
 
-        <!-- Timesheet tree-->
+        <!-- Timesheet form-->
         <record id="eq_account_analytic_form_view_normal" model="ir.ui.view">
             <field name="name">account.analytic.form</field>
             <field name="model">account.analytic.line</field>
@@ -47,5 +47,18 @@
                 </field>
             </field>
         </record>
+
+        <!-- Activities-->
+        <record id="eq_hr_timesheet_line_tree" model="ir.ui.view">
+            <field name="name">account.analytic.tree</field>
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree" />
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="eq_product_type_id"/>
+                </field>
+            </field>
+        </record>
+
     </data>
 </odoo>

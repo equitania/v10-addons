@@ -1,5 +1,10 @@
 ## Modul eq_project_product_type
 
+#### 14.02.2019
+#### Version 1.0.6
+##### CHG
+- eq_product_type_id field again shown on Activities view
+
 #### 13.02.2019
 #### Version 1.0.5
 ##### CHG
