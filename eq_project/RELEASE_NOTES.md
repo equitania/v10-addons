@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 15.02.2019
+#### Version 1.0.51
+##### CHG
+- Changed search view for Activities
+
 #### 14.02.2019
 #### Version 1.0.50
 ##### CHG
