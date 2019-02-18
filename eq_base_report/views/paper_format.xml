@@ -20,6 +20,22 @@
 		        <field name="dpi">90</field>
 		</record>
 
+		<!-- Definition of paper format -->
+		<record id="eq_paperformat_landscape" model="report.paperformat">
+		        <field name="name">EQ European A4 Landscape</field>
+			    <field name="default" eval="True" />
+		        <field name="format">A4</field>
+		        <field name="page_height">0</field>
+		        <field name="page_width">0</field>
+		        <field name="orientation">Landscape</field>
+		        <field name="margin_top">15</field>
+		        <field name="margin_bottom">23</field>
+		        <field name="margin_left">17</field>
+		        <field name="margin_right">17</field>
+		        <field name="header_line" eval="False" />
+		        <field name="header_spacing">10</field>
+		        <field name="dpi">90</field>
+		</record>
 
 		<!-- Wirft noch einen Fehler -->
 		<!-- http://stackoverflow.com/questions/29815280/how-to-link-custom-paper-format-to-a-pdf-report-in-odoo-8-0 -->
