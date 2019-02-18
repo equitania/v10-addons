@@ -1,6 +1,11 @@
 ## eq_report_pattern 
 
 #### 18.02.2019
+#### Version 1.0.31
+##### CHG
+- Translation change 
+
+#### 18.02.2019
 #### Version 1.0.30
 ##### ADD
 - Documents that have no model can be selected everywhere.

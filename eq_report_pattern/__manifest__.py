@@ -22,7 +22,7 @@
 {
     'name': 'Equitania Dokumenten Bausteine',
     'license': 'AGPL-3',
-    'version': '1.0.30',
+    'version': '1.0.31',
     'description': """
         Improves the odoo document templating, overwrites head- and foot-texttemplates
     """,

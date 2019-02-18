@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 10.20190216\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-23 08:00+0000\n"
-"PO-Revision-Date: 2017-05-23 08:00+0000\n"
+"POT-Creation-Date: 2019-02-18 15:52+0000\n"
+"PO-Revision-Date: 2019-02-18 15:52+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,87 +16,41 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.report_picking_data
-msgid "<span style=\"font-weight:bold;\">Invoice address:</span>"
-msgstr "<span style=\"font-weight:bold;\">Invoice address:</span>"
-
-#. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.report_picking_data
-msgid "<strong>Barcode</strong>"
-msgstr "<strong>Barcode</strong>"
-
-#. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.report_picking_data
-msgid "<strong>Carrier</strong>"
-msgstr "<strong>Carrier</strong>"
-
-#. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.report_picking_data
-msgid "<strong>Destination</strong>"
-msgstr "<strong>Zielort</strong>"
-
-#. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.report_picking_data
-msgid "<strong>Item description</strong>"
-msgstr "<strong>Item description</strong>"
-
-#. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.report_picking_data
-msgid "<strong>Item no.</strong>"
-msgstr "<strong>Item no.</strong>"
-
-#. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.report_picking_data
-msgid "<strong>Qty.</strong>"
-msgstr "<strong>Qty.</strong>"
-
-#. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.report_picking_data
-msgid "<strong>Seq</strong>"
-msgstr "<strong>Seq</strong>"
-
-#. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.report_picking_data
-msgid "<strong>Source</strong>"
-msgstr "<strong>Quelle</strong>"
-
-#. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.report_picking_data
-msgid "<strong>Status</strong>"
-msgstr "<strong>Status</strong>"
-
-#. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.report_picking_data
-msgid "<strong>Weight</strong>"
-msgstr "<strong>Weight</strong>"
-
-#. module: eq_report_pattern
 #: model:ir.actions.act_window,help:eq_report_pattern.eq_action_sale_quotation_template
 msgid "Click here to create your template."
 msgstr "Hier klicken, um eine Vorlage zu erstellen."
 
 #. module: eq_report_pattern
 #: model:ir.model.fields,field_description:eq_report_pattern.field_eq_document_template_create_uid
+#: model:ir.model.fields,field_description:eq_report_pattern.field_eq_sale_quote_line_create_uid
 msgid "Created by"
 msgstr "Erstellt von"
 
 #. module: eq_report_pattern
 #: model:ir.model.fields,field_description:eq_report_pattern.field_eq_document_template_create_date
+#: model:ir.model.fields,field_description:eq_report_pattern.field_eq_sale_quote_line_create_date
 msgid "Created on"
 msgstr "Angelegt am"
 
 #. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.eq_stock_view_doc_template_ext
-msgid "Dear Sir or Madam,"
-msgstr "Dear Sir or Madam,"
+#: code:addons/eq_report_pattern/models/document_template.py:44
+#, python-format
+msgid "Current default template for %s is %s,you can not have more than one."
+msgstr "Das derzeitige Standard-Template für %s ist %s. Sie können nur ein Standard-Template wählen."
 
 #. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.report_picking_data
-msgid "Delivery note:"
-msgstr "Delivery note:"
+#: model:ir.model.fields,field_description:eq_report_pattern.field_eq_document_template_eq_default
+msgid "Default value"
+msgstr "Standard"
+
+#. module: eq_report_pattern
+#: selection:eq.document.template,eq_model:0
+msgid "Delivery"
+msgstr "Auslieferung"
 
 #. module: eq_report_pattern
 #: model:ir.model.fields,field_description:eq_report_pattern.field_eq_document_template_display_name
+#: model:ir.model.fields,field_description:eq_report_pattern.field_eq_sale_quote_line_display_name
 msgid "Display Name"
 msgstr "Anzeigename"
 
@@ -111,68 +65,48 @@ msgstr "Dokumentenvorlage"
 
 #. module: eq_report_pattern
 #: model:ir.actions.act_window,name:eq_report_pattern.eq_action_sale_quotation_template
+#: model:ir.ui.menu,name:eq_report_pattern.eq_menu_purchase_template
 #: model:ir.ui.menu,name:eq_report_pattern.eq_menu_sale_quote_template
 msgid "EQ Quotation Templates"
 msgstr "Dokumentenvorlage"
 
 #. module: eq_report_pattern
 #: model:ir.model.fields,field_description:eq_report_pattern.field_eq_document_template_eq_footer
-#: model:ir.model.fields,field_description:eq_report_pattern.field_sale_order_eq_footer
-#: model:ir.model.fields,field_description:eq_report_pattern.field_stock_picking_eq_footer_text
-#: model:ir.ui.view,arch_db:eq_report_pattern.view_order_form
 msgid "Footer"
 msgstr "Fußtext"
 
 #. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.eq_stock_view_doc_template_ext
-msgid "Footer Text"
-msgstr "Fußtext"
-
-#. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.report_picking_data
-msgid "Goods received on date:"
-msgstr "Goods received on date:"
-
-#. module: eq_report_pattern
 #: model:ir.model.fields,field_description:eq_report_pattern.field_eq_document_template_eq_header
-#: model:ir.model.fields,field_description:eq_report_pattern.field_sale_order_eq_header
-#: model:ir.model.fields,field_description:eq_report_pattern.field_stock_picking_eq_header_text
-#: model:ir.ui.view,arch_db:eq_report_pattern.view_order_form
 msgid "Header"
 msgstr "Kopftext"
 
 #. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.eq_stock_view_doc_template_ext
-msgid "Header Text"
-msgstr "Kopftext"
-
-#. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.eq_stock_view_doc_template_ext
-msgid "Header text"
-msgstr "Kopftext"
-
-#. module: eq_report_pattern
 #: model:ir.model.fields,field_description:eq_report_pattern.field_eq_document_template_id
+#: model:ir.model.fields,field_description:eq_report_pattern.field_eq_sale_quote_line_id
 msgid "ID"
 msgstr "ID"
 
 #. module: eq_report_pattern
+#: selection:eq.document.template,eq_model:0
 #: model:ir.model,name:eq_report_pattern.model_account_invoice
 msgid "Invoice"
 msgstr "Rechnung"
 
 #. module: eq_report_pattern
 #: model:ir.model.fields,field_description:eq_report_pattern.field_eq_document_template___last_update
+#: model:ir.model.fields,field_description:eq_report_pattern.field_eq_sale_quote_line___last_update
 msgid "Last Modified on"
 msgstr "Zuletzt geändert am"
 
 #. module: eq_report_pattern
 #: model:ir.model.fields,field_description:eq_report_pattern.field_eq_document_template_write_uid
+#: model:ir.model.fields,field_description:eq_report_pattern.field_eq_sale_quote_line_write_uid
 msgid "Last Updated by"
 msgstr "Zuletzt aktualisiert durch"
 
 #. module: eq_report_pattern
 #: model:ir.model.fields,field_description:eq_report_pattern.field_eq_document_template_write_date
+#: model:ir.model.fields,field_description:eq_report_pattern.field_eq_sale_quote_line_write_date
 msgid "Last Updated on"
 msgstr "Zuletzt aktualisiert am"
 
@@ -182,29 +116,45 @@ msgid "Lines"
 msgstr "Positionen"
 
 #. module: eq_report_pattern
+#: model:ir.model.fields,field_description:eq_report_pattern.field_eq_document_template_eq_model
+msgid "Model"
+msgstr "Modell"
+
+#. module: eq_report_pattern
 #: model:ir.model.fields,field_description:eq_report_pattern.field_eq_document_template_name
 msgid "Name"
 msgstr "Name"
 
 #. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.report_picking_data
-msgid "Our reference no."
-msgstr "Our reference no."
-
-#. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.report_picking_data
-msgid "Packing list:"
-msgstr "Packing list:"
-
-#. module: eq_report_pattern
+#: selection:eq.document.template,eq_model:0
 #: model:ir.model,name:eq_report_pattern.model_purchase_order
 msgid "Purchase Order"
 msgstr "Beschaffungsauftrag"
 
 #. module: eq_report_pattern
+#: model:ir.model,name:eq_report_pattern.model_sale_quote_line
+msgid "Quotation Template Lines"
+msgstr "Positionen der Angebotsvorlage"
+
+#. module: eq_report_pattern
+#: model:ir.model.fields,field_description:eq_report_pattern.field_eq_sale_quote_line_quote_id
+msgid "Quotation Template Reference"
+msgstr "Referenz der Angebotsvorlage"
+
+#. module: eq_report_pattern
 #: model:ir.model.fields,field_description:eq_report_pattern.field_eq_document_template_eq_quote_line
 msgid "Quote Template Lines"
 msgstr "Quote Template Lines"
+
+#. module: eq_report_pattern
+#: model:ir.ui.view,arch_db:eq_report_pattern.eq_sale_partner_extension_form_view
+msgid "Report settings"
+msgstr "Reporteinstellungen"
+
+#. module: eq_report_pattern
+#: selection:eq.document.template,eq_model:0
+msgid "Sale Order"
+msgstr "Verkaufsauftrag"
 
 #. module: eq_report_pattern
 #: model:ir.model,name:eq_report_pattern.model_sale_order
@@ -214,17 +164,7 @@ msgstr "Verkaufsauftrag"
 #. module: eq_report_pattern
 #: model:ir.ui.view,arch_db:eq_report_pattern.eq_document_template_form_view
 msgid "Sales Quote Template Lines"
-msgstr "Sales Quote Template Lines"
-
-#. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.report_picking_data
-msgid "Scheduled date"
-msgstr "Scheduled date"
-
-#. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.report_picking_data
-msgid "Signature"
-msgstr "Signature"
+msgstr "Verkaufsauftrag Template Positionen"
 
 #. module: eq_report_pattern
 #: model:ir.model,name:eq_report_pattern.model_stock_picking
@@ -241,18 +181,11 @@ msgstr "Use templates to create polished, professional quotes in minutes.\n"
 "                    Use cross-selling and discounts to push and boost your sales."
 
 #. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.report_picking_data
-msgid "c/o"
-msgstr "c/o"
-
-#. module: eq_report_pattern
 #: model:ir.model,name:eq_report_pattern.model_eq_document_template
 msgid "eq.document.template"
 msgstr "eq.document.template"
 
-
 #. module: eq_report_pattern
-#: model:ir.ui.view,arch_db:eq_report_pattern.eq_sale_partner_extension_form_view
-msgid "Report settings"
-msgstr "Reporteinstellungen"
-
+#: model:ir.model,name:eq_report_pattern.model_eq_sale_quote_line
+msgid "eq.sale.quote.line"
+msgstr "eq.sale.quote.line"
