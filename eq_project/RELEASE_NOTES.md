@@ -1,9 +1,9 @@
 ## Modul eq_project
 
-#### 15.02.2019
-#### Version 1.0.51
+#### 18.02.2019
+#### Version 1.0.52
 ##### CHG
-- Changed search view for Activities
+- change view in report account extension.xml for person / user with break 
 
 #### 14.02.2019
 #### Version 1.0.50

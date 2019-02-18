@@ -1,5 +1,10 @@
 ## Modul eq_base_report
 
+#### 18.02.2019
+#### Version 1.0.39
+##### CHG
+- Internal Standard Report: Changing top border color from green to black
+
 #### 17.12.2018
 #### Version 1.0.38
 ##### ADD
