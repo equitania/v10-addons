@@ -173,7 +173,6 @@
                     <filter string="My Timesheet" name="my_timesheets" domain="[('user_id','=',uid),('sheet_id','=',False),('issue_id','=',False),('task_id','=',False)]"/>
                     <filter string="My Issue" name="my_issues" domain="[('user_id','=',uid),('issue_id','!=',False)]"/>
                     <filter string="My Task" name="my_task" domain="[('user_id','=',uid),('task_id','!=',False)]"/>
-                    <filter string="Timesheet(all)" name="timesheet_all" domain="[('move_id','=', False)]"/>
                     <filter string="Timesheet(issues)" name="timesheet_issues" domain="[('issue_id','!=',False)]"/>
                     <filter string="Timesheet(task)" name="timesheet_task" domain="[('task_id','!=',False)]"/>
                     <separator/>
@@ -294,40 +293,13 @@
                           (0, 0, {'view_mode': 'form', 'view_id': ref('account_analytic_form_view')}),
 
                           ]"/>
-            <field name="domain">[]</field>
+            <field name="domain">[('move_id','=', False)]</field>
             <field name="help" type="html">
                 <p>
                     The Odoo issues tracker allows you to efficiently manage things
                     like internal requests, software development bugs, customer
                     complaints, project troubles, material breakdowns, etc.
                 </p>
-            </field>
-        </record>
-
-        <record id="eq_hr_timesheet_line_tree" model="ir.ui.view">
-            <field name="name">timesheet.line.tree</field>
-            <field name="model">account.analytic.line</field>
-            <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree"/>
-            <field name="arch" type="xml">
-                <field name="unit_amount" position="after">
-                    <field name="to_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
-                    <field name="eq_time_invoice" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
-                    <field name="eq_storno_flag" readonly="1"/>
-                    <field name="invoice_id" readonly="1"/>
-                    <field name="product_id" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
-                </field>
-                <field name="time_start" position="attributes">
-                    <attribute name="attrs">{'readonly': [('invoice_id', '!=', False)]}</attribute>
-                </field>
-                <field name="time_stop" position="attributes">
-                    <attribute name="attrs">{'readonly': [('invoice_id', '!=', False)]}</attribute>
-                </field>
-                <field name="user_id" position="attributes">
-                    <attribute name="attrs">{'readonly': [('invoice_id', '!=', False)]}</attribute>
-                </field>
-                <field name="project_id" position="attributes">
-                    <attribute name="attrs">{'readonly': [('invoice_id', '!=', False)]}</attribute>
-                </field>
             </field>
         </record>
 
@@ -339,6 +311,43 @@
                     <field name="issue_id"/>
                     <field name="to_invoice"/>
                 </xpath>
+            </field>
+        </record>
+
+        <!-- Timesheet Activities tree-->
+        <record id="hr_timesheet.hr_timesheet_line_tree" model="ir.ui.view">
+            <field name="model">account.analytic.line</field>
+            <field name="name">account.analytic.line.tree.hr_timesheet</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Timesheet Activities">
+                    <field name="date" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                    <field name="name" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                    <field name="unit_amount" string="Duration" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                    <field name="project_id" required="1" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                    <field name="task_id" context="{'default_project_id': project_id}" domain="[('project_id', '=', project_id)]" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                    <field name="issue_id" context="{'default_project_id': project_id}" domain="[('project_id', '=', project_id)]" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                    <field name="to_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                    <field name="eq_time_invoice" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                    <field name="product_id" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                    <field name="user_id" required="1" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                    <field name="invoice_id" readonly="1"/>
+                    <field name="eq_storno_flag" readonly="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="eq_hr_timesheet_line_tree" model="ir.ui.view">
+            <field name="name">timesheet.line.tree</field>
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree"/>
+            <field name="arch" type="xml">
+                <!-- time_start and time_stop are defined in module hr_timesheet_activity_begin_end -->
+                <field name="time_start" position="attributes">
+                    <attribute name="attrs">{'readonly': [('invoice_id', '!=', False)]}</attribute>
+                </field>
+                <field name="time_stop" position="attributes">
+                    <attribute name="attrs">{'readonly': [('invoice_id', '!=', False)]}</attribute>
+                </field>
             </field>
         </record>
 

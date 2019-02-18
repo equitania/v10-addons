@@ -1,9 +1,21 @@
 ## Modul eq_project
 
 #### 18.02.2019
+#### Version 1.0.53
+##### CHG
+- Added hr_timesheet_task in dependencies
+- Added domain move_id = False and removed filter Timesheet(all)
+- Changed view for Activities
+
+#### 18.02.2019
 #### Version 1.0.52
 ##### CHG
 - change view in report account extension.xml for person / user with break 
+
+#### 15.02.2019
+#### Version 1.0.51
+##### CHG
+- Changed search view for Activities
 
 #### 14.02.2019
 #### Version 1.0.50
