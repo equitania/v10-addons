@@ -10,6 +10,7 @@
 		            <group>
 		            	<field name="name"/>
 						<field name="eq_model"/>
+						<field name="eq_default"/>
 		            	<field name="eq_header"/>
 					</group>
 					<notebook>

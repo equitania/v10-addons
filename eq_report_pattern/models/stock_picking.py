@@ -27,8 +27,14 @@ from openerp import models, fields, api, _
 
 class eq_stock_picking(models.Model):
     _inherit = 'stock.picking'
+
+    # Get default template
+    def _get_default_template(self):
+        eq_default = self.env["eq.document.template"].search([("eq_model", "=", "stock.picking"), ('eq_default', '=', True)],limit=1)
+        if eq_default:
+            return eq_default
    
-    document_template_id = fields.Many2one(comodel_name='eq.document.template', string='Document Template')#TODO: readonly falls Rechnung nicht mehr editierbar?
+    document_template_id = fields.Many2one(comodel_name='eq.document.template', string='Document Template',domain="['|',('eq_model', '=', False),('eq_model','=','stock.picking')]}",default=_get_default_template)#TODO: readonly falls Rechnung nicht mehr editierbar?
 
     # account.invoice enthaelt die selbe Methode und ist auf die selbe Art ueberschrieben
     @api.onchange('document_template_id')

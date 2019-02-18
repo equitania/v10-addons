@@ -1,5 +1,12 @@
 ## eq_report_pattern 
 
+#### 18.02.2019
+#### Version 1.0.30
+##### ADD
+- Documents that have no model can be selected everywhere.
+- Added models for Invoice and Delivery.
+- Added default value that is selected automatically on creation and is unique.
+
 #### 07.02.2019
 #### Version 1.0.29
 ##### ADD

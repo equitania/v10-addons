@@ -28,8 +28,15 @@ from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT
 
 class eq_sale_order_template(models.Model):
     _inherit = 'sale.order'
+
+    # Get default template
+    def _get_default_template(self):
+        eq_default = self.env["eq.document.template"].search(
+            [("eq_model", "=", "sale.order"), ('eq_default', '=', True)], limit=1)
+        if eq_default:
+            return eq_default
    
-    document_template_id = fields.Many2one(comodel_name='eq.document.template', string='Document Template', readonly=True, states={'draft': [('readonly', False)], 'sent': [('readonly', False)]},domain="[('eq_model','=','sale.order')]}")
+    document_template_id = fields.Many2one(comodel_name='eq.document.template', string='Document Template', readonly=True, states={'draft': [('readonly', False)], 'sent': [('readonly', False)]},domain="['|',('eq_model', '=', False),('eq_model','=','sale.order')]}",default=_get_default_template)
 
     # Automatischen Test anlegen
     @api.model

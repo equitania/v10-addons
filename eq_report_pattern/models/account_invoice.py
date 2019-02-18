@@ -26,8 +26,14 @@ from openerp import models, fields, api, _
 # Erweitert account.invoice
 class eq_account_invoice(models.Model):
     _inherit = 'account.invoice'
+
+    # Get default template
+    def _get_default_template(self):
+        eq_default = self.env["eq.document.template"].search([("eq_model", "=", "account.invoice"), ('eq_default', '=', True)],limit=1)
+        if eq_default:
+            return eq_default
    
-    document_template_id = fields.Many2one(comodel_name='eq.document.template', string='Document Template')#TODO: readonly falls Rechnung nicht mehr editierbar?
+    document_template_id = fields.Many2one(comodel_name='eq.document.template', string='Document Template',domain="['|',('eq_model', '=', False),('eq_model','=','account.invoice')]}",default=_get_default_template)#TODO: readonly falls Rechnung nicht mehr editierbar?
     comment = fields.Html('Additional Information')
 
     # @api.onchange('document_template_id')
@@ -82,18 +88,20 @@ class eq_account_invoice(models.Model):
         :return:
         """
         selected_template = self.document_template_id
-        if (self.partner_id and self.partner_id.lang and self.document_template_id):
+        if self.partner_id and self.partner_id.lang and self.document_template_id:
             selected_template = self.document_template_id.with_context(lang=self.partner_id.lang)
-
-        if (selected_template):
+        if selected_template:
             self.eq_head_text = selected_template.eq_header
             self.comment = selected_template.eq_footer
-            # partner_id = False
-            # if (self.partner_id):
-            #     partner_id = self.partner_id.id
+            print self.comment
 
-        # self.eq_head_text = selected_template.eq_header
-        # self.comment = selected_template.eq_footer
+    @api.onchange('partner_id', 'company_id')
+    def _onchange_delivery_address(self):
+        addr = self.partner_id.address_get(['delivery'])
+        self.partner_shipping_id = addr and addr.get('delivery')
+        if self.env.context.get('type', 'out_invoice') == 'out_invoice':
+            company = self.company_id or self.env.user.company_id
+            #self.comment = company.with_context(lang=self.partner_id.lang).sale_note
 
 """
     def _prepare_invoice(self, cr, uid, order, line_ids, context=None):

@@ -26,8 +26,14 @@ import datetime
 
 class eq_purchase_order_template(models.Model):
     _inherit = 'purchase.order'
+
+    # Get default template
+    def _get_default_template(self):
+        eq_default = self.env["eq.document.template"].search([("eq_model", "=", "purchase.order"), ('eq_default', '=', True)],limit=1)
+        if eq_default:
+            return eq_default
    
-    document_template_id = fields.Many2one(comodel_name='eq.document.template', string='Document Template', readonly=True, states={'draft': [('readonly', False)], 'sent': [('readonly', False)]},domain="[('eq_model','=','purchase.order')]}")
+    document_template_id = fields.Many2one(comodel_name='eq.document.template', string='Document Template', readonly=True, states={'draft': [('readonly', False)], 'sent': [('readonly', False)]},domain="['|',('eq_model', '=', False),('eq_model','=','purchase.order')]}",default=_get_default_template)
 
     @api.model
     def change_purchase_template_id(self, quote_template):
