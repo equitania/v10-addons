@@ -1,6 +1,11 @@
 ## Modul eq_project
 
 #### 19.02.2019
+#### Version 1.0.55
+##### CHG
+- Same tree, form and search views for Activities and Project/Timesheet
+
+#### 19.02.2019
 #### Version 1.0.54
 ##### CHG
 - Changed order by id in account.analytic.line
