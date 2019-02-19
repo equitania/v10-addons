@@ -211,6 +211,22 @@
             </field>
         </record>
 
+        <!--<record id="view_account_analytic_line_tree" model="ir.ui.view">-->
+            <!--<field name="name">account.analytic.line.tree</field>-->
+            <!--<field name="model">account.analytic.line</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<tree string="Analytic Entries">-->
+                    <!--<field name="date"/>-->
+                    <!--<field name="name"/>-->
+                    <!--<field name="account_id"/>-->
+                    <!--<field name="currency_id" invisible="1"/>-->
+                    <!--<field name="company_id" groups="base.group_multi_company"/>-->
+                    <!--<field name="unit_amount" sum="Quantity"/>-->
+                    <!--<field name="amount" sum="Total"/>-->
+                <!--</tree>-->
+            <!--</field>-->
+        <!--</record>-->
+
         <!-- Timesheet tree-->
         <record id="account_analytic_tree_view" model="ir.ui.view">
             <field name="name">account.analytic.tree</field>
@@ -324,6 +340,55 @@
               </p>
             </field>
         </record>
+
+
+        <record id="eq_hr_timesheet_line_form_view" model="ir.ui.view">
+            <field name="model">hr_timesheet_sheet.sheet</field>
+            <field name="inherit_id" ref="hr_timesheet_sheet.hr_timesheet_sheet_form"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//notebook/page[@class='o_hr_timesheet_sheet_details']" position="replace">
+                    <page string="Details" class="o_hr_timesheet_sheet_details">
+                            <field context="{'employee_id': employee_id, 'user_id':user_id, 'timesheet_date_from': date_from, 'timesheet_date_to': date_to}" name="timesheet_ids" nolabel="1">
+                                <tree string="Timesheet Activities">
+                                    <field name="invoice_id" invisible="1"/>
+                                    <field name="date" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                    <field name="name" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                    <field name="time_start" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                    <field name="time_stop" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                    <field name="unit_amount" string="Duration" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                    <field name="project_id" required="1" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                    <field name="task_id" context="{'default_project_id': project_id}" domain="[('project_id', '=', project_id)]" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                    <field name="issue_id" context="{'default_project_id': project_id}" domain="[('project_id', '=', project_id)]" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                    <field name="to_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                    <field name="eq_time_invoice" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                    <field name="product_id" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                    <field name="user_id" required="1" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                </tree>
+                                <form string="Timesheet Activities">
+                                    <group>
+                                        <field name="invoice_id" invisible="1"/>
+                                        <field name="date" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                        <field name="name" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                        <field name="time_start" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                        <field name="time_stop" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                        <field name="unit_amount" string="Duration" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                        <field name="project_id" required="1" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                        <field name="task_id" context="{'default_project_id': project_id}" domain="[('project_id', '=', project_id)]" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                        <field name="issue_id" context="{'default_project_id': project_id}" domain="[('project_id', '=', project_id)]" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                        <field name="to_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                        <field name="eq_time_invoice" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                        <field name="product_id" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                        <field name="user_id" required="1" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                </xpath>
+                </field>
+
+        </record>
+
+
 
         <!-- Menus -->
         <menuitem id="menu_project_timesheet" name="Timesheet" parent="project.menu_project_management" action="project_timesheet_action_" sequence="15"/>
