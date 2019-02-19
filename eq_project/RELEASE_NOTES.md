@@ -1,6 +1,13 @@
 ## Modul eq_project
 
 #### 19.02.2019
+#### Version 1.0.56
+##### CHG / ADD
+- timesheet reports (add new EQ version)
+- changes in view for hr_timesheet_sheet.sheet
+- Removed invoice_id from task and issue timesheets, added eq_time_invoice
+
+#### 19.02.2019
 #### Version 1.0.55
 ##### CHG
 - Same tree, form and search views for Activities and Project/Timesheet

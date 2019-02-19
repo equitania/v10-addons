@@ -1,9 +1,12 @@
 <odoo>
 
 
-<template id="eq_project_report_timesheet_extension" inherit_id="hr_timesheet.report_timesheet">
 
-  <xpath expr="//t[@t-call='report.external_layout']" position="replace">
+<template id="eq_report_timesheet_extension_invoice">
+
+    <t t-call="report.html_container">
+
+
 
         <t t-if="not o and doc">
             <t t-set="o" t-value="doc"/>
@@ -22,10 +25,10 @@
 
       <div class="page" style="padding-left:0px!important;">
           <div class="oe_structure"/>
-
+          
 
                 <h2>
-                 Control Timesheet Entries
+                 List Timesheet Entries
                 </h2>
 
 
@@ -59,8 +62,7 @@
                                         <th class="text-right">Billed Duration</th>
                                         <th>Product</th>
                                         <th>Responsible</th>
-                                      <!--  <th>Invoice</th>-->
-
+                                        <th>Invoice</th>
                                     </tr>
                                </thead>
                                <tbody>
@@ -96,8 +98,8 @@
                                             <td>
                                                <span t-field="l.user_id.partner_id.name"/>
                                             </td>
-                                          <!-- <td> <t t-if="l.invoice_id"><span t-field="l.invoice_id"/></t>
-                                            </td>-->
+                                            <td> <t t-if="l.invoice_id"><span t-field="l.invoice_id"/></t>
+                                            </td>
 
                                         </tr>
                                     </t>
@@ -121,23 +123,30 @@
                         </div>
                     </div>
 
-            <div id="signatureblock">
+          <!-- signature field not needed on this report-->
+          <!--  <div id="signatureblock">
                 <hr style="border-color:black; width:40%; margin-top:1cm; margin-bottom:0cm;"></hr>
                 <span>Date, signature</span>
-            </div>
+            </div> -->
 
        </div>
 
       <t t-call="eq_base_report.eq_external_layout_footer"/>
 
-  </xpath>
+  </t>
 
+    </template>
 
-</template>
+    <report id="eq_timesheet_report_invoice"
+            model="account.analytic.line"
+            string="List Timesheet Entries (Invoice)"
+            report_type="qweb-pdf"
+            name="eq_project.eq_report_timesheet_extension_invoice"
+            file="eq_report_timesheet_extension_invoice"
+    />
+    <record id="eq_project.eq_timesheet_report_invoice" model="ir.actions.report.xml">
 
-    <record id="hr_timesheet.timesheet_report" model="ir.actions.report.xml">
-
-            <field name="paperformat_id" ref="eq_base_report.eq_paperformat_landscape" />
+            <field name="paperformat_id" ref="eq_base_report.eq_paperformat_landscape"/>
     </record>
 
 </odoo>

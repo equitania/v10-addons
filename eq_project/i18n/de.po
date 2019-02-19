@@ -303,6 +303,7 @@ msgstr "Verrechenbar"
 
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
 msgid "Billed Duration"
 msgstr "Abgerechnete Dauer"
 
@@ -353,3 +354,354 @@ msgstr "Geplante Durchführung"
 #: model:ir.ui.view,arch_db:eq_project.eq_project_issue_form_view
 msgid "planed finish date"
 msgstr "Geplante Fertigstellung"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
+msgid "End time"
+msgstr "End time"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+msgid "Group By"
+msgstr "Gruppiert nach..."
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_
+#: model:ir.ui.view,arch_db:eq_project.project_project_view_kanban
+msgid "Hour(s)"
+msgstr "Stunde(n)"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_
+msgid "Hour(s)  /"
+msgstr "Stunde(n)  /"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_
+#: model:ir.ui.view,arch_db:eq_project.project_project_view_kanban
+msgid "Hours"
+msgstr "Stunden"
+
+#. module: eq_project
+#: model:ir.model,name:eq_project.model_account_invoice
+#: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
+msgid "Invoice"
+msgstr "Rechnung"
+
+#. module: eq_project
+#: model:ir.model,name:eq_project.model_account_invoice_refund
+msgid "Invoice Refund"
+msgstr "Rechnungsgutschrift"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
+msgid "Invoiceable"
+msgstr "Verrechenbar"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
+msgid "Issue"
+msgstr "Problem"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
+msgid "List Timesheet Entries"
+msgstr "Liste Zeiterfassung"
+
+#. module: eq_project
+#: model:ir.actions.report.xml,name:eq_project.eq_timesheet_report_invoice
+msgid "List Timesheet Entries (Invoice)"
+msgstr "Liste Zeiterfassung (mit Rechnung)"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+msgid "My Issue"
+msgstr "Meine Fälle"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+msgid "My Task"
+msgstr "Meine Aufgaben"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+msgid "My Timesheet"
+msgstr "Meine Zeiterfassung"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.project_project_search_view_2
+msgid "My projects"
+msgstr "Meine Projekte"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_project_project_eq_project_number
+msgid "Number"
+msgstr "Nummer"
+
+#. module: eq_project
+#: code:addons/eq_project/models/eq_project_extension.py:234
+#: code:addons/eq_project/models/eq_project_extension.py:237
+#: code:addons/eq_project/models/eq_project_extension.py:261
+#: code:addons/eq_project/models/eq_project_extension.py:264
+#, python-format
+msgid "Please enter a valid Hour"
+msgstr "Die Zeitangaben ist ungültig"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_account_analytic_line_eq_proceed
+msgid "Proceed"
+msgstr "Erlös"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_view
+msgid "Proceeds"
+msgstr "Erlöse"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+#: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
+msgid "Product"
+msgstr "Produkt"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_project_project_eq_project_proceeds
+msgid "Product Proceeds"
+msgstr "Produkt Erlöse"
+
+#. module: eq_project
+#: model:ir.model,name:eq_project.model_project_project
+#: model:ir.ui.menu,name:eq_project.project_menu
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+msgid "Project"
+msgstr "Projekt"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
+msgid "Project -"
+msgstr "Projekt -"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_project_project_contract_count
+msgid "Project Count"
+msgstr "Projekt-Anzahl"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_view
+msgid "Project Number Automatically"
+msgstr "Projektnummer erzeugen"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_view
+msgid "Recalculate project"
+msgstr "Projekt neu kalkulieren"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
+msgid "Responsible"
+msgstr "Verantwortlich"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_report_account_extension
+msgid "Responsible:"
+msgstr "Verantwortlich:"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+msgid "Sales"
+msgstr "Verkauf"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_project_project_stage_id
+msgid "Stage id"
+msgstr "Stage id"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_account_analytic_line_eq_startdate
+msgid "Start Date"
+msgstr "Startdatum"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
+msgid "Start time"
+msgstr "Startzeit"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+#: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
+msgid "Task"
+msgstr "Aufgabe"
+
+#. module: eq_project
+#: model:ir.model,name:eq_project.model_project_task_type
+msgid "Task Stage"
+msgstr "Aufgabenstufe"
+
+#. module: eq_project
+#: model:ir.actions.act_window,help:eq_project.eq_project_action_2
+#: model:ir.actions.act_window,help:eq_project.project_timesheet_action_
+msgid "The Odoo issues tracker allows you to efficiently manage things\n"
+"                    like internal requests, software development bugs, customer\n"
+"                    complaints, project troubles, material breakdowns, etc."
+msgstr "Der Odoo Issues Tracker ermöglicht es Ihnen, Dinge effizient zu verwalten.\n"
+"                    wie interne Anfragen, Softwareentwicklungsfehler, Kundenanfragen\n"
+"                    Reklamationen, Projektstörungen, Materialausfälle, etc."
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
+msgid "Time"
+msgstr "Dauer"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_view
+msgid "Time Scheduling"
+msgstr "Zeitplanung"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_account_analytic_line_eq_time_invoice
+msgid "Time to Invoice"
+msgstr "Abgerechnete Dauer"
+
+#. module: eq_project
+#: code:addons/eq_project/models/eq_project.py:105
+#: model:ir.actions.act_window,name:eq_project.project_timesheet_action_
+#: model:ir.ui.menu,name:eq_project.menu_project_timesheet
+#: model:ir.ui.view,arch_db:eq_project.project_timesheet_calendar_view
+#, python-format
+msgid "Timesheet"
+msgstr "Zeiterfassung"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_issue_form_view
+msgid "Timesheet Activities"
+msgstr "Zeiterfassungsaktivitäten"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+msgid "Timesheet Month"
+msgstr "monatliche Zeiterfassung"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+msgid "Timesheet by Month"
+msgstr "Zeiterfassung nach Monat"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+msgid "Timesheet(issues)"
+msgstr "Zeiterfassung(Fälle/Probleme)"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+msgid "Timesheet(task)"
+msgstr "Zeiterfassung(Aufgaben)"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_issue_form_view
+msgid "Timesheets"
+msgstr "Zeiterfassung"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+msgid "Timesheets Invoiced"
+msgstr "Stundenzettel in Rechnung gestellt"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+msgid "Timesheets Not Invoiced"
+msgstr "Stundenzettel NICHT in Rechnung gestellt"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+msgid "Timesheets To Invoice"
+msgstr "Stundenzettel in Rechnung zu stellen"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_tree_view
+msgid "Tree View Account"
+msgstr "Baumstruktursicht"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
+msgid "Users"
+msgstr "Benutzer"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_issue_form_view
+msgid "planed duration"
+msgstr "Geplante Dauer"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_issue_form_view
+msgid "planed execution date"
+msgstr "Geplante Durchführung"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_issue_form_view
+msgid "planed finish date"
+msgstr "Geplante Fertigstellung"
+
+#. module: eq_project
+#: model:ir.actions.act_window,name:eq_project.eq_project_action_2
+#: model:ir.ui.view,arch_db:eq_project.project_project_search_view_2
+#: model:ir.ui.view,arch_db:eq_project.project_project_tree_view
+msgid "project"
+msgstr "Projekt"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_project_project_eq_rest_hours
+msgid "rest Time"
+msgstr "Reststunde"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_account_analytic_line_eq_storno_flag
+msgid "storniert"
+msgstr "storniert"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_account_analytic_line_eq_time_start
+msgid "time start"
+msgstr "Startzeit"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_extension_
+#: model:ir.ui.view,arch_db:eq_project.project_project_view_kanban
+msgid "will be filled automaticaly"
+msgstr "wird automatisch ausgefüllt"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_project_project_eq_worked_hours
+msgid "worked Time"
+msgstr "Geleistete Stunden"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
+msgid "Control Timesheet Entries"
+msgstr "Abnahme Zeiterfassung"
+
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
+msgid "Date"
+msgstr "Datum"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
+msgid "Description"
+msgstr "Beschreibung"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
+msgid "End time"
+msgstr "Endzeit"
