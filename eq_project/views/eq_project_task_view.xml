@@ -37,7 +37,7 @@
                             <field name="to_invoice"/>
                             <field name="time_start" widget="float_time"/>
                             <field name="time_stop" widget="float_time"/>
-                            <field name="invoice_id"/>
+                            <field name="eq_time_invoice"/>
                         </tree>
                     </field>
                     <group>

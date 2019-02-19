@@ -19,8 +19,8 @@
                                 <field name="project_id" invisible="1" required="1"/>
                                 <field name="time_start" widget="float_time"/>
                                 <field name="time_stop" widget="float_time"/>
-                                <field name="invoice_id"/>
                                 <field name="unit_amount" string="Duration" widget="float_time"/>
+                                <field name="eq_time_invoice"/>
                             </tree>
                         </field>
                     </page>
