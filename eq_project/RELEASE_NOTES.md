@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 19.02.2019
+#### Version 1.0.54
+##### CHG
+- Changed order by id in account.analytic.line
+
 #### 18.02.2019
 #### Version 1.0.53
 ##### CHG

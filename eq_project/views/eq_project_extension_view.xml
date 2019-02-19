@@ -216,7 +216,7 @@
             <field name="name">account.analytic.tree</field>
             <field name="model">account.analytic.line</field>
             <field name="arch" type="xml">
-                <tree string="Tree View Account">
+                <tree string="Tree View Account" default_order="id desc">
                     <field name="date" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                     <field name="name" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                     <field name="time_start" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
@@ -319,7 +319,7 @@
             <field name="model">account.analytic.line</field>
             <field name="name">account.analytic.line.tree.hr_timesheet</field>
             <field name="arch" type="xml">
-                <tree editable="top" string="Timesheet Activities">
+                <tree editable="top" string="Timesheet Activities" default_order="id desc">
                     <field name="date" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                     <field name="name" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                     <field name="unit_amount" string="Duration" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
