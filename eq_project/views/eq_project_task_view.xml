@@ -29,16 +29,32 @@
                     <page string="Timesheets" attrs="{'invisible': [('project_id', '=', False)]}">
                     <field name="timesheet_ids" context="{'default_project_id': project_id,'default_task_id': id}">
                         <tree editable="bottom" string="Timesheet Activities" default_order="date">
-                            <field name="date"/>
-                            <field name="user_id" required="1"/>
-                            <field name="name"/>
-                            <field name="unit_amount" string="Duration" widget="float_time"/>
-                            <field name="project_id" invisible="1"/>
-                            <field name="to_invoice"/>
-                            <field name="time_start" widget="float_time"/>
-                            <field name="time_stop" widget="float_time"/>
-                            <field name="eq_time_invoice"/>
+                            <field name="invoice_id" invisible="1"/>
+                            <field name="date" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                            <field name="user_id" required="1" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                            <field name="name" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                            <field name="unit_amount" string="Duration" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                            <field name="project_id" invisible="1" />
+                            <field name="to_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                            <field name="time_start" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                            <field name="time_stop" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                            <field name="eq_time_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                         </tree>
+                        <form string="Timesheet Activities">
+                            <group>
+                                <field name="invoice_id" invisible="1"/>
+                                <field name="date" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                <field name="user_id" required="1" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                <field name="name" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                <field name="unit_amount" string="Duration" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                <field name="project_id" invisible="1"/>
+                                <field name="to_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                <field name="time_start" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                <field name="time_stop" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                <field name="eq_time_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                <field name="product_id"/>
+                            </group>
+                        </form>
                     </field>
                     <group>
                      <group class="oe_subtotal_footer oe_right" name="project_hours">

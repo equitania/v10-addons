@@ -330,16 +330,6 @@ msgstr "Stundenzettel in Rechnung gestellt"
 msgid "Timesheets Not Invoiced"
 msgstr "Stundenzettel NICHT in Rechnung gestellt"
 
-#. module: timesheet_invoice
-#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
-msgid "Timesheets To Invoice"
-msgstr "Stundenzettel in Rechnung zu stellen"
-
-#. module: product_margin
-#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
-msgid "Sales"
-msgstr "Verkauf"
-
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.eq_project_issue_form_view
 msgid "planed duration"
@@ -618,11 +608,6 @@ msgstr "Stundenzettel in Rechnung gestellt"
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
 msgid "Timesheets Not Invoiced"
 msgstr "Stundenzettel NICHT in Rechnung gestellt"
-
-#. module: eq_project
-#: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
-msgid "Timesheets To Invoice"
-msgstr "Stundenzettel in Rechnung zu stellen"
 
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_tree_view

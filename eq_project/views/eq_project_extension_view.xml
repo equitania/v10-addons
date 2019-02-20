@@ -170,22 +170,17 @@
                     <field name="name"/>
                     <field name="department_id"/>
                     <field name="account_id"/>
-                    <filter string="My Timesheet" name="my_timesheets" domain="[('user_id','=',uid),('sheet_id','=',False),('issue_id','=',False),('task_id','=',False)]"/>
+                    <filter string="My Timesheet" name="my_timesheets" domain="[('user_id','=',uid)]"/>
                     <filter string="My Issue" name="my_issues" domain="[('user_id','=',uid),('issue_id','!=',False)]"/>
                     <filter string="My Task" name="my_task" domain="[('user_id','=',uid),('task_id','!=',False)]"/>
                     <filter string="Timesheet(issues)" name="timesheet_issues" domain="[('issue_id','!=',False)]"/>
                     <filter string="Timesheet(task)" name="timesheet_task" domain="[('task_id','!=',False)]"/>
                     <separator/>
-                    <filter name="timesheets_to_invoice" string="Timesheets To Invoice" context="{'to_invoice': 1}"
-                            domain="[('move_id','=', False),('project_id','!=',False), ('invoice_id','=',False), ('to_invoice','!=',False)]"/>
-                    <separator/>
                     <filter name="timesheets_invoiced" string="Timesheets Invoiced"
-                            domain="[('move_id','=', False),('project_id','!=',False), ('invoice_id','!=',False)]"/>
+                            domain="[('project_id','!=',False), ('invoice_id','!=',False)]"/>
                     <filter name="timesheets_not_invoiced" string="Timesheets Not Invoiced"
-                            domain="[('move_id','=', False),('project_id','!=',False), ('invoice_id','=',False)]"/>
+                            domain="[('project_id','!=',False), ('invoice_id','=',False)]"/>
                     <separator/>
-                    <filter name="sales" string="Sales"
-                            domain="[('move_id','=', False),('project_id','=',False)]"/>
                     <group expand="0" string="Group By">
                         <filter string="Users" domain="[]" context="{'group_by':'user_id'}"/>
                         <filter string="Project" domain="[]" context="{'group_by':'project_id'}"/>
@@ -319,10 +314,11 @@
             </field>
         </record>
 
-        <record id="hr_timesheet.act_hr_timesheet_line" model="ir.actions.act_window">
+        <record id="eq_act_hr_timesheet_line_action" model="ir.actions.act_window">
             <field name="name">Activities</field>
             <field name="res_model">account.analytic.line</field>
-            <field name="domain">[('move_id', '=', False)]</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,form,tree,calendar</field>
             <field name="search_view_id" ref="account_analytic_search_view_Time"/>
             <field name="view_ids"
                    eval="[(5, 0, 0),
@@ -330,6 +326,7 @@
                           (0, 0, {'view_mode': 'form', 'view_id': ref('account_analytic_form_view')}),
 
                           ]"/>
+            <field name="domain">[('move_id','=', False)]</field>
             <field name="help" type="html">
               <p class="oe_view_nocontent_create">
                 Click to record activities.
@@ -384,14 +381,15 @@
                             </field>
                         </page>
                 </xpath>
-                </field>
+            </field>
 
         </record>
-
 
 
         <!-- Menus -->
         <menuitem id="menu_project_timesheet" name="Timesheet" parent="project.menu_project_management" action="project_timesheet_action_" sequence="15"/>
         <menuitem id="project_menu" name="Project" parent="project.menu_project_management" sequence="50" action="eq_project_action_2" />
+        <menuitem id="hr_timesheet.menu_hr_working_hours" parent="hr_timesheet.menu_hr_time_tracking" action="eq_act_hr_timesheet_line_action" name="Detailed Activities"/>
+
     </data>
 </odoo>

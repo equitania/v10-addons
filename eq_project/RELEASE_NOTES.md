@@ -1,6 +1,13 @@
 ## Modul eq_project
 
 #### 20.02.2019
+#### Version 1.0.58
+##### CHG / FIX
+- Removed filters and changed domain to My Timesheet filter
+- Changed form views of task and issue timesheet
+- Changed view for Activities, because of error
+
+#### 20.02.2019
 #### Version 1.0.57
 ##### CHG / FIX
 - fix a german translation

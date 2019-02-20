@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 20.02.2019
+#### Version 1.0.48
+##### CHG
+- Changed name of the function for compute display name in res.users
+
 #### 22.01.2019
 #### Version 1.0.47
 ##### CHG
