@@ -1,5 +1,10 @@
 ## Modul eq_project_product_type
 
+#### 20.02.2019
+#### Version 1.0.7
+##### FIX
+- Added eq_product_type_id in timesheet page of Meine Stundenzettel
+
 #### 14.02.2019
 #### Version 1.0.6
 ##### CHG

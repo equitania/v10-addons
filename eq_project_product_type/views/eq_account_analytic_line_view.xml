@@ -60,5 +60,18 @@
             </field>
         </record>
 
+        <record id="eq_hr_timesheet_line_form_view_project" model="ir.ui.view">
+            <field name="model">hr_timesheet_sheet.sheet</field>
+            <field name="inherit_id" ref="eq_project.eq_hr_timesheet_line_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@class='o_hr_timesheet_sheet_details']/field[@name='timesheet_ids']/tree/field[@name='name']" position="before">
+                    <field name="eq_product_type_id"/>
+                </xpath>
+                <xpath expr="//notebook/page[@class='o_hr_timesheet_sheet_details']/field[@name='timesheet_ids']/form/group/field[@name='name']" position="before">
+                    <field name="eq_product_type_id"/>
+                </xpath>
+            </field>
+        </record>
+
     </data>
 </odoo>

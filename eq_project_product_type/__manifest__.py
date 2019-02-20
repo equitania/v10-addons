@@ -22,7 +22,7 @@
 {
     'name': 'Equitania Project Product Type Extension',
     'license': 'AGPL-3',
-    'version': '1.0.6',
+    'version': '1.0.7',
     'description': """
         Product type Extension for eq_project
     """,
