@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 20.02.2019
+#### Version 1.0.93
+##### CHG
+- Report: Changing a wrong Container of Sale-Order Total Container on Reports for future upgrades to WKHTML
+
 #### 09.01.2019
 #### Version 1.0.92
 ##### IMP

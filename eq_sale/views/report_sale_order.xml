@@ -473,47 +473,46 @@
 
 
                             <div class="row padding-fix">
-                                <div name="total">
-                                    <div class="row" name="total">
-                                        <div class="col-xs-5 pull-right">
-                                            <table class="table table-condensed" style="page-break-inside:avoid !important;">
-                                                <tr>
-                                                    <td>Total without taxes</td>
+                                <div class="row" name="total">
+                                    <div class="col-xs-5 pull-right">
+                                        <table class="table table-condensed" style="page-break-inside:avoid !important;">
+                                            <tr>
+                                                <td>Total without taxes</td>
+                                                <td class="text-right">
+                                                    <span t-field="doc.amount_untaxed"
+                                                        t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tax</td>
+                                                <td class="text-right">
+                                                    <span t-field="doc.amount_tax"
+                                                        t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
+                                                </td>
+                                            </tr>
+                                            <!-- TODO - Steuerzeilen für mehrere Steuersätze wenn z.B. Artikel mit 7% und 19% verkauft werden, müssen die Steuern für jeden Steuersatz einzeln ausgewiesen sein -->
+                                            <!--<t t-foreach="doc._get_tax_amount_by_group()" t-as="amount_by_group">
+                                                <tr style="background-color:yellow;">
+                                                    <td><span t-esc="amount_by_group[0] or 'Taxes'"/></td>
                                                     <td class="text-right">
-                                                        <span t-field="doc.amount_untaxed"
+                                                        <span t-esc="amount_by_group[1]"
                                                             t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>Tax</td>
-                                                    <td class="text-right">
-                                                        <span t-field="doc.amount_tax"
+                                            </t>-->
+                                            <tr class="border-black">
+                                                <td><strong>Total sum</strong></td>
+                                                <td class="text-right">
+                                                    <strong>
+                                                        <span t-field="doc.amount_total"
                                                             t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
-                                                    </td>
-                                                </tr>
-                                                <!-- TODO - Steuerzeilen für mehrere Steuersätze wenn z.B. Artikel mit 7% und 19% verkauft werden, müssen die Steuern für jeden Steuersatz einzeln ausgewiesen sein -->
-                                                <!--<t t-foreach="doc._get_tax_amount_by_group()" t-as="amount_by_group">
-                                                    <tr style="background-color:yellow;">
-                                                        <td><span t-esc="amount_by_group[0] or 'Taxes'"/></td>
-                                                        <td class="text-right">
-                                                            <span t-esc="amount_by_group[1]"
-                                                                t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
-                                                        </td>
-                                                    </tr>
-                                                </t>-->
-                                                <tr class="border-black">
-                                                    <td><strong>Total sum</strong></td>
-                                                    <td class="text-right">
-                                                        <strong>
-                                                            <span t-field="doc.amount_total"
-                                                                t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
-                                                        </strong>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
+                                                    </strong>
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </div>
                                 </div>
+
 
                                 <!-- Pagebreak before footertext -->
                                 <p t-if="doc.eq_use_page_break_before_footer" style="page-break-after:always;"> </p>
