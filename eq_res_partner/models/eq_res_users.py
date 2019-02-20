@@ -24,7 +24,7 @@ from odoo import models, fields, api, _
 
 class eq_res_users(models.Model):
     _inherit = 'res.users'
-    _rec_name = 'display_name'
+    # _rec_name = 'display_name'
 
     eq_firstname = fields.Char(related='partner_id.eq_firstname', inherited=True)
 
@@ -38,3 +38,18 @@ class eq_res_users(models.Model):
                 user.display_name = user.name
 
     display_name = fields.Char(compute='_compute_full_display_name', string='Name')
+
+    def name_get(self):
+        """
+        For showing both eq_firstname and name in the dropdown of many2one field
+        :return: if eq_firstname full name, else name
+        """
+        res = []
+
+        for user in self:
+            if user.eq_firstname and user.name:
+                res.append((user.id, user.eq_firstname + ' ' + user.name))
+            else:
+                res.append((user.id, user.name))
+
+        return res
