@@ -45,6 +45,10 @@ class eq_res_partner(models.Model):
     customer_number = fields.Char(string=_('Customer Number'))
     supplier_number = fields.Char(string=_('Supplier Number'))
 
+    eq_custom1 = fields.Char(string='Freefield (1)', size=100)
+    eq_custom2 = fields.Char(string='Freefield (2)', size=100)
+    eq_custom3 = fields.Char(string='Freefield (3)', size=100)
+
 
     #eq_complete_description = fields.Char(compute='_generate_complete_description', store=True)
 

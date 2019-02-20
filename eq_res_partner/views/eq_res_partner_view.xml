@@ -164,6 +164,11 @@
 				</field>
 
 
+				<field name="category_id" position="after">
+					<field name="eq_custom1"/>
+					<field name="eq_custom2"/>
+					<field name="eq_custom3"/>
+				</field>
 
 
 				<field name="lang" position="after">

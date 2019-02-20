@@ -1,6 +1,11 @@
 ## Modul eq_res_partner
 
 #### 20.02.2019
+#### Version 1.0.49
+##### ADD
+- added 3 new custom fiels (eq_custom1, eq_custom2, eq_custom3) defined here https://gitlab.ownerp.io/v10-myodoo-public/v10-addons/issues/22
+
+#### 20.02.2019
 #### Version 1.0.48
 ##### CHG
 - Changed name of the function for compute display name in res.users

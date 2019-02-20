@@ -188,3 +188,21 @@ msgstr "Partner Sender-ID"
 #: model:ir.ui.view,arch_db:eq_res_partner.eq_partner_extension_form_view
 msgid "ZIP"
 msgstr "PLZ"
+
+#. module: eq_res_partner
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_custom1
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_custom1
+msgid "Freefield (1)"
+msgstr "Freifeld (1)"
+
+#. module: eq_res_partner
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_custom2
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_custom2
+msgid "Freefield (2)"
+msgstr "Freifeld (2)"
+
+#. module: eq_res_partner
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_partner_eq_custom3
+#: model:ir.model.fields,field_description:eq_res_partner.field_res_users_eq_custom3
+msgid "Freefield (3)"
+msgstr "Freifeld (3)"
