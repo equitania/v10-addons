@@ -1,5 +1,11 @@
 ## Modul eq_project
 
+#### 20.02.2019
+#### Version 1.0.57
+##### CHG / FIX
+- fix a german translation
+- report for tasks (non-final)
+
 #### 19.02.2019
 #### Version 1.0.56
 ##### CHG / ADD

@@ -705,3 +705,9 @@ msgstr "Beschreibung"
 #: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
 msgid "End time"
 msgstr "Endzeit"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
+msgid "<strong>Total</strong>"
+msgstr "<strong>Gesamt</strong>"
