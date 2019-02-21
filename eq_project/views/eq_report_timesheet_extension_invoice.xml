@@ -96,7 +96,7 @@
                                                  <t t-if="l.product_id"><span t-field="l.product_id"/></t>
                                             </td>
                                             <td>
-                                               <span t-field="l.user_id.partner_id.name"/>
+                                               <span t-field="l.user_id"/>s
                                             </td>
                                             <td> <t t-if="l.invoice_id"><span t-field="l.invoice_id"/></t>
                                             </td>

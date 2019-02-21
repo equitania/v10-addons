@@ -1,6 +1,11 @@
 ## Modul eq_project
 
 #### 21.02.2019
+#### Version 1.0.60
+##### FIX
+- changed field for users on timesheet reports
+
+#### 21.02.2019
 #### Version 1.0.59
 ##### CHG
 - Changed action and views of Timesheet smart and kanban buttons in Project
