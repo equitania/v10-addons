@@ -208,9 +208,16 @@ msgid "Timesheet(task)"
 msgstr "Zeiterfassung(Aufgaben)"
 
 #. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_invoice_form
 #: model:ir.ui.view,arch_db:eq_project.eq_project_issue_form_view
+#: model:ir.ui.view,arch_db:eq_project.eq_view_project_kanban_inhertied
 msgid "Timesheets"
 msgstr "Zeiterfassung"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_view_project_kanban_inhertied
+msgid "<span class=\"o_label\">Timesheets</span>"
+msgstr "<span class=\"o_label\">Zeiterfassungen</span>"
 
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_tree_view
@@ -563,6 +570,7 @@ msgstr "Abgerechnete Dauer"
 #. module: eq_project
 #: code:addons/eq_project/models/eq_project.py:105
 #: model:ir.actions.act_window,name:eq_project.project_timesheet_action_
+#: model:ir.actions.act_window,name:eq_project.eq_act_hr_timesheet_line_action_activities
 #: model:ir.ui.menu,name:eq_project.menu_project_timesheet
 #: model:ir.ui.view,arch_db:eq_project.project_timesheet_calendar_view
 #, python-format

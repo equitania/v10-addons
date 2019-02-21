@@ -206,22 +206,6 @@
             </field>
         </record>
 
-        <!--<record id="view_account_analytic_line_tree" model="ir.ui.view">-->
-            <!--<field name="name">account.analytic.line.tree</field>-->
-            <!--<field name="model">account.analytic.line</field>-->
-            <!--<field name="arch" type="xml">-->
-                <!--<tree string="Analytic Entries">-->
-                    <!--<field name="date"/>-->
-                    <!--<field name="name"/>-->
-                    <!--<field name="account_id"/>-->
-                    <!--<field name="currency_id" invisible="1"/>-->
-                    <!--<field name="company_id" groups="base.group_multi_company"/>-->
-                    <!--<field name="unit_amount" sum="Quantity"/>-->
-                    <!--<field name="amount" sum="Total"/>-->
-                <!--</tree>-->
-            <!--</field>-->
-        <!--</record>-->
-
         <!-- Timesheet tree-->
         <record id="account_analytic_tree_view" model="ir.ui.view">
             <field name="name">account.analytic.tree</field>
@@ -291,7 +275,7 @@
             </field>
         </record>
 
-        <!-- Timesheet action-->
+        <!-- Timesheet action in Project-->
         <record id="project_timesheet_action_" model="ir.actions.act_window">
             <field name="name">Timesheet</field>
             <field name="res_model">account.analytic.line</field>
@@ -306,14 +290,17 @@
                           ]"/>
             <field name="domain">[('move_id','=', False)]</field>
             <field name="help" type="html">
-                <p>
-                    The Odoo issues tracker allows you to efficiently manage things
-                    like internal requests, software development bugs, customer
-                    complaints, project troubles, material breakdowns, etc.
+                <p class="oe_view_nocontent_create">
+                Click to record activities.
+                </p><p>
+                You can register and track your workings hours by project every
+                day. Every time spent on a project will become a cost and can be re-invoiced to
+                customers if required.
                 </p>
             </field>
         </record>
 
+        <!-- Activities action for the view of Detailed Activities menu in Timesheets -->
         <record id="eq_act_hr_timesheet_line_action" model="ir.actions.act_window">
             <field name="name">Activities</field>
             <field name="res_model">account.analytic.line</field>
@@ -338,6 +325,31 @@
             </field>
         </record>
 
+        <!-- Timesheet action for smart and kanban Timesheet buttonns of Project-->
+        <record id="eq_act_hr_timesheet_line_action_activities" model="ir.actions.act_window">
+            <field name="name">Timesheet</field>
+            <field name="res_model">account.analytic.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,form,tree,calendar</field>
+            <field name="search_view_id" ref="account_analytic_search_view_Time"/>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('account_analytic_tree_view')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('account_analytic_form_view')}),
+
+                          ]"/>
+            <field name="domain">[('move_id','=', False),('project_id', '!=', False)]</field>
+            <field name="context">{"default_project_id": active_id, "search_default_project_id": [active_id]}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to record activities.
+              </p><p>
+                You can register and track your workings hours by project every
+                day. Every time spent on a project will become a cost and can be re-invoiced to
+                customers if required.
+              </p>
+            </field>
+        </record>
 
         <record id="eq_hr_timesheet_line_form_view" model="ir.ui.view">
             <field name="model">hr_timesheet_sheet.sheet</field>
@@ -382,9 +394,36 @@
                         </page>
                 </xpath>
             </field>
-
         </record>
 
+        <!-- Inherited the view from hr_timesheet, for changing the view of project kanban Timesheets buttons -->
+        <record id="eq_view_project_kanban_inhertied" model="ir.ui.view">
+            <field name="name">eq.project.project.timesheet.kanban.inherited</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="hr_timesheet.view_project_kanban_inherited"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[contains(@class, 'o_kanban_manage_reports')]/div/a[@name='%(hr_timesheet.act_hr_timesheet_line_by_project)d']" position="replace">
+                    <a name="%(eq_act_hr_timesheet_line_action_activities)d" type="action">Timesheets</a>
+                </xpath>
+                <xpath expr="//div[contains(@class, 'o_project_kanban_box')]/div/a[@name='%(hr_timesheet.act_hr_timesheet_line_by_project)d']" position="replace">
+                    <a t-if="record.allow_timesheets.raw_value" name="%(eq_act_hr_timesheet_line_action_activities)d" type="action">
+                        <span class="o_label">Timesheets</span>
+                    </a>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherited the view from hr_timesheet, for changing the view of project smart Timesheets button -->
+        <record id="eq_project_invoice_form" model="ir.ui.view">
+            <field name="name">eq.inherit.project.form.invoicing.data</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="hr_timesheet.project_invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@icon='fa-calendar']" position="replace">
+                    <button class="oe_stat_button" name="%(eq_act_hr_timesheet_line_action_activities)d" type="action" icon="fa-calendar" string="Timesheets" attrs="{'invisible': [('allow_timesheets', '=', False)]}"/>
+                </xpath>
+            </field>
+        </record>
 
         <!-- Menus -->
         <menuitem id="menu_project_timesheet" name="Timesheet" parent="project.menu_project_management" action="project_timesheet_action_" sequence="15"/>
