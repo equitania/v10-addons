@@ -1,5 +1,9 @@
 ## Modul eq_pricelist
 
+#### 21.02.2019
+#### Version 1.0.6
+##### ADD
+- added new colum with sequence and link to price_list defined here https://gitlab.ownerp.io/v10-myodoo-public/v10-addons/issues/34
 
 #### 16.11.2017
 #### Version 1.0.5

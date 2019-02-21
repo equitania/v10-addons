@@ -26,6 +26,66 @@
 			<field name="view_mode">tree,form</field>
 		</record>
 
+
+		<!-- Extension of product_pricelist_item_tree_view to be able to see sequence -->
+		<record id="eq_product_pricelist_item_tree_view" model="ir.ui.view">
+            <field name="name">eq.product.pricelist.item.tree</field>
+            <field name="model">product.pricelist.item</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="product.product_pricelist_item_tree_view" />
+            <field name="arch" type="xml">
+				<field name="sequence" position="after">
+					<field name="sequence"/>
+				</field>
+				<field name="min_quantity" position="before">
+					<field name="pricelist_id"/>
+				</field>
+            </field>
+        </record>
+
+		<!-- Redefinition of item_ids to be able to see sequence -->
+		<record id="eq_product_pricelist_view" model="ir.ui.view">
+            <field name="name">eq.product.pricelist.form</field>
+            <field name="model">product.pricelist</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="product.product_pricelist_view" />
+            <field name="arch" type="xml">
+				<field name="item_ids" position="replace">
+					<field name="item_ids" nolabel="1" context="{'default_base':'list_price'}">
+						<tree string="Pricelist Items">
+							<field name="sequence"/>
+							<field name="name" string="Applicable On"/>
+							<field name="min_quantity"/>
+							<field name="date_start"/>
+							<field name="date_end"/>
+							<field name="price" string="Price"/>
+							<field name="base" invisible="1"/>
+							<field name="price_discount" invisible="1"/>
+							<field name="applied_on" invisible="1"/>
+							<field name="compute_price" invisible="1"/>
+						</tree>
+					</field>
+				</field>
+            </field>
+        </record>
+
+		<!-- Extension of modal popup for price liste position to be able to set sequence -->
+		<record id="eq_product_pricelist_item_form_view" model="ir.ui.view">
+            <field name="name">eq.product.pricelist.item.form</field>
+            <field name="model">product.pricelist.item</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="product.product_pricelist_item_form_view" />
+            <field name="arch" type="xml">
+				<field name="applied_on" position="before">
+					<field name="sequence"/>
+				</field>
+				<field name="date_end" position="after">
+					<field name="pricelist_id"/>
+				</field>
+            </field>
+        </record>
+
+
 		<menuitem id="pricelistversionposition_menu" name="Pricelistversionsposition"
 					parent="sale.menu_product_pricelist_main" action="pricelistversionposition_action" sequence="10" />
 	</data>
