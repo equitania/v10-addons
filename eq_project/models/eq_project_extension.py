@@ -274,45 +274,37 @@ class eq_account_analytic_line_project(models.Model):
         """
         OnChangeHandler for project_id - recalculate and set time
         """
-        eq_time_start = 0.0
-        eq_startdate = time.strftime("%Y-%m-%d")            # set today's date as default date
 
-        if self.project_id.id == False:
-            pass
-        else:
-            account_analytic_objs = self.env['account.analytic.line'].search([('project_id', '=', self.project_id.id),('time_start','!=',False),('time_stop','!=',False)],order='date desc,time_stop desc')
-            project_objs = self.env['project.project'].search([('id', '=', self.project_id.id)])
-            if len(project_objs) > 0:
-                project_obj = project_objs[0]
-                self.to_invoice = project_obj.eq_to_invoice_id
+        if not self._origin.id:
+            eq_time_start = 0.0
+            eq_startdate = time.strftime("%Y-%m-%d")            # set today's date as default date
 
-            if len(account_analytic_objs) > 0:
-                account_analytic_obj = account_analytic_objs[0]
-                if account_analytic_obj.time_stop > eq_time_start:
-                    eq_time_start = account_analytic_obj.time_stop
-                if (account_analytic_obj.date) > eq_startdate:
-                    eq_startdate = account_analytic_obj.date
-
-            if eq_time_start > 23.97:
-                eq_time_start = 0.00
-                last_date = account_analytic_obj.date
-                date = datetime.strptime(last_date,'%Y-%m-%d')
-                self.date = date + timedelta(days=1)
+            if self.project_id.id == False:
+                pass
             else:
-                self.date = eq_startdate
+                account_analytic_objs = self.env['account.analytic.line'].search([('project_id', '=', self.project_id.id),('time_start','!=',False),('time_stop','!=',False)],order='date desc,time_stop desc')
+                project_objs = self.env['project.project'].search([('id', '=', self.project_id.id)])
+                if len(project_objs) > 0:
+                    project_obj = project_objs[0]
+                    self.to_invoice = project_obj.eq_to_invoice_id
 
-            self.time_start = eq_time_start
+                if len(account_analytic_objs) > 0:
+                    account_analytic_obj = account_analytic_objs[0]
+                    if account_analytic_obj.time_stop > eq_time_start:
+                        eq_time_start = account_analytic_obj.time_stop
+                    if (account_analytic_obj.date) > eq_startdate:
+                        eq_startdate = account_analytic_obj.date
 
-        # Show the issues from the selected project
-        # res = {}
-        # if self.project_id:
-        #     project = self.project_id
-        #     if project != self.issue_id.project_id:
-        #         self.issue_id = False
-        #     res['domain'] = {'issue_id': [('project_id', '=', project.id)]}
-        # else:
-        #     res['domain'] = {'issue_id': []}
-        # return res
+                if eq_time_start > 23.97:
+                    eq_time_start = 0.00
+                    last_date = account_analytic_obj.date
+                    date = datetime.strptime(last_date,'%Y-%m-%d')
+                    self.date = date + timedelta(days=1)
+                else:
+                    self.date = eq_startdate
+
+                self.time_start = eq_time_start
+
 
     @api.multi
     @api.onchange('unit_amount')

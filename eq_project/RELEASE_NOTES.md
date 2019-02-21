@@ -1,6 +1,11 @@
 ## Modul eq_project
 
 #### 21.02.2019
+#### Version 1.0.62
+##### FIX
+- Disable changing of the start date if account.analytic.line id already exist
+
+#### 21.02.2019
 #### Version 1.0.61
 ##### FIX
 - Changed sequence of the tree and form view in task and issue Timesheet
