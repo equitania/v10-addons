@@ -1,6 +1,12 @@
 ## Modul eq_project_product_type
 
 #### 20.02.2019
+#### Version 1.0.8
+##### FIX
+- Added Type field in task and issue form view
+- Write the value of eq_invoice_line in account.analytic.line when account.invoice.line is created
+
+#### 20.02.2019
 #### Version 1.0.7
 ##### FIX
 - Added eq_product_type_id in timesheet page of Meine Stundenzettel

@@ -53,3 +53,22 @@ class eq_projectAccountInvoiceRefund(models.TransientModel):
                 for del_line_link in del_line_links:
                     del_line_link.write({'invoice_id': False, 'eq_storno_flag': 'True'})
         return res
+
+class EqAccountInvoiceLine(models.Model):
+    _inherit = "account.invoice.line"
+
+    @api.multi
+    def unlink(self):
+        """
+        Unlink function for removing the link to the invoice in account.analytic.line if  linked account.invoice.line is removed
+        :return: res
+        """
+        # eq_invoice_line_id is defined in timesheet_invoice module
+        account_analytic_lines = self.env['account.analytic.line'].search([('eq_invoice_line_id','in',self.ids)])
+        res = super(EqAccountInvoiceLine, self).unlink()
+        if res:
+            if account_analytic_lines:
+                for account_analytic_line in account_analytic_lines:
+                    account_analytic_line.write({'invoice_id': False, 'eq_storno_flag': 'True'})
+
+        return res

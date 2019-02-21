@@ -120,9 +120,9 @@ class eq_account_analytic_line(models.Model):
                         curr_invoice_line['eq_product_type_id'] = line_to_invoice.eq_product_type_id.id
 
                     curr_invoice_line['eq_user_id'] = user_id
-                    invoice_line_obj.create(curr_invoice_line)
+                    acc_invoice_obj = invoice_line_obj.create(curr_invoice_line)
 
-                    line_to_invoice.write({'invoice_id': last_invoice.id})
+                    line_to_invoice.write({'invoice_id': last_invoice.id,'eq_invoice_line_id': acc_invoice_obj.id})
 
             #analytic_line_obj.browse(map(lambda x: x.id, analytic_lines)).write({'invoice_id': last_invoice.id})
             last_invoice.compute_taxes()

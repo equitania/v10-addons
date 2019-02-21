@@ -31,28 +31,28 @@
                         <tree editable="bottom" string="Timesheet Activities" default_order="date">
                             <field name="invoice_id" invisible="1"/>
                             <field name="date" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
-                            <field name="user_id" required="1" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                             <field name="name" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                            <field name="time_start" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                            <field name="time_stop" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                             <field name="unit_amount" string="Duration" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                             <field name="project_id" invisible="1" />
                             <field name="to_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
-                            <field name="time_start" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
-                            <field name="time_stop" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                             <field name="eq_time_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                            <field name="user_id" required="1" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                         </tree>
                         <form string="Timesheet Activities">
                             <group>
                                 <field name="invoice_id" invisible="1"/>
                                 <field name="date" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
-                                <field name="user_id" required="1" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                                 <field name="name" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                <field name="time_start" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                <field name="time_stop" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                                 <field name="unit_amount" string="Duration" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                                 <field name="project_id" invisible="1"/>
                                 <field name="to_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
-                                <field name="time_start" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
-                                <field name="time_stop" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                                 <field name="eq_time_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
-                                <field name="product_id"/>
+                                <field name="product_id" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                <field name="user_id" required="1" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                             </group>
                         </form>
                     </field>

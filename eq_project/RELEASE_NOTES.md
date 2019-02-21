@@ -1,6 +1,12 @@
 ## Modul eq_project
 
 #### 21.02.2019
+#### Version 1.0.61
+##### FIX
+- Changed sequence of the tree and form view in task and issue Timesheet
+- Overrided unlink function in account.invoice.line for unlink the invoice_id in account.analytic.line
+
+#### 21.02.2019
 #### Version 1.0.60
 ##### FIX
 - changed field for users on timesheet reports
