@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 22.02.2019
+#### Version 1.0.51
+##### FIX
+- Added context to contact view so it will not crush for sale order creation.
+
 #### 20.02.2019
 #### Version 1.0.50
 ##### FIX
