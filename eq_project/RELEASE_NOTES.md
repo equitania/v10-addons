@@ -1,6 +1,11 @@
 ## Modul eq_project
 
 #### 22.02.2019
+#### Version 1.0.64
+##### CHG
+- Group group_no_one removed from task_id field in issue form view
+
+#### 22.02.2019
 #### Version 1.0.63
 ##### FIX
 - Added task_id invisible in the Issue Timesheet page, for correct progress calculation

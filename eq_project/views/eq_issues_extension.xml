@@ -49,6 +49,9 @@
                     <field string="planed duration" name="duration"/>
                     <field string="planed execution date" name="date"/>
                 </field>
+                <field name="task_id" position="replace">
+                    <field name="task_id" context="{'default_project_id':project_id}"/>
+                </field>
             </field>
         </record>
     </data>
