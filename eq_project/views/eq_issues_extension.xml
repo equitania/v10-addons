@@ -18,6 +18,7 @@
                                 <field name="time_start" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                                 <field name="time_stop" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                                 <field name="unit_amount" string="Duration" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                <field name="task_id" invisible="1" required="0"/>
                                 <field name="project_id" invisible="1" required="1"/>
                                 <field name="to_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                                 <field name="eq_time_invoice"/>
@@ -31,6 +32,7 @@
                                     <field name="time_start" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                                     <field name="time_stop" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                                     <field name="unit_amount" string="Duration" widget="float_time" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
+                                    <field name="task_id" invisible="1" required="0"/>
                                     <field name="project_id" invisible="1" required="1"/>
                                     <field name="to_invoice" attrs="{'readonly': [('invoice_id', '!=', False)]}"/>
                                     <field name="eq_time_invoice"/>
@@ -46,6 +48,9 @@
                     <field string="planed finish date" name="date_deadline"/>
                     <field string="planed duration" name="duration"/>
                     <field string="planed execution date" name="date"/>
+                </field>
+                <field name="task_id" position="replace">
+                    <field name="task_id" context="{'default_project_id':project_id}"/>
                 </field>
             </field>
         </record>
