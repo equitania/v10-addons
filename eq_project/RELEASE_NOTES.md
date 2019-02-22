@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 22.02.2019
+#### Version 1.0.63
+##### FIX
+- Added task_id invisible in the Issue Timesheet page, for correct progress calculation
+
 #### 21.02.2019
 #### Version 1.0.62
 ##### FIX
