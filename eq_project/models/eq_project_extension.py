@@ -305,6 +305,10 @@ class eq_account_analytic_line_project(models.Model):
 
                 self.time_start = eq_time_start
 
+        else:
+            self.time_start = 0.0
+            self.time_stop = 0.0
+
 
     @api.multi
     @api.onchange('unit_amount')

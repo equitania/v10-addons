@@ -21,7 +21,7 @@
 {
     'name': "Equitania Projekt",
     'license': 'AGPL-3',
-    'version': '1.0.64',
+    'version': '1.0.65',
     'category': 'project',
     'description': """Extensions for project""",
     'author': 'Equitania Software GmbH',
@@ -40,6 +40,7 @@
             'views/report_account_extension.xml',
             'views/report_timesheet_extension.xml',
             'views/eq_report_timesheet_extension_invoice.xml',
+            'views/eq_hr_timesheet_assets.xml',
             #'views/project_task_report_extension.xml',
              ],
     "active": False,

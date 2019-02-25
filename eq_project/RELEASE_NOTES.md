@@ -1,5 +1,11 @@
 ## Modul eq_project
 
+#### 25.02.2019
+#### Version 1.0.65
+##### ADD/FIX
+- Added invoice_id when timesheet line is created from widget weekly_timesheet
+- On change of project_id in account_analytic_line, start and end time are equal to 0.0
+
 #### 22.02.2019
 #### Version 1.0.64
 ##### CHG
