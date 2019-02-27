@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <function name="eq_crm_stage_remove" model="crm.stage"/>
+    </data>
+</odoo>
