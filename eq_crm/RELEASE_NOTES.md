@@ -1,5 +1,10 @@
 ## Modul eq_crm
 
+#### 27.02.2017
+#### Version 1.0.5
+##### ADD
+- New function executed on module upgrade, which unlink crm lead stage which is again created after removing
+
 #### 16.11.2017
 #### Version 1.0.4
 ##### CHG
