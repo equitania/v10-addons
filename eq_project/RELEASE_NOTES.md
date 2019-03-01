@@ -1,5 +1,11 @@
 ## Modul eq_project
 
+#### 01.03.2019
+#### Version 1.0.66
+##### ADD
+- optical changes on task reports project_task_report_extension & project_task_chatter_report_extension
+- German translation
+
 #### 25.02.2019
 #### Version 1.0.65
 ##### ADD/FIX

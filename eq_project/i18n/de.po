@@ -25,7 +25,7 @@ msgstr "Gesamtzeit"
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_tree_view_issue
 msgid "Account Issue"
-msgstr "Fall/Problem"
+msgstr "Vorfall"
 
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_tree_view_task
@@ -110,7 +110,7 @@ msgstr "Stunden"
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
 msgid "My Issue"
-msgstr "Meine Fälle"
+msgstr "Meine Vorfälle"
 
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
@@ -175,7 +175,7 @@ msgid ""
 "                    like internal requests, software development bugs, customer\n"
 "                    complaints, project troubles, material breakdowns, etc."
 msgstr ""
-"Der Odoo Issues Tracker ermöglicht es Ihnen, Dinge effizient zu verwalten.\n"
+"Der Odoo Vorfall Tracker ermöglicht es Ihnen, Dinge effizient zu verwalten.\n"
 "                    wie interne Anfragen, Softwareentwicklungsfehler, Kundenanfragen\n"
 "                    Reklamationen, Projektstörungen, Materialausfälle, etc."
 
@@ -200,7 +200,7 @@ msgstr "Zeiterfassungsaktivitäten"
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
 msgid "Timesheet(issues)"
-msgstr "Zeiterfassung(Fälle/Probleme)"
+msgstr "Zeiterfassung(Vorfälle)"
 
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
@@ -356,7 +356,7 @@ msgstr "Geplante Fertigstellung"
 #: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
 #: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
 msgid "End time"
-msgstr "End time"
+msgstr "Endzeit"
 
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
@@ -401,7 +401,7 @@ msgstr "Verrechenbar"
 #: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
 #: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
 msgid "Issue"
-msgstr "Problem"
+msgstr "Vorfall"
 
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
@@ -416,7 +416,7 @@ msgstr "Liste Zeiterfassung (mit Rechnung)"
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
 msgid "My Issue"
-msgstr "Meine Fälle"
+msgstr "Meine Vorfälle"
 
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
@@ -547,7 +547,7 @@ msgstr "Aufgabenstufe"
 msgid "The Odoo issues tracker allows you to efficiently manage things\n"
 "                    like internal requests, software development bugs, customer\n"
 "                    complaints, project troubles, material breakdowns, etc."
-msgstr "Der Odoo Issues Tracker ermöglicht es Ihnen, Dinge effizient zu verwalten.\n"
+msgstr "Der Odoo Vorfall Tracker ermöglicht es Ihnen, Dinge effizient zu verwalten.\n"
 "                    wie interne Anfragen, Softwareentwicklungsfehler, Kundenanfragen\n"
 "                    Reklamationen, Projektstörungen, Materialausfälle, etc."
 
@@ -595,7 +595,7 @@ msgstr "Zeiterfassung nach Monat"
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
 msgid "Timesheet(issues)"
-msgstr "Zeiterfassung(Fälle/Probleme)"
+msgstr "Zeiterfassung(Vorfälle)"
 
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.account_analytic_search_view_Time
@@ -680,7 +680,6 @@ msgstr "Geleistete Stunden"
 msgid "Control Timesheet Entries"
 msgstr "Abnahme Zeiterfassung"
 
-
 #. module: eq_project
 #: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
 #: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
@@ -704,3 +703,136 @@ msgstr "Endzeit"
 #: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
 msgid "<strong>Total</strong>"
 msgstr "<strong>Gesamt</strong>"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_chatter_report_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_report_extension
+msgid "<span>Page:</span> <span class=\"page\"/><span> / </span><span class=\"topage\"/>"
+msgstr "<span>Seite:</span> <span class=\"page\"/><span> / </span><span class=\"topage\"/>"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_chatter_report_extension
+msgid "<strong>Chatter</strong>"
+msgstr "<strong>Nachrichten</strong>"
+
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_chatter_report_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_report_extension
+msgid "Assigned to"
+msgstr "Zugewiesen an"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_chatter_report_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_report_extension
+msgid "BIC:"
+msgstr "BIC:"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_chatter_report_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_report_extension
+msgid "Bank:"
+msgstr "Bank:"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_chatter_report_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_report_extension
+msgid "Category"
+msgstr "Kategorie"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_chatter_report_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_report_extension
+msgid "Description:"
+msgstr "Beschreibung:"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_chatter_report_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_report_extension
+msgid "End Date"
+msgstr "Enddatum"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_chatter_report_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_report_extension
+msgid "Fax:"
+msgstr "Fax:"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_chatter_report_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_report_extension
+msgid "IBAN:"
+msgstr "IBAN:"
+
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_chatter_report_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_report_extension
+msgid "Last Stage Update"
+msgstr "Letzte Aktualisierung"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_chatter_report_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_report_extension
+msgid "Partner"
+msgstr "Kunde"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_chatter_report_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_report_extension
+msgid "Phone:"
+msgstr "Tel:"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_chatter_report_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_report_extension
+msgid "Planned hours"
+msgstr "Urspr. geplante Stunden"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_chatter_report_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_report_extension
+msgid "Project"
+msgstr "Projekt"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_chatter_report_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_report_extension
+msgid "Remaining hours"
+msgstr "Verbleibende Stunden"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_chatter_report_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_report_extension
+msgid "Stage"
+msgstr "Stufe"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_project_project_stage_id
+msgid "Stage id"
+msgstr "Stufe"
+
+#. module: eq_project
+#: model:ir.model.fields,field_description:eq_project.field_account_analytic_line_eq_startdate
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_chatter_report_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_report_extension
+msgid "Start Date"
+msgstr "Startdatum"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_report_timesheet_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_report_timesheet_extension_invoice
+msgid "Start time"
+msgstr "Startzeit"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_chatter_report_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_report_extension
+msgid "Tags"
+msgstr "Stichwörter"
+
+#. module: eq_project
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_chatter_report_extension
+#: model:ir.ui.view,arch_db:eq_project.eq_project_task_report_extension
+msgid "VAT"
+msgstr "USt-IdNr."

@@ -2,7 +2,7 @@
 
 <odoo>
 
-<template id="eq_project_task_report_extension" inherit_id="project_task_report.task_report">
+<template id="eq_project_task_chatter_report_extension" inherit_id="project_task_report.task_chatter_report">
 
   <xpath expr="//t[@t-call='report.external_layout']" position="replace">
 
@@ -69,15 +69,41 @@
                                 <th>Tags</th>
                                 <td>
                                     <span>| </span>
-                                    <t t-foreach="o.tag_ids" st-as="tag">
+                                    <t t-foreach="o.tag_ids" t-as="tag">
                                         <span t-field="tag.name"/>
                                         <span>| </span>
                                     </t>
                                 </td>
                             </tr>
                         </table>
-                        <strong t-if="o.description">Description:</strong>
+                        <strong t-if="o.description">Description: </strong>
                         <span t-field="o.description"/>
+                        <strong>Chatter</strong>
+                        <table>
+                            <t t-foreach="o.message_ids" t-as="msg">
+                                <tr>
+                                    <td style="padding-right: 1cm; font-weight:bold;">
+                                        <span t-field="msg.author_id"/><br/>
+                                        <div style="font-size:75%;">
+                                            (<span t-field="msg.date"/>)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div t-if="msg.subject"><span t-field="msg.subject"/>: </div>
+                                        <div t-if="msg.message_type == 'notification'">
+                                            <span t-field="msg.subtype_id.name"/>
+                                            <t t-foreach='msg.tracking_value_ids' t-as='value'>
+                                                <li>
+                                                    <t t-esc="value.field_desc"/>:
+                                                    <span> <t t-esc="value.new_value_char"/> </span>
+                                                </li>
+                                            </t>
+                                        </div>
+                                        <span t-field="msg.body"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </table>
           </div>
 
       <div class="footer">
@@ -146,10 +172,6 @@
 	            </tr>
 	        </table>
 	    </div>
-
-
-
-      <!--<t t-call="eq_base_report.eq_external_layout_footer"/>-->
 
   </xpath>
 
