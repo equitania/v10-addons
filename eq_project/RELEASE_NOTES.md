@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 04.03.2019
+#### Version 1.0.67
+##### FIX
+- Reports: Fix of Task-Report and changing hours to german decimal standard
+
 #### 01.03.2019
 #### Version 1.0.66
 ##### ADD
