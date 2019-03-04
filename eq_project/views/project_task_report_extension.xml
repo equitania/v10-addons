@@ -37,11 +37,11 @@
                             </tr>
                              <tr t-if="o.planned_hours">
                                 <th>Planned hours</th>
-                                <td><span t-esc="o.planned_hours"/></td>
+                                <td><span t-field="o.planned_hours"/> h</td>
                             </tr>
                               <tr t-if="o.remaining_hours">
                                 <th>Remaining hours</th>
-                                <td><span t-esc="o.remaining_hours"/></td>
+                                <td><span t-field="o.remaining_hours"/> h</td>
                             </tr>
                              <tr t-if="o.stage_id">
                                 <th>Stage</th>
@@ -69,7 +69,7 @@
                                 <th>Tags</th>
                                 <td>
                                     <span>| </span>
-                                    <t t-foreach="o.tag_ids" st-as="tag">
+                                    <t t-foreach="o.tag_ids" t-as="tag">
                                         <span t-field="tag.name"/>
                                         <span>| </span>
                                     </t>
