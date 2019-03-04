@@ -1,5 +1,10 @@
 ## Modul eq_sale_vat_check
 
+#### 04.03.2019
+#### Version 1.0.1
+##### CHG
+- Description for module
+
 #### 27.02.2019
 #### Version 1.0.0
 ##### ADD
