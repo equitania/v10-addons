@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 05.03.2019
+#### Version 1.0.68
+##### CHG
+- The Datetime fields in project.task are changed to Date type
+
 #### 04.03.2019
 #### Version 1.0.67
 ##### FIX
