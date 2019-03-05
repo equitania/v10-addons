@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 05.03.2019
+#### Version 1.0.94
+##### IMP
+- German translation for state done in sale orders
+
 #### 20.02.2019
 #### Version 1.0.93
 ##### CHG

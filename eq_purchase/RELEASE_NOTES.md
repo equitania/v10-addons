@@ -1,5 +1,10 @@
 ## Modul eq_purchase
 
+#### 05.03.2019
+#### Version 1.0.42
+##### IMP
+- German translation for state done in purchase orders
+
 #### 09.01.2019
 #### Version 1.0.41
 ##### IMP

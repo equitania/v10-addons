@@ -294,3 +294,13 @@ msgstr "benannter Ort"
 #: model:ir.ui.view,arch_db:eq_purchase.eq_report_purchasequotation_document
 msgid "<strong>Delivered at place:</strong>"
 msgstr "<strong>benannter Ort:</strong>"
+
+#. module: purchase
+#: selection:purchase.order,state:0
+msgid "Locked"
+msgstr "Erledigt"
+
+#. module: purchase
+#: model:ir.ui.view,arch_db:purchase.purchase_order_form
+msgid "Lock"
+msgstr "Auf erledigt setzen"

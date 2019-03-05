@@ -674,3 +674,13 @@ msgstr "Erstelldatum"
 #: model:ir.model.fields,field_description:sale_stock.field_sale_order_incoterm
 msgid "Incoterms"
 msgstr "Incoterms"
+
+#. module: sale
+#: selection:sale.order,state:0
+msgid "Locked"
+msgstr "Erledigt"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.view_order_form
+msgid "Lock"
+msgstr "Auf erledigt setzen"
