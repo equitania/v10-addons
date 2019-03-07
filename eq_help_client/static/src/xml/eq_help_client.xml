@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+    <t t-name='HelpClient.Button'>
+        <a class="fa fa-question-circle btn btn-icon o_eq_help_client_button" href='#'></a>
+    </t>
+
+    <t t-name='HelpClient.ButtonsContainer'>
+        <div class='hidden-xs btn-group btn-group-sm o_eq_help_client_buttons'>
+        </div>
+    </t>
+
+    <t t-extend="ControlPanel">
+        <t t-jquery="div.o_cp_switch_buttons" t-operation="after">
+            <t t-call='HelpClient.ButtonsContainer' />
+        </t>
+        <t t-jquery="div.oe-cp-switch-buttons" t-operation="after">
+            <t t-call='HelpClient.ButtonsContainer' />
+        </t>
+    </t>
+
+    <t t-extend="X2ManyControlPanel">
+        <t t-jquery="div.o_cp_pager" t-operation="after">
+            <t t-call='HelpClient.ButtonsContainer' />
+        </t>
+        <t t-jquery="div.oe-cp-pager" t-operation="after">
+            <div class="pull-right">
+                <t t-call='HelpClient.ButtonsContainer' />
+            </div>
+        </t>
+    </t>
+
+</templates>

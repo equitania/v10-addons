@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" name="help.online.assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/eq_help_client/static/src/css/eq_help_client.css" type="text/css"/>
+            <script type="text/javascript" src="/eq_help_client/static/src/js/eq_help_client.js"></script>
+        </xpath>
+    </template>
+</odoo>
