@@ -12,7 +12,7 @@ MyOdoo Help Client
          Erweitert Odoo um eine kontextsensitive Hilfe.
 
     """,
-    'version': '1.0.0',
+    'version': '1.0.1',
     'author': "Callino, improved by Equitania Software GmbH",
     'maintainer': 'Callino, improved by Equitania Software GmbH',
     'website': 'https://equitania.atlassian.net/wiki/spaces/MH/overview',

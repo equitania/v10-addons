@@ -55,6 +55,8 @@ odoo.define('eq_help_client.HelpClient', function (require) {
                     console.warn("Server Path is not set!");
                     return false;
                 }
+
+                // Source_Client = web.base.url
                 window.open(session.help_params.help_server_path + '/help/get/' +
                     '?software=' + session.help_params.software_type +
                     '&software_version=' + window.odoo.session_info.server_version_info[0] +
@@ -62,8 +64,8 @@ odoo.define('eq_help_client.HelpClient', function (require) {
                     '&view_type=' + self.active_view.type +
                     '&view_title=' + self.active_view.title +
                     '&view_name=' + self.active_view.fields_view.name +
-                    '&dataset_context=' + self.dataset.context +
-                    '&action_xml_id=' + self.action.xml_id, '_blank');
+                    '&base_url=' + session["web.base.url"],
+                    '_blank');
             });
             return $helpButton;
         },
