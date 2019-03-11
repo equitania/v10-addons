@@ -4,15 +4,7 @@
     'summary': """
         MyOdoo Help Client will Create Buttons for Models which will request Help form the Help Server
         """,
-
-    'description': """
-MyOdoo Help Client
-========================================
-
-         Erweitert Odoo um eine kontextsensitive Hilfe.
-
-    """,
-    'version': '1.0.2',
+    'version': '1.0.3',
     'author': "Callino, improved by Equitania Software GmbH",
     'maintainer': 'Callino, improved by Equitania Software GmbH',
     'website': 'https://equitania.atlassian.net/wiki/spaces/MH/overview',
