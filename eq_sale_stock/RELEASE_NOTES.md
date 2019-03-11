@@ -1,5 +1,10 @@
 ## Modul eq_sale_stock
 
+#### 11.03.2019
+#### Version 1.0.18
+##### FIX
+- FIX for _prepare_pack_ops, only use it when product_id exists.
+
 #### 31.01.2019
 #### Version 1.0.17
 ##### CHG

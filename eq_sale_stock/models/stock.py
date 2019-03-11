@@ -81,6 +81,7 @@ class eq_stock_picking_extension(models.Model):
                     product_description[move.product_id.id] = move.name
 
         for pack_op_vals in res:
-            pack_op_vals['eq_description'] = product_description[pack_op_vals['product_id']]
+            if 'product_id' in pack_op_vals:
+                pack_op_vals['eq_description'] = product_description[pack_op_vals['product_id']]
 
         return res
