@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 13.03.2019
+#### Version 1.0.95
+##### CHG
+- Switch to WKHTMLtoPDF 0.12.5 ... Reports and Reportstyles!
+
 #### 05.03.2019
 #### Version 1.0.94
 ##### IMP
