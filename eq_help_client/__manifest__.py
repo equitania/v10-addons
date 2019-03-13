@@ -7,7 +7,7 @@
     'summary': """
         MyOdoo Help Client will Create Buttons for Models which will request Help form the Help Server
         """,
-    'version': '1.0.3',
+    'version': '1.0.4',
     'author': "Callino, improved by Equitania Software GmbH",
     'maintainer': 'Callino, improved by Equitania Software GmbH',
     'website': 'https://equitania.atlassian.net/wiki/spaces/MH/overview',
@@ -24,4 +24,5 @@
         'static/src/xml/eq_help_client.xml',
     ],
     'installable': True,
+    'auto_install': True
 }
