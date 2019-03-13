@@ -2,7 +2,7 @@
 
 body {
     color: #000 !important;
-	font-size: 8.5pt!important;
+	font-size: 11pt!important;
     font-family: "Open Sans", Calibri,"Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -14,11 +14,11 @@ h5 {font-size: 10pt;}
 
 td {
 	vertical-align:top;
-	font-size: 8.5pt!important;
+	font-size: 11pt!important;
 }
 
 table.eq-hr-timemangement td {
-	font-size:6pt!important;
+	font-size:8pt!important;
 }
 
 .border-black td {
@@ -28,22 +28,23 @@ table.eq-hr-timemangement td {
 .table-condensed > thead > tr > th {
 	border-bottom: 1px solid black !important;
 	page-break-inside:avoid !important;
-	font-size: 8.5pt!important;
+	font-size: 11pt!important;
 											/*font-size: 0.8em;*/
 }
 
 .zero_min_height {
-	min-height: 0px
-	!important;
+	min-height: 0px !important;
 }
 
 .padding-fix {
-	padding-left:15px; padding-right:15px;
+	padding-left:15px;
+	padding-right:15px;
 }
 
 /* Hier die zusätzlichen Abstände für den Druck einstellen */
-.page {
-	padding-left:1cm;
+.page,
+div.header.padding-print {
+	padding-left:1.2cm;
 	padding-right:0cm;
 }
 
@@ -52,7 +53,7 @@ table.eq-hr-timemangement td {
 	align:center;
 	text-align:center;
 	margin-left:0px;
-	font-size:7.5pt!important;
+	font-size:8pt!important;
 }
 
 .footer td {
@@ -63,28 +64,31 @@ table.eq-hr-timemangement td {
 	text-align:left;
 	border: none;
 	background-color:none;
-	font-size:6pt!important;
+	font-size:8pt!important;
 }
 
 #version {
 	margin:0 0 0 -15px;
-	padding:0;
+	padding: 0;
 	display: none;
-	font-size:4px;
+	font-size: 4px;
 	background-color:none;
 	transform: rotate(-90deg);
 	-webkit-transform:rotate(-90deg); /* Opera, Chrome, and Safari */
 }
 
 #logo {
-	margin-top: 0em;
+	margin-top: 0px;
 	margin-bottom: 0px;
-	margin-right:0px;
+	margin-right: 0px;
+	padding-left: 0px;
+	max-width: 45%!important;
+	width: 45%!important;
 }
 
 #logo img {
 	max-width:100%;
-	max-height:31mm;
+	max-height:35mm;
 	float:right;
 	margin-right:0px;
 	padding-right:0px;
@@ -92,7 +96,8 @@ table.eq-hr-timemangement td {
 }
 
 div.internalheaderbox div.rightbox { /* this class is used in the external layout header for the internal documents logo, such as report_overdue // fällige zahlungen */
-	max-width:70mm!important;
+	max-width:73mm!important;
+	width:73mm!important;
 }
 
 div.internalheaderbox div.leftbox {
@@ -105,15 +110,36 @@ div.internalheaderbox div.leftbox {
 }
 
 #address {
-	margin-top: 1em;
-	min-height: 200px;
+	margin-top: 1cm;
+	min-height: 4.5cm;
 	vertical-align: bottom;
 	position: relative;
+}
+
+#returnaddress {
+	color: #000000;
+	font-size: 7pt!important;
+	border-bottom: 1px solid #000000;
+	padding-top:0.5cm;
+	margin-bottom:0.6em;
+	display: inline-block;
+	white-space: nowrap;
 }
 
 .leftbox {
 	width: 45%;
 }
+
+.rightbox {
+	float:right;
+	padding-left:0px;
+
+	max-width:45%!important;
+	width:45%!important;
+}
+.rightbox table {
+}
+
 div.header .leftbox {
 	margin-left:1.4cm;
 	padding-left:0cm;
@@ -126,24 +152,6 @@ table.data > tbody > tr > td:first-child {
 	font-weight:bold;
 	padding-right:0.4cm;
 }
-
-
-.rightbox {
-	float:right;
-	/*padding-left:0px;*/
-}
-
-#returnaddress {
-	color:
-	#000000;
-	font-size: 7pt!important;
-	border-bottom: 1px solid #000000;
-	padding-top:1cm;
-	margin-bottom:0.6em;
-	display: inline-block;
-	white-space: nowrap;
-}
-
 
 
 .bottomBlock {
@@ -171,6 +179,15 @@ table.data > tbody > tr > td:first-child {
 .table > tbody > tr.active > td {
 	background-color:#ddd; /*alter wert: #ddd */
 	color:#000;
+}
+
+/* DIV NAME TOTAL is the block for summary */
+div[name="total"] > div.col-xs-5,
+div[name="total"],
+div[name="contract_sum"] {
+	padding-left:0px;
+	max-width:45%!important;
+	width:45%!important;
 }
 
 .optional {

@@ -1,6 +1,9 @@
 ## Modul eq_base_report
 
-
+#### 13.03.2019
+#### Version 1.0.40
+##### CHG
+- Switch to WKHTMLtoPDF 0.12.5 ... Reports and Reportstyles!
 
 #### 18.02.2019
 #### Version 1.0.39
