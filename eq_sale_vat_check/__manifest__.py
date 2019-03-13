@@ -22,7 +22,7 @@
 {
     'name': "Equitania Sale VAT Check",
     'license': 'AGPL-3',
-    'version': '1.0.1',
+    'version': '1.0.2',
     'category': 'sale',
     'description': """Extensions for VAT Check""",
     'author': 'Equitania Software GmbH',

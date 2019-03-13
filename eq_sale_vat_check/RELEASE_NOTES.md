@@ -1,5 +1,10 @@
 ## Modul eq_sale_vat_check
 
+#### 13.03.2019
+#### Version 1.0.2
+##### CHG
+- The VAT is checked not for the customer but for the Delivery address.
+
 #### 04.03.2019
 #### Version 1.0.1
 ##### CHG
