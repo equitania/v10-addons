@@ -250,7 +250,7 @@
                             <div id="informations" class="col-xs-12"
                                  style="margin-top:0em; margin-bottom:0em; margin-left:0px; padding-left:0px;">
                                 <div>
-                                    <span/>
+                                    <span/> <!-- this div informations will be used/ is referenced in website_quote - DONT Delete or move! -->
                                 </div>
                             </div>
 
@@ -297,7 +297,7 @@
                         <div id="informations" class="col-xs-12"
                              style="margin-top:1em; margin-bottom:2em; font-size:0.8em; margin-left:0px; padding-left:0px;">
                             <div>
-                                <span/>
+                                <span/><!-- this div informations will be used/ is referenced in website_quote - DONT Delete or move! -->
                             </div>
                         </div>
 
@@ -595,42 +595,41 @@
 
 
 
-                        <div class="row padding-fix">
-                            <div class="col-xs-5 pull-right">
-                                <div class="row" name="total">
-                                    <table class="table table-condensed" rules="none" style=" page-break-inside:avoid !important;">
-                                        <tr ><!-- class="border-black" style="border-top:none;" -->
-                                            <td id="price_netto" > <!-- style="border-top:none;"-->
-                                                <span>Total without taxes</span>
-                                            </td>
-                                            <td class="text-right" id="price_netto_amount" > <!-- style="border-top:none;"-->
-                                                <span t-field="o.amount_untaxed"
+                        <div class="row">
+                            <div class="col-xs-5 pull-right" name="total">
+                                <table class="table table-condensed" rules="none" style=" page-break-inside:avoid !important;">
+                                    <tr ><!-- class="border-black" style="border-top:none;" -->
+                                        <td id="price_netto" > <!-- style="border-top:none;"-->
+                                            <span>Total without taxes</span>
+                                        </td>
+                                        <td class="text-right" id="price_netto_amount" > <!-- style="border-top:none;"-->
+                                            <span t-field="o.amount_untaxed"
+                                                  t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                        </td>
+                                    </tr>
+                                    <tr t-foreach="o.tax_line_ids" t-as="tax_line_ids">
+                                        <td class="text-left">
+                                            <span t-field="tax_line_ids.name"/>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-esc="tax_line_ids.amount"
+                                                  t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-black">
+                                        <td class="text-left">
+                                            <strong>Total sum</strong>
+                                        </td>
+                                        <td class="text-right">
+                                            <strong>
+                                                <span t-field="o.amount_total"
                                                       t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
-                                            </td>
-                                        </tr>
-                                        <tr t-foreach="o.tax_line_ids" t-as="tax_line_ids">
-                                            <td class="text-left">
-                                                <span t-field="tax_line_ids.name"/>
-                                            </td>
-                                            <td class="text-right">
-                                                <span t-esc="tax_line_ids.amount"
-                                                      t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
-                                            </td>
-                                        </tr>
-                                        <tr class="border-black">
-                                            <td class="text-left">
-                                                <strong>Total sum</strong>
-                                            </td>
-                                            <td class="text-right">
-                                                <strong>
-                                                    <span t-field="o.amount_total"
-                                                          t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
-                                                </strong>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
+
 
 
                             <!-- Pagebreak before footertext -->
@@ -641,8 +640,9 @@
                                 <p t-field="o.comment" style="margin-bottom:3em;"/>
                             </div>
 
-                            <div id="informations" class="col-xs-12"
+                            <div id="invoice-information" class="col-xs-12"
                                  style="margin-top:1em; margin-bottom:1em; margin-left:0px; padding-left:0px; page-break-inside:avoid !important;">
+                                <!-- this was the old ID "informations"-->
                                 <table style="width:auto!important; margin-left:0px; padding-left:0px; font-size: 0.8em;">
                                     <tbody>
                                         <tr t-if="o.payment_term_id" >

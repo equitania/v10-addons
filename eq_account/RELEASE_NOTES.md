@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 13.03.2019
+#### Version 1.0.73
+##### CHG
+- Switch to WKHTMLtoPDF 0.12.5 ... Reports and Reportstyles!
+
 #### 07.02.2019
 #### Version 1.0.72
 ##### FIX
