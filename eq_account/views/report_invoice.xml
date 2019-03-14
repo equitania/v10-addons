@@ -641,7 +641,7 @@
                             </div>
 
                             <div id="invoice-information" class="col-xs-12"
-                                 style="margin-top:1em; margin-bottom:1em; margin-left:0px; padding-left:0px; page-break-inside:avoid !important;">
+                                 style="margin-top:1em; margin-bottom:1em; margin-left:0px; page-break-inside:avoid !important;">
                                 <!-- this was the old ID "informations"-->
                                 <table style="width:auto!important; margin-left:0px; padding-left:0px; font-size: 0.8em;">
                                     <tbody>

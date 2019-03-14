@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 14.03.2019
+#### Version 1.0.74
+##### IMP
+- Invoice Report: Little Padding improvement
+
 #### 13.03.2019
 #### Version 1.0.73
 ##### CHG
