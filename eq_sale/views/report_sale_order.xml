@@ -523,7 +523,7 @@
                                 </div>
 
                                 <div class="col-xs-12"
-                                     style="margin-top:1em; margin-bottom:2em; margin-left:0px; page-break-inside:avoid !important;">
+                                     style="margin-top:1em; margin-bottom:2em; margin-left:0px;">
                                     <table style="width:auto!important; ">
                                         <tbody>
                                             <!--<tr t-if="doc.note">
@@ -577,7 +577,7 @@
                                                 </tr>
                                             </tr>
                                             <tr
-                                                    t-if="doc.partner_invoice_id != doc.partner_id and doc.partner_invoice_id != False">
+                                                    t-if="doc.partner_invoice_id != doc.partner_id and doc.partner_invoice_id != False" style="page-break-inside:avoid !important;">
                                                 <td style="padding-right:0.5cm; font-weight:bold;padding-top:0.5cm;" valign="top">
                                                     <strong>Invoice address:</strong>
                                                 </td>
@@ -619,7 +619,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr t-if="doc.partner_shipping_id != doc.partner_id and doc.partner_shipping_id != False">
+                                            <tr t-if="doc.partner_shipping_id != doc.partner_id and doc.partner_shipping_id != False" style="page-break-inside:avoid !important;">
                                                 <td style="padding-right:0.5cm; font-weight:bold;padding-top:0.5cm;" valign="top">
                                                     Shipping address:
                                                 </td>

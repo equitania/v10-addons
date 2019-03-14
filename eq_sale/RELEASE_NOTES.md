@@ -4,6 +4,7 @@
 #### Version 1.0.96
 ##### IMP
 - SaleReport: Little Padding improvement
+- SaleReport: PageBreak fix for Invoice & Shipping-address
  
 #### 13.03.2019
 #### Version 1.0.95
