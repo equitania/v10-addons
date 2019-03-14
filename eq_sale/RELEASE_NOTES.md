@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 14.03.2019
+#### Version 1.0.96
+##### IMP
+- SaleReport: Little Padding improvement
+ 
 #### 13.03.2019
 #### Version 1.0.95
 ##### CHG

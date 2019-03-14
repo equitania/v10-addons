@@ -517,13 +517,14 @@
                                 <p t-if="doc.eq_use_page_break_before_footer" style="page-break-after:always;"> </p>
 
                                 <div t-if="doc.html_text_is_set(doc.note)"  class="eq_footertext" style="width:100%;float:left; display:block;page-break-inside:avoid !important;" >
-                                    <p t-field="doc.note"/>
+                                    <div class="col-xs-12">
+                                        <p t-field="doc.note"/>
+                                    </div>
                                 </div>
 
-                                <!--<div class="col-xs-12"
-                                     style="margin-top:1em; margin-bottom:2em; margin-left:0px; padding-left:0px; page-break-inside:avoid !important;">-->
-                                    <table class="col-xs-3"
-                                           style="width:auto!important; ">
+                                <div class="col-xs-12"
+                                     style="margin-top:1em; margin-bottom:2em; margin-left:0px; page-break-inside:avoid !important;">
+                                    <table style="width:auto!important; ">
                                         <tbody>
                                             <!--<tr t-if="doc.note">
                                                 <td style="padding-right:0.5cm; vertical-align:top;" colspan="2">
@@ -665,7 +666,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                <div></div>
+                                </div>
                             </div>
                             <div id="informations" style="display:none;"></div>
                             <p id="fiscal_position_remark"></p>
