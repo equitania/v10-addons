@@ -248,7 +248,7 @@
                                 <span/>
                             </h2>
                             <div id="informations" class="col-xs-12"
-                                 style="margin-top:0em; margin-bottom:0em; margin-left:0px; padding-left:0px;">
+                                 style="margin-top:0em; margin-bottom:0em; margin-left:0px; padding-left:0px; display:none;">
                                 <div>
                                     <span/> <!-- this div informations will be used/ is referenced in website_quote - DONT Delete or move! -->
                                 </div>
@@ -295,7 +295,7 @@
                         <p t-if="o.eq_use_page_break_after_header" style="page-break-after:always;"> </p>
 
                         <div id="informations" class="col-xs-12"
-                             style="margin-top:1em; margin-bottom:2em; font-size:0.8em; margin-left:0px; padding-left:0px;">
+                             style="margin-top:1em; margin-bottom:2em; font-size:0.8em; margin-left:0px; padding-left:0px; display:none;">
                             <div>
                                 <span/><!-- this div informations will be used/ is referenced in website_quote - DONT Delete or move! -->
                             </div>
@@ -635,9 +635,10 @@
                             <!-- Pagebreak before footertext -->
 					        <p t-if="o.eq_use_page_break_before_footer" style="page-break-after:always;"> </p>
 
-
                             <div t-if="o.html_text_is_set(o.comment)"  class="eq_footertext" style="width:100%;float:left; display:block;page-break-inside:avoid !important;" >
-                                <p t-field="o.comment" style="margin-bottom:3em;"/>
+                                <div class="col-xs-12">
+                                    <p t-field="o.comment" style="margin-bottom:3em;"/>
+                                </div>
                             </div>
 
                             <div id="invoice-information" class="col-xs-12"

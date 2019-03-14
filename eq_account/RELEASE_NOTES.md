@@ -1,6 +1,11 @@
 ## Modul eq_account
 
 #### 14.03.2019
+#### Version 1.0.75
+##### IMP
+- Invoice Report: Improving spaces between some elements
+
+#### 14.03.2019
 #### Version 1.0.74
 ##### IMP
 - Invoice Report: Little Padding improvement
