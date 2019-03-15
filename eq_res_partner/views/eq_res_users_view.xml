@@ -13,6 +13,18 @@
                 </label>
             </field>
         </record>
+        <record id="eq_users_simple_extension_form_view" model="ir.ui.view">
+			<field name="name">eq_partner_extension.simple_form</field>
+			<field name="model">res.users</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="base.view_users_simple_form" />
+			<field name="arch" type="xml">
+				<label for="name" position="before">
+				    <label for="eq_firstname" class="oe_edit_only"/>
+                    <h1><field name="eq_firstname"/></h1>
+                </label>
+            </field>
+        </record>
         <record id="eq_users_extension_tree_view" model="ir.ui.view">
 			<field name="name">eq_users_extension.tree</field>
 			<field name="model">res.users</field>
@@ -31,6 +43,15 @@
             <field name="name" position="replace">
                 <field name="display_name"/>
             </field>
+            </field>
+        </record>
+        <record id="eq_view_users_search" model="ir.ui.view">
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_search"/>
+            <field name="arch" type="xml">
+                <field name="name" position="replace">
+                    <field name="name" filter_domain="['|', '|', '|','|', ('display_name','ilike',self), ('eq_firstname','ilike',self), ('name','ilike',self), ('login','ilike',self), ('email','ilike',self)]" string="User"/>
+                </field>
             </field>
         </record>
     </data>

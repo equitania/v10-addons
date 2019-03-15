@@ -1,23 +1,6 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    Odoo Addon, Open Source Management Solution
-#    Copyright (C) 2014-now Equitania Software GmbH(<http://www.equitania.de>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# Copyright 2014-now Equitania Software GmbH - Pforzheim - Germany
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import models, fields, api, _
 
@@ -28,16 +11,29 @@ class eq_res_users(models.Model):
 
     eq_firstname = fields.Char(related='partner_id.eq_firstname', inherited=True)
 
+    @api.depends('eq_firstname', 'name')
     def _compute_full_display_name(self):
-        # Display the full name (eq_firstname + name), or display only the name
+        """
+        Display the full name (eq_firstname + name), or display only the name
+        """
+        names = dict(self.name_get())
+        for record in self:
+            record.display_name = names.get(record.id, False)
 
-        for user in self:
-            if user.eq_firstname and user.name:
-                user.display_name = user.eq_firstname + ' ' + user.name
+    @api.multi
+    def _search_display_name(self, operator, operand):
+        """
+        Function which is executed on search by display_name field.
+        """
+        if operator in ['=', 'ilike']:
+            users = self.env['res.users'].search([]).filtered(
+                lambda x: operand in x.display_name)
+            if users:
+                return [('id', 'in', [x.id for x in users])]
             else:
-                user.display_name = user.name
+                return [('id', '=', False)]
 
-    display_name = fields.Char(compute='_compute_full_display_name', string='Name')
+    display_name = fields.Char(compute='_compute_full_display_name', string='Name', search='_search_display_name')
 
     def name_get(self):
         """
@@ -45,11 +41,26 @@ class eq_res_users(models.Model):
         :return: if eq_firstname full name, else name
         """
         res = []
-
         for user in self:
-            if user.eq_firstname and user.name:
-                res.append((user.id, user.eq_firstname + ' ' + user.name))
-            else:
-                res.append((user.id, user.name))
-
+            if user:
+                name = ''
+                if user.eq_firstname:
+                    name = user.eq_firstname
+                if user.name:
+                    name = name + ' ' + user.name
+                res.append((user.id, name))
         return res
+
+    @api.model
+    def name_search(self, name='', args=None, operator='ilike', limit=100):
+        """
+        Added searching for eq_firstname and display_name
+        """
+        if args is None:
+            args = []
+        users = self.browse()
+        if name and operator in ['=', 'ilike']:
+            users = self.search([('login', '=', name)] + args, limit=limit)
+        if not users:
+            users = self.search(['|','|',('display_name', operator, name),('name', operator, name),('eq_firstname', operator, name)] + args, limit=limit)
+        return users.name_get()

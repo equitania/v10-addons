@@ -1,5 +1,10 @@
 ## Modul eq_res_partner
 
+#### 15.03.2019
+#### Version 1.0.52
+##### FIX
+- Fixed search by display_name and added eq_firstname in view_users_simple_form, clean up copyright
+
 #### 22.02.2019
 #### Version 1.0.51
 ##### FIX
