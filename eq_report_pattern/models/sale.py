@@ -90,6 +90,7 @@ class eq_sale_order_template(models.Model):
         if (selected_template):
             self.eq_head_text = selected_template.eq_header
             self.note = selected_template.eq_footer
+            self.pricelist_id = selected_template.eq_pricelist_id
             partner_id = False
             if (self.partner_id):
                 partner_id = self.partner_id.id

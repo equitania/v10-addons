@@ -34,6 +34,7 @@ class eq_document_template(models.Model):
     eq_header = fields.Html(string="Header", translate=True)
     eq_footer = fields.Html(string="Footer", translate=True)
     eq_default = fields.Boolean(string="Default value")
+    eq_pricelist_id = fields.Many2one(string="Pricelist",comodel_name="product.pricelist")
 
 
     # Check if there is already a default value

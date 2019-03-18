@@ -93,6 +93,7 @@ class eq_account_invoice(models.Model):
         if selected_template:
             self.eq_head_text = selected_template.eq_header
             self.comment = selected_template.eq_footer
+            self.pricelist_id = selected_template.eq_pricelist_id
 
     @api.onchange('partner_id', 'company_id')
     def _onchange_delivery_address(self):

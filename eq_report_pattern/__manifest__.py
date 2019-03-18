@@ -22,13 +22,13 @@
 {
     'name': 'Equitania Dokumenten Bausteine',
     'license': 'AGPL-3',
-    'version': '1.0.32',
+    'version': '1.0.33',
     'description': """
         Improves the odoo document templating, overwrites head- and foot-texttemplates
     """,
     'author': 'Equitania Software GmbH',
     'website': 'www.myodoo.de',
-    'depends': ['base', 'base_setup', 'website_quote', 'stock', 'sales_team', 'eq_sale', 'eq_purchase', 'eq_account'],
+    'depends': ['base', 'base_setup', 'website_quote', 'stock', 'sales_team', 'eq_sale', 'eq_purchase', 'eq_account','product'],
     'category' : 'Reports',
     'summary': '',
     'data': [

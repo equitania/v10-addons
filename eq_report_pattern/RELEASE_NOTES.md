@@ -1,6 +1,11 @@
 ## eq_report_pattern 
 
 #### 13.03.2019
+#### Version 1.0.33
+##### ADD
+- Added pricelists for document template.
+
+#### 13.03.2019
 #### Version 1.0.32
 ##### FIX
 - Fixing Ascii-Error

@@ -56,7 +56,7 @@ class eq_sale_quote_line(models.Model):
             if self.quote_id.eq_model == 'purchase.order':
                 self.price_unit = self.product_id.standard_price
             else:
-                self.price_unit = self.product_id.lst_price
+                self.price_unit = self.quote_id.eq_pricelist_id.get_product_price(self.product_id, self.product_uom_qty, False)
             name = self.product_id.name_get()[0][1]
             if self.product_id.description_sale:
                 name += '\n' + self.product_id.description_sale
@@ -66,4 +66,4 @@ class eq_sale_quote_line(models.Model):
     @api.onchange('product_uom_id')
     def _onchange_product_uom(self):
         if self.product_id and self.product_uom_id and self.quote_id.eq_model != 'purchase.order':
-            self.price_unit = self.product_id.uom_id._compute_price(self.product_id.lst_price, self.product_uom_id)
+            self.price_unit = self.product_id.uom_id._compute_price(self.price_unit, self.product_uom_id)
