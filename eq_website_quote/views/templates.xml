@@ -5,9 +5,10 @@
 <template id="eq_website_quotation_content" inherit_id="website_quote.so_quotation_content">
 
     <!-- Adding Headtext for Quotation from eq_sale-->
-    <xpath expr="//div[@t-field='quotation.website_description']" position="after">
+    <!-- Ticket #9884 hat die doppelte Kopftextanzeige gezeigt, weswegen es hier aus der eq_website_quote nun entfernt wird -->
+    <!--<xpath expr="//div[@t-field='quotation.website_description']" position="after">
         <span t-field="quotation.eq_head_text" t-if="quotation.eq_head_text"/>
-    </xpath>
+    </xpath>-->
 
     <!-- Adding IF request for Contact Person-->
     <xpath expr="//div[@class='row mt32']/div[@class='col-md-6 col-xs-6'][2]/div[@class='row'][1]" position="attributes">
