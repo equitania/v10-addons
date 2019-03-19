@@ -1,5 +1,10 @@
 ## Modul eq_mail_extension
 
+#### 19.03.2019
+#### Version 1.0.47
+##### FIX
+- Fix when sending more than one e-mail at once. It ended up in a connection-problem.
+
 #### 21.12.2018
 #### Version 1.0.46
 ##### FIX

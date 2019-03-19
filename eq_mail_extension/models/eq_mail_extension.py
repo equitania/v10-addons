@@ -339,7 +339,7 @@ class eq_mail_mail(models.Model):
                 # see revid:odo@odoo.com-20120622152536-42b2s28lvdv3odyr in 6.1
                 if mail_sent:
                     _logger.info('Mail with ID %r and Message-Id %r successfully sent', mail.id, mail.message_id)
-                self._postprocess_sent_message(mail_sent=mail_sent)
+                mail._postprocess_sent_message(mail_sent=mail_sent)
             except MemoryError:
                 # prevent catching transient MemoryErrors, bubble up to notify user or abort cron job
                 # instead of marking the mail as failed
@@ -350,7 +350,7 @@ class eq_mail_mail(models.Model):
             except Exception as e:
                 _logger.exception('failed sending mail.mail %s', mail.id)
                 mail.write({'state': 'exception'})
-                self._postprocess_sent_message(mail_sent=False)
+                mail._postprocess_sent_message(mail_sent=False)
                 if raise_exception:
                     if isinstance(e, AssertionError):
                         # get the args of the original error, wrap into a value and throw a MailDeliveryException
