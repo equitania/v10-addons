@@ -19,8 +19,8 @@
 #
 ##############################################################################
 
-import account_invoice
 import document_template
+import account_invoice
 import purchase
 import sale
 import stock_picking
