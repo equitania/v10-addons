@@ -1,5 +1,10 @@
 ## eq_report_pattern 
 
+#### 19.03.2019
+#### Version 1.0.34
+##### FIX
+- Changed order of loading the models, this fixes initial installation errors.
+
 #### 13.03.2019
 #### Version 1.0.33
 ##### ADD
