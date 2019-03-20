@@ -14,16 +14,22 @@
                                     <p id="returnaddress">
                                         <h t-field="doc.company_id.partner_id.name"/>
                                         <span>-</span>
-                                        <h t-field="doc.company_id.partner_id.street"/>
-                                        <h t-if="doc.company_id.partner_id.eq_house_no">
-                                            <h t-field="doc.company_id.partner_id.eq_house_no" />
-                                        </h>
-                                        <span>-</span>
-                                        <h t-field="doc.company_id.partner_id.zip"/>
-                                        <span>
+                                        <span style="white-space:nowrap;">
+                                            <h t-field="doc.company_id.partner_id.street"/>
+                                            <h t-if="doc.company_id.partner_id.eq_house_no">
+                                                <h t-field="doc.company_id.partner_id.eq_house_no" />
+                                            </h>
                                         </span>
-                                        <h t-field="doc.company_id.partner_id.city"/>
-                                        <h t-if="doc.company_id.partner_id.country_id.name != doc.partner_id.country_id.name" t-field="doc.company_id.partner_id.country_id.name"/>
+                                        <span>-</span>
+                                        <span style="white-space:nowrap;">
+                                            <h t-field="doc.company_id.partner_id.zip"/>
+                                            <span>
+                                            </span>
+                                            <h t-field="doc.company_id.partner_id.city"/>
+                                        </span>
+                                        <h t-if="doc.company_id.partner_id.country_id.name != doc.partner_id.country_id.name">
+                                            - <h t-field="doc.company_id.partner_id.country_id.name"/>
+                                        </h>
                                     </p>
                                     <t t-if="doc.partner_id.parent_id">
                                         <t t-if="doc.partner_id.parent_id.company_type == 'company'">

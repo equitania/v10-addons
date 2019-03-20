@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 20.03.2019
+#### Version 1.0.97
+##### IMP
+- Sale Reports: Improve Senders-Address, if its too long
+
 #### 14.03.2019
 #### Version 1.0.96
 ##### IMP
