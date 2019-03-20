@@ -22,13 +22,13 @@
 {
     'name': 'Equitania Lager Optimierungen',
     'license': 'AGPL-3',
-    'version': '1.0.29',
+    'version': '1.0.30',
     'description': """
         Erweiterung für Lager
     """,
     'author': 'Equitania Software GmbH',
     'website': 'www.myodoo.de',
-    'depends': ['base', 'base_setup','delivery', 'stock',],
+    'depends': ['base', 'base_setup','delivery', 'stock','eq_base_report'],
     'category' : 'stock',
     'summary': 'Equitania Lager Erweiterung',
 

@@ -23,16 +23,22 @@
                                 <p id="returnaddress">
                                     <h t-field="o.company_id.partner_id.name"/>
                                     <span>-</span>
-                                    <h t-field="o.company_id.partner_id.street"/>
-                                    <h t-if="o.company_id.partner_id.eq_house_no">
-                                        <h t-field="o.company_id.partner_id.eq_house_no" />
-                                    </h>
-                                    <span>-</span>
-                                    <h t-field="o.company_id.partner_id.zip"/>
-                                    <span>
+                                    <span style="white-space:nowrap;">
+                                        <h t-field="o.company_id.partner_id.street"/>
+                                        <h t-if="o.company_id.partner_id.eq_house_no">
+                                            <h t-field="o.company_id.partner_id.eq_house_no" />
+                                        </h>
                                     </span>
-                                    <h t-field="o.company_id.partner_id.city"/>
-                                    <h t-if="o.company_id.partner_id.country_id.name != o.partner_id.country_id.name" t-field="o.company_id.partner_id.country_id.name"/>
+                                    <span>-</span>
+                                    <span style="white-space:nowrap;">
+                                        <h t-field="o.company_id.partner_id.zip"/>
+                                        <span>
+                                        </span>
+                                        <h t-field="o.company_id.partner_id.city"/>
+                                    </span>
+                                    <h t-if="o.company_id.partner_id.country_id.name != o.partner_id.country_id.name">
+                                        - <h t-field="o.company_id.partner_id.country_id.name"/>
+                                    </h>
                                 </p>
                                 <t t-if="o.partner_id.company_type != 'company'">
                                     <t t-if="o.partner_id.parent_id">

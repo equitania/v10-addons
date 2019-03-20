@@ -1,5 +1,10 @@
 ## Modul eq_stock
 
+#### 20.03.2019
+#### Version 1.0.30
+##### IMP
+- Stock Reports: Improve Senders-Address, if its too long
+
 #### 31.01.2019
 #### Version 1.0.29
 ##### FIX
