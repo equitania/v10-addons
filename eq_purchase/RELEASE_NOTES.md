@@ -1,5 +1,10 @@
 ## Modul eq_purchase
 
+#### 20.03.2019
+#### Version 1.0.44
+##### IMP
+- Purchase Reports: Improve Senders-Address, if its too long
+
 #### 13.03.2019
 #### Version 1.0.43
 ##### CHG
