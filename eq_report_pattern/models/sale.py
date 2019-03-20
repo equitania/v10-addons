@@ -99,6 +99,8 @@ class eq_sale_order_template(models.Model):
                                                          self.order_line)
                 #if (res and 'value' in res and 'order_line' in res['value'] and res['value']['order_line']):
                 if (res):
+                    for sale_order_line in self.order_line:
+                        res.append((4,sale_order_line.id))
                     self.order_line = res
 
         self.eq_header = selected_template.eq_header

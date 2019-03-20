@@ -1,6 +1,11 @@
 ## eq_report_pattern 
 
 #### 19.03.2019
+#### Version 1.0.35
+##### FIX
+- Onchange on document template appends the positions instead of replacing the existing ones.
+
+#### 19.03.2019
 #### Version 1.0.34
 ##### FIX
 - Changed order of loading the models, this fixes initial installation errors.

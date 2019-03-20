@@ -72,6 +72,8 @@ class eq_purchase_order_template(models.Model):
             if self.document_template_id:
                 res = self.change_purchase_template_id(selected_template)
                 if res:
+                    for order_line in self.order_line:
+                        res.append((4, order_line.id))
                     self.order_line = res
 
         self.eq_head_text = selected_template.eq_header
