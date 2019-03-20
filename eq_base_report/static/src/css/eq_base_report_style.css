@@ -123,7 +123,7 @@ div.internalheaderbox div.leftbox {
 	padding-top:0.5cm;
 	margin-bottom:0.6em;
 	display: inline-block;
-	white-space: nowrap;
+	width:9cm;
 }
 
 .leftbox {
@@ -137,12 +137,13 @@ div.internalheaderbox div.leftbox {
 	max-width:45%!important;
 	width:45%!important;
 }
+
 .rightbox table {
 }
 
-div.header .leftbox {
-	margin-left:1.4cm;
-	padding-left:0cm;
+div.header .leftbox {  /* Dieser Style definiert den kopfbereich für Folgeseiten, also Seite 2+ */
+	/*margin-left:1.4cm;
+	padding-left:0cm;*/ /*entfernt, da es in der neuen WKHTML Version 0.12.15 zu unnötigen Abständen führt */
 	margin-top: 0.8cm;
 	float:left;
 }
@@ -152,7 +153,6 @@ table.data > tbody > tr > td:first-child {
 	font-weight:bold;
 	padding-right:0.4cm;
 }
-
 
 .bottomBlock {
 	margin-top: 1em;

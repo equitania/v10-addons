@@ -1,5 +1,11 @@
 ## Modul eq_base_report
 
+#### 20.03.2019
+#### Version 1.0.41
+##### IMP
+- Report sending address now has a limitation in width and breaks into a second line, to still be in the view-window of letters.
+- Report second page, Header on second and following pages will have correct positions
+
 #### 13.03.2019
 #### Version 1.0.40
 ##### CHG
