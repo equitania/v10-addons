@@ -5,7 +5,7 @@
 {
     'name': 'Equitania Ausdrucke Basis',
     'license': 'AGPL-3',
-    'version': '1.0.41',
+    'version': '1.0.42',
     'description': """
         Allgemeine Anpassungen für die Equitania Reports
     """,

@@ -1,6 +1,11 @@
 ## Modul eq_base_report
 
 #### 20.03.2019
+#### Version 1.0.42
+##### IMP
+- Reportstyles: further improvement of shipping address
+
+#### 20.03.2019
 #### Version 1.0.41
 ##### IMP
 - Report sending address now has a limitation in width and breaks into a second line, to still be in the view-window of letters.
