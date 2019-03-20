@@ -1,9 +1,9 @@
 ## Modul eq_account
 
-#### 14.03.2019
+#### 20.03.2019
 #### Version 1.0.75
 ##### IMP
-- Invoice Report: Improving spaces between some elements
+- Invoice Report: Improve Senders-Address, if its too long
 
 #### 14.03.2019
 #### Version 1.0.74
