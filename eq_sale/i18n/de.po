@@ -684,3 +684,8 @@ msgstr "Erledigt"
 #: model:ir.ui.view,arch_db:sale.view_order_form
 msgid "Lock"
 msgstr "Auf erledigt setzen"
+
+#. module: eq_sale
+#: model:ir.ui.view,arch_db:eq_sale.eq_report_saleorder_document
+msgid "<strong>Total Price</strong>"
+msgstr "<strong>Preis</strong>"

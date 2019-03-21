@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 21.03.2019
+#### Version 1.0.98
+##### CHG
+- German Translation for Column "Total Price" added
+
 #### 20.03.2019
 #### Version 1.0.97
 ##### IMP
