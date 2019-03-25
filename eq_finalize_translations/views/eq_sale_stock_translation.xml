@@ -23,7 +23,7 @@
 
                             <field name="src">Incoterms</field>
 
-                            <field name="value">Incoterms</field> <!-- vorher fehlerhafte Übersetzung 'Mininale Menge' -->
+                            <field name="value">Incoterms</field>
 
                 </record>
 
@@ -47,7 +47,66 @@
 
                             <field name="src">Incoterms</field>
 
-                            <field name="value">Incoterms</field> <!-- vorher fehlerhafte Übersetzung 'Mininale Menge' -->
+                            <field name="value">Incoterms</field>
+
+                </record>
+
+        <!--#. module: stock-->
+        <!--#: selection:stock.config.settings,warehouse_and_location_usage_level:0-->
+        <!--msgid "Manage only 1 Warehouse, composed by several stock locations"-->
+        <!--msgstr "Nur 1 Lager aber mehrere Lagerorte verwalten"-->
+
+        <delete model="ir.translation" search="[('src','=', 'Manage only 1 Warehouse, composed by several stock locations'),('name','=','stock.config.settings,warehouse_and_location_usage_level')]"/>
+
+                <record id="eq_stock_config_location_usage_level_several_stock_location" model="ir.translation">
+
+                            <field name="name">stock.config.settings,warehouse_and_location_usage_level</field>
+
+                            <field name="type">selection</field>
+
+                            <field name="res_id">0</field>
+
+                            <field name="module">stock</field>
+
+                            <field name="state">translated</field>
+
+                            <field name="lang">de_DE</field> <!-- The code of the language you want to translate to -->
+
+                            <field name="src">Manage only 1 Warehouse, composed by several stock locations</field>
+
+                            <field name="value">Nur 1 Lager aber mehrere Lagerplätze verwalten</field>
+
+                </record>
+
+        <!--#. module: stock-->
+        <!--#: selection:stock.config.settings,warehouse_and_location_usage_level:0-->
+        <!--msgid ""-->
+        <!--"Manage several Warehouses, each one composed by several stock locations"-->
+        <!--msgstr ""-->
+        <!--"Verwalten Sie mehrere Lagerhäuser, die jeweils aus mehreren Lagerorten "-->
+        <!--"zusammengesetzt sind"-->
+        <!---->
+
+
+        <delete model="ir.translation" search="[('src','=', 'Manage several Warehouses, each one composed by several stock locations'),('name','=','stock.config.settings,warehouse_and_location_usage_level')]"/>
+
+                <record id="eq_stock_config_location_usage_level_several_warehouses" model="ir.translation">
+
+                            <field name="name">stock.config.settings,warehouse_and_location_usage_level</field>
+
+                            <field name="type">selection</field>
+
+                            <field name="res_id">0</field>
+
+                            <field name="module">stock</field>
+
+                            <field name="state">translated</field>
+
+                            <field name="lang">de_DE</field> <!-- The code of the language you want to translate to -->
+
+                            <field name="src">Manage several Warehouses, each one composed by several stock locations</field>
+
+                            <field name="value">Verwalten Sie mehrere Lagerhäuser, die jeweils aus mehreren Lagerplätze zusammengesetzt sind</field>
 
                 </record>
 
