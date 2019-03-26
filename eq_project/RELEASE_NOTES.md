@@ -1,5 +1,10 @@
 ## Modul eq_project
 
+#### 26.03.2019
+#### Version 1.0.69
+##### FIX
+- remove "s" after user_id field
+
 #### 05.03.2019
 #### Version 1.0.68
 ##### CHG
