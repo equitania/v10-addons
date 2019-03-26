@@ -1,5 +1,10 @@
 ## Modul eq_employee_documents
 
+#### 26.03.2018
+#### Version 1.0.7
+##### CHG
+- Clean up code
+
 #### 24.08.2018
 #### Version 1.0.6
 ##### ADD
