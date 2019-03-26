@@ -1,5 +1,10 @@
 ## Modul eq_init_reports
 
+#### 26.03.2019
+#### Version 1.0.6
+##### CHG
+- Clean up code
+
 #### 06.11.2018
 #### Version 1.0.5
 ##### FIX
