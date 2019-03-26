@@ -1,41 +1,14 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    Odoo Addon, Open Source Management Solution
-#    Copyright (C) 2014-now Equitania Software GmbH(<http://www.equitania.de>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# Copyright Equitania Software GmbH - Germany - https://www.equitania.de
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 import logging
-from odoo import SUPERUSER_ID
-import time
-from imaplib import IMAP4
-from imaplib import IMAP4_SSL
-from poplib import POP3
-from poplib import POP3_SSL
-from odoo.tools import frozendict
 try:
     import cStringIO as StringIO
 except ImportError:
     import StringIO
 
-import zipfile
 import base64
-from odoo import addons
-
 from odoo.addons.base.ir.ir_mail_server import MailDeliveryException
 from odoo import fields, models, exceptions
 from odoo import tools, api
@@ -47,8 +20,9 @@ class eq_fetchmail_server(models.Model):
     _inherit = "fetchmail.server"
 
     user_id = fields.Many2one('res.users', string="Owner")
-    
-    #Copy and Pasted form original fetchmail.server and removed the remove E-Mail for pop mail servers.
+
+    #Copy and Pasted form original fetchmail.server
+    # and removed the remove E-Mail for pop mail servers.
     @api.multi
     def fetch_mail(self):
         """ WARNING: meant for cron usage only - will commit() after each email! """
@@ -143,7 +117,7 @@ class eq_ir_mail_server(models.Model):
     _inherit = "ir.mail_server"
 
     user_id = fields.Many2one('res.users', string="Owner")
-        
+
 class eq_mail_mail(models.Model):
     _inherit = 'mail.mail'
 
@@ -185,7 +159,7 @@ class eq_mail_mail(models.Model):
         ir_mail_server = self.env['ir.mail_server']
         ir_values = self.env['ir.values']
         default_mail_server = ir_values.get_default('mail.mail', 'mail_server_id')
-        existing_ir_mail_server = self.env['ir.mail_server'].sudo().search([('id','=',default_mail_server)])
+        existing_ir_mail_server = self.env['ir.mail_server'].sudo().search([('id', '=', default_mail_server)])
         if len(existing_ir_mail_server) > 0:
             default_mail_address = existing_ir_mail_server.smtp_user
         else:
@@ -439,9 +413,9 @@ class eq_mail_password_change(models.TransientModel):
         #ir.mail_server Dataset
         ir_mail_server = ir_mail_server_id
         if len(ir_mail_server_id) == 0 and len(fetchmail_server_id) == 0:
-            raise exceptions.UserError(_('There is no incoming and outgoing mailserver for this user./nPlease contact an administrator.' ))
+            raise exceptions.UserError(_('There is no incoming and outgoing mailserver for this user./nPlease contact an administrator.'))
         elif len(ir_mail_server_id) == 0:
-            raise exceptions.UserError(_('There is no outgoing mailserver for this user./nPlease contact an administrator.' ))
+            raise exceptions.UserError(_('There is no outgoing mailserver for this user./nPlease contact an administrator.'))
         else:
             if password.eq_old_password != ir_mail_server.smtp_pass:
                 raise exceptions.UserError(_('The old password does not match.' ))
@@ -452,14 +426,14 @@ class eq_mail_password_change(models.TransientModel):
                     #Set password for ir_mail_server
                     if ir_mail_server:
                         ir_mail_server_values = {
-                                  'smtp_pass': password.eq_password
-                                  }
+                            'smtp_pass': password.eq_password
+                            }
                         ir_mail_server.write(ir_mail_server_values)
                     #Set password for fetchmail_server
                     if fetchmail_server_id:
                         if len(fetchmail_server_id) != 0:
                             fetchmail_server_values = {
-                                      'password': password.eq_password,
-                                      }
+                                'password': password.eq_password,
+                                }
                             fetchmail_server_id.write(fetchmail_server_values)
                     return True

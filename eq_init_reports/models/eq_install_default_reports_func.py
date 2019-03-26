@@ -1,27 +1,11 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    Odoo Addon, Open Source Management Solution
-#    Copyright (C) 2014-now Equitania Software GmbH(<http://www.equitania.de>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
-from odoo import models, fields, api, _
+# Copyright Equitania Software GmbH - Germany - https://www.equitania.de
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+
+from odoo import models
 
 
-class eq_install_default_reports_func(models.Model):
+class EqInstallDefaultReportsFunc(models.Model):
     """
     Our small helper that will set defined reports to FastReports reports with all default data
     """
@@ -44,17 +28,29 @@ class eq_install_default_reports_func(models.Model):
         """
         attachment = print_report_name = ""
         if report_name == "Invoices":                       # Rechnung
-            attachment = print_report_name = "(object.state in ('open','paid')) and ('Rechnung-'+(object.number or '').replace('/','')+'.pdf') or (object.state in ('draft')) and ('Rechnungsentwurf'+(object.number or '').replace('/','')+'.pdf')"
+            attachment = print_report_name \
+                = "(object.state in ('open','paid')) " \
+                  "and ('Rechnung-'+(object.number or '').replace('/','')+'.pdf') " \
+                  "or (object.state in ('draft')) " \
+                  "and ('Rechnungsentwurf'+(object.number or '').replace('/','')+'.pdf')"
         elif report_name == "Request for Quotation":        # Angebotsanfrage
-            attachment = print_report_name = "('Einkaufsanfrage-' + (object.name or '').replace('/','')+'.pdf')"
+            attachment = print_report_name \
+                = "('Einkaufsanfrage-' + (object.name or '').replace('/','')+'.pdf')"
         elif report_name == "Purchase Order":               # Beschaffungsauftrag
-            attachment = print_report_name = "('Einkauf-' + (object.name or '').replace('/','')+'.pdf')"
+            attachment = print_report_name \
+                = "('Einkauf-' + (object.name or '').replace('/','')+'.pdf')"
         elif report_name == "Quotation / Order":            # Angebot
-            attachment = print_report_name = "(object.state in ('draft','sent')) and ('Angebot-' + (object.name or '').replace('/','')+'.pdf') or (object.state in ('sale','done')) and ('Auftrag-' + (object.name or '').replace('/','')+'.pdf')"
+            attachment = print_report_name \
+                = "(object.state in ('draft','sent')) " \
+                  "and ('Angebot-' + (object.name or '').replace('/','')+'.pdf') " \
+                  "or (object.state in ('sale','done')) " \
+                  "and ('Auftrag-' + (object.name or '').replace('/','')+'.pdf')"
         elif report_name == "Delivery Slip":                # Lieferschein (Lager)
-            attachment = print_report_name = "('Lieferschein-' + (object.name or '').replace('/','')+'.pdf')"
+            attachment = print_report_name \
+                = "('Lieferschein-' + (object.name or '').replace('/','')+'.pdf')"
         elif report_name == "Picking Operations":           # Packvorgänge (Lager)
-            attachment = print_report_name = "('Packschein-' + (object.name or '').replace('/','')+'.pdf')"
+            attachment = print_report_name\
+                = "('Packschein-' + (object.name or '').replace('/','')+'.pdf')"
 
         return attachment, print_report_name
 

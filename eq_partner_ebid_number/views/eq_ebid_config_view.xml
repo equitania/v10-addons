@@ -1,5 +1,5 @@
-<?xml version="1.0"?>
-<openerp>
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
 	<data>
 		<record id="eq_ebid_config_settings" model="ir.ui.view">
             <field name="name">ebid settings</field>
@@ -86,4 +86,4 @@
             />
         
 	</data>
-</openerp>
+</odoo>

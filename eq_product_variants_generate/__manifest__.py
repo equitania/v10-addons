@@ -1,20 +1,17 @@
 # -*- coding: utf-8 -*-
 # Copyright Equitania Software GmbH - Germany - https://www.equitania.de
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-
 {
-    'name': "Equitania Translation Modul",
+    'name': "eq_product_variants_generate",
     'license': 'AGPL-3',
-    'version': '1.0.2',
-    'category': 'sales',
-    'description': """ Extension for the translation file""",
+    'version': '1.0.0',
+    'category': 'product',
+    'description': """Extensions for product""",
     'author': 'Equitania Software GmbH',
-    'summary': ' Change the standard translations',
+    'summary': 'Changed logic for an import of variants',
     'website': 'www.myodoo.de',
-    "depends" : ['base',  'sale_stock'],
+    "depends" : ['base', 'base_setup', 'product','sale'],
     'data': [
-
-            'views/eq_sale_stock_translation.xml',
              ],
     "active": False,
     "installable": True

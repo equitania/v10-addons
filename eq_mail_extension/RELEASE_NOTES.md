@@ -1,5 +1,10 @@
 ## Modul eq_mail_extension
 
+#### 26.03.2019
+#### Version 1.0.48
+##### CHG
+- Clean up code
+
 #### 19.03.2019
 #### Version 1.0.47
 ##### FIX

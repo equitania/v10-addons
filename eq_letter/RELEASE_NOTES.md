@@ -1,5 +1,10 @@
 ## Modul eq_letter
 
+#### 26.03.2019
+#### Version 1.0.3
+##### CHG
+- Clean up code
+
 #### 16.01.2019
 #### Version 1.0.2
 ##### CHG
