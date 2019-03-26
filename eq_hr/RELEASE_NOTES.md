@@ -1,5 +1,10 @@
 ## Modul eq_hr
 
+#### 26.03.2019
+#### Version 1.0.11
+##### CHG
+- Clean up code
+
 #### 20.06.2018
 #### Version 1.0.10
 ##### CHG
