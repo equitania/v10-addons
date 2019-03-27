@@ -1,5 +1,10 @@
 ## Modul eq_pricelist
 
+#### 27.03.2019
+#### Version 1.0.7
+##### CHG
+- Clean up code
+
 #### 21.02.2019
 #### Version 1.0.6
 ##### ADD
