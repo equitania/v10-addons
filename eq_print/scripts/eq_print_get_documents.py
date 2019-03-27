@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-# Copyright Equitania Software GmbH - Germany - https://www.equitania.de
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# Copyright 2014-now Equitania Software GmbH - Pforzheim - Germany
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 ##############################################################################
 # Dieses Skript gehört zum Modul eq_instances
 # https://equitania.atlassian.net/wiki/x/XQ9aAw
