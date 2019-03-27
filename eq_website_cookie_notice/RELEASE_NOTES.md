@@ -1,5 +1,10 @@
 ## Modul eq_website_cookie_notice
 
+### 27.03.2019
+#### Version 1.0.9
+##### ADD
+- add rst File & en.png 
+
 ### 23.05.2018
 #### Version 1.0.8
 ##### CHG
