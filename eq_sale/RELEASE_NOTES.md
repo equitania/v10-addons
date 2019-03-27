@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 27.03.2019
+#### Version 1.0.99
+##### CHG
+- Clean up code
+
 #### 21.03.2019
 #### Version 1.0.98
 ##### CHG
