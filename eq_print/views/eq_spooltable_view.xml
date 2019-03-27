@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
 	<data>
 	
 		<!-- Search View -->
@@ -93,4 +93,4 @@
 		<menuitem id="menu_spooltable_config" name="Spooltable"
 			parent="menu_spooltable" action="eq_spooltable_action" sequence="10" />
 	</data>
-</openerp>
+</odoo>

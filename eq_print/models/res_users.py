@@ -1,28 +1,17 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    Odoo Addon, Open Source Management Solution
-#    Copyright (C) 2014-now Equitania Software GmbH(<http://www.equitania.de>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# Copyright Equitania Software GmbH - Germany - https://www.equitania.de
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, fields, api, _
+from odoo import models, fields
 
-class eq_printer_res_users(models.Model):
+class EqResUsers(models.Model):
+    """EqResUsers class inherited from ResUsers class"""
     _inherit = 'res.users'
-    
-    eq_printer_ids = fields.Many2many(string="Possible Printers", comodel_name="eq.printer", relation="eq_printer_users_rel", column1="user_id", column2="eq_printer_id")
+
+    eq_printer_ids = fields.Many2many(
+        string="Possible Printers",
+        comodel_name="eq.printer",
+        relation="eq_printer_users_rel",
+        column1="user_id",
+        column2="eq_printer_id")
     eq_default_printer_id = fields.Many2one(string="Default Printer", comodel_name="eq.printer")
