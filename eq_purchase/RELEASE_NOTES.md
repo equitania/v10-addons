@@ -1,5 +1,10 @@
 ## Modul eq_purchase
 
+#### 27.03.2019
+#### Version 1.0.45
+##### CHG
+- Clean up code
+
 #### 20.03.2019
 #### Version 1.0.44
 ##### IMP

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data noupdate="1">
         <record forcecreate="True" id="decimal_qty_purchase" model="decimal.precision">
             <field name="name">Purchase Unit of Measure [eq_purchase]</field>
@@ -18,4 +18,4 @@
             <field name="digits">2</field>
         </record>
     </data>
-</openerp>
+</odoo>
