@@ -1,5 +1,10 @@
 ## Modul eq_setting_unbrand
 
+### 27.03.2019
+#### Version 1.0.7
+##### CHG
+- Clean up code
+
 ### 10.04.2018
 #### Version 1.0.6
 ##### DEL

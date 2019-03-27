@@ -1,4 +1,4 @@
-<openerp>
+<odoo>
     <data>
 
 <!-- Wird derzeit nicht benötigt und deshalb auskommentiert -->
@@ -10,4 +10,4 @@
 
 
     </data>
-</openerp>
+</odoo>
