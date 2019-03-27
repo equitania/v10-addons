@@ -1,5 +1,10 @@
 ## Modul eq_sale_stock_block
 
+#### 27.03.2019
+#### Version 1.5
+##### CHG
+- Clean up code
+
 #### 07.01.2019
 #### Version 1.4
 ##### CHG
