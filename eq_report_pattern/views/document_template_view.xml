@@ -19,13 +19,13 @@
 							<field name="eq_quote_line">
 								<tree string="Sales Quote Template Lines" editable="bottom">
 									<field name="sequence" widget="handle"/>
-									<field name="product_id"/>
-									<field name="layout_category_id"/>
-									<field name="name"/>
-									<field name="product_uom_qty"/>
-									<field name="product_uom_id"/>
-									<field name="discount"/>
-									<field name="price_unit"/>
+									<field name="product_id" string="Product"/>
+									<field name="layout_category_id" string="Section"/>
+									<field name="name" string="Description"/>
+									<field name="product_uom_qty" string="Quantity"/>
+									<field name="product_uom_id" string="Unit of Measure"/>
+									<field name="discount" string="Discount"/>
+									<field name="price_unit" string="Price"/>
 									<field name="website_description" invisible="1"/>
 								</tree>
 							</field>

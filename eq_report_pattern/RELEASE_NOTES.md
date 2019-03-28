@@ -1,5 +1,11 @@
 ## eq_report_pattern 
 
+#### 28.03.2019
+#### Version 1.0.36
+##### FIX
+- Section is taken from the document template.
+- Translation for positions in the template.
+
 #### 19.03.2019
 #### Version 1.0.35
 ##### FIX

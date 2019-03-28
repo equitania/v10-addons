@@ -189,3 +189,38 @@ msgstr "eq.document.template"
 #: model:ir.model,name:eq_report_pattern.model_eq_sale_quote_line
 msgid "eq.sale.quote.line"
 msgstr "eq.sale.quote.line"
+
+#. module: eq_report_pattern
+#: model:ir.ui.view,arch_db:eq_report_pattern.eq_document_template_form_view
+msgid "Product"
+msgstr "Produkt"
+
+#. module: eq_report_pattern
+#: model:ir.ui.view,arch_db:eq_report_pattern.eq_document_template_form_view
+msgid "Section"
+msgstr "Sektion"
+
+#. module: eq_report_pattern
+#: model:ir.ui.view,arch_db:eq_report_pattern.eq_document_template_form_view
+msgid "Description"
+msgstr "Beschreibung"
+
+#. module: eq_report_pattern
+#: model:ir.ui.view,arch_db:eq_report_pattern.eq_document_template_form_view
+msgid "Quantity"
+msgstr "Menge"
+
+#. module: eq_report_pattern
+#: model:ir.ui.view,arch_db:eq_report_pattern.eq_document_template_form_view
+msgid "Unit of Measure"
+msgstr "Mengeneinheit"
+
+#. module: eq_report_pattern
+#: model:ir.ui.view,arch_db:eq_report_pattern.eq_document_template_form_view
+msgid "Discount"
+msgstr "Rabatt"
+
+#. module: eq_report_pattern
+#: model:ir.ui.view,arch_db:eq_report_pattern.eq_document_template_form_view
+msgid "Price"
+msgstr "Preis"
