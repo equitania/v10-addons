@@ -4,7 +4,7 @@
 
 
 .. image:: https://rm.ownerp.io/flags/de.png
-    :width: 75
+    :width: 60
 
 Modul Cookie Notiz
 ===================
@@ -30,9 +30,8 @@ Verwendung
 
 Auf Websites.
 
-.. image:: https://rm.ownerp.io/flags/en.png /*TODO*/
-.. figure:: en.png
-    :width: 75
+.. image:: https://rm.ownerp.io/flags/en.png
+    :width: 60
 
 Module Cookie Notiz
 ===================
