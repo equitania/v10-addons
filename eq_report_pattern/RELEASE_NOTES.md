@@ -1,5 +1,10 @@
 ## eq_report_pattern 
 
+#### 29.03.2019
+#### Version 1.0.37
+##### FIX
+- German Translation 
+
 #### 28.03.2019
 #### Version 1.0.36
 ##### FIX

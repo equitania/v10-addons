@@ -224,3 +224,8 @@ msgstr "Rabatt"
 #: model:ir.ui.view,arch_db:eq_report_pattern.eq_document_template_form_view
 msgid "Price"
 msgstr "Preis"
+
+#. module: eq_report_pattern
+#: model:ir.model.fields,field_description:eq_report_pattern.field_eq_document_template_eq_pricelist_id
+msgid "Pricelist"
+msgstr "Preisliste"
