@@ -6,3 +6,7 @@ a.o_eq_help_client_button {
   font-size: 17px!important;
   padding: 1px 7px!important;
 }
+
+.eq_only_help_client .o_cp_switch_buttons {
+  display: none;
+}

@@ -1,5 +1,10 @@
 ## Modul eq_help_client
 
+#### 01.04.2019
+#### Version 1.0.5
+##### CHG
+- changed functionality to be able to dispaly help icon and link also on config pages
+
 #### 08.03.2019
 #### Version 1.0.1
 ##### CHG

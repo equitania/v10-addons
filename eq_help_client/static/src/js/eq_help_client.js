@@ -1,5 +1,6 @@
 odoo.define('eq_help_client.HelpClient', function (require) {
     "use strict";
+    var eq_hide_parts = false;
 
     var core = require('web.core');
     var QWeb = core.qweb;
@@ -10,19 +11,54 @@ odoo.define('eq_help_client.HelpClient', function (require) {
     session.help_params = false;
 
     ControlPanel.include({
+        _toggle_visibility: function(visible) {
+            if (eq_hide_parts){
+                // to be able to use help button really on EACH backend page, just set visibility always to TRUE
+                $(".breadcrumb").hide();
+                $(".o_cp_searchview").hide();
+                $(".o_list_buttons").hide();
+                $(".o_cp_buttons").hide();
+                $(".o_cp_right").addClass("eq_only_help_client");
+                visible = true;
+            }
+            else{
+                $(".breadcrumb").show();
+                $(".o_cp_searchview").show();
+                $(".o_list_buttons").show();
+                $(".o_cp_buttons").show()
+                $(".o_cp_right").removeClass("eq_only_help_client");
+            }
+
+            this.do_toggle(visible);
+            if (!visible && !this.$content) {
+                this.$content = this.$el.contents().detach();
+            } else if (this.$content) {
+                this.$content.appendTo(this.$el);
+                this.$content = null;
+            }
+        },
+
         start: function(){
             this._super.apply(this, arguments);
             this._toggle_visibility(true);
             this.nodes = _.extend(
                 this.nodes,
                 {$eq_help_client_buttons: this.$('.o_eq_help_client_buttons')});
-            this._toggle_visibility(false);
+            //this._toggle_visibility(false);
         },
     });
 
     ViewManager.include({
 
         init: function(parent, dataset, views, flags, options) {
+            // are we dealing with config pages
+            if (dataset.model.includes('config') || dataset.model.includes('board.board')){
+                eq_hide_parts = true;   // yes - so hide parts
+            }
+            else{
+                eq_hide_parts = false;  // no
+            }
+
             var self = this;
             this._super(parent, dataset, views, flags, options);
             if (!session.help_params) {
