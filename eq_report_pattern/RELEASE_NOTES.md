@@ -1,5 +1,10 @@
 ## eq_report_pattern 
 
+#### 02.04.2019
+#### Version 1.0.38
+##### CHG
+- Document template is no longer readonly,but changes only header and footer if not a draft.Affected are Sale and Purchase orders.
+
 #### 29.03.2019
 #### Version 1.0.37
 ##### FIX

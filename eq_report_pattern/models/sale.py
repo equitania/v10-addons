@@ -17,7 +17,7 @@ class eq_sale_order_template(models.Model):
         if eq_default:
             return eq_default
    
-    document_template_id = fields.Many2one(comodel_name='eq.document.template', string='Document Template', readonly=True, states={'draft': [('readonly', False)], 'sent': [('readonly', False)]},domain="['|',('eq_model', '=', False),('eq_model','=','sale.order')]}",default=_get_default_template)
+    document_template_id = fields.Many2one(comodel_name='eq.document.template', string='Document Template',domain="['|',('eq_model', '=', False),('eq_model','=','sale.order')]}",default=_get_default_template)
 
     # Automatischen Test anlegen
     @api.model
@@ -63,30 +63,22 @@ class eq_sale_order_template(models.Model):
 
     @api.onchange('document_template_id')
     def onchange_document_template_id(self):
-
-
         selected_template = self.document_template_id
-        if (self.partner_id and self.partner_id.lang and self.document_template_id):
+        if self.partner_id and self.partner_id.lang and self.document_template_id:
             selected_template = self.document_template_id.with_context(lang=self.partner_id.lang)
-
-        if (selected_template):
+        if selected_template:
             self.eq_head_text = selected_template.eq_header
             self.note = selected_template.eq_footer
-            self.pricelist_id = selected_template.eq_pricelist_id
             partner_id = False
-            if (self.partner_id):
+            if self.partner_id:
                 partner_id = self.partner_id.id
-            if (self.document_template_id):
-                res = self.change_template_id(selected_template, partner_id, self.fiscal_position_id,
-                                                         self.order_line)
-                #if (res and 'value' in res and 'order_line' in res['value'] and res['value']['order_line']):
-                if (res):
+            if self.state == "draft":
+                self.pricelist_id = selected_template.eq_pricelist_id
+                res = self.change_template_id(selected_template, partner_id, self.fiscal_position_id,self.order_line)
+                if res:
                     for sale_order_line in self.order_line:
                         res.append((4,sale_order_line.id))
                     self.order_line = res
-
-        self.eq_header = selected_template.eq_header
-        self.note = selected_template.eq_footer
 
 
     # Automatischen Test anlegen
