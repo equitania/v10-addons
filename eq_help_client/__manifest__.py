@@ -19,6 +19,7 @@
     'data': [
         'data/parameters.xml',
         'views/assets.xml',
+        'views/eq_help_client_frontend.xml',
     ],
     'qweb': [
         'static/src/xml/eq_help_client.xml',

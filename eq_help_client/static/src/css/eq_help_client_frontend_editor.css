@@ -1,0 +1,6 @@
+.o_planner_systray { /* This will hide the web_planner progress bar in website */
+  display:none!important;
+}
+li.o_eq_helpclient_button_websiteeditor a {
+  font-size:16px!important;
+}

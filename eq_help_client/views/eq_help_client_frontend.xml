@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="user_navbar" inherit_id="website.user_navbar">
+        <xpath expr="//li[@class='o_mobile_preview']" position="before">
+            <li class="o_eq_helpclient_button_websiteeditor">
+                <a href="#"><span title="Hilfe" class="fa fa-question-circle o_eq_help_client_button"/></a>
+            </li>
+        </xpath>
+    </template>
+
+</odoo>
