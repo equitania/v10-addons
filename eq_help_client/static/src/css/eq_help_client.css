@@ -10,3 +10,7 @@ a.o_eq_help_client_button {
 .eq_only_help_client .o_cp_switch_buttons {
   display: none;
 }
+
+.o_planner_systray {
+  display:none!important;
+}

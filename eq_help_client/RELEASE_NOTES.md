@@ -1,5 +1,11 @@
 ## Modul eq_help_client
 
+#### 02.04.2019
+#### Version 1.0.6
+##### ADD
+- added new functionality to be able to show help icon on frontend pages and use redirect to our url_relay
+- deactivated progress bar
+
 #### 01.04.2019
 #### Version 1.0.5
 ##### CHG
