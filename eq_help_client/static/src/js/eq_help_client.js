@@ -1,6 +1,7 @@
 odoo.define('eq_help_client.HelpClient', function (require) {
     "use strict";
     var eq_hide_parts = false;
+    var eq_show_left_div = false
 
     var core = require('web.core');
     var QWeb = core.qweb;
@@ -16,8 +17,16 @@ odoo.define('eq_help_client.HelpClient', function (require) {
                 // to be able to use help button really on EACH backend page, just set visibility always to TRUE
                 $(".breadcrumb").hide();
                 $(".o_cp_searchview").hide();
-                $(".o_list_buttons").hide();
-                $(".o_cp_buttons").hide();
+
+                if (eq_show_left_div){                  // extra logic for cloud
+                    $(".o_list_buttons").show();
+                    $(".o_cp_buttons").show();
+                }
+                else{
+                 $(".o_list_buttons").hide();
+                 $(".o_cp_buttons").hide();
+                }
+
                 $(".o_cp_right").addClass("eq_only_help_client");
                 visible = true;
             }
@@ -49,11 +58,15 @@ odoo.define('eq_help_client.HelpClient', function (require) {
     });
 
     ViewManager.include({
-
         init: function(parent, dataset, views, flags, options) {
             // are we dealing with config pages
-            if (dataset.model.includes('config') || dataset.model.includes('board.board')){
+            if (dataset.model.includes('config') || dataset.model.includes('board.board') ||
+                dataset.model.includes('eq.cloud.settings')){
                 eq_hide_parts = true;   // yes - so hide parts
+                eq_show_left_div = false;
+                if (dataset.model.includes('eq_cloud_base_config_folders')){
+                    eq_show_left_div = true;
+                }
             }
             else{
                 eq_hide_parts = false;  // no

@@ -1,5 +1,10 @@
 ## Modul eq_help_client
 
+#### 03.04.2019
+#### Version 1.0.7
+##### ADD
+- added missing part for eq_cloud settings
+
 #### 02.04.2019
 #### Version 1.0.6
 ##### ADD
