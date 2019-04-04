@@ -1,5 +1,10 @@
 ## Modul eq_sale
 
+#### 04.04.2019
+#### Version 1.0.100
+##### IMP
+- Sale Report: Improving spaces, where sometimes an empty last page would be added, will now be 95% less often
+
 #### 27.03.2019
 #### Version 1.0.99
 ##### CHG

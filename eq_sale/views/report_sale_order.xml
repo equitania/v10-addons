@@ -390,7 +390,7 @@
                                                             <span t-field="l.product_id.name"/>
                                                         </strong>
                                                         <br/>
-                                                        <div style="width:13cm; margin-right:-13cm; " class="table-description">
+                                                        <div style="width:16cm; margin-right:-16cm; " class="table-description">
                                                             <t t-if="l.name and l.name != ' '">
                                                                 <br/><span t-field="l.name"/>
                                                             </t>
@@ -529,7 +529,7 @@
                                 </div>
 
                                 <div class="col-xs-12"
-                                     style="margin-top:1em; margin-bottom:2em; margin-left:0px;">
+                                     style="margin-top:1em; margin-bottom:0em; margin-left:0px;">
                                     <table style="width:auto!important; ">
                                         <tbody>
                                             <!--<tr t-if="doc.note">
@@ -584,10 +584,10 @@
                                             </tr>
                                             <tr
                                                     t-if="doc.partner_invoice_id != doc.partner_id and doc.partner_invoice_id != False" style="page-break-inside:avoid !important;">
-                                                <td style="padding-right:0.5cm; font-weight:bold;padding-top:0.5cm;" valign="top">
+                                                <td style="line-height:1.4; padding-right:0.5cm; font-weight:bold;padding-top:0.5cm; padding-bottom:0px; margin-bottom:0px;" valign="top">
                                                     <strong>Invoice address:</strong>
                                                 </td>
-                                                <td style="padding-top:0.5cm;">
+                                                <td style="line-height:1.4; padding-top:0.5cm; margin-bottom:0px; padding-bottom:0px;">
                                                     <div>
                                                         <!-- falls es einen übergeordneten Partner gibt, dann dessen Namen ausgeben -->
                                                         <t t-if="doc.partner_invoice_id.parent_id">
@@ -626,10 +626,10 @@
                                                 </td>
                                             </tr>
                                             <tr t-if="doc.partner_shipping_id != doc.partner_id and doc.partner_shipping_id != False" style="page-break-inside:avoid !important;">
-                                                <td style="padding-right:0.5cm; font-weight:bold;padding-top:0.5cm;" valign="top">
+                                                <td style="line-height:1.4; padding-right:0.5cm;font-weight:bold; padding-top:0.5cm;" valign="top">
                                                     Shipping address:
                                                 </td>
-                                                <td style="padding-top:0.5cm;">
+                                                <td style="line-height:1.4; padding-top:0.5cm;">
                                                     <div>
                                                         <!-- falls es einen übergeordneten Partner gibt, dann dessen Namen ausgeben -->
                                                         <t t-if="doc.partner_shipping_id.parent_id">
@@ -666,7 +666,9 @@
                                                                 <h t-field="doc.partner_shipping_id.eq_citypart" />
                                                             </h>
                                                         </h>
-                                                        <div t-field="doc.partner_shipping_id.country_id.name"/>
+                                                        <t t-if="doc.partner_shipping_id.country_id.name">
+                                                        <br/><span t-field="doc.partner_shipping_id.country_id.name"/>
+                                                        </t>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -675,7 +677,7 @@
                                 </div>
                             </div>
                             <div id="informations" style="display:none;"></div>
-                            <p id="fiscal_position_remark"></p>
+                            <p id="fiscal_position_remark" style="margin:0px;"></p>
                             <div name="payment_term"></div>
                             <div class="oe_structure"/>
                         </div>
