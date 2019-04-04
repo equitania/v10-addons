@@ -1,5 +1,10 @@
 ## Modul eq_help_client
 
+#### 04.04.2019
+#### Version 1.0.8
+##### ADD
+- added small extra logic for system parameters
+
 #### 03.04.2019
 #### Version 1.0.7
 ##### ADD

@@ -64,7 +64,8 @@ odoo.define('eq_help_client.HelpClient', function (require) {
                 dataset.model.includes('eq.cloud.settings')){
                 eq_hide_parts = true;   // yes - so hide parts
                 eq_show_left_div = false;
-                if (dataset.model.includes('eq_cloud_base_config_folders')){
+                if (dataset.model.includes('eq_cloud_base_config_folders')
+                    || dataset.model.includes('ir.config_parameter')){
                     eq_show_left_div = true;
                 }
             }
