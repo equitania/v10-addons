@@ -516,7 +516,7 @@
                                         <span t-field="l.product_id.name"/>
                                     </strong>
                                     <br/>
-                                    <div style="width:13cm; margin-right:-13cm; " class="table-description-invoice">
+                                    <div style="width:16cm; margin-right:-16cm;" class="table-description-invoice" >
                                         <t t-if="l.name and l.name != ' '">
                                             <br/><span t-field="l.name"/>
                                         </t>
@@ -643,7 +643,7 @@
 
                             <div t-if="o.html_text_is_set(o.comment)"  class="eq_footertext" style="width:100%;float:left; display:block;page-break-inside:avoid !important;" >
                                 <div class="col-xs-12">
-                                    <p t-field="o.comment" style="margin-bottom:3em;"/>
+                                    <p t-field="o.comment"/>
                                 </div>
                             </div>
 

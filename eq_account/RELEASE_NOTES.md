@@ -1,5 +1,10 @@
 ## Modul eq_account
 
+#### 09.04.2019
+#### Version 1.0.76
+##### IMP
+- Invoice Report: improving spaces
+
 #### 20.03.2019
 #### Version 1.0.75
 ##### IMP
