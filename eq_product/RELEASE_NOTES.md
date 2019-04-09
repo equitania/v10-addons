@@ -1,5 +1,10 @@
 ## Modul eq_product
 
+#### 09.04.2019
+#### Version 1.0.28
+##### ADD
+- add link to product.template in product.product
+
 #### 04.06.2018
 #### Version 1.0.27
 ##### FIX
