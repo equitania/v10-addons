@@ -26,8 +26,9 @@ class EqStockMove(models.Model):
                 ('picking_type_id', '=', move.picking_type_id.id),
                 ('printed', '=', False),
                 ('state', 'in', ['draft', 'confirmed', 'waiting', 'partially_available', 'assigned'])])
-            
-            if picking:
+
+            # Create separate stock picking only if picking_policy is not 'one'
+            if picking and move.sale_line_id.order_id.picking_policy != 'one':
                 # It is necessary because min date is 'datetime' and eq delivery date is 'date'
                 for rec in picking:
                     min_date = datetime.strptime(rec.min_date, '%Y-%m-%d %H:%M:%S').date()
@@ -65,7 +66,13 @@ class EqStockMove(models.Model):
         # Overrided base _get_new_picking_values function
         """ Prepares a new picking for this move as it could not be assigned to
         another picking. This method is designed to be inherited. """
-        
+
+        # Set min_date only if picking_policy is not 'one', else use the standard date setting
+        if self.sale_line_id.order_id.picking_policy != 'one':
+            min_date = self.sale_line_id.eq_delivery_date
+        else:
+            min_date = False
+
         # Added min_date, set from eq_delivery_date of the corresponding sale_line_id
         return {
             'origin': self.origin,
@@ -75,5 +82,5 @@ class EqStockMove(models.Model):
             'picking_type_id': self.picking_type_id.id,
             'location_id': self.location_id.id,
             'location_dest_id': self.location_dest_id.id,
-            'min_date': self.sale_line_id.eq_delivery_date
+            'min_date': min_date
         }

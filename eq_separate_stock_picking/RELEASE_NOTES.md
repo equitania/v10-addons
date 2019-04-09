@@ -1,6 +1,11 @@
 ## Modul eq_separate_stock_picking
 
-#### 07.01.2018
+#### 09.04.2019
+#### Version 1.0.5
+##### FIX
+- If picking_policy is set to 'one' use Odoo standard functionality
+
+#### 07.01.2019
 #### Version 1.0.4
 ##### FIX
 - Ticket 9534: Fix singleton Fehler zu stock_move
