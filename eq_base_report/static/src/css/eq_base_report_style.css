@@ -191,6 +191,10 @@ div[name="contract_sum"] {
 	width:45%!important;
 }
 
+div[name="total"] > table.table {
+	margin-bottom:0px;
+}
+
 .optional {
 	color:#1964ca;
 }

@@ -1,5 +1,10 @@
 ## Modul eq_base_report
 
+#### 10.04.2019
+#### Version 1.0.43
+##### IMP
+- Reporstyles: margin under Price-Sum in Reports is removed
+
 #### 20.03.2019
 #### Version 1.0.42
 ##### IMP
