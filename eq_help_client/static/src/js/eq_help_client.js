@@ -21,6 +21,7 @@ odoo.define('eq_help_client.HelpClient', function (require) {
                 if (eq_show_left_div){                  // extra logic for cloud
                     $(".o_list_buttons").show();
                     $(".o_cp_buttons").show();
+                    $(".breadcrumb").show();
                 }
                 else{
                  $(".o_list_buttons").hide();

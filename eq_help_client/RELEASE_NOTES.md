@@ -1,6 +1,12 @@
 ## Modul eq_help_client
 
 #### 11.04.2019
+#### Version 1.0.10
+##### CHG
+- changed auto_install to false
+- added breadcrumb for system parameters
+
+#### 11.04.2019
 #### Version 1.0.9
 ##### DEL
 - deleted all parts related to eq_help_client_website
