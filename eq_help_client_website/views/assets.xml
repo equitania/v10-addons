@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- Frontend Editor, not for normal Website Guests -->
-    <template id="assets_editor" inherit_id="website.assets_editor" name="Editor assets help_client">
+    <template id="assets_editor_help_client_website" inherit_id="website.assets_editor" name="Editor assets help_client">
         <xpath expr="//link[last()]" position="after">
             <link href="/eq_help_client_website/static/src/css/eq_help_client_frontend_editor.css" rel="stylesheet" type="text/less"/>
         </xpath>
