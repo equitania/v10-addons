@@ -13,7 +13,7 @@
     'license': 'AGPL-3',
     'category': 'Documentation',
     'depends': [
-        'website', 'website_sale'
+        'website', 'website_sale', 'eq_help_client'
     ],
     'data': [
         'views/assets.xml',
