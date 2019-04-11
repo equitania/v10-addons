@@ -4,7 +4,7 @@
     <!-- Add our version of main JS file -->
     <template id="eq_website_product_no_js" name="main" inherit_id="website.assets_frontend" active="True" customize_show="True">
         <xpath expr="." position="inside">
-            <script type="text/javascript"  src="/eq_help_client/static/src/js/eq_help_client_frontend.js"></script>
+            <script type="text/javascript"  src="/eq_help_client_website/static/src/js/eq_help_client_frontend.js"></script>
         </xpath>
     </template>
 
