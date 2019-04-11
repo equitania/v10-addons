@@ -1,5 +1,10 @@
 ## Modul eq_help_client
 
+#### 11.04.2019
+#### Version 1.0.9
+##### DEL
+- deleted all parts related to eq_help_client_website
+
 #### 04.04.2019
 #### Version 1.0.8
 ##### ADD

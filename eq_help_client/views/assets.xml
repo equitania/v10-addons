@@ -7,11 +7,4 @@
             <script type="text/javascript" src="/eq_help_client/static/src/js/eq_help_client.js"></script>
         </xpath>
     </template>
-
-    <!-- Frontend Editor, not for normal Website Guests -->
-    <template id="assets_editor" inherit_id="website.assets_editor" name="Editor assets help_client">
-        <xpath expr="//link[last()]" position="after">
-            <link href="/eq_help_client/static/src/css/eq_help_client_frontend_editor.css" rel="stylesheet" type="text/less"/>
-        </xpath>
-    </template>
 </odoo>
