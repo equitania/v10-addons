@@ -1,5 +1,10 @@
 ## Modul eq_help_client
 
+#### 12.04.2019
+#### Version 1.0.11
+##### CHG
+- changed auto_install to True
+
 #### 11.04.2019
 #### Version 1.0.10
 ##### CHG
