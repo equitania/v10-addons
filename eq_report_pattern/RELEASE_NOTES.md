@@ -1,5 +1,10 @@
 ## eq_report_pattern 
 
+#### 12.04.2019
+#### Version 1.0.39
+##### FIX
+- Fixed problem with creation of lines if there is no price list selected for the template.
+
 #### 02.04.2019
 #### Version 1.0.38
 ##### CHG

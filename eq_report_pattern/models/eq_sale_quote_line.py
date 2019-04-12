@@ -39,8 +39,10 @@ class eq_sale_quote_line(models.Model):
         if self.product_id:
             if self.quote_id.eq_model == 'purchase.order':
                 self.price_unit = self.product_id.standard_price
-            else:
+            elif self.quote_id.eq_pricelist_id:
                 self.price_unit = self.quote_id.eq_pricelist_id.get_product_price(self.product_id, self.product_uom_qty, False)
+            else:
+                self.price_unit = self.product_id.lst_price
             name = self.product_id.name_get()[0][1]
             if self.product_id.description_sale:
                 name += '\n' + self.product_id.description_sale
