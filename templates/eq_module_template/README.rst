@@ -1,4 +1,4 @@
-.. image:: https://rm.ownerp.io/staff/MyOdooLogo.png
+.. image:: https://rm.myodoo.net/staff/MyOdooLogo.png
    :alt: Power by MyOdoo
    :target: https://www.myodoo.de
 
@@ -9,8 +9,8 @@ Name des Moduls
 Kurzbeschreibung
 
 
-.. image:: https://rm.ownerp.io/flags/de.png
-    :width: 75
+.. image:: https://pics.myodoo.net/flags/de.png
+    :width: 50
 
 Installation
 ============
@@ -41,7 +41,7 @@ Known issues / Roadmap
 Maintainer
 ----------
 
-.. image:: https://rm.ownerp.io/staff/EquitaniaLogo.png
+.. image:: https://rm.myodoo.net/staff/EquitaniaLogo.png
    :alt: Equitania Software GmbH
    :target: https://www.equitania.de
 
@@ -57,9 +57,11 @@ Copyrights & License
 * Copyright 2014 - now by Equitania Software GmbH - Germany - https://www.equitania.de
 * License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-.. image:: https://rm.ownerp.io/staff/ownERP_Logo.png
+.. image:: https://rm.myodoo.net/staff/ownERP_Logo.png
    :alt: ownERP - ERP as a Service
    :target: https://www.ownerp.de
+
+--
 
 
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
